@@ -43,6 +43,16 @@
 ## Known Intentional Deviations
 None.
 
+## Visual Self-Review vs Approved Reference
+- **Evaluated Against**: `references/rock_concept_reference.png` (Cube Siege Rock Asset Family Concept Art v1.0)
+- **Visual Comparison Findings**:
+  - **Stage 1 (6 variants)**: All 6 huge boulders exhibit distinct primary mass compositions rather than uniform boxes with chamfers. Footprints in top views are non-rectangular, polygonal, and notched. The variants represent the full breadth of the concept reference: ridgeline boulder (`var_1`), split/cleft peak (`var_2`), steep ramp wedge (`var_3`), overhanging crag (`var_4`), terraced butte (`var_5`), and elongated low slab (`var_6`).
+  - **Stage 2 (3 variants)**: Show clear damage progression (~50% mass) with planar fracture faces and cleaved chunks, reflecting the "Big Chunks" concept row.
+  - **Stage 3 (3 variants)**: Medium faceted chunks (~25% mass) matching the concept's "Medium Chunks" row.
+  - **Stages 4–5 (5 variants)**: Fractured into physically separate components (3 pieces for Stage 4; 4–5 pieces for Stage 5), all with individual flat ground contact (`y=0`), directly matching the "Small Chunks" and "Debris" concept rows.
+- **Review Verdict**: APPROVED — Visual forms closely follow the stylized, faceted blocky rock language of `rock_concept_reference.png`.
+- **Reviewer**: Antigravity agent visual self-review
+
 ## Notes for External Reviewer
 - Обратите внимание на `contact_sheet.png`: на нем представлены все 17 вариантов в едином пространстве с одинаковым студийным освещением и изометрической камерой.
 - Все треугольники находятся в диапазоне 212–1704 при лимите 5000 на меш.
