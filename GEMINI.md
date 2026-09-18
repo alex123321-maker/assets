@@ -136,7 +136,30 @@ PR с визуальным ассетом не считается готовым
 - still frames ключевых фаз;
 - короткое video/webp preview в игровой камере, если возможно.
 
-## 10. Pull Request
+## 10. Pull Request и review loop
+
+Каждая задача выполняется в отдельной ветке, например `asset/<issue>-<slug>`, `fix/<issue>-<slug>` или `chore/<issue>-<slug>`.
+
+**Создавать PR разрешено только через:**
+
+```bash
+python tools/review_loop/create_pr.py -- <аргументы gh pr create>
+```
+
+Прямой `gh pr create` запрещён: он может создать PR без гарантированной привязки текущей ветки к GUI-чату Antigravity и без регистрации в автономном review loop.
+
+`create_pr.py` обязан:
+- сохранить связь branch ↔ Antigravity conversation до создания PR;
+- убедиться, что watcher доступен;
+- создать либо переиспользовать PR текущей ветки;
+- зарегистрировать PR для автоматического получения внешнего review.
+
+При автоматическом запуске исправлений из review loop:
+- не публиковать собственные PR comments/reviews;
+- результат сообщать только в текущем Antigravity-чате;
+- после исправлений прогнать требуемую validation/build verification;
+- commit + push в существующую PR-ветку является сигналом завершения;
+- не merge PR самостоятельно.
 
 PR должен содержать:
 - ссылку на Issue;
