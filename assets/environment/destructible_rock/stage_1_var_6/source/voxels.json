@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "name": "destructible_rock_stage_1_var_6",
+  "voxel_size": 0.15,
+  "origin": "bottom_center",
+  "materials": {
+    "S": {
+      "name": "stone_gray",
+      "base_color": [
+        0.38,
+        0.4,
+        0.43,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "..................",
+        "..................",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        "..................",
+        ".................."
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "..................",
+        "..................",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        "..................",
+        ".................."
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "..................",
+        "..................",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        "..................",
+        ".................."
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "..................",
+        "..................",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        ".SSSSSSSSSSSSSSSS.",
+        "..................",
+        ".................."
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "..................",
+        "..................",
+        "..................",
+        "..SSSSSS..SSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSS..SSSSSS..",
+        "..................",
+        "..................",
+        ".................."
+      ]
+    },
+    {
+      "y": 5,
+      "rows": [
+        "..................",
+        "..................",
+        "..................",
+        "..SSSSSS..SSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSS..SSSSSS..",
+        "..................",
+        "..................",
+        ".................."
+      ]
+    },
+    {
+      "y": 6,
+      "rows": [
+        "..................",
+        "..................",
+        "..................",
+        "..SSSSSS..SSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSSSSSSSSSS..",
+        "..SSSSSS..SSSSSS..",
+        "..................",
+        "..................",
+        ".................."
+      ]
+    },
+    {
+      "y": 7,
+      "rows": [
+        "..................",
+        "..................",
+        "..................",
+        "..SSSSSS..S.......",
+        "..SSSSSS..SSSSSS..",
+        "..SSSSSS..SSSSSS..",
+        "..SSSSSS..SSSSSS..",
+        "..SSSSSS..SSSSSS..",
+        "..SSSSSS..SSSSSS..",
+        "..SSSSSS..SSSSSS..",
+        "...SSSSS..SSSSSS..",
+        "..................",
+        "..................",
+        ".................."
+      ]
+    },
+    {
+      "y": 8,
+      "rows": [
+        "..................",
+        "..................",
+        "..................",
+        "..SS..............",
+        "...SSSSS..SS......",
+        "...SSSSS..SSSSS...",
+        "...SSSSS..SSSSS...",
+        "...SSSSS..SSSSS...",
+        "...SSSSS..SSSSSS..",
+        "...SSSSS..SSSSSS..",
+        "......SS..SSSSSS..",
+        "..................",
+        "..................",
+        ".................."
+      ]
+    },
+    {
+      "y": 9,
+      "rows": [
+        "..................",
+        "..................",
+        "..................",
+        "..................",
+        "...SS.............",
+        "...SSSSS..........",
+        "..................",
+        "..................",
+        "..................",
+        "..................",
+        "..................",
+        "..................",
+        "..................",
+        ".................."
+      ]
+    }
+  ]
+}

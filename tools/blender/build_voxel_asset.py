@@ -103,6 +103,21 @@ def source_to_blender(
     return x, y, z
 
 
+def resolve_eevee_engine() -> str:
+    engine_items = {
+        item.identifier
+        for item in bpy.types.RenderSettings.bl_rna.properties["engine"].enum_items
+    }
+    if "BLENDER_EEVEE" in engine_items:
+        return "BLENDER_EEVEE"
+    elif "BLENDER_EEVEE_NEXT" in engine_items:
+        return "BLENDER_EEVEE_NEXT"
+    else:
+        raise RuntimeError(
+            f"No supported EEVEE engine found. Available: {sorted(engine_items)}"
+        )
+
+
 def build_objects(data: dict):
     occupied, width, height, depth = parse_voxels(data)
     voxel_size = float(data["voxel_size"])
@@ -159,6 +174,7 @@ def build_objects(data: dict):
             "z": depth * voxel_size,
         },
         "blender_version": bpy.app.version_string,
+        "render_engine": resolve_eevee_engine(),
     }
     return objects, metrics
 
@@ -212,7 +228,7 @@ def setup_review_scene(objects):
     look_at(fill, center)
 
     scene = bpy.context.scene
-    scene.render.engine = "BLENDER_EEVEE_NEXT"
+    scene.render.engine = resolve_eevee_engine()
     scene.render.resolution_x = 640
     scene.render.resolution_y = 640
     scene.render.resolution_percentage = 100

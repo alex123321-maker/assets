@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "name": "destructible_rock_stage_2_var_3",
+  "voxel_size": 0.15,
+  "origin": "bottom_center",
+  "materials": {
+    "S": {
+      "name": "stone_gray",
+      "base_color": [
+        0.38,
+        0.4,
+        0.43,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "..............",
+        "..............",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..............",
+        ".............."
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "..............",
+        "..............",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..............",
+        ".............."
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "..............",
+        "..............",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..............",
+        ".............."
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "..............",
+        "..............",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..SSSSSSSSSS..",
+        "..............",
+        ".............."
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "..............",
+        "..............",
+        "..............",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "..............",
+        "..............",
+        "..............",
+        ".............."
+      ]
+    },
+    {
+      "y": 5,
+      "rows": [
+        "..............",
+        "..............",
+        "..............",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "..............",
+        "..............",
+        "..............",
+        ".............."
+      ]
+    },
+    {
+      "y": 6,
+      "rows": [
+        "..............",
+        "..............",
+        "..............",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "..............",
+        "..............",
+        "..............",
+        ".............."
+      ]
+    },
+    {
+      "y": 7,
+      "rows": [
+        "..............",
+        "..............",
+        "..............",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "...SSSSSSS....",
+        "....SSSSSS....",
+        "....SSSSSS....",
+        "..............",
+        "..............",
+        "..............",
+        "..............",
+        ".............."
+      ]
+    }
+  ]
+}
