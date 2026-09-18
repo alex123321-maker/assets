@@ -43,10 +43,10 @@ This is an autonomous remediation run, not a planning request.
 Do not create or update an implementation plan, do not request plan approval, and do not wait for user confirmation.
 Plan internally and begin inspecting and editing the code immediately.
 Preserve all pre-existing uncommitted changes outside the review feedback scope; do not revert, stage, commit, or modify them.
-Do not change the gameplay/design contract.
-Do not invent gameplay decisions.
+Do not change the approved asset/art/gameplay design contract.
+Do not invent artistic, gameplay, proportion, animation, or VFX decisions.
 Only if a real DESIGN DECISION REQUIRED is encountered, stop that part and report it clearly; continue all independent work.
-Run the repository verification workflow.
+Run the repository asset validation/build verification required by the Issue and PR.
 Commit and push the fixes to the existing PR branch.
 Do not merge the PR.
 
