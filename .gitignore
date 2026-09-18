@@ -1,0 +1,24 @@
+# Blender
+*.blend1
+*.blend2
+*.blend@
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local pipeline
+.local/
+tmp/
+build/
+
+# Do not ignore source .blend, exported .glb, or committed review media.
