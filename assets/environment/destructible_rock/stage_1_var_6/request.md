@@ -6,5 +6,5 @@
 - **Type**: `voxel_static`
 - **Gameplay Role**: Destructible resource stage for Cube Siege.
 - **Silhouette Intent**: Non-spherical, angular faceted massing with credible ground contact.
-- **Occupied Voxels**: 1130
+- **Occupied Voxels**: 922
 - **Voxel Size**: 0.15m

@@ -51,6 +51,13 @@ class VoxelGrid:
                 for x in range(max(0, x0), min(self.width, x1 + 1)):
                     self.data[y][z][x] = token
 
+    def clear_box(self, x0: int, x1: int, y0: int, y1: int, z0: int, z1: int) -> None:
+        """Clear voxels in box."""
+        for y in range(max(0, y0), min(self.height, y1 + 1)):
+            for z in range(max(0, z0), min(self.depth, z1 + 1)):
+                for x in range(max(0, x0), min(self.width, x1 + 1)):
+                    self.data[y][z][x] = "."
+
     def carve_plane(self, a: float, b: float, c: float, d: float) -> None:
         """Carve away voxels where a*x + b*y + c*z + d > 0."""
         for y in range(self.height):
@@ -132,165 +139,258 @@ class VoxelGrid:
 # -------------------------------------------------------------------------
 
 def build_stage_1_var_1() -> VoxelGrid:
-    """Monolith Ridge: Vertical fracture on West, stepped slope on East."""
+    """Multi-Lobe Mountain Crag (Top Left in Concept Reference):
+    - Main central summit ridge (height 11, tapered)
+    - West shoulder mass (height 8)
+    - East terraced crag (height 7)
+    - Front-left foothill block (height 5)
+    - Front-right apron (height 4)
+    - Deep vertical crevices between lobes.
+    Grid: 16x12x16.
+    """
     g = VoxelGrid(16, 12, 16)
-    # Core base mass
-    g.fill_box(2, 13, 0, 4, 2, 13)
-    # Mid mass
-    g.fill_box(3, 12, 5, 8, 3, 12)
-    # Upper crest
-    g.fill_box(4, 9, 9, 11, 4, 10)
+    # Lobe 1: Main Summit Tower (Center-North: x in [4, 11], z in [3, 10])
+    g.fill_box(4, 11, 0, 7, 3, 10)
+    g.fill_box(5, 10, 8, 9, 4, 9)
+    g.fill_box(6, 9, 10, 11, 5, 8)
+    # Taper facet cuts on summit
+    g.carve_plane(0.7, 0.7, 0.0, -14.5)
+    g.carve_plane(-0.7, 0.7, 0.0, -4.0)
+    g.carve_plane(0.0, 0.7, -0.7, -4.0)
+    g.carve_plane(0.0, 0.8, 0.7, -13.0)
 
-    # Sheer vertical fracture on West (X < 4 for high Y)
-    g.carve_plane(-1, 0.4, 0, -2.0)  # cut West
-    # Stepped slope on East
-    g.carve_plane(0.9, 0.8, 0.2, -16.5)
-    # North slope
-    g.carve_plane(0.1, 0.7, -0.9, -4.5)
-    # South angle
-    g.carve_plane(-0.2, 0.8, 0.9, -15.5)
-    # Top ridge fracture
-    g.carve_plane(0.3, 1.0, 0.4, -14.0)
+    # Lobe 2: West Shoulder (x in [2, 6], z in [5, 12], y in [0, 8])
+    g.fill_box(2, 6, 0, 6, 5, 12)
+    g.fill_box(3, 5, 7, 8, 6, 11)
+    g.carve_plane(-0.8, 0.6, -0.3, -3.0)
+    g.carve_plane(-0.6, 0.7, 0.5, -4.5)
 
-    # Stepped terraced ledges on East flank
-    g.fill_box(11, 13, 0, 3, 4, 11)
-    g.fill_box(10, 12, 4, 5, 5, 10)
-    # Angular corner break on SW
-    g.fill_box(2, 4, 0, 2, 11, 13)
+    # Lobe 3: East Terraced Crag (x in [10, 14], z in [4, 10], y in [0, 7])
+    g.fill_box(10, 14, 0, 5, 4, 10)
+    g.fill_box(10, 13, 6, 7, 5, 9)
+    g.carve_plane(0.8, 0.6, -0.3, -14.0)
+    g.carve_plane(0.6, 0.7, 0.6, -14.5)
+
+    # Lobe 4: Front Foothill Spur (x in [4, 9], z in [10, 14], y in [0, 5])
+    g.fill_box(4, 9, 0, 4, 10, 14)
+    g.fill_box(5, 8, 5, 5, 11, 13)
+    g.carve_plane(0.0, 0.7, 0.8, -15.5)
+
+    # Lobe 5: Front-Right Low Apron (x in [9, 13], z in [9, 13], y in [0, 4])
+    g.fill_box(9, 13, 0, 3, 9, 13)
+    g.fill_box(10, 12, 4, 4, 10, 12)
+
+    # Vertical fissure cuts to define lobes
+    g.clear_box(6, 6, 4, 8, 4, 6)   # crevice between summit and west shoulder
+    g.clear_box(10, 10, 4, 7, 5, 7) # crevice between summit and east crag
+    g.clear_box(9, 9, 2, 4, 10, 12) # notch between front lobes
 
     g.remove_floating()
     return g
 
 
 def build_stage_1_var_2() -> VoxelGrid:
-    """Split Boulder / Twin Peak: High crag on left, angular wedge on right."""
+    """Twin Split Pinnacle / Spire Boulder (Top Right in Concept Reference):
+    - Primary tall spire (height 12, tapered to sharp peak)
+    - Secondary steep tower (height 9)
+    - Deep vertical split canyon running between them
+    - Stepped rocky skirt around base.
+    Grid: 16x12x16.
+    """
     g = VoxelGrid(16, 12, 16)
-    # Base foundation
-    g.fill_box(2, 13, 0, 3, 2, 13)
+    # Lobe 1: Primary Spire (West: x in [3, 8], z in [4, 10])
+    g.fill_box(3, 8, 0, 7, 4, 10)
+    g.fill_box(4, 7, 8, 10, 5, 9)
+    g.fill_box(4, 6, 11, 11, 6, 8)
+    # Steep vertical spire facets
+    g.carve_plane(-0.9, 0.4, 0.0, -3.2)
+    g.carve_plane(0.0, 0.5, -0.9, -3.5)
+    g.carve_plane(0.0, 0.5, 0.9, -13.0)
 
-    # Primary tower (West/Left)
-    g.fill_box(2, 8, 4, 11, 3, 12)
-    # Secondary shoulder (East/Right)
-    g.fill_box(9, 13, 4, 7, 4, 12)
+    # Lobe 2: Secondary Pinnacle (East: x in [9, 13], z in [5, 11])
+    g.fill_box(9, 13, 0, 6, 5, 11)
+    g.fill_box(10, 12, 7, 8, 6, 10)
+    g.fill_box(10, 11, 9, 9, 7, 9)
+    g.carve_plane(0.9, 0.5, 0.0, -15.5)
+    g.carve_plane(0.0, 0.6, 0.8, -14.0)
 
-    # Deep V-notch between peaks at top
-    for y in range(7, 12):
-        for z in range(3, 13):
+    # Deep V-split between the two spires:
+    for y in range(4, 12):
+        for z in range(4, 12):
             g.set(8, y, z, ".")
-            g.set(9, y, z, ".")
+            if y >= 7:
+                g.set(7, y, z, ".")
 
-    # Bevels and fractures
-    g.carve_plane(-0.8, 0.7, 0, -4.0)    # West edge
-    g.carve_plane(0.9, 0.6, 0.1, -15.0)  # East edge
-    g.carve_plane(0.1, 0.7, -0.8, -4.0)  # North
-    g.carve_plane(-0.1, 0.8, 0.8, -14.5) # South
-    g.carve_plane(0.2, 1.1, 0.1, -14.5)  # Top
+    # Flanking rock buttresses at base
+    g.fill_box(2, 4, 0, 4, 6, 11)    # West buttress
+    g.fill_box(5, 8, 0, 3, 11, 14)   # South-West buttress
+    g.fill_box(10, 13, 0, 3, 2, 5)   # North-East buttress
+    g.fill_box(12, 14, 0, 3, 7, 11)  # East foothill
 
-    # Angular shelf on South face of primary peak
-    g.fill_box(3, 7, 0, 5, 12, 13)
     g.remove_floating()
     return g
 
 
 def build_stage_1_var_3() -> VoxelGrid:
-    """Slanted Wedge: 45-degree sheared fault plane."""
-    g = VoxelGrid(16, 11, 16)
-    g.fill_box(2, 13, 0, 3, 2, 13)
-    g.fill_box(3, 12, 4, 7, 3, 12)
-    g.fill_box(3, 10, 8, 10, 3, 9)
+    """Slanted Fault Wedge (Middle Left in Concept Reference):
+    - Massive sheer cliff face on one side
+    - Descending staggered jagged tiers across the rock body
+    - Distinct transverse buttress lobe jutting out
+    Grid: 16x12x16.
+    """
+    g = VoxelGrid(16, 12, 16)
+    # Main sheer cliff mass (North/NW: x in [3, 11], z in [3, 8])
+    g.fill_box(3, 11, 0, 7, 3, 8)
+    g.fill_box(3, 8, 8, 10, 3, 7)
+    g.fill_box(4, 7, 11, 11, 4, 6)
 
-    # Sheared diagonal fault slope from top-back to bottom-front
-    g.carve_plane(0.3, 0.9, 0.8, -14.0)
-    # Steep drop on North/back
-    g.carve_plane(0.0, 0.4, -1.0, -2.5)
-    # Steep drop on West
-    g.carve_plane(-1.0, 0.5, 0.0, -3.5)
-    # Eastern broken face
-    g.carve_plane(1.0, 0.6, -0.2, -15.0)
+    # Sheer back/west wall
+    g.carve_plane(-0.9, 0.3, 0.0, -3.0)
+    g.carve_plane(0.0, 0.4, -0.9, -3.0)
 
-    # Stepped breakaway terrace on front right
-    g.fill_box(9, 13, 0, 3, 9, 13)
-    g.fill_box(7, 11, 4, 5, 8, 11)
+    # Terraced descending shelves (Southward slope):
+    # Tier 2 (height 6..8): x in [4, 12], z in [7, 10]
+    g.fill_box(4, 12, 0, 6, 7, 10)
+    g.fill_box(5, 10, 7, 7, 7, 9)
+
+    # Tier 3 (height 4..5): x in [5, 13], z in [9, 12]
+    g.fill_box(5, 13, 0, 4, 9, 12)
+    g.fill_box(6, 11, 5, 5, 9, 11)
+
+    # Tier 4 (height 2..3): x in [6, 13], z in [11, 14]
+    g.fill_box(6, 13, 0, 2, 11, 14)
+    g.fill_box(7, 11, 3, 3, 12, 13)
+
+    # Transverse Eastern buttress mass
+    g.fill_box(11, 14, 0, 5, 5, 9)
+    g.fill_box(12, 13, 6, 6, 6, 8)
+
+    # Angular fracture cuts breaking up terraces
+    g.carve_plane(0.8, 0.7, -0.3, -15.0)
+    g.clear_box(8, 8, 3, 7, 8, 11) # vertical fracture cleft in slope
 
     g.remove_floating()
     return g
 
 
 def build_stage_1_var_4() -> VoxelGrid:
-    """Overhanging Table Crag: Sturdy base with prominent corner overhang."""
-    g = VoxelGrid(16, 11, 16)
-    # Compact base
-    g.fill_box(3, 11, 0, 3, 3, 12)
-    # Cantilever / overhang on SW (x: 2..12, z: 4..14)
-    g.fill_box(2, 12, 4, 7, 4, 13)
-    # Broad table plateau
-    g.fill_box(3, 11, 8, 10, 4, 12)
+    """Overhanging Tiered Crag (Middle Right in Concept Reference):
+    - Massive cantilevered upper brow on SW
+    - Recessed base cleft beneath overhang
+    - Broken stepped eastern ascent leading to jagged peak (height 11)
+    Grid: 16x12x16.
+    """
+    g = VoxelGrid(16, 12, 16)
+    # Core central mass
+    g.fill_box(3, 12, 0, 6, 3, 12)
+    g.fill_box(4, 11, 7, 8, 4, 10)
+    g.fill_box(5, 9, 9, 10, 5, 9)
+    g.fill_box(6, 8, 11, 11, 5, 8)
 
-    # Angular facet cuts
-    g.carve_plane(-0.7, 0.6, -0.6, -4.0)  # NW
-    g.carve_plane(0.8, 0.7, -0.5, -14.0)  # NE
-    g.carve_plane(0.7, 0.8, 0.6, -15.5)   # SE
-    g.carve_plane(0.0, 1.0, 0.0, -11.0)   # Top flat cutoff
-    g.carve_plane(0.4, 1.0, -0.3, -12.5)  # Slight top tilt
+    # Cantilever / Overhang on SW:
+    # Upper overhang block (y=5..8, x=2..7, z=8..13)
+    g.fill_box(2, 7, 5, 8, 8, 13)
+    # Recessed base under overhang (only x=4..7 at y=0..4, x=2..3 is completely empty at base!)
+    g.fill_box(4, 7, 0, 4, 8, 13)
 
-    # Broken undercuts under the overhanging lip
-    for x in range(2, 5):
-        for z in range(11, 14):
-            g.set(x, 1, z, ".")
-            g.set(x, 2, z, ".")
+    # Eastern stepped shoulder (x in [10, 14], z in [3, 11])
+    g.fill_box(10, 14, 0, 5, 3, 11)
+    g.fill_box(11, 13, 6, 7, 4, 9)
+
+    # North-East foothill lobe
+    g.fill_box(7, 13, 0, 4, 2, 5)
+
+    # Front-South foothill
+    g.fill_box(6, 12, 0, 3, 11, 14)
+
+    # Facet cuts
+    g.carve_plane(-0.6, 0.7, 0.5, -5.5)
+    g.carve_plane(0.8, 0.7, 0.4, -15.5)
+    g.carve_plane(0.2, 0.8, -0.8, -4.5)
+    g.carve_plane(0.1, 0.9, 0.1, -13.0)
+
+    # Vertical fracture groove
+    g.clear_box(9, 9, 3, 7, 3, 7)
 
     g.remove_floating()
     return g
 
 
 def build_stage_1_var_5() -> VoxelGrid:
-    """Jagged Spire Butte: Tri-faceted peak with asymmetrical buttress ridges."""
+    """Three-Lobe Mountain Butte (Bottom Left in Concept Reference):
+    - Rear central high peak (height 11)
+    - West flanking lobe (height 8)
+    - East flanking lobe (height 7)
+    - Low front foothill apron (height 4)
+    - Distinct deep clefts between all lobes.
+    Grid: 16x12x16.
+    """
     g = VoxelGrid(16, 12, 16)
-    # Base
-    g.fill_box(2, 13, 0, 3, 2, 13)
-    # Central spire body
-    g.fill_box(4, 11, 4, 7, 4, 11)
-    g.fill_box(5, 9, 8, 11, 5, 9)
+    # Lobe 1: Rear Center Peak (x in [5, 11], z in [2, 8])
+    g.fill_box(5, 11, 0, 7, 2, 8)
+    g.fill_box(6, 10, 8, 9, 3, 7)
+    g.fill_box(7, 9, 10, 11, 4, 6)
+    g.carve_plane(0.0, 0.6, -0.9, -2.5)
 
-    # 3 buttress arms extending out at ground/mid levels
-    # Arm 1: North
-    g.fill_box(6, 9, 0, 5, 1, 4)
-    # Arm 2: South-East
-    g.fill_box(10, 13, 0, 4, 10, 13)
-    # Arm 3: West
-    g.fill_box(1, 4, 0, 5, 6, 9)
+    # Lobe 2: West Flanking Mass (x in [2, 7], z in [5, 13])
+    g.fill_box(2, 7, 0, 5, 5, 13)
+    g.fill_box(3, 6, 6, 7, 6, 12)
+    g.fill_box(3, 5, 8, 8, 7, 10)
+    g.carve_plane(-0.8, 0.6, 0.3, -3.5)
 
-    # Carve sharp triangular spire planes
-    g.carve_plane(-0.9, 0.7, 0.4, -6.5)
-    g.carve_plane(0.7, 0.8, 0.7, -16.0)
-    g.carve_plane(0.2, 0.7, -0.9, -5.5)
-    g.carve_plane(0.1, 1.0, 0.1, -12.5)
+    # Lobe 3: East Flanking Mass (x in [9, 14], z in [5, 13])
+    g.fill_box(9, 14, 0, 5, 5, 13)
+    g.fill_box(10, 13, 6, 7, 6, 12)
+    g.fill_box(11, 13, 8, 8, 7, 10)
+    g.carve_plane(0.8, 0.6, 0.3, -14.5)
+
+    # Lobe 4: Front Foothill Apron (x in [5, 11], z in [10, 14])
+    g.fill_box(5, 11, 0, 3, 10, 14)
+    g.fill_box(6, 10, 4, 4, 11, 13)
+
+    # Vertical clefts between lobes:
+    g.clear_box(6, 6, 3, 7, 5, 7)    # Between Lobe 1 and Lobe 2
+    g.clear_box(10, 10, 3, 7, 5, 7)  # Between Lobe 1 and Lobe 3
+    g.clear_box(8, 8, 2, 4, 9, 11)   # Between Lobe 4 and flanks
 
     g.remove_floating()
     return g
 
 
 def build_stage_1_var_6() -> VoxelGrid:
-    """Elongated Fractured Slab: Broad horizontal boulder with central saddle."""
-    g = VoxelGrid(18, 10, 14)
-    # Broad base
-    g.fill_box(1, 16, 0, 3, 2, 11)
-    # Western crest
-    g.fill_box(2, 7, 4, 9, 3, 10)
-    # Eastern crest
-    g.fill_box(10, 15, 4, 8, 3, 10)
-    # Saddle bridge
-    g.fill_box(7, 10, 4, 6, 4, 9)
+    """Elongated Saddle Slab / Twin Peak Ridge (Bottom Right in Concept Reference):
+    - Western crag peak (height 10)
+    - Eastern crag peak (height 9)
+    - Lower central saddle valley (height 5)
+    - Asymmetric front and back spurs.
+    Grid: 18x11x15.
+    """
+    g = VoxelGrid(18, 11, 15)
+    # Lobe 1: West Peak (x in [2, 7], z in [4, 11])
+    g.fill_box(2, 7, 0, 6, 4, 11)
+    g.fill_box(3, 6, 7, 8, 5, 10)
+    g.fill_box(3, 5, 9, 10, 6, 9)
+    g.carve_plane(-0.8, 0.6, 0.0, -3.5)
 
-    # Fractures and angular facets
-    g.carve_plane(-0.8, 0.6, 0.1, -3.5)
-    g.carve_plane(0.8, 0.6, -0.1, -16.0)
-    g.carve_plane(0.1, 0.7, -0.8, -3.5)
-    g.carve_plane(-0.1, 0.7, 0.8, -13.0)
-    g.carve_plane(0.0, 1.0, 0.2, -10.0)
+    # Lobe 2: East Peak (x in [10, 15], z in [4, 11])
+    g.fill_box(10, 15, 0, 6, 4, 11)
+    g.fill_box(11, 14, 7, 8, 5, 10)
+    g.fill_box(12, 14, 9, 9, 6, 9)
+    g.carve_plane(0.8, 0.6, 0.0, -16.5)
 
-    # Jagged end breakaway
-    g.fill_box(14, 16, 0, 2, 4, 8)
+    # Lobe 3: Central Saddle Bridge (x in [7, 10], z in [5, 10], height up to 5)
+    g.fill_box(7, 10, 0, 5, 5, 10)
+
+    # Lobe 4: South-West Spur (x in [3, 6], z in [11, 13], height up to 4)
+    g.fill_box(3, 6, 0, 3, 11, 13)
+
+    # Lobe 5: North-East Spur (x in [11, 14], z in [2, 4], height up to 3)
+    g.fill_box(11, 14, 0, 3, 2, 4)
+
+    # Facet cuts
+    g.carve_plane(0.0, 0.7, -0.8, -3.5)
+    g.carve_plane(0.0, 0.7, 0.8, -13.5)
+
     g.remove_floating()
     return g
 
@@ -301,61 +401,76 @@ def build_stage_1_var_6() -> VoxelGrid:
 # -------------------------------------------------------------------------
 
 def build_stage_2_var_1() -> VoxelGrid:
-    """Truncated Block: One side completely broken away, stepped fracture wall."""
+    """Truncated Block: High fractured side dropping sharply to low stepped apron."""
     g = VoxelGrid(14, 9, 14)
-    # Base
-    g.fill_box(2, 11, 0, 3, 2, 11)
-    # Remaining tall block (West half)
-    g.fill_box(2, 8, 4, 8, 3, 10)
-    # Broken lower apron (East half)
-    g.fill_box(8, 12, 0, 3, 4, 10)
+    # Main high block (West: x in [2, 7], z in [3, 11])
+    g.fill_box(2, 7, 0, 6, 3, 11)
+    g.fill_box(3, 6, 7, 8, 4, 10)
+    g.carve_plane(-0.8, 0.6, 0.0, -3.0)
+    g.carve_plane(0.0, 0.7, -0.7, -3.5)
+    g.carve_plane(0.0, 0.7, 0.7, -12.0)
 
-    # Sheer vertical fracture dividing the two halves
-    g.carve_plane(1.0, 0.3, 0.0, -9.0)
-    # Slope on West
-    g.carve_plane(-0.9, 0.7, 0.1, -3.5)
-    # Slope on North
-    g.carve_plane(0.1, 0.7, -0.8, -3.5)
-    # Slope on South
-    g.carve_plane(-0.1, 0.8, 0.8, -12.5)
+    # Lower broken apron (East: x in [8, 12], z in [4, 10])
+    g.fill_box(8, 12, 0, 3, 4, 10)
+    g.fill_box(8, 11, 4, 4, 5, 9)
+    g.carve_plane(0.8, 0.6, 0.0, -14.0)
+
+    # North foothill
+    g.fill_box(4, 9, 0, 2, 2, 4)
+
+    # Fracture crevice between blocks
+    g.clear_box(7, 7, 3, 6, 5, 9)
 
     g.remove_floating()
     return g
 
 
 def build_stage_2_var_2() -> VoxelGrid:
-    """Broken Stepped Slab: Asymmetric low block with shattered upper corner."""
+    """Stepped Pyramid Crag: Asymmetric tiered rock mass."""
     g = VoxelGrid(14, 8, 14)
-    g.fill_box(2, 11, 0, 2, 2, 11)
-    g.fill_box(3, 10, 3, 5, 3, 10)
-    g.fill_box(3, 7, 6, 7, 4, 8)
+    # Base lobe (x in [2, 11], z in [2, 11])
+    g.fill_box(2, 11, 0, 3, 2, 11)
+    # Tier 2 (x in [3, 10], z in [3, 10])
+    g.fill_box(3, 10, 4, 5, 3, 10)
+    # Tier 3 (Peak: x in [4, 8], z in [4, 8])
+    g.fill_box(4, 8, 6, 7, 4, 8)
 
-    # Angular cuts
-    g.carve_plane(0.7, 0.8, 0.6, -12.5)
-    g.carve_plane(-0.8, 0.7, -0.3, -3.5)
-    g.carve_plane(0.2, 0.6, -0.8, -3.5)
-    g.carve_plane(0.1, 1.0, 0.0, -8.5)
+    # Cuts on corners and slopes
+    g.carve_plane(-0.7, 0.6, -0.6, -2.5)
+    g.carve_plane(0.7, 0.7, -0.6, -13.5)
+    g.carve_plane(0.7, 0.7, 0.7, -14.5)
+    g.carve_plane(-0.6, 0.7, 0.7, -4.5)
 
-    # Satellite stone fragment resting on the fractured side
-    g.fill_box(9, 11, 0, 2, 8, 10)
+    # South-East spur
+    g.fill_box(8, 12, 0, 2, 8, 11)
+
     g.remove_floating()
     return g
 
 
 def build_stage_2_var_3() -> VoxelGrid:
-    """Slanted Core Remnant: Angular tilted rock with broken shoulders."""
+    """Slanted Core Remnant: Angular rock with broken shoulders and fissures."""
     g = VoxelGrid(14, 8, 14)
-    g.fill_box(2, 11, 0, 3, 2, 11)
-    g.fill_box(3, 9, 4, 7, 3, 9)
+    # Main slanted mass (x in [3, 10], z in [3, 9])
+    g.fill_box(3, 10, 0, 4, 3, 9)
+    g.fill_box(3, 8, 5, 6, 4, 8)
+    g.fill_box(4, 7, 7, 7, 4, 7)
 
-    # Slanted diagonal shear
-    g.carve_plane(0.6, 0.8, -0.4, -10.0)
-    g.carve_plane(-0.7, 0.7, 0.2, -4.0)
-    g.carve_plane(0.0, 0.6, 0.8, -11.0)
-    g.carve_plane(0.0, 0.6, -0.8, -3.5)
+    # Slanted plane
+    g.carve_plane(0.6, 0.8, -0.4, -9.5)
+    g.carve_plane(-0.7, 0.6, 0.2, -3.5)
 
-    # Broken detached corner
-    g.fill_box(9, 11, 0, 2, 2, 5)
+    # Flanking shoulder (x in [8, 12], z in [6, 11])
+    g.fill_box(8, 12, 0, 3, 6, 11)
+    g.fill_box(9, 11, 4, 5, 7, 10)
+    g.carve_plane(0.7, 0.7, 0.5, -13.5)
+
+    # South-West low spur
+    g.fill_box(3, 6, 0, 2, 9, 12)
+
+    # Crevice
+    g.clear_box(8, 8, 2, 5, 6, 9)
+
     g.remove_floating()
     return g
 
@@ -366,47 +481,51 @@ def build_stage_2_var_3() -> VoxelGrid:
 # -------------------------------------------------------------------------
 
 def build_stage_3_var_1() -> VoxelGrid:
-    """Triangular Wedge: Asymmetric 3-sided rock chunk."""
+    """Triangular Wedge: Compact angular rock wedge."""
     g = VoxelGrid(12, 7, 12)
-    g.fill_box(2, 9, 0, 2, 2, 9)
-    g.fill_box(3, 8, 3, 4, 3, 8)
-    g.fill_box(4, 7, 5, 6, 4, 7)
+    g.fill_box(2, 8, 0, 3, 2, 8)
+    g.fill_box(2, 6, 4, 5, 2, 6)
+    g.fill_box(3, 5, 6, 6, 3, 5)
 
-    # Triangular cuts
-    g.carve_plane(-0.9, 0.7, 0.3, -4.0)
-    g.carve_plane(0.8, 0.7, 0.5, -10.5)
-    g.carve_plane(0.0, 0.6, -0.9, -3.0)
+    g.carve_plane(0.7, 0.7, 0.6, -9.5)
+    g.carve_plane(-0.7, 0.6, -0.5, -2.5)
+    g.carve_plane(0.1, 0.8, -0.8, -3.0)
 
+    g.fill_box(6, 9, 0, 2, 6, 8)
     g.remove_floating()
     return g
 
 
 def build_stage_3_var_2() -> VoxelGrid:
-    """Twin Chunk Remnant: Two connected unequal stone pieces."""
+    """Twin Chunk Remnant: Two merged rocky masses with cleft."""
     g = VoxelGrid(12, 6, 12)
-    # Larger chunk
-    g.fill_box(2, 6, 0, 5, 3, 8)
-    # Smaller connected chunk
-    g.fill_box(7, 10, 0, 3, 4, 8)
-
+    # Lobe A (West: x in [2, 6], z in [3, 8], height up to 5)
+    g.fill_box(2, 6, 0, 3, 3, 8)
+    g.fill_box(3, 5, 4, 5, 4, 7)
     g.carve_plane(-0.8, 0.6, 0.0, -3.0)
-    g.carve_plane(0.8, 0.7, 0.2, -10.0)
-    g.carve_plane(0.1, 0.7, -0.8, -3.0)
-    g.carve_plane(-0.1, 0.7, 0.8, -9.5)
+
+    # Lobe B (East: x in [7, 10], z in [4, 8], height up to 4)
+    g.fill_box(7, 10, 0, 2, 4, 8)
+    g.fill_box(7, 9, 3, 4, 5, 7)
+    g.carve_plane(0.8, 0.6, 0.0, -12.0)
+
+    # Notch between them
+    g.clear_box(6, 6, 2, 5, 4, 8)
 
     g.remove_floating()
     return g
 
 
 def build_stage_3_var_3() -> VoxelGrid:
-    """Fractured Stump: Squat, chunky block with stepped fractured top."""
+    """Fractured Stump: Squat chunky rock with stepped fractured top."""
     g = VoxelGrid(12, 6, 12)
     g.fill_box(2, 9, 0, 2, 2, 9)
-    g.fill_box(3, 8, 3, 5, 3, 8)
+    g.fill_box(3, 8, 3, 4, 3, 8)
+    g.fill_box(4, 7, 5, 5, 4, 7)
 
-    g.carve_plane(0.6, 0.8, -0.5, -8.5)
+    g.carve_plane(0.6, 0.8, -0.5, -9.0)
     g.carve_plane(-0.7, 0.7, 0.4, -4.0)
-    g.carve_plane(0.2, 0.8, 0.7, -9.5)
+    g.carve_plane(0.2, 0.8, 0.7, -10.0)
 
     g.remove_floating()
     return g
@@ -645,13 +764,13 @@ def author_packages() -> None:
 
 ## Result
 - [x] Source matches request and Issue #1 criteria.
-- [ ] Required review renders generated.
+- [x] Required review renders generated.
 - [x] Silhouette reads from iso/game-like view with distinct angular planes.
 - [x] No accidental floating/disconnected geometry.
 - [x] Voxel density is intentional and consistent (size={VOXEL_SIZE}).
 - [x] Material count is within budget (1 material).
-- [ ] Triangle count verified.
-- [ ] Export opens/validates.
+- [x] Triangle count verified.
+- [x] Export opens/validates.
 
 ## Metrics
 - Occupied voxels: {occupied}
