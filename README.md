@@ -75,9 +75,13 @@ assets/<category>/<asset_name>/
      --asset assets/<category>/<asset_name>
    ```
 8. Сгенерировать review renders и заполнить `review/review.md`.
-9. Открыть Pull Request.
+9. Открыть Pull Request **только через review-loop wrapper**:
+   ```bash
+   python tools/review_loop/create_pr.py -- --title "..." --body "..."
+   ```
+   Прямой `gh pr create` не использовать.
 
-Подробности: [docs/PIPELINE.md](docs/PIPELINE.md).
+Подробности: [docs/PIPELINE.md](docs/PIPELINE.md) и [docs/REVIEW_LOOP.md](docs/REVIEW_LOOP.md).
 
 ## Главный принцип
 
