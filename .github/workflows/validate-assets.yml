@@ -23,6 +23,10 @@ jobs:
           python -m py_compile tools/validate_all.py
           python -m py_compile tools/new_asset.py
           python -m py_compile tools/blender/build_voxel_asset.py
+          python -m py_compile tools/review_loop/*.py
+
+      - name: Review loop unit tests
+        run: python -m unittest discover -s tests/unit -p "test_review_loop.py"
 
       - name: Validate committed asset packages
         run: python tools/validate_all.py
