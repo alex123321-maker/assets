@@ -17,10 +17,9 @@
 - Grid: 14x9x14
 - World size: 2.10 x 1.35 x 2.10 m
 
-## Visual Self-Review vs Approved Reference
-- **Evaluated Against**: `references/rock_concept_reference.png`
-- **Primary Massing**: Cleaved remnant (~50% volume of Stage 1), exhibiting a prominent vertical fracture plane on the north face.
-- **Silhouette Read**: Sharp planar cleavage contrasted with naturally faceted southern slopes; clear reduction in mass.
-- **Reference Match**: Directly matches freshly cleaved boulder halves in the reference destruction sequence.
-- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
-- **Reviewer**: Antigravity visual self-review step
+## Visual Self-Review Notes
+- **Reference**: `references/rock_concept_reference.png`
+- **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
+  - **Massing & Silhouette**: Displays a cleaved boulder with a clean vertical planar cleavage face along the north flank contrasted with stepped natural weathering on the south. Mass is ~50% of Stage 1 (594 voxels).
+  - **Reference Alignment**: Directly reflects the fractured half-boulder in the top of the Stage 2 'Big Chunks' reference column.
+- **Reviewer**: Antigravity agent (interactive visual inspection of renders vs concept reference)

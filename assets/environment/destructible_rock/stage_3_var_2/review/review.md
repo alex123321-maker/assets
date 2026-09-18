@@ -17,10 +17,9 @@
 - Grid: 12x6x12
 - World size: 1.80 x 0.90 x 1.80 m
 
-## Visual Self-Review vs Approved Reference
-- **Evaluated Against**: `references/rock_concept_reference.png`
-- **Primary Massing**: Low-profile faceted stone with sharp stepped perimeter and stable ground contact.
-- **Silhouette Read**: Asymmetric polygonal perimeter; distinct low-angle facets.
-- **Reference Match**: Matches ground-level flat cleaved stones from reference.
-- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
-- **Reviewer**: Antigravity visual self-review step
+## Visual Self-Review Notes
+- **Reference**: `references/rock_concept_reference.png`
+- **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
+  - **Massing & Silhouette**: Low-profile cleaved stone with sharp stepped perimeter, broad flat base, and asymmetric facets.
+  - **Reference Alignment**: Matches the ground-level cleaved stones in the middle of the Stage 3 reference column.
+- **Reviewer**: Antigravity agent (interactive visual inspection of renders vs concept reference)

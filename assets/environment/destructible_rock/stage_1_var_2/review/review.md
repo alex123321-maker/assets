@@ -17,10 +17,9 @@
 - Grid: 16x12x16
 - World size: 2.40 x 1.80 x 2.40 m
 
-## Visual Self-Review vs Approved Reference
-- **Evaluated Against**: `references/rock_concept_reference.png`
-- **Primary Massing**: Dual-peak formation separated by a deep central ravine notch, creating strong negative space and profile bifurcation.
-- **Silhouette Read**: Western summit dominates while eastern shoulder provides stepped support. Deep saddle notch prevents any box-like reading.
-- **Reference Match**: Matches the cleft/split rock formations seen in the midground of the concept reference.
-- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
-- **Reviewer**: Antigravity visual self-review step
+## Visual Self-Review Notes
+- **Reference**: `references/rock_concept_reference.png`
+- **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
+  - **Massing & Silhouette**: Isometric and front views reveal two distinct asymmetric summits (western summit at height y=12, eastern shoulder at y=9) separated by a deep vertical cleft. Top view shows the deep cleft indenting the perimeter from both north and south, creating strong negative space.
+  - **Reference Alignment**: Matches the cleft/split rock formation with vertical fissure in the mid-left of the Stage 1 reference row.
+- **Reviewer**: Antigravity agent (interactive visual inspection of renders vs concept reference)

@@ -17,10 +17,9 @@
 - Grid: 14x8x14
 - World size: 2.10 x 1.20 x 2.10 m
 
-## Visual Self-Review vs Approved Reference
-- **Evaluated Against**: `references/rock_concept_reference.png`
-- **Primary Massing**: Strongly faceted boulder with two prominent sloping shear planes creating a sharp triangular reading.
-- **Silhouette Read**: Triangular apex reading clearly from isometric and top views; no box corners remain.
-- **Reference Match**: Matches angular cleaved boulders in reference art.
-- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
-- **Reviewer**: Antigravity visual self-review step
+## Visual Self-Review Notes
+- **Reference**: `references/rock_concept_reference.png`
+- **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
+  - **Massing & Silhouette**: An angular cleaved rock with two prominent sloping fracture faces creating a sharp triangular reading from isometric and top views, eliminating box corners.
+  - **Reference Alignment**: Matches the low faceted chunk in the bottom of the Stage 2 reference column.
+- **Reviewer**: Antigravity agent (interactive visual inspection of renders vs concept reference)

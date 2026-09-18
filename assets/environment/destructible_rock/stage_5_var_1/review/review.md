@@ -17,10 +17,9 @@
 - Grid: 10x3x10
 - World size: 1.50 x 0.45 x 1.50 m
 
-## Visual Self-Review vs Approved Reference
-- **Evaluated Against**: `references/rock_concept_reference.png`
-- **Primary Massing**: Exactly 5 physically separate small rubble pieces distributed naturally across ground plane.
-- **Silhouette Read**: Low-profile scattered debris with multiple independent ground contact points; completely fragmented.
-- **Reference Match**: Directly matches final stage rubble/gravel remnants from concept reference.
-- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
-- **Reviewer**: Antigravity visual self-review step
+## Visual Self-Review Notes
+- **Reference**: `references/rock_concept_reference.png`
+- **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
+  - **Massing & Silhouette**: Exactly 5 physically separate small rubble pieces distributed across the ground plane with clear separation and independent contacts at y=0.
+  - **Reference Alignment**: Matches the dispersed rubble clusters in the top of the Stage 5 'Debris' reference column.
+- **Reviewer**: Antigravity agent (interactive visual inspection of renders vs concept reference)

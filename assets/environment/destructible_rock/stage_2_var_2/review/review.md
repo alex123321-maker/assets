@@ -17,10 +17,9 @@
 - Grid: 14x8x14
 - World size: 2.10 x 1.20 x 2.10 m
 
-## Visual Self-Review vs Approved Reference
-- **Evaluated Against**: `references/rock_concept_reference.png`
-- **Primary Massing**: Two close-set asymmetric angular chunks with shared ground contact and a deep crevice between them.
-- **Silhouette Read**: Broken profile with distinct angular cleavage planes on both chunks.
-- **Reference Match**: Evokes rock split along natural cleavage planes during damage.
-- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
-- **Reviewer**: Antigravity visual self-review step
+## Visual Self-Review Notes
+- **Reference**: `references/rock_concept_reference.png`
+- **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
+  - **Massing & Silhouette**: Two adjacent angular boulders resting on a flat ground plane with a deep central fracture crevice separating them. Both chunks exhibit independent angular facets and distinct height peaks.
+  - **Reference Alignment**: Matches the split-boulder pair in the middle of the Stage 2 reference column.
+- **Reviewer**: Antigravity agent (interactive visual inspection of renders vs concept reference)

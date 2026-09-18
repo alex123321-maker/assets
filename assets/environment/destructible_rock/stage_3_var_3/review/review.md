@@ -17,10 +17,9 @@
 - Grid: 12x6x12
 - World size: 1.80 x 0.90 x 1.80 m
 
-## Visual Self-Review vs Approved Reference
-- **Evaluated Against**: `references/rock_concept_reference.png`
-- **Primary Massing**: Fused unequal twin stones forming an asymmetrical compound silhouette with a waist notch.
-- **Silhouette Read**: Hourglass-like notch separates higher western dome from lower eastern shoulder.
-- **Reference Match**: Matches clustered medium stones in the reference.
-- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
-- **Reviewer**: Antigravity visual self-review step
+## Visual Self-Review Notes
+- **Reference**: `references/rock_concept_reference.png`
+- **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
+  - **Massing & Silhouette**: Two unequal fused stones forming an irregular compound silhouette with a waist notch separating a higher western dome from a lower eastern shoulder.
+  - **Reference Alignment**: Matches the compound boulder clusters in the bottom of the Stage 3 reference column.
+- **Reviewer**: Antigravity agent (interactive visual inspection of renders vs concept reference)

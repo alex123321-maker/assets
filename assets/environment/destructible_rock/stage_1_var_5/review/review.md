@@ -17,10 +17,9 @@
 - Grid: 16x12x16
 - World size: 2.40 x 1.80 x 2.40 m
 
-## Visual Self-Review vs Approved Reference
-- **Evaluated Against**: `references/rock_concept_reference.png`
-- **Primary Massing**: Triple-mass terraced formation with three distinct elevation benches (SW, Center, NE).
-- **Silhouette Read**: Multi-lobed irregular perimeter; narrow jagged pinnacle surrounded by broken lower shelves; completely non-boxy.
-- **Reference Match**: Evokes the stepped, terraced stone formations depicted in the reference.
-- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
-- **Reviewer**: Antigravity visual self-review step
+## Visual Self-Review Notes
+- **Reference**: `references/rock_concept_reference.png`
+- **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
+  - **Massing & Silhouette**: Isometric and front views display a three-tiered terraced formation with distinct elevation benches at y=4, y=8, and y=12, culminating in a sharp off-center pinnacle. Top view confirms a multi-lobed irregular contour with notched perimeter and no flat top slab.
+  - **Reference Alignment**: Matches the multi-tiered eroded boulder in the bottom-right of the Stage 1 reference row.
+- **Reviewer**: Antigravity agent (interactive visual inspection of renders vs concept reference)

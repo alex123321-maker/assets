@@ -17,10 +17,9 @@
 - Grid: 18x11x15
 - World size: 2.70 x 1.65 x 2.25 m
 
-## Visual Self-Review vs Approved Reference
-- **Evaluated Against**: `references/rock_concept_reference.png`
-- **Primary Massing**: Broad oblong formation (18x15 horizontal extent) with uneven rolling crest line and asymmetric ends.
-- **Silhouette Read**: Fractured longitudinal spine with broken lateral terraces; trapeze-like base with notched indentations.
-- **Reference Match**: Matches the wider, lower profile rock masses resting along the ground plane in the reference art.
-- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
-- **Reviewer**: Antigravity visual self-review step
+## Visual Self-Review Notes
+- **Reference**: `references/rock_concept_reference.png`
+- **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
+  - **Massing & Silhouette**: Isometric and front views exhibit an elongated horizontal span (18x15 voxels, 2.7m wide) with an undulating crest featuring two unequal summits (heights y=11 and y=8). Side view shows a broad, stable ground base; top view reveals a trapezoidal perimeter with central waist indentation.
+  - **Reference Alignment**: Matches the wider, low-profile rock masses resting along the ground plane in the reference art.
+- **Reviewer**: Antigravity agent (interactive visual inspection of renders vs concept reference)
