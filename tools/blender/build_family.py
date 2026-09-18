@@ -96,25 +96,12 @@ def build_variant(pkg_dir: Path) -> dict:
     title = manifest.get("title", pkg_dir.name)
     review_path = pkg_dir / "review" / "review.md"
 
-    # Preserve subjective self-review checks if already evaluated by agent/author
-    source_checked = False
-    silhouette_checked = False
-    if review_path.exists():
-        old_text = review_path.read_text(encoding="utf-8")
-        if re.search(r"-\s*\[x\]\s*Source matches", old_text, re.IGNORECASE):
-            source_checked = True
-        if re.search(r"-\s*\[x\]\s*Silhouette reads", old_text, re.IGNORECASE):
-            silhouette_checked = True
-
-    source_box = "[x]" if source_checked else "[ ]"
-    silhouette_box = "[x]" if silhouette_checked else "[ ]"
-
     review_md = f"""# Self Review: {title}
 
 ## Result
-- {source_box} Source matches request and Issue #1 criteria.
+- [ ] Source matches request and Issue #1 criteria.
 - [x] Required review renders generated.
-- {silhouette_box} Silhouette reads from iso/game-like view with distinct angular planes.
+- [ ] Silhouette reads from iso/game-like view with distinct angular planes.
 - [x] No accidental floating/disconnected geometry.
 - [x] Voxel density is intentional and consistent (size={metrics['voxel_size']}).
 - [x] Material count is within budget ({metrics['materials']} material).

@@ -16,3 +16,11 @@
 - Visible faces: 278
 - Grid: 12x7x12
 - World size: 1.80 x 1.05 x 1.80 m
+
+## Visual Self-Review vs Approved Reference
+- **Evaluated Against**: `references/rock_concept_reference.png`
+- **Primary Massing**: Medium-small faceted stone (~25% volume) with an off-center pyramidal peak.
+- **Silhouette Read**: Three distinct facet planes meeting at an off-center crest; clean geometric stone read.
+- **Reference Match**: Matches medium faceted rubble rocks in concept reference.
+- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
+- **Reviewer**: Antigravity visual self-review step

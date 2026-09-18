@@ -16,3 +16,11 @@
 - Visible faces: 706
 - Grid: 16x12x16
 - World size: 2.40 x 1.80 x 2.40 m
+
+## Visual Self-Review vs Approved Reference
+- **Evaluated Against**: `references/rock_concept_reference.png`
+- **Primary Massing**: Heavy diagonal ramp massing with steep southern shear face and gradual stepped northern incline.
+- **Silhouette Read**: Pronounced cantilevered overhangs on the south face and faceted flanks. Slanted shear top at ~35 degrees breaks rectangular volume.
+- **Reference Match**: Matches the tilted monolithic slab rocks in the approved reference.
+- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
+- **Reviewer**: Antigravity visual self-review step

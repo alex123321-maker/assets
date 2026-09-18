@@ -16,3 +16,11 @@
 - Visible faces: 528
 - Grid: 14x9x14
 - World size: 2.10 x 1.35 x 2.10 m
+
+## Visual Self-Review vs Approved Reference
+- **Evaluated Against**: `references/rock_concept_reference.png`
+- **Primary Massing**: Cleaved remnant (~50% volume of Stage 1), exhibiting a prominent vertical fracture plane on the north face.
+- **Silhouette Read**: Sharp planar cleavage contrasted with naturally faceted southern slopes; clear reduction in mass.
+- **Reference Match**: Directly matches freshly cleaved boulder halves in the reference destruction sequence.
+- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
+- **Reviewer**: Antigravity visual self-review step

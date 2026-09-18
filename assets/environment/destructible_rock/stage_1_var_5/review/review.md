@@ -16,3 +16,11 @@
 - Visible faces: 852
 - Grid: 16x12x16
 - World size: 2.40 x 1.80 x 2.40 m
+
+## Visual Self-Review vs Approved Reference
+- **Evaluated Against**: `references/rock_concept_reference.png`
+- **Primary Massing**: Triple-mass terraced formation with three distinct elevation benches (SW, Center, NE).
+- **Silhouette Read**: Multi-lobed irregular perimeter; narrow jagged pinnacle surrounded by broken lower shelves; completely non-boxy.
+- **Reference Match**: Evokes the stepped, terraced stone formations depicted in the reference.
+- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
+- **Reviewer**: Antigravity visual self-review step

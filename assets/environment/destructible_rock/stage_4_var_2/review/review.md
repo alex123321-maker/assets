@@ -16,3 +16,11 @@
 - Visible faces: 246
 - Grid: 12x4x12
 - World size: 1.80 x 0.60 x 1.80 m
+
+## Visual Self-Review vs Approved Reference
+- **Evaluated Against**: `references/rock_concept_reference.png`
+- **Primary Massing**: Exactly 3 physically separate angular rubble stones in an asymmetric cluster.
+- **Silhouette Read**: Clear visual air gaps between all 3 pieces; distinct silhouettes for each fragment.
+- **Reference Match**: Matches shattered stone fragments in concept art.
+- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
+- **Reviewer**: Antigravity visual self-review step

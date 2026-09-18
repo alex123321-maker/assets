@@ -10,7 +10,6 @@ Supports two backends:
 Backend type is stored explicitly to avoid cross-platform Path.stem issues
 (Windows backslash paths parsed on Linux POSIX).
 """
-import json
 import logging
 import os
 import shutil
@@ -83,19 +82,6 @@ class AgentResumer:
             )
             return list(self._custom_cmd), backend
 
-        # 0. Check for explicit ANTIGRAVITY_AGENTAPI_EXE from env or saved env
-        env_file = REVIEW_LOOP_DIR / "antigravity_env.json"
-        saved_env = {}
-        if env_file.exists():
-            try:
-                saved_env = json.loads(env_file.read_text(encoding="utf-8"))
-            except Exception:
-                pass
-
-        exe = os.environ.get("ANTIGRAVITY_AGENTAPI_EXE") or saved_env.get("ANTIGRAVITY_AGENTAPI_EXE")
-        if exe and Path(exe).is_file():
-            return [exe, "agentapi"], BACKEND_AGENTAPI
-
         # 1. Antigravity sidecars receive the official agentapi executable.
         agentapi_which = shutil.which("agentapi") or shutil.which(
             "agentapi.exe"
@@ -135,8 +121,7 @@ class AgentResumer:
             return prompt
 
         blocks: List[str] = []
-        # Keep prompt safely under Windows shell/CreateProcess limits (8191 chars total command line)
-        remaining = 4000
+        remaining = 24000
         for event in feedback_events:
             body = str(event.get("body") or "").strip()
             if not body:
@@ -199,19 +184,6 @@ class AgentResumer:
                 cmd_list, conversation_id, prompt, title, timeout, max_retries
             )
 
-    def _get_effective_env(self) -> Dict[str, str]:
-        env = dict(os.environ)
-        env_file = REVIEW_LOOP_DIR / "antigravity_env.json"
-        if env_file.exists():
-            try:
-                saved_env = json.loads(env_file.read_text(encoding="utf-8"))
-                for k, v in saved_env.items():
-                    if k not in env or not env[k]:
-                        env[k] = str(v)
-            except Exception as e:
-                logger.warning("Failed to load %s: %s", env_file, e)
-        return env
-
     def _resume_via_agy(
         self,
         cmd_list: List[str],
@@ -260,7 +232,6 @@ class AgentResumer:
                 # Build Popen kwargs with output redirected to log file
                 popen_kwargs = {
                     "cwd": str(self.cwd),
-                    "env": self._get_effective_env(),
                     "stdout": log_file,
                     "stderr": subprocess.STDOUT,
                     "stdin": subprocess.DEVNULL,
@@ -344,7 +315,6 @@ class AgentResumer:
                 res = subprocess.run(
                     full_cmd,
                     cwd=str(self.cwd),
-                    env=self._get_effective_env(),
                     capture_output=True,
                     text=True,
                     encoding="utf-8",

@@ -16,3 +16,11 @@
 - Visible faces: 726
 - Grid: 16x12x16
 - World size: 2.40 x 1.80 x 2.40 m
+
+## Visual Self-Review vs Approved Reference
+- **Evaluated Against**: `references/rock_concept_reference.png`
+- **Primary Massing**: Dramatic asymmetric crag with pronounced western overhanging shelf and deeply recessed eastern buttress.
+- **Silhouette Read**: Stepped overhangs cast distinct self-shadowing in isometric view; jagged NW spur provides sharp pinnacle contour.
+- **Reference Match**: Accurately represents the rugged, weathered cragged outcrops in the concept art.
+- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
+- **Reviewer**: Antigravity visual self-review step

@@ -401,8 +401,7 @@ def print_status() -> None:
     if DEFAULT_LOG_FILE.exists():
         print("\n--- Recent Log Activity (last 10 lines) ---")
         for line in DEFAULT_LOG_FILE.read_text(encoding="utf-8", errors="replace").splitlines()[-10:]:
-            safe_line = line.encode(sys.stdout.encoding or "utf-8", errors="replace").decode(sys.stdout.encoding or "utf-8", errors="replace")
-            print(f"  {safe_line}")
+            print(f"  {line}")
     print("=" * 60)
 
 

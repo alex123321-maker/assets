@@ -16,3 +16,11 @@
 - Visible faces: 738
 - Grid: 16x12x16
 - World size: 2.40 x 1.80 x 2.40 m
+
+## Visual Self-Review vs Approved Reference
+- **Evaluated Against**: `references/rock_concept_reference.png`
+- **Primary Massing**: Asymmetric diagonal ridge formed from intersecting primary masses, rising from SW to a tall angular crest at NE.
+- **Silhouette Read**: Stepped broken profile with distinct 45-degree cleaved planes. Polygonal 16x16 footprint with chamfered facets; no dominant flat top slab.
+- **Reference Match**: Directly matches the prominent angled ridgeline boulders in the concept reference foreground.
+- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
+- **Reviewer**: Antigravity visual self-review step

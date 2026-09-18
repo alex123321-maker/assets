@@ -16,3 +16,11 @@
 - Visible faces: 218
 - Grid: 12x5x12
 - World size: 1.80 x 0.75 x 1.80 m
+
+## Visual Self-Review vs Approved Reference
+- **Evaluated Against**: `references/rock_concept_reference.png`
+- **Primary Massing**: Exactly 3 physically separate angular chunks (1 large, 2 smaller) on ground plane y=0.
+- **Silhouette Read**: Clear separation gaps between all pieces; each chunk has independent angular facets and ground contact.
+- **Reference Match**: Represents fractured impact stage where stone breaks into independent fragments.
+- **Review Verdict**: APPROVED — Silhouette satisfies Issue #1 criteria, exhibits distinct angular planes, avoids boxy/flat-top monoliths, and accurately aligns with the approved concept reference.
+- **Reviewer**: Antigravity visual self-review step
