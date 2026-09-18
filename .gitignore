@@ -22,3 +22,6 @@ tmp/
 build/
 
 # Do not ignore source .blend, exported .glb, or committed review media.
+
+# Autonomous PR review loop runtime state
+.review_loop/
