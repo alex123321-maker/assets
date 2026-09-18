@@ -553,6 +553,21 @@ class ReviewWatcher:
                 self.state.reset_retry_count(pr_number)
                 self.state.update_pr_fields(pr_number, last_head_sha=current_head_sha, status="watching")
                 pr_entry = self.state.get_pr(pr_number) or pr_entry
+            elif pr_status == "error":
+                # Check if new review feedback arrived from allowlisted reviewer
+                new_events = self.check_pr_events(pr_number, pr_info)
+                if new_events:
+                    logger.info(
+                        "PR #%s in 'error' received %d new review event(s). Reactivating to 'watching'.",
+                        pr_number, len(new_events)
+                    )
+                    self.state.reset_retry_count(pr_number)
+                    self.state.mark_pr_status(pr_number, "watching")
+                    for ev in new_events:
+                        self.state.queue_pending_event(pr_number, ev)
+                    pr_entry = self.state.get_pr(pr_number) or pr_entry
+                else:
+                    return
             else:
                 return
 

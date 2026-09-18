@@ -10,6 +10,8 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import re
+import struct
 import sys
 from pathlib import Path
 
@@ -43,6 +45,33 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def validate_glb_export(glb_path: Path) -> dict:
+    """Validate that the exported GLB file exists, has a valid glTF 2.0 binary header, and can be parsed."""
+    if not glb_path.exists():
+        raise RuntimeError(f"Exported GLB not found at {glb_path}")
+    size = glb_path.stat().st_size
+    if size < 20:
+        raise RuntimeError(f"Exported GLB too small ({size} bytes)")
+    with open(glb_path, "rb") as f:
+        magic = f.read(4)
+        if magic != b"glTF":
+            raise RuntimeError(f"Invalid GLB magic header: {magic}")
+        version, length = struct.unpack("<II", f.read(8))
+        if version != 2:
+            raise RuntimeError(f"Unsupported glTF version: {version}")
+        if length != size:
+            raise RuntimeError(f"GLB length mismatch: header says {length}, file is {size}")
+        chunk_len, chunk_type = struct.unpack("<II", f.read(8))
+        if chunk_type != 0x4E4F534A:  # "JSON"
+            raise RuntimeError(f"First GLB chunk is not JSON: {hex(chunk_type)}")
+        json_bytes = f.read(chunk_len)
+        gltf_json = json.loads(json_bytes.decode("utf-8"))
+        meshes = gltf_json.get("meshes", [])
+        if not meshes:
+            raise RuntimeError(f"GLB contains no meshes")
+    return {"size_bytes": size, "version": version, "meshes": len(meshes)}
+
+
 def build_variant(pkg_dir: Path) -> dict:
     manifest = load_json(pkg_dir / "manifest.json")
     source_path = pkg_dir / manifest["source"]
@@ -55,6 +84,7 @@ def build_variant(pkg_dir: Path) -> dict:
 
     output_path = pkg_dir / manifest.get("outputs", {}).get("model", "output/model.glb")
     export_glb(output_path, objects)
+    glb_info = validate_glb_export(output_path)
     render_views(pkg_dir / "review", objects)
 
     metrics_path = pkg_dir / "review" / "metrics.json"
@@ -65,17 +95,31 @@ def build_variant(pkg_dir: Path) -> dict:
 
     title = manifest.get("title", pkg_dir.name)
     review_path = pkg_dir / "review" / "review.md"
+
+    # Preserve subjective self-review checks if already evaluated by agent/author
+    source_checked = False
+    silhouette_checked = False
+    if review_path.exists():
+        old_text = review_path.read_text(encoding="utf-8")
+        if re.search(r"-\s*\[x\]\s*Source matches", old_text, re.IGNORECASE):
+            source_checked = True
+        if re.search(r"-\s*\[x\]\s*Silhouette reads", old_text, re.IGNORECASE):
+            silhouette_checked = True
+
+    source_box = "[x]" if source_checked else "[ ]"
+    silhouette_box = "[x]" if silhouette_checked else "[ ]"
+
     review_md = f"""# Self Review: {title}
 
 ## Result
-- [x] Source matches request and Issue #1 criteria.
+- {source_box} Source matches request and Issue #1 criteria.
 - [x] Required review renders generated.
-- [x] Silhouette reads from iso/game-like view with distinct angular planes.
+- {silhouette_box} Silhouette reads from iso/game-like view with distinct angular planes.
 - [x] No accidental floating/disconnected geometry.
 - [x] Voxel density is intentional and consistent (size={metrics['voxel_size']}).
 - [x] Material count is within budget ({metrics['materials']} material).
 - [x] Triangle count verified.
-- [x] Export opens/validates.
+- [x] Export validated ({output_path.name}, glTF 2.0, {glb_info['size_bytes']} bytes).
 
 ## Metrics
 - Occupied voxels: {metrics['occupied_voxels']}

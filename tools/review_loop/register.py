@@ -67,6 +67,26 @@ def log_hook_event(message: str) -> None:
         pass
 
 
+def persist_antigravity_env() -> None:
+    """Save active Antigravity session connection parameters for the watcher."""
+    env_keys = [
+        "ANTIGRAVITY_LS_ADDRESS",
+        "ANTIGRAVITY_CSRF_TOKEN",
+        "ANTIGRAVITY_AGENTAPI_EXE",
+        "ANTIGRAVITY_CONVERSATION_ID",
+        "ANTIGRAVITY_PROJECT_ID",
+    ]
+    data = {}
+    for k in env_keys:
+        val = os.environ.get(k)
+        if val:
+            data[k] = val
+    if data:
+        env_file = REPO_ROOT / ".review_loop" / "antigravity_env.json"
+        env_file.parent.mkdir(parents=True, exist_ok=True)
+        env_file.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+
+
 def register_from_hook(is_stop: bool = False) -> None:
     """
     Handle official Antigravity Hook invocation.
@@ -78,6 +98,7 @@ def register_from_hook(is_stop: bool = False) -> None:
         PostToolUse: {} (empty JSON object)
         Stop: {"decision": "stop"} to allow normal termination
     """
+    persist_antigravity_env()
     try:
         payload_text = sys.stdin.read()
         if not payload_text.strip():
@@ -96,6 +117,10 @@ def register_from_hook(is_stop: bool = False) -> None:
                     pr_number = github.find_pr_for_branch(branch)
                     if pr_number:
                         state_mgr.register_pr(pr_number, conv_id, branch)
+                        pr = state_mgr.get_pr(pr_number)
+                        if pr and pr.get("status") == "error":
+                            state_mgr.reset_retry_count(pr_number)
+                            state_mgr.mark_pr_status(pr_number, "watching")
                         log_hook_event(
                             f"Registered PR #{pr_number} on branch '{branch}' "
                             f"to conversation '{conv_id}'."
@@ -174,7 +199,12 @@ def register(
         return False
 
     # 4. Save registration
+    persist_antigravity_env()
     state_mgr.register_pr(resolved_pr, resolved_conv, resolved_branch)
+    pr = state_mgr.get_pr(resolved_pr)
+    if pr and pr.get("status") == "error":
+        state_mgr.reset_retry_count(resolved_pr)
+        state_mgr.mark_pr_status(resolved_pr, "watching")
     print(
         f"[SUCCESS] Registered PR #{resolved_pr} (branch: "
         f"'{resolved_branch}') to Antigravity conversation '{resolved_conv}'."
@@ -252,6 +282,7 @@ def main() -> None:
         "--allow-user", help="Add a username to reviewer allowlist."
     )
     args = parser.parse_args()
+    persist_antigravity_env()
 
     if args.from_hook:
         register_from_hook(is_stop=args.stop)

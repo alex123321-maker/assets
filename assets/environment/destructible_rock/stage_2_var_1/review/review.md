@@ -8,7 +8,7 @@
 - [x] Voxel density is intentional and consistent (size=0.15).
 - [x] Material count is within budget (1 material).
 - [x] Triangle count verified.
-- [x] Export opens/validates.
+- [x] Export validated (model.glb, glTF 2.0, 58124 bytes).
 
 ## Metrics
 - Occupied voxels: 594

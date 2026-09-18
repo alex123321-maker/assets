@@ -759,24 +759,26 @@ def author_packages() -> None:
             encoding="utf-8"
         )
 
-        # 4. Review template
-        review_md = f"""# Self Review: {title}
+        # 4. Review template: only write initial uncompleted template if review.md does not already exist
+        review_path = pkg_dir / "review" / "review.md"
+        if not review_path.exists():
+            review_md = f"""# Self Review: {title}
 
 ## Result
-- [x] Source matches request and Issue #1 criteria.
-- [x] Required review renders generated.
-- [x] Silhouette reads from iso/game-like view with distinct angular planes.
+- [ ] Source matches request and Issue #1 criteria.
+- [ ] Required review renders generated.
+- [ ] Silhouette reads from iso/game-like view with distinct angular planes.
 - [x] No accidental floating/disconnected geometry.
 - [x] Voxel density is intentional and consistent (size={VOXEL_SIZE}).
 - [x] Material count is within budget (1 material).
-- [x] Triangle count verified.
-- [x] Export opens/validates.
+- [ ] Triangle count verified.
+- [ ] Export validated.
 
 ## Metrics
 - Occupied voxels: {occupied}
 - Grid: {grid.width}x{grid.height}x{grid.depth}
 """
-        (pkg_dir / "review" / "review.md").write_text(review_md, encoding="utf-8")
+            review_path.write_text(review_md, encoding="utf-8")
 
         summary.append({
             "slug": slug,
