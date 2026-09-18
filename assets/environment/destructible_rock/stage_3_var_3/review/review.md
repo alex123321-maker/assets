@@ -1,18 +1,15 @@
-# Self Review: stage_3_var_3
+# Self Review: Stage 3 — Medium Remnant (Fractured Stump)
 
 ## Result
 - [x] Source matches request and Issue #1 criteria.
-- [x] Required review renders generated (iso, front, side, top).
+- [ ] Required review renders generated.
 - [x] Silhouette reads from iso/game-like view with distinct angular planes.
 - [x] No accidental floating/disconnected geometry.
 - [x] Voxel density is intentional and consistent (size=0.15).
 - [x] Material count is within budget (1 material).
-- [x] Triangle count verified (584 <= 5000).
-- [x] Export opens/validates.
+- [ ] Triangle count verified.
+- [ ] Export opens/validates.
 
 ## Metrics
 - Occupied voxels: 278
-- Triangles: 584
-- Visible faces: 292
 - Grid: 12x6x12
-- World size: 1.80 x 0.90 x 1.80 m

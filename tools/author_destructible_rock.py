@@ -418,35 +418,51 @@ def build_stage_3_var_3() -> VoxelGrid:
 # -------------------------------------------------------------------------
 
 def build_stage_4_var_1() -> VoxelGrid:
-    """Fragment & Satellites: Main chunky fragment with adjacent smaller pieces."""
-    g = VoxelGrid(11, 5, 11)
-    # Main piece
-    g.fill_box(3, 7, 0, 4, 3, 7)
-    g.carve_plane(0.7, 0.8, -0.4, -7.5)
-    g.carve_plane(-0.7, 0.7, 0.3, -3.5)
+    """Fragment & Satellites: Main chunky fragment with 2 separate satellite chunks."""
+    g = VoxelGrid(12, 5, 12)
+    # Piece 1: Main block (West/North-Center): x in [2, 6], z in [2, 6], y in [0, 4]
+    g.fill_box(2, 6, 0, 2, 2, 6)
+    g.fill_box(3, 5, 3, 4, 3, 5)
+    # Carve facets on main piece
+    g.carve_plane(0.7, 0.7, -0.3, -6.0)
+    g.carve_plane(-0.6, 0.7, 0.4, -3.2)
+    g.carve_plane(0.3, 0.8, 0.6, -7.5)
 
-    # Satellite chunk 1 (East)
-    g.fill_box(8, 9, 0, 1, 4, 6)
-    # Satellite chunk 2 (South)
-    g.fill_box(3, 5, 0, 1, 8, 9)
+    # Piece 2: Satellite East: x in [8, 10], z in [3, 5], y in [0, 1]
+    # Clear gap: column x=7 is empty, ensuring distinct separated component
+    g.fill_box(8, 10, 0, 1, 3, 5)
+    g.carve_plane(0.6, 0.8, 0.5, -9.0)
+
+    # Piece 3: Satellite South: x in [3, 5], z in [8, 10], y in [0, 1]
+    # Clear gap: row z=7 is empty, ensuring distinct separated component
+    g.fill_box(3, 5, 0, 1, 8, 10)
+    g.carve_plane(-0.5, 0.8, 0.6, -7.5)
 
     g.remove_floating()
     return g
 
 
 def build_stage_4_var_2() -> VoxelGrid:
-    """Triad Debris Cluster: Three chunky flat rock fragments in loose group."""
-    g = VoxelGrid(11, 4, 11)
-    # Chunk A (NW)
-    g.fill_box(2, 5, 0, 3, 2, 5)
-    # Chunk B (NE)
-    g.fill_box(6, 9, 0, 2, 3, 6)
-    # Chunk C (South)
-    g.fill_box(3, 7, 0, 1, 6, 9)
-
-    # Bevel chunks
+    """Triad Debris Cluster: Three chunky rock fragments in loose separated group."""
+    g = VoxelGrid(12, 4, 12)
+    # Chunk A (NW): x in [2, 5], z in [2, 5], y in [0, 3]
+    g.fill_box(2, 5, 0, 2, 2, 5)
+    g.fill_box(3, 4, 3, 3, 3, 4)
     g.carve_plane(-0.6, 0.7, -0.6, -2.5)
-    g.carve_plane(0.7, 0.7, 0.6, -9.5)
+    g.carve_plane(0.5, 0.8, 0.4, -6.5)
+
+    # Chunk B (NE): x in [7, 10], z in [2, 5], y in [0, 2]
+    # Clear gap at column x=6
+    g.fill_box(7, 10, 0, 1, 2, 5)
+    g.fill_box(8, 9, 2, 2, 3, 4)
+    g.carve_plane(0.7, 0.7, -0.5, -8.0)
+
+    # Chunk C (South): x in [3, 7], z in [7, 10], y in [0, 2]
+    # Clear gap at row z=6
+    g.fill_box(3, 7, 0, 1, 7, 10)
+    g.fill_box(4, 6, 2, 2, 8, 9)
+    g.carve_plane(0.5, 0.8, 0.6, -9.5)
+    g.carve_plane(-0.7, 0.7, 0.4, -4.5)
 
     g.remove_floating()
     return g
@@ -458,43 +474,80 @@ def build_stage_4_var_2() -> VoxelGrid:
 # -------------------------------------------------------------------------
 
 def build_stage_5_var_1() -> VoxelGrid:
-    """Central Nub with small scatter."""
-    g = VoxelGrid(9, 3, 9)
-    # Low central stone
-    g.fill_box(3, 5, 0, 2, 3, 5)
-    # Gravel bits around
-    g.fill_box(2, 2, 0, 0, 4, 4)
-    g.fill_box(6, 6, 0, 0, 3, 4)
-    g.fill_box(4, 5, 0, 0, 6, 6)
-    g.fill_box(2, 3, 0, 0, 2, 2)
+    """Central Nub with small scatter: 1 low central rock + 4 separate pebbles."""
+    g = VoxelGrid(10, 3, 10)
+    # Central low rock: x in [4, 6], z in [4, 6], y in [0, 2]
+    g.fill_box(4, 6, 0, 1, 4, 6)
+    g.fill_box(4, 5, 2, 2, 5, 6)
+    g.carve_plane(0.7, 1.0, 0.7, -9.5)
+    g.carve_plane(-0.7, 0.9, -0.5, -2.5)
 
-    g.carve_plane(0.7, 1.0, 0.7, -8.0)
+    # Pebble 1 (West): small stone at x: 1..2, z: 4..5
+    g.fill_box(1, 2, 0, 0, 4, 5)
+    g.set(2, 1, 4)
+
+    # Pebble 2 (East): small angular bit at x: 8..8, z: 4..5
+    g.fill_box(8, 8, 0, 0, 4, 5)
+    g.set(8, 1, 5)
+
+    # Pebble 3 (North): low stone at x: 4..5, z: 1..2
+    g.fill_box(4, 5, 0, 0, 1, 2)
+    g.set(5, 1, 2)
+
+    # Pebble 4 (South): small bit at x: 5..6, z: 8..8
+    g.fill_box(5, 6, 0, 0, 8, 8)
+
     g.remove_floating()
     return g
 
 
 def build_stage_5_var_2() -> VoxelGrid:
-    """Angular Linear Debris trail."""
-    g = VoxelGrid(9, 3, 9)
-    # Scattered diagonal pieces
-    g.fill_box(2, 4, 0, 1, 5, 7)
-    g.fill_box(4, 6, 0, 2, 3, 5)
-    g.fill_box(6, 7, 0, 0, 2, 3)
+    """Angular Linear Debris trail: Diagonal trail of 4 separate angular rubble stones."""
+    g = VoxelGrid(10, 3, 10)
+    # Piece 1 (SW): angular chunk at x: 1..3, z: 7..8
+    g.fill_box(1, 3, 0, 0, 7, 8)
+    g.fill_box(2, 3, 1, 1, 7, 8)
+    g.carve_plane(-0.6, 0.8, 0.5, -4.5)
 
-    g.carve_plane(0.8, 0.8, -0.4, -7.0)
+    # Piece 2 (Center-SW): medium chunk at x: 4..6, z: 4..5
+    g.fill_box(4, 6, 0, 1, 4, 5)
+    g.set(5, 2, 4)
+    g.carve_plane(0.8, 0.8, -0.4, -6.5)
+
+    # Piece 3 (Center-NE): small angular stone at x: 8..9, z: 3..4
+    # Gap from Piece 2 (max x=6): column x=7 is completely empty!
+    g.fill_box(8, 9, 0, 0, 3, 4)
+    g.set(8, 1, 3)
+
+    # Piece 4 (Far NE): small stone at x: 8..9, z: 0..1
+    # Gap from Piece 3 (min z=3): row z=2 is completely empty!
+    g.fill_box(8, 9, 0, 0, 0, 1)
+    g.set(8, 1, 0)
+
     g.remove_floating()
     return g
 
 
 def build_stage_5_var_3() -> VoxelGrid:
-    """Low Crescent Rubble Mound."""
-    g = VoxelGrid(9, 3, 9)
-    # Curved low scatter
-    g.fill_box(2, 6, 0, 1, 2, 3)
-    g.fill_box(5, 7, 0, 2, 4, 6)
-    g.fill_box(3, 5, 0, 0, 6, 7)
+    """Crescent Rubble Mound: Arc of 4 separate rubble pieces."""
+    g = VoxelGrid(10, 3, 10)
+    # Piece 1 (NW): x: 2..4, z: 2..3
+    g.fill_box(2, 4, 0, 0, 2, 3)
+    g.set(3, 1, 2)
+    g.set(3, 1, 3)
 
-    g.carve_plane(-0.4, 0.9, 0.7, -6.5)
+    # Piece 2 (NE/E): x: 6..8, z: 3..5
+    g.fill_box(6, 8, 0, 1, 3, 5)
+    g.set(7, 2, 4)
+    g.carve_plane(0.7, 0.8, 0.4, -8.5)
+
+    # Piece 3 (SE): x: 5..7, z: 7..8
+    g.fill_box(5, 7, 0, 0, 7, 8)
+    g.set(6, 1, 7)
+
+    # Piece 4 (SW): x: 1..2, z: 5..6
+    g.fill_box(1, 2, 0, 0, 5, 6)
+
     g.remove_floating()
     return g
 

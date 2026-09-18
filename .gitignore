@@ -25,3 +25,4 @@ build/
 
 # Autonomous PR review loop runtime state
 .review_loop/
+.agents/
