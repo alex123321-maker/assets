@@ -13,7 +13,11 @@
         1.0
       ],
       "roughness": 0.92,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "atlas_cell": [
+        1,
+        1
+      ]
     },
     "G": {
       "name": "flower_stem",
@@ -24,7 +28,11 @@
         1.0
       ],
       "roughness": 0.88,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "atlas_cell": [
+        0,
+        1
+      ]
     },
     "R": {
       "name": "petal_red",
@@ -35,7 +43,11 @@
         1.0
       ],
       "roughness": 0.8,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "atlas_cell": [
+        5,
+        1
+      ]
     },
     "C": {
       "name": "center_dark",
@@ -46,7 +58,11 @@
         1.0
       ],
       "roughness": 0.85,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "atlas_cell": [
+        6,
+        1
+      ]
     }
   },
   "layers": [

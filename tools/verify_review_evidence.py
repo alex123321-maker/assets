@@ -616,6 +616,22 @@ def verify_evidence() -> bool:
             glb_file = pkg_dir / "output" / "model.glb"
             if not glb_file.exists() or glb_file.stat().st_size < 20:
                 errors.append(f"{slug}: Missing or invalid output/model.glb")
+            else:
+                try:
+                    with open(glb_file, "rb") as gf:
+                        magic, ver, total_len = struct.unpack("<4sII", gf.read(12))
+                        chunk_len, chunk_type = struct.unpack("<I4s", gf.read(8))
+                        if magic != b"glTF" or chunk_type != b"JSON":
+                            errors.append(f"{slug}: Invalid glTF/GLB header in {glb_file}")
+                        else:
+                            gltf_json = json.loads(gf.read(chunk_len).decode("utf-8"))
+                            mats = gltf_json.get("materials", [])
+                            if len(mats) != 1:
+                                errors.append(f"{slug}: Expected exactly 1 material in GLB, found {len(mats)}")
+                            elif mats[0].get("name") != "mat_dressing_atlas":
+                                errors.append(f"{slug}: Material name '{mats[0].get('name')}' != 'mat_dressing_atlas'")
+                except Exception as exc:
+                    errors.append(f"{slug}: Error inspecting GLB materials: {exc}")
 
             rev_dir = pkg_dir / "review"
             if not rev_dir.is_dir():
@@ -639,6 +655,10 @@ def verify_evidence() -> bool:
                     for key in ("occupied_voxels", "triangles", "visible_faces", "grid", "world_size"):
                         if key not in data:
                             errors.append(f"{slug}: metrics.json missing required key '{key}'")
+                    if data.get("materials") != 1:
+                        errors.append(f"{slug}: metrics.json materials count is {data.get('materials')}, expected 1")
+                    if data.get("shared_material") != "mat_dressing_atlas":
+                        errors.append(f"{slug}: metrics.json shared_material is {data.get('shared_material')}, expected 'mat_dressing_atlas'")
                 except Exception as exc:
                     errors.append(f"{slug}: Invalid metrics.json ({exc})")
 
@@ -652,7 +672,51 @@ def verify_evidence() -> bool:
                 if "## Metrics" not in content:
                     errors.append(f"{slug}: review.md missing '## Metrics'")
 
-            print(f"  [PASS] {slug}: all 4 renders (512x512), metrics, GLB, and review document verified.")
+            print(f"  [PASS] {slug}: all 4 renders (512x512), metrics (1 shared mat), GLB, and review document verified.")
+
+        # Distinctiveness check for stone debris variants: verify no two variants are 3D rotationally equivalent
+        stone_slugs = [s for s in dressing_variants if s.startswith("stone_debris_")]
+        import itertools
+        rot_transforms = []
+        for perm in itertools.permutations([0, 1, 2]):
+            for signs in itertools.product([1, -1], repeat=3):
+                det = signs[0] * signs[1] * signs[2]
+                if perm not in [(0, 1, 2), (1, 2, 0), (2, 0, 1)]:
+                    det = -det
+                if det == 1:
+                    rot_transforms.append((perm, signs))
+
+        def get_canonical_signature(coords: list[tuple[int, int, int]]) -> tuple:
+            signatures = []
+            for perm, signs in rot_transforms:
+                rotated = [(pt[perm[0]] * signs[0], pt[perm[1]] * signs[1], pt[perm[2]] * signs[2]) for pt in coords]
+                min_x = min(p[0] for p in rotated)
+                min_y = min(p[1] for p in rotated)
+                min_z = min(p[2] for p in rotated)
+                signatures.append(tuple(sorted((p[0] - min_x, p[1] - min_y, p[2] - min_z) for p in rotated)))
+            return min(signatures)
+
+        stone_signatures = {}
+        for s in stone_slugs:
+            v_file = dressing_family_dir / s / "source" / "voxels.json"
+            if v_file.exists():
+                v_data = json.loads(v_file.read_text(encoding="utf-8"))
+                coords = []
+                for layer in v_data.get("layers", []):
+                    y = layer.get("y", 0)
+                    for z, row in enumerate(layer.get("rows", [])):
+                        for x, ch in enumerate(row):
+                            if ch not in (".", " "):
+                                coords.append((x, y, z))
+                stone_signatures[s] = get_canonical_signature(coords)
+
+        # Verify no pair is rotationally equivalent
+        for i in range(len(stone_slugs)):
+            for j in range(i + 1, len(stone_slugs)):
+                s1, s2 = stone_slugs[i], stone_slugs[j]
+                if stone_signatures.get(s1) == stone_signatures.get(s2):
+                    errors.append(f"Stone debris rotational equivalence collision: {s1} and {s2} are rotationally identical!")
+        print(f"[PASS] Stone debris distinctiveness verified: all {len(stone_slugs)} variants have unique 3D rotational signatures.")
 
     if errors:
         print(f"\n[FAIL] Evidence verification failed with {len(errors)} error(s):")

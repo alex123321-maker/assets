@@ -2,8 +2,10 @@
   "occupied_voxels": 16,
   "visible_faces": 56,
   "triangles": 112,
-  "mesh_objects": 4,
-  "materials": 4,
+  "mesh_objects": 1,
+  "materials": 1,
+  "shared_material": "mat_dressing_atlas",
+  "atlas_texture": "dressing_palette_atlas.png",
   "grid": {
     "x": 5,
     "y": 4,

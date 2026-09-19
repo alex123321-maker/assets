@@ -20,15 +20,16 @@ This package contains 19 canonical, reusable stylized voxel dressing props autho
    - `moss_rock_shelf`: Rock crevice shelf
    - `moss_cliff_ledge`: Cascading terrace overhang
 4. **Stone Debris (6 variants, Issue #3 Rock Family matched)**:
-   - `stone_debris_single`: Faceted lone shard
+   - `stone_debris_single`: Faceted rectangular keystone shard
    - `stone_debris_trio`: Balanced 3-stone group
    - `stone_debris_flat_patch`: Interlocking slab patch
-   - `stone_debris_angular_chip`: Sharp cleaved chip
+   - `stone_debris_angular_chip`: Sharp diagonal triangular cleave
    - `stone_debris_fine_scatter`: Gravel & grit spread
    - `stone_debris_mountain_cluster`: Stepped crag pile
 
 ## Shared Technical & Performance Features
 - **Voxel Scale**: Uniform `voxel_size = 0.10`m.
 - **Pivot**: Strictly `bottom_center` at ground level.
-- **MultiMesh Ready**: Triangle counts 20-140 tris, no collisions, no scripts.
+- **Shared Production Material**: Unified 1-material export (`mat_dressing_atlas`) referencing `dressing_palette_atlas.png`.
+- **MultiMesh Ready**: Exactly 1 mesh object and 1 material per prop, triangle counts 40-140 tris, no collisions, no scripts.
 - **Unified Palette**: `source/palette.json` and `textures/dressing_palette_atlas.png`.

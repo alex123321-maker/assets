@@ -13,7 +13,11 @@
         1.0
       ],
       "roughness": 0.94,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "atlas_cell": [
+        1,
+        3
+      ]
     },
     "S": {
       "name": "stone_primary",
@@ -24,7 +28,11 @@
         1.0
       ],
       "roughness": 0.88,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "atlas_cell": [
+        0,
+        3
+      ]
     }
   },
   "layers": [

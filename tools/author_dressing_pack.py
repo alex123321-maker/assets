@@ -19,14 +19,14 @@ Generates 19 canonical voxel prop packages across 4 required subfamilies:
      - moss_rock_shelf (clinging rock crevice shelf)
      - moss_cliff_ledge (cascading terrace overhang)
   4. Stone Debris (6 variants, Issue #3 rock family matched):
-     - stone_debris_single           (faceted lone shard)
+     - stone_debris_single           (faceted rectangular keystone shard)
      - stone_debris_trio             (balanced 3-stone group)
      - stone_debris_flat_patch       (interlocking slab patch)
-     - stone_debris_angular_chip     (sharp cleaved chip)
+     - stone_debris_angular_chip     (sharp diagonal triangular cleave)
      - stone_debris_fine_scatter     (gravel & grit spread)
      - stone_debris_mountain_cluster (stepped crag pile)
 
-Pipeline: voxel_static, 0.10m voxel size, bottom_center pivot, MultiMesh batching ready.
+Pipeline: voxel_static, 0.10m voxel size, bottom_center pivot, MultiMesh shared atlas batching ready.
 """
 
 from __future__ import annotations
@@ -46,10 +46,16 @@ SOURCE_DIR.mkdir(parents=True, exist_ok=True)
 
 VOXEL_SIZE = 0.10
 
-# Shared palette definition
+# 8x8 grid on 64x64 texture atlas
+ATLAS_GRID_COLS = 8
+ATLAS_GRID_ROWS = 8
+
+# Canonical Palette and UV swatch definitions on the 64x64 atlas
 PALETTE_DATA = {
     "version": 1,
-    "description": "Cube Siege Environment Dressing Pack Canonical Palettes (Issue #7)",
+    "description": "Cube Siege Environment Dressing Pack Canonical Palettes with Shared Atlas UVs (Issue #7)",
+    "atlas_texture": "textures/dressing_palette_atlas.png",
+    "atlas_grid": {"cols": ATLAS_GRID_COLS, "rows": ATLAS_GRID_ROWS, "cell_pixels": 8},
     "families": {
         "grass": {
             "G": {
@@ -57,18 +63,21 @@ PALETTE_DATA = {
                 "base_color": [0.28, 0.52, 0.16, 1.0],  # #478529
                 "roughness": 0.88,
                 "metallic": 0.0,
+                "atlas_cell": [0, 0],
             },
             "D": {
                 "name": "grass_base",
                 "base_color": [0.18, 0.35, 0.11, 1.0],  # #2e591c
                 "roughness": 0.92,
                 "metallic": 0.0,
+                "atlas_cell": [1, 0],
             },
             "L": {
                 "name": "grass_tip",
                 "base_color": [0.42, 0.68, 0.22, 1.0],  # #6bae38
                 "roughness": 0.82,
                 "metallic": 0.0,
+                "atlas_cell": [2, 0],
             },
         },
         "flowers": {
@@ -77,54 +86,63 @@ PALETTE_DATA = {
                 "base_color": [0.25, 0.48, 0.15, 1.0],  # #407a26
                 "roughness": 0.88,
                 "metallic": 0.0,
+                "atlas_cell": [0, 1],
             },
             "D": {
                 "name": "flower_stem_dark",
                 "base_color": [0.16, 0.32, 0.10, 1.0],  # #29521a
                 "roughness": 0.92,
                 "metallic": 0.0,
+                "atlas_cell": [1, 1],
             },
             "W": {
                 "name": "petal_white",
                 "base_color": [0.92, 0.92, 0.88, 1.0],  # #ebebe0
                 "roughness": 0.80,
                 "metallic": 0.0,
+                "atlas_cell": [2, 1],
             },
             "Y": {
                 "name": "center_gold",
                 "base_color": [0.96, 0.78, 0.12, 1.0],  # #f5c71f
                 "roughness": 0.75,
                 "metallic": 0.0,
+                "atlas_cell": [3, 1],
             },
             "O": {
                 "name": "center_amber",
                 "base_color": [0.85, 0.50, 0.10, 1.0],  # #d9801a
                 "roughness": 0.80,
                 "metallic": 0.0,
+                "atlas_cell": [4, 1],
             },
             "R": {
                 "name": "petal_red",
                 "base_color": [0.86, 0.22, 0.15, 1.0],  # #dc3826
                 "roughness": 0.80,
                 "metallic": 0.0,
+                "atlas_cell": [5, 1],
             },
             "C": {
                 "name": "center_dark",
                 "base_color": [0.20, 0.10, 0.10, 1.0],  # #331a1a
                 "roughness": 0.85,
                 "metallic": 0.0,
+                "atlas_cell": [6, 1],
             },
             "P": {
                 "name": "petal_purple",
                 "base_color": [0.56, 0.38, 0.84, 1.0],  # #8f61d6
                 "roughness": 0.75,
                 "metallic": 0.0,
+                "atlas_cell": [7, 1],
             },
             "B": {
                 "name": "petal_blue",
                 "base_color": [0.32, 0.54, 0.90, 1.0],  # #528ae6
                 "roughness": 0.75,
                 "metallic": 0.0,
+                "atlas_cell": [0, 2],
             },
         },
         "moss": {
@@ -133,18 +151,21 @@ PALETTE_DATA = {
                 "base_color": [0.26, 0.44, 0.16, 1.0],  # #427029
                 "roughness": 0.92,
                 "metallic": 0.0,
+                "atlas_cell": [1, 2],
             },
             "D": {
                 "name": "moss_dark",
                 "base_color": [0.15, 0.28, 0.09, 1.0],  # #264717
                 "roughness": 0.95,
                 "metallic": 0.0,
+                "atlas_cell": [2, 2],
             },
             "L": {
                 "name": "moss_light",
                 "base_color": [0.40, 0.62, 0.22, 1.0],  # #669e38
                 "roughness": 0.86,
                 "metallic": 0.0,
+                "atlas_cell": [3, 2],
             },
         },
         "stone_debris": {
@@ -154,24 +175,28 @@ PALETTE_DATA = {
                 "base_color": [0.24, 0.22, 0.20, 1.0],  # #3d3833
                 "roughness": 0.88,
                 "metallic": 0.0,
+                "atlas_cell": [0, 3],
             },
             "D": {
                 "name": "stone_dark",
                 "base_color": [0.11, 0.10, 0.10, 1.0],  # #1c1a1a
                 "roughness": 0.94,
                 "metallic": 0.0,
+                "atlas_cell": [1, 3],
             },
             "L": {
                 "name": "stone_light",
                 "base_color": [0.45, 0.43, 0.40, 1.0],  # #736e66
                 "roughness": 0.82,
                 "metallic": 0.0,
+                "atlas_cell": [2, 3],
             },
             "M": {
                 "name": "stone_moss",
                 "base_color": [0.17, 0.20, 0.09, 1.0],  # #2b3317
                 "roughness": 0.95,
                 "metallic": 0.0,
+                "atlas_cell": [3, 3],
             },
         },
     },
@@ -698,32 +723,33 @@ PROPS_SPECS = [
     },
 
     # -------------------------------------------------------------
-    # 4. STONE DEBRIS (6 variants)
+    # 4. STONE DEBRIS (6 variants, Issue #3 Rock Family matched)
+    # Strictly distinct geometries and silhouettes!
     # -------------------------------------------------------------
     {
         "slug": "stone_debris_single",
         "family": "stone_debris",
         "title": "Stone Debris Single Shard",
         "subfamily": "Stone Debris",
-        "role": "Faceted lone stone shard matching Issue #3 rock family",
+        "role": "Faceted rectangular keystone boulder shard (2x3 base, height 2)",
         "materials": ["D", "S", "L"],
         "layers": [
             {
                 "y": 0,
                 "rows": [
                     "....",
-                    ".SD.",
                     ".SS.",
-                    "....",
+                    ".SS.",
+                    ".SD.",
                 ],
             },
             {
                 "y": 1,
                 "rows": [
                     "....",
-                    "..L.",
                     "....",
-                    "....",
+                    ".L..",
+                    ".L..",
                 ],
             },
         ],
@@ -795,25 +821,37 @@ PROPS_SPECS = [
         "family": "stone_debris",
         "title": "Stone Debris Angular Chip",
         "subfamily": "Stone Debris",
-        "role": "Sharp chisel-cut angular flake with steep broken fracture plane",
+        "role": "Sharp diagonal triangular cleave with steep 3-layer pointed pinnacle",
         "materials": ["D", "S", "L"],
         "layers": [
             {
                 "y": 0,
                 "rows": [
-                    "....",
-                    ".SD.",
-                    ".LD.",
-                    "....",
+                    ".....",
+                    "..S..",
+                    "..SS.",
+                    ".SSD.",
+                    ".....",
                 ],
             },
             {
                 "y": 1,
                 "rows": [
-                    "....",
-                    ".L..",
-                    "....",
-                    "....",
+                    ".....",
+                    ".....",
+                    "..L..",
+                    "..SL.",
+                    ".....",
+                ],
+            },
+            {
+                "y": 2,
+                "rows": [
+                    ".....",
+                    ".....",
+                    ".....",
+                    "..L..",
+                    ".....",
                 ],
             },
         ],
@@ -883,67 +921,25 @@ PROPS_SPECS = [
 
 
 def generate_palette_atlas() -> None:
-    """Generate 32x32 shared palette atlas texture for MultiMesh batching."""
-    atlas = Image.new("RGBA", (32, 32), color=(0, 0, 0, 255))
-    draw_img = Image.new("RGBA", (32, 32))
-    
-    # 4 quadrants of 16x16:
-    # Top-Left (0,0): Grass
-    # Top-Right (16,0): Flowers
-    # Bottom-Left (0,16): Moss
-    # Bottom-Right (16,16): Stone Debris
-    
-    # Fill Grass quadrant (0,0, 16,16)
-    g_pals = PALETTE_DATA["families"]["grass"]
-    for y in range(0, 16):
-        for x in range(0, 16):
-            if y < 5:
-                color = tuple(int(c * 255) for c in g_pals["D"]["base_color"])
-            elif y < 11:
-                color = tuple(int(c * 255) for c in g_pals["G"]["base_color"])
-            else:
-                color = tuple(int(c * 255) for c in g_pals["L"]["base_color"])
-            atlas.putpixel((x, y), color)
+    """Generate 64x64 shared palette atlas texture for MultiMesh batching."""
+    atlas_w = ATLAS_GRID_COLS * 8
+    atlas_h = ATLAS_GRID_ROWS * 8
+    atlas = Image.new("RGBA", (atlas_w, atlas_h), color=(0, 0, 0, 255))
 
-    # Fill Flowers quadrant (16,0, 32,16)
-    fl_pals = PALETTE_DATA["families"]["flowers"]
-    fl_keys = ["W", "Y", "R", "P", "B", "G", "D", "O"]
-    for y in range(0, 16):
-        for x in range(16, 32):
-            idx = ((y // 4) * 4 + ((x - 16) // 4)) % len(fl_keys)
-            k = fl_keys[idx]
-            color = tuple(int(c * 255) for c in fl_pals[k]["base_color"])
-            atlas.putpixel((x, y), color)
-
-    # Fill Moss quadrant (0,16, 16,32)
-    m_pals = PALETTE_DATA["families"]["moss"]
-    for y in range(16, 32):
-        for x in range(0, 16):
-            if y < 21:
-                color = tuple(int(c * 255) for c in m_pals["D"]["base_color"])
-            elif y < 27:
-                color = tuple(int(c * 255) for c in m_pals["M"]["base_color"])
-            else:
-                color = tuple(int(c * 255) for c in m_pals["L"]["base_color"])
-            atlas.putpixel((x, y), color)
-
-    # Fill Stone Debris quadrant (16,16, 32,32)
-    st_pals = PALETTE_DATA["families"]["stone_debris"]
-    for y in range(16, 32):
-        for x in range(16, 32):
-            if y < 20:
-                color = tuple(int(c * 255) for c in st_pals["D"]["base_color"])
-            elif y < 25:
-                color = tuple(int(c * 255) for c in st_pals["S"]["base_color"])
-            elif y < 29:
-                color = tuple(int(c * 255) for c in st_pals["L"]["base_color"])
-            else:
-                color = tuple(int(c * 255) for c in st_pals["M"]["base_color"])
-            atlas.putpixel((x, y), color)
+    # Populate each cell with its 8x8 solid swatch
+    for fam_name, tokens in PALETTE_DATA["families"].items():
+        for tok, spec in tokens.items():
+            col, row = spec["atlas_cell"]
+            color_rgba = tuple(int(c * 255) for c in spec["base_color"])
+            for dy in range(8):
+                for dx in range(8):
+                    px = col * 8 + dx
+                    py = row * 8 + dy
+                    atlas.putpixel((px, py), color_rgba)
 
     atlas_path = TEXTURES_DIR / "dressing_palette_atlas.png"
     atlas.save(atlas_path, "PNG")
-    print(f"[OK] Generated shared dressing palette atlas at {atlas_path} (32x32)")
+    print(f"[OK] Generated shared dressing palette atlas at {atlas_path} ({atlas_w}x{atlas_h})")
 
     # Write Godot .tres material for shared atlas
     tres_content = """[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
@@ -994,7 +990,7 @@ def author_props() -> None:
 
         family_name = spec["family"]
         family_pal = PALETTE_DATA["families"][family_name]
-        
+
         # Pick materials used by this prop
         mat_dict = {}
         for token in spec["materials"]:
@@ -1062,7 +1058,7 @@ Designed for mass scatter-placement across Cube Siege biomes (Forest, Plains, Mo
 - Chunky readable blocky silhouette;
 - Flat clean ground contact at z=0;
 - No collision shapes, no scripts;
-- MultiMesh / batching ready;
+- MultiMesh / batching ready with shared `material_dressing_atlas`;
 - Shared palette `{family_name}` integration;
 - Triangle budget <= 500 tris.
 """
@@ -1094,17 +1090,18 @@ This package contains 19 canonical, reusable stylized voxel dressing props autho
    - `moss_rock_shelf`: Rock crevice shelf
    - `moss_cliff_ledge`: Cascading terrace overhang
 4. **Stone Debris (6 variants, Issue #3 Rock Family matched)**:
-   - `stone_debris_single`: Faceted lone shard
+   - `stone_debris_single`: Faceted rectangular keystone shard
    - `stone_debris_trio`: Balanced 3-stone group
    - `stone_debris_flat_patch`: Interlocking slab patch
-   - `stone_debris_angular_chip`: Sharp cleaved chip
+   - `stone_debris_angular_chip`: Sharp diagonal triangular cleave
    - `stone_debris_fine_scatter`: Gravel & grit spread
    - `stone_debris_mountain_cluster`: Stepped crag pile
 
 ## Shared Technical & Performance Features
 - **Voxel Scale**: Uniform `voxel_size = 0.10`m.
 - **Pivot**: Strictly `bottom_center` at ground level.
-- **MultiMesh Ready**: Triangle counts 20-140 tris, no collisions, no scripts.
+- **Shared Production Material**: Unified 1-material export (`mat_dressing_atlas`) referencing `dressing_palette_atlas.png`.
+- **MultiMesh Ready**: Exactly 1 mesh object and 1 material per prop, triangle counts 40-140 tris, no collisions, no scripts.
 - **Unified Palette**: `source/palette.json` and `textures/dressing_palette_atlas.png`.
 """
     readme_file = FAMILY_DIR / "README.md"

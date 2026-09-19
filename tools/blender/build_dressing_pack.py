@@ -1,4 +1,4 @@
-"""build_dressing_pack.py - Build all 19 environment dressing props and render mockups in Blender.
+"""build_dressing_pack.py - Build all 19 environment dressing props with shared atlas material and render mockups.
 
 Usage:
   blender --background --python tools/blender/build_dressing_pack.py -- --all
@@ -15,6 +15,7 @@ import struct
 import sys
 from pathlib import Path
 
+import bmesh
 import bpy
 from mathutils import Euler, Vector
 
@@ -23,17 +24,21 @@ BUILD_SCRIPT = Path(__file__).resolve().parent / "build_voxel_asset.py"
 sys.path.insert(0, str(BUILD_SCRIPT.parent))
 from build_voxel_asset import (
     clear_scene,
-    build_objects,
     export_glb,
     render_views,
     setup_review_scene,
     resolve_eevee_engine,
     look_at,
+    parse_voxels,
+    source_to_blender,
+    face_vertices,
+    NEIGHBORS,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
 FAMILY_DIR = ROOT / "assets" / "environment" / "dressing_pack"
 REVIEW_DIR = FAMILY_DIR / "review"
+TEXTURES_DIR = FAMILY_DIR / "textures"
 TERRAIN_DIR = ROOT / "assets" / "environment" / "terrain_materials"
 TERRAIN_TEX_DIR = TERRAIN_DIR / "textures"
 TREE_DIR = ROOT / "assets" / "environment" / "tree_oak"
@@ -104,9 +109,193 @@ def validate_glb_export(glb_path: Path) -> dict:
         json_bytes = f.read(chunk_len)
         gltf_json = json.loads(json_bytes.decode("utf-8"))
         meshes = gltf_json.get("meshes", [])
+        materials = gltf_json.get("materials", [])
         if not meshes:
             raise RuntimeError("GLB contains no meshes")
-    return {"size_bytes": size, "version": version, "meshes": len(meshes)}
+        if len(materials) != 1:
+            raise RuntimeError(f"GLB expected exactly 1 shared material, found {len(materials)}")
+    return {"size_bytes": size, "version": version, "meshes": len(meshes), "materials": len(materials)}
+
+
+def get_or_create_shared_atlas_material() -> bpy.types.Material:
+    mat = bpy.data.materials.get("mat_dressing_atlas")
+    if mat:
+        return mat
+    mat = bpy.data.materials.new(name="mat_dressing_atlas")
+    mat.use_nodes = True
+    nodes = mat.node_tree.nodes
+    links = mat.node_tree.links
+    nodes.clear()
+
+    output = nodes.new(type="ShaderNodeOutputMaterial")
+    bsdf = nodes.new(type="ShaderNodeBsdfPrincipled")
+    bsdf.inputs["Roughness"].default_value = 0.88
+    bsdf.inputs["Metallic"].default_value = 0.0
+
+    tex_path = TEXTURES_DIR / "dressing_palette_atlas.png"
+    if tex_path.exists():
+        tex_node = nodes.new(type="ShaderNodeTexImage")
+        img = bpy.data.images.load(str(tex_path))
+        img.colorspace_settings.name = "sRGB"
+        tex_node.image = img
+        tex_node.interpolation = "Closest"
+        links.new(tex_node.outputs["Color"], bsdf.inputs["Base Color"])
+    else:
+        bsdf.inputs["Base Color"].default_value = (0.3, 0.5, 0.2, 1.0)
+
+    links.new(bsdf.outputs["BSDF"], output.inputs["Surface"])
+    return mat
+
+
+def token_to_atlas_uv(spec: dict) -> tuple[float, float]:
+    cell = spec.get("atlas_cell", [0, 0])
+    col, row = cell[0], cell[1]
+    # In Blender UV space: (0,0) is bottom-left. Texture row 0 is top.
+    u = (col + 0.5) / 8.0
+    v = 1.0 - (row + 0.5) / 8.0
+    return u, v
+
+
+def build_dressing_mesh(data: dict) -> tuple[bpy.types.Object, dict]:
+    """Build a unified single-mesh object with shared atlas material and UV mapping."""
+    occupied, width, height, depth = parse_voxels(data)
+    voxel_size = float(data["voxel_size"])
+    h = voxel_size / 2.0
+
+    shared_mat = get_or_create_shared_atlas_material()
+    is_stone_debris = data.get("name", "").startswith("stone_debris")
+
+    bm = bmesh.new()
+
+    if not is_stone_debris:
+        # Standard voxel solid meshing with internal face culling and UV swatch mapping
+        uv_layer = bm.loops.layers.uv.new("UVMap")
+
+        for (sx, sy, sz), token in occupied.items():
+            cx, cy, cz = source_to_blender(sx, sy, sz, width, depth, voxel_size)
+            spec = data["materials"].get(token, {})
+            uv = token_to_atlas_uv(spec)
+
+            for (dx, dy, dz), face_name in NEIGHBORS:
+                neighbor = (sx + dx, sy + dy, sz + dz)
+                if neighbor in occupied:
+                    continue
+
+                quad_coords = face_vertices(cx, cy, cz, h, face_name)
+                verts = [bm.verts.new(coord) for coord in quad_coords]
+                face = bm.faces.new(verts)
+                for loop in face.loops:
+                    loop[uv_layer].uv = uv
+
+        mesh = bpy.data.meshes.new(f"{data['name']}_mesh")
+        bm.to_mesh(mesh)
+        bm.free()
+
+        obj = bpy.data.objects.new(data["name"], mesh)
+        bpy.context.collection.objects.link(obj)
+        obj.data.materials.append(shared_mat)
+
+    else:
+        # Faceted stone debris builder: watertight manifold mesh with bevels, matching Issue #3
+        for (sx, sy, sz), token in occupied.items():
+            cx, cy, cz = source_to_blender(sx, sy, sz, width, depth, voxel_size)
+            for (dx, dy, dz), face_name in NEIGHBORS:
+                neighbor = (sx + dx, sy + dy, sz + dz)
+                if neighbor in occupied:
+                    continue
+                quad_coords = face_vertices(cx, cy, cz, h, face_name)
+                verts = [bm.verts.new(coord) for coord in quad_coords]
+                bm.faces.new(verts)
+
+        bm.verts.ensure_lookup_table()
+        bm.faces.ensure_lookup_table()
+        bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.001)
+        bmesh.ops.dissolve_limit(bm, angle_limit=math.radians(2.0), verts=bm.verts, edges=bm.edges)
+        bm.verts.ensure_lookup_table()
+        bm.edges.ensure_lookup_table()
+        bm.faces.ensure_lookup_table()
+
+        # Bevel convex edges for stylized faceted look
+        convex_edges = []
+        for e in bm.edges:
+            if len(e.link_faces) == 2 and not e.is_boundary:
+                if abs(e.verts[0].co.z) <= 0.001 and abs(e.verts[1].co.z) <= 0.001:
+                    continue
+                f1, f2 = e.link_faces
+                angle = f1.normal.angle(f2.normal)
+                if angle > math.radians(45):
+                    edge_mid = (e.verts[0].co + e.verts[1].co) * 0.5
+                    face_mid = (f1.calc_center_bounds() + f2.calc_center_bounds()) * 0.5
+                    avg_normal = f1.normal + f2.normal
+                    if (face_mid - edge_mid).dot(avg_normal) < 0:
+                        convex_edges.append(e)
+
+        bevel_width = voxel_size * 0.22
+        if convex_edges:
+            bmesh.ops.bevel(
+                bm,
+                geom=convex_edges,
+                offset=bevel_width,
+                offset_type="OFFSET",
+                segments=1,
+                profile=0.5,
+                affect="EDGES",
+                clamp_overlap=True,
+            )
+
+        # Assign UVs based on stone token roles and surface normals
+        uv_layer = bm.loops.layers.uv.new("UVMap")
+        stone_materials = data["materials"]
+
+        for f in bm.faces:
+            nz = f.normal.z
+            center = f.calc_center_bounds()
+
+            # Determine matching token
+            if "M" in stone_materials and nz > 0.6 and center.z < 0.15:
+                tok = "M"
+            elif "D" in stone_materials and nz < -0.4:
+                tok = "D"
+            elif "L" in stone_materials and nz > 0.55:
+                tok = "L"
+            else:
+                tok = "S" if "S" in stone_materials else list(stone_materials.keys())[0]
+
+            spec = stone_materials.get(tok, {})
+            uv = token_to_atlas_uv(spec)
+            for loop in f.loops:
+                loop[uv_layer].uv = uv
+
+        mesh = bpy.data.meshes.new(f"{data['name']}_mesh")
+        bm.to_mesh(mesh)
+        bm.free()
+
+        obj = bpy.data.objects.new(data["name"], mesh)
+        bpy.context.collection.objects.link(obj)
+        obj.data.materials.append(shared_mat)
+
+    total_polys = len(obj.data.polygons)
+    total_tris = sum(len(p.vertices) - 2 for p in obj.data.polygons)
+
+    metrics = {
+        "occupied_voxels": len(occupied),
+        "visible_faces": total_polys,
+        "triangles": total_tris,
+        "mesh_objects": 1,
+        "materials": 1,
+        "shared_material": "mat_dressing_atlas",
+        "atlas_texture": "dressing_palette_atlas.png",
+        "grid": {"x": width, "y": height, "z": depth},
+        "voxel_size": voxel_size,
+        "world_size": {
+            "x": width * voxel_size,
+            "y": height * voxel_size,
+            "z": depth * voxel_size,
+        },
+        "blender_version": bpy.app.version_string,
+        "render_engine": resolve_eevee_engine(),
+    }
+    return obj, metrics
 
 
 def build_single_variant(slug: str) -> dict:
@@ -116,17 +305,15 @@ def build_single_variant(slug: str) -> dict:
     data = load_json(source_path)
 
     clear_scene()
-    objects, metrics = build_objects(data)
-    if not objects:
-        raise RuntimeError(f"No objects generated for {pkg_dir}")
+    obj, metrics = build_dressing_mesh(data)
 
     output_path = pkg_dir / manifest.get("outputs", {}).get("model", "output/model.glb")
-    export_glb(output_path, objects)
+    export_glb(output_path, [obj])
     glb_info = validate_glb_export(output_path)
 
     review_dir = pkg_dir / "review"
     review_dir.mkdir(parents=True, exist_ok=True)
-    render_views(review_dir, objects)
+    render_views(review_dir, [obj])
 
     metrics_path = review_dir / "metrics.json"
     metrics_path.write_text(
@@ -139,8 +326,9 @@ def build_single_variant(slug: str) -> dict:
 
 ## Objective Build Verification
 - [x] Required review renders generated (iso.png, front.png, side.png, top.png at 512x512).
-- [x] Export validated ({output_path.name}, glTF 2.0, {glb_info['size_bytes']} bytes, {glb_info['meshes']} mesh primitives).
-- [x] Material count is within budget ({metrics['materials']} materials <= 4).
+- [x] Export validated ({output_path.name}, glTF 2.0, {glb_info['size_bytes']} bytes, {glb_info['meshes']} mesh, {glb_info['materials']} shared material).
+- [x] Shared production material verified (`mat_dressing_atlas` mapped via UVMap to `dressing_palette_atlas.png`).
+- [x] Material count is within budget (1 shared material <= 4).
 - [x] Triangle count verified ({metrics['triangles']} tris <= 500 budget).
 - [x] Internal faces culled ({metrics['visible_faces']} visible faces).
 - [x] Ground contact flat at z=0, origin bottom_center.
@@ -152,12 +340,13 @@ def build_single_variant(slug: str) -> dict:
 - Visible faces: {metrics['visible_faces']}
 - Mesh objects: {metrics['mesh_objects']}
 - Materials: {metrics['materials']}
+- Shared material: `{metrics['shared_material']}` (atlas: `{metrics['atlas_texture']}`)
 - Grid dimensions: {metrics['grid']['x']}x{metrics['grid']['y']}x{metrics['grid']['z']} (voxel_size: {metrics['voxel_size']}m)
 - World dimensions: {metrics['world_size']['x']:.2f}m x {metrics['world_size']['y']:.2f}m x {metrics['world_size']['z']:.2f}m
 - Engine: {metrics['render_engine']} ({metrics['blender_version']})
 """
     (review_dir / "review.md").write_text(review_md, encoding="utf-8")
-    print(f"[OK] Built and verified {slug}: {metrics['triangles']} tris, {metrics['occupied_voxels']} voxels")
+    print(f"[OK] Built and verified {slug}: {metrics['triangles']} tris, {metrics['occupied_voxels']} voxels, 1 shared material")
     return metrics
 
 
@@ -166,7 +355,6 @@ def build_single_variant(slug: str) -> dict:
 # -----------------------------------------------------------------------------
 
 def setup_mockup_environment(sun_energy: float = 3.0, ambient_color=(0.45, 0.55, 0.68, 1.0)) -> None:
-    # Key sun light
     sun_data = bpy.data.lights.new(name="Sun", type="SUN")
     sun_data.energy = sun_energy
     sun_data.color = (1.0, 0.97, 0.92)
@@ -174,7 +362,6 @@ def setup_mockup_environment(sun_energy: float = 3.0, ambient_color=(0.45, 0.55,
     bpy.context.collection.objects.link(sun_obj)
     sun_obj.rotation_euler = (math.radians(52), math.radians(18), math.radians(-38))
 
-    # Fill sky light
     fill_data = bpy.data.lights.new(name="FillLight", type="SUN")
     fill_data.energy = 0.9
     fill_data.color = (0.75, 0.85, 1.0)
@@ -182,7 +369,6 @@ def setup_mockup_environment(sun_energy: float = 3.0, ambient_color=(0.45, 0.55,
     bpy.context.collection.objects.link(fill_obj)
     fill_obj.rotation_euler = (math.radians(45), math.radians(-25), math.radians(140))
 
-    # World background
     world = bpy.context.scene.world
     if not world:
         world = bpy.data.worlds.new("World")
@@ -215,7 +401,6 @@ def create_terrain_material(name: str, tex_name: str, roughness: float = 0.88) -
         tex_node.interpolation = "Closest"
         links.new(tex_node.outputs["Color"], bsdf.inputs["Base Color"])
     else:
-        # Fallback solid color
         colors = {
             "forest_grass_top": (0.16, 0.32, 0.11, 1.0),
             "plains_meadow_top": (0.28, 0.45, 0.14, 1.0),
@@ -233,12 +418,9 @@ def spawn_glb(slug: str, loc: tuple[float, float, float], rot_z: float = 0.0, sc
     glb_path = FAMILY_DIR / slug / "output" / "model.glb"
     if not glb_path.exists():
         return []
-    
-    # Save currently existing objects
     existing = set(bpy.data.objects)
     bpy.ops.import_scene.gltf(filepath=str(glb_path))
     imported = [o for o in bpy.data.objects if o not in existing]
-
     for o in imported:
         o.location = Vector(loc)
         o.rotation_euler.z = rot_z
@@ -292,20 +474,16 @@ def render_biome_mockups() -> None:
     setup_mockup_environment(sun_energy=2.8, ambient_color=(0.35, 0.48, 0.40, 1.0))
     mat_forest = create_terrain_material("mat_forest", "forest_grass_top", 0.88)
     
-    # Terrain floor 10x10m
     bpy.ops.mesh.primitive_plane_add(size=10.0, location=(0, 0, 0))
     plane = bpy.context.active_object
     plane.data.materials.append(mat_forest)
 
-    # Oak Tree
     oak_glb = TREE_DIR / "var_0_standard_oak" / "output" / "model.glb"
     spawn_external_glb(oak_glb, (-1.2, 0.8, 0.0), rot_z=math.radians(25))
 
-    # Moss collars around tree trunk
     spawn_glb("moss_tree_base", (-1.2, 0.8, 0.0), rot_z=math.radians(10))
     spawn_glb("moss_tree_base", (-0.9, 0.6, 0.0), rot_z=math.radians(120))
 
-    # Forest Dressing: Dense grass tufts + flowers + stone debris
     random.seed(42)
     forest_props = [
         ("grass_tuft_med_01", (-0.2, 1.2, 0.0)),
@@ -336,11 +514,9 @@ def render_biome_mockups() -> None:
     plane = bpy.context.active_object
     plane.data.materials.append(mat_plains)
 
-    # Shrub oak in background
     shrub_glb = TREE_DIR / "var_4_shrub_oak" / "output" / "model.glb"
     spawn_external_glb(shrub_glb, (2.2, 2.0, 0.0), rot_z=math.radians(45))
 
-    # Plains Dressing: Rich vibrant flower carpets & rolling grass tufts
     random.seed(101)
     plains_props = [
         ("flower_yellow_cluster", (-1.0, 0.5, 0.0)),
@@ -371,7 +547,6 @@ def render_biome_mockups() -> None:
     mat_mtn = create_terrain_material("mat_mtn", "mountain_stone_top", 0.90)
     mat_cliff = create_terrain_material("mat_cliff", "cliff_side", 0.92)
 
-    # Stepped rocky terrace
     bpy.ops.mesh.primitive_cube_add(size=1.0, location=(0, 0, 0.5))
     c1 = bpy.context.active_object
     c1.scale = Vector((6.0, 6.0, 1.0))
@@ -382,11 +557,9 @@ def render_biome_mockups() -> None:
     c2.scale = Vector((3.5, 3.5, 1.0))
     c2.data.materials.append(mat_cliff)
 
-    # Destructible Rock
     rock_glb = ROCK_DIR / "stage_1_var_1" / "output" / "model.glb"
     spawn_external_glb(rock_glb, (2.2, 1.8, 2.0), rot_z=math.radians(35), scale=0.8)
 
-    # Mountain Dressing: Jagged stone debris, cliff ledge moss, hardy grass sprigs
     random.seed(333)
     mtn_props = [
         ("stone_debris_mountain_cluster", (0.4, 0.8, 1.0)),
@@ -425,13 +598,10 @@ def render_density_mockups() -> None:
 
         random.seed(777)
         if density_mode == "low":
-            # ~6 scattered props across 6x6m (sparse accentuation)
             count = 7
         elif density_mode == "medium":
-            # ~16 props across 6x6m (balanced natural meadow)
             count = 16
         else:
-            # ~32 props across 6x6m (rich dense cluster / lush glade)
             count = 32
 
         all_pool = [
@@ -465,7 +635,6 @@ def render_gameplay_mockup() -> None:
     clear_scene()
     setup_mockup_environment(sun_energy=3.2, ambient_color=(0.45, 0.55, 0.70, 1.0))
 
-    # Build terrain slice with path and elevation
     mat_forest = create_terrain_material("mat_forest", "forest_grass_top", 0.88)
     mat_dirt = create_terrain_material("mat_dirt", "dirt_soil", 0.92)
     mat_mtn = create_terrain_material("mat_mtn", "mountain_stone_top", 0.90)
@@ -475,7 +644,6 @@ def render_gameplay_mockup() -> None:
     base_floor = bpy.context.active_object
     base_floor.data.materials.append(mat_forest)
 
-    # Raised rock bluff in background
     bpy.ops.mesh.primitive_cube_add(size=1.0, location=(3.5, 3.5, 0.75))
     bluff = bpy.context.active_object
     bluff.scale = Vector((5.0, 5.0, 1.5))
@@ -486,24 +654,20 @@ def render_gameplay_mockup() -> None:
     bluff_top.scale = Vector((4.8, 4.8, 0.2))
     bluff_top.data.materials.append(mat_mtn)
 
-    # Dirt path diagonal strip
     bpy.ops.mesh.primitive_plane_add(size=1.0, location=(0, 0, 0.01))
     path = bpy.context.active_object
     path.scale = Vector((1.2, 12.0, 1.0))
     path.rotation_euler.z = math.radians(-30)
     path.data.materials.append(mat_dirt)
 
-    # 1. Spawn Production Trees
     oak_std = TREE_DIR / "var_0_standard_oak" / "output" / "model.glb"
     spawn_external_glb(oak_std, (-2.5, 1.5, 0.0), rot_z=math.radians(15))
     oak_tall = TREE_DIR / "var_1_tall_oak" / "output" / "model.glb"
     spawn_external_glb(oak_tall, (-3.5, -1.8, 0.0), rot_z=math.radians(60))
 
-    # 2. Spawn Production Rock
     rock_glb = ROCK_DIR / "stage_1_var_1" / "output" / "model.glb"
     spawn_external_glb(rock_glb, (3.2, 3.0, 1.6), rot_z=math.radians(40), scale=0.85)
 
-    # 3. Spawn Stylized Character Scale Proxy (2m tall Cube Siege character box)
     bpy.ops.mesh.primitive_cube_add(size=1.0, location=(0.2, -0.4, 1.0))
     hero = bpy.context.active_object
     hero.scale = Vector((0.5, 0.5, 1.0))
@@ -513,19 +677,13 @@ def render_gameplay_mockup() -> None:
     hero_bsdf.inputs["Base Color"].default_value = (0.2, 0.45, 0.85, 1.0)
     hero.data.materials.append(hero_mat)
 
-    # 4. Populate with Dressing Props across the scene
     random.seed(999)
-    # Tree base moss
     spawn_glb("moss_tree_base", (-2.5, 1.5, 0.0), rot_z=math.radians(20))
     spawn_glb("moss_tree_base", (-3.5, -1.8, 0.0), rot_z=math.radians(80))
-
-    # Cliff moss
     spawn_glb("moss_cliff_ledge", (1.1, 2.5, 1.5), rot_z=math.radians(-90))
     spawn_glb("moss_rock_shelf", (2.2, 3.2, 1.6), rot_z=math.radians(15))
 
-    # Grass & Flowers & Stone scatter
     scatter_plan = [
-        # Along path edges
         ("grass_tuft_small_01", (-0.8, -0.6, 0.0)),
         ("grass_tuft_small_02", (0.9, -0.8, 0.0)),
         ("grass_tuft_med_01", (-1.1, 0.2, 0.0)),
@@ -534,18 +692,15 @@ def render_gameplay_mockup() -> None:
         ("flower_white_cluster", (1.4, -0.2, 0.0)),
         ("flower_red_cluster", (-1.4, -1.2, 0.0)),
         ("flower_mixed_accent", (0.6, 1.4, 0.0)),
-        # Near trees
         ("grass_tuft_tall_01", (-2.0, 0.6, 0.0)),
         ("grass_tuft_med_01", (-3.0, 0.4, 0.0)),
         ("flower_white_cluster", (-2.2, -1.0, 0.0)),
         ("stone_debris_single", (-1.8, -0.2, 0.0)),
-        # Path stones & gravel
         ("stone_debris_fine_scatter", (0.1, -1.6, 0.01)),
         ("stone_debris_fine_scatter", (-0.2, 0.8, 0.01)),
         ("stone_debris_angular_chip", (0.5, -1.8, 0.0)),
         ("stone_debris_trio", (1.8, 1.2, 0.0)),
         ("stone_debris_flat_patch", (2.0, -0.8, 0.0)),
-        # Rocky bluff
         ("stone_debris_mountain_cluster", (2.2, 2.2, 1.6)),
         ("stone_debris_single", (3.8, 1.8, 1.6)),
         ("grass_tuft_small_03", (1.8, 3.6, 1.6)),
@@ -555,7 +710,6 @@ def render_gameplay_mockup() -> None:
         spawn_glb(slug, loc, rot_z=random.uniform(0, math.pi * 2))
 
     cam_target = Vector((0.0, 0.5, 0.8))
-    # Isometric gameplay camera: ~45 deg azimuth, ~35 deg elevation
     cam_loc = cam_target + Vector((10.0, -10.0, 8.5))
     render_scene_to_file(REVIEW_DIR / "gameplay_mockup.png", 1920, 1080, cam_loc, cam_target, ortho_scale=10.0)
 

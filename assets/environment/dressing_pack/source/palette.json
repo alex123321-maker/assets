@@ -1,6 +1,12 @@
 {
   "version": 1,
-  "description": "Cube Siege Environment Dressing Pack Canonical Palettes (Issue #7)",
+  "description": "Cube Siege Environment Dressing Pack Canonical Palettes with Shared Atlas UVs (Issue #7)",
+  "atlas_texture": "textures/dressing_palette_atlas.png",
+  "atlas_grid": {
+    "cols": 8,
+    "rows": 8,
+    "cell_pixels": 8
+  },
   "families": {
     "grass": {
       "G": {
@@ -12,7 +18,11 @@
           1.0
         ],
         "roughness": 0.88,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          0,
+          0
+        ]
       },
       "D": {
         "name": "grass_base",
@@ -23,7 +33,11 @@
           1.0
         ],
         "roughness": 0.92,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          1,
+          0
+        ]
       },
       "L": {
         "name": "grass_tip",
@@ -34,7 +48,11 @@
           1.0
         ],
         "roughness": 0.82,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          2,
+          0
+        ]
       }
     },
     "flowers": {
@@ -47,7 +65,11 @@
           1.0
         ],
         "roughness": 0.88,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          0,
+          1
+        ]
       },
       "D": {
         "name": "flower_stem_dark",
@@ -58,7 +80,11 @@
           1.0
         ],
         "roughness": 0.92,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          1,
+          1
+        ]
       },
       "W": {
         "name": "petal_white",
@@ -69,7 +95,11 @@
           1.0
         ],
         "roughness": 0.8,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          2,
+          1
+        ]
       },
       "Y": {
         "name": "center_gold",
@@ -80,7 +110,11 @@
           1.0
         ],
         "roughness": 0.75,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          3,
+          1
+        ]
       },
       "O": {
         "name": "center_amber",
@@ -91,7 +125,11 @@
           1.0
         ],
         "roughness": 0.8,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          4,
+          1
+        ]
       },
       "R": {
         "name": "petal_red",
@@ -102,7 +140,11 @@
           1.0
         ],
         "roughness": 0.8,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          5,
+          1
+        ]
       },
       "C": {
         "name": "center_dark",
@@ -113,7 +155,11 @@
           1.0
         ],
         "roughness": 0.85,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          6,
+          1
+        ]
       },
       "P": {
         "name": "petal_purple",
@@ -124,7 +170,11 @@
           1.0
         ],
         "roughness": 0.75,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          7,
+          1
+        ]
       },
       "B": {
         "name": "petal_blue",
@@ -135,7 +185,11 @@
           1.0
         ],
         "roughness": 0.75,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          0,
+          2
+        ]
       }
     },
     "moss": {
@@ -148,7 +202,11 @@
           1.0
         ],
         "roughness": 0.92,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          1,
+          2
+        ]
       },
       "D": {
         "name": "moss_dark",
@@ -159,7 +217,11 @@
           1.0
         ],
         "roughness": 0.95,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          2,
+          2
+        ]
       },
       "L": {
         "name": "moss_light",
@@ -170,7 +232,11 @@
           1.0
         ],
         "roughness": 0.86,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          3,
+          2
+        ]
       }
     },
     "stone_debris": {
@@ -183,7 +249,11 @@
           1.0
         ],
         "roughness": 0.88,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          0,
+          3
+        ]
       },
       "D": {
         "name": "stone_dark",
@@ -194,7 +264,11 @@
           1.0
         ],
         "roughness": 0.94,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          1,
+          3
+        ]
       },
       "L": {
         "name": "stone_light",
@@ -205,7 +279,11 @@
           1.0
         ],
         "roughness": 0.82,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          2,
+          3
+        ]
       },
       "M": {
         "name": "stone_moss",
@@ -216,7 +294,11 @@
           1.0
         ],
         "roughness": 0.95,
-        "metallic": 0.0
+        "metallic": 0.0,
+        "atlas_cell": [
+          3,
+          3
+        ]
       }
     }
   }

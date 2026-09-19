@@ -13,7 +13,11 @@
         1.0
       ],
       "roughness": 0.95,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "atlas_cell": [
+        2,
+        2
+      ]
     },
     "M": {
       "name": "moss_primary",
@@ -24,7 +28,11 @@
         1.0
       ],
       "roughness": 0.92,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "atlas_cell": [
+        1,
+        2
+      ]
     },
     "L": {
       "name": "moss_light",
@@ -35,7 +43,11 @@
         1.0
       ],
       "roughness": 0.86,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "atlas_cell": [
+        3,
+        2
+      ]
     }
   },
   "layers": [

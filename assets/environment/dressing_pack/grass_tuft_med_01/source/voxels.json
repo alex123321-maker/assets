@@ -13,7 +13,11 @@
         1.0
       ],
       "roughness": 0.92,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "atlas_cell": [
+        1,
+        0
+      ]
     },
     "G": {
       "name": "grass_primary",
@@ -24,7 +28,11 @@
         1.0
       ],
       "roughness": 0.88,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "atlas_cell": [
+        0,
+        0
+      ]
     },
     "L": {
       "name": "grass_tip",
@@ -35,7 +43,11 @@
         1.0
       ],
       "roughness": 0.82,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "atlas_cell": [
+        2,
+        0
+      ]
     }
   },
   "layers": [
