@@ -1,7 +1,7 @@
 {
   "occupied_voxels": 802,
-  "visible_faces": 716,
-  "triangles": 1432,
+  "visible_faces": 1007,
+  "triangles": 2060,
   "mesh_objects": 4,
   "materials": 4,
   "grid": {

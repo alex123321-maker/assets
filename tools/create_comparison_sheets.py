@@ -78,12 +78,12 @@ def create_stage_1_comparison() -> Path:
     ]
 
     var_names = [
-        ("stage_1_var_1", "Var 1 — Monolith Crag"),
-        ("stage_1_var_2", "Var 2 — Twin Spire"),
-        ("stage_1_var_3", "Var 3 — Slanted Wedge"),
-        ("stage_1_var_4", "Var 4 — Cantilever Brow"),
-        ("stage_1_var_5", "Var 5 — Three-Lobe Butte"),
-        ("stage_1_var_6", "Var 6 — Dual Peak Ridge"),
+        ("stage_1_var_1", "Var 1 - Monolith Crag"),
+        ("stage_1_var_2", "Var 2 - Twin Spire"),
+        ("stage_1_var_3", "Var 3 - Slanted Wedge"),
+        ("stage_1_var_4", "Var 4 - Cantilever Brow"),
+        ("stage_1_var_5", "Var 5 - Three-Lobe Butte"),
+        ("stage_1_var_6", "Var 6 - Dual Peak Ridge"),
     ]
 
     tile_size = 360

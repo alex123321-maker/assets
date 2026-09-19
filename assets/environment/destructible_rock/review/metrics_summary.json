@@ -1,8 +1,8 @@
 {
   "stage_1_var_1": {
     "occupied_voxels": 776,
-    "visible_faces": 698,
-    "triangles": 1396,
+    "visible_faces": 1048,
+    "triangles": 2112,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -21,8 +21,8 @@
   },
   "stage_1_var_2": {
     "occupied_voxels": 727,
-    "visible_faces": 780,
-    "triangles": 1560,
+    "visible_faces": 1131,
+    "triangles": 2295,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -41,8 +41,8 @@
   },
   "stage_1_var_3": {
     "occupied_voxels": 802,
-    "visible_faces": 716,
-    "triangles": 1432,
+    "visible_faces": 1007,
+    "triangles": 2060,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -61,8 +61,8 @@
   },
   "stage_1_var_4": {
     "occupied_voxels": 800,
-    "visible_faces": 722,
-    "triangles": 1444,
+    "visible_faces": 1056,
+    "triangles": 2134,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -81,8 +81,8 @@
   },
   "stage_1_var_5": {
     "occupied_voxels": 729,
-    "visible_faces": 794,
-    "triangles": 1588,
+    "visible_faces": 1106,
+    "triangles": 2239,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -101,8 +101,8 @@
   },
   "stage_1_var_6": {
     "occupied_voxels": 900,
-    "visible_faces": 758,
-    "triangles": 1516,
+    "visible_faces": 1064,
+    "triangles": 2184,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -121,8 +121,8 @@
   },
   "stage_2_var_1": {
     "occupied_voxels": 576,
-    "visible_faces": 522,
-    "triangles": 1044,
+    "visible_faces": 710,
+    "triangles": 1454,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -141,8 +141,8 @@
   },
   "stage_2_var_2": {
     "occupied_voxels": 568,
-    "visible_faces": 470,
-    "triangles": 940,
+    "visible_faces": 642,
+    "triangles": 1306,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -161,8 +161,8 @@
   },
   "stage_2_var_3": {
     "occupied_voxels": 454,
-    "visible_faces": 478,
-    "triangles": 956,
+    "visible_faces": 666,
+    "triangles": 1359,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -181,8 +181,8 @@
   },
   "stage_3_var_1": {
     "occupied_voxels": 256,
-    "visible_faces": 274,
-    "triangles": 548,
+    "visible_faces": 387,
+    "triangles": 784,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -201,8 +201,8 @@
   },
   "stage_3_var_2": {
     "occupied_voxels": 202,
-    "visible_faces": 268,
-    "triangles": 536,
+    "visible_faces": 395,
+    "triangles": 789,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -221,8 +221,8 @@
   },
   "stage_3_var_3": {
     "occupied_voxels": 268,
-    "visible_faces": 280,
-    "triangles": 560,
+    "visible_faces": 402,
+    "triangles": 820,
     "mesh_objects": 2,
     "materials": 2,
     "grid": {
@@ -241,8 +241,8 @@
   },
   "stage_4_var_1": {
     "occupied_voxels": 126,
-    "visible_faces": 216,
-    "triangles": 432,
+    "visible_faces": 332,
+    "triangles": 668,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -261,8 +261,8 @@
   },
   "stage_4_var_2": {
     "occupied_voxels": 134,
-    "visible_faces": 246,
-    "triangles": 492,
+    "visible_faces": 398,
+    "triangles": 820,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -281,8 +281,8 @@
   },
   "stage_5_var_1": {
     "occupied_voxels": 37,
-    "visible_faces": 114,
-    "triangles": 228,
+    "visible_faces": 237,
+    "triangles": 472,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -301,8 +301,8 @@
   },
   "stage_5_var_2": {
     "occupied_voxels": 33,
-    "visible_faces": 106,
-    "triangles": 212,
+    "visible_faces": 219,
+    "triangles": 438,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -321,8 +321,8 @@
   },
   "stage_5_var_3": {
     "occupied_voxels": 38,
-    "visible_faces": 116,
-    "triangles": 232,
+    "visible_faces": 233,
+    "triangles": 472,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {

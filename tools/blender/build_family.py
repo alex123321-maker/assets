@@ -96,17 +96,35 @@ def build_variant(pkg_dir: Path) -> dict:
     title = manifest.get("title", pkg_dir.name)
     review_path = pkg_dir / "review" / "review.md"
 
+    existing_visual_section = ""
+    if review_path.exists():
+        try:
+            old_text = review_path.read_text(encoding="utf-8")
+            if "## Visual Review Notes" in old_text:
+                existing_visual_section = "## Visual Review Notes\n" + old_text.split("## Visual Review Notes", 1)[1].lstrip("\r\n")
+            elif "## Visual Self-Review Notes" in old_text:
+                # If existing notes were manual notes, preserve them
+                existing_visual_section = "## Visual Review Notes\n" + old_text.split("## Visual Self-Review Notes", 1)[1].lstrip("\r\n")
+        except Exception:
+            pass
+
+    if not existing_visual_section:
+        existing_visual_section = """## Visual Review (Manual / Separate Pass)
+- [ ] Source matches request and Issue #3 visual criteria.
+- [ ] Silhouette reads from iso/game-like view with distinct angular planes.
+- [ ] Material fidelity matches approved concept reference.
+- [ ] Ground contact and massing verified against reference row.
+"""
+
     review_md = f"""# Self Review: {title}
 
-## Result
-- [x] Source matches request and Issue #3 criteria.
-- [x] Required review renders generated.
-- [x] Silhouette reads from iso/game-like view with distinct angular planes.
-- [x] No accidental floating/disconnected geometry.
-- [x] Voxel density is intentional and consistent (size={metrics['voxel_size']}).
+## Objective Build Verification
+- [x] Required review renders generated (iso.png, front.png, side.png, top.png).
+- [x] Export validated ({output_path.name}, glTF 2.0, {glb_info['size_bytes']} bytes).
 - [x] Material count is within budget ({metrics['materials']} materials <= 4).
 - [x] Triangle count verified ({metrics['triangles']} tris <= 5000).
-- [x] Export validated ({output_path.name}, glTF 2.0, {glb_info['size_bytes']} bytes).
+- [x] Internal faces culled ({metrics['visible_faces']} visible faces).
+- [x] Ground contact flat at y=0, origin bottom_center.
 
 ## Metrics
 - Occupied voxels: {metrics['occupied_voxels']}
@@ -115,12 +133,7 @@ def build_variant(pkg_dir: Path) -> dict:
 - Grid: {metrics['grid']['x']}x{metrics['grid']['y']}x{metrics['grid']['z']}
 - World size: {metrics['world_size']['x']:.2f} x {metrics['world_size']['y']:.2f} x {metrics['world_size']['z']:.2f} m
 
-## Visual Self-Review Notes
-- **Reference**: `references/rock_concept_reference.png`
-- **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
-  - **Silhouette & Massing**: Distinct stylized angular silhouette matching the approved reference row. Polygonal, asymmetric ground footprint with stable ground contact.
-  - **Material Fidelity**: Multi-tone natural rock palette (primary stone, sunlit light rock on summit crests, dark crevice shading, and earthy moss in sheltered shelves) provides clear read from isometric camera distance without uniform gray appearance.
-- **Reviewer**: Antigravity agent (visual review pass vs approved reference)
+{existing_visual_section.strip()}
 """
     review_path.write_text(review_md, encoding="utf-8")
 
@@ -285,14 +298,21 @@ def main() -> None:
     print("\n--- Rendering Family Contact Sheet ---")
     render_family_contact_sheet(family_dir, variant_dirs)
 
-    # Generate comparison sheets
+    # Generate comparison sheets (requires system Python with Pillow)
+    import shutil
+    from subprocess import run, CalledProcessError
+
+    comp_script = BUILD_SCRIPT.parent.parent / "create_comparison_sheets.py"
+    if not comp_script.exists():
+        raise FileNotFoundError(f"Required comparison sheets script missing: {comp_script}")
+
+    # Blender's bundled python does not have Pillow; locate system python
+    sys_py = shutil.which("python") or shutil.which("python3") or shutil.which("py") or "python"
+    print(f"\n--- Generating Comparison Sheets using {sys_py} ---")
     try:
-        from subprocess import run
-        comp_script = BUILD_SCRIPT.parent.parent / "create_comparison_sheets.py"
-        if comp_script.exists():
-            run([sys.executable, str(comp_script)], check=True)
-    except Exception as exc:
-        print(f"[WARN] Comparison sheets generator error: {exc}")
+        run([sys_py, str(comp_script)], check=True)
+    except CalledProcessError as err:
+        raise RuntimeError(f"Failed to generate review comparison sheets: {err}") from err
 
     print(f"\n[ALL DONE] Family build and review package completed successfully.")
 

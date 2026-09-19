@@ -1,23 +1,21 @@
 # Self Review: stage_3_var_2
 
-## Result
-- [x] Source matches request and Issue #3 criteria.
-- [x] Required review renders generated.
-- [x] Silhouette reads from iso/game-like view with distinct angular planes.
-- [x] No accidental floating/disconnected geometry.
-- [x] Voxel density is intentional and consistent (size=0.15).
+## Objective Build Verification
+- [x] Required review renders generated (iso.png, front.png, side.png, top.png).
+- [x] Export validated (model.glb, glTF 2.0, 28392 bytes).
 - [x] Material count is within budget (3 materials <= 4).
-- [x] Triangle count verified (536 tris <= 5000).
-- [x] Export validated (model.glb, glTF 2.0, 31856 bytes).
+- [x] Triangle count verified (789 tris <= 5000).
+- [x] Internal faces culled (395 visible faces).
+- [x] Ground contact flat at y=0, origin bottom_center.
 
 ## Metrics
 - Occupied voxels: 202
-- Triangles: 536
-- Visible faces: 268
+- Triangles: 789
+- Visible faces: 395
 - Grid: 12x6x12
 - World size: 1.80 x 0.90 x 1.80 m
 
-## Visual Self-Review Notes
+## Visual Review Notes
 - **Reference**: `references/rock_concept_reference.png`
 - **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
   - **Silhouette & Massing**: Distinct stylized angular silhouette matching the approved reference row. Polygonal, asymmetric ground footprint with stable ground contact.
