@@ -129,6 +129,68 @@ def build_objects(data: dict):
         for token, spec in data["materials"].items()
     }
 
+    is_faceted_rock = (
+        data.get("name", "").startswith("destructible_rock")
+        or (
+            "S" in data.get("materials", {})
+            and data["materials"]["S"].get("name", "").startswith("stone")
+        )
+    )
+
+    if not is_faceted_rock:
+        geometry = {
+            token: {"verts": [], "faces": [], "visible_faces": 0}
+            for token in materials
+        }
+
+        for (sx, sy, sz), token in occupied.items():
+            cx, cy, cz = source_to_blender(sx, sy, sz, width, depth, voxel_size)
+            target = geometry[token]
+
+            for (dx, dy, dz), face_name in NEIGHBORS:
+                neighbor = (sx + dx, sy + dy, sz + dz)
+                if neighbor in occupied:
+                    continue
+
+                quad = face_vertices(cx, cy, cz, h, face_name)
+                base = len(target["verts"])
+                target["verts"].extend(quad)
+                target["faces"].append((base, base + 1, base + 2, base + 3))
+                target["visible_faces"] += 1
+
+        objects = []
+        for token, geo in geometry.items():
+            if not geo["faces"]:
+                continue
+            mesh = bpy.data.meshes.new(f"{data['name']}_{token}_mesh")
+            mesh.from_pydata(geo["verts"], [], geo["faces"])
+            mesh.update()
+            obj = bpy.data.objects.new(f"{data['name']}_{token}", mesh)
+            bpy.context.collection.objects.link(obj)
+            obj.data.materials.append(materials[token])
+            objects.append(obj)
+
+        total_polys = sum(len(o.data.polygons) for o in objects)
+        total_tris = sum(len(p.vertices) - 2 for o in objects for p in o.data.polygons)
+
+        metrics = {
+            "occupied_voxels": len(occupied),
+            "visible_faces": total_polys,
+            "triangles": total_tris,
+            "mesh_objects": len(objects),
+            "materials": len(objects),
+            "grid": {"x": width, "y": height, "z": depth},
+            "voxel_size": voxel_size,
+            "world_size": {
+                "x": width * voxel_size,
+                "y": height * voxel_size,
+                "z": depth * voxel_size,
+            },
+            "blender_version": bpy.app.version_string,
+            "render_engine": resolve_eevee_engine(),
+        }
+        return objects, metrics
+
     # 1. Build unified watertight mesh
     mesh = bpy.data.meshes.new(f"{data['name']}_raw_mesh")
     bm = bmesh.new()

@@ -1,0 +1,102 @@
+{
+  "var_0_standard_oak": {
+    "occupied_voxels": 1675,
+    "visible_faces": 1582,
+    "triangles": 3164,
+    "mesh_objects": 3,
+    "materials": 3,
+    "grid": {
+      "x": 18,
+      "y": 28,
+      "z": 18
+    },
+    "voxel_size": 0.15,
+    "world_size": {
+      "x": 2.6999999999999997,
+      "y": 4.2,
+      "z": 2.6999999999999997
+    },
+    "blender_version": "5.2.1 LTS",
+    "render_engine": "BLENDER_EEVEE"
+  },
+  "var_1_tall_oak": {
+    "occupied_voxels": 906,
+    "visible_faces": 1074,
+    "triangles": 2148,
+    "mesh_objects": 3,
+    "materials": 3,
+    "grid": {
+      "x": 15,
+      "y": 34,
+      "z": 15
+    },
+    "voxel_size": 0.15,
+    "world_size": {
+      "x": 2.25,
+      "y": 5.1,
+      "z": 2.25
+    },
+    "blender_version": "5.2.1 LTS",
+    "render_engine": "BLENDER_EEVEE"
+  },
+  "var_2_broad_oak": {
+    "occupied_voxels": 2345,
+    "visible_faces": 2064,
+    "triangles": 4128,
+    "mesh_objects": 3,
+    "materials": 3,
+    "grid": {
+      "x": 24,
+      "y": 24,
+      "z": 24
+    },
+    "voxel_size": 0.15,
+    "world_size": {
+      "x": 3.5999999999999996,
+      "y": 3.5999999999999996,
+      "z": 3.5999999999999996
+    },
+    "blender_version": "5.2.1 LTS",
+    "render_engine": "BLENDER_EEVEE"
+  },
+  "var_3_young_oak": {
+    "occupied_voxels": 239,
+    "visible_faces": 354,
+    "triangles": 708,
+    "mesh_objects": 3,
+    "materials": 3,
+    "grid": {
+      "x": 11,
+      "y": 16,
+      "z": 11
+    },
+    "voxel_size": 0.15,
+    "world_size": {
+      "x": 1.65,
+      "y": 2.4,
+      "z": 1.65
+    },
+    "blender_version": "5.2.1 LTS",
+    "render_engine": "BLENDER_EEVEE"
+  },
+  "var_4_shrub_oak": {
+    "occupied_voxels": 290,
+    "visible_faces": 366,
+    "triangles": 732,
+    "mesh_objects": 3,
+    "materials": 3,
+    "grid": {
+      "x": 12,
+      "y": 9,
+      "z": 12
+    },
+    "voxel_size": 0.15,
+    "world_size": {
+      "x": 1.7999999999999998,
+      "y": 1.3499999999999999,
+      "z": 1.7999999999999998
+    },
+    "blender_version": "5.2.1 LTS",
+    "render_engine": "BLENDER_EEVEE"
+  }
+}

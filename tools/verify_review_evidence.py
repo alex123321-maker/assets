@@ -154,13 +154,143 @@ def verify_evidence() -> bool:
 
         print(f"  [PASS] {slug}: all 4 renders (512x512), metrics, and review document verified.")
 
+    # 5. Verify tree_oak family (Issue #5)
+    tree_family_dir = REPO_ROOT / "assets" / "environment" / "tree_oak"
+    if tree_family_dir.is_dir():
+        print(f"\nVerifying evidence for tree_oak family...")
+        # Approved concept reference
+        t_ref = tree_family_dir / "references" / "tree_concept_reference.png"
+        ok, w, h, err = check_png_header(t_ref)
+        if not ok:
+            errors.append(f"Tree concept reference missing or invalid: {err}")
+        else:
+            print(f"[PASS] Tree concept reference: {t_ref.name} ({w}x{h}, {t_ref.stat().st_size} bytes)")
+
+        t_ref_readme = tree_family_dir / "references" / "README.md"
+        if not t_ref_readme.exists():
+            errors.append(f"Tree references/README.md missing at {t_ref_readme}")
+        else:
+            print(f"[PASS] Tree references README: {t_ref_readme.name}")
+
+        # Family contact sheet
+        t_contact = tree_family_dir / "review" / "contact_sheet.png"
+        ok, w, h, err = check_png_header(t_contact)
+        if not ok:
+            errors.append(f"Tree family contact sheet invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Tree family contact sheet too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Tree family contact sheet: {t_contact.name} ({w}x{h}, {t_contact.stat().st_size} bytes)")
+
+        # Comparison sheet
+        t_comp = tree_family_dir / "review" / "comparison_sheet.png"
+        ok, w, h, err = check_png_header(t_comp)
+        if not ok:
+            errors.append(f"Tree comparison sheet missing or invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Tree comparison sheet too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Tree comparison sheet: {t_comp.name} ({w}x{h}, {t_comp.stat().st_size} bytes)")
+
+        # Reference vs 3D comparison sheet
+        t_ref_comp = tree_family_dir / "review" / "reference_vs_3d_comparison.png"
+        ok, w, h, err = check_png_header(t_ref_comp)
+        if not ok:
+            errors.append(f"Tree reference vs 3D comparison sheet missing or invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Tree reference vs 3D comparison sheet too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Tree reference vs 3D comparison: {t_ref_comp.name} ({w}x{h}, {t_ref_comp.stat().st_size} bytes)")
+
+        # Variants concept vs 3D comparison sheet
+        t_var_comp = tree_family_dir / "review" / "variants_concept_vs_3d.png"
+        ok, w, h, err = check_png_header(t_var_comp)
+        if not ok:
+            errors.append(f"Tree variants concept vs 3D comparison sheet missing or invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Tree variants concept vs 3D comparison sheet too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Tree variants concept vs 3D comparison: {t_var_comp.name} ({w}x{h}, {t_var_comp.stat().st_size} bytes)")
+
+        # Gameplay mockup
+        t_mockup = tree_family_dir / "review" / "gameplay_mockup.png"
+        ok, w, h, err = check_png_header(t_mockup)
+        if not ok:
+            errors.append(f"Tree gameplay mockup missing or invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Tree gameplay mockup too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Tree gameplay mockup: {t_mockup.name} ({w}x{h}, {t_mockup.stat().st_size} bytes)")
+
+        # Family review.md
+        t_review = tree_family_dir / "review" / "review.md"
+        if not t_review.exists():
+            errors.append(f"Missing tree family review.md at {t_review}")
+        else:
+            content = t_review.read_text(encoding="utf-8")
+            if "# Family Self Review" not in content:
+                errors.append(f"Tree review.md missing title header in {t_review}")
+            else:
+                print(f"[PASS] Tree family review document: {t_review.name}")
+
+        # Variants
+        tree_variants = [
+            "var_0_standard_oak",
+            "var_1_tall_oak",
+            "var_2_broad_oak",
+            "var_3_young_oak",
+            "var_4_shrub_oak",
+        ]
+        for slug in tree_variants:
+            pkg_dir = tree_family_dir / slug
+            if not pkg_dir.is_dir():
+                errors.append(f"Missing tree variant package directory: {pkg_dir}")
+                continue
+
+            rev_dir = pkg_dir / "review"
+            if not rev_dir.is_dir():
+                errors.append(f"Missing review directory in {pkg_dir}")
+                continue
+
+            for view_name in REQUIRED_VIEWS:
+                v_path = rev_dir / view_name
+                ok, w, h, err = check_png_header(v_path)
+                if not ok:
+                    errors.append(f"{slug}: {err}")
+                elif w != h or w < 512:
+                    errors.append(f"{slug}: Render {view_name} invalid resolution {w}x{h}")
+
+            m_path = rev_dir / "metrics.json"
+            if not m_path.exists():
+                errors.append(f"{slug}: Missing metrics.json")
+            else:
+                try:
+                    data = json.loads(m_path.read_text(encoding="utf-8"))
+                    for key in ("occupied_voxels", "triangles", "visible_faces", "grid", "world_size"):
+                        if key not in data:
+                            errors.append(f"{slug}: metrics.json missing required key '{key}'")
+                except Exception as exc:
+                    errors.append(f"{slug}: Invalid metrics.json ({exc})")
+
+            r_path = rev_dir / "review.md"
+            if not r_path.exists():
+                errors.append(f"{slug}: Missing review.md")
+            else:
+                content = r_path.read_text(encoding="utf-8")
+                if "## Objective Build Verification" not in content and "## Result" not in content:
+                    errors.append(f"{slug}: review.md missing '## Objective Build Verification'")
+                if "## Metrics" not in content:
+                    errors.append(f"{slug}: review.md missing '## Metrics'")
+
+            print(f"  [PASS] {slug}: all 4 renders (512x512), metrics, and review document verified.")
+
     if errors:
         print(f"\n[FAIL] Evidence verification failed with {len(errors)} error(s):")
         for e in errors:
             print(f"  - {e}")
         return False
 
-    print(f"\n[ALL PASS] All {len(EXPECTED_VARIANTS)} packages have complete, valid review evidence.")
+    print(f"\n[ALL PASS] All packages have complete, valid review evidence.")
     return True
 
 
