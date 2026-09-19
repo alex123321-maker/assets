@@ -23,6 +23,8 @@ jobs:
           python -m py_compile tools/validate_all.py
           python -m py_compile tools/new_asset.py
           python -m py_compile tools/blender/build_voxel_asset.py
+          python -m py_compile tools/blender/build_tree_family.py
+          python -m py_compile tools/author_tree_oak.py
           python -m py_compile tools/review_loop/*.py
 
       - name: Review loop unit tests

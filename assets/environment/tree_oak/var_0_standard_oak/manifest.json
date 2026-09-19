@@ -1,0 +1,21 @@
+{
+  "name": "tree_oak_var_0_standard_oak",
+  "type": "voxel_static",
+  "version": 1,
+  "source": "source/voxels.json",
+  "outputs": {
+    "model": "output/model.glb"
+  },
+  "review": {
+    "required_views": [
+      "iso",
+      "front",
+      "side",
+      "top"
+    ]
+  },
+  "budgets": {
+    "max_materials": 3,
+    "max_triangles": 5000
+  }
+}
