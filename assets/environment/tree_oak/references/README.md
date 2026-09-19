@@ -1,10 +1,10 @@
 # References & Visual Contract: Oak Tree Family
 
-## Approved Concept Reference
+## Proposed Concept Reference (Awaiting Art Director Approval)
 
-![Approved tree concept sheet](./tree_concept_reference.png)
+![Proposed tree concept sheet](./tree_concept_reference.png)
 
-`tree_concept_reference.png` — утверждённый визуальный ориентир семейства для Issue #5. Он фиксирует ключевое визуальное направление игры Cube Siege:
+`tree_concept_reference.png` — предложенный визуальный ориентир семейства для Issue #5, ожидающий явного утверждения Арт-директором (Пользователем). Он визуализирует ключевое художественное направление игры Cube Siege:
 - 5 канонических вариантов дубов, сопоставленных со слотами `ResourceTree.tree_variation` 0..4;
 - стилизованная воксельная/кубическая геометрия без микрошума;
 - выраженная асимметрия ветвей и крон;

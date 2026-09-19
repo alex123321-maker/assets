@@ -202,6 +202,16 @@ def verify_evidence() -> bool:
         else:
             print(f"[PASS] Tree reference vs 3D comparison: {t_ref_comp.name} ({w}x{h}, {t_ref_comp.stat().st_size} bytes)")
 
+        # Variants concept vs 3D comparison sheet
+        t_var_comp = tree_family_dir / "review" / "variants_concept_vs_3d.png"
+        ok, w, h, err = check_png_header(t_var_comp)
+        if not ok:
+            errors.append(f"Tree variants concept vs 3D comparison sheet missing or invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Tree variants concept vs 3D comparison sheet too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Tree variants concept vs 3D comparison: {t_var_comp.name} ({w}x{h}, {t_var_comp.stat().st_size} bytes)")
+
         # Gameplay mockup
         t_mockup = tree_family_dir / "review" / "gameplay_mockup.png"
         ok, w, h, err = check_png_header(t_mockup)

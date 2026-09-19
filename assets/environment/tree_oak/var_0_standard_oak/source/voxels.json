@@ -7,34 +7,34 @@
     "W": {
       "name": "wood_bark",
       "base_color": [
-        0.26,
-        0.16,
-        0.1,
+        0.29,
+        0.18,
+        0.11,
         1.0
       ],
-      "roughness": 0.9,
+      "roughness": 0.92,
       "metallic": 0.0
     },
     "D": {
       "name": "foliage_base",
       "base_color": [
-        0.12,
-        0.32,
-        0.15,
+        0.23,
+        0.42,
+        0.13,
         1.0
       ],
-      "roughness": 0.85,
+      "roughness": 0.88,
       "metallic": 0.0
     },
     "L": {
       "name": "foliage_accent",
       "base_color": [
-        0.26,
-        0.52,
-        0.18,
+        0.37,
+        0.58,
+        0.17,
         1.0
       ],
-      "roughness": 0.8,
+      "roughness": 0.82,
       "metallic": 0.0
     }
   },

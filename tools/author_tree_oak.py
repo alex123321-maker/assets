@@ -28,20 +28,20 @@ VOXEL_SIZE = 0.15
 SHARED_MATERIALS = {
     "W": {
         "name": "wood_bark",
-        "base_color": [0.26, 0.16, 0.10, 1.0],  # Rich dark warm oak bark
-        "roughness": 0.90,
+        "base_color": [0.29, 0.18, 0.11, 1.0],  # Warm dark timber bark (#4a2f1b)
+        "roughness": 0.92,
         "metallic": 0.0,
     },
     "D": {
         "name": "foliage_base",
-        "base_color": [0.12, 0.32, 0.15, 1.0],  # Deep forest green, distinctly deeper than grass
-        "roughness": 0.85,
+        "base_color": [0.23, 0.42, 0.13, 1.0],  # Rich forest green (#3b6b22)
+        "roughness": 0.88,
         "metallic": 0.0,
     },
     "L": {
         "name": "foliage_accent",
-        "base_color": [0.26, 0.52, 0.18, 1.0],  # Warm sunlit golden foliage highlight
-        "roughness": 0.80,
+        "base_color": [0.37, 0.58, 0.17, 1.0],  # Sunlit golden-green highlight (#5e932b)
+        "roughness": 0.82,
         "metallic": 0.0,
     },
 }

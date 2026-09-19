@@ -26,13 +26,9 @@
 ```text
 assets/environment/tree_oak/
 ├── README.md
-├── references/
-│   ├── README.md
-│   └── tree_concept_reference.png
 ├── review/
 │   ├── contact_sheet.png
 │   ├── comparison_sheet.png
-│   ├── reference_vs_3d_comparison.png
 │   ├── gameplay_mockup.png
 │   ├── metrics_summary.json
 │   └── review.md

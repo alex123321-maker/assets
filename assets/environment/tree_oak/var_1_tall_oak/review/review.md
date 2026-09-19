@@ -2,7 +2,7 @@
 
 ## Objective Build Verification
 - [x] Required review renders generated (iso.png, front.png, side.png, top.png).
-- [x] Export validated (model.glb, glTF 2.0, 118904 bytes, 3 meshes).
+- [x] Export validated (model.glb, glTF 2.0, 118908 bytes, 3 meshes).
 - [x] Material count is within budget (3 materials <= 3).
 - [x] Triangle count verified (2148 tris <= 5000).
 - [x] Internal faces culled (1074 visible faces).
