@@ -12,7 +12,8 @@
 - **Runtime Readiness & Shared Material Strategy**:
   - Exactly **1 shared production material** (`mat_dressing_atlas`) per model;
   - Exactly **1 mesh object** per model;
-  - UVs mapped to shared 64x64 texture atlas `textures/dressing_palette_atlas.png`;
+  - UVs mapped to shared 64x64 texture atlas `textures/dressing_palette_atlas.png` (Base Color) and `textures/dressing_roughness_atlas.png` (Metallic-Roughness);
+  - Full canonical PBR roughness fidelity preserved per surface token (stone debris: 0.88 / 0.94 / 0.82 / 0.95; grass: 0.88 / 0.92 / 0.82; moss: 0.92 / 0.95 / 0.86; flowers: 0.75–0.88);
   - Pivot strictly `bottom_center` at z=0, no collision, no scripts;
   - Total triangles: 2316 (avg: 121.9 tris/prop, max: 240 tris, well within <= 500 budget);
   - Native MultiMesh GPU batching ready with zero draw call multiplication.
@@ -23,7 +24,8 @@
 - [x] All 19 variant packages authored, validated, and built with Blender 5.2.1 LTS.
 - [x] Standard orthogonal views generated per variant (`iso.png`, `front.png`, `side.png`, `top.png` at 512x512).
 - [x] GLB exports validated (glTF 2.0 binary headers, internal face culling confirmed, 1 mesh object, 1 shared material, zero scripts).
-- [x] Shared production atlas material verified (`mat_dressing_atlas` mapped via UVMap to `dressing_palette_atlas.png`).
+- [x] Shared production atlas material verified (`mat_dressing_atlas` mapped via UVMap to baseColor and metallic-roughness atlases).
+- [x] Full PBR contract verified: `baseColorTexture` and `metallicRoughnessTexture` embedded in GLB with canonical per-cell roughness.
 - [x] Rotational uniqueness verified across all 6 stone debris variants (no rotational equivalence).
 - [x] Family contact sheet generated (`contact_sheet.png`, 2560x1600).
 - [x] Multi-angle comparison sheet generated (`comparison_sheet.png`, 2048x1152).

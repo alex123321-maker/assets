@@ -55,6 +55,7 @@ PALETTE_DATA = {
     "version": 1,
     "description": "Cube Siege Environment Dressing Pack Canonical Palettes with Shared Atlas UVs (Issue #7)",
     "atlas_texture": "textures/dressing_palette_atlas.png",
+    "roughness_atlas_texture": "textures/dressing_roughness_atlas.png",
     "atlas_grid": {"cols": ATLAS_GRID_COLS, "rows": ATLAS_GRID_ROWS, "cell_pixels": 8},
     "families": {
         "grass": {
@@ -921,36 +922,50 @@ PROPS_SPECS = [
 
 
 def generate_palette_atlas() -> None:
-    """Generate 64x64 shared palette atlas texture for MultiMesh batching."""
+    """Generate 64x64 shared palette atlas texture and roughness/metallic atlas for MultiMesh batching."""
     atlas_w = ATLAS_GRID_COLS * 8
     atlas_h = ATLAS_GRID_ROWS * 8
     atlas = Image.new("RGBA", (atlas_w, atlas_h), color=(0, 0, 0, 255))
+    # glTF metallicRoughness standard: R=occlusion(255), G=roughness, B=metallic, A=255
+    roughness_atlas = Image.new("RGBA", (atlas_w, atlas_h), color=(255, 224, 0, 255))
 
-    # Populate each cell with its 8x8 solid swatch
+    # Populate each cell with its 8x8 solid swatches
     for fam_name, tokens in PALETTE_DATA["families"].items():
         for tok, spec in tokens.items():
             col, row = spec["atlas_cell"]
             color_rgba = tuple(int(c * 255) for c in spec["base_color"])
+            roughness_byte = int(round(spec["roughness"] * 255))
+            metallic_byte = int(round(spec.get("metallic", 0.0) * 255))
+            mr_rgba = (255, roughness_byte, metallic_byte, 255)
+
             for dy in range(8):
                 for dx in range(8):
                     px = col * 8 + dx
                     py = row * 8 + dy
                     atlas.putpixel((px, py), color_rgba)
+                    roughness_atlas.putpixel((px, py), mr_rgba)
 
     atlas_path = TEXTURES_DIR / "dressing_palette_atlas.png"
     atlas.save(atlas_path, "PNG")
     print(f"[OK] Generated shared dressing palette atlas at {atlas_path} ({atlas_w}x{atlas_h})")
 
+    roughness_atlas_path = TEXTURES_DIR / "dressing_roughness_atlas.png"
+    roughness_atlas.save(roughness_atlas_path, "PNG")
+    print(f"[OK] Generated shared dressing roughness atlas at {roughness_atlas_path} ({atlas_w}x{atlas_h})")
+
     # Write Godot .tres material for shared atlas
-    tres_content = """[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+    tres_content = """[gd_resource type="StandardMaterial3D" load_steps=3 format=3]
 
 [ext_resource type="Texture2D" path="res://assets/environment/dressing_pack/textures/dressing_palette_atlas.png" id="1_atlas"]
+[ext_resource type="Texture2D" path="res://assets/environment/dressing_pack/textures/dressing_roughness_atlas.png" id="2_roughness"]
 
 [resource]
 resource_name = "material_dressing_atlas"
 albedo_texture = ExtResource("1_atlas")
 texture_filter = 0
-roughness = 0.88
+roughness = 1.0
+roughness_texture = ExtResource("2_roughness")
+roughness_texture_channel = 1
 specular = 0.1
 metallic = 0.0
 """

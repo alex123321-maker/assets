@@ -2,6 +2,7 @@
   "version": 1,
   "description": "Cube Siege Environment Dressing Pack Canonical Palettes with Shared Atlas UVs (Issue #7)",
   "atlas_texture": "textures/dressing_palette_atlas.png",
+  "roughness_atlas_texture": "textures/dressing_roughness_atlas.png",
   "atlas_grid": {
     "cols": 8,
     "rows": 8,

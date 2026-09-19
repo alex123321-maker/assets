@@ -2,8 +2,8 @@
 
 ## Objective Build Verification
 - [x] Required review renders generated (iso.png, front.png, side.png, top.png at 512x512).
-- [x] Export validated (model.glb, glTF 2.0, 4836 bytes, 1 mesh, 1 shared material).
-- [x] Shared production material verified (`mat_dressing_atlas` mapped via UVMap to `dressing_palette_atlas.png`).
+- [x] Export validated (model.glb, glTF 2.0, 5224 bytes, 1 mesh, 1 shared material).
+- [x] Shared production material verified (`mat_dressing_atlas` mapped via UVMap to baseColor & metallic-roughness atlases).
 - [x] Material count is within budget (1 shared material <= 4).
 - [x] Triangle count verified (44 tris <= 500 budget).
 - [x] Internal faces culled (22 visible faces).
@@ -16,7 +16,7 @@
 - Visible faces: 22
 - Mesh objects: 1
 - Materials: 1
-- Shared material: `mat_dressing_atlas` (atlas: `dressing_palette_atlas.png`)
+- Shared material: `mat_dressing_atlas` (albedo atlas: `dressing_palette_atlas.png`, roughness atlas: `dressing_roughness_atlas.png`)
 - Grid dimensions: 3x2x3 (voxel_size: 0.1m)
 - World dimensions: 0.30m x 0.20m x 0.30m
 - Engine: BLENDER_EEVEE (5.2.1 LTS)

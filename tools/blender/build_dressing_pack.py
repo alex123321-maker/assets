@@ -114,6 +114,12 @@ def validate_glb_export(glb_path: Path) -> dict:
             raise RuntimeError("GLB contains no meshes")
         if len(materials) != 1:
             raise RuntimeError(f"GLB expected exactly 1 shared material, found {len(materials)}")
+        mat0 = materials[0]
+        pbr = mat0.get("pbrMetallicRoughness", {})
+        if "baseColorTexture" not in pbr:
+            raise RuntimeError("GLB material missing baseColorTexture")
+        if "metallicRoughnessTexture" not in pbr:
+            raise RuntimeError("GLB material missing metallicRoughnessTexture")
     return {"size_bytes": size, "version": version, "meshes": len(meshes), "materials": len(materials)}
 
 
@@ -129,8 +135,8 @@ def get_or_create_shared_atlas_material() -> bpy.types.Material:
 
     output = nodes.new(type="ShaderNodeOutputMaterial")
     bsdf = nodes.new(type="ShaderNodeBsdfPrincipled")
-    bsdf.inputs["Roughness"].default_value = 0.88
-    bsdf.inputs["Metallic"].default_value = 0.0
+    bsdf.inputs["Roughness"].default_value = 1.0
+    bsdf.inputs["Metallic"].default_value = 1.0
 
     tex_path = TEXTURES_DIR / "dressing_palette_atlas.png"
     if tex_path.exists():
@@ -142,6 +148,19 @@ def get_or_create_shared_atlas_material() -> bpy.types.Material:
         links.new(tex_node.outputs["Color"], bsdf.inputs["Base Color"])
     else:
         bsdf.inputs["Base Color"].default_value = (0.3, 0.5, 0.2, 1.0)
+
+    roughness_path = TEXTURES_DIR / "dressing_roughness_atlas.png"
+    if roughness_path.exists():
+        mr_node = nodes.new(type="ShaderNodeTexImage")
+        mr_img = bpy.data.images.load(str(roughness_path))
+        mr_img.colorspace_settings.name = "Non-Color"
+        mr_node.image = mr_img
+        mr_node.interpolation = "Closest"
+
+        sep = nodes.new(type="ShaderNodeSeparateColor")
+        links.new(mr_node.outputs["Color"], sep.inputs["Color"])
+        links.new(sep.outputs["Green"], bsdf.inputs["Roughness"])
+        links.new(sep.outputs["Blue"], bsdf.inputs["Metallic"])
 
     links.new(bsdf.outputs["BSDF"], output.inputs["Surface"])
     return mat
@@ -285,6 +304,7 @@ def build_dressing_mesh(data: dict) -> tuple[bpy.types.Object, dict]:
         "materials": 1,
         "shared_material": "mat_dressing_atlas",
         "atlas_texture": "dressing_palette_atlas.png",
+        "roughness_atlas_texture": "dressing_roughness_atlas.png",
         "grid": {"x": width, "y": height, "z": depth},
         "voxel_size": voxel_size,
         "world_size": {
@@ -327,7 +347,7 @@ def build_single_variant(slug: str) -> dict:
 ## Objective Build Verification
 - [x] Required review renders generated (iso.png, front.png, side.png, top.png at 512x512).
 - [x] Export validated ({output_path.name}, glTF 2.0, {glb_info['size_bytes']} bytes, {glb_info['meshes']} mesh, {glb_info['materials']} shared material).
-- [x] Shared production material verified (`mat_dressing_atlas` mapped via UVMap to `dressing_palette_atlas.png`).
+- [x] Shared production material verified (`mat_dressing_atlas` mapped via UVMap to baseColor & metallic-roughness atlases).
 - [x] Material count is within budget (1 shared material <= 4).
 - [x] Triangle count verified ({metrics['triangles']} tris <= 500 budget).
 - [x] Internal faces culled ({metrics['visible_faces']} visible faces).
@@ -340,7 +360,7 @@ def build_single_variant(slug: str) -> dict:
 - Visible faces: {metrics['visible_faces']}
 - Mesh objects: {metrics['mesh_objects']}
 - Materials: {metrics['materials']}
-- Shared material: `{metrics['shared_material']}` (atlas: `{metrics['atlas_texture']}`)
+- Shared material: `{metrics['shared_material']}` (albedo atlas: `{metrics['atlas_texture']}`, roughness atlas: `{metrics['roughness_atlas_texture']}`)
 - Grid dimensions: {metrics['grid']['x']}x{metrics['grid']['y']}x{metrics['grid']['z']} (voxel_size: {metrics['voxel_size']}m)
 - World dimensions: {metrics['world_size']['x']:.2f}m x {metrics['world_size']['y']:.2f}m x {metrics['world_size']['z']:.2f}m
 - Engine: {metrics['render_engine']} ({metrics['blender_version']})

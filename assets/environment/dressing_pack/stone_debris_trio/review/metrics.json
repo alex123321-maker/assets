@@ -6,6 +6,7 @@
   "materials": 1,
   "shared_material": "mat_dressing_atlas",
   "atlas_texture": "dressing_palette_atlas.png",
+  "roughness_atlas_texture": "dressing_roughness_atlas.png",
   "grid": {
     "x": 6,
     "y": 2,
