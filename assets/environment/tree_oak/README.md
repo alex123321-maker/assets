@@ -17,18 +17,23 @@
 ## Палитра материалов (PBR)
 
 Все варианты используют единую палитру из 3 материалов:
-1. `wood_bark` (`W`): тёплая тёмная кора дуба (#42291a), roughness 0.90;
-2. `foliage_base` (`D`): глубокая насыщенная лесная листва (#1f5226), roughness 0.85;
-3. `foliage_accent` (`L`): тёплый золотисто-зелёный акцент для верхних террас и освещённых шапок (#42852e), roughness 0.80.
+1. `wood_bark` (`W`): тёплая тёмная кора дуба (#4a2f1b), roughness 0.92, metallic 0.0;
+2. `foliage_base` (`D`): глубокая насыщенная лесная листва (#3b6b22), roughness 0.88, metallic 0.0;
+3. `foliage_accent` (`L`): тёплый золотисто-зелёный акцент для верхних террас и освещённых шапок (#5e932b), roughness 0.82, metallic 0.0.
 
 ## Структура пакета
 
 ```text
 assets/environment/tree_oak/
 ├── README.md
+├── references/
+│   ├── README.md
+│   └── tree_concept_reference.png
 ├── review/
 │   ├── contact_sheet.png
 │   ├── comparison_sheet.png
+│   ├── reference_vs_3d_comparison.png
+│   ├── variants_concept_vs_3d.png
 │   ├── gameplay_mockup.png
 │   ├── metrics_summary.json
 │   └── review.md

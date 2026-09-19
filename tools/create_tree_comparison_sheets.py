@@ -55,7 +55,7 @@ def create_family_comparison() -> Path:
     canvas.paste(ref_resized, (ref_x, ref_y))
     draw.text(
         (ref_x + 10, pad + 15),
-        "PROPOSED CONCEPT REFERENCE (Cube Siege Oak Tree Family — slots 0..4)",
+        "APPROVED CONCEPT REFERENCE (Cube Siege Oak Tree Family — slots 0..4)",
         fill=(240, 240, 240),
         font=font_large,
     )
