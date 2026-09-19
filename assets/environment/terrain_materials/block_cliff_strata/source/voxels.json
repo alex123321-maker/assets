@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "name": "terrain_cliff_strata_block",
+  "voxel_size": 1.0,
+  "origin": "bottom_center",
+  "materials": {
+    "S": {
+      "name": "mat_cliff_side",
+      "base_color": [
+        0.33,
+        0.31,
+        0.3,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0,
+      "texture": "assets/environment/terrain_materials/textures/cliff_side.png"
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "S"
+      ]
+    }
+  ]
+}

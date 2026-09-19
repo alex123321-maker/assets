@@ -1,0 +1,269 @@
+{
+  "version": 1,
+  "resolution": 16,
+  "materials": [
+    "forest_grass_top",
+    "plains_meadow_top",
+    "mountain_stone_top",
+    "cliff_side",
+    "dirt_soil"
+  ],
+  "patterns": {
+    "forest_grass_top": [
+      "BBMMBLMBBMMMBLBB",
+      "BMMLLMMBMMLMMBBB",
+      "MMLLMMMMLLLLMMBM",
+      "MLLMMBBMLMMMBBMM",
+      "MMMBBBBBMMBBBMML",
+      "BBBDDBBBBDDBMMLL",
+      "BBDDDDDBBDDDBBMM",
+      "DDDBBBDDDBBBBBBB",
+      "BBBBMMBBBBBBBBBD",
+      "BBBMLMMBBBBMMLBB",
+      "MBMLLLMMBBMMLMBB",
+      "MMLLALMMMMMLLMMM",
+      "LMLLLLMMBBMLMMMB",
+      "MMBMMMBBBBBMMBBM",
+      "BBBBBBDDBBBBBBBB",
+      "BBMMBBBDDBBMMMBL"
+    ],
+    "plains_meadow_top": [
+      "MMLLMMMMMLLMMMMM",
+      "MLLYLLMMMLLLLMMM",
+      "LLYYLMMBMLLLLMML",
+      "LLLLMMBBBMMMMMML",
+      "MMLMMBBDDBBMMMML",
+      "MMMBBDDDDBBBBMMM",
+      "BBBBBDDBDDBBBBBB",
+      "BBMBBBBBBBBBMMBB",
+      "MBMMMBBBBMMMLLMB",
+      "MMLLMMBBMMLLLLMM",
+      "LLLLLMBMMLLYLMML",
+      "LYLLMMBMLLYYLMML",
+      "LLLMYBBMMLLLMMMM",
+      "MMMMBBBBMMMMMBBM",
+      "MMMBBBDBBMMMBBMM",
+      "MMMMMBBBBMMLLMMM"
+    ],
+    "mountain_stone_top": [
+      "SSMMMSSBSSBSSMSS",
+      "SMLHHLLBSBBDMMMS",
+      "MLLHHLLMSBDDDDMM",
+      "MLLLLLMMSBDDDBMM",
+      "SMMLLMMSSBBDDDBS",
+      "SSSSSSSSSBBDDBBS",
+      "BSSSSSSBBBDDDBBB",
+      "BBBDDDBBBDDDDBBB",
+      "BBBDDBBSSSSSSBBB",
+      "SBDDBSMMMSSSSSSS",
+      "SBDDBSMLHHLLMMSS",
+      "MBDDBMLLHHLLLMMS",
+      "MBDDBSMLLLLLMMSS",
+      "SBDDBSMMLLMMSSSS",
+      "SSBBDSSSSSSSSSSS",
+      "SSMMMSSBSSBSSMSS"
+    ],
+    "cliff_side": [
+      "BBSSSSBBBBSSSSBB",
+      "BSMMMSBBBSMMMSBB",
+      "SMMLMMSSSMLMMMSS",
+      "SMLHLMMSSMLHLMSS",
+      "SSMLMSSBBSMMMSSS",
+      "BSSSSBBDBBSSSSBB",
+      "BBBDDDBDDBBBDDBB",
+      "BDDDDBDBDDBDDDDB",
+      "BBBDDBBBBDDDBBBB",
+      "BSSSSBBBBBSSSSBB",
+      "SSMMSSBBBSSMMSSS",
+      "SMMLMSSBSMMLLMSS",
+      "SMLHLMSSMLLHLMSS",
+      "SSMLMSSSSMLLMSSS",
+      "BSSMSBBBSSMMSSBB",
+      "BBSSSSBBBBSSSSBB"
+    ],
+    "dirt_soil": [
+      "SSMMSSBBSSMMSSBS",
+      "SMMLMSBBSMMLLMSS",
+      "MMLHLMSSMMLLMSSM",
+      "MLLLMSSBSMLMSSBM",
+      "SMMMSBBDBSSSSBDB",
+      "BSSSBBDDDBBBBDDB",
+      "BBDDBSBBDDBBDDBB",
+      "BBBDDDBBBDDDDBBB",
+      "BSBBDDBSBBDDBBSB",
+      "SSSSBBSSSBBDSSSS",
+      "SMMSSBSMMLMSBSMM",
+      "MLLMSMLLHLMSMLLM",
+      "MLHLMMLLLMSSMLLM",
+      "SMLMSSMMMMSBSMMS",
+      "SSMSSBBSSBBBSSSS",
+      "SSMMSSBBSSMMSSBS"
+    ]
+  },
+  "atlas": {
+    "resolution": 64,
+    "cell_size": 16,
+    "grid_cells": {
+      "forest_grass_top": {
+        "x": 0,
+        "y": 0,
+        "uv": [
+          0.0,
+          0.0,
+          0.25,
+          0.25
+        ]
+      },
+      "plains_meadow_top": {
+        "x": 1,
+        "y": 0,
+        "uv": [
+          0.25,
+          0.0,
+          0.5,
+          0.25
+        ]
+      },
+      "mountain_stone_top": {
+        "x": 2,
+        "y": 0,
+        "uv": [
+          0.5,
+          0.0,
+          0.75,
+          0.25
+        ]
+      },
+      "cliff_side": {
+        "x": 3,
+        "y": 0,
+        "uv": [
+          0.75,
+          0.0,
+          1.0,
+          0.25
+        ]
+      },
+      "dirt_soil": {
+        "x": 0,
+        "y": 1,
+        "uv": [
+          0.0,
+          0.25,
+          0.25,
+          0.5
+        ]
+      },
+      "forest_side_edge": {
+        "x": 1,
+        "y": 1,
+        "uv": [
+          0.25,
+          0.25,
+          0.5,
+          0.5
+        ]
+      },
+      "plains_side_edge": {
+        "x": 2,
+        "y": 1,
+        "uv": [
+          0.5,
+          0.25,
+          0.75,
+          0.5
+        ]
+      },
+      "stone_cliff_rim": {
+        "x": 3,
+        "y": 1,
+        "uv": [
+          0.75,
+          0.25,
+          1.0,
+          0.5
+        ]
+      },
+      "rocky_dirt_path": {
+        "x": 0,
+        "y": 2,
+        "uv": [
+          0.0,
+          0.5,
+          0.25,
+          0.75
+        ]
+      },
+      "forest_path_wear": {
+        "x": 1,
+        "y": 2,
+        "uv": [
+          0.25,
+          0.5,
+          0.5,
+          0.75
+        ]
+      },
+      "mountain_scree": {
+        "x": 2,
+        "y": 2,
+        "uv": [
+          0.5,
+          0.5,
+          0.75,
+          0.75
+        ]
+      },
+      "cliff_shaded_deep": {
+        "x": 3,
+        "y": 2,
+        "uv": [
+          0.75,
+          0.5,
+          1.0,
+          0.75
+        ]
+      },
+      "mossy_rock_variant": {
+        "x": 0,
+        "y": 3,
+        "uv": [
+          0.0,
+          0.75,
+          0.25,
+          1.0
+        ]
+      },
+      "dry_sunny_grass": {
+        "x": 1,
+        "y": 3,
+        "uv": [
+          0.25,
+          0.75,
+          0.5,
+          1.0
+        ]
+      },
+      "dense_dark_earth": {
+        "x": 2,
+        "y": 3,
+        "uv": [
+          0.5,
+          0.75,
+          0.75,
+          1.0
+        ]
+      },
+      "cliff_crest_lip": {
+        "x": 3,
+        "y": 3,
+        "uv": [
+          0.75,
+          0.75,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  }
+}

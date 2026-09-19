@@ -1,0 +1,144 @@
+{
+  "asset_family": "terrain_materials",
+  "issue": 6,
+  "texture_format": "PNG (RGBA8)",
+  "filter_mode": "TEXTURE_FILTER_NEAREST",
+  "textures": {
+    "forest_grass_top": {
+      "resolution": [
+        16,
+        16
+      ],
+      "roughness": 0.85,
+      "tileability_test": "PASS (6x6 verified)",
+      "format": "RGBA8"
+    },
+    "plains_meadow_top": {
+      "resolution": [
+        16,
+        16
+      ],
+      "roughness": 0.85,
+      "tileability_test": "PASS (6x6 verified)",
+      "format": "RGBA8"
+    },
+    "mountain_stone_top": {
+      "resolution": [
+        16,
+        16
+      ],
+      "roughness": 0.9,
+      "tileability_test": "PASS (6x6 verified)",
+      "format": "RGBA8"
+    },
+    "cliff_side": {
+      "resolution": [
+        16,
+        16
+      ],
+      "roughness": 0.92,
+      "tileability_test": "PASS (6x6 verified)",
+      "format": "RGBA8"
+    },
+    "dirt_soil": {
+      "resolution": [
+        16,
+        16
+      ],
+      "roughness": 0.92,
+      "tileability_test": "PASS (6x6 verified)",
+      "format": "RGBA8"
+    }
+  },
+  "atlas": {
+    "name": "terrain_atlas.png",
+    "resolution": [
+      64,
+      64
+    ],
+    "total_regions": 16,
+    "region_size": [
+      16,
+      16
+    ],
+    "channels": "RGBA8",
+    "draw_calls": 1
+  },
+  "showcase_blocks": {
+    "block_forest_grass": {
+      "occupied_voxels": 1,
+      "triangles": 12,
+      "visible_faces": 6,
+      "grid": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "world_size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      }
+    },
+    "block_plains_meadow": {
+      "occupied_voxels": 1,
+      "triangles": 12,
+      "visible_faces": 6,
+      "grid": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "world_size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      }
+    },
+    "block_mountain_stone": {
+      "occupied_voxels": 1,
+      "triangles": 12,
+      "visible_faces": 6,
+      "grid": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "world_size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      }
+    },
+    "block_cliff_strata": {
+      "occupied_voxels": 1,
+      "triangles": 12,
+      "visible_faces": 6,
+      "grid": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "world_size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      }
+    },
+    "block_dirt_soil": {
+      "occupied_voxels": 1,
+      "triangles": 12,
+      "visible_faces": 6,
+      "grid": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "world_size": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "name": "terrain_dirt_soil_block",
+  "voxel_size": 1.0,
+  "origin": "bottom_center",
+  "materials": {
+    "D": {
+      "name": "mat_dirt_soil",
+      "base_color": [
+        0.35,
+        0.25,
+        0.17,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0,
+      "texture": "assets/environment/terrain_materials/textures/dirt_soil.png"
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "D"
+      ]
+    }
+  ]
+}

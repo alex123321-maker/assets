@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "name": "terrain_plains_meadow_block",
+  "voxel_size": 1.0,
+  "origin": "bottom_center",
+  "materials": {
+    "B": {
+      "name": "terrain_plains_meadow_block",
+      "base_color": [
+        0.36,
+        0.55,
+        0.18,
+        1.0
+      ],
+      "face_materials": {
+        "+Z": "T",
+        "-Z": "D",
+        "+X": "S",
+        "-X": "S",
+        "+Y": "S",
+        "-Y": "S"
+      }
+    },
+    "T": {
+      "name": "mat_plains_meadow_top",
+      "base_color": [
+        0.36,
+        0.55,
+        0.18,
+        1.0
+      ],
+      "roughness": 0.85,
+      "metallic": 0.0,
+      "texture": "assets/environment/terrain_materials/textures/plains_meadow_top.png"
+    },
+    "S": {
+      "name": "mat_cliff_side",
+      "base_color": [
+        0.33,
+        0.31,
+        0.3,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0,
+      "texture": "assets/environment/terrain_materials/textures/cliff_side.png"
+    },
+    "D": {
+      "name": "mat_dirt_soil",
+      "base_color": [
+        0.35,
+        0.25,
+        0.17,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0,
+      "texture": "assets/environment/terrain_materials/textures/dirt_soil.png"
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "B"
+      ]
+    }
+  ]
+}

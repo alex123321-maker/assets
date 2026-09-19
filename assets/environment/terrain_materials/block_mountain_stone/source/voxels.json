@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "name": "terrain_mountain_stone_block",
+  "voxel_size": 1.0,
+  "origin": "bottom_center",
+  "materials": {
+    "B": {
+      "name": "terrain_mountain_stone_block",
+      "base_color": [
+        0.49,
+        0.47,
+        0.45,
+        1.0
+      ],
+      "face_materials": {
+        "+Z": "T",
+        "-Z": "S",
+        "+X": "S",
+        "-X": "S",
+        "+Y": "S",
+        "-Y": "S"
+      }
+    },
+    "T": {
+      "name": "mat_mountain_stone_top",
+      "base_color": [
+        0.49,
+        0.47,
+        0.45,
+        1.0
+      ],
+      "roughness": 0.9,
+      "metallic": 0.0,
+      "texture": "assets/environment/terrain_materials/textures/mountain_stone_top.png"
+    },
+    "S": {
+      "name": "mat_cliff_side",
+      "base_color": [
+        0.33,
+        0.31,
+        0.3,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0,
+      "texture": "assets/environment/terrain_materials/textures/cliff_side.png"
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "B"
+      ]
+    }
+  ]
+}
