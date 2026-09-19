@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "name": "moss_tree_base",
+  "voxel_size": 0.1,
+  "origin": "bottom_center",
+  "materials": {
+    "D": {
+      "name": "moss_dark",
+      "base_color": [
+        0.15,
+        0.28,
+        0.09,
+        1.0
+      ],
+      "roughness": 0.95,
+      "metallic": 0.0
+    },
+    "M": {
+      "name": "moss_primary",
+      "base_color": [
+        0.26,
+        0.44,
+        0.16,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0
+    },
+    "L": {
+      "name": "moss_light",
+      "base_color": [
+        0.4,
+        0.62,
+        0.22,
+        1.0
+      ],
+      "roughness": 0.86,
+      "metallic": 0.0
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "......",
+        "..DD..",
+        ".DMMD.",
+        "DMM.M.",
+        ".MD...",
+        "..D..."
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "......",
+        "...L..",
+        "..ML..",
+        ".M....",
+        "......",
+        "......"
+      ]
+    }
+  ]
+}

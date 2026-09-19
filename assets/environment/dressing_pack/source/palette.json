@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "description": "Cube Siege Environment Dressing Pack Canonical Palettes (Issue #7)",
+  "families": {
+    "grass": {
+      "G": {
+        "name": "grass_primary",
+        "base_color": [
+          0.28,
+          0.52,
+          0.16,
+          1.0
+        ],
+        "roughness": 0.88,
+        "metallic": 0.0
+      },
+      "D": {
+        "name": "grass_base",
+        "base_color": [
+          0.18,
+          0.35,
+          0.11,
+          1.0
+        ],
+        "roughness": 0.92,
+        "metallic": 0.0
+      },
+      "L": {
+        "name": "grass_tip",
+        "base_color": [
+          0.42,
+          0.68,
+          0.22,
+          1.0
+        ],
+        "roughness": 0.82,
+        "metallic": 0.0
+      }
+    },
+    "flowers": {
+      "G": {
+        "name": "flower_stem",
+        "base_color": [
+          0.25,
+          0.48,
+          0.15,
+          1.0
+        ],
+        "roughness": 0.88,
+        "metallic": 0.0
+      },
+      "D": {
+        "name": "flower_stem_dark",
+        "base_color": [
+          0.16,
+          0.32,
+          0.1,
+          1.0
+        ],
+        "roughness": 0.92,
+        "metallic": 0.0
+      },
+      "W": {
+        "name": "petal_white",
+        "base_color": [
+          0.92,
+          0.92,
+          0.88,
+          1.0
+        ],
+        "roughness": 0.8,
+        "metallic": 0.0
+      },
+      "Y": {
+        "name": "center_gold",
+        "base_color": [
+          0.96,
+          0.78,
+          0.12,
+          1.0
+        ],
+        "roughness": 0.75,
+        "metallic": 0.0
+      },
+      "O": {
+        "name": "center_amber",
+        "base_color": [
+          0.85,
+          0.5,
+          0.1,
+          1.0
+        ],
+        "roughness": 0.8,
+        "metallic": 0.0
+      },
+      "R": {
+        "name": "petal_red",
+        "base_color": [
+          0.86,
+          0.22,
+          0.15,
+          1.0
+        ],
+        "roughness": 0.8,
+        "metallic": 0.0
+      },
+      "C": {
+        "name": "center_dark",
+        "base_color": [
+          0.2,
+          0.1,
+          0.1,
+          1.0
+        ],
+        "roughness": 0.85,
+        "metallic": 0.0
+      },
+      "P": {
+        "name": "petal_purple",
+        "base_color": [
+          0.56,
+          0.38,
+          0.84,
+          1.0
+        ],
+        "roughness": 0.75,
+        "metallic": 0.0
+      },
+      "B": {
+        "name": "petal_blue",
+        "base_color": [
+          0.32,
+          0.54,
+          0.9,
+          1.0
+        ],
+        "roughness": 0.75,
+        "metallic": 0.0
+      }
+    },
+    "moss": {
+      "M": {
+        "name": "moss_primary",
+        "base_color": [
+          0.26,
+          0.44,
+          0.16,
+          1.0
+        ],
+        "roughness": 0.92,
+        "metallic": 0.0
+      },
+      "D": {
+        "name": "moss_dark",
+        "base_color": [
+          0.15,
+          0.28,
+          0.09,
+          1.0
+        ],
+        "roughness": 0.95,
+        "metallic": 0.0
+      },
+      "L": {
+        "name": "moss_light",
+        "base_color": [
+          0.4,
+          0.62,
+          0.22,
+          1.0
+        ],
+        "roughness": 0.86,
+        "metallic": 0.0
+      }
+    },
+    "stone_debris": {
+      "S": {
+        "name": "stone_primary",
+        "base_color": [
+          0.24,
+          0.22,
+          0.2,
+          1.0
+        ],
+        "roughness": 0.88,
+        "metallic": 0.0
+      },
+      "D": {
+        "name": "stone_dark",
+        "base_color": [
+          0.11,
+          0.1,
+          0.1,
+          1.0
+        ],
+        "roughness": 0.94,
+        "metallic": 0.0
+      },
+      "L": {
+        "name": "stone_light",
+        "base_color": [
+          0.45,
+          0.43,
+          0.4,
+          1.0
+        ],
+        "roughness": 0.82,
+        "metallic": 0.0
+      },
+      "M": {
+        "name": "stone_moss",
+        "base_color": [
+          0.17,
+          0.2,
+          0.09,
+          1.0
+        ],
+        "roughness": 0.95,
+        "metallic": 0.0
+      }
+    }
+  }
+}

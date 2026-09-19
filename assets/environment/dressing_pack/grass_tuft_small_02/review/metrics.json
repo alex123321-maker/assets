@@ -1,0 +1,20 @@
+{
+  "occupied_voxels": 7,
+  "visible_faces": 36,
+  "triangles": 72,
+  "mesh_objects": 3,
+  "materials": 3,
+  "grid": {
+    "x": 5,
+    "y": 2,
+    "z": 5
+  },
+  "voxel_size": 0.1,
+  "world_size": {
+    "x": 0.5,
+    "y": 0.2,
+    "z": 0.5
+  },
+  "blender_version": "5.2.1 LTS",
+  "render_engine": "BLENDER_EEVEE"
+}

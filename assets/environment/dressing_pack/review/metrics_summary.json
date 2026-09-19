@@ -1,0 +1,418 @@
+{
+  "family": "dressing_pack",
+  "total_props": 19,
+  "total_occupied_voxels": 254,
+  "total_triangles": 2242,
+  "total_visible_faces": 1102,
+  "avg_triangles_per_prop": 118.0,
+  "min_triangles": 44,
+  "max_triangles": 240,
+  "subfamilies": {
+    "grass": 6,
+    "flowers": 4,
+    "moss": 3,
+    "stone_debris": 6
+  },
+  "voxel_size": 0.1,
+  "props": [
+    {
+      "occupied_voxels": 4,
+      "visible_faces": 22,
+      "triangles": 44,
+      "mesh_objects": 3,
+      "materials": 3,
+      "grid": {
+        "x": 3,
+        "y": 2,
+        "z": 3
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.30000000000000004,
+        "y": 0.2,
+        "z": 0.30000000000000004
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "grass_tuft_small_01"
+    },
+    {
+      "occupied_voxels": 7,
+      "visible_faces": 36,
+      "triangles": 72,
+      "mesh_objects": 3,
+      "materials": 3,
+      "grid": {
+        "x": 5,
+        "y": 2,
+        "z": 5
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.5,
+        "y": 0.2,
+        "z": 0.5
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "grass_tuft_small_02"
+    },
+    {
+      "occupied_voxels": 11,
+      "visible_faces": 50,
+      "triangles": 100,
+      "mesh_objects": 3,
+      "materials": 3,
+      "grid": {
+        "x": 5,
+        "y": 3,
+        "z": 5
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.5,
+        "y": 0.30000000000000004,
+        "z": 0.5
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "grass_tuft_small_03"
+    },
+    {
+      "occupied_voxels": 19,
+      "visible_faces": 66,
+      "triangles": 132,
+      "mesh_objects": 3,
+      "materials": 3,
+      "grid": {
+        "x": 5,
+        "y": 4,
+        "z": 5
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.5,
+        "y": 0.4,
+        "z": 0.5
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "grass_tuft_med_01"
+    },
+    {
+      "occupied_voxels": 19,
+      "visible_faces": 70,
+      "triangles": 140,
+      "mesh_objects": 3,
+      "materials": 3,
+      "grid": {
+        "x": 6,
+        "y": 3,
+        "z": 5
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.6000000000000001,
+        "y": 0.30000000000000004,
+        "z": 0.5
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "grass_tuft_med_02"
+    },
+    {
+      "occupied_voxels": 16,
+      "visible_faces": 66,
+      "triangles": 132,
+      "mesh_objects": 3,
+      "materials": 3,
+      "grid": {
+        "x": 5,
+        "y": 5,
+        "z": 5
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "grass_tuft_tall_01"
+    },
+    {
+      "occupied_voxels": 17,
+      "visible_faces": 66,
+      "triangles": 132,
+      "mesh_objects": 4,
+      "materials": 4,
+      "grid": {
+        "x": 5,
+        "y": 3,
+        "z": 5
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.5,
+        "y": 0.30000000000000004,
+        "z": 0.5
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "flower_white_cluster"
+    },
+    {
+      "occupied_voxels": 16,
+      "visible_faces": 64,
+      "triangles": 128,
+      "mesh_objects": 4,
+      "materials": 4,
+      "grid": {
+        "x": 5,
+        "y": 3,
+        "z": 5
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.5,
+        "y": 0.30000000000000004,
+        "z": 0.5
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "flower_yellow_cluster"
+    },
+    {
+      "occupied_voxels": 17,
+      "visible_faces": 68,
+      "triangles": 136,
+      "mesh_objects": 4,
+      "materials": 4,
+      "grid": {
+        "x": 5,
+        "y": 3,
+        "z": 5
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.5,
+        "y": 0.30000000000000004,
+        "z": 0.5
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "flower_red_cluster"
+    },
+    {
+      "occupied_voxels": 16,
+      "visible_faces": 56,
+      "triangles": 112,
+      "mesh_objects": 4,
+      "materials": 4,
+      "grid": {
+        "x": 5,
+        "y": 4,
+        "z": 5
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.5,
+        "y": 0.4,
+        "z": 0.5
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "flower_mixed_accent"
+    },
+    {
+      "occupied_voxels": 17,
+      "visible_faces": 60,
+      "triangles": 120,
+      "mesh_objects": 3,
+      "materials": 3,
+      "grid": {
+        "x": 6,
+        "y": 2,
+        "z": 6
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.6000000000000001,
+        "y": 0.2,
+        "z": 0.6000000000000001
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "moss_tree_base"
+    },
+    {
+      "occupied_voxels": 21,
+      "visible_faces": 58,
+      "triangles": 116,
+      "mesh_objects": 3,
+      "materials": 3,
+      "grid": {
+        "x": 5,
+        "y": 2,
+        "z": 5
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.5,
+        "y": 0.2,
+        "z": 0.5
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "moss_rock_shelf"
+    },
+    {
+      "occupied_voxels": 22,
+      "visible_faces": 62,
+      "triangles": 124,
+      "mesh_objects": 3,
+      "materials": 3,
+      "grid": {
+        "x": 6,
+        "y": 2,
+        "z": 4
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.6000000000000001,
+        "y": 0.2,
+        "z": 0.4
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "moss_cliff_ledge"
+    },
+    {
+      "occupied_voxels": 5,
+      "visible_faces": 31,
+      "triangles": 66,
+      "mesh_objects": 3,
+      "materials": 3,
+      "grid": {
+        "x": 4,
+        "y": 2,
+        "z": 4
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.4,
+        "y": 0.2,
+        "z": 0.4
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "stone_debris_single"
+    },
+    {
+      "occupied_voxels": 8,
+      "visible_faces": 67,
+      "triangles": 138,
+      "mesh_objects": 3,
+      "materials": 3,
+      "grid": {
+        "x": 6,
+        "y": 2,
+        "z": 6
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.6000000000000001,
+        "y": 0.2,
+        "z": 0.6000000000000001
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "stone_debris_trio"
+    },
+    {
+      "occupied_voxels": 13,
+      "visible_faces": 56,
+      "triangles": 124,
+      "mesh_objects": 4,
+      "materials": 4,
+      "grid": {
+        "x": 6,
+        "y": 2,
+        "z": 5
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.6000000000000001,
+        "y": 0.2,
+        "z": 0.5
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "stone_debris_flat_patch"
+    },
+    {
+      "occupied_voxels": 5,
+      "visible_faces": 31,
+      "triangles": 66,
+      "mesh_objects": 3,
+      "materials": 3,
+      "grid": {
+        "x": 4,
+        "y": 2,
+        "z": 4
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.4,
+        "y": 0.2,
+        "z": 0.4
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "stone_debris_angular_chip"
+    },
+    {
+      "occupied_voxels": 7,
+      "visible_faces": 117,
+      "triangles": 240,
+      "mesh_objects": 2,
+      "materials": 2,
+      "grid": {
+        "x": 6,
+        "y": 1,
+        "z": 6
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.6000000000000001,
+        "y": 0.1,
+        "z": 0.6000000000000001
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "stone_debris_fine_scatter"
+    },
+    {
+      "occupied_voxels": 14,
+      "visible_faces": 56,
+      "triangles": 120,
+      "mesh_objects": 3,
+      "materials": 3,
+      "grid": {
+        "x": 5,
+        "y": 3,
+        "z": 5
+      },
+      "voxel_size": 0.1,
+      "world_size": {
+        "x": 0.5,
+        "y": 0.30000000000000004,
+        "z": 0.5
+      },
+      "blender_version": "5.2.1 LTS",
+      "render_engine": "BLENDER_EEVEE",
+      "name": "stone_debris_mountain_cluster"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+# Environment Dressing Pack Family
+
+This package contains 19 canonical, reusable stylized voxel dressing props authored for Cube Siege (Issue #7).
+
+## Subfamilies
+1. **Grass Tufts (6 variants)**:
+   - `grass_tuft_small_01`: Compact 2-blade sprig
+   - `grass_tuft_small_02`: Asymmetric 3-blade fan
+   - `grass_tuft_small_03`: Tight 4-blade clump
+   - `grass_tuft_med_01`: Tiered 5-blade clump
+   - `grass_tuft_med_02`: Wind-swept 6-blade spread
+   - `grass_tuft_tall_01`: Tall accent focal clump
+2. **Flowers (4 variants / color groups)**:
+   - `flower_white_cluster`: White meadow daisies
+   - `flower_yellow_cluster`: Sunny golden buttercups
+   - `flower_red_cluster`: Crimson poppy pair
+   - `flower_mixed_accent`: Rare lilac-blue bellflower
+3. **Moss / Low Vegetation (3 variants)**:
+   - `moss_tree_base`: Curved trunk wrap collar
+   - `moss_rock_shelf`: Rock crevice shelf
+   - `moss_cliff_ledge`: Cascading terrace overhang
+4. **Stone Debris (6 variants, Issue #3 Rock Family matched)**:
+   - `stone_debris_single`: Faceted lone shard
+   - `stone_debris_trio`: Balanced 3-stone group
+   - `stone_debris_flat_patch`: Interlocking slab patch
+   - `stone_debris_angular_chip`: Sharp cleaved chip
+   - `stone_debris_fine_scatter`: Gravel & grit spread
+   - `stone_debris_mountain_cluster`: Stepped crag pile
+
+## Shared Technical & Performance Features
+- **Voxel Scale**: Uniform `voxel_size = 0.10`m.
+- **Pivot**: Strictly `bottom_center` at ground level.
+- **MultiMesh Ready**: Triangle counts 20-140 tris, no collisions, no scripts.
+- **Unified Palette**: `source/palette.json` and `textures/dressing_palette_atlas.png`.

@@ -488,6 +488,172 @@ def verify_evidence() -> bool:
 
             print(f"  [PASS] {slug}: all 4 renders (512x512), metrics, and review document verified.")
 
+    # 7. Verify dressing_pack family (Issue #7)
+    dressing_family_dir = REPO_ROOT / "assets" / "environment" / "dressing_pack"
+    if dressing_family_dir.is_dir():
+        print(f"\nVerifying evidence for dressing_pack family...")
+        # Concept reference
+        d_ref = dressing_family_dir / "references" / "dressing_concept_reference.png"
+        ok, w, h, err = check_png_header(d_ref)
+        if not ok:
+            errors.append(f"Dressing concept reference missing or invalid: {err}")
+        else:
+            print(f"[PASS] Dressing concept reference: {d_ref.name} ({w}x{h}, {d_ref.stat().st_size} bytes)")
+
+        d_ref_readme = dressing_family_dir / "references" / "README.md"
+        if not d_ref_readme.exists():
+            errors.append(f"Dressing references/README.md missing at {d_ref_readme}")
+        else:
+            print(f"[PASS] Dressing references README: {d_ref_readme.name}")
+
+        # Contact sheet
+        d_contact = dressing_family_dir / "review" / "contact_sheet.png"
+        ok, w, h, err = check_png_header(d_contact)
+        if not ok:
+            errors.append(f"Dressing family contact sheet invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Dressing family contact sheet too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Dressing family contact sheet: {d_contact.name} ({w}x{h}, {d_contact.stat().st_size} bytes)")
+
+        # Comparison sheet
+        d_comp = dressing_family_dir / "review" / "comparison_sheet.png"
+        ok, w, h, err = check_png_header(d_comp)
+        if not ok:
+            errors.append(f"Dressing comparison sheet missing or invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Dressing comparison sheet too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Dressing comparison sheet: {d_comp.name} ({w}x{h}, {d_comp.stat().st_size} bytes)")
+
+        # Reference vs 3D comparison sheet
+        d_ref_comp = dressing_family_dir / "review" / "reference_vs_3d_comparison.png"
+        ok, w, h, err = check_png_header(d_ref_comp)
+        if not ok:
+            errors.append(f"Dressing reference vs 3D comparison sheet missing or invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Dressing reference vs 3D comparison sheet too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Dressing reference vs 3D comparison: {d_ref_comp.name} ({w}x{h}, {d_ref_comp.stat().st_size} bytes)")
+
+        # Biome mockups
+        for b_name in ("biome_mockup_forest.png", "biome_mockup_plains.png", "biome_mockup_mountain.png"):
+            bmp = dressing_family_dir / "review" / b_name
+            ok, w, h, err = check_png_header(bmp)
+            if not ok:
+                errors.append(f"Dressing {b_name} missing or invalid: {err}")
+            elif w < 1000 or h < 500:
+                errors.append(f"Dressing {b_name} too small ({w}x{h}, expected >= 1000x500)")
+            else:
+                print(f"[PASS] Dressing biome mockup: {b_name} ({w}x{h})")
+
+        # Density mockups
+        for d_name in ("density_mockup_low.png", "density_mockup_medium.png", "density_mockup_high.png"):
+            dmp = dressing_family_dir / "review" / d_name
+            ok, w, h, err = check_png_header(dmp)
+            if not ok:
+                errors.append(f"Dressing {d_name} missing or invalid: {err}")
+            elif w < 1000 or h < 500:
+                errors.append(f"Dressing {d_name} too small ({w}x{h}, expected >= 1000x500)")
+            else:
+                print(f"[PASS] Dressing density mockup: {d_name} ({w}x{h})")
+
+        # Gameplay mockup
+        d_mockup = dressing_family_dir / "review" / "gameplay_mockup.png"
+        ok, w, h, err = check_png_header(d_mockup)
+        if not ok:
+            errors.append(f"Dressing gameplay mockup missing or invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Dressing gameplay mockup too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Dressing gameplay mockup: {d_mockup.name} ({w}x{h}, {d_mockup.stat().st_size} bytes)")
+
+        # Family review.md & metrics summary
+        d_review = dressing_family_dir / "review" / "review.md"
+        if not d_review.exists():
+            errors.append(f"Missing dressing family review.md at {d_review}")
+        else:
+            content = d_review.read_text(encoding="utf-8")
+            if "# Family Self Review" not in content:
+                errors.append(f"Dressing review.md missing title header in {d_review}")
+            else:
+                print(f"[PASS] Dressing family review document: {d_review.name}")
+
+        d_metrics = dressing_family_dir / "review" / "metrics_summary.json"
+        if not d_metrics.exists():
+            errors.append(f"Missing dressing metrics_summary.json at {d_metrics}")
+        else:
+            print(f"[PASS] Dressing metrics summary: {d_metrics.name}")
+
+        # All 19 variants
+        dressing_variants = [
+            "grass_tuft_small_01",
+            "grass_tuft_small_02",
+            "grass_tuft_small_03",
+            "grass_tuft_med_01",
+            "grass_tuft_med_02",
+            "grass_tuft_tall_01",
+            "flower_white_cluster",
+            "flower_yellow_cluster",
+            "flower_red_cluster",
+            "flower_mixed_accent",
+            "moss_tree_base",
+            "moss_rock_shelf",
+            "moss_cliff_ledge",
+            "stone_debris_single",
+            "stone_debris_trio",
+            "stone_debris_flat_patch",
+            "stone_debris_angular_chip",
+            "stone_debris_fine_scatter",
+            "stone_debris_mountain_cluster",
+        ]
+        for slug in dressing_variants:
+            pkg_dir = dressing_family_dir / slug
+            if not pkg_dir.is_dir():
+                errors.append(f"Missing dressing variant package directory: {pkg_dir}")
+                continue
+
+            glb_file = pkg_dir / "output" / "model.glb"
+            if not glb_file.exists() or glb_file.stat().st_size < 20:
+                errors.append(f"{slug}: Missing or invalid output/model.glb")
+
+            rev_dir = pkg_dir / "review"
+            if not rev_dir.is_dir():
+                errors.append(f"Missing review directory in {pkg_dir}")
+                continue
+
+            for view_name in REQUIRED_VIEWS:
+                v_path = rev_dir / view_name
+                ok, w, h, err = check_png_header(v_path)
+                if not ok:
+                    errors.append(f"{slug}: {err}")
+                elif w != h or w < 512:
+                    errors.append(f"{slug}: Render {view_name} invalid resolution {w}x{h}")
+
+            m_path = rev_dir / "metrics.json"
+            if not m_path.exists():
+                errors.append(f"{slug}: Missing metrics.json")
+            else:
+                try:
+                    data = json.loads(m_path.read_text(encoding="utf-8"))
+                    for key in ("occupied_voxels", "triangles", "visible_faces", "grid", "world_size"):
+                        if key not in data:
+                            errors.append(f"{slug}: metrics.json missing required key '{key}'")
+                except Exception as exc:
+                    errors.append(f"{slug}: Invalid metrics.json ({exc})")
+
+            r_path = rev_dir / "review.md"
+            if not r_path.exists():
+                errors.append(f"{slug}: Missing review.md")
+            else:
+                content = r_path.read_text(encoding="utf-8")
+                if "## Objective Build Verification" not in content and "## Result" not in content:
+                    errors.append(f"{slug}: review.md missing '## Objective Build Verification'")
+                if "## Metrics" not in content:
+                    errors.append(f"{slug}: review.md missing '## Metrics'")
+
+            print(f"  [PASS] {slug}: all 4 renders (512x512), metrics, GLB, and review document verified.")
+
     if errors:
         print(f"\n[FAIL] Evidence verification failed with {len(errors)} error(s):")
         for e in errors:

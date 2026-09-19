@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "name": "stone_debris_fine_scatter",
+  "voxel_size": 0.1,
+  "origin": "bottom_center",
+  "materials": {
+    "D": {
+      "name": "stone_dark",
+      "base_color": [
+        0.11,
+        0.1,
+        0.1,
+        1.0
+      ],
+      "roughness": 0.94,
+      "metallic": 0.0
+    },
+    "S": {
+      "name": "stone_primary",
+      "base_color": [
+        0.24,
+        0.22,
+        0.2,
+        1.0
+      ],
+      "roughness": 0.88,
+      "metallic": 0.0
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "......",
+        ".S..D.",
+        "...S..",
+        ".D..S.",
+        "..S...",
+        "....D."
+      ]
+    }
+  ]
+}

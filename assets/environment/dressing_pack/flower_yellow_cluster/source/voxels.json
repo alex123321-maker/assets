@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "name": "flower_yellow_cluster",
+  "voxel_size": 0.1,
+  "origin": "bottom_center",
+  "materials": {
+    "D": {
+      "name": "flower_stem_dark",
+      "base_color": [
+        0.16,
+        0.32,
+        0.1,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0
+    },
+    "G": {
+      "name": "flower_stem",
+      "base_color": [
+        0.25,
+        0.48,
+        0.15,
+        1.0
+      ],
+      "roughness": 0.88,
+      "metallic": 0.0
+    },
+    "Y": {
+      "name": "center_gold",
+      "base_color": [
+        0.96,
+        0.78,
+        0.12,
+        1.0
+      ],
+      "roughness": 0.75,
+      "metallic": 0.0
+    },
+    "O": {
+      "name": "center_amber",
+      "base_color": [
+        0.85,
+        0.5,
+        0.1,
+        1.0
+      ],
+      "roughness": 0.8,
+      "metallic": 0.0
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        ".....",
+        ".DG..",
+        "..GD.",
+        ".....",
+        "....."
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        ".Y...",
+        "..G.Y",
+        "..G..",
+        ".....",
+        "....."
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "YY...",
+        "YO.YY",
+        "...YO",
+        ".....",
+        "....."
+      ]
+    }
+  ]
+}

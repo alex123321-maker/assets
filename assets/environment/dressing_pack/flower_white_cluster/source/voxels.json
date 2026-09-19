@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "name": "flower_white_cluster",
+  "voxel_size": 0.1,
+  "origin": "bottom_center",
+  "materials": {
+    "D": {
+      "name": "flower_stem_dark",
+      "base_color": [
+        0.16,
+        0.32,
+        0.1,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0
+    },
+    "G": {
+      "name": "flower_stem",
+      "base_color": [
+        0.25,
+        0.48,
+        0.15,
+        1.0
+      ],
+      "roughness": 0.88,
+      "metallic": 0.0
+    },
+    "W": {
+      "name": "petal_white",
+      "base_color": [
+        0.92,
+        0.92,
+        0.88,
+        1.0
+      ],
+      "roughness": 0.8,
+      "metallic": 0.0
+    },
+    "Y": {
+      "name": "center_gold",
+      "base_color": [
+        0.96,
+        0.78,
+        0.12,
+        1.0
+      ],
+      "roughness": 0.75,
+      "metallic": 0.0
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        ".....",
+        "..D..",
+        ".DGD.",
+        "..D..",
+        "....."
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        ".W...",
+        "..G..",
+        "...W.",
+        "..G..",
+        "....."
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "WW...",
+        "WY...",
+        "..WW.",
+        "..WY.",
+        "....."
+      ]
+    }
+  ]
+}
