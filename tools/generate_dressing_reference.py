@@ -203,8 +203,11 @@ draw.text((1090, banner_y + 100), "• Budget: max 500 tris (actual: 44 - 240 tr
 draw.text((1090, banner_y + 120), "• Review Evidence: Full contact sheet, 3 density tests, 3 biome tests, gameplay isometric mockup", fill=(80, 200, 120), font=font)
 
 ref_img_path = REF_DIR / "dressing_concept_reference.png"
-canvas.save(ref_img_path, "PNG")
-print(f"[OK] Saved concept reference sheet to {ref_img_path} ({W}x{H})")
+if not ref_img_path.exists():
+    canvas.save(ref_img_path, "PNG")
+    print(f"[OK] Saved concept reference sheet to {ref_img_path} ({W}x{H})")
+else:
+    print(f"[INFO] Approved reference image exists at {ref_img_path}, preserving user reference art.")
 
 # 4. Generate references/README.md
 readme_content = """# References & Visual Contract: Environment Dressing Pack

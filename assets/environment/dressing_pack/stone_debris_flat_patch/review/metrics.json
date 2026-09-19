@@ -1,7 +1,7 @@
 {
-  "occupied_voxels": 13,
-  "visible_faces": 56,
-  "triangles": 124,
+  "occupied_voxels": 23,
+  "visible_faces": 80,
+  "triangles": 188,
   "mesh_objects": 1,
   "materials": 1,
   "shared_material": "mat_dressing_atlas",
@@ -10,13 +10,13 @@
   "grid": {
     "x": 6,
     "y": 2,
-    "z": 5
+    "z": 6
   },
   "voxel_size": 0.1,
   "world_size": {
     "x": 0.6000000000000001,
     "y": 0.2,
-    "z": 0.5
+    "z": 0.6000000000000001
   },
   "blender_version": "5.2.1 LTS",
   "render_engine": "BLENDER_EEVEE"

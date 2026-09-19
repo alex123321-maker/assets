@@ -9,7 +9,7 @@
 - **Origin / Pivot**: `bottom_center` at z=0 (ground contact)
 
 ## Role & Description
-Fine scatter of pebbles, chips, and grit for pathways and impact zones.
+Fine gravel and grit spread of discrete small pebbles.
 Designed for mass scatter-placement across Cube Siege biomes (Forest, Plains, Mountain).
 
 ## Visual & Runtime Constraints

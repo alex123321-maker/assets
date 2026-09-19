@@ -9,7 +9,7 @@
 - **Origin / Pivot**: `bottom_center` at z=0 (ground contact)
 
 ## Role & Description
-Rare lilac and blue bellflower accent bloom.
+Rare lilac and purple bellflower accent bloom.
 Designed for mass scatter-placement across Cube Siege biomes (Forest, Plains, Mountain).
 
 ## Visual & Runtime Constraints

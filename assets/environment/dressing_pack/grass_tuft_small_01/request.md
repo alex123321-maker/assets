@@ -1,4 +1,4 @@
-# Request: Small Grass Sprig 01 (Compact 2-Blade)
+# Request: Small Grass Sprig 01 (Compact 3-Blade)
 
 ## Metadata
 - **Asset Name**: `grass_tuft_small_01`

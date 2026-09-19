@@ -15,7 +15,7 @@
     ]
   },
   "budgets": {
-    "max_materials": 4,
+    "max_materials": 5,
     "max_triangles": 500
   }
 }

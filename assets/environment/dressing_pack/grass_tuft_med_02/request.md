@@ -9,7 +9,7 @@
 - **Origin / Pivot**: `bottom_center` at z=0 (ground contact)
 
 ## Role & Description
-Medium wind-swept spread with directional tilt.
+Medium wind-swept spread with prominent directional tilt.
 Designed for mass scatter-placement across Cube Siege biomes (Forest, Plains, Mountain).
 
 ## Visual & Runtime Constraints

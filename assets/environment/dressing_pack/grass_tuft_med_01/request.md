@@ -1,4 +1,4 @@
-# Request: Medium Grass Tuft 01 (Tiered 5-Blade)
+# Request: Medium Grass Tuft 01 (Tiered Multi-Blade)
 
 ## Metadata
 - **Asset Name**: `grass_tuft_med_01`
@@ -9,7 +9,7 @@
 - **Origin / Pivot**: `bottom_center` at z=0 (ground contact)
 
 ## Role & Description
-Medium tiered grass clump with stepped surrounding blades.
+Medium tiered grass clump with rich stepped blades.
 Designed for mass scatter-placement across Cube Siege biomes (Forest, Plains, Mountain).
 
 ## Visual & Runtime Constraints

@@ -1,7 +1,7 @@
 {
-  "occupied_voxels": 16,
-  "visible_faces": 66,
-  "triangles": 132,
+  "occupied_voxels": 40,
+  "visible_faces": 106,
+  "triangles": 212,
   "mesh_objects": 1,
   "materials": 1,
   "shared_material": "mat_dressing_atlas",
@@ -9,13 +9,13 @@
   "roughness_atlas_texture": "dressing_roughness_atlas.png",
   "grid": {
     "x": 5,
-    "y": 5,
+    "y": 6,
     "z": 5
   },
   "voxel_size": 0.1,
   "world_size": {
     "x": 0.5,
-    "y": 0.5,
+    "y": 0.6000000000000001,
     "z": 0.5
   },
   "blender_version": "5.2.1 LTS",

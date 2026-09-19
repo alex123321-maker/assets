@@ -9,7 +9,7 @@
 - **Origin / Pivot**: `bottom_center` at z=0 (ground contact)
 
 ## Role & Description
-Sharp diagonal triangular cleave with steep 3-layer pointed pinnacle.
+Two sharp cleaved angular pinnacles and corner chip.
 Designed for mass scatter-placement across Cube Siege biomes (Forest, Plains, Mountain).
 
 ## Visual & Runtime Constraints

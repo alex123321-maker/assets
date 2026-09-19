@@ -15,7 +15,7 @@
   - UVs mapped to shared 64x64 texture atlas `textures/dressing_palette_atlas.png` (Base Color) and `textures/dressing_roughness_atlas.png` (Metallic-Roughness);
   - Full canonical PBR roughness fidelity preserved per surface token (stone debris: 0.88 / 0.94 / 0.82 / 0.95; grass: 0.88 / 0.92 / 0.82; moss: 0.92 / 0.95 / 0.86; flowers: 0.75–0.88);
   - Pivot strictly `bottom_center` at z=0, no collision, no scripts;
-  - Total triangles: 2316 (avg: 121.9 tris/prop, max: 240 tris, well within <= 500 budget);
+  - Total triangles: 3460 (avg: 182.1 tris/prop, max: 262 tris, well within <= 500 budget);
   - Native MultiMesh GPU batching ready with zero draw call multiplication.
 
 ---
@@ -63,7 +63,7 @@
 - [x] **No collision / scripts**: Pure visual geometry, zero runtime scripting overhead.
 - [x] **Pivot bottom-center**: Origin strictly centered at ground plane `z=0`.
 - [x] **Shared material strategy implemented**: All 19 props export with 1 shared material `mat_dressing_atlas` referencing `dressing_palette_atlas.png`.
-- [x] **Geometry budget suitable for mass scatter**: Average 121.9 triangles per prop (max 240 tris, well below 500 tri budget).
+- [x] **Geometry budget suitable for mass scatter**: Average 182.1 triangles per prop (max 262 tris, well below 500 tri budget).
 - [x] **Review package complete**: Contact sheet, density mockups (low/med/high), biome mockups (Forest/Plains/Mountain), metrics per mesh, gameplay render.
 
 ---
@@ -72,24 +72,24 @@
 
 | Семейство | Имя пакета | Воксели | Треугольники | Видимые грани | Материалы | Размеры (ШxВxГ) |
 |:---|:---|:---:|:---:|:---:|:---:|:---:|
-| **Grass** | `grass_tuft_small_01` | 4 | 44 | 22 | 1 (shared) | 0.30 x 0.20 x 0.30 m |
-| **Grass** | `grass_tuft_small_02` | 7 | 72 | 36 | 1 (shared) | 0.50 x 0.20 x 0.50 m |
-| **Grass** | `grass_tuft_small_03` | 11 | 100 | 50 | 1 (shared) | 0.50 x 0.30 x 0.50 m |
-| **Grass** | `grass_tuft_med_01` | 19 | 132 | 66 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
-| **Grass** | `grass_tuft_med_02` | 19 | 140 | 70 | 1 (shared) | 0.60 x 0.30 x 0.50 m |
-| **Grass** | `grass_tuft_tall_01` | 16 | 132 | 66 | 1 (shared) | 0.50 x 0.50 x 0.50 m |
-| **Flower** | `flower_white_cluster` | 17 | 132 | 66 | 1 (shared) | 0.50 x 0.30 x 0.50 m |
-| **Flower** | `flower_yellow_cluster` | 16 | 128 | 64 | 1 (shared) | 0.50 x 0.30 x 0.50 m |
-| **Flower** | `flower_red_cluster` | 17 | 136 | 68 | 1 (shared) | 0.50 x 0.30 x 0.50 m |
-| **Flower** | `flower_mixed_accent` | 16 | 112 | 56 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
-| **Moss** | `moss_tree_base` | 17 | 120 | 60 | 1 (shared) | 0.60 x 0.20 x 0.60 m |
-| **Moss** | `moss_rock_shelf` | 21 | 116 | 58 | 1 (shared) | 0.50 x 0.20 x 0.50 m |
-| **Moss** | `moss_cliff_ledge` | 22 | 124 | 62 | 1 (shared) | 0.60 x 0.20 x 0.40 m |
-| **Stone** | `stone_debris_single` | 8 | 68 | 33 | 1 (shared) | 0.40 x 0.20 x 0.40 m |
-| **Stone** | `stone_debris_trio` | 8 | 138 | 67 | 1 (shared) | 0.60 x 0.20 x 0.60 m |
-| **Stone** | `stone_debris_flat_patch` | 13 | 124 | 56 | 1 (shared) | 0.60 x 0.20 x 0.50 m |
-| **Stone** | `stone_debris_angular_chip` | 10 | 138 | 64 | 1 (shared) | 0.50 x 0.30 x 0.50 m |
-| **Stone** | `stone_debris_fine_scatter` | 7 | 240 | 117 | 1 (shared) | 0.60 x 0.10 x 0.60 m |
-| **Stone** | `stone_debris_mountain_cluster` | 14 | 120 | 56 | 1 (shared) | 0.50 x 0.30 x 0.50 m |
+| **Grass** | `grass_tuft_small_01` | 11 | 92 | 46 | 1 (shared) | 0.40 x 0.30 x 0.40 m |
+| **Grass** | `grass_tuft_small_02` | 14 | 140 | 70 | 1 (shared) | 0.50 x 0.30 x 0.50 m |
+| **Grass** | `grass_tuft_small_03` | 25 | 152 | 76 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
+| **Grass** | `grass_tuft_med_01` | 37 | 228 | 114 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
+| **Grass** | `grass_tuft_med_02` | 29 | 144 | 72 | 1 (shared) | 0.60 x 0.40 x 0.50 m |
+| **Grass** | `grass_tuft_tall_01` | 40 | 212 | 106 | 1 (shared) | 0.50 x 0.60 x 0.50 m |
+| **Flower** | `flower_white_cluster` | 38 | 248 | 124 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
+| **Flower** | `flower_yellow_cluster` | 38 | 248 | 124 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
+| **Flower** | `flower_red_cluster` | 38 | 248 | 124 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
+| **Flower** | `flower_mixed_accent` | 38 | 248 | 124 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
+| **Moss** | `moss_tree_base` | 20 | 144 | 72 | 1 (shared) | 0.60 x 0.30 x 0.60 m |
+| **Moss** | `moss_rock_shelf` | 27 | 144 | 72 | 1 (shared) | 0.60 x 0.30 x 0.50 m |
+| **Moss** | `moss_cliff_ledge` | 26 | 148 | 74 | 1 (shared) | 0.60 x 0.30 x 0.50 m |
+| **Stone** | `stone_debris_single` | 11 | 84 | 38 | 1 (shared) | 0.40 x 0.30 x 0.40 m |
+| **Stone** | `stone_debris_trio` | 17 | 184 | 86 | 1 (shared) | 0.60 x 0.30 x 0.60 m |
+| **Stone** | `stone_debris_flat_patch` | 23 | 188 | 80 | 1 (shared) | 0.60 x 0.20 x 0.60 m |
+| **Stone** | `stone_debris_angular_chip` | 13 | 152 | 71 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
+| **Stone** | `stone_debris_fine_scatter` | 12 | 262 | 124 | 1 (shared) | 0.60 x 0.20 x 0.60 m |
+| **Stone** | `stone_debris_mountain_cluster` | 25 | 194 | 90 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
 
-**Итого по семейству**: 262 вокселей, 2316 треугольников (в среднем 121.9 tris / проп, максимум 240 tris).
+**Итого по семейству**: 482 вокселей, 3460 треугольников (в среднем 182.1 tris / проп, максимум 262 tris).

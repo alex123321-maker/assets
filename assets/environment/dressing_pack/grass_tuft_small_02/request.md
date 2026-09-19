@@ -1,4 +1,4 @@
-# Request: Small Grass Sprig 02 (Asymmetric 3-Blade)
+# Request: Small Grass Sprig 02 (Asymmetric Fan)
 
 ## Metadata
 - **Asset Name**: `grass_tuft_small_02`
@@ -9,7 +9,7 @@
 - **Origin / Pivot**: `bottom_center` at z=0 (ground contact)
 
 ## Role & Description
-Asymmetric 3-blade fan for natural ground scatter.
+Asymmetric fanning grass blades for natural ground scatter.
 Designed for mass scatter-placement across Cube Siege biomes (Forest, Plains, Mountain).
 
 ## Visual & Runtime Constraints

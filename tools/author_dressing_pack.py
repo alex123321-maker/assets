@@ -61,21 +61,21 @@ PALETTE_DATA = {
         "grass": {
             "G": {
                 "name": "grass_primary",
-                "base_color": [0.28, 0.52, 0.16, 1.0],  # #478529
+                "base_color": [0.1746, 0.2623, 0.0545, 1.0],  # #748c42
                 "roughness": 0.88,
                 "metallic": 0.0,
                 "atlas_cell": [0, 0],
             },
             "D": {
                 "name": "grass_base",
-                "base_color": [0.18, 0.35, 0.11, 1.0],  # #2e591c
+                "base_color": [0.0319, 0.0467, 0.0168, 1.0],  # #323d23
                 "roughness": 0.92,
                 "metallic": 0.0,
                 "atlas_cell": [1, 0],
             },
             "L": {
                 "name": "grass_tip",
-                "base_color": [0.42, 0.68, 0.22, 1.0],  # #6bae38
+                "base_color": [0.1683, 0.2874, 0.0865, 1.0],  # #729253
                 "roughness": 0.82,
                 "metallic": 0.0,
                 "atlas_cell": [2, 0],
@@ -84,63 +84,63 @@ PALETTE_DATA = {
         "flowers": {
             "G": {
                 "name": "flower_stem",
-                "base_color": [0.25, 0.48, 0.15, 1.0],  # #407a26
+                "base_color": [0.1746, 0.2623, 0.0545, 1.0],  # #748c42
                 "roughness": 0.88,
                 "metallic": 0.0,
                 "atlas_cell": [0, 1],
             },
             "D": {
                 "name": "flower_stem_dark",
-                "base_color": [0.16, 0.32, 0.10, 1.0],  # #29521a
+                "base_color": [0.0319, 0.0467, 0.0168, 1.0],  # #323d23
                 "roughness": 0.92,
                 "metallic": 0.0,
                 "atlas_cell": [1, 1],
             },
             "W": {
                 "name": "petal_white",
-                "base_color": [0.92, 0.92, 0.88, 1.0],  # #ebebe0
+                "base_color": [0.8550, 0.8228, 0.7379, 1.0],  # #eeeadf
                 "roughness": 0.80,
                 "metallic": 0.0,
                 "atlas_cell": [2, 1],
             },
             "Y": {
                 "name": "center_gold",
-                "base_color": [0.96, 0.78, 0.12, 1.0],  # #f5c71f
+                "base_color": [0.9216, 0.5711, 0.0578, 1.0],  # #f6c744
                 "roughness": 0.75,
                 "metallic": 0.0,
                 "atlas_cell": [3, 1],
             },
             "O": {
                 "name": "center_amber",
-                "base_color": [0.85, 0.50, 0.10, 1.0],  # #d9801a
+                "base_color": [0.6976, 0.2195, 0.0125, 1.0],  # #da801a
                 "roughness": 0.80,
                 "metallic": 0.0,
                 "atlas_cell": [4, 1],
             },
             "R": {
                 "name": "petal_red",
-                "base_color": [0.86, 0.22, 0.15, 1.0],  # #dc3826
+                "base_color": [0.7605, 0.1195, 0.0742, 1.0],  # #e2614d
                 "roughness": 0.80,
                 "metallic": 0.0,
                 "atlas_cell": [5, 1],
             },
             "C": {
                 "name": "center_dark",
-                "base_color": [0.20, 0.10, 0.10, 1.0],  # #331a1a
+                "base_color": [0.0482, 0.0467, 0.0437, 1.0],  # #3e3d3b
                 "roughness": 0.85,
                 "metallic": 0.0,
                 "atlas_cell": [6, 1],
             },
             "P": {
                 "name": "petal_purple",
-                "base_color": [0.56, 0.38, 0.84, 1.0],  # #8f61d6
+                "base_color": [0.3095, 0.1356, 0.4020, 1.0],  # #9767aa
                 "roughness": 0.75,
                 "metallic": 0.0,
                 "atlas_cell": [7, 1],
             },
             "B": {
                 "name": "petal_blue",
-                "base_color": [0.32, 0.54, 0.90, 1.0],  # #528ae6
+                "base_color": [0.4287, 0.2623, 0.6445, 1.0],  # #af8cd2
                 "roughness": 0.75,
                 "metallic": 0.0,
                 "atlas_cell": [0, 2],
@@ -149,52 +149,51 @@ PALETTE_DATA = {
         "moss": {
             "M": {
                 "name": "moss_primary",
-                "base_color": [0.26, 0.44, 0.16, 1.0],  # #427029
+                "base_color": [0.0513, 0.0723, 0.0232, 1.0],  # #404c2a
                 "roughness": 0.92,
                 "metallic": 0.0,
                 "atlas_cell": [1, 2],
             },
             "D": {
                 "name": "moss_dark",
-                "base_color": [0.15, 0.28, 0.09, 1.0],  # #264717
+                "base_color": [0.0319, 0.0467, 0.0168, 1.0],  # #323d23
                 "roughness": 0.95,
                 "metallic": 0.0,
                 "atlas_cell": [2, 2],
             },
             "L": {
                 "name": "moss_light",
-                "base_color": [0.40, 0.62, 0.22, 1.0],  # #669e38
+                "base_color": [0.1683, 0.2874, 0.0865, 1.0],  # #729253
                 "roughness": 0.86,
                 "metallic": 0.0,
                 "atlas_cell": [3, 2],
             },
         },
         "stone_debris": {
-            # 100% matched to Issue #3 Destructible Rock Family
             "S": {
                 "name": "stone_primary",
-                "base_color": [0.24, 0.22, 0.20, 1.0],  # #3d3833
+                "base_color": [0.1046, 0.0931, 0.0844, 1.0],  # #5b5652
                 "roughness": 0.88,
                 "metallic": 0.0,
                 "atlas_cell": [0, 3],
             },
             "D": {
                 "name": "stone_dark",
-                "base_color": [0.11, 0.10, 0.10, 1.0],  # #1c1a1a
+                "base_color": [0.0482, 0.0467, 0.0437, 1.0],  # #3e3d3b
                 "roughness": 0.94,
                 "metallic": 0.0,
                 "atlas_cell": [1, 3],
             },
             "L": {
                 "name": "stone_light",
-                "base_color": [0.45, 0.43, 0.40, 1.0],  # #736e66
+                "base_color": [0.1301, 0.1195, 0.1046, 1.0],  # #65615b
                 "roughness": 0.82,
                 "metallic": 0.0,
                 "atlas_cell": [2, 3],
             },
             "M": {
                 "name": "stone_moss",
-                "base_color": [0.17, 0.20, 0.09, 1.0],  # #2b3317
+                "base_color": [0.1022, 0.1356, 0.0482, 1.0],  # #5a673e
                 "roughness": 0.95,
                 "metallic": 0.0,
                 "atlas_cell": [3, 3],
@@ -206,152 +205,60 @@ PALETTE_DATA = {
 
 PROPS_SPECS = [
     # -------------------------------------------------------------
-    # 1. GRASS TUFTS (6 variants)
+    # 1. GRASS TUFTS (6 variants, reference matched)
     # -------------------------------------------------------------
     {
         "slug": "grass_tuft_small_01",
         "family": "grass",
-        "title": "Small Grass Sprig 01 (Compact 2-Blade)",
+        "title": "Small Grass Sprig 01 (Compact 3-Blade)",
         "subfamily": "Grass Tufts",
         "role": "Small compact grass sprig for subtle ground breaks",
         "materials": ["D", "G", "L"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    "...",
-                    ".DG",
-                    "...",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    "...",
-                    "L..",
-                    "..L",
-                ],
-            },
+            {"y": 0, "rows": ["....", ".DD.", ".DG.", "...."]},
+            {"y": 1, "rows": [".G..", ".G.G", "..G.", "...."]},
+            {"y": 2, "rows": [".L..", "...L", "..L.", "...."]},
         ],
     },
     {
         "slug": "grass_tuft_small_02",
         "family": "grass",
-        "title": "Small Grass Sprig 02 (Asymmetric 3-Blade)",
+        "title": "Small Grass Sprig 02 (Asymmetric Fan)",
         "subfamily": "Grass Tufts",
-        "role": "Asymmetric 3-blade fan for natural ground scatter",
+        "role": "Asymmetric fanning grass blades for natural ground scatter",
         "materials": ["D", "G", "L"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    ".....",
-                    "..D..",
-                    ".DGD.",
-                    ".....",
-                    ".....",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    "..L..",
-                    ".....",
-                    "L...L",
-                    ".....",
-                    ".....",
-                ],
-            },
+            {"y": 0, "rows": [".....", "..D..", ".DGD.", "..D..", "....."]},
+            {"y": 1, "rows": [".G.G.", "..G..", ".G.G.", ".....", "....."]},
+            {"y": 2, "rows": ["L...L", ".....", "L...L", ".....", "....."]},
         ],
     },
     {
         "slug": "grass_tuft_small_03",
         "family": "grass",
-        "title": "Small Grass Sprig 03 (Tight 4-Blade Clump)",
+        "title": "Small Grass Sprig 03 (Bushy Stepped Clump)",
         "subfamily": "Grass Tufts",
-        "role": "Tight 4-blade clump with stepped center blade",
+        "role": "Dense rounded grass clump with stepped center blade",
         "materials": ["D", "G", "L"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    ".....",
-                    ".GD..",
-                    ".DGG.",
-                    "..D..",
-                    ".....",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    "..L..",
-                    ".G.G.",
-                    "..G..",
-                    ".....",
-                    ".....",
-                ],
-            },
-            {
-                "y": 2,
-                "rows": [
-                    ".....",
-                    "..L..",
-                    ".....",
-                    ".....",
-                    ".....",
-                ],
-            },
+            {"y": 0, "rows": [".....", ".DDD.", ".DGD.", ".DDD.", "....."]},
+            {"y": 1, "rows": [".G.G.", ".GGG.", ".GGG.", ".G.G.", "....."]},
+            {"y": 2, "rows": [".....", ".L.L.", "..G..", ".L.L.", "....."]},
+            {"y": 3, "rows": [".....", ".....", "..L..", ".....", "....."]},
         ],
     },
     {
         "slug": "grass_tuft_med_01",
         "family": "grass",
-        "title": "Medium Grass Tuft 01 (Tiered 5-Blade)",
+        "title": "Medium Grass Tuft 01 (Tiered Multi-Blade)",
         "subfamily": "Grass Tufts",
-        "role": "Medium tiered grass clump with stepped surrounding blades",
+        "role": "Medium tiered grass clump with rich stepped blades",
         "materials": ["D", "G", "L"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    ".....",
-                    ".DD..",
-                    ".DGD.",
-                    "..DD.",
-                    ".....",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    "..G..",
-                    ".GGG.",
-                    ".GG..",
-                    "..L..",
-                    ".....",
-                ],
-            },
-            {
-                "y": 2,
-                "rows": [
-                    ".L.L.",
-                    "..G..",
-                    "..G..",
-                    ".....",
-                    ".....",
-                ],
-            },
-            {
-                "y": 3,
-                "rows": [
-                    ".....",
-                    "..L..",
-                    ".....",
-                    ".....",
-                    ".....",
-                ],
-            },
+            {"y": 0, "rows": [".....", ".DDD.", "DDGDD", ".DDD.", "....."]},
+            {"y": 1, "rows": ["..G..", ".GGG.", "GGGGG", ".GGG.", "..G.."]},
+            {"y": 2, "rows": [".L.L.", "..G..", ".GGG.", "..G..", ".L.L."]},
+            {"y": 3, "rows": [".....", "..L..", ".L.L.", "..L..", "....."]},
         ],
     },
     {
@@ -359,39 +266,13 @@ PROPS_SPECS = [
         "family": "grass",
         "title": "Medium Grass Tuft 02 (Wind-Swept Spread)",
         "subfamily": "Grass Tufts",
-        "role": "Medium wind-swept spread with directional tilt",
+        "role": "Medium wind-swept spread with prominent directional tilt",
         "materials": ["D", "G", "L"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    "......",
-                    ".DDG..",
-                    "..DGD.",
-                    "..DD..",
-                    "......",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    "..LGG.",
-                    "...GG.",
-                    "..GG.L",
-                    "......",
-                    "......",
-                ],
-            },
-            {
-                "y": 2,
-                "rows": [
-                    "...L..",
-                    "....L.",
-                    ".....L",
-                    "......",
-                    "......",
-                ],
-            },
+            {"y": 0, "rows": ["......", ".DDD..", ".DGD..", ".DDD..", "......"]},
+            {"y": 1, "rows": ["......", "..GGG.", "..GGG.", "..GGG.", "......"]},
+            {"y": 2, "rows": ["......", "...GG.", "...GGG", "...GG.", "......"]},
+            {"y": 3, "rows": ["......", "....L.", "....LL", "....L.", "......"]},
         ],
     },
     {
@@ -402,61 +283,17 @@ PROPS_SPECS = [
         "role": "Tall prominent focal grass clump with towering center spire",
         "materials": ["D", "G", "L"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    ".....",
-                    "..D..",
-                    ".DGD.",
-                    "..D..",
-                    ".....",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    "..G..",
-                    ".GGG.",
-                    "..G..",
-                    "..L..",
-                    ".....",
-                ],
-            },
-            {
-                "y": 2,
-                "rows": [
-                    ".L...",
-                    "..G..",
-                    "...L.",
-                    ".....",
-                    ".....",
-                ],
-            },
-            {
-                "y": 3,
-                "rows": [
-                    ".....",
-                    "..G..",
-                    ".....",
-                    ".....",
-                    ".....",
-                ],
-            },
-            {
-                "y": 4,
-                "rows": [
-                    ".....",
-                    "..L..",
-                    ".....",
-                    ".....",
-                    ".....",
-                ],
-            },
+            {"y": 0, "rows": [".....", "..D..", ".DGD.", "..D..", "....."]},
+            {"y": 1, "rows": ["..G..", ".GGG.", "GGGGG", ".GGG.", "..G.."]},
+            {"y": 2, "rows": [".L...", ".GGG.", ".GGG.", ".GGG.", "...L."]},
+            {"y": 3, "rows": [".....", "..G..", ".GGG.", "..G..", "....."]},
+            {"y": 4, "rows": [".....", "..L..", ".LLL.", "..L..", "....."]},
+            {"y": 5, "rows": [".....", ".....", "..L..", ".....", "....."]},
         ],
     },
 
     # -------------------------------------------------------------
-    # 2. FLOWERS (4 variants)
+    # 2. FLOWERS (4 variants, reference matched)
     # -------------------------------------------------------------
     {
         "slug": "flower_white_cluster",
@@ -466,36 +303,10 @@ PROPS_SPECS = [
         "role": "White daisy cluster with golden centers for open meadows",
         "materials": ["D", "G", "W", "Y"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    ".....",
-                    "..D..",
-                    ".DGD.",
-                    "..D..",
-                    ".....",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    ".W...",
-                    "..G..",
-                    "...W.",
-                    "..G..",
-                    ".....",
-                ],
-            },
-            {
-                "y": 2,
-                "rows": [
-                    "WW...",
-                    "WY...",
-                    "..WW.",
-                    "..WY.",
-                    ".....",
-                ],
-            },
+            {"y": 0, "rows": [".....", ".DDD.", "DDGDD", ".DDD.", "....."]},
+            {"y": 1, "rows": [".G...", "..G.G", ".G.G.", "..G..", "....."]},
+            {"y": 2, "rows": ["WWW..", "WYW.W", "WWW.G", "..G..", "....."]},
+            {"y": 3, "rows": [".....", ".....", "..WWW", "..WYW", "..WWW"]},
         ],
     },
     {
@@ -506,36 +317,10 @@ PROPS_SPECS = [
         "role": "Golden yellow buttercup cluster with warm amber centers",
         "materials": ["D", "G", "Y", "O"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    ".....",
-                    ".DG..",
-                    "..GD.",
-                    ".....",
-                    ".....",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    ".Y...",
-                    "..G.Y",
-                    "..G..",
-                    ".....",
-                    ".....",
-                ],
-            },
-            {
-                "y": 2,
-                "rows": [
-                    "YY...",
-                    "YO.YY",
-                    "...YO",
-                    ".....",
-                    ".....",
-                ],
-            },
+            {"y": 0, "rows": [".....", ".DDD.", "DDGDD", ".DDD.", "....."]},
+            {"y": 1, "rows": [".G...", "..G.G", ".G.G.", "..G..", "....."]},
+            {"y": 2, "rows": ["YYY..", "YOY.Y", "YYY.G", "..G..", "....."]},
+            {"y": 3, "rows": [".....", ".....", "..YYY", "..YOY", "..YYY"]},
         ],
     },
     {
@@ -546,36 +331,10 @@ PROPS_SPECS = [
         "role": "Vibrant poppy cluster with rich red petals and dark center",
         "materials": ["D", "G", "R", "C"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    ".....",
-                    "..D..",
-                    ".DGD.",
-                    ".....",
-                    ".....",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    "..G..",
-                    ".G.G.",
-                    "..G..",
-                    ".....",
-                    ".....",
-                ],
-            },
-            {
-                "y": 2,
-                "rows": [
-                    ".RC..",
-                    "RRR..",
-                    "..RC.",
-                    "..RR.",
-                    ".....",
-                ],
-            },
+            {"y": 0, "rows": [".....", ".DDD.", "DDGDD", ".DDD.", "....."]},
+            {"y": 1, "rows": [".G...", "..G.G", ".G.G.", "..G..", "....."]},
+            {"y": 2, "rows": ["RRR..", "RCR.R", "RRR.G", "..G..", "....."]},
+            {"y": 3, "rows": [".....", ".....", "..RRR", "..RCR", "..RRR"]},
         ],
     },
     {
@@ -583,54 +342,18 @@ PROPS_SPECS = [
         "family": "flowers",
         "title": "Mixed Accent Flower (Rare Bellflower)",
         "subfamily": "Flowers",
-        "role": "Rare lilac and blue bellflower accent bloom",
-        "materials": ["D", "G", "P", "B"],
+        "role": "Rare lilac and purple bellflower accent bloom",
+        "materials": ["D", "G", "P", "Y", "B"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    ".....",
-                    "..D..",
-                    ".DGD.",
-                    "..D..",
-                    ".....",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    "..G..",
-                    ".GGG.",
-                    "..G..",
-                    ".....",
-                    ".....",
-                ],
-            },
-            {
-                "y": 2,
-                "rows": [
-                    "..P..",
-                    ".PBP.",
-                    "..P..",
-                    ".....",
-                    ".....",
-                ],
-            },
-            {
-                "y": 3,
-                "rows": [
-                    ".....",
-                    "..B..",
-                    ".....",
-                    ".....",
-                    ".....",
-                ],
-            },
+            {"y": 0, "rows": [".....", ".DDD.", "DDGDD", ".DDD.", "....."]},
+            {"y": 1, "rows": [".G...", "..G.G", ".G.G.", "..G..", "....."]},
+            {"y": 2, "rows": ["BBB..", "BYB.P", "BBB.G", "..G..", "....."]},
+            {"y": 3, "rows": [".....", ".....", "..PPP", "..PYP", "..PPP"]},
         ],
     },
 
     # -------------------------------------------------------------
-    # 3. MOSS / LOW VEGETATION (3 variants)
+    # 3. MOSS / LOW VEGETATION (3 variants, reference matched)
     # -------------------------------------------------------------
     {
         "slug": "moss_tree_base",
@@ -640,28 +363,9 @@ PROPS_SPECS = [
         "role": "Curved embracing moss collar designed to wrap tree trunk bases",
         "materials": ["D", "M", "L"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    "......",
-                    "..DD..",
-                    ".DMMD.",
-                    "DMM.M.",
-                    ".MD...",
-                    "..D...",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    "......",
-                    "...L..",
-                    "..ML..",
-                    ".M....",
-                    "......",
-                    "......",
-                ],
-            },
+            {"y": 0, "rows": ["......", "..DD..", ".DMMD.", "DMM.MD", ".MD..D", "..D..."]},
+            {"y": 1, "rows": ["......", "...L..", "..ML..", ".M....", "......", "......"]},
+            {"y": 2, "rows": ["......", "...L..", "......", "......", "......", "......"]},
         ],
     },
     {
@@ -672,26 +376,9 @@ PROPS_SPECS = [
         "role": "Clinging L-shaped moss shelf designed for boulder crevices and stone steps",
         "materials": ["D", "M", "L"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    "DDDDD",
-                    "DMMMD",
-                    ".MMM.",
-                    "..M..",
-                    ".....",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    ".DDD.",
-                    ".LLL.",
-                    "..L..",
-                    ".....",
-                    ".....",
-                ],
-            },
+            {"y": 0, "rows": ["DDDDD.", "DMMMD.", ".MMMD.", "..MD..", "......"]},
+            {"y": 1, "rows": [".DDD..", ".MLLM.", "..LL..", "......", "......"]},
+            {"y": 2, "rows": ["..L...", "...L..", "......", "......", "......"]},
         ],
     },
     {
@@ -702,29 +389,14 @@ PROPS_SPECS = [
         "role": "Trailing stepped overhang patch designed for cliff edges and terrace rims",
         "materials": ["D", "M", "L"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    "......",
-                    "DDMMDD",
-                    "MMLLMM",
-                    ".LLLL.",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    "......",
-                    ".DMMD.",
-                    "..LL..",
-                    "......",
-                ],
-            },
+            {"y": 0, "rows": ["......", "DDMMDD", "MMLLMM", ".LLLL.", "..LL.."]},
+            {"y": 1, "rows": ["......", ".DMMD.", "..LL..", "......", "......"]},
+            {"y": 2, "rows": ["......", "..LL..", "......", "......", "......"]},
         ],
     },
 
     # -------------------------------------------------------------
-    # 4. STONE DEBRIS (6 variants, Issue #3 Rock Family matched)
+    # 4. STONE DEBRIS (6 variants, reference matched)
     # Strictly distinct geometries and silhouettes!
     # -------------------------------------------------------------
     {
@@ -732,27 +404,12 @@ PROPS_SPECS = [
         "family": "stone_debris",
         "title": "Stone Debris Single Shard",
         "subfamily": "Stone Debris",
-        "role": "Faceted rectangular keystone boulder shard (2x3 base, height 2)",
-        "materials": ["D", "S", "L"],
+        "role": "Faceted rectangular keystone boulder shard with corner moss",
+        "materials": ["D", "S", "L", "M"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    "....",
-                    ".SS.",
-                    ".SS.",
-                    ".SD.",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    "....",
-                    "....",
-                    ".L..",
-                    ".L..",
-                ],
-            },
+            {"y": 0, "rows": ["....", ".SS.", ".SS.", ".MD."]},
+            {"y": 1, "rows": ["....", ".LL.", ".LS.", "...."]},
+            {"y": 2, "rows": ["....", "..L.", "....", "...."]},
         ],
     },
     {
@@ -761,30 +418,11 @@ PROPS_SPECS = [
         "title": "Stone Debris Trio Group",
         "subfamily": "Stone Debris",
         "role": "Balanced 3-stone group of varied heights and natural negative space",
-        "materials": ["D", "S", "L"],
+        "materials": ["D", "S", "L", "M"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    "......",
-                    ".SD...",
-                    "......",
-                    "...SS.",
-                    "...DS.",
-                    ".D....",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    "......",
-                    "......",
-                    "......",
-                    "...L..",
-                    "......",
-                    "......",
-                ],
-            },
+            {"y": 0, "rows": ["......", ".SS...", ".SD...", "....SS", ".M..SS", ".SS..."]},
+            {"y": 1, "rows": ["......", ".L....", "......", "....LL", "....LS", "......"]},
+            {"y": 2, "rows": ["......", "......", "......", ".....L", "......", "......"]},
         ],
     },
     {
@@ -795,26 +433,8 @@ PROPS_SPECS = [
         "role": "Low flat patch of interlocking stone slabs with mossy shadow edge",
         "materials": ["D", "S", "L", "M"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    "......",
-                    ".SDDS.",
-                    ".SSMS.",
-                    "..SD..",
-                    "......",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    "......",
-                    "..LL..",
-                    "..S...",
-                    "......",
-                    "......",
-                ],
-            },
+            {"y": 0, "rows": [".SS...", ".SSD..", "..MSSS", ".DDSSS", "..SD..", "...D.."]},
+            {"y": 1, "rows": ["......", ".LL...", "....LL", "....LS", "......", "......"]},
         ],
     },
     {
@@ -822,39 +442,13 @@ PROPS_SPECS = [
         "family": "stone_debris",
         "title": "Stone Debris Angular Chip",
         "subfamily": "Stone Debris",
-        "role": "Sharp diagonal triangular cleave with steep 3-layer pointed pinnacle",
-        "materials": ["D", "S", "L"],
+        "role": "Two sharp cleaved angular pinnacles and corner chip",
+        "materials": ["D", "S", "L", "M"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    ".....",
-                    "..S..",
-                    "..SS.",
-                    ".SSD.",
-                    ".....",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    ".....",
-                    ".....",
-                    "..L..",
-                    "..SL.",
-                    ".....",
-                ],
-            },
-            {
-                "y": 2,
-                "rows": [
-                    ".....",
-                    ".....",
-                    ".....",
-                    "..L..",
-                    ".....",
-                ],
-            },
+            {"y": 0, "rows": [".....", ".SS..", ".SD..", "...SS", "...D."]},
+            {"y": 1, "rows": [".....", ".SL..", "..L..", "...L.", "....."]},
+            {"y": 2, "rows": [".....", ".L...", ".....", ".....", "....."]},
+            {"y": 3, "rows": [".....", ".L...", ".....", ".....", "....."]},
         ],
     },
     {
@@ -862,20 +456,11 @@ PROPS_SPECS = [
         "family": "stone_debris",
         "title": "Stone Debris Fine Scatter",
         "subfamily": "Stone Debris",
-        "role": "Fine scatter of pebbles, chips, and grit for pathways and impact zones",
-        "materials": ["D", "S"],
+        "role": "Fine gravel and grit spread of discrete small pebbles",
+        "materials": ["D", "S", "L", "M"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    "......",
-                    ".S..D.",
-                    "...S..",
-                    ".D..S.",
-                    "..S...",
-                    "....D.",
-                ],
-            },
+            {"y": 0, "rows": [".S..S.", "....D.", "..SS..", "..SD.S", ".S..M.", "...S.."]},
+            {"y": 1, "rows": ["......", "......", "..L...", "......", "......", "......"]},
         ],
     },
     {
@@ -884,38 +469,12 @@ PROPS_SPECS = [
         "title": "Stone Debris Mountain Cluster",
         "subfamily": "Stone Debris",
         "role": "Rugged stepped crag cluster with deep shadow clefts and sunlit crests",
-        "materials": ["D", "S", "L"],
+        "materials": ["D", "S", "L", "M"],
         "layers": [
-            {
-                "y": 0,
-                "rows": [
-                    ".....",
-                    ".DSD.",
-                    ".SSS.",
-                    ".SDD.",
-                    ".....",
-                ],
-            },
-            {
-                "y": 1,
-                "rows": [
-                    ".....",
-                    "..S..",
-                    ".SLS.",
-                    ".....",
-                    ".....",
-                ],
-            },
-            {
-                "y": 2,
-                "rows": [
-                    ".....",
-                    "..L..",
-                    ".....",
-                    ".....",
-                    ".....",
-                ],
-            },
+            {"y": 0, "rows": [".SD..", "DSSSD", "DSSSD", ".DMD.", "....."]},
+            {"y": 1, "rows": [".....", ".SLS.", ".SLS.", ".....", "....."]},
+            {"y": 2, "rows": [".....", "..L..", "..LL.", ".....", "....."]},
+            {"y": 3, "rows": [".....", "..L..", ".....", ".....", "....."]},
         ],
     },
 ]
