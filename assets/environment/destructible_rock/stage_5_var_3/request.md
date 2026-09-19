@@ -8,3 +8,4 @@
 - **Silhouette Intent**: Non-spherical, angular faceted massing with credible ground contact.
 - **Occupied Voxels**: 38
 - **Voxel Size**: 0.15m
+- **Materials**: Multi-tone natural rock palette matching approved concept reference.

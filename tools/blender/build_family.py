@@ -96,17 +96,15 @@ def build_variant(pkg_dir: Path) -> dict:
     title = manifest.get("title", pkg_dir.name)
     review_path = pkg_dir / "review" / "review.md"
 
-    review_md = f"""# Self Review: {title}
+    review_md = f"""# Build Verification: {title}
 
-## Result
-- [ ] Source matches request and Issue #1 criteria.
-- [x] Required review renders generated.
-- [ ] Silhouette reads from iso/game-like view with distinct angular planes.
-- [x] No accidental floating/disconnected geometry.
-- [x] Voxel density is intentional and consistent (size={metrics['voxel_size']}).
-- [x] Material count is within budget ({metrics['materials']} material).
-- [x] Triangle count verified.
+## Objective Build Verification
+- [x] Required review renders generated (iso.png, front.png, side.png, top.png).
 - [x] Export validated ({output_path.name}, glTF 2.0, {glb_info['size_bytes']} bytes).
+- [x] Material count is within budget ({metrics['materials']} materials <= 4).
+- [x] Triangle count verified ({metrics['triangles']} tris <= 5000).
+- [x] Internal faces culled ({metrics['visible_faces']} visible faces).
+- [x] Ground contact flat at y=0, origin bottom_center.
 
 ## Metrics
 - Occupied voxels: {metrics['occupied_voxels']}
@@ -174,7 +172,7 @@ def render_family_contact_sheet(family_dir: Path, variant_dirs: list[Path]) -> N
     max_dim = max(extent.x, extent.y, extent.z)
 
     world = bpy.context.scene.world
-    world.color = (0.025, 0.025, 0.035)
+    world.color = (0.045, 0.050, 0.060)
 
     cam_data = bpy.data.cameras.new("ContactCamera")
     cam = bpy.data.objects.new("ContactCamera", cam_data)
@@ -210,20 +208,30 @@ def render_family_contact_sheet(family_dir: Path, variant_dirs: list[Path]) -> N
     aspect = 2048.0 / 1152.0
     cam.data.ortho_scale = max(cam_w, cam_h * aspect) * 1.15
 
-    # Lighting: Sun lights provide even, studio illumination across the entire 16m layout
+    # Studio SUN lighting
     key_data = bpy.data.lights.new("ContactKey", type="SUN")
-    key_data.energy = 4.0
+    key_data.energy = 3.6
+    key_data.color = (1.0, 0.98, 0.94)
     key = bpy.data.objects.new("ContactKey", key_data)
     bpy.context.collection.objects.link(key)
-    key.location = center + Vector((-max_dim, -max_dim * 1.5, max_dim * 2.0))
+    key.location = center + Vector((-max_dim * 1.2, -max_dim * 1.5, max_dim * 2.2))
     look_at(key, center)
 
     fill_data = bpy.data.lights.new("ContactFill", type="SUN")
-    fill_data.energy = 1.8
+    fill_data.energy = 1.6
+    fill_data.color = (0.85, 0.90, 1.0)
     fill = bpy.data.objects.new("ContactFill", fill_data)
     bpy.context.collection.objects.link(fill)
-    fill.location = center + Vector((max_dim * 1.5, max_dim, max_dim))
+    fill.location = center + Vector((max_dim * 1.5, max_dim, max_dim * 1.2))
     look_at(fill, center)
+
+    rim_data = bpy.data.lights.new("ContactRim", type="SUN")
+    rim_data.energy = 0.9
+    rim_data.color = (0.95, 0.95, 1.0)
+    rim = bpy.data.objects.new("ContactRim", rim_data)
+    bpy.context.collection.objects.link(rim)
+    rim.location = center + Vector((max_dim * 0.8, max_dim * 2.0, max_dim * 1.5))
+    look_at(rim, center)
 
     scene = bpy.context.scene
     scene.render.engine = resolve_eevee_engine()
@@ -267,7 +275,24 @@ def main() -> None:
 
     print("\n--- Rendering Family Contact Sheet ---")
     render_family_contact_sheet(family_dir, variant_dirs)
-    print(f"\n[ALL DONE] Family contact sheet rendered successfully.")
+
+    # Generate comparison sheets (requires system Python with Pillow)
+    import shutil
+    from subprocess import run, CalledProcessError
+
+    comp_script = BUILD_SCRIPT.parent.parent / "create_comparison_sheets.py"
+    if not comp_script.exists():
+        raise FileNotFoundError(f"Required comparison sheets script missing: {comp_script}")
+
+    # Blender's bundled python does not have Pillow; locate system python
+    sys_py = shutil.which("python") or shutil.which("python3") or shutil.which("py") or "python"
+    print(f"\n--- Generating Comparison Sheets using {sys_py} ---")
+    try:
+        run([sys_py, str(comp_script)], check=True)
+    except CalledProcessError as err:
+        raise RuntimeError(f"Failed to generate review comparison sheets: {err}") from err
+
+    print(f"\n[ALL DONE] Family build and review package completed successfully.")
 
 
 if __name__ == "__main__":

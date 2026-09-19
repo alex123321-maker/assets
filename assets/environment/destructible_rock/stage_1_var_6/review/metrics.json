@@ -1,9 +1,9 @@
 {
-  "occupied_voxels": 922,
-  "visible_faces": 736,
-  "triangles": 1472,
-  "mesh_objects": 1,
-  "materials": 1,
+  "occupied_voxels": 900,
+  "visible_faces": 196,
+  "triangles": 444,
+  "mesh_objects": 4,
+  "materials": 4,
   "grid": {
     "x": 18,
     "y": 11,

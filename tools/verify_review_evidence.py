@@ -71,10 +71,31 @@ def verify_evidence() -> bool:
     ok, w, h, err = check_png_header(contact_sheet)
     if not ok:
         errors.append(f"Family contact sheet invalid: {err}")
+    elif w < 1000 or h < 500:
+        errors.append(f"Family contact sheet too small ({w}x{h}, expected >= 1000x500)")
     else:
         print(f"[PASS] Family contact sheet: {contact_sheet.name} ({w}x{h}, {contact_sheet.stat().st_size} bytes)")
 
-    # 3. Verify family review.md
+    # 3. Verify side-by-side comparison sheets (mandatory for Issue #3)
+    ref_comp = FAMILY_DIR / "review" / "reference_vs_3d_comparison.png"
+    ok, w, h, err = check_png_header(ref_comp)
+    if not ok:
+        errors.append(f"Reference vs 3D comparison sheet missing or invalid: {err}")
+    elif w < 1000 or h < 500:
+        errors.append(f"Reference vs 3D comparison sheet too small ({w}x{h}, expected >= 1000x500)")
+    else:
+        print(f"[PASS] Reference vs 3D comparison sheet: {ref_comp.name} ({w}x{h}, {ref_comp.stat().st_size} bytes)")
+
+    stage_comp = FAMILY_DIR / "review" / "stage_1_comparison.png"
+    ok, w, h, err = check_png_header(stage_comp)
+    if not ok:
+        errors.append(f"Stage 1 comparison sheet missing or invalid: {err}")
+    elif w < 1000 or h < 500:
+        errors.append(f"Stage 1 comparison sheet too small ({w}x{h}, expected >= 1000x500)")
+    else:
+        print(f"[PASS] Stage 1 comparison sheet: {stage_comp.name} ({w}x{h}, {stage_comp.stat().st_size} bytes)")
+
+    # 4. Verify family review.md
     family_review = FAMILY_DIR / "review" / "review.md"
     if not family_review.exists():
         errors.append(f"Missing family review.md at {family_review}")
@@ -126,8 +147,8 @@ def verify_evidence() -> bool:
             errors.append(f"{slug}: Missing review.md")
         else:
             content = review_md_path.read_text(encoding="utf-8")
-            if "## Visual Self-Review" not in content:
-                errors.append(f"{slug}: review.md missing '## Visual Self-Review' section")
+            if "## Objective Build Verification" not in content and "## Result" not in content:
+                errors.append(f"{slug}: review.md missing '## Objective Build Verification' section")
             if "## Metrics" not in content:
                 errors.append(f"{slug}: review.md missing '## Metrics' section")
 
