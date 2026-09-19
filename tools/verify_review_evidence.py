@@ -754,7 +754,7 @@ def verify_evidence() -> bool:
             else:
                 try:
                     data = json.loads(m_path.read_text(encoding="utf-8"))
-                    for key in ("occupied_voxels", "triangles", "visible_faces", "grid", "world_size"):
+                    for key in ("occupied_voxels", "triangles", "visible_faces", "grid", "world_size", "mesh_aabb", "nominal_grid_size"):
                         if key not in data:
                             errors.append(f"{slug}: metrics.json missing required key '{key}'")
                     if data.get("materials") != 1:
@@ -846,6 +846,31 @@ def verify_evidence() -> bool:
                 if flower_signatures.get(f1) == flower_signatures.get(f2):
                     errors.append(f"Flower variant collision: {f1} and {f2} have identical voxel geometry!")
         print(f"[PASS] Flower distinctiveness verified: all {len(flower_slugs)} flower archetypes have unique voxel geometries.")
+
+        # Flower builder semantic check: verify every flower archetype has angled petal geometry
+        for f_slug in flower_slugs:
+            f_glb = dressing_family_dir / f_slug / "output" / "model.glb"
+            if f_glb.exists():
+                with open(f_glb, "rb") as f:
+                    f.seek(12)
+                    chunk_len, _ = struct.unpack("<II", f.read(8))
+                    gltf = json.loads(f.read(chunk_len))
+                    norm_idx = gltf["meshes"][0]["primitives"][0]["attributes"]["NORMAL"]
+                    bin_len, _ = struct.unpack("<II", f.read(8))
+                    bin_data = f.read(bin_len)
+                    norm_acc = gltf["accessors"][norm_idx]
+                    norm_bv = gltf["bufferViews"][norm_acc["bufferView"]]
+                    offset = norm_bv.get("byteOffset", 0) + norm_acc.get("byteOffset", 0)
+                    count = norm_acc["count"]
+                    angled_count = 0
+                    for k in range(count):
+                        nx, ny, nz = struct.unpack_from("<fff", bin_data, offset + k * 12)
+                        if abs(abs(ny) - 1.0) > 0.05 and abs(abs(nz) - 1.0) > 0.05 and abs(abs(nx) - 1.0) > 0.05:
+                            angled_count += 1
+                    # With both basal leaves and angled petals, flower models must have >= 150 angled normals
+                    if angled_count < 150:
+                        errors.append(f"Flower archetype {f_slug} has insufficient angled petal geometry ({angled_count} angled normals, expected >= 150)")
+        print(f"[PASS] Flower petal geometry verified: all {len(flower_slugs)} flower archetypes contain angled petal geometry.")
 
         # Documentation consistency check
         d_readme = dressing_family_dir / "references" / "README.md"

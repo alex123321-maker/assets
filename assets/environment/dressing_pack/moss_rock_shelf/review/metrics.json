@@ -14,10 +14,30 @@
   },
   "voxel_size": 0.1,
   "world_size": {
-    "x": 0.6000000000000001,
-    "y": 0.30000000000000004,
-    "z": 0.5
+    "x": 0.492,
+    "y": 0.315,
+    "z": 0.392
   },
   "blender_version": "5.2.1 LTS",
-  "render_engine": "BLENDER_EEVEE"
+  "render_engine": "BLENDER_EEVEE",
+  "mesh_aabb": {
+    "x": 0.492,
+    "y": 0.315,
+    "z": 0.392
+  },
+  "mesh_bounds_min": {
+    "x": -0.296,
+    "y": 0.0,
+    "z": -0.146
+  },
+  "mesh_bounds_max": {
+    "x": 0.196,
+    "y": 0.315,
+    "z": 0.246
+  },
+  "nominal_grid_size": {
+    "x": 0.6,
+    "y": 0.3,
+    "z": 0.5
+  }
 }

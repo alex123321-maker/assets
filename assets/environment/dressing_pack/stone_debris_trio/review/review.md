@@ -18,5 +18,7 @@
 - Materials: 1
 - Shared material: `mat_dressing_atlas` (albedo atlas: `dressing_palette_atlas.png`, roughness atlas: `dressing_roughness_atlas.png`)
 - Grid dimensions: 6x3x6 (voxel_size: 0.1m)
-- World dimensions: 0.60m x 0.30m x 0.60m
+- Nominal grid size: 0.60m x 0.30m x 0.60m
+- Exported mesh AABB: 0.500m x 0.300m x 0.500m
+- Exported bounds: min=[-0.200, 0.000, -0.200], max=[0.300, 0.300, 0.300]
 - Engine: BLENDER_EEVEE (5.2.1 LTS)

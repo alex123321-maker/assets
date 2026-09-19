@@ -120,7 +120,23 @@ def validate_glb_export(glb_path: Path) -> dict:
             raise RuntimeError("GLB material missing baseColorTexture")
         if "metallicRoughnessTexture" not in pbr:
             raise RuntimeError("GLB material missing metallicRoughnessTexture")
-    return {"size_bytes": size, "version": version, "meshes": len(meshes), "materials": len(materials)}
+
+        # Extract POSITION accessor bounds
+        pos_idx = meshes[0]["primitives"][0]["attributes"]["POSITION"]
+        pos_acc = gltf_json["accessors"][pos_idx]
+        pos_min = [round(float(x), 3) for x in pos_acc["min"]]
+        pos_max = [round(float(x), 3) for x in pos_acc["max"]]
+        pos_span = [round(pos_max[i] - pos_min[i], 3) for i in range(3)]
+
+    return {
+        "size_bytes": size,
+        "version": version,
+        "meshes": len(meshes),
+        "materials": len(materials),
+        "bounds_min": pos_min,
+        "bounds_max": pos_max,
+        "aabb_span": pos_span,
+    }
 
 
 def get_or_create_shared_atlas_material() -> bpy.types.Material:
@@ -303,7 +319,23 @@ def build_flower_mesh(data: dict, occupied: dict, width: int, height: int, depth
         spec = data["materials"].get(tok, {})
         return token_to_atlas_uv(spec)
 
-    pistil_tokens = {"Y", "O", "C"}
+    # Determine pistil and petal tokens strictly per flower archetype to avoid token role collisions
+    if "yellow" in slug:
+        pistil_tokens = {"O"}
+        petal_tokens = {"Y"}
+    elif "red" in slug:
+        pistil_tokens = {"C"}
+        petal_tokens = {"R"}
+    elif "white" in slug:
+        pistil_tokens = {"Y"}
+        petal_tokens = {"W"}
+    elif "mixed" in slug:
+        pistil_tokens = {"Y"}
+        petal_tokens = {"P"}
+    else:
+        pistil_tokens = {"Y", "O", "C"}
+        petal_tokens = {"W", "R", "P"}
+
     pistils = []
     for (sx, sy, sz), tok in occupied.items():
         if tok in pistil_tokens:
@@ -741,6 +773,37 @@ def build_single_variant(slug: str) -> dict:
     export_glb(output_path, [obj])
     glb_info = validate_glb_export(output_path)
 
+    actual_span = glb_info["aabb_span"]
+    bounds_min = glb_info["bounds_min"]
+    bounds_max = glb_info["bounds_max"]
+
+    metrics["mesh_aabb"] = {
+        "x": actual_span[0],
+        "y": actual_span[1],
+        "z": actual_span[2],
+    }
+    metrics["mesh_bounds_min"] = {
+        "x": bounds_min[0],
+        "y": bounds_min[1],
+        "z": bounds_min[2],
+    }
+    metrics["mesh_bounds_max"] = {
+        "x": bounds_max[0],
+        "y": bounds_max[1],
+        "z": bounds_max[2],
+    }
+    metrics["nominal_grid_size"] = {
+        "x": round(float(data["voxel_size"]) * metrics["grid"]["x"], 3),
+        "y": round(float(data["voxel_size"]) * metrics["grid"]["y"], 3),
+        "z": round(float(data["voxel_size"]) * metrics["grid"]["z"], 3),
+    }
+    # world_size represents actual exported AABB dimensions
+    metrics["world_size"] = {
+        "x": actual_span[0],
+        "y": actual_span[1],
+        "z": actual_span[2],
+    }
+
     review_dir = pkg_dir / "review"
     review_dir.mkdir(parents=True, exist_ok=True)
     render_views(review_dir, [obj])
@@ -772,7 +835,9 @@ def build_single_variant(slug: str) -> dict:
 - Materials: {metrics['materials']}
 - Shared material: `{metrics['shared_material']}` (albedo atlas: `{metrics['atlas_texture']}`, roughness atlas: `{metrics['roughness_atlas_texture']}`)
 - Grid dimensions: {metrics['grid']['x']}x{metrics['grid']['y']}x{metrics['grid']['z']} (voxel_size: {metrics['voxel_size']}m)
-- World dimensions: {metrics['world_size']['x']:.2f}m x {metrics['world_size']['y']:.2f}m x {metrics['world_size']['z']:.2f}m
+- Nominal grid size: {metrics['nominal_grid_size']['x']:.2f}m x {metrics['nominal_grid_size']['y']:.2f}m x {metrics['nominal_grid_size']['z']:.2f}m
+- Exported mesh AABB: {metrics['mesh_aabb']['x']:.3f}m x {metrics['mesh_aabb']['y']:.3f}m x {metrics['mesh_aabb']['z']:.3f}m
+- Exported bounds: min=[{metrics['mesh_bounds_min']['x']:.3f}, {metrics['mesh_bounds_min']['y']:.3f}, {metrics['mesh_bounds_min']['z']:.3f}], max=[{metrics['mesh_bounds_max']['x']:.3f}, {metrics['mesh_bounds_max']['y']:.3f}, {metrics['mesh_bounds_max']['z']:.3f}]
 - Engine: {metrics['render_engine']} ({metrics['blender_version']})
 """
     (review_dir / "review.md").write_text(review_md, encoding="utf-8")

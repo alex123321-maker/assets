@@ -71,26 +71,26 @@
 
 ## 5. Metrics Table (All 19 Props)
 
-| Семейство | Имя пакета | Воксели | Треугольники | Видимые грани | Материалы | Размеры (ШxВxГ) |
-|:---|:---|:---:|:---:|:---:|:---:|:---:|
-| **Grass** | `grass_tuft_small_01` | 11 | 84 | 48 | 1 (shared) | 0.40 x 0.30 x 0.40 m |
-| **Grass** | `grass_tuft_small_02` | 14 | 100 | 61 | 1 (shared) | 0.50 x 0.30 x 0.50 m |
-| **Grass** | `grass_tuft_small_03` | 25 | 196 | 109 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
-| **Grass** | `grass_tuft_med_01` | 37 | 284 | 159 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
-| **Grass** | `grass_tuft_med_02` | 29 | 224 | 125 | 1 (shared) | 0.60 x 0.40 x 0.50 m |
-| **Grass** | `grass_tuft_tall_01` | 40 | 300 | 165 | 1 (shared) | 0.50 x 0.60 x 0.50 m |
-| **Flower** | `flower_white_cluster` | 31 | 372 | 186 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
-| **Flower** | `flower_yellow_cluster` | 27 | 324 | 162 | 1 (shared) | 0.50 x 0.30 x 0.50 m |
-| **Flower** | `flower_red_cluster` | 34 | 408 | 204 | 1 (shared) | 0.50 x 0.50 x 0.50 m |
-| **Flower** | `flower_mixed_accent` | 28 | 336 | 168 | 1 (shared) | 0.60 x 0.40 x 0.50 m |
-| **Moss** | `moss_tree_base` | 20 | 184 | 122 | 1 (shared) | 0.60 x 0.30 x 0.60 m |
-| **Moss** | `moss_rock_shelf` | 27 | 198 | 131 | 1 (shared) | 0.60 x 0.30 x 0.50 m |
-| **Moss** | `moss_cliff_ledge` | 26 | 224 | 160 | 1 (shared) | 0.60 x 0.30 x 0.50 m |
-| **Stone** | `stone_debris_single` | 11 | 84 | 38 | 1 (shared) | 0.40 x 0.30 x 0.40 m |
-| **Stone** | `stone_debris_trio` | 17 | 184 | 86 | 1 (shared) | 0.60 x 0.30 x 0.60 m |
-| **Stone** | `stone_debris_flat_patch` | 23 | 188 | 80 | 1 (shared) | 0.60 x 0.20 x 0.60 m |
-| **Stone** | `stone_debris_angular_chip` | 13 | 152 | 71 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
-| **Stone** | `stone_debris_fine_scatter` | 12 | 262 | 124 | 1 (shared) | 0.60 x 0.20 x 0.60 m |
-| **Stone** | `stone_debris_mountain_cluster` | 25 | 194 | 90 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
+| Семейство | Имя пакета | Воксели | Треугольники | Видимые грани | Материалы | Экспортированный AABB (ШxВxГ) | Номинальная сетка |
+|:---|:---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Grass** | `grass_tuft_small_01` | 11 | 84 | 48 | 1 (shared) | 0.34 x 0.30 x 0.34 m | 4x3x4 (0.40x0.30x0.40 m) |
+| **Grass** | `grass_tuft_small_02` | 14 | 100 | 61 | 1 (shared) | 0.59 x 0.30 x 0.46 m | 5x3x5 (0.50x0.30x0.50 m) |
+| **Grass** | `grass_tuft_small_03` | 25 | 196 | 109 | 1 (shared) | 0.32 x 0.40 x 0.46 m | 5x4x5 (0.50x0.40x0.50 m) |
+| **Grass** | `grass_tuft_med_01` | 37 | 284 | 159 | 1 (shared) | 0.59 x 0.40 x 0.59 m | 5x4x5 (0.50x0.40x0.50 m) |
+| **Grass** | `grass_tuft_med_02` | 29 | 224 | 125 | 1 (shared) | 0.63 x 0.40 x 0.36 m | 6x4x5 (0.60x0.40x0.50 m) |
+| **Grass** | `grass_tuft_tall_01` | 40 | 300 | 165 | 1 (shared) | 0.59 x 0.60 x 0.59 m | 5x6x5 (0.50x0.60x0.50 m) |
+| **Flower** | `flower_white_cluster` | 31 | 372 | 186 | 1 (shared) | 0.50 x 0.38 x 0.50 m | 5x4x5 (0.50x0.40x0.50 m) |
+| **Flower** | `flower_yellow_cluster` | 27 | 324 | 162 | 1 (shared) | 0.38 x 0.30 x 0.40 m | 5x3x5 (0.50x0.30x0.50 m) |
+| **Flower** | `flower_red_cluster` | 34 | 408 | 204 | 1 (shared) | 0.49 x 0.52 x 0.50 m | 5x5x5 (0.50x0.50x0.50 m) |
+| **Flower** | `flower_mixed_accent` | 28 | 336 | 168 | 1 (shared) | 0.50 x 0.38 x 0.39 m | 6x4x5 (0.60x0.40x0.50 m) |
+| **Moss** | `moss_tree_base` | 20 | 184 | 122 | 1 (shared) | 0.59 x 0.32 x 0.49 m | 6x3x6 (0.60x0.30x0.60 m) |
+| **Moss** | `moss_rock_shelf` | 27 | 198 | 131 | 1 (shared) | 0.49 x 0.32 x 0.39 m | 6x3x5 (0.60x0.30x0.50 m) |
+| **Moss** | `moss_cliff_ledge` | 26 | 224 | 160 | 1 (shared) | 0.59 x 0.57 x 0.39 m | 6x3x5 (0.60x0.30x0.50 m) |
+| **Stone** | `stone_debris_single` | 11 | 84 | 38 | 1 (shared) | 0.20 x 0.30 x 0.30 m | 4x3x4 (0.40x0.30x0.40 m) |
+| **Stone** | `stone_debris_trio` | 17 | 184 | 86 | 1 (shared) | 0.50 x 0.30 x 0.50 m | 6x3x6 (0.60x0.30x0.60 m) |
+| **Stone** | `stone_debris_flat_patch` | 23 | 188 | 80 | 1 (shared) | 0.50 x 0.20 x 0.60 m | 6x2x6 (0.60x0.20x0.60 m) |
+| **Stone** | `stone_debris_angular_chip` | 13 | 152 | 71 | 1 (shared) | 0.40 x 0.40 x 0.40 m | 5x4x5 (0.50x0.40x0.50 m) |
+| **Stone** | `stone_debris_fine_scatter` | 12 | 262 | 124 | 1 (shared) | 0.50 x 0.20 x 0.60 m | 6x2x6 (0.60x0.20x0.60 m) |
+| **Stone** | `stone_debris_mountain_cluster` | 25 | 194 | 90 | 1 (shared) | 0.50 x 0.40 x 0.40 m | 5x4x5 (0.50x0.40x0.50 m) |
 
 **Итого по семейству**: 450 вокселей, 4298 треугольников (в среднем 226.2 tris / проп, максимум 408 tris).

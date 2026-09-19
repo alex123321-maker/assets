@@ -362,12 +362,14 @@ def generate_metrics_summary_and_review_md() -> dict:
 
 ## 5. Metrics Table (All 19 Props)
 
-| Семейство | Имя пакета | Воксели | Треугольники | Видимые грани | Материалы | Размеры (ШxВxГ) |
-|:---|:---|:---:|:---:|:---:|:---:|:---:|
+| Семейство | Имя пакета | Воксели | Треугольники | Видимые грани | Материалы | Экспортированный AABB (ШxВxГ) | Номинальная сетка |
+|:---|:---|:---:|:---:|:---:|:---:|:---:|:---:|
 """
     for m in all_metrics:
         ws = m.get("world_size", {"x": 0, "y": 0, "z": 0})
-        review_content += f"| **{m['name'].split('_')[0].capitalize()}** | `{m['name']}` | {m.get('occupied_voxels', 0)} | {m.get('triangles', 0)} | {m.get('visible_faces', 0)} | {m.get('materials', 1)} (shared) | {ws['x']:.2f} x {ws['y']:.2f} x {ws['z']:.2f} m |\n"
+        nom = m.get("nominal_grid_size", ws)
+        grid = m.get("grid", {"x": 0, "y": 0, "z": 0})
+        review_content += f"| **{m['name'].split('_')[0].capitalize()}** | `{m['name']}` | {m.get('occupied_voxels', 0)} | {m.get('triangles', 0)} | {m.get('visible_faces', 0)} | {m.get('materials', 1)} (shared) | {ws['x']:.2f} x {ws['y']:.2f} x {ws['z']:.2f} m | {grid['x']}x{grid['y']}x{grid['z']} ({nom['x']:.2f}x{nom['y']:.2f}x{nom['z']:.2f} m) |\n"
 
     review_content += f"""
 **Итого по семейству**: {summary['total_occupied_voxels']} вокселей, {summary['total_triangles']} треугольников (в среднем {summary['avg_triangles_per_prop']} tris / проп, максимум {summary['max_triangles']} tris).
