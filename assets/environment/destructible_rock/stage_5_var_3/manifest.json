@@ -1,0 +1,21 @@
+{
+  "name": "destructible_rock_stage_5_var_3",
+  "type": "voxel_static",
+  "version": 1,
+  "source": "source/voxels.json",
+  "outputs": {
+    "model": "output/model.glb"
+  },
+  "review": {
+    "required_views": [
+      "iso",
+      "front",
+      "side",
+      "top"
+    ]
+  },
+  "budgets": {
+    "max_materials": 2,
+    "max_triangles": 5000
+  }
+}
