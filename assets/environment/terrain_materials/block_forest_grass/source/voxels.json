@@ -1,33 +1,52 @@
 {
   "version": 1,
   "name": "terrain_forest_grass_block",
-  "voxel_size": 0.15,
+  "voxel_size": 1.0,
   "origin": "bottom_center",
   "materials": {
-    "F": {
-      "name": "forest_grass_base",
+    "B": {
+      "name": "terrain_forest_grass_block",
       "base_color": [
-        0.16,
-        0.31,
-        0.11,
+        0.2,
+        0.39,
+        0.14,
         1.0
       ],
-      "roughness": 0.85,
-      "metallic": 0.0
+      "face_materials": {
+        "+Z": "T",
+        "-Z": "D",
+        "+X": "S",
+        "-X": "S",
+        "+Y": "S",
+        "-Y": "S"
+      }
     },
-    "L": {
-      "name": "forest_grass_accent",
+    "T": {
+      "name": "mat_forest_grass_top",
       "base_color": [
-        0.27,
-        0.48,
-        0.17,
+        0.2,
+        0.39,
+        0.14,
         1.0
       ],
       "roughness": 0.85,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "texture": "assets/environment/terrain_materials/textures/forest_grass_top.png"
     },
     "S": {
-      "name": "soil_subsurface",
+      "name": "mat_cliff_side",
+      "base_color": [
+        0.33,
+        0.31,
+        0.3,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0,
+      "texture": "assets/environment/terrain_materials/textures/cliff_side.png"
+    },
+    "D": {
+      "name": "mat_dirt_soil",
       "base_color": [
         0.35,
         0.25,
@@ -35,97 +54,15 @@
         1.0
       ],
       "roughness": 0.92,
-      "metallic": 0.0
-    },
-    "D": {
-      "name": "deep_earth",
-      "base_color": [
-        0.22,
-        0.15,
-        0.1,
-        1.0
-      ],
-      "roughness": 0.92,
-      "metallic": 0.0
+      "metallic": 0.0,
+      "texture": "assets/environment/terrain_materials/textures/dirt_soil.png"
     }
   },
   "layers": [
     {
       "y": 0,
       "rows": [
-        "DDDDDDDD",
-        "DDDDDDDD",
-        "DDDDDDDD",
-        "DDDDDDDD",
-        "DDDDDDDD",
-        "DDDDDDDD",
-        "DDDDDDDD",
-        "DDDDDDDD"
-      ]
-    },
-    {
-      "y": 1,
-      "rows": [
-        "DDDDDDDD",
-        "DDDDDDDD",
-        "DDSDDDDD",
-        "DDSSDDDD",
-        "DDDDDDDD",
-        "DDDDDDDD",
-        "DDDDDDDD",
-        "DDDDDDDD"
-      ]
-    },
-    {
-      "y": 2,
-      "rows": [
-        "SSSSSSSS",
-        "SSSSSSSS",
-        "SSSSSSSS",
-        "SSSSSSSS",
-        "SSSSSSSS",
-        "SSSSSSSS",
-        "SSSSSSSS",
-        "SSSSSSSS"
-      ]
-    },
-    {
-      "y": 3,
-      "rows": [
-        "SSSSSSSS",
-        "SSSSSSSS",
-        "SSSSSSSS",
-        "SSSSSSSS",
-        "FFFFFFFF",
-        "FFFFFFFF",
-        "FFFFFFFF",
-        "FFFFFFFF"
-      ]
-    },
-    {
-      "y": 4,
-      "rows": [
-        "FFFFFFFF",
-        "FFFFFFFF",
-        "FFFFFFFF",
-        "FFFFFFFF",
-        "..LL....",
-        "...L....",
-        "........",
-        "........"
-      ]
-    },
-    {
-      "y": 5,
-      "rows": [
-        ".LL.....",
-        "..LL....",
-        "...L....",
-        "........",
-        "........",
-        "........",
-        "........",
-        "........"
+        "B"
       ]
     }
   ]

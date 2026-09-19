@@ -17,6 +17,8 @@ import bmesh
 import bpy
 from mathutils import Vector
 
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+
 
 def script_args() -> argparse.Namespace:
     argv = sys.argv
@@ -66,6 +68,18 @@ def create_material(token: str, spec: dict) -> bpy.types.Material:
     principled.inputs["Base Color"].default_value = tuple(float(v) for v in color)
     principled.inputs["Roughness"].default_value = float(spec.get("roughness", 0.9))
     principled.inputs["Metallic"].default_value = float(spec.get("metallic", 0.0))
+
+    tex_path = spec.get("texture")
+    if tex_path:
+        full_path = Path(tex_path)
+        if not full_path.is_absolute():
+            full_path = REPO_ROOT / full_path
+        if full_path.exists():
+            img = bpy.data.images.load(str(full_path))
+            tex_node = mat.node_tree.nodes.new("ShaderNodeTexImage")
+            tex_node.image = img
+            tex_node.interpolation = "Closest"
+            mat.node_tree.links.new(tex_node.outputs["Color"], principled.inputs["Base Color"])
     return mat
 
 
@@ -145,13 +159,16 @@ def build_objects(data: dict):
 
         for (sx, sy, sz), token in occupied.items():
             cx, cy, cz = source_to_blender(sx, sy, sz, width, depth, voxel_size)
-            target = geometry[token]
+            spec = data["materials"].get(token, {})
+            face_map = spec.get("face_materials", {})
 
             for (dx, dy, dz), face_name in NEIGHBORS:
                 neighbor = (sx + dx, sy + dy, sz + dz)
                 if neighbor in occupied:
                     continue
 
+                target_token = face_map.get(face_name, token)
+                target = geometry.setdefault(target_token, {"verts": [], "faces": [], "visible_faces": 0})
                 quad = face_vertices(cx, cy, cz, h, face_name)
                 base = len(target["verts"])
                 target["verts"].extend(quad)
@@ -165,9 +182,19 @@ def build_objects(data: dict):
             mesh = bpy.data.meshes.new(f"{data['name']}_{token}_mesh")
             mesh.from_pydata(geo["verts"], [], geo["faces"])
             mesh.update()
+
+            uv_layer = mesh.uv_layers.new(name="UVMap")
+            for poly in mesh.polygons:
+                if len(poly.loop_indices) == 4:
+                    uv_layer.data[poly.loop_indices[0]].uv = (0.0, 0.0)
+                    uv_layer.data[poly.loop_indices[1]].uv = (1.0, 0.0)
+                    uv_layer.data[poly.loop_indices[2]].uv = (1.0, 1.0)
+                    uv_layer.data[poly.loop_indices[3]].uv = (0.0, 1.0)
+
             obj = bpy.data.objects.new(f"{data['name']}_{token}", mesh)
             bpy.context.collection.objects.link(obj)
-            obj.data.materials.append(materials[token])
+            if token in materials:
+                obj.data.materials.append(materials[token])
             objects.append(obj)
 
         total_polys = sum(len(o.data.polygons) for o in objects)

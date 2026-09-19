@@ -8,8 +8,8 @@ Stylized voxel terrain material kit for **Cube Siege** (`alex123321-maker/assets
 - [x] **All 5 Texture Assets authored**: `forest_grass_top.png`, `plains_meadow_top.png`, `mountain_stone_top.png`, `cliff_side.png`, `dirt_soil.png` (16×16 RGBA8).
 - [x] **Unified Texture Atlas generated**: `terrain_atlas.png` (64×64 RGBA8, 16 regions with normalized UV coordinates for single draw-call chunk meshing).
 - [x] **Godot 4.x Resources generated**: `.tres` StandardMaterial3D text resources for each surface with `texture_filter = 0` (`TEXTURE_FILTER_NEAREST`).
-- [x] **5 Voxel Static Showcase Packages**: `block_forest_grass`, `block_plains_meadow`, `block_mountain_stone`, `block_cliff_strata`, `block_dirt_soil` all built with Blender, GLBs exported, and CI validation green.
-- [x] **Tileability 6×6 Previews**: verified seamless tiling without seam artifacts or repeating diagonal stripes.
+- [x] **5 Voxel Static Showcase Packages**: `block_forest_grass`, `block_plains_meadow`, `block_mountain_stone`, `block_cliff_strata`, `block_dirt_soil` built with Blender, 1m textured cubes using production 16×16 PNG textures with nearest-neighbor filtering and UVs.
+- [x] **Tileability & Seam Continuity Verified**: Verified continuous repeats across horizontal and vertical boundaries. Automated seam continuity validation passes on all 5 textures (H and V seam ratios <= 1.6, mountain_stone_top seam jump 5.06 vs internal 17.63, ratio 0.29).
 - [x] **Concept Reference & Side-by-Side Comparison**: `references/terrain_concept_reference.png`, `review/contact_sheet.png`, `review/comparison_sheet.png`, `review/reference_vs_3d_comparison.png`.
 - [x] **In-Game Gameplay Camera Mockup**: `review/gameplay_mockup.png` rendered from true isometric camera (45° azimuth, 35.264° elevation) with production Oak Tree (#5) and Destructible Rock (#3).
 
@@ -28,13 +28,14 @@ Stylized voxel terrain material kit for **Cube Siege** (`alex123321-maker/assets
 - **Readability**: High contrast against Forest and Mountain from isometric gameplay distance.
 
 ### Mountain Stone Top
-- **Faceting**: Interlocking stone slabs and chiseled planes (`#7d7872` / `#959088` / `#aea8a0` / `#555350`).
+- **Faceting**: Staggered interlocking stone slabs and chiseled planes (`#7d7872` / `#959088` / `#aea8a0` / `#555350`).
+- **Seamless Tiling**: Solved seam discontinuity with staggered mortar fissures and border-matched flagstone slabs (H seam jump 5.06, ratio 0.29; V seam jump 0.00).
 - **No Procedural Stripes**: Completely eliminates the prototype's diagonal mathematical stripe pattern.
 - **Rock Family Harmony**: 100% color-matched with `destructible_rock` primary stone and light shelves.
 
 ### Cliff / Exposed Rock Side
 - **Stratification**: Distinct horizontal sedimentary beds with vertical fracture steps.
-- **Depth**: Darker than the mountain top (`#44413e` / `#524e4a` / `#746e67`), giving dramatic stepped depth to drops without harsh pitch-black lines.
+- **Depth**: Darker than the mountain top (`#44413e` / `#54504c` / `#746e67`), giving dramatic stepped depth to drops without harsh pitch-black lines.
 - **Vertical Tiling**: Matches seamlessly across multi-block height drops.
 
 ### Soil / Dirt Accent

@@ -46,22 +46,22 @@
       "MMMMMBBBBMMLLMMM"
     ],
     "mountain_stone_top": [
-      "SSSMMMLLMMSSSBBB",
-      "SMMLLLLHLLMMSBBD",
-      "MLLLHHHHHLLMSBDD",
-      "MLLHLLLLLLMMSSBB",
-      "MLLLLMMMMMSSSSSS",
-      "SMMMSSSSBBBSSMMM",
-      "SSSSSBBDDDBSSMLL",
-      "BBSSBBDDBBBSSLLH",
-      "DBBBBBDDBSSSMLHH",
-      "DDBSSBBSSMMMLLHL",
-      "BBSSSSSSMLLLLLLM",
-      "SSMMSSMMLLHLLMMS",
-      "SMLLMSMLLHHLMSSS",
-      "SLLLMSSMLLLMSSBB",
-      "SMLMSSSSMMMSSBBD",
-      "SSSSSSSSSSSSBBBD"
+      "SSMMMSSBSSBSSMSS",
+      "SMLHHLLBSBBDMMMS",
+      "MLLHHLLMSBDDDDMM",
+      "MLLLLLMMSBDDDBMM",
+      "SMMLLMMSSBBDDDBS",
+      "SSSSSSSSSBBDDBBS",
+      "BSSSSSSBBBDDDBBB",
+      "BBBDDDBBBDDDDBBB",
+      "BBBDDBBSSSSSSBBB",
+      "SBDDBSMMMSSSSSSS",
+      "SBDDBSMLHHLLMMSS",
+      "MBDDBMLLHHLLLMMS",
+      "MBDDBSMLLLLLMMSS",
+      "SBDDBSMMLLMMSSSS",
+      "SSBBDSSSSSSSSSSS",
+      "SSMMMSSBSSBSSMSS"
     ],
     "cliff_side": [
       "BBSSSSBBBBSSSSBB",
@@ -182,6 +182,86 @@
           0.25,
           1.0,
           0.5
+        ]
+      },
+      "rocky_dirt_path": {
+        "x": 0,
+        "y": 2,
+        "uv": [
+          0.0,
+          0.5,
+          0.25,
+          0.75
+        ]
+      },
+      "forest_path_wear": {
+        "x": 1,
+        "y": 2,
+        "uv": [
+          0.25,
+          0.5,
+          0.5,
+          0.75
+        ]
+      },
+      "mountain_scree": {
+        "x": 2,
+        "y": 2,
+        "uv": [
+          0.5,
+          0.5,
+          0.75,
+          0.75
+        ]
+      },
+      "cliff_shaded_deep": {
+        "x": 3,
+        "y": 2,
+        "uv": [
+          0.75,
+          0.5,
+          1.0,
+          0.75
+        ]
+      },
+      "mossy_rock_variant": {
+        "x": 0,
+        "y": 3,
+        "uv": [
+          0.0,
+          0.75,
+          0.25,
+          1.0
+        ]
+      },
+      "dry_sunny_grass": {
+        "x": 1,
+        "y": 3,
+        "uv": [
+          0.25,
+          0.75,
+          0.5,
+          1.0
+        ]
+      },
+      "dense_dark_earth": {
+        "x": 2,
+        "y": 3,
+        "uv": [
+          0.5,
+          0.75,
+          0.75,
+          1.0
+        ]
+      },
+      "cliff_crest_lip": {
+        "x": 3,
+        "y": 3,
+        "uv": [
+          0.75,
+          0.75,
+          1.0,
+          1.0
         ]
       }
     }

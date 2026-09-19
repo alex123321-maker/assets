@@ -59,7 +59,7 @@ PALETTES = {
     "cliff_side": {
         "D": (52, 50, 48, 255),    # #343230 - Deep strata fissure / joint
         "B": (68, 65, 62, 255),    # #44413e - Lower dark strata bed
-        "S": (84, 80, 76, 255),    # #524e4a - Mid-cliff rock strata
+        "S": (84, 80, 76, 255),    # #54504c - Mid-cliff rock strata
         "M": (98, 93, 87, 255),    # #625d57 - Prominent horizontal strata ledge
         "L": (116, 110, 103, 255), # #746e67 - Sunlit shelf lip / mineral band
         "H": (134, 128, 119, 255), # #868077 - Edge shelf highlight
@@ -116,22 +116,22 @@ PATTERNS = {
         "MMMMMBBBBMMLLMMM",
     ],
     "mountain_stone_top": [
-        "SSSMMMLLMMSSSBBB",
-        "SMMLLLLHLLMMSBBD",
-        "MLLLHHHHHLLMSBDD",
-        "MLLHLLLLLLMMSSBB",
-        "MLLLLMMMMMSSSSSS",
-        "SMMMSSSSBBBSSMMM",
-        "SSSSSBBDDDBSSMLL",
-        "BBSSBBDDBBBSSLLH",
-        "DBBBBBDDBSSSMLHH",
-        "DDBSSBBSSMMMLLHL",
-        "BBSSSSSSMLLLLLLM",
-        "SSMMSSMMLLHLLMMS",
-        "SMLLMSMLLHHLMSSS",
-        "SLLLMSSMLLLMSSBB",
-        "SMLMSSSSMMMSSBBD",
-        "SSSSSSSSSSSSBBBD",
+        "SSMMMSSBSSBSSMSS",
+        "SMLHHLLBSBBDMMMS",
+        "MLLHHLLMSBDDDDMM",
+        "MLLLLLMMSBDDDBMM",
+        "SMMLLMMSSBBDDDBS",
+        "SSSSSSSSSBBDDBBS",
+        "BSSSSSSBBBDDDBBB",
+        "BBBDDDBBBDDDDBBB",
+        "BBBDDBBSSSSSSBBB",
+        "SBDDBSMMMSSSSSSS",
+        "SBDDBSMLHHLLMMSS",
+        "MBDDBMLLHHLLLMMS",
+        "MBDDBSMLLLLLMMSS",
+        "SBDDBSMMLLMMSSSS",
+        "SSBBDSSSSSSSSSSS",
+        "SSMMMSSBSSBSSMSS",
     ],
     "cliff_side": [
         "BBSSSSBBBBSSSSBB",
@@ -389,14 +389,26 @@ def save_source_data() -> None:
             "resolution": 64,
             "cell_size": 16,
             "grid_cells": {
+                # Row 0: Top surfaces & cliff
                 "forest_grass_top": {"x": 0, "y": 0, "uv": [0.0, 0.0, 0.25, 0.25]},
                 "plains_meadow_top": {"x": 1, "y": 0, "uv": [0.25, 0.0, 0.50, 0.25]},
                 "mountain_stone_top": {"x": 2, "y": 0, "uv": [0.50, 0.0, 0.75, 0.25]},
                 "cliff_side": {"x": 3, "y": 0, "uv": [0.75, 0.0, 1.0, 0.25]},
+                # Row 1: Dirt soil & side transitions
                 "dirt_soil": {"x": 0, "y": 1, "uv": [0.0, 0.25, 0.25, 0.50]},
                 "forest_side_edge": {"x": 1, "y": 1, "uv": [0.25, 0.25, 0.50, 0.50]},
                 "plains_side_edge": {"x": 2, "y": 1, "uv": [0.50, 0.25, 0.75, 0.50]},
                 "stone_cliff_rim": {"x": 3, "y": 1, "uv": [0.75, 0.25, 1.0, 0.50]},
+                # Row 2: Secondary / path transitions
+                "rocky_dirt_path": {"x": 0, "y": 2, "uv": [0.0, 0.50, 0.25, 0.75]},
+                "forest_path_wear": {"x": 1, "y": 2, "uv": [0.25, 0.50, 0.50, 0.75]},
+                "mountain_scree": {"x": 2, "y": 2, "uv": [0.50, 0.50, 0.75, 0.75]},
+                "cliff_shaded_deep": {"x": 3, "y": 2, "uv": [0.75, 0.50, 1.0, 0.75]},
+                # Row 3: Biome accent variants
+                "mossy_rock_variant": {"x": 0, "y": 3, "uv": [0.0, 0.75, 0.25, 1.0]},
+                "dry_sunny_grass": {"x": 1, "y": 3, "uv": [0.25, 0.75, 0.50, 1.0]},
+                "dense_dark_earth": {"x": 2, "y": 3, "uv": [0.50, 0.75, 0.75, 1.0]},
+                "cliff_crest_lip": {"x": 3, "y": 3, "uv": [0.75, 0.75, 1.0, 1.0]},
             },
         },
     }
@@ -412,97 +424,132 @@ def build_showcase_voxel_packages() -> None:
         "block_forest_grass": {
             "name": "terrain_forest_grass_block",
             "title": "Forest Grass Showcase Block",
-            "desc": "3D stylized voxel terrain block showcasing Forest Grass Top surface with cut soil foundation and stepped elevation.",
+            "desc": "3D stylized 1m voxel terrain block showcasing Forest Grass Top surface with cliff rock sides and soil foundation.",
+            "voxel_size": 1.0,
             "materials": {
-                "F": {"name": "forest_grass_base", "base_color": [0.16, 0.31, 0.11, 1.0], "roughness": 0.85, "metallic": 0.0},
-                "L": {"name": "forest_grass_accent", "base_color": [0.27, 0.48, 0.17, 1.0], "roughness": 0.85, "metallic": 0.0},
-                "S": {"name": "soil_subsurface", "base_color": [0.35, 0.25, 0.17, 1.0], "roughness": 0.92, "metallic": 0.0},
-                "D": {"name": "deep_earth", "base_color": [0.22, 0.15, 0.10, 1.0], "roughness": 0.92, "metallic": 0.0},
+                "B": {
+                    "name": "terrain_forest_grass_block",
+                    "base_color": [0.20, 0.39, 0.14, 1.0],
+                    "face_materials": {"+Z": "T", "-Z": "D", "+X": "S", "-X": "S", "+Y": "S", "-Y": "S"},
+                },
+                "T": {
+                    "name": "mat_forest_grass_top",
+                    "base_color": [0.20, 0.39, 0.14, 1.0],
+                    "roughness": 0.85,
+                    "metallic": 0.0,
+                    "texture": "assets/environment/terrain_materials/textures/forest_grass_top.png",
+                },
+                "S": {
+                    "name": "mat_cliff_side",
+                    "base_color": [0.33, 0.31, 0.30, 1.0],
+                    "roughness": 0.92,
+                    "metallic": 0.0,
+                    "texture": "assets/environment/terrain_materials/textures/cliff_side.png",
+                },
+                "D": {
+                    "name": "mat_dirt_soil",
+                    "base_color": [0.35, 0.25, 0.17, 1.0],
+                    "roughness": 0.92,
+                    "metallic": 0.0,
+                    "texture": "assets/environment/terrain_materials/textures/dirt_soil.png",
+                },
             },
-            "layers": [
-                {"y": 0, "rows": ["DDDDDDDD"] * 8},
-                {"y": 1, "rows": ["DDDDDDDD", "DDDDDDDD", "DDSDDDDD", "DDSSDDDD", "DDDDDDDD", "DDDDDDDD", "DDDDDDDD", "DDDDDDDD"]},
-                {"y": 2, "rows": ["SSSSSSSS"] * 8},
-                {"y": 3, "rows": ["SSSSSSSS", "SSSSSSSS", "SSSSSSSS", "SSSSSSSS", "FFFFFFFF", "FFFFFFFF", "FFFFFFFF", "FFFFFFFF"]},
-                {"y": 4, "rows": ["FFFFFFFF", "FFFFFFFF", "FFFFFFFF", "FFFFFFFF", "..LL....", "...L....", "........", "........"]},
-                {"y": 5, "rows": [".LL.....", "..LL....", "...L....", "........", "........", "........", "........", "........"]},
-            ],
+            "layers": [{"y": 0, "rows": ["B"]}],
         },
         "block_plains_meadow": {
             "name": "terrain_plains_meadow_block",
             "title": "Plains Meadow Showcase Block",
-            "desc": "3D stylized voxel terrain block showcasing Plains Meadow Top surface with gentle sunlit meadow terrace and soil bank cut.",
+            "desc": "3D stylized 1m voxel terrain block showcasing Plains Meadow Top surface with cliff rock sides and soil foundation.",
+            "voxel_size": 1.0,
             "materials": {
-                "P": {"name": "plains_meadow_base", "base_color": [0.28, 0.45, 0.15, 1.0], "roughness": 0.85, "metallic": 0.0},
-                "M": {"name": "plains_meadow_accent", "base_color": [0.40, 0.60, 0.20, 1.0], "roughness": 0.85, "metallic": 0.0},
-                "S": {"name": "soil_subsurface", "base_color": [0.35, 0.25, 0.17, 1.0], "roughness": 0.92, "metallic": 0.0},
-                "D": {"name": "deep_earth", "base_color": [0.22, 0.15, 0.10, 1.0], "roughness": 0.92, "metallic": 0.0},
+                "B": {
+                    "name": "terrain_plains_meadow_block",
+                    "base_color": [0.36, 0.55, 0.18, 1.0],
+                    "face_materials": {"+Z": "T", "-Z": "D", "+X": "S", "-X": "S", "+Y": "S", "-Y": "S"},
+                },
+                "T": {
+                    "name": "mat_plains_meadow_top",
+                    "base_color": [0.36, 0.55, 0.18, 1.0],
+                    "roughness": 0.85,
+                    "metallic": 0.0,
+                    "texture": "assets/environment/terrain_materials/textures/plains_meadow_top.png",
+                },
+                "S": {
+                    "name": "mat_cliff_side",
+                    "base_color": [0.33, 0.31, 0.30, 1.0],
+                    "roughness": 0.92,
+                    "metallic": 0.0,
+                    "texture": "assets/environment/terrain_materials/textures/cliff_side.png",
+                },
+                "D": {
+                    "name": "mat_dirt_soil",
+                    "base_color": [0.35, 0.25, 0.17, 1.0],
+                    "roughness": 0.92,
+                    "metallic": 0.0,
+                    "texture": "assets/environment/terrain_materials/textures/dirt_soil.png",
+                },
             },
-            "layers": [
-                {"y": 0, "rows": ["DDDDDDDD"] * 8},
-                {"y": 1, "rows": ["DDDDDDDD", "DDSDDDDD", "DSSDDDDD", "DDDDDDDD", "DDDDDDDD", "DDDDDDDD", "DDDDDDDD", "DDDDDDDD"]},
-                {"y": 2, "rows": ["SSSSSSSS"] * 8},
-                {"y": 3, "rows": ["SSSSSSSS", "SSSSSSSS", "SSSSSSSS", "PPPPPPPP", "PPPPPPPP", "PPPPPPPP", "PPPPPPPP", "PPPPPPPP"]},
-                {"y": 4, "rows": ["PPPPPPPP", "PPPPPPPP", "PPPPPPPP", "....MM..", ".....M..", "........", "........", "........"]},
-                {"y": 5, "rows": ["..MM....", "...M....", "........", "........", "........", "........", "........", "........"]},
-            ],
+            "layers": [{"y": 0, "rows": ["B"]}],
         },
         "block_mountain_stone": {
             "name": "terrain_mountain_stone_block",
             "title": "Mountain Stone Showcase Block",
-            "desc": "3D stylized voxel terrain block showcasing Mountain Stone Top surface with chiseled rock shelves and granite facets.",
+            "desc": "3D stylized 1m voxel terrain block showcasing Mountain Stone Top surface with chiseled rock shelves and cliff rock sides.",
+            "voxel_size": 1.0,
             "materials": {
-                "S": {"name": "stone_primary", "base_color": [0.49, 0.47, 0.45, 1.0], "roughness": 0.90, "metallic": 0.0},
-                "L": {"name": "stone_light", "base_color": [0.68, 0.66, 0.63, 1.0], "roughness": 0.90, "metallic": 0.0},
-                "D": {"name": "stone_dark", "base_color": [0.33, 0.33, 0.31, 1.0], "roughness": 0.90, "metallic": 0.0},
-                "M": {"name": "stone_shelf", "base_color": [0.58, 0.56, 0.53, 1.0], "roughness": 0.90, "metallic": 0.0},
+                "B": {
+                    "name": "terrain_mountain_stone_block",
+                    "base_color": [0.49, 0.47, 0.45, 1.0],
+                    "face_materials": {"+Z": "T", "-Z": "S", "+X": "S", "-X": "S", "+Y": "S", "-Y": "S"},
+                },
+                "T": {
+                    "name": "mat_mountain_stone_top",
+                    "base_color": [0.49, 0.47, 0.45, 1.0],
+                    "roughness": 0.90,
+                    "metallic": 0.0,
+                    "texture": "assets/environment/terrain_materials/textures/mountain_stone_top.png",
+                },
+                "S": {
+                    "name": "mat_cliff_side",
+                    "base_color": [0.33, 0.31, 0.30, 1.0],
+                    "roughness": 0.92,
+                    "metallic": 0.0,
+                    "texture": "assets/environment/terrain_materials/textures/cliff_side.png",
+                },
             },
-            "layers": [
-                {"y": 0, "rows": ["SSSSSSSS"] * 8},
-                {"y": 1, "rows": ["SSSSSSSS", "SSDDSSSS", "SDDDSSSS", "SSSSSSSS", "SSSSSSSS", "SSSSSSSS", "SSSSSSSS", "SSSSSSSS"]},
-                {"y": 2, "rows": ["SSSSSSSS", "SSSSSSSS", "SSSSMMSS", "SSSSMMSS", "SSSSSSSS", "SSSSSSSS", "SSSSSSSS", "SSSSSSSS"]},
-                {"y": 3, "rows": ["SSMMSSSS", "SSMMSSSS", "SSLLSSSS", "SSLLSSSS", "SSSSSSSS", "SSSSSSSS", "........", "........"]},
-                {"y": 4, "rows": ["..LLSSSS", "..LLSSSS", "..LLSSSS", "........", "........", "........", "........", "........"]},
-                {"y": 5, "rows": ["...LSS..", "...LSS..", "........", "........", "........", "........", "........", "........"]},
-            ],
+            "layers": [{"y": 0, "rows": ["B"]}],
         },
         "block_cliff_strata": {
             "name": "terrain_cliff_strata_block",
             "title": "Cliff Strata Showcase Block",
-            "desc": "3D stylized voxel terrain block showcasing vertical Cliff Side strata layers with stepped relief and horizontal overhangs.",
+            "desc": "3D stylized 1m voxel terrain block showcasing vertical Cliff Side strata layers with seamless horizontal and vertical rock texture.",
+            "voxel_size": 1.0,
             "materials": {
-                "B": {"name": "cliff_base", "base_color": [0.27, 0.25, 0.24, 1.0], "roughness": 0.92, "metallic": 0.0},
-                "S": {"name": "cliff_strata_mid", "base_color": [0.33, 0.31, 0.30, 1.0], "roughness": 0.92, "metallic": 0.0},
-                "L": {"name": "cliff_shelf_lip", "base_color": [0.45, 0.43, 0.40, 1.0], "roughness": 0.92, "metallic": 0.0},
-                "D": {"name": "cliff_fissure", "base_color": [0.20, 0.20, 0.19, 1.0], "roughness": 0.92, "metallic": 0.0},
+                "S": {
+                    "name": "mat_cliff_side",
+                    "base_color": [0.33, 0.31, 0.30, 1.0],
+                    "roughness": 0.92,
+                    "metallic": 0.0,
+                    "texture": "assets/environment/terrain_materials/textures/cliff_side.png",
+                },
             },
-            "layers": [
-                {"y": 0, "rows": ["BBBBBBBB"] * 8},
-                {"y": 1, "rows": ["BBBBBBBB", "BBDDBBBB", "BBDDBBBB", "BBBBBBBB", "BBBBBBBB", "BBBBBBBB", "BBBBBBBB", "BBBBBBBB"]},
-                {"y": 2, "rows": ["SSSSSSSS", "SSSSSSSS", "SSSSSSSS", "SSSSSSSS", "SSSSSSSS", "SSSSSSSS", "........", "........"]},
-                {"y": 3, "rows": ["SSLLSSSS", "SSLLSSSS", "SSLLSSSS", "SSSSSSSS", "SSSSSSSS", "........", "........", "........"]},
-                {"y": 4, "rows": ["..LLSSSS", "..LLSSSS", "..LLSSSS", "SSSSSSSS", "........", "........", "........", "........"]},
-                {"y": 5, "rows": ["...LSSSS", "...LSSSS", "...LSSSS", "........", "........", "........", "........", "........"]},
-            ],
+            "layers": [{"y": 0, "rows": ["S"]}],
         },
         "block_dirt_soil": {
             "name": "terrain_dirt_soil_block",
             "title": "Dirt Soil Showcase Block",
-            "desc": "3D stylized voxel terrain block showcasing Soil / Dirt Accent material with crumbly loam terrace and subsoil structure.",
+            "desc": "3D stylized 1m voxel terrain block showcasing Soil / Dirt Accent material with crumbly loam texture on all faces.",
+            "voxel_size": 1.0,
             "materials": {
-                "S": {"name": "soil_primary", "base_color": [0.35, 0.25, 0.17, 1.0], "roughness": 0.92, "metallic": 0.0},
-                "M": {"name": "soil_crumb", "base_color": [0.43, 0.31, 0.21, 1.0], "roughness": 0.92, "metallic": 0.0},
-                "L": {"name": "soil_light_crumb", "base_color": [0.52, 0.37, 0.25, 1.0], "roughness": 0.92, "metallic": 0.0},
-                "D": {"name": "soil_dark_loam", "base_color": [0.22, 0.15, 0.10, 1.0], "roughness": 0.92, "metallic": 0.0},
+                "D": {
+                    "name": "mat_dirt_soil",
+                    "base_color": [0.35, 0.25, 0.17, 1.0],
+                    "roughness": 0.92,
+                    "metallic": 0.0,
+                    "texture": "assets/environment/terrain_materials/textures/dirt_soil.png",
+                },
             },
-            "layers": [
-                {"y": 0, "rows": ["DDDDDDDD"] * 8},
-                {"y": 1, "rows": ["DDDDDDDD", "DDSDDDDD", "DSDDDDDD", "DDDDDDDD", "DDDDDDDD", "DDDDDDDD", "DDDDDDDD", "DDDDDDDD"]},
-                {"y": 2, "rows": ["SSSSSSSS"] * 8},
-                {"y": 3, "rows": ["SSSSSSSS", "SSSSSSSS", "SSSSSSSS", "SSSSSSSS", "MMMMMMMM", "MMMMMMMM", "MMMMMMMM", "MMMMMMMM"]},
-                {"y": 4, "rows": ["MMMMMMMM", "MMMMMMMM", "MMMMMMMM", "....LL..", ".....L..", "........", "........", "........"]},
-                {"y": 5, "rows": ["..LL....", "...L....", "........", "........", "........", "........", "........", "........"]},
-            ],
+            "layers": [{"y": 0, "rows": ["D"]}],
         },
     }
 
@@ -528,7 +575,7 @@ def build_showcase_voxel_packages() -> None:
         voxels = {
             "version": 1,
             "name": pkg["name"],
-            "voxel_size": 0.15,
+            "voxel_size": pkg.get("voxel_size", 1.0),
             "origin": "bottom_center",
             "materials": pkg["materials"],
             "layers": pkg["layers"],
@@ -543,9 +590,9 @@ def build_showcase_voxel_packages() -> None:
 
 ## 2. Specifications
 
-- Target resolution: 8x6x8 voxels
-- Voxel size: 0.15m (1.2m x 0.9m x 1.2m sample block)
-- Material set: 4 calibrated stylized materials
+- Target resolution: 1x1x1 voxels (1m x 1m x 1m standard terrain chunk block)
+- Voxel size: {pkg.get('voxel_size', 1.0):.2f}m
+- Production Texturing: True nearest-neighbor textured cube faces using production 16x16 PNG textures with standard UV coordinates
 - Purpose: Static 3D visual showcase and validation package for Cube Siege terrain materials.
 """
         (pkg_dir / "request.md").write_text(request_md, encoding="utf-8")
@@ -573,18 +620,19 @@ def write_showcase_reviews() -> None:
 
 ## Objective Build Verification
 - [x] Required review renders generated (iso.png, front.png, side.png, top.png).
-- [x] Export validated (model.glb, glTF 2.0).
-- [x] Material count is within budget ({data.get('materials', 4)} materials <= 4).
+- [x] Export validated (model.glb, glTF 2.0 with embedded production textures and nearest filtering).
+- [x] Material count is within budget ({data.get('materials', 3)} materials <= 4).
 - [x] Triangle count verified ({data.get('triangles', 0)} tris <= 5000).
 - [x] Internal faces culled ({data.get('visible_faces', 0)} visible faces).
 - [x] Ground contact flat at y=0, origin bottom_center.
+- [x] Production 16x16 PNG textures mapped with UVs and TEXTURE_FILTER_NEAREST point filtering.
 
 ## Metrics
 - Occupied voxels: {data.get('occupied_voxels', 0)}
 - Triangles: {data.get('triangles', 0)}
 - Visible faces: {data.get('visible_faces', 0)}
-- Grid: {data.get('grid', {}).get('x', 8)}x{data.get('grid', {}).get('y', 6)}x{data.get('grid', {}).get('z', 8)}
-- World size: {data.get('world_size', {}).get('x', 1.2):.2f} x {data.get('world_size', {}).get('y', 0.9):.2f} x {data.get('world_size', {}).get('z', 1.2):.2f} m
+- Grid: {data.get('grid', {}).get('x', 1)}x{data.get('grid', {}).get('y', 1)}x{data.get('grid', {}).get('z', 1)}
+- World size: {data.get('world_size', {}).get('x', 1.0):.2f} x {data.get('world_size', {}).get('y', 1.0):.2f} x {data.get('world_size', {}).get('z', 1.0):.2f} m
 """
         (review_dir / "review.md").write_text(review_md, encoding="utf-8")
         print(f"[REVIEW] Written review.md for {slug}")

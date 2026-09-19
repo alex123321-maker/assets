@@ -66,78 +66,78 @@
   },
   "showcase_blocks": {
     "block_forest_grass": {
-      "occupied_voxels": 296,
-      "triangles": 592,
-      "visible_faces": 296,
+      "occupied_voxels": 1,
+      "triangles": 12,
+      "visible_faces": 6,
       "grid": {
-        "x": 8,
-        "y": 6,
-        "z": 8
+        "x": 1,
+        "y": 1,
+        "z": 1
       },
       "world_size": {
-        "x": 1.2,
-        "y": 0.8999999999999999,
-        "z": 1.2
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
       }
     },
     "block_plains_meadow": {
-      "occupied_voxels": 286,
-      "triangles": 580,
-      "visible_faces": 290,
+      "occupied_voxels": 1,
+      "triangles": 12,
+      "visible_faces": 6,
       "grid": {
-        "x": 8,
-        "y": 6,
-        "z": 8
+        "x": 1,
+        "y": 1,
+        "z": 1
       },
       "world_size": {
-        "x": 1.2,
-        "y": 0.8999999999999999,
-        "z": 1.2
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
       }
     },
     "block_mountain_stone": {
-      "occupied_voxels": 264,
-      "triangles": 132,
-      "visible_faces": 63,
+      "occupied_voxels": 1,
+      "triangles": 12,
+      "visible_faces": 6,
       "grid": {
-        "x": 8,
-        "y": 6,
-        "z": 8
+        "x": 1,
+        "y": 1,
+        "z": 1
       },
       "world_size": {
-        "x": 1.2,
-        "y": 0.8999999999999999,
-        "z": 1.2
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
       }
     },
     "block_cliff_strata": {
-      "occupied_voxels": 257,
-      "triangles": 572,
-      "visible_faces": 286,
+      "occupied_voxels": 1,
+      "triangles": 12,
+      "visible_faces": 6,
       "grid": {
-        "x": 8,
-        "y": 6,
-        "z": 8
+        "x": 1,
+        "y": 1,
+        "z": 1
       },
       "world_size": {
-        "x": 1.2,
-        "y": 0.8999999999999999,
-        "z": 1.2
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
       }
     },
     "block_dirt_soil": {
-      "occupied_voxels": 286,
-      "triangles": 580,
-      "visible_faces": 290,
+      "occupied_voxels": 1,
+      "triangles": 12,
+      "visible_faces": 6,
       "grid": {
-        "x": 8,
-        "y": 6,
-        "z": 8
+        "x": 1,
+        "y": 1,
+        "z": 1
       },
       "world_size": {
-        "x": 1.2,
-        "y": 0.8999999999999999,
-        "z": 1.2
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
       }
     }
   }

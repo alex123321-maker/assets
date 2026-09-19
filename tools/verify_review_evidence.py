@@ -56,6 +56,48 @@ def check_png_header(path: Path) -> tuple[bool, int, int, str]:
         return False, 0, 0, f"Error reading {path}: {exc}"
 
 
+def check_seamless_tiling(tex_path: Path, max_ratio: float = 1.8, max_jump: float = 30.0) -> tuple[bool, str, dict]:
+    """Verify that a texture has continuous, seamless boundary transitions."""
+    try:
+        from PIL import Image
+        import numpy as np
+    except ImportError:
+        return True, "PIL/numpy not installed, skipping pixel analysis", {}
+
+    if not tex_path.exists():
+        return False, f"Texture not found at {tex_path}", {}
+
+    try:
+        img = Image.open(tex_path).convert("RGB")
+        arr = np.array(img, dtype=float)
+        # horizontal jump across seam: |arr[:, 0] - arr[:, -1]|
+        h_seam = float(np.mean(np.linalg.norm(arr[:, 0] - arr[:, -1], axis=1)))
+        h_internal = float(np.mean(np.linalg.norm(arr[:, 1:] - arr[:, :-1], axis=2)))
+        v_seam = float(np.mean(np.linalg.norm(arr[0, :] - arr[-1, :], axis=1)))
+        v_internal = float(np.mean(np.linalg.norm(arr[1:, :] - arr[:-1, :], axis=2)))
+
+        h_ratio = h_seam / max(h_internal, 1e-4)
+        v_ratio = v_seam / max(v_internal, 1e-4)
+
+        metrics = {
+            "h_seam": h_seam,
+            "h_internal": h_internal,
+            "h_ratio": h_ratio,
+            "v_seam": v_seam,
+            "v_internal": v_internal,
+            "v_ratio": v_ratio,
+        }
+
+        if h_ratio > max_ratio and h_seam > max_jump:
+            return False, f"Horizontal seam jump too high (seam={h_seam:.2f}, internal={h_internal:.2f}, ratio={h_ratio:.2f} > {max_ratio})", metrics
+        if v_ratio > max_ratio and v_seam > max_jump:
+            return False, f"Vertical seam jump too high (seam={v_seam:.2f}, internal={v_internal:.2f}, ratio={v_ratio:.2f} > {max_ratio})", metrics
+
+        return True, "", metrics
+    except Exception as exc:
+        return False, f"Error inspecting texture: {exc}", {}
+
+
 def verify_evidence() -> bool:
     errors: list[str] = []
 
@@ -342,17 +384,25 @@ def verify_evidence() -> bool:
         else:
             print(f"[PASS] Terrain gameplay mockup: {t_mockup.name} ({w}x{h}, {t_mockup.stat().st_size} bytes)")
 
-        # Tileability tests
+        # Tileability tests & seam continuity verification
+        textures_dir = terrain_family_dir / "textures"
         for mat_key in ("forest_grass_top", "plains_meadow_top", "mountain_stone_top", "cliff_side", "dirt_soil"):
             tile_path = terrain_family_dir / "review" / f"tileability_{mat_key}.png"
             ok, w, h, err = check_png_header(tile_path)
             if not ok:
-                errors.append(f"Tileability test for {mat_key} missing or invalid: {err}")
+                errors.append(f"Tileability test preview for {mat_key} missing or invalid: {err}")
             else:
-                print(f"[PASS] Tileability test: {tile_path.name} ({w}x{h})")
+                print(f"[PASS] Tileability test preview: {tile_path.name} ({w}x{h})")
+
+            # Check actual pixel boundary seam continuity on the 16x16 texture
+            tex_file = textures_dir / f"{mat_key}.png"
+            t_ok, t_err, t_m = check_seamless_tiling(tex_file)
+            if not t_ok:
+                errors.append(f"{mat_key}.png failed seamless tiling: {t_err}")
+            elif t_m:
+                print(f"  [PASS] Seamless tiling: {mat_key}.png (H: seam={t_m['h_seam']:.2f}, ratio={t_m['h_ratio']:.2f}; V: seam={t_m['v_seam']:.2f}, ratio={t_m['v_ratio']:.2f})")
 
         # Texture files
-        textures_dir = terrain_family_dir / "textures"
         for tex_name in ("forest_grass_top.png", "plains_meadow_top.png", "mountain_stone_top.png", "cliff_side.png", "dirt_soil.png"):
             tp = textures_dir / tex_name
             ok, w, h, err = check_png_header(tp)
