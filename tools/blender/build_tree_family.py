@@ -452,23 +452,28 @@ def main() -> None:
         if d.is_dir() and (d / "manifest.json").exists()
     ])
 
+    summary = {}
     if not args.family_media_only:
         print(f"Building {len(variant_dirs)} tree variants in {family_dir}...")
-        summary = {}
         for pkg_dir in variant_dirs:
             print(f"\n--- Building {pkg_dir.name} ---")
             metrics = build_variant(pkg_dir)
             summary[pkg_dir.name] = metrics
             print(f"  Voxels: {metrics['occupied_voxels']}, Tris: {metrics['triangles']}")
+    else:
+        for pkg_dir in variant_dirs:
+            m_path = pkg_dir / "review" / "metrics.json"
+            if m_path.exists():
+                summary[pkg_dir.name] = load_json(m_path)
 
-        # Save family metrics summary
-        review_dir = family_dir / "review"
-        review_dir.mkdir(parents=True, exist_ok=True)
-        summary_path = review_dir / "metrics_summary.json"
-        summary_path.write_text(
-            json.dumps(summary, ensure_ascii=False, indent=2) + "\n",
-            encoding="utf-8"
-        )
+    # Always ensure family metrics summary is saved and accurate
+    review_dir = family_dir / "review"
+    review_dir.mkdir(parents=True, exist_ok=True)
+    summary_path = review_dir / "metrics_summary.json"
+    summary_path.write_text(
+        json.dumps(summary, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8"
+    )
 
     print("\n--- Rendering Family Contact Sheet ---")
     render_family_contact_sheet(family_dir, variant_dirs)
@@ -479,9 +484,43 @@ def main() -> None:
     print("\n--- Rendering Gameplay Scale Mockup ---")
     render_gameplay_mockup(family_dir, variant_dirs)
 
-    # Write Family Review MD
+    # Write Family Review MD dynamically from actual metrics
+    descriptions = {
+        "var_0_standard_oak": (
+            "0", "Standard Oak",
+            "Классический сбалансированный силуэт дуба. Ствол с контрфорсными корнями, видимый каркас сучьев, 4 органические асимметричные массы кроны."
+        ),
+        "var_1_tall_oak": (
+            "1", "Tall Oak",
+            "Выраженный высокий узкий силуэт. Органически изогнутый ствол, асимметричные разновысокие ветви и плечи (восточное плечо y=12..21, западное y=18..27), шпилеобразная крона."
+        ),
+        "var_2_broad_oak": (
+            "2", "Broad Oak",
+            "Широкая раскидистая зонтичная крона. Мощный ствол 6×6, 4 массивных узловатых горизонтальных сука под кроной, широкие долевые облака листвы."
+        ),
+        "var_3_young_oak": (
+            "3", "Young Oak",
+            "Ювенильный саженец дуба (~0.6x от взрослого дерева). Тонкий ствол, компактная двухдольная крона, читаемый молодой силуэт."
+        ),
+        "var_4_shrub_oak": (
+            "4", "Shrub / Bush Oak",
+            "Низкорослый кустарниковый дуб (~1.35м). Многоствольное основание с корневыми шпорами, 3 приземистых холмика листвы. Высота по пояс 2м персонажу."
+        ),
+    }
+
+    table_rows = []
+    for pkg_dir in variant_dirs:
+        m = summary.get(pkg_dir.name, {})
+        slot_info = descriptions.get(pkg_dir.name, ("?", pkg_dir.name, ""))
+        dims = f"{m.get('world_size', {}).get('x', 0):.2f} × {m.get('world_size', {}).get('y', 0):.2f} × {m.get('world_size', {}).get('z', 0):.2f}" if 'world_size' in m else "N/A"
+        voxels = f"{m.get('occupied_voxels', 0):,}"
+        tris = f"{m.get('triangles', 0):,}"
+        table_rows.append(f"| **{slot_info[0]}** | **{slot_info[1]}** | {dims} | {voxels} | {tris} | {slot_info[2]} |")
+
+    table_content = "\n".join(table_rows)
+
     family_review_path = family_dir / "review" / "review.md"
-    family_review_md = """# Family Self Review: Environment Trees (Oak Family)
+    family_review_md = f"""# Family Self Review: Environment Trees (Oak Family)
 
 ## Executive Summary
 Семейство дубовых деревьев (`tree_oak`) разработано в строгом соответствии с художественным направлением Cube Siege и интеграционным контрактом `ResourceTree` (Issue #5). Все 5 вариантов (слоты 0..4) построены как статические воксельные ассеты (`voxel_static`) с согласованной плотностью вокселей (0.15м), единой PBR-палитрой материалов (wood bark, base foliage, accent foliage) и нижним центральным origin (`bottom_center`).
@@ -490,11 +529,7 @@ def main() -> None:
 
 | Слот | Вариант | Габариты (м) | Воксели | Треугольники | Проверка силуэта и читаемости |
 |:---:|---|:---:|:---:|:---:|---|
-| **0** | **Standard Oak** | 2.70 × 4.20 × 2.70 | 928 | 1,732 | Классический сбалансированный силуэт дуба. Ствол с контрфорсными корнями, 2 видимых крупных сука, 3 асимметричные массы кроны. |
-| **1** | **Tall Oak** | 2.10 × 5.10 × 2.10 | 392 | 1,024 | Выраженный высокий узкий силуэт. Ствол поднят до y=21 (~3.1м) перед ветвлением; двухъярусная шпилеобразная крона. |
-| **2** | **Broad Oak** | 3.60 × 3.60 × 3.60 | 1,886 | 3,124 | Широкая раскидистая зонтичная крона. Мощный ствол 6×6, 3 массивных узловатых горизонтальных сука под кроной, 4 выраженные долевые массы. |
-| **3** | **Young Oak** | 1.65 × 2.40 × 1.65 | 158 | 512 | Ювенильный саженец дуба (~0.6x от взрослого дерева). Тонкий ствол, компактная двухдольная крона, читаемый молодой силуэт. |
-| **4** | **Shrub / Bush Oak** | 1.80 × 1.35 × 1.80 | 185 | 544 | Низкорослый кустарниковый дуб (~1.35м). Многоствольное основание с корневыми шпорами, 3 приземистых холмика листвы. Высота по пояс 2м персонажу. |
+{table_content}
 
 ## Objective Verification Criteria
 - [x] Создано ровно 5 вариантов, сопоставленных со слотами 0..4 `ResourceTree`.
@@ -510,7 +545,8 @@ def main() -> None:
   - 4 ортогональных рендера (iso, front, side, top) для каждого варианта;
   - Contact sheet всего семейства (`review/contact_sheet.png`);
   - Comparison sheet в едином масштабе (`review/comparison_sheet.png`);
-  - Gameplay mockup с 2м персонажем (`review/gameplay_mockup.png`).
+  - Gameplay mockup с 2м персонажем (`review/gameplay_mockup.png`);
+  - Side-by-side comparison с концептом (`review/reference_vs_3d_comparison.png`).
 """
     family_review_path.write_text(family_review_md, encoding="utf-8")
 

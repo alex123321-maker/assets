@@ -158,6 +158,20 @@ def verify_evidence() -> bool:
     tree_family_dir = REPO_ROOT / "assets" / "environment" / "tree_oak"
     if tree_family_dir.is_dir():
         print(f"\nVerifying evidence for tree_oak family...")
+        # Approved concept reference
+        t_ref = tree_family_dir / "references" / "tree_concept_reference.png"
+        ok, w, h, err = check_png_header(t_ref)
+        if not ok:
+            errors.append(f"Tree concept reference missing or invalid: {err}")
+        else:
+            print(f"[PASS] Tree concept reference: {t_ref.name} ({w}x{h}, {t_ref.stat().st_size} bytes)")
+
+        t_ref_readme = tree_family_dir / "references" / "README.md"
+        if not t_ref_readme.exists():
+            errors.append(f"Tree references/README.md missing at {t_ref_readme}")
+        else:
+            print(f"[PASS] Tree references README: {t_ref_readme.name}")
+
         # Family contact sheet
         t_contact = tree_family_dir / "review" / "contact_sheet.png"
         ok, w, h, err = check_png_header(t_contact)
@@ -177,6 +191,16 @@ def verify_evidence() -> bool:
             errors.append(f"Tree comparison sheet too small ({w}x{h}, expected >= 1000x500)")
         else:
             print(f"[PASS] Tree comparison sheet: {t_comp.name} ({w}x{h}, {t_comp.stat().st_size} bytes)")
+
+        # Reference vs 3D comparison sheet
+        t_ref_comp = tree_family_dir / "review" / "reference_vs_3d_comparison.png"
+        ok, w, h, err = check_png_header(t_ref_comp)
+        if not ok:
+            errors.append(f"Tree reference vs 3D comparison sheet missing or invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Tree reference vs 3D comparison sheet too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Tree reference vs 3D comparison: {t_ref_comp.name} ({w}x{h}, {t_ref_comp.stat().st_size} bytes)")
 
         # Gameplay mockup
         t_mockup = tree_family_dir / "review" / "gameplay_mockup.png"

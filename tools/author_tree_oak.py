@@ -314,50 +314,65 @@ def build_standard_oak() -> VoxelGrid:
 def build_tall_oak() -> VoxelGrid:
     """
     Tall Oak (Slot 1):
-    Columnar fastigiate oak. Stately vertical presence, high crown with 3 stacked tiers.
+    Columnar fastigiate oak. Stately vertical presence, high crown with clear organic
+    asymmetry between eastern and western shoulders, sweeping trunk, and visible boughs.
     Height: 34 layers (5.1m).
-    Width: 14x14 grid (2.1m x 2.1m).
+    Width: 15x15 grid (2.25m x 2.25m).
     """
-    w, h, d = 14, 34, 14
+    w, h, d = 15, 34, 15
     g = VoxelGrid(w, h, d)
-    cx, cz = 6.5, 6.5
+    cx, cz = 7.0, 7.0
 
-    # 1. Base Root flare (y=0..2)
-    g.fill_cylinder(cx, cz, 0, 2, r0=2.4, r1=1.5, token="W")
-    g.draw_line_wood(cx - 2.2, 0, cz, cx, 2, cz, radius=0.8)
-    g.draw_line_wood(cx + 2.2, 0, cz, cx, 2, cz, radius=0.8)
-    g.draw_line_wood(cx, 0, cz - 2.2, cx, 2, cz, radius=0.8)
-    g.draw_line_wood(cx, 0, cz + 2.2, cx, 2, cz, radius=0.8)
+    # 1. Asymmetric Root Flare (y=0..2)
+    g.fill_cylinder(cx, cz, 0, 2, r0=2.3, r1=1.5, token="W")
+    # Primary strong buttress root southwest
+    g.draw_line_wood(cx - 3.2, 0, cz + 1.4, cx, 2, cz, radius=0.85)
+    # Secondary root east-northeast
+    g.draw_line_wood(cx + 2.8, 0, cz - 0.8, cx, 2, cz, radius=0.8)
+    # Shorter anchor north-northwest
+    g.draw_line_wood(cx - 1.2, 0, cz - 2.5, cx, 2, cz, radius=0.75)
+    # Ground toe southeast
+    g.draw_line_wood(cx + 1.6, 0, cz + 2.2, cx, 2, cz, radius=0.7)
 
-    # 2. Columnar Central Trunk (y=2..25)
-    # Rises cleanly to y=12 before first tier branches, continues through canopy as central mast
-    g.fill_cylinder(cx, cz, 2, 12, r0=1.3, r1=1.1, token="W", cx1=cx + 0.1, cz1=cz - 0.1)
-    g.fill_cylinder(cx + 0.1, cz - 0.1, 12, 24, r0=1.1, r1=0.8, token="W", cx1=cx - 0.1, cz1=cz + 0.1)
+    # 2. Sweeping Organic Trunk (y=2..24)
+    # Sweeps slightly southeast to northwest as it ascends
+    g.fill_cylinder(cx, cz, 2, 7, r0=1.5, r1=1.3, token="W", cx1=cx - 0.3, cz1=cz + 0.4)
+    g.fill_cylinder(cx - 0.3, cz + 0.4, 7, 13, r0=1.3, r1=1.1, token="W", cx1=cx - 0.6, cz1=cz + 0.6)
+    g.fill_cylinder(cx - 0.6, cz + 0.6, 13, 19, r0=1.1, r1=0.9, token="W", cx1=cx - 0.1, cz1=cz - 0.1)
+    g.fill_cylinder(cx - 0.1, cz - 0.1, 19, 25, r0=0.9, r1=0.7, token="W", cx1=cx + 0.1, cz1=cz - 0.2)
 
-    # 3. High Vertical Branch Forks
-    # Branching for lower skirt tier (y=11..16)
-    g.draw_line_wood(cx, 11, cz, cx - 1.8, 15, cz + 1.6, radius=0.65)
-    g.draw_line_wood(cx, 12, cz, cx + 1.8, 16, cz - 1.4, radius=0.65)
+    # 3. Asymmetric Framework of Visible Boughs
+    # Bough A: Lower East / North-East bough emerging at y=10..15
+    g.draw_line_wood(cx - 0.4, 10, cz + 0.5, cx + 2.8, 14, cz - 1.8, radius=0.85)
+    g.draw_line_wood(cx + 2.8, 14, cz - 1.8, cx + 4.2, 17, cz - 2.4, radius=0.6)
 
-    # Branching for middle tier (y=17..23)
-    g.draw_line_wood(cx, 17, cz, cx + 1.6, 22, cz + 1.4, radius=0.6)
-    g.draw_line_wood(cx, 18, cz, cx - 1.4, 23, cz - 1.2, radius=0.6)
+    # Bough B: Mid-tier West / South-West bough emerging higher at y=15..21
+    g.draw_line_wood(cx - 0.5, 15, cz + 0.4, cx - 3.2, 19, cz + 2.2, radius=0.8)
+    g.draw_line_wood(cx - 3.2, 19, cz + 2.2, cx - 4.4, 23, cz + 2.8, radius=0.55)
 
-    # Branching for upper spire pinnacle (y=23..29)
-    g.draw_line_wood(cx, 23, cz, cx + 0.2, 28, cz + 0.1, radius=0.55)
+    # Bough C: Upper spire fork at y=23..29
+    g.draw_line_wood(cx - 0.1, 23, cz - 0.1, cx - 0.6, 28, cz + 0.4, radius=0.6)
+    g.draw_line_wood(cx - 0.1, 23, cz - 0.1, cx + 0.7, 27, cz - 0.5, radius=0.55)
 
-    # 4. Foliage: 3 Stately Vertically Tiered Masses
-    # Tier 1: Lower skirt tier (y=12..20)
-    g.fill_foliage_cluster(cx - 0.4, 16.0, cz + 0.4, rx=3.6, ry=4.2, rz=3.6, accent_top_ratio=0.50)
+    # 4. Foliage: 4 Asymmetric Volumetric Masses
+    # Mass A: Lower East Shoulder (y=12..21) - hangs lower on the east flank
+    g.fill_foliage_cluster(cx + 2.8, 16.0, cz - 1.8, rx=3.6, ry=4.2, rz=3.6, accent_top_ratio=0.50)
 
-    # Tier 2: Mid-section Column tier (y=18..27)
-    g.fill_foliage_cluster(cx + 0.3, 22.5, cz - 0.3, rx=3.8, ry=4.8, rz=3.8, accent_top_ratio=0.50)
+    # Mass B: Mid-tier West Shoulder (y=18..27) - sits higher on the opposing southwest flank
+    g.fill_foliage_cluster(cx - 3.2, 22.5, cz + 2.2, rx=3.5, ry=4.6, rz=3.6, accent_top_ratio=0.50)
 
-    # Tier 3: Upper Crown & Spire Pinnacle (y=25..33)
-    g.fill_foliage_cluster(cx - 0.1, 29.0, cz + 0.1, rx=2.8, ry=4.4, rz=2.8, accent_top_ratio=0.55)
+    # Mass C: Connecting North/Central Fill (y=16..24)
+    g.fill_foliage_cluster(cx + 0.4, 20.0, cz - 1.6, rx=3.0, ry=4.0, rz=3.0, accent_top_ratio=0.45)
 
-    # Slim vertical accent cap at summit (y=31..33)
-    g.fill_foliage_cluster(cx, 32.0, cz, rx=1.8, ry=1.8, rz=1.8, accent_top_ratio=0.30)
+    # Mass D: Upper Spire Pinnacle (y=24..33) - stately narrow spire apex
+    g.fill_foliage_cluster(cx - 0.2, 28.5, cz + 0.2, rx=2.8, ry=4.8, rz=2.8, accent_top_ratio=0.55)
+
+    # Apex accent cap at summit (y=31..33)
+    g.fill_foliage_cluster(cx - 0.2, 32.0, cz + 0.2, rx=1.7, ry=1.7, rz=1.7, accent_top_ratio=0.35)
+
+    # Carve negative space under the boughs to ensure visible branches and undercut read
+    g.carve_box(int(cx + 0.5), int(cx + 2.5), 11, 14, int(cz - 1.0), int(cz + 1.0))
+    g.carve_box(int(cx - 3.5), int(cx - 1.5), 16, 18, int(cz + 0.5), int(cz + 2.0))
 
     g.remove_floating_voxels()
     return g
