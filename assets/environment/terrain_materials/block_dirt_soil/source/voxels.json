@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "name": "terrain_dirt_soil_block",
+  "voxel_size": 0.15,
+  "origin": "bottom_center",
+  "materials": {
+    "S": {
+      "name": "soil_primary",
+      "base_color": [
+        0.35,
+        0.25,
+        0.17,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0
+    },
+    "M": {
+      "name": "soil_crumb",
+      "base_color": [
+        0.43,
+        0.31,
+        0.21,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0
+    },
+    "L": {
+      "name": "soil_light_crumb",
+      "base_color": [
+        0.52,
+        0.37,
+        0.25,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0
+    },
+    "D": {
+      "name": "soil_dark_loam",
+      "base_color": [
+        0.22,
+        0.15,
+        0.1,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "DDDDDDDD",
+        "DDSDDDDD",
+        "DSDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "MMMMMMMM",
+        "MMMMMMMM",
+        "MMMMMMMM",
+        "MMMMMMMM"
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "MMMMMMMM",
+        "MMMMMMMM",
+        "MMMMMMMM",
+        "....LL..",
+        ".....L..",
+        "........",
+        "........",
+        "........"
+      ]
+    },
+    {
+      "y": 5,
+      "rows": [
+        "..LL....",
+        "...L....",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........"
+      ]
+    }
+  ]
+}

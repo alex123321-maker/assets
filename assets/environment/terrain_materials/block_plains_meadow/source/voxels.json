@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "name": "terrain_plains_meadow_block",
+  "voxel_size": 0.15,
+  "origin": "bottom_center",
+  "materials": {
+    "P": {
+      "name": "plains_meadow_base",
+      "base_color": [
+        0.28,
+        0.45,
+        0.15,
+        1.0
+      ],
+      "roughness": 0.85,
+      "metallic": 0.0
+    },
+    "M": {
+      "name": "plains_meadow_accent",
+      "base_color": [
+        0.4,
+        0.6,
+        0.2,
+        1.0
+      ],
+      "roughness": 0.85,
+      "metallic": 0.0
+    },
+    "S": {
+      "name": "soil_subsurface",
+      "base_color": [
+        0.35,
+        0.25,
+        0.17,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0
+    },
+    "D": {
+      "name": "deep_earth",
+      "base_color": [
+        0.22,
+        0.15,
+        0.1,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "DDDDDDDD",
+        "DDSDDDDD",
+        "DSSDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD",
+        "DDDDDDDD"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "SSSSSSSS",
+        "PPPPPPPP",
+        "PPPPPPPP",
+        "PPPPPPPP",
+        "PPPPPPPP",
+        "PPPPPPPP"
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "PPPPPPPP",
+        "PPPPPPPP",
+        "PPPPPPPP",
+        "....MM..",
+        ".....M..",
+        "........",
+        "........",
+        "........"
+      ]
+    },
+    {
+      "y": 5,
+      "rows": [
+        "..MM....",
+        "...M....",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........",
+        "........"
+      ]
+    }
+  ]
+}

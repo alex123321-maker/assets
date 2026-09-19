@@ -284,6 +284,160 @@ def verify_evidence() -> bool:
 
             print(f"  [PASS] {slug}: all 4 renders (512x512), metrics, and review document verified.")
 
+    # 6. Verify terrain_materials family (Issue #6)
+    terrain_family_dir = REPO_ROOT / "assets" / "environment" / "terrain_materials"
+    if terrain_family_dir.is_dir():
+        print(f"\nVerifying evidence for terrain_materials family...")
+        # Concept reference
+        t_ref = terrain_family_dir / "references" / "terrain_concept_reference.png"
+        ok, w, h, err = check_png_header(t_ref)
+        if not ok:
+            errors.append(f"Terrain concept reference missing or invalid: {err}")
+        else:
+            print(f"[PASS] Terrain concept reference: {t_ref.name} ({w}x{h}, {t_ref.stat().st_size} bytes)")
+
+        t_ref_readme = terrain_family_dir / "references" / "README.md"
+        if not t_ref_readme.exists():
+            errors.append(f"Terrain references/README.md missing at {t_ref_readme}")
+        else:
+            print(f"[PASS] Terrain references README: {t_ref_readme.name}")
+
+        # Contact sheet
+        t_contact = terrain_family_dir / "review" / "contact_sheet.png"
+        ok, w, h, err = check_png_header(t_contact)
+        if not ok:
+            errors.append(f"Terrain family contact sheet invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Terrain family contact sheet too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Terrain family contact sheet: {t_contact.name} ({w}x{h}, {t_contact.stat().st_size} bytes)")
+
+        # Comparison sheet
+        t_comp = terrain_family_dir / "review" / "comparison_sheet.png"
+        ok, w, h, err = check_png_header(t_comp)
+        if not ok:
+            errors.append(f"Terrain comparison sheet missing or invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Terrain comparison sheet too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Terrain comparison sheet: {t_comp.name} ({w}x{h}, {t_comp.stat().st_size} bytes)")
+
+        # Reference vs 3D comparison sheet
+        t_ref_comp = terrain_family_dir / "review" / "reference_vs_3d_comparison.png"
+        ok, w, h, err = check_png_header(t_ref_comp)
+        if not ok:
+            errors.append(f"Terrain reference vs 3D comparison sheet missing or invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Terrain reference vs 3D comparison sheet too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Terrain reference vs 3D comparison: {t_ref_comp.name} ({w}x{h}, {t_ref_comp.stat().st_size} bytes)")
+
+        # Gameplay mockup
+        t_mockup = terrain_family_dir / "review" / "gameplay_mockup.png"
+        ok, w, h, err = check_png_header(t_mockup)
+        if not ok:
+            errors.append(f"Terrain gameplay mockup missing or invalid: {err}")
+        elif w < 1000 or h < 500:
+            errors.append(f"Terrain gameplay mockup too small ({w}x{h}, expected >= 1000x500)")
+        else:
+            print(f"[PASS] Terrain gameplay mockup: {t_mockup.name} ({w}x{h}, {t_mockup.stat().st_size} bytes)")
+
+        # Tileability tests
+        for mat_key in ("forest_grass_top", "plains_meadow_top", "mountain_stone_top", "cliff_side", "dirt_soil"):
+            tile_path = terrain_family_dir / "review" / f"tileability_{mat_key}.png"
+            ok, w, h, err = check_png_header(tile_path)
+            if not ok:
+                errors.append(f"Tileability test for {mat_key} missing or invalid: {err}")
+            else:
+                print(f"[PASS] Tileability test: {tile_path.name} ({w}x{h})")
+
+        # Texture files
+        textures_dir = terrain_family_dir / "textures"
+        for tex_name in ("forest_grass_top.png", "plains_meadow_top.png", "mountain_stone_top.png", "cliff_side.png", "dirt_soil.png"):
+            tp = textures_dir / tex_name
+            ok, w, h, err = check_png_header(tp)
+            if not ok:
+                errors.append(f"Texture {tex_name} missing or invalid: {err}")
+            elif w != 16 or h != 16:
+                errors.append(f"Texture {tex_name} resolution is {w}x{h}, expected 16x16")
+
+        atlas_path = textures_dir / "terrain_atlas.png"
+        ok, w, h, err = check_png_header(atlas_path)
+        if not ok:
+            errors.append(f"Terrain atlas missing or invalid: {err}")
+        elif w != 64 or h != 64:
+            errors.append(f"Terrain atlas resolution is {w}x{h}, expected 64x64")
+        else:
+            print(f"[PASS] Terrain atlas: {atlas_path.name} (64x64, {atlas_path.stat().st_size} bytes)")
+
+        # Family review.md & metrics
+        t_review = terrain_family_dir / "review" / "review.md"
+        if not t_review.exists():
+            errors.append(f"Missing terrain family review.md at {t_review}")
+        else:
+            content = t_review.read_text(encoding="utf-8")
+            if "# Family Self Review" not in content:
+                errors.append(f"Terrain review.md missing title header in {t_review}")
+            else:
+                print(f"[PASS] Terrain family review document: {t_review.name}")
+
+        t_metrics = terrain_family_dir / "review" / "metrics_summary.json"
+        if not t_metrics.exists():
+            errors.append(f"Missing terrain metrics_summary.json at {t_metrics}")
+        else:
+            print(f"[PASS] Terrain metrics summary: {t_metrics.name}")
+
+        # Showcase blocks
+        terrain_blocks = [
+            "block_forest_grass",
+            "block_plains_meadow",
+            "block_mountain_stone",
+            "block_cliff_strata",
+            "block_dirt_soil",
+        ]
+        for slug in terrain_blocks:
+            pkg_dir = terrain_family_dir / slug
+            if not pkg_dir.is_dir():
+                errors.append(f"Missing terrain block package directory: {pkg_dir}")
+                continue
+
+            rev_dir = pkg_dir / "review"
+            if not rev_dir.is_dir():
+                errors.append(f"Missing review directory in {pkg_dir}")
+                continue
+
+            for view_name in REQUIRED_VIEWS:
+                v_path = rev_dir / view_name
+                ok, w, h, err = check_png_header(v_path)
+                if not ok:
+                    errors.append(f"{slug}: {err}")
+                elif w != h or w < 512:
+                    errors.append(f"{slug}: Render {view_name} invalid resolution {w}x{h}")
+
+            m_path = rev_dir / "metrics.json"
+            if not m_path.exists():
+                errors.append(f"{slug}: Missing metrics.json")
+            else:
+                try:
+                    data = json.loads(m_path.read_text(encoding="utf-8"))
+                    for key in ("occupied_voxels", "triangles", "visible_faces", "grid", "world_size"):
+                        if key not in data:
+                            errors.append(f"{slug}: metrics.json missing required key '{key}'")
+                except Exception as exc:
+                    errors.append(f"{slug}: Invalid metrics.json ({exc})")
+
+            r_path = rev_dir / "review.md"
+            if not r_path.exists():
+                errors.append(f"{slug}: Missing review.md")
+            else:
+                content = r_path.read_text(encoding="utf-8")
+                if "## Objective Build Verification" not in content and "## Result" not in content:
+                    errors.append(f"{slug}: review.md missing '## Objective Build Verification'")
+                if "## Metrics" not in content:
+                    errors.append(f"{slug}: review.md missing '## Metrics'")
+
+            print(f"  [PASS] {slug}: all 4 renders (512x512), metrics, and review document verified.")
+
     if errors:
         print(f"\n[FAIL] Evidence verification failed with {len(errors)} error(s):")
         for e in errors:
