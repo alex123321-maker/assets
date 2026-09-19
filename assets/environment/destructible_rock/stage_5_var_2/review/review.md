@@ -1,23 +1,16 @@
-# Self Review: stage_5_var_2
+# Build Verification: stage_5_var_2
 
 ## Objective Build Verification
 - [x] Required review renders generated (iso.png, front.png, side.png, top.png).
-- [x] Export validated (model.glb, glTF 2.0, 21420 bytes).
+- [x] Export validated (model.glb, glTF 2.0, 17036 bytes).
 - [x] Material count is within budget (3 materials <= 4).
-- [x] Triangle count verified (438 tris <= 5000).
-- [x] Internal faces culled (219 visible faces).
+- [x] Triangle count verified (268 tris <= 5000).
+- [x] Internal faces culled (128 visible faces).
 - [x] Ground contact flat at y=0, origin bottom_center.
 
 ## Metrics
 - Occupied voxels: 33
-- Triangles: 438
-- Visible faces: 219
+- Triangles: 268
+- Visible faces: 128
 - Grid: 10x3x10
 - World size: 1.50 x 0.45 x 1.50 m
-
-## Visual Review Notes
-- **Reference**: `references/rock_concept_reference.png`
-- **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
-  - **Silhouette & Massing**: Distinct stylized angular silhouette matching the approved reference row. Polygonal, asymmetric ground footprint with stable ground contact.
-  - **Material Fidelity**: Multi-tone natural rock palette (primary stone, sunlit light rock on summit crests, dark crevice shading, and earthy moss in sheltered shelves) provides clear read from isometric camera distance without uniform gray appearance.
-- **Reviewer**: Antigravity agent (visual review pass vs approved reference)

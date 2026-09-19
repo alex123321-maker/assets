@@ -1,8 +1,8 @@
 {
   "stage_1_var_1": {
-    "occupied_voxels": 776,
-    "visible_faces": 1048,
-    "triangles": 2112,
+    "occupied_voxels": 707,
+    "visible_faces": 373,
+    "triangles": 880,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -21,8 +21,8 @@
   },
   "stage_1_var_2": {
     "occupied_voxels": 727,
-    "visible_faces": 1131,
-    "triangles": 2295,
+    "visible_faces": 261,
+    "triangles": 633,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -40,9 +40,9 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_1_var_3": {
-    "occupied_voxels": 802,
-    "visible_faces": 1007,
-    "triangles": 2060,
+    "occupied_voxels": 969,
+    "visible_faces": 198,
+    "triangles": 474,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -61,8 +61,8 @@
   },
   "stage_1_var_4": {
     "occupied_voxels": 800,
-    "visible_faces": 1056,
-    "triangles": 2134,
+    "visible_faces": 241,
+    "triangles": 534,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -80,11 +80,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_1_var_5": {
-    "occupied_voxels": 729,
-    "visible_faces": 1106,
-    "triangles": 2239,
-    "mesh_objects": 3,
-    "materials": 3,
+    "occupied_voxels": 1023,
+    "visible_faces": 240,
+    "triangles": 576,
+    "mesh_objects": 4,
+    "materials": 4,
     "grid": {
       "x": 16,
       "y": 12,
@@ -101,8 +101,8 @@
   },
   "stage_1_var_6": {
     "occupied_voxels": 900,
-    "visible_faces": 1064,
-    "triangles": 2184,
+    "visible_faces": 196,
+    "triangles": 444,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -121,8 +121,8 @@
   },
   "stage_2_var_1": {
     "occupied_voxels": 576,
-    "visible_faces": 710,
-    "triangles": 1454,
+    "visible_faces": 110,
+    "triangles": 264,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -141,8 +141,8 @@
   },
   "stage_2_var_2": {
     "occupied_voxels": 568,
-    "visible_faces": 642,
-    "triangles": 1306,
+    "visible_faces": 113,
+    "triangles": 240,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -161,8 +161,8 @@
   },
   "stage_2_var_3": {
     "occupied_voxels": 454,
-    "visible_faces": 666,
-    "triangles": 1359,
+    "visible_faces": 132,
+    "triangles": 311,
     "mesh_objects": 4,
     "materials": 4,
     "grid": {
@@ -181,8 +181,8 @@
   },
   "stage_3_var_1": {
     "occupied_voxels": 256,
-    "visible_faces": 387,
-    "triangles": 784,
+    "visible_faces": 79,
+    "triangles": 176,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -201,8 +201,8 @@
   },
   "stage_3_var_2": {
     "occupied_voxels": 202,
-    "visible_faces": 395,
-    "triangles": 789,
+    "visible_faces": 91,
+    "triangles": 199,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -221,8 +221,8 @@
   },
   "stage_3_var_3": {
     "occupied_voxels": 268,
-    "visible_faces": 402,
-    "triangles": 820,
+    "visible_faces": 85,
+    "triangles": 186,
     "mesh_objects": 2,
     "materials": 2,
     "grid": {
@@ -241,8 +241,8 @@
   },
   "stage_4_var_1": {
     "occupied_voxels": 126,
-    "visible_faces": 332,
-    "triangles": 668,
+    "visible_faces": 85,
+    "triangles": 172,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -261,8 +261,8 @@
   },
   "stage_4_var_2": {
     "occupied_voxels": 134,
-    "visible_faces": 398,
-    "triangles": 820,
+    "visible_faces": 130,
+    "triangles": 268,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -281,8 +281,8 @@
   },
   "stage_5_var_1": {
     "occupied_voxels": 37,
-    "visible_faces": 237,
-    "triangles": 472,
+    "visible_faces": 143,
+    "triangles": 296,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -301,8 +301,8 @@
   },
   "stage_5_var_2": {
     "occupied_voxels": 33,
-    "visible_faces": 219,
-    "triangles": 438,
+    "visible_faces": 128,
+    "triangles": 268,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {
@@ -321,8 +321,8 @@
   },
   "stage_5_var_3": {
     "occupied_voxels": 38,
-    "visible_faces": 233,
-    "triangles": 472,
+    "visible_faces": 133,
+    "triangles": 278,
     "mesh_objects": 3,
     "materials": 3,
     "grid": {

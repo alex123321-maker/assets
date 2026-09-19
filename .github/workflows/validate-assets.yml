@@ -30,3 +30,7 @@ jobs:
 
       - name: Validate committed asset packages
         run: python tools/validate_all.py
+
+      - name: Verify review package evidence
+        run: python tools/verify_review_evidence.py
+

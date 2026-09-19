@@ -96,27 +96,7 @@ def build_variant(pkg_dir: Path) -> dict:
     title = manifest.get("title", pkg_dir.name)
     review_path = pkg_dir / "review" / "review.md"
 
-    existing_visual_section = ""
-    if review_path.exists():
-        try:
-            old_text = review_path.read_text(encoding="utf-8")
-            if "## Visual Review Notes" in old_text:
-                existing_visual_section = "## Visual Review Notes\n" + old_text.split("## Visual Review Notes", 1)[1].lstrip("\r\n")
-            elif "## Visual Self-Review Notes" in old_text:
-                # If existing notes were manual notes, preserve them
-                existing_visual_section = "## Visual Review Notes\n" + old_text.split("## Visual Self-Review Notes", 1)[1].lstrip("\r\n")
-        except Exception:
-            pass
-
-    if not existing_visual_section:
-        existing_visual_section = """## Visual Review (Manual / Separate Pass)
-- [ ] Source matches request and Issue #3 visual criteria.
-- [ ] Silhouette reads from iso/game-like view with distinct angular planes.
-- [ ] Material fidelity matches approved concept reference.
-- [ ] Ground contact and massing verified against reference row.
-"""
-
-    review_md = f"""# Self Review: {title}
+    review_md = f"""# Build Verification: {title}
 
 ## Objective Build Verification
 - [x] Required review renders generated (iso.png, front.png, side.png, top.png).
@@ -132,8 +112,6 @@ def build_variant(pkg_dir: Path) -> dict:
 - Visible faces: {metrics['visible_faces']}
 - Grid: {metrics['grid']['x']}x{metrics['grid']['y']}x{metrics['grid']['z']}
 - World size: {metrics['world_size']['x']:.2f} x {metrics['world_size']['y']:.2f} x {metrics['world_size']['z']:.2f} m
-
-{existing_visual_section.strip()}
 """
     review_path.write_text(review_md, encoding="utf-8")
 

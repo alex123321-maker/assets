@@ -183,50 +183,28 @@ assets/environment/destructible_rock/
 ## Known Intentional Deviations
 None.
 
-## Visual Self-Review vs Approved Reference
+## Visual Inspection Reference Media
 
-Оценка произведена человеком/агентом путём визуального сравнения сгенерированных рендеров (`review/reference_vs_3d_comparison.png`, `review/stage_1_comparison.png` и индивидуальных `iso.png`) с концепт-артом `references/rock_concept_reference.png`:
+Visual inspection and validation against `references/rock_concept_reference.png` are provided via dedicated comparison media in `review/`:
+- `review/reference_vs_3d_comparison.png`: Full concept sheet vs 3D renders side-by-side.
+- `review/stage_1_comparison.png`: High-resolution side-by-side comparison for each of the 6 Stage 1 boulder concepts vs rendered 3D models.
+- `review/contact_sheet.png`: Global panorama of all 17 models across Stages 1–5.
+- Per-variant orthogonal renders (`iso.png`, `front.png`, `side.png`, `top.png`) in each variant's `review/` directory.
 
-### 1. Анализ силуэтов и масс Stage 1
-- **`stage_1_var_1` (Monolith Crag)**:
-  - Референс: доминирующая башня с плоской наклонной вершиной, пониженное восточное плечо, ступенчатый передний шлейф.
-  - 3D Pass: высокая западная башня (y=11) с широким плато `L`, восточный контрфорс (y=7) и вертикальная щель-расщелина между ними. Силуэт совпадает.
-- **`stage_1_var_2` (Twin Spire)**:
-  - Референс: два острых пика разной высоты с глубоким V-образным расщеплением до основания и мхом в глубине трещины.
-  - 3D Pass: пики (y=12 и y=10) с каньоном шириной в 1–2 вокселя, полом со мхом `M` в основании расщелины. Чёткая узнаваемость.
-- **`stage_1_var_3` (Slanted Wedge)**:
-  - Референс: отвесный северный срез и широкие пологие горизонтальные террасы, каскадом спускающиеся к югу.
-  - 3D Pass: задняя стена высотой 11 вокселей, каскадные террасы (высоты 8, 5, 2) с освещёнными поверхностями `L` и мхом вдоль стыка террас.
-- **`stage_1_var_4` (Cantilever Brow)**:
-  - Референс: нависающий массивный лоб на переднем плане с глубокой тенью под ним.
-  - 3D Pass: консольный выступ (y=4..7) с полостью поднутрения (y=0..2) из тёмного камня `D`, ступенчатый подъём к вершине башни.
-- **`stage_1_var_5` (Three-Lobe Butte)**:
-  - Референс: три раздельные горные лопасти (задний пик, левый и правый контрфорсы) с глубокими щелями между ними.
-  - 3D Pass: центральный пик (y=11) и два боковых массива (y=8), разделенные продольными щелями во всю высоту.
-- **`stage_1_var_6` (Dual Peak Ridge)**:
-  - Референс: широкий хребет с двумя сглаженными вершинами и седловиной.
-  - 3D Pass: две вершины (y=10 и y=9) с понижением-седловиной (y=5) и асимметричными боковыми отрогами.
-
-### 2. Прогрессия разрушения (Stages 2–5)
-- **Stage 2 (Big Chunks)**: крупный сколотый массив (~50% массы валуна) с чёткими плоскими поверхностями сколов (`stone_primary`) и обломками у основания.
-- **Stage 3 (Medium Chunks)**: компактные гранёные блоки (~25% массы), естественная группировка 2–3 каменных частей.
-- **Stage 4 (Small Chunks)**: разрозненные группы из 3 отдельных камней с надёжным плоским контактом с землёй (`y=0`).
-- **Stage 5 (Debris)**: россыпь мелких камней и гальки ({s5_r['min_vox']}–{s5_r['max_vox']} вокселей, {s5_r['min_tris']}–{s5_r['max_tris']} треугольников), плоский силуэт высотой 2–3 вокселя.
-
-### 3. Материальная читаемость и свет
-- Верхние грани ловят свет (`stone_light`), формируя объём при взгляде сверху/в изометрии.
-- Расщелины и поднутрения затемнены (`stone_dark`), создавая визуальную глубину и рельефность.
-- Мох (`stone_moss`) ограничен 3–5% видимых поверхностей и локализован только в глубоких укрытых нишах, не образуя однородных ковров.
+### Structural & Silhouette Design Intent
+- **Stage 1 (Vars 1–6)**: Distinct macro silhouettes (Monolith Crag, Twin Spire, Slanted Wedge, Cantilever Brow, Three-Lobe Butte, Dual Peak Ridge). Meshes built with facet dissolving (planar consolidation) and 0.26 bevel chamfers to avoid terraced staircases.
+- **Stages 2–5**: Monotonic volume and polygon reduction across destruction states, flat ground contact at y=0, and clean material separation.
+- **Material Differentiation**: Upper horizontal planes mapped to `stone_light`, crevices/undercuts to `stone_dark`, side walls to `stone_primary`, and sheltered recesses to `stone_moss` accents.
 
 ## Notes for External Reviewer
-- Review package содержит:
-  - `review/reference_vs_3d_comparison.png` — сопоставление всей линейки с утверждённым концептом;
-  - `review/stage_1_comparison.png` — увеличенное сравнение 6 концептов Stage 1 с 3D-моделями;
-  - `review/contact_sheet.png` — общий рендер всех 17 моделей;
-  - 4 ракурса (iso, front, side, top) и `metrics.json` для каждого варианта.
-- Все полигоны ({s5_r['min_tris']}–{s1_r['max_tris']} tris) укладываются в бюджет 5000 tris.
-- Все материалы (до 4) укладываются в бюджет 4 materials.
-- Все GLB экспортированы с единым мешем на материал и удалёнными внутренними гранями.
+- Review package contains:
+  - `review/reference_vs_3d_comparison.png` — full family comparison against approved concept art;
+  - `review/stage_1_comparison.png` — magnified side-by-side comparison of 6 Stage 1 concepts vs 3D models;
+  - `review/contact_sheet.png` — panorama of all 17 models;
+  - 4 orthogonal renders (iso, front, side, top) and `metrics.json` for each variant.
+- All polygon counts ({s5_r['min_tris']}–{s1_r['max_tris']} tris) strictly satisfy the <= 5000 tris budget.
+- All material counts (<= 4) strictly satisfy the <= 4 materials budget.
+- All GLBs are exported with single mesh per material and culled internal faces.
 """
 
     (FAMILY_DIR / "review" / "review.md").write_text(review_content, encoding="utf-8")

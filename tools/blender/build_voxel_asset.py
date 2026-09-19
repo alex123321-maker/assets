@@ -152,6 +152,12 @@ def build_objects(data: dict):
     bm.edges.ensure_lookup_table()
     bm.faces.ensure_lookup_table()
 
+    # Dissolve coplanar faces to form clean planar facets before beveling
+    bmesh.ops.dissolve_limit(bm, angle_limit=math.radians(2.0), verts=bm.verts, edges=bm.edges)
+    bm.verts.ensure_lookup_table()
+    bm.edges.ensure_lookup_table()
+    bm.faces.ensure_lookup_table()
+
     # 2. Identify strictly convex sharp edges to bevel into stylized facets
     convex_edges = []
     for e in bm.edges:
@@ -172,7 +178,7 @@ def build_objects(data: dict):
                     convex_edges.append(e)
 
     # Apply bevel with 1 segment (chamfer)
-    bevel_width = voxel_size * 0.22  # ~0.033m for 0.15m voxels
+    bevel_width = voxel_size * 0.26  # ~0.039m for 0.15m voxels
     if convex_edges:
         bmesh.ops.bevel(
             bm,
