@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "name": "stone_debris_mountain_cluster",
+  "voxel_size": 0.1,
+  "origin": "bottom_center",
+  "materials": {
+    "D": {
+      "name": "stone_dark",
+      "base_color": [
+        0.0482,
+        0.0467,
+        0.0437,
+        1.0
+      ],
+      "roughness": 0.94,
+      "metallic": 0.0,
+      "atlas_cell": [
+        1,
+        3
+      ]
+    },
+    "S": {
+      "name": "stone_primary",
+      "base_color": [
+        0.1046,
+        0.0931,
+        0.0844,
+        1.0
+      ],
+      "roughness": 0.88,
+      "metallic": 0.0,
+      "atlas_cell": [
+        0,
+        3
+      ]
+    },
+    "L": {
+      "name": "stone_light",
+      "base_color": [
+        0.1301,
+        0.1195,
+        0.1046,
+        1.0
+      ],
+      "roughness": 0.82,
+      "metallic": 0.0,
+      "atlas_cell": [
+        2,
+        3
+      ]
+    },
+    "M": {
+      "name": "stone_moss",
+      "base_color": [
+        0.1022,
+        0.1356,
+        0.0482,
+        1.0
+      ],
+      "roughness": 0.95,
+      "metallic": 0.0,
+      "atlas_cell": [
+        3,
+        3
+      ]
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        ".SD..",
+        "DSSSD",
+        "DSSSD",
+        ".DMD.",
+        "....."
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        ".....",
+        ".SLS.",
+        ".SLS.",
+        ".....",
+        "....."
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        ".....",
+        "..L..",
+        "..LL.",
+        ".....",
+        "....."
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        ".....",
+        "..L..",
+        ".....",
+        ".....",
+        "....."
+      ]
+    }
+  ]
+}

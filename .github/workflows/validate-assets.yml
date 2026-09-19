@@ -33,6 +33,10 @@ jobs:
           python -m py_compile tools/generate_terrain_reference.py
           python -m py_compile tools/create_terrain_comparison_sheets.py
           python -m py_compile tools/blender/render_gameplay_mockup.py
+          python -m py_compile tools/author_dressing_pack.py
+          python -m py_compile tools/generate_dressing_reference.py
+          python -m py_compile tools/create_dressing_comparison_sheets.py
+          python -m py_compile tools/blender/build_dressing_pack.py
           python -m py_compile tools/review_loop/*.py
 
       - name: Review loop unit tests
