@@ -1,10 +1,10 @@
 {
   "stage_1_var_1": {
-    "occupied_voxels": 750,
-    "visible_faces": 738,
-    "triangles": 1476,
-    "mesh_objects": 1,
-    "materials": 1,
+    "occupied_voxels": 776,
+    "visible_faces": 698,
+    "triangles": 1396,
+    "mesh_objects": 4,
+    "materials": 4,
     "grid": {
       "x": 16,
       "y": 12,
@@ -20,11 +20,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_1_var_2": {
-    "occupied_voxels": 805,
-    "visible_faces": 722,
-    "triangles": 1444,
-    "mesh_objects": 1,
-    "materials": 1,
+    "occupied_voxels": 727,
+    "visible_faces": 780,
+    "triangles": 1560,
+    "mesh_objects": 4,
+    "materials": 4,
     "grid": {
       "x": 16,
       "y": 12,
@@ -40,11 +40,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_1_var_3": {
-    "occupied_voxels": 893,
-    "visible_faces": 706,
-    "triangles": 1412,
-    "mesh_objects": 1,
-    "materials": 1,
+    "occupied_voxels": 802,
+    "visible_faces": 716,
+    "triangles": 1432,
+    "mesh_objects": 4,
+    "materials": 4,
     "grid": {
       "x": 16,
       "y": 12,
@@ -60,11 +60,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_1_var_4": {
-    "occupied_voxels": 788,
-    "visible_faces": 726,
-    "triangles": 1452,
-    "mesh_objects": 1,
-    "materials": 1,
+    "occupied_voxels": 800,
+    "visible_faces": 722,
+    "triangles": 1444,
+    "mesh_objects": 4,
+    "materials": 4,
     "grid": {
       "x": 16,
       "y": 12,
@@ -80,11 +80,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_1_var_5": {
-    "occupied_voxels": 870,
-    "visible_faces": 852,
-    "triangles": 1704,
-    "mesh_objects": 1,
-    "materials": 1,
+    "occupied_voxels": 729,
+    "visible_faces": 794,
+    "triangles": 1588,
+    "mesh_objects": 3,
+    "materials": 3,
     "grid": {
       "x": 16,
       "y": 12,
@@ -100,11 +100,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_1_var_6": {
-    "occupied_voxels": 922,
-    "visible_faces": 736,
-    "triangles": 1472,
-    "mesh_objects": 1,
-    "materials": 1,
+    "occupied_voxels": 900,
+    "visible_faces": 758,
+    "triangles": 1516,
+    "mesh_objects": 4,
+    "materials": 4,
     "grid": {
       "x": 18,
       "y": 11,
@@ -120,11 +120,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_2_var_1": {
-    "occupied_voxels": 594,
-    "visible_faces": 528,
-    "triangles": 1056,
-    "mesh_objects": 1,
-    "materials": 1,
+    "occupied_voxels": 576,
+    "visible_faces": 522,
+    "triangles": 1044,
+    "mesh_objects": 4,
+    "materials": 4,
     "grid": {
       "x": 14,
       "y": 9,
@@ -140,11 +140,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_2_var_2": {
-    "occupied_voxels": 411,
-    "visible_faces": 432,
-    "triangles": 864,
-    "mesh_objects": 1,
-    "materials": 1,
+    "occupied_voxels": 568,
+    "visible_faces": 470,
+    "triangles": 940,
+    "mesh_objects": 3,
+    "materials": 3,
     "grid": {
       "x": 14,
       "y": 8,
@@ -160,11 +160,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_2_var_3": {
-    "occupied_voxels": 420,
-    "visible_faces": 464,
-    "triangles": 928,
-    "mesh_objects": 1,
-    "materials": 1,
+    "occupied_voxels": 454,
+    "visible_faces": 478,
+    "triangles": 956,
+    "mesh_objects": 4,
+    "materials": 4,
     "grid": {
       "x": 14,
       "y": 8,
@@ -180,11 +180,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_3_var_1": {
-    "occupied_voxels": 235,
-    "visible_faces": 278,
-    "triangles": 556,
-    "mesh_objects": 1,
-    "materials": 1,
+    "occupied_voxels": 256,
+    "visible_faces": 274,
+    "triangles": 548,
+    "mesh_objects": 3,
+    "materials": 3,
     "grid": {
       "x": 12,
       "y": 7,
@@ -200,11 +200,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_3_var_2": {
-    "occupied_voxels": 212,
-    "visible_faces": 274,
-    "triangles": 548,
-    "mesh_objects": 1,
-    "materials": 1,
+    "occupied_voxels": 202,
+    "visible_faces": 268,
+    "triangles": 536,
+    "mesh_objects": 3,
+    "materials": 3,
     "grid": {
       "x": 12,
       "y": 6,
@@ -220,11 +220,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_3_var_3": {
-    "occupied_voxels": 276,
-    "visible_faces": 288,
-    "triangles": 576,
-    "mesh_objects": 1,
-    "materials": 1,
+    "occupied_voxels": 268,
+    "visible_faces": 280,
+    "triangles": 560,
+    "mesh_objects": 2,
+    "materials": 2,
     "grid": {
       "x": 12,
       "y": 6,
@@ -240,11 +240,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_4_var_1": {
-    "occupied_voxels": 127,
-    "visible_faces": 218,
-    "triangles": 436,
-    "mesh_objects": 1,
-    "materials": 1,
+    "occupied_voxels": 126,
+    "visible_faces": 216,
+    "triangles": 432,
+    "mesh_objects": 3,
+    "materials": 3,
     "grid": {
       "x": 12,
       "y": 5,
@@ -260,11 +260,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_4_var_2": {
-    "occupied_voxels": 130,
+    "occupied_voxels": 134,
     "visible_faces": 246,
     "triangles": 492,
-    "mesh_objects": 1,
-    "materials": 1,
+    "mesh_objects": 3,
+    "materials": 3,
     "grid": {
       "x": 12,
       "y": 4,
@@ -280,11 +280,11 @@
     "render_engine": "BLENDER_EEVEE"
   },
   "stage_5_var_1": {
-    "occupied_voxels": 36,
+    "occupied_voxels": 37,
     "visible_faces": 114,
     "triangles": 228,
-    "mesh_objects": 1,
-    "materials": 1,
+    "mesh_objects": 3,
+    "materials": 3,
     "grid": {
       "x": 10,
       "y": 3,
@@ -303,8 +303,8 @@
     "occupied_voxels": 33,
     "visible_faces": 106,
     "triangles": 212,
-    "mesh_objects": 1,
-    "materials": 1,
+    "mesh_objects": 3,
+    "materials": 3,
     "grid": {
       "x": 10,
       "y": 3,
@@ -323,8 +323,8 @@
     "occupied_voxels": 38,
     "visible_faces": 116,
     "triangles": 232,
-    "mesh_objects": 1,
-    "materials": 1,
+    "mesh_objects": 3,
+    "materials": 3,
     "grid": {
       "x": 10,
       "y": 3,

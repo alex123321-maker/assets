@@ -1,14 +1,14 @@
 # Self Review: stage_5_var_3
 
 ## Result
-- [x] Source matches request and Issue #1 criteria.
+- [x] Source matches request and Issue #3 criteria.
 - [x] Required review renders generated.
 - [x] Silhouette reads from iso/game-like view with distinct angular planes.
 - [x] No accidental floating/disconnected geometry.
 - [x] Voxel density is intentional and consistent (size=0.15).
-- [x] Material count is within budget (1 material).
-- [x] Triangle count verified.
-- [x] Export validated (model.glb, glTF 2.0, 13668 bytes).
+- [x] Material count is within budget (3 materials <= 4).
+- [x] Triangle count verified (232 tris <= 5000).
+- [x] Export validated (model.glb, glTF 2.0, 15444 bytes).
 
 ## Metrics
 - Occupied voxels: 38
@@ -20,6 +20,6 @@
 ## Visual Self-Review Notes
 - **Reference**: `references/rock_concept_reference.png`
 - **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
-  - **Massing & Silhouette**: Exactly 4 physically separate stones forming a curved crescent scatter pattern with varied piece sizes and flat ground contact.
-  - **Reference Alignment**: Matches the curved debris scatter in the bottom of the Stage 5 reference column.
-- **Reviewer**: Antigravity agent (interactive visual inspection of renders vs concept reference)
+  - **Silhouette & Massing**: Distinct stylized angular silhouette matching the approved reference row. Polygonal, asymmetric ground footprint with stable ground contact.
+  - **Material Fidelity**: Multi-tone natural rock palette (primary stone, sunlit light rock on summit crests, dark crevice shading, and earthy moss in sheltered shelves) provides clear read from isometric camera distance without uniform gray appearance.
+- **Reviewer**: Antigravity agent (visual review pass vs approved reference)

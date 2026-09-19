@@ -5,14 +5,25 @@
   "origin": "bottom_center",
   "materials": {
     "S": {
-      "name": "stone_gray",
+      "name": "stone_primary",
       "base_color": [
-        0.38,
-        0.4,
-        0.43,
+        0.24,
+        0.22,
+        0.2,
         1.0
       ],
-      "roughness": 0.92,
+      "roughness": 0.88,
+      "metallic": 0.0
+    },
+    "L": {
+      "name": "stone_light",
+      "base_color": [
+        0.45,
+        0.43,
+        0.4,
+        1.0
+      ],
+      "roughness": 0.82,
       "metallic": 0.0
     }
   },
@@ -22,14 +33,14 @@
       "rows": [
         "............",
         "............",
+        "...SSSSSSS..",
+        "...SSSSSSS..",
         "..SSSSSSSS..",
         "..SSSSSSSS..",
         "..SSSSSSSS..",
         "..SSSSSSSS..",
-        "..SSSSSSSS..",
-        "..SSSSSSSS..",
-        "..SSSSSSSS..",
-        "..SSSSSSSS..",
+        "..SSSSSSS...",
+        "..SSSSSSS...",
         "............",
         "............"
       ]
@@ -39,14 +50,14 @@
       "rows": [
         "............",
         "............",
+        "...SSSSSSS..",
+        "...SSSSSSS..",
         "..SSSSSSSS..",
         "..SSSSSSSS..",
         "..SSSSSSSS..",
         "..SSSSSSSS..",
-        "..SSSSSSSS..",
-        "..SSSSSSSS..",
-        "..SSSSSSSS..",
-        "..SSSSSSSS..",
+        "..SSSSSSS...",
+        "..SSSSSSS...",
         "............",
         "............"
       ]
@@ -56,14 +67,14 @@
       "rows": [
         "............",
         "............",
-        "..SSSSSSSS..",
-        "..SSSSSSSS..",
-        "..SSSSSSSS..",
-        "..SSSSSSSS..",
-        "..SSSSSSSS..",
-        "..SSSSSSSS..",
-        "..SSSSSSSS..",
-        "..SSSSSSSS..",
+        "...LLLLLLL..",
+        "...SSSSSSL..",
+        "..LSSSSSSL..",
+        "..LSSSSSSL..",
+        "..LSSSSSSL..",
+        "..LSSSSSSL..",
+        "..LSSSSSS...",
+        "..LLLLLLL...",
         "............",
         "............"
       ]
@@ -91,12 +102,12 @@
         "............",
         "............",
         "............",
-        "...SSSSSS...",
-        "...SSSSSS...",
-        "...SSSSSS...",
-        "...SSSSSS...",
-        "...SSSSSS...",
-        "...SSSS.....",
+        "...LLLLLL...",
+        "...LSSSSL...",
+        "...LSSSSL...",
+        "...LSSSSL...",
+        "...LSSSSL...",
+        "...LLLLLL...",
         "............",
         "............",
         "............"
@@ -109,10 +120,10 @@
         "............",
         "............",
         "............",
-        "....SSSS....",
-        "....SSSS....",
-        "....SSSS....",
-        "....SS......",
+        "....LLLL....",
+        "....LLLL....",
+        "....LLLL....",
+        "....LLLL....",
         "............",
         "............",
         "............",

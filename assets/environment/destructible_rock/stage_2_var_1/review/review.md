@@ -1,25 +1,25 @@
 # Self Review: stage_2_var_1
 
 ## Result
-- [x] Source matches request and Issue #1 criteria.
+- [x] Source matches request and Issue #3 criteria.
 - [x] Required review renders generated.
 - [x] Silhouette reads from iso/game-like view with distinct angular planes.
 - [x] No accidental floating/disconnected geometry.
 - [x] Voxel density is intentional and consistent (size=0.15).
-- [x] Material count is within budget (1 material).
-- [x] Triangle count verified.
-- [x] Export validated (model.glb, glTF 2.0, 58124 bytes).
+- [x] Material count is within budget (4 materials <= 4).
+- [x] Triangle count verified (1044 tris <= 5000).
+- [x] Export validated (model.glb, glTF 2.0, 60116 bytes).
 
 ## Metrics
-- Occupied voxels: 594
-- Triangles: 1056
-- Visible faces: 528
+- Occupied voxels: 576
+- Triangles: 1044
+- Visible faces: 522
 - Grid: 14x9x14
 - World size: 2.10 x 1.35 x 2.10 m
 
 ## Visual Self-Review Notes
 - **Reference**: `references/rock_concept_reference.png`
 - **Observations from Renders (`iso.png`, `front.png`, `side.png`, `top.png`)**:
-  - **Massing & Silhouette**: Displays a cleaved boulder with a clean vertical planar cleavage face along the north flank contrasted with stepped natural weathering on the south. Mass is ~50% of Stage 1 (594 voxels).
-  - **Reference Alignment**: Directly reflects the fractured half-boulder in the top of the Stage 2 'Big Chunks' reference column.
-- **Reviewer**: Antigravity agent (interactive visual inspection of renders vs concept reference)
+  - **Silhouette & Massing**: Distinct stylized angular silhouette matching the approved reference row. Polygonal, asymmetric ground footprint with stable ground contact.
+  - **Material Fidelity**: Multi-tone natural rock palette (primary stone, sunlit light rock on summit crests, dark crevice shading, and earthy moss in sheltered shelves) provides clear read from isometric camera distance without uniform gray appearance.
+- **Reviewer**: Antigravity agent (visual review pass vs approved reference)

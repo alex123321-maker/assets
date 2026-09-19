@@ -201,7 +201,7 @@ def setup_review_scene(objects):
     max_dim = max(extent.x, extent.y, extent.z)
 
     world = bpy.context.scene.world
-    world.color = (0.025, 0.025, 0.035)
+    world.color = (0.045, 0.050, 0.060)
 
     cam_data = bpy.data.cameras.new("ReviewCamera")
     cam = bpy.data.objects.new("ReviewCamera", cam_data)
@@ -211,21 +211,34 @@ def setup_review_scene(objects):
     cam.data.ortho_scale = max_dim * 1.6
 
     key_data = bpy.data.lights.new("Key", type="AREA")
-    key_data.energy = 900.0
+    key_data.energy = 850.0
     key_data.shape = "DISK"
     key_data.size = max_dim * 3.0
+    key_data.color = (1.0, 0.98, 0.94)
     key = bpy.data.objects.new("Key", key_data)
     bpy.context.collection.objects.link(key)
-    key.location = center + Vector((-max_dim * 2.0, -max_dim * 2.0, max_dim * 3.0))
+    key.location = center + Vector((-max_dim * 2.2, -max_dim * 2.2, max_dim * 3.2))
     look_at(key, center)
 
     fill_data = bpy.data.lights.new("Fill", type="AREA")
-    fill_data.energy = 350.0
-    fill_data.size = max_dim * 2.0
+    fill_data.energy = 380.0
+    fill_data.shape = "DISK"
+    fill_data.size = max_dim * 2.5
+    fill_data.color = (0.85, 0.90, 1.0)
     fill = bpy.data.objects.new("Fill", fill_data)
     bpy.context.collection.objects.link(fill)
-    fill.location = center + Vector((max_dim * 2.0, max_dim * 1.5, max_dim * 1.5))
+    fill.location = center + Vector((max_dim * 2.2, max_dim * 1.8, max_dim * 1.8))
     look_at(fill, center)
+
+    rim_data = bpy.data.lights.new("Rim", type="AREA")
+    rim_data.energy = 220.0
+    rim_data.shape = "DISK"
+    rim_data.size = max_dim * 2.0
+    rim_data.color = (0.95, 0.95, 1.0)
+    rim = bpy.data.objects.new("Rim", rim_data)
+    bpy.context.collection.objects.link(rim)
+    rim.location = center + Vector((max_dim * 1.0, max_dim * 3.0, max_dim * 2.5))
+    look_at(rim, center)
 
     scene = bpy.context.scene
     scene.render.engine = resolve_eevee_engine()
