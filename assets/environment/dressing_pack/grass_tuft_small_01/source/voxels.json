@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "name": "grass_tuft_small_01",
+  "voxel_size": 0.1,
+  "origin": "bottom_center",
+  "materials": {
+    "D": {
+      "name": "grass_base",
+      "base_color": [
+        0.0319,
+        0.0467,
+        0.0168,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0,
+      "atlas_cell": [
+        1,
+        0
+      ]
+    },
+    "G": {
+      "name": "grass_primary",
+      "base_color": [
+        0.1746,
+        0.2623,
+        0.0545,
+        1.0
+      ],
+      "roughness": 0.88,
+      "metallic": 0.0,
+      "atlas_cell": [
+        0,
+        0
+      ]
+    },
+    "L": {
+      "name": "grass_tip",
+      "base_color": [
+        0.1683,
+        0.2874,
+        0.0865,
+        1.0
+      ],
+      "roughness": 0.82,
+      "metallic": 0.0,
+      "atlas_cell": [
+        2,
+        0
+      ]
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "....",
+        ".DD.",
+        ".DG.",
+        "...."
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        ".G..",
+        ".G.G",
+        "..G.",
+        "...."
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        ".L..",
+        "...L",
+        "..L.",
+        "...."
+      ]
+    }
+  ]
+}

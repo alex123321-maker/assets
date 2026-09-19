@@ -1,0 +1,44 @@
+{
+  "occupied_voxels": 20,
+  "visible_faces": 122,
+  "triangles": 184,
+  "mesh_objects": 1,
+  "materials": 1,
+  "shared_material": "mat_dressing_atlas",
+  "atlas_texture": "dressing_palette_atlas.png",
+  "roughness_atlas_texture": "dressing_roughness_atlas.png",
+  "grid": {
+    "x": 6,
+    "y": 3,
+    "z": 6
+  },
+  "voxel_size": 0.1,
+  "world_size": {
+    "x": 0.592,
+    "y": 0.315,
+    "z": 0.492
+  },
+  "blender_version": "5.2.1 LTS",
+  "render_engine": "BLENDER_EEVEE",
+  "mesh_aabb": {
+    "x": 0.592,
+    "y": 0.315,
+    "z": 0.492
+  },
+  "mesh_bounds_min": {
+    "x": -0.296,
+    "y": 0.0,
+    "z": -0.296
+  },
+  "mesh_bounds_max": {
+    "x": 0.296,
+    "y": 0.315,
+    "z": 0.196
+  },
+  "nominal_grid_size": {
+    "x": 0.6,
+    "y": 0.3,
+    "z": 0.6
+  },
+  "origin": "bottom_center"
+}

@@ -38,7 +38,7 @@
 
 - `version` currently must be `1`.
 - `voxel_size` is world-space size in Blender units.
-- `origin`: baseline supports `bottom_center`.
+- `origin`: baseline supports `bottom_center`; ledge/cliff assets may use `edge_anchor`.
 - `.` means empty voxel.
 - Every non-dot token must exist in `materials`.
 - All rows across all layers have equal length (X).

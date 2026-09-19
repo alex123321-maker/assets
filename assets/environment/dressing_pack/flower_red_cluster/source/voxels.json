@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "name": "flower_red_cluster",
+  "voxel_size": 0.1,
+  "origin": "bottom_center",
+  "materials": {
+    "D": {
+      "name": "flower_stem_dark",
+      "base_color": [
+        0.0319,
+        0.0467,
+        0.0168,
+        1.0
+      ],
+      "roughness": 0.92,
+      "metallic": 0.0,
+      "atlas_cell": [
+        1,
+        1
+      ]
+    },
+    "G": {
+      "name": "flower_stem",
+      "base_color": [
+        0.1746,
+        0.2623,
+        0.0545,
+        1.0
+      ],
+      "roughness": 0.88,
+      "metallic": 0.0,
+      "atlas_cell": [
+        0,
+        1
+      ]
+    },
+    "R": {
+      "name": "petal_red",
+      "base_color": [
+        0.7605,
+        0.1195,
+        0.0742,
+        1.0
+      ],
+      "roughness": 0.8,
+      "metallic": 0.0,
+      "atlas_cell": [
+        5,
+        1
+      ]
+    },
+    "C": {
+      "name": "center_dark",
+      "base_color": [
+        0.0482,
+        0.0467,
+        0.0437,
+        1.0
+      ],
+      "roughness": 0.85,
+      "metallic": 0.0,
+      "atlas_cell": [
+        6,
+        1
+      ]
+    }
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "..D..",
+        ".DDD.",
+        "DDGDD",
+        ".DDD.",
+        "..D.."
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        ".....",
+        "..G..",
+        "..G..",
+        "...G.",
+        "....."
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        ".....",
+        "..G..",
+        ".....",
+        "...RR",
+        "...RC"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        ".RRR.",
+        ".RCR.",
+        ".RRR.",
+        ".....",
+        "....."
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        ".R.R.",
+        ".....",
+        ".R.R.",
+        ".....",
+        "....."
+      ]
+    }
+  ]
+}
