@@ -921,6 +921,16 @@ PROPS_SPECS = [
 ]
 
 
+def linear_to_srgb(c: float) -> float:
+    """Standard IEC 61966-2-1 linear-to-sRGB transfer function."""
+    c = max(0.0, min(1.0, c))
+    return 12.92 * c if c <= 0.0031308 else 1.055 * (c ** (1.0 / 2.4)) - 0.055
+
+
+def linear_to_srgb_byte(c: float) -> int:
+    return int(round(linear_to_srgb(c) * 255.0))
+
+
 def generate_palette_atlas() -> None:
     """Generate 64x64 shared palette atlas texture and roughness/metallic atlas for MultiMesh batching."""
     atlas_w = ATLAS_GRID_COLS * 8
@@ -933,7 +943,13 @@ def generate_palette_atlas() -> None:
     for fam_name, tokens in PALETTE_DATA["families"].items():
         for tok, spec in tokens.items():
             col, row = spec["atlas_cell"]
-            color_rgba = tuple(int(c * 255) for c in spec["base_color"])
+            # glTF baseColorTexture MUST be sRGB-encoded so sampling decodes back to canonical linear base_color
+            color_rgba = (
+                linear_to_srgb_byte(spec["base_color"][0]),
+                linear_to_srgb_byte(spec["base_color"][1]),
+                linear_to_srgb_byte(spec["base_color"][2]),
+                int(round(spec["base_color"][3] * 255.0)),
+            )
             roughness_byte = int(round(spec["roughness"] * 255))
             metallic_byte = int(round(spec.get("metallic", 0.0) * 255))
             mr_rgba = (255, roughness_byte, metallic_byte, 255)

@@ -699,6 +699,39 @@ def verify_evidence() -> bool:
                                         exp_g = int(round(spec.get("roughness", 0.88) * 255))
                                         if abs(g_val - exp_g) > 1:
                                             errors.append(f"{slug}: Token '{tok}' GLB roughness {g_val} != expected {exp_g}")
+
+                            # 4. BaseColor texture sRGB encoding and canonical linear fidelity check
+                            if mats and "baseColorTexture" in mats[0].get("pbrMetallicRoughness", {}):
+                                bc_tex_idx = mats[0]["pbrMetallicRoughness"]["baseColorTexture"]["index"]
+                                bc_img_idx = gltf_json["textures"][bc_tex_idx]["source"]
+                                bc_bv_idx = gltf_json["images"][bc_img_idx]["bufferView"]
+                                bc_bv = gltf_json["bufferViews"][bc_bv_idx]
+                                bc_bytes = bin_data[bc_bv.get("byteOffset", 0):bc_bv.get("byteOffset", 0) + bc_bv["byteLength"]]
+
+                                import io
+                                from PIL import Image
+                                bc_img = Image.open(io.BytesIO(bc_bytes))
+
+                                def srgb_to_linear(b: int) -> float:
+                                    c = b / 255.0
+                                    if c <= 0.04045:
+                                        return c / 12.92
+                                    return ((c + 0.055) / 1.055) ** 2.4
+
+                                v_path = pkg_dir / "source" / "voxels.json"
+                                if v_path.exists():
+                                    v_data = json.loads(v_path.read_text(encoding="utf-8"))
+                                    for tok, spec in v_data.get("materials", {}).items():
+                                        col, row = spec.get("atlas_cell", [0, 0])
+                                        px = col * 8 + 4
+                                        py = row * 8 + 4
+                                        texel = bc_img.getpixel((px, py))
+                                        canon_bc = spec.get("base_color", [1.0, 1.0, 1.0, 1.0])
+                                        for ch_i, ch_name in enumerate(("R", "G", "B")):
+                                            c_lin = srgb_to_linear(texel[ch_i])
+                                            exp_lin = canon_bc[ch_i]
+                                            if abs(c_lin - exp_lin) > 0.015:
+                                                errors.append(f"{slug}: Token '{tok}' {ch_name} baseColor linear {c_lin:.4f} != expected {exp_lin:.4f} (texel: {texel})")
                 except Exception as exc:
                     errors.append(f"{slug}: Error inspecting GLB materials: {exc}")
 
