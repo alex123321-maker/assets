@@ -824,6 +824,45 @@ def verify_evidence() -> bool:
                     errors.append(f"Stone debris rotational equivalence collision: {s1} and {s2} are rotationally identical!")
         print(f"[PASS] Stone debris distinctiveness verified: all {len(stone_slugs)} variants have unique 3D rotational signatures.")
 
+        # Distinctiveness check for flower variants: verify all 4 have unique voxel geometry
+        flower_slugs = [s for s in dressing_variants if s.startswith("flower_")]
+        flower_signatures = {}
+        for f_slug in flower_slugs:
+            v_file = dressing_family_dir / f_slug / "source" / "voxels.json"
+            if v_file.exists():
+                v_data = json.loads(v_file.read_text(encoding="utf-8"))
+                coords = []
+                for layer in v_data.get("layers", []):
+                    y = layer.get("y", 0)
+                    for z, row in enumerate(layer.get("rows", [])):
+                        for x, ch in enumerate(row):
+                            if ch not in (".", " "):
+                                coords.append((x, y, z))
+                flower_signatures[f_slug] = (len(coords), tuple(sorted(coords)))
+
+        for i in range(len(flower_slugs)):
+            for j in range(i + 1, len(flower_slugs)):
+                f1, f2 = flower_slugs[i], flower_slugs[j]
+                if flower_signatures.get(f1) == flower_signatures.get(f2):
+                    errors.append(f"Flower variant collision: {f1} and {f2} have identical voxel geometry!")
+        print(f"[PASS] Flower distinctiveness verified: all {len(flower_slugs)} flower archetypes have unique voxel geometries.")
+
+        # Documentation consistency check
+        d_readme = dressing_family_dir / "references" / "README.md"
+        if d_readme.exists():
+            d_readme_text = d_readme.read_text(encoding="utf-8")
+            if "100% согласован с destructible rock family" in d_readme_text:
+                errors.append(f"Dressing references/README.md contains stale claim: '100% согласован с destructible rock family'")
+            if "использует идентичные PBR-материалы скал" in d_readme_text:
+                errors.append(f"Dressing references/README.md contains stale claim: 'использует идентичные PBR-материалы скал'")
+        d_rev = dressing_family_dir / "review" / "review.md"
+        if d_rev.exists():
+            d_rev_text = d_rev.read_text(encoding="utf-8")
+            if "Uses the identical 4-material palette from destructible_rock" in d_rev_text:
+                errors.append(f"Dressing review/review.md contains stale claim: 'Uses the identical 4-material palette from destructible_rock'")
+            if "Exact palette & shader parameters matched to Issue #3" in d_rev_text:
+                errors.append(f"Dressing review/review.md contains stale claim: 'Exact palette & shader parameters matched to Issue #3'")
+
     if errors:
         print(f"\n[FAIL] Evidence verification failed with {len(errors)} error(s):")
         for e in errors:

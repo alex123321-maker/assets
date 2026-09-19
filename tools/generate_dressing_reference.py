@@ -28,54 +28,54 @@ families = [
         "title": "GRASS TUFTS",
         "count": "6 Variants (Slots 0..5)",
         "sub": "3 Small, 2 Medium, 1 Tall Accent",
-        "accent_color": (75, 145, 45),
+        "accent_color": (116, 140, 66),
         "desc": [
             "• Chunky stepped voxel blades",
             "• Natural outwards fan & directional tilts",
             "• Flat clean ground contact at z=0",
-            "• Height: 0.15m - 0.50m (voxel_size: 0.10m)",
+            "• Height: 0.15m - 0.60m (voxel_size: 0.10m)",
             "• No alpha foliage cards; solid volume geometry",
-            "• Triangles: 24 - 110 tris per mesh",
+            "• Triangles: 92 - 228 tris per mesh",
         ],
         "variants": [
-            "1. grass_tuft_small_01 (Compact 2-blade sprig)",
-            "2. grass_tuft_small_02 (Asymmetric 3-blade fan)",
-            "3. grass_tuft_small_03 (Tight 4-blade clump)",
-            "4. grass_tuft_med_01 (Tiered 5-blade clump)",
-            "5. grass_tuft_med_02 (Wind-swept 6-blade spread)",
-            "6. grass_tuft_tall_01 (Tall accent focal clump)",
+            "1. grass_tuft_small_01 (Compact 3-blade sprig)",
+            "2. grass_tuft_small_02 (Asymmetric fan sprig)",
+            "3. grass_tuft_small_03 (Bushy stepped clump)",
+            "4. grass_tuft_med_01 (Tiered multi-blade tuft)",
+            "5. grass_tuft_med_02 (Wind-swept spread tuft)",
+            "6. grass_tuft_tall_01 (Tall accent focal tuft)",
         ],
         "palette": [
-            ("Primary Blade", "#8fbf70", (143, 191, 112)),
-            ("Ground Root", "#769d5e", (118, 157, 94)),
-            ("Sunlit Tip", "#add982", (173, 217, 130)),
+            ("Primary Grass", "#748c42", (116, 140, 66)),
+            ("Dark Foliage Root", "#323d23", (50, 61, 35)),
+            ("Sunlit Light Tip", "#729253", (114, 146, 83)),
         ],
     },
     {
         "id": "flowers",
         "title": "FLOWERS",
-        "count": "4 Variants / Color Groups",
+        "count": "4 Variants / Archetypes",
         "sub": "White, Yellow, Red, Mixed Accent",
-        "accent_color": (210, 160, 35),
+        "accent_color": (246, 199, 68),
         "desc": [
-            "• Bold chromatic focal points for meadows",
-            "• Chunky cubic petals around vibrant pistil center",
-            "• Grounded leafy stem base",
+            "• Distinct archetypes: daisies, buttercups, poppies, bells",
+            "• Distinct heights (0.3m to 0.5m) and voxel layouts",
+            "• Grounded leafy rosette bases & colored blossoms",
             "• High readability from isometric gameplay camera",
             "• Distinctive silhouettes under rotation",
-            "• Triangles: 112 - 136 tris per mesh",
+            "• Triangles: 136 - 236 tris per mesh",
         ],
         "variants": [
-            "1. flower_white_cluster (Meadow daisy group)",
-            "2. flower_yellow_cluster (Golden buttercups)",
-            "3. flower_red_cluster (Crimson poppy pair)",
-            "4. flower_mixed_accent (Rare bellflower/star)",
+            "1. flower_white_cluster (Meadow daisies)",
+            "2. flower_yellow_cluster (Sunny buttercups)",
+            "3. flower_red_cluster (Crimson poppies)",
+            "4. flower_mixed_accent (Rare bellflower/violet)",
         ],
         "palette": [
-            ("White Petal", "#f5f5f0", (245, 245, 240)),
-            ("Golden Yellow", "#fae362", (250, 227, 98)),
-            ("Poppy Red", "#ee816b", (238, 129, 107)),
-            ("Rare Bellflower", "#c5a6ec", (197, 166, 236)),
+            ("Flower White", "#eeeade", (238, 234, 223)),
+            ("Flower Yellow", "#f6c744", (246, 199, 68)),
+            ("Flower Red", "#e2614d", (226, 97, 77)),
+            ("Flower Purple", "#9767aa", (151, 103, 170)),
         ],
     },
     {
@@ -83,14 +83,14 @@ families = [
         "title": "MOSS / LOW VEGETATION",
         "count": "3 Low Variants",
         "sub": "Tree Bases, Rocks & Cliff Ledges",
-        "accent_color": (65, 115, 40),
+        "accent_color": (64, 76, 42),
         "desc": [
             "• Organic shelf & skirt geometry",
             "• Smooth transition between props and terrain",
             "• Concave tree base collar wraps oak trunks",
             "• Clinging L-shelf fits rock joints & ledges",
             "• Stepped overhang for cliffs & terraces",
-            "• Triangles: 116 - 124 tris per mesh",
+            "• Triangles: 144 - 148 tris per mesh",
         ],
         "variants": [
             "1. moss_tree_base (Curved trunk wrap collar)",
@@ -98,24 +98,24 @@ families = [
             "3. moss_cliff_ledge (Cascading terrace overhang)",
         ],
         "palette": [
-            ("Velvet Moss", "#8ab170", (138, 177, 112)),
-            ("Shadow Lichen", "#6d8f55", (109, 143, 85)),
-            ("Sunlit Moss", "#a9cf82", (169, 207, 130)),
+            ("Velvet Moss", "#404c2a", (64, 76, 42)),
+            ("Dark Lichen Root", "#323d23", (50, 61, 35)),
+            ("Light Moss Tip", "#729253", (114, 146, 83)),
         ],
     },
     {
         "id": "stone_debris",
         "title": "STONE DEBRIS",
-        "count": "6 Variants (Issue #3 Matched)",
+        "count": "6 Variants (Independent Palette)",
         "sub": "Single, Trio, Patch, Chip, Scatter, Cluster",
-        "accent_color": (134, 129, 124),
+        "accent_color": (91, 86, 82),
         "desc": [
-            "• 100% synchronized with Destructible Rock #3",
-            "• Uses identical S, D, L, M PBR material parameters",
+            "• Independent darker palette from concept reference",
+            "• High ground contrast against green terrain & grass",
             "• Planar facets, bevel clefts & broken footprints",
             "• Clean ground contact; zero floating cubes",
-            "• Perfect rubble for mining & explosion residue",
-            "• Triangles: 44 - 240 tris per mesh",
+            "• Unique 3D rotational signatures (no duplicates)",
+            "• Triangles: 84 - 262 tris per mesh",
         ],
         "variants": [
             "1. stone_debris_single (Faceted 2-tier keystone)",
@@ -126,10 +126,10 @@ families = [
             "6. stone_debris_mountain_cluster (Stepped crag pile)",
         ],
         "palette": [
-            ("Primary Stone (S)", "#86817c", (134, 129, 124)),
-            ("Crevice Dark (D)", "#5d5959", (93, 89, 89)),
-            ("Sunlit Light (L)", "#b3afaa", (179, 175, 170)),
-            ("Rock Moss (M)", "#737c55", (115, 124, 85)),
+            ("Primary Stone", "#5b5652", (91, 86, 82)),
+            ("Crevice Dark", "#3e3d3b", (62, 61, 59)),
+            ("Sunlit Light", "#65615b", (101, 97, 91)),
+            ("Rock Moss", "#5a673e", (90, 103, 62)),
         ],
     },
 ]
@@ -199,7 +199,7 @@ draw.text((1090, banner_y + 18), "PERFORMANCE & ENGINE CONTRACT", fill=(255, 255
 draw.text((1090, banner_y + 40), "• Total Props: 19 models across 4 subfamilies (6 Grass + 4 Flowers + 3 Moss + 6 Stone Debris)", fill=(160, 185, 210), font=font)
 draw.text((1090, banner_y + 60), "• Voxel Scale: 0.10m uniform step | Culled interior faces | Flat shaded normals", fill=(160, 185, 210), font=font)
 draw.text((1090, banner_y + 80), "• Memory Footprint: Shared 64x64 albedo & 64x64 metallic-roughness atlases", fill=(160, 185, 210), font=font)
-draw.text((1090, banner_y + 100), "• Budget: max 500 tris (actual: 44 - 240 tris) | Zero CPU runtime overhead", fill=(160, 185, 210), font=font)
+draw.text((1090, banner_y + 100), "• Budget: max 500 tris (actual: 84 - 262 tris) | Zero CPU runtime overhead", fill=(160, 185, 210), font=font)
 draw.text((1090, banner_y + 120), "• Review Evidence: Full contact sheet, 3 density tests, 3 biome tests, gameplay isometric mockup", fill=(80, 200, 120), font=font)
 
 ref_img_path = REF_DIR / "dressing_concept_reference.png"
@@ -218,9 +218,9 @@ readme_content = """# References & Visual Contract: Environment Dressing Pack
 
 `dressing_concept_reference.png` — утверждённый визуальный контракт и технический ориентир для семейств малых объектов окружения (Issue #7). Он фиксирует состав пакета, пропорции, PBR-палитры и интеграцию с биомами Cube Siege:
 - **Grass Tufts (6 вариантов)**: 3 малых, 2 средних, 1 высокий акцентный;
-- **Flowers (4 варианта / группы)**: белые (маргаритки), жёлтые (лютики), красные (маки), смешанные (редкие колокольчики);
+- **Flowers (4 варианта / архетипа)**: белые маргаритки, жёлтые лютики, красные маки, смешанные редкие колокольчики;
 - **Moss / Low Vegetation (3 варианта)**: воротник у основания деревьев, полка в расщелинах камней, уступ обрывов;
-- **Stone Debris (6 вариантов)**: 100% согласован с destructible rock family (Issue #3) по палитре и блочным фасетам.
+- **Stone Debris (6 вариантов)**: самостоятельная более тёмная палитра концепт-референса с уникальными 3D-силуэтами.
 
 ---
 
@@ -234,14 +234,14 @@ readme_content = """# References & Visual Contract: Environment Dressing Pack
 - **Поворотная вариативность**: не выглядят монотонно при случайном вращении вокруг оси Y.
 
 ### 2. Runtime & MultiMesh Performance
-- **Маленький треугольный бюджет**: каждый проп содержит от 44 до 240 треугольников (бюджет <= 500 tris).
+- **Маленький треугольный бюджет**: каждый проп содержит от 84 до 262 треугольников (бюджет <= 500 tris, среднее 169.9 tris).
 - **Пивот строго `bottom_center`**: точка привязки в основании для корректного MultiMesh-спавна на наклонных поверхностях террейна.
 - **Без коллизий и скриптов**: ассеты оптимизированы для массового batching / MultiMesh GPU instancing.
 - **Shared Material Strategy**: зафиксирована единая палитра `palette.json`, единый шейдинг и общие текстурные атласы `textures/dressing_palette_atlas.png` (sRGB baseColor) и `textures/dressing_roughness_atlas.png` (linear roughness).
 
-### 3. Согласованность с существующими семействами
-- **Stone Debris**: использует идентичные PBR-материалы скал `destructible_rock` (`S`: stone_primary, `D`: stone_dark, `L`: stone_light, `M`: stone_moss).
-- **Foliage & Moss**: колористически сбалансированы с кронами `tree_oak` (`#3b6b22`, `#5e932b`) и материалами террейна `terrain_materials` (Forest Grass `#28501b`, Plains Meadow `#487425`, Mountain Stone `#7d7872`).
+### 3. Согласованность с биомами и стилем
+- **Stone Debris**: использует самостоятельную более тёмную палитру из утверждённого концепт-референса (`S`: #5b5652, `D`: #3e3d3b, `L`: #65615b, `M`: #5a673e) для четкой контрастной читаемости мелких камней на фоне грунта и травы.
+- **Foliage & Moss**: колористически сбалансированы с кронами `tree_oak` и материалами террейна `terrain_materials` (Forest Grass, Plains Meadow, Mountain Stone).
 
 ---
 
@@ -249,25 +249,25 @@ readme_content = """# References & Visual Contract: Environment Dressing Pack
 
 | Семейство | Имя пакета | Назначение / Архетип | Воксели | Треугольники |
 |:---|:---|:---|:---:|:---:|
-| **Grass** | `grass_tuft_small_01` | Компактный 2-лепестковый росток (низкий разлет) | 4 | 44 |
-| **Grass** | `grass_tuft_small_02` | Асимметричный 3-лепестковый веер | 7 | 72 |
-| **Grass** | `grass_tuft_small_03` | Плотная 4-лепестковая кочка со ступенькой | 11 | 100 |
-| **Grass** | `grass_tuft_med_01` | Средний ярусный пучок (ярусные стебли) | 19 | 132 |
-| **Grass** | `grass_tuft_med_02` | Средний ветровой наклонный веер | 19 | 140 |
-| **Grass** | `grass_tuft_tall_01` | Высокий доминантный акцентный пучок | 16 | 132 |
-| **Flowers** | `flower_white_cluster` | Белые луговые ромашки (желтая сердцевина) | 17 | 132 |
-| **Flowers** | `flower_yellow_cluster` | Солнечные лютики (золотые лепестки, амбра) | 16 | 128 |
-| **Flowers** | `flower_red_cluster` | Яркие маки (теплый алый, темный центр) | 17 | 136 |
-| **Flowers** | `flower_mixed_accent` | Редкий лавандово-синий колокольчик | 16 | 112 |
-| **Moss** | `moss_tree_base` | Воротник-юбка для основания ствола дерева | 17 | 120 |
-| **Moss** | `moss_rock_shelf` | Угловая полка для расщелин камней и выступов | 21 | 116 |
-| **Moss** | `moss_cliff_ledge` | Свисающий каскад для карнизов обрывов | 22 | 124 |
-| **Stone** | `stone_debris_single` | Одиночный граненый скол скалы | 8 | 68 |
-| **Stone** | `stone_debris_trio` | Сбалансированная группа из 3 небольших камней | 8 | 138 |
-| **Stone** | `stone_debris_flat_patch` | Плоская группа каменных плит со мхом | 13 | 124 |
-| **Stone** | `stone_debris_angular_chip`| Острый сколотый обломок с гранью | 10 | 138 |
-| **Stone** | `stone_debris_fine_scatter`| Мелкая щебеночная россыпь / гравий | 7 | 240 |
-| **Stone** | `stone_debris_mountain_cluster`| Горный ступенчатый кряжистый кластер | 14 | 120 |
+| **Grass** | `grass_tuft_small_01` | Компактный 3-лепестковый росток (низкий разлет) | 11 | 92 |
+| **Grass** | `grass_tuft_small_02` | Асимметричный веер травы | 14 | 140 |
+| **Grass** | `grass_tuft_small_03` | Плотная ступенчатая кочка | 25 | 152 |
+| **Grass** | `grass_tuft_med_01` | Средний ярусный многолепестковый пучок | 37 | 228 |
+| **Grass** | `grass_tuft_med_02` | Средний ветровой наклонный веер | 29 | 144 |
+| **Grass** | `grass_tuft_tall_01` | Высокий доминантный акцентный пучок | 40 | 212 |
+| **Flowers** | `flower_white_cluster` | Белые луговые ромашки (золотая сердцевина) | 31 | 204 |
+| **Flowers** | `flower_yellow_cluster` | Солнечные лютики (золотые лепестки, купол) | 27 | 136 |
+| **Flowers** | `flower_red_cluster` | Яркие маки (алые лепестки, чашевидный венчик) | 34 | 236 |
+| **Flowers** | `flower_mixed_accent` | Редкий лавандово-синий колокольчик | 28 | 184 |
+| **Moss** | `moss_tree_base` | Воротник-юбка для основания ствола дерева | 20 | 144 |
+| **Moss** | `moss_rock_shelf` | Угловая полка для расщелин камней и выступов | 27 | 144 |
+| **Moss** | `moss_cliff_ledge` | Свисающий каскад для карнизов обрывов | 26 | 148 |
+| **Stone** | `stone_debris_single` | Одиночный граненый замковый скол скалы | 11 | 84 |
+| **Stone** | `stone_debris_trio` | Сбалансированная группа из 3 небольших камней | 17 | 184 |
+| **Stone** | `stone_debris_flat_patch` | Плоская группа каменных плит со мхом | 23 | 188 |
+| **Stone** | `stone_debris_angular_chip`| Острый сколотый обломок-пик с гранью | 13 | 152 |
+| **Stone** | `stone_debris_fine_scatter`| Мелкая щебеночная россыпь / гравий | 12 | 262 |
+| **Stone** | `stone_debris_mountain_cluster`| Горный ступенчатый кряжистый кластер | 25 | 194 |
 """
 
 readme_path = REF_DIR / "README.md"

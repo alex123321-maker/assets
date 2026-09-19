@@ -14,9 +14,9 @@
   - Exactly **1 mesh object** per model;
   - UVs mapped to shared 64x64 texture atlas `textures/dressing_palette_atlas.png` (Base Color) and `textures/dressing_roughness_atlas.png` (Metallic-Roughness);
   - Full canonical PBR roughness fidelity preserved per surface token (stone debris: 0.88 / 0.94 / 0.82 / 0.95; grass: 0.88 / 0.92 / 0.82; moss: 0.92 / 0.95 / 0.86; flowers: 0.75–0.88);
-  - Pivot strictly `bottom_center` at z=0, no collision, no scripts;
-  - Total triangles: 3460 (avg: 182.1 tris/prop, max: 262 tris, well within <= 500 budget);
-  - Native MultiMesh GPU batching ready with zero draw call multiplication.
+   - Pivot strictly `bottom_center` at z=0, no collision, no scripts;
+   - Total triangles: 3228 (avg: 169.9 tris/prop, max: 262 tris, well within <= 500 budget);
+   - Native MultiMesh GPU batching ready: all props share a single material (`mat_dressing_atlas`), enabling zero-material-switch GPU instancing in Godot 4.
 
 ---
 
@@ -41,11 +41,12 @@
 1. **Chunky Readable Silhouettes**:
    - Every grass tuft, flower, and stone debris prop avoids thin polygon hair-cards or microscopic noise.
    - Distinct silhouettes are immediately recognizable from the ~45° isometric gameplay camera.
-2. **Stone Debris Consistency with Issue #3**:
-   - Uses the identical 4-material palette from `destructible_rock` (`S`: stone_primary, `D`: stone_dark, `L`: stone_light, `M`: stone_moss).
-   - Faceted planar bevels and clean fracture clefts create 100% visual coherence between broken debris and huge mineable boulders.
-3. **No Rotational Equivalence**:
-   - `stone_debris_single` (8 voxels, 2x3 base, height 2 keystone) and `stone_debris_angular_chip` (10 voxels, triangular wedge base, height 3 pinnacle) have completely unique 3D silhouettes and volume distributions.
+2. **Stone Debris Independent Palette**:
+   - Adopts the accepted independent darker stone palette sampled directly from the approved concept reference (`dressing_concept_reference.png`), creating high-contrast readability for fine ground scatter.
+   - Faceted planar bevels and clean fracture clefts create strong stylistic coherence with the voxel environmental language.
+3. **Distinct Subfamily Silhouettes & Archetypes**:
+   - All 4 flower variants feature completely distinct geometries, heights (0.3m–0.5m), and head arrangements (daisies, buttercups, poppies, bellflowers).
+   - All 6 stone debris variants feature completely unique 3D rotational volume distributions.
 4. **Flat Ground Contact**:
    - Bottom faces rest flush at `z=0` with zero floating voxels, ensuring seamless placement on sloped terrain tiles.
 5. **Rotational Variation**:
@@ -55,15 +56,15 @@
 
 ## 4. Acceptance Criteria Checklist
 - [x] **6+ grass variants**: Exactly 6 variants (3 small, 2 medium, 1 tall accent).
-- [x] **4+ flower variants/groups**: Exactly 4 color groups (white, yellow, red/orange, mixed rare accent).
+- [x] **4+ flower variants/groups**: Exactly 4 distinct archetypes (white daisies, yellow buttercups, red poppies, mixed bellflowers).
 - [x] **3+ moss/low vegetation variants**: Exactly 3 variants (tree base collar, rock crevice shelf, cliff ledge cascade).
 - [x] **6+ stone debris variants**: Exactly 6 variants (keystone shard, trio group, flat patch, triangular cleave, fine scatter, mountain cluster).
 - [x] **All props readable from gameplay camera**: Verified via `gameplay_mockup.png` and orthogonal views.
-- [x] **Stone debris synchronized with rock family**: Exact palette & shader parameters matched to Issue #3.
+- [x] **Stone debris palette updated**: Adopts the accepted independent darker stone palette from the approved concept reference.
 - [x] **No collision / scripts**: Pure visual geometry, zero runtime scripting overhead.
 - [x] **Pivot bottom-center**: Origin strictly centered at ground plane `z=0`.
 - [x] **Shared material strategy implemented**: All 19 props export with 1 shared material `mat_dressing_atlas` referencing `dressing_palette_atlas.png`.
-- [x] **Geometry budget suitable for mass scatter**: Average 182.1 triangles per prop (max 262 tris, well below 500 tri budget).
+- [x] **Geometry budget suitable for mass scatter**: Average 169.9 triangles per prop (max 262 tris, well below 500 tri budget).
 - [x] **Review package complete**: Contact sheet, density mockups (low/med/high), biome mockups (Forest/Plains/Mountain), metrics per mesh, gameplay render.
 
 ---
@@ -78,10 +79,10 @@
 | **Grass** | `grass_tuft_med_01` | 37 | 228 | 114 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
 | **Grass** | `grass_tuft_med_02` | 29 | 144 | 72 | 1 (shared) | 0.60 x 0.40 x 0.50 m |
 | **Grass** | `grass_tuft_tall_01` | 40 | 212 | 106 | 1 (shared) | 0.50 x 0.60 x 0.50 m |
-| **Flower** | `flower_white_cluster` | 38 | 248 | 124 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
-| **Flower** | `flower_yellow_cluster` | 38 | 248 | 124 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
-| **Flower** | `flower_red_cluster` | 38 | 248 | 124 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
-| **Flower** | `flower_mixed_accent` | 38 | 248 | 124 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
+| **Flower** | `flower_white_cluster` | 31 | 204 | 102 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
+| **Flower** | `flower_yellow_cluster` | 27 | 136 | 68 | 1 (shared) | 0.50 x 0.30 x 0.50 m |
+| **Flower** | `flower_red_cluster` | 34 | 236 | 118 | 1 (shared) | 0.50 x 0.50 x 0.50 m |
+| **Flower** | `flower_mixed_accent` | 28 | 184 | 92 | 1 (shared) | 0.60 x 0.40 x 0.50 m |
 | **Moss** | `moss_tree_base` | 20 | 144 | 72 | 1 (shared) | 0.60 x 0.30 x 0.60 m |
 | **Moss** | `moss_rock_shelf` | 27 | 144 | 72 | 1 (shared) | 0.60 x 0.30 x 0.50 m |
 | **Moss** | `moss_cliff_ledge` | 26 | 148 | 74 | 1 (shared) | 0.60 x 0.30 x 0.50 m |
@@ -92,4 +93,4 @@
 | **Stone** | `stone_debris_fine_scatter` | 12 | 262 | 124 | 1 (shared) | 0.60 x 0.20 x 0.60 m |
 | **Stone** | `stone_debris_mountain_cluster` | 25 | 194 | 90 | 1 (shared) | 0.50 x 0.40 x 0.50 m |
 
-**Итого по семейству**: 482 вокселей, 3460 треугольников (в среднем 182.1 tris / проп, максимум 262 tris).
+**Итого по семейству**: 450 вокселей, 3228 треугольников (в среднем 169.9 tris / проп, максимум 262 tris).

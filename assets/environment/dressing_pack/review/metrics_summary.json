@@ -1,10 +1,10 @@
 {
   "family": "dressing_pack",
   "total_props": 19,
-  "total_occupied_voxels": 482,
-  "total_triangles": 3460,
-  "total_visible_faces": 1687,
-  "avg_triangles_per_prop": 182.1,
+  "total_occupied_voxels": 450,
+  "total_triangles": 3228,
+  "total_visible_faces": 1571,
+  "avg_triangles_per_prop": 169.9,
   "min_triangles": 84,
   "max_triangles": 262,
   "subfamilies": {
@@ -165,9 +165,9 @@
       "name": "grass_tuft_tall_01"
     },
     {
-      "occupied_voxels": 38,
-      "visible_faces": 124,
-      "triangles": 248,
+      "occupied_voxels": 31,
+      "visible_faces": 102,
+      "triangles": 204,
       "mesh_objects": 1,
       "materials": 1,
       "shared_material": "mat_dressing_atlas",
@@ -189,9 +189,9 @@
       "name": "flower_white_cluster"
     },
     {
-      "occupied_voxels": 38,
-      "visible_faces": 124,
-      "triangles": 248,
+      "occupied_voxels": 27,
+      "visible_faces": 68,
+      "triangles": 136,
       "mesh_objects": 1,
       "materials": 1,
       "shared_material": "mat_dressing_atlas",
@@ -199,13 +199,13 @@
       "roughness_atlas_texture": "dressing_roughness_atlas.png",
       "grid": {
         "x": 5,
-        "y": 4,
+        "y": 3,
         "z": 5
       },
       "voxel_size": 0.1,
       "world_size": {
         "x": 0.5,
-        "y": 0.4,
+        "y": 0.30000000000000004,
         "z": 0.5
       },
       "blender_version": "5.2.1 LTS",
@@ -213,9 +213,9 @@
       "name": "flower_yellow_cluster"
     },
     {
-      "occupied_voxels": 38,
-      "visible_faces": 124,
-      "triangles": 248,
+      "occupied_voxels": 34,
+      "visible_faces": 118,
+      "triangles": 236,
       "mesh_objects": 1,
       "materials": 1,
       "shared_material": "mat_dressing_atlas",
@@ -223,13 +223,13 @@
       "roughness_atlas_texture": "dressing_roughness_atlas.png",
       "grid": {
         "x": 5,
-        "y": 4,
+        "y": 5,
         "z": 5
       },
       "voxel_size": 0.1,
       "world_size": {
         "x": 0.5,
-        "y": 0.4,
+        "y": 0.5,
         "z": 0.5
       },
       "blender_version": "5.2.1 LTS",
@@ -237,22 +237,22 @@
       "name": "flower_red_cluster"
     },
     {
-      "occupied_voxels": 38,
-      "visible_faces": 124,
-      "triangles": 248,
+      "occupied_voxels": 28,
+      "visible_faces": 92,
+      "triangles": 184,
       "mesh_objects": 1,
       "materials": 1,
       "shared_material": "mat_dressing_atlas",
       "atlas_texture": "dressing_palette_atlas.png",
       "roughness_atlas_texture": "dressing_roughness_atlas.png",
       "grid": {
-        "x": 5,
+        "x": 6,
         "y": 4,
         "z": 5
       },
       "voxel_size": 0.1,
       "world_size": {
-        "x": 0.5,
+        "x": 0.6000000000000001,
         "y": 0.4,
         "z": 0.5
       },

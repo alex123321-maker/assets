@@ -12,14 +12,14 @@ This package contains 19 canonical, reusable stylized voxel dressing props autho
    - `grass_tuft_tall_01`: Tall accent focal clump
 2. **Flowers (4 variants / color groups)**:
    - `flower_white_cluster`: White meadow daisies
-   - `flower_yellow_cluster`: Sunny golden buttercups
-   - `flower_red_cluster`: Crimson poppy pair
-   - `flower_mixed_accent`: Rare lilac-blue bellflower
+   - `flower_yellow_cluster`: Sunny golden buttercups (compact dome)
+   - `flower_red_cluster`: Crimson poppies (flared cup crown)
+   - `flower_mixed_accent`: Rare lilac-blue bellflower (arching stalk)
 3. **Moss / Low Vegetation (3 variants)**:
    - `moss_tree_base`: Curved trunk wrap collar
    - `moss_rock_shelf`: Rock crevice shelf
    - `moss_cliff_ledge`: Cascading terrace overhang
-4. **Stone Debris (6 variants, Issue #3 Rock Family matched)**:
+4. **Stone Debris (6 variants, Independent Darker Palette)**:
    - `stone_debris_single`: Faceted rectangular keystone shard
    - `stone_debris_trio`: Balanced 3-stone group
    - `stone_debris_flat_patch`: Interlocking slab patch
@@ -30,6 +30,6 @@ This package contains 19 canonical, reusable stylized voxel dressing props autho
 ## Shared Technical & Performance Features
 - **Voxel Scale**: Uniform `voxel_size = 0.10`m.
 - **Pivot**: Strictly `bottom_center` at ground level.
-- **Shared Production Material**: Unified 1-material export (`mat_dressing_atlas`) referencing `dressing_palette_atlas.png`.
-- **MultiMesh Ready**: Exactly 1 mesh object and 1 material per prop, triangle counts 40-140 tris, no collisions, no scripts.
+- **Shared Production Material**: Unified 1-material export (`mat_dressing_atlas`) referencing `dressing_palette_atlas.png` and `dressing_roughness_atlas.png`.
+- **MultiMesh Ready**: Exactly 1 mesh object and 1 material per prop, triangle counts 84-262 tris (average 169.9 tris, budget <= 500), no collisions, no scripts. Instanced via Godot MultiMesh without material switches.
 - **Unified Palette**: `source/palette.json` and `textures/dressing_palette_atlas.png`.

@@ -47,7 +47,7 @@ GROUPS = [
         ],
     },
     {
-        "name": "STONE DEBRIS (6 VARIANTS - ROCK #3 MATCHED)",
+        "name": "STONE DEBRIS (6 VARIANTS)",
         "color": (130, 125, 120),
         "props": [
             ("stone_debris_single", "Keystone Shard"),
@@ -305,9 +305,9 @@ def generate_metrics_summary_and_review_md() -> dict:
   - Exactly **1 mesh object** per model;
   - UVs mapped to shared 64x64 texture atlas `textures/dressing_palette_atlas.png` (Base Color) and `textures/dressing_roughness_atlas.png` (Metallic-Roughness);
   - Full canonical PBR roughness fidelity preserved per surface token (stone debris: 0.88 / 0.94 / 0.82 / 0.95; grass: 0.88 / 0.92 / 0.82; moss: 0.92 / 0.95 / 0.86; flowers: 0.75–0.88);
-  - Pivot strictly `bottom_center` at z=0, no collision, no scripts;
-  - Total triangles: {summary['total_triangles']} (avg: {summary['avg_triangles_per_prop']} tris/prop, max: {summary['max_triangles']} tris, well within <= 500 budget);
-  - Native MultiMesh GPU batching ready with zero draw call multiplication.
+   - Pivot strictly `bottom_center` at z=0, no collision, no scripts;
+   - Total triangles: {summary['total_triangles']} (avg: {summary['avg_triangles_per_prop']} tris/prop, max: {summary['max_triangles']} tris, well within <= 500 budget);
+   - Native MultiMesh GPU batching ready: all props share a single material (`mat_dressing_atlas`), enabling zero-material-switch GPU instancing in Godot 4.
 
 ---
 
@@ -332,11 +332,12 @@ def generate_metrics_summary_and_review_md() -> dict:
 1. **Chunky Readable Silhouettes**:
    - Every grass tuft, flower, and stone debris prop avoids thin polygon hair-cards or microscopic noise.
    - Distinct silhouettes are immediately recognizable from the ~45° isometric gameplay camera.
-2. **Stone Debris Consistency with Issue #3**:
-   - Uses the identical 4-material palette from `destructible_rock` (`S`: stone_primary, `D`: stone_dark, `L`: stone_light, `M`: stone_moss).
-   - Faceted planar bevels and clean fracture clefts create 100% visual coherence between broken debris and huge mineable boulders.
-3. **No Rotational Equivalence**:
-   - `stone_debris_single` (8 voxels, 2x3 base, height 2 keystone) and `stone_debris_angular_chip` (10 voxels, triangular wedge base, height 3 pinnacle) have completely unique 3D silhouettes and volume distributions.
+2. **Stone Debris Independent Palette**:
+   - Adopts the accepted independent darker stone palette sampled directly from the approved concept reference (`dressing_concept_reference.png`), creating high-contrast readability for fine ground scatter.
+   - Faceted planar bevels and clean fracture clefts create strong stylistic coherence with the voxel environmental language.
+3. **Distinct Subfamily Silhouettes & Archetypes**:
+   - All 4 flower variants feature completely distinct geometries, heights (0.3m–0.5m), and head arrangements (daisies, buttercups, poppies, bellflowers).
+   - All 6 stone debris variants feature completely unique 3D rotational volume distributions.
 4. **Flat Ground Contact**:
    - Bottom faces rest flush at `z=0` with zero floating voxels, ensuring seamless placement on sloped terrain tiles.
 5. **Rotational Variation**:
@@ -346,11 +347,11 @@ def generate_metrics_summary_and_review_md() -> dict:
 
 ## 4. Acceptance Criteria Checklist
 - [x] **6+ grass variants**: Exactly 6 variants (3 small, 2 medium, 1 tall accent).
-- [x] **4+ flower variants/groups**: Exactly 4 color groups (white, yellow, red/orange, mixed rare accent).
+- [x] **4+ flower variants/groups**: Exactly 4 distinct archetypes (white daisies, yellow buttercups, red poppies, mixed bellflowers).
 - [x] **3+ moss/low vegetation variants**: Exactly 3 variants (tree base collar, rock crevice shelf, cliff ledge cascade).
 - [x] **6+ stone debris variants**: Exactly 6 variants (keystone shard, trio group, flat patch, triangular cleave, fine scatter, mountain cluster).
 - [x] **All props readable from gameplay camera**: Verified via `gameplay_mockup.png` and orthogonal views.
-- [x] **Stone debris synchronized with rock family**: Exact palette & shader parameters matched to Issue #3.
+- [x] **Stone debris palette updated**: Adopts the accepted independent darker stone palette from the approved concept reference.
 - [x] **No collision / scripts**: Pure visual geometry, zero runtime scripting overhead.
 - [x] **Pivot bottom-center**: Origin strictly centered at ground plane `z=0`.
 - [x] **Shared material strategy implemented**: All 19 props export with 1 shared material `mat_dressing_atlas` referencing `dressing_palette_atlas.png`.
