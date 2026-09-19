@@ -17,6 +17,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install dependencies
+        run: pip install pillow numpy
+
       - name: Syntax check
         run: |
           python -m py_compile tools/validate_asset.py

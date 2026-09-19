@@ -61,8 +61,8 @@ def check_seamless_tiling(tex_path: Path, max_ratio: float = 1.8, max_jump: floa
     try:
         from PIL import Image
         import numpy as np
-    except ImportError:
-        return True, "PIL/numpy not installed, skipping pixel analysis", {}
+    except ImportError as exc:
+        return False, f"Missing required dependency for seamless tiling verification: {exc} (install pillow numpy)", {}
 
     if not tex_path.exists():
         return False, f"Texture not found at {tex_path}", {}
