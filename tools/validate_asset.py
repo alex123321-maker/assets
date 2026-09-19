@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 REQUIRED_MANIFEST = {"name", "type", "version", "source"}
-SUPPORTED_TYPES = {"voxel_static", "voxel_rigged", "blender_unique", "vfx"}
+SUPPORTED_TYPES = {"voxel_static", "voxel_rigged", "blender_unique", "vfx", "ui_kit"}
 
 
 class ValidationError(Exception):
@@ -151,6 +151,17 @@ def validate_asset(asset_dir: Path) -> dict:
             raise ValidationError(
                 f"Material budget exceeded: {voxel_metrics['materials']} > {max_materials}"
             )
+    elif manifest["type"] == "ui_kit":
+        budgets = manifest.get("budgets", {})
+        min_icons = budgets.get("min_icons", 0)
+        icons_dir = asset_dir / manifest.get("outputs", {}).get("icons_dir", "output/icons")
+        if icons_dir.is_dir():
+            icon_files = [p for p in icons_dir.iterdir() if p.suffix.lower() == ".png"]
+            result["icons_count"] = len(icon_files)
+            if min_icons and len(icon_files) < min_icons:
+                raise ValidationError(
+                    f"Icon count {len(icon_files)} is below required minimum {min_icons}"
+                )
 
     return result
 
