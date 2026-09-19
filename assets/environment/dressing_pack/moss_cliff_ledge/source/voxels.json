@@ -2,7 +2,7 @@
   "version": 1,
   "name": "moss_cliff_ledge",
   "voxel_size": 0.1,
-  "origin": "bottom_center",
+  "origin": "edge_anchor",
   "materials": {
     "D": {
       "name": "moss_dark",

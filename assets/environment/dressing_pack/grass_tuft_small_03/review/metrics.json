@@ -39,5 +39,6 @@
     "x": 0.5,
     "y": 0.4,
     "z": 0.5
-  }
+  },
+  "origin": "bottom_center"
 }

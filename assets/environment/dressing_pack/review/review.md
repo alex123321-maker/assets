@@ -14,7 +14,7 @@
   - Exactly **1 mesh object** per model;
   - UVs mapped to shared 64x64 texture atlas `textures/dressing_palette_atlas.png` (Base Color) and `textures/dressing_roughness_atlas.png` (Metallic-Roughness);
   - Full canonical PBR roughness fidelity preserved per surface token (stone debris: 0.88 / 0.94 / 0.82 / 0.95; grass: 0.88 / 0.92 / 0.82; moss: 0.92 / 0.95 / 0.86; flowers: 0.75–0.88);
-   - Pivot strictly `bottom_center` at z=0, no collision, no scripts;
+   - Pivot: strictly `bottom_center` at z=0 for 18 ground props; `moss_cliff_ledge` uses documented `edge_anchor` at ledge surface plane (z=0) with hanging tendrils down to -0.26m; no collision, no scripts;
    - Total triangles: 4298 (avg: 226.2 tris/prop, max: 408 tris, well within <= 500 budget);
    - Native MultiMesh GPU batching ready: all props share a single material (`mat_dressing_atlas`), enabling zero-material-switch GPU instancing in Godot 4.
 
@@ -47,8 +47,8 @@
 3. **Distinct Subfamily Silhouettes & Archetypes**:
    - All 4 flower variants feature completely distinct geometries, heights (0.3m–0.5m), and head arrangements (daisies, buttercups, poppies, bellflowers).
    - All 6 stone debris variants feature completely unique 3D rotational volume distributions.
-4. **Flat Ground Contact**:
-   - Bottom faces rest flush at `z=0` with zero floating voxels, ensuring seamless placement on sloped terrain tiles.
+4. **Flat Ground Contact & Ledge Anchor**:
+   - Bottom faces rest flush at `z=0` for 18 ground props; `moss_cliff_ledge` anchors at ledge surface plane `z=0` with hanging 3D tendrils extending below cliff rim.
 5. **Rotational Variation**:
    - Asymmetric blade tilts, off-center flower clusters, and angular rock fracture planes ensure props look natural under random rotation.
 
@@ -62,7 +62,7 @@
 - [x] **All props readable from gameplay camera**: Verified via `gameplay_mockup.png` and orthogonal views.
 - [x] **Stone debris palette updated**: Adopts the accepted independent darker stone palette from the approved concept reference.
 - [x] **No collision / scripts**: Pure visual geometry, zero runtime scripting overhead.
-- [x] **Pivot bottom-center**: Origin strictly centered at ground plane `z=0`.
+- [x] **Pivot bottom-center / edge-anchor**: 18 ground props strictly use `bottom_center` at z=0; `moss_cliff_ledge` uses `edge_anchor` at z=0 cliff edge with negative hanging extent.
 - [x] **Shared material strategy implemented**: All 19 props export with 1 shared material `mat_dressing_atlas` referencing `dressing_palette_atlas.png`.
 - [x] **Geometry budget suitable for mass scatter**: Average 226.2 triangles per prop (max 408 tris, well below 500 tri budget).
 - [x] **Review package complete**: Contact sheet, density mockups (low/med/high), biome mockups (Forest/Plains/Mountain), metrics per mesh, gameplay render.

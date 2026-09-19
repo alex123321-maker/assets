@@ -62,6 +62,7 @@
         "y": 0.3,
         "z": 0.4
       },
+      "origin": "bottom_center",
       "name": "grass_tuft_small_01"
     },
     {
@@ -106,6 +107,7 @@
         "y": 0.3,
         "z": 0.5
       },
+      "origin": "bottom_center",
       "name": "grass_tuft_small_02"
     },
     {
@@ -150,6 +152,7 @@
         "y": 0.4,
         "z": 0.5
       },
+      "origin": "bottom_center",
       "name": "grass_tuft_small_03"
     },
     {
@@ -194,6 +197,7 @@
         "y": 0.4,
         "z": 0.5
       },
+      "origin": "bottom_center",
       "name": "grass_tuft_med_01"
     },
     {
@@ -238,6 +242,7 @@
         "y": 0.4,
         "z": 0.5
       },
+      "origin": "bottom_center",
       "name": "grass_tuft_med_02"
     },
     {
@@ -282,6 +287,7 @@
         "y": 0.6,
         "z": 0.5
       },
+      "origin": "bottom_center",
       "name": "grass_tuft_tall_01"
     },
     {
@@ -326,6 +332,7 @@
         "y": 0.4,
         "z": 0.5
       },
+      "origin": "bottom_center",
       "name": "flower_white_cluster"
     },
     {
@@ -370,6 +377,7 @@
         "y": 0.3,
         "z": 0.5
       },
+      "origin": "bottom_center",
       "name": "flower_yellow_cluster"
     },
     {
@@ -414,6 +422,7 @@
         "y": 0.5,
         "z": 0.5
       },
+      "origin": "bottom_center",
       "name": "flower_red_cluster"
     },
     {
@@ -458,6 +467,7 @@
         "y": 0.4,
         "z": 0.5
       },
+      "origin": "bottom_center",
       "name": "flower_mixed_accent"
     },
     {
@@ -502,6 +512,7 @@
         "y": 0.3,
         "z": 0.6
       },
+      "origin": "bottom_center",
       "name": "moss_tree_base"
     },
     {
@@ -546,6 +557,7 @@
         "y": 0.3,
         "z": 0.5
       },
+      "origin": "bottom_center",
       "name": "moss_rock_shelf"
     },
     {
@@ -590,6 +602,7 @@
         "y": 0.3,
         "z": 0.5
       },
+      "origin": "edge_anchor",
       "name": "moss_cliff_ledge"
     },
     {
@@ -634,6 +647,7 @@
         "y": 0.3,
         "z": 0.4
       },
+      "origin": "bottom_center",
       "name": "stone_debris_single"
     },
     {
@@ -678,6 +692,7 @@
         "y": 0.3,
         "z": 0.6
       },
+      "origin": "bottom_center",
       "name": "stone_debris_trio"
     },
     {
@@ -722,6 +737,7 @@
         "y": 0.2,
         "z": 0.6
       },
+      "origin": "bottom_center",
       "name": "stone_debris_flat_patch"
     },
     {
@@ -766,6 +782,7 @@
         "y": 0.4,
         "z": 0.5
       },
+      "origin": "bottom_center",
       "name": "stone_debris_angular_chip"
     },
     {
@@ -810,6 +827,7 @@
         "y": 0.2,
         "z": 0.6
       },
+      "origin": "bottom_center",
       "name": "stone_debris_fine_scatter"
     },
     {
@@ -854,6 +872,7 @@
         "y": 0.4,
         "z": 0.5
       },
+      "origin": "bottom_center",
       "name": "stone_debris_mountain_cluster"
     }
   ]

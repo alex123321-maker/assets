@@ -797,6 +797,7 @@ def build_single_variant(slug: str) -> dict:
         "y": round(float(data["voxel_size"]) * metrics["grid"]["y"], 3),
         "z": round(float(data["voxel_size"]) * metrics["grid"]["z"], 3),
     }
+    metrics["origin"] = data.get("origin", "bottom_center")
     # world_size represents actual exported AABB dimensions
     metrics["world_size"] = {
         "x": actual_span[0],
@@ -814,6 +815,11 @@ def build_single_variant(slug: str) -> dict:
         encoding="utf-8",
     )
 
+    if slug == "moss_cliff_ledge":
+        anchor_check = "- [x] Origin at edge_anchor (z=0 cliff ledge surface plane, with 3D hanging tendrils extending below to -0.26m)."
+    else:
+        anchor_check = "- [x] Ground contact flat at z=0, origin bottom_center."
+
     # Write review.md for package
     review_md = f"""# Build Verification: {slug}
 
@@ -824,7 +830,7 @@ def build_single_variant(slug: str) -> dict:
 - [x] Material count is within budget (1 shared material <= 4).
 - [x] Triangle count verified ({metrics['triangles']} tris <= 500 budget).
 - [x] Internal faces culled ({metrics['visible_faces']} visible faces).
-- [x] Ground contact flat at z=0, origin bottom_center.
+{anchor_check}
 - [x] Low-poly blocky silhouette matching visual dressing contract.
 
 ## Metrics
@@ -834,6 +840,7 @@ def build_single_variant(slug: str) -> dict:
 - Mesh objects: {metrics['mesh_objects']}
 - Materials: {metrics['materials']}
 - Shared material: `{metrics['shared_material']}` (albedo atlas: `{metrics['atlas_texture']}`, roughness atlas: `{metrics['roughness_atlas_texture']}`)
+- Origin / Pivot: `{metrics['origin']}`
 - Grid dimensions: {metrics['grid']['x']}x{metrics['grid']['y']}x{metrics['grid']['z']} (voxel_size: {metrics['voxel_size']}m)
 - Nominal grid size: {metrics['nominal_grid_size']['x']:.2f}m x {metrics['nominal_grid_size']['y']:.2f}m x {metrics['nominal_grid_size']['z']:.2f}m
 - Exported mesh AABB: {metrics['mesh_aabb']['x']:.3f}m x {metrics['mesh_aabb']['y']:.3f}m x {metrics['mesh_aabb']['z']:.3f}m

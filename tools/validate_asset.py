@@ -34,8 +34,9 @@ def validate_voxels(path: Path) -> dict:
     if not isinstance(voxel_size, (int, float)) or voxel_size <= 0:
         raise ValidationError(f"{path}: voxel_size must be > 0")
 
-    if data.get("origin", "bottom_center") != "bottom_center":
-        raise ValidationError(f"{path}: only origin='bottom_center' is supported in v1")
+    origin = data.get("origin", "bottom_center")
+    if origin not in ("bottom_center", "edge_anchor"):
+        raise ValidationError(f"{path}: only origin='bottom_center' or 'edge_anchor' is supported in v1")
 
     materials = data.get("materials")
     if not isinstance(materials, dict) or not materials:

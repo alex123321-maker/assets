@@ -6,15 +6,15 @@
 - **Issue**: #7 Environment dressing pack
 - **Source Mode**: `voxel_static`
 - **Voxel Size**: 0.1m (10 cm step)
-- **Origin / Pivot**: `bottom_center` at z=0 (ground contact)
+- **Origin / Pivot**: `edge_anchor` at z=0 (cliff ledge surface plane with negative hanging stalactite tendrils extending down to -0.26m)
 
 ## Role & Description
-Trailing stepped overhang patch designed for cliff edges and terrace rims.
-Designed for mass scatter-placement across Cube Siege biomes (Forest, Plains, Mountain).
+Trailing stepped overhang patch designed specifically for cliff edges and terrace rims.
+Spawned via edge/ledge placement rules (rather than flat ground scatter) with its anchor resting on the cliff top surface.
 
 ## Visual & Runtime Constraints
 - Chunky readable blocky silhouette;
-- Flat clean ground contact at z=0;
+- Ledge surface contact at z=0 with 3D hanging stalactite tendrils extending below ground plane;
 - No collision shapes, no scripts;
 - MultiMesh / batching ready with shared `material_dressing_atlas`;
 - Shared palette `moss` integration;

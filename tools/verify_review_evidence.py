@@ -765,6 +765,35 @@ def verify_evidence() -> bool:
                         errors.append(f"{slug}: metrics.json atlas_texture is {data.get('atlas_texture')}, expected 'dressing_palette_atlas.png'")
                     if data.get("roughness_atlas_texture") != "dressing_roughness_atlas.png":
                         errors.append(f"{slug}: metrics.json roughness_atlas_texture is {data.get('roughness_atlas_texture')}, expected 'dressing_roughness_atlas.png'")
+
+                    # Verify origin specification and vertical bounds
+                    v_path = pkg_dir / "source" / "voxels.json"
+                    v_origin = None
+                    if v_path.exists():
+                        try:
+                            v_data = json.loads(v_path.read_text(encoding="utf-8"))
+                            v_origin = v_data.get("origin")
+                        except Exception:
+                            pass
+
+                    m_origin = data.get("origin")
+                    bounds_min = data.get("mesh_bounds_min", {})
+                    min_y = bounds_min.get("y", 0.0)
+
+                    if slug == "moss_cliff_ledge":
+                        if v_origin != "edge_anchor":
+                            errors.append(f"{slug}: source/voxels.json origin is '{v_origin}', expected 'edge_anchor'")
+                        if m_origin != "edge_anchor":
+                            errors.append(f"{slug}: review/metrics.json origin is '{m_origin}', expected 'edge_anchor'")
+                        if min_y >= -0.05:
+                            errors.append(f"{slug}: mesh_bounds_min Y ({min_y}) expected < -0.05 for hanging tendrils")
+                    else:
+                        if v_origin != "bottom_center":
+                            errors.append(f"{slug}: source/voxels.json origin is '{v_origin}', expected 'bottom_center'")
+                        if m_origin != "bottom_center":
+                            errors.append(f"{slug}: review/metrics.json origin is '{m_origin}', expected 'bottom_center'")
+                        if min_y < -0.005:
+                            errors.append(f"{slug}: mesh_bounds_min Y ({min_y}) expected >= -0.005 for flat ground contact")
                 except Exception as exc:
                     errors.append(f"{slug}: Invalid metrics.json ({exc})")
 

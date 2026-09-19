@@ -387,6 +387,7 @@ PROPS_SPECS = [
         "title": "Cliff Ledge Moss Cascade",
         "subfamily": "Moss / Low Vegetation",
         "role": "Trailing stepped overhang patch designed for cliff edges and terrace rims",
+        "origin": "edge_anchor",
         "materials": ["D", "M", "L"],
         "layers": [
             {"y": 0, "rows": ["......", "DDMMDD", "MMLLMM", ".LLLL.", "..LL.."]},
@@ -586,12 +587,14 @@ def author_props() -> None:
         for token in spec["materials"]:
             mat_dict[token] = family_pal[token]
 
+        origin_val = spec.get("origin", "bottom_center")
+
         # 1. source/voxels.json
         voxels_data = {
             "version": 1,
             "name": slug,
             "voxel_size": VOXEL_SIZE,
-            "origin": "bottom_center",
+            "origin": origin_val,
             "materials": mat_dict,
             "layers": spec["layers"],
         }
@@ -630,6 +633,13 @@ def author_props() -> None:
         )
 
         # 3. request.md
+        if origin_val == "edge_anchor":
+            origin_line = "- **Origin / Pivot**: `edge_anchor` at z=0 (cliff ledge surface plane with negative hanging stalactite tendrils extending down to -0.26m)"
+            contact_constraint = "- Ledge surface contact at z=0 with 3D hanging stalactite tendrils extending below ground plane;"
+        else:
+            origin_line = "- **Origin / Pivot**: `bottom_center` at z=0 (ground contact)"
+            contact_constraint = "- Flat clean ground contact at z=0;"
+
         request_md = f"""# Request: {spec['title']}
 
 ## Metadata
@@ -638,7 +648,7 @@ def author_props() -> None:
 - **Issue**: #7 Environment dressing pack
 - **Source Mode**: `voxel_static`
 - **Voxel Size**: {VOXEL_SIZE}m (10 cm step)
-- **Origin / Pivot**: `bottom_center` at z=0 (ground contact)
+{origin_line}
 
 ## Role & Description
 {spec['role']}.
@@ -646,7 +656,7 @@ Designed for mass scatter-placement across Cube Siege biomes (Forest, Plains, Mo
 
 ## Visual & Runtime Constraints
 - Chunky readable blocky silhouette;
-- Flat clean ground contact at z=0;
+{contact_constraint}
 - No collision shapes, no scripts;
 - MultiMesh / batching ready with shared `material_dressing_atlas`;
 - Shared palette `{family_name}` integration;
@@ -689,7 +699,7 @@ This package contains 19 canonical, reusable stylized voxel dressing props autho
 
 ## Shared Technical & Performance Features
 - **Voxel Scale**: Uniform `voxel_size = 0.10`m.
-- **Pivot**: Strictly `bottom_center` at ground level.
+- **Pivot / Origin**: 18 ground props strictly use `bottom_center` at ground level (z=0). `moss_cliff_ledge` is an intentional architectural exception using `edge_anchor` on the ledge surface plane (z=0), allowing negative vertical extent (down to -0.26m) for 3D hanging tendrils dripping over cliff rims.
 - **Shared Production Material**: Unified 1-material export (`mat_dressing_atlas`) referencing `dressing_palette_atlas.png` and `dressing_roughness_atlas.png`.
 - **MultiMesh Ready**: Exactly 1 mesh object and 1 material per prop, triangle counts 84-408 tris (average 226.2 tris, budget <= 500), no collisions, no scripts. Instanced via Godot MultiMesh without material switches.
 - **Unified Palette**: `source/palette.json` and `textures/dressing_palette_atlas.png`.
