@@ -37,6 +37,11 @@ jobs:
           python -m py_compile tools/generate_dressing_reference.py
           python -m py_compile tools/create_dressing_comparison_sheets.py
           python -m py_compile tools/blender/build_dressing_pack.py
+          python -m py_compile tools/author_hud_visual_kit.py
+          python -m py_compile tools/hud_icons_builder.py
+          python -m py_compile tools/hud_frames_builder.py
+          python -m py_compile tools/hud_svg_builder.py
+          python -m py_compile assets/ui/hud_visual_kit/source/generate_kit.py
           python -m py_compile tools/review_loop/*.py
 
       - name: Review loop unit tests

@@ -1,5 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <!-- Asset: engineer_overclock (Overclock Surge) - Category: engineer -->
-  <!-- Action: Engineer F: Clockwork Overclock -->
-  <image href="../../output/icons/engineer_overclock_256.png" width="512" height="512"/>
-</svg>
+  <title>Engineer Overclock</title>
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-lg" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <g filter="url(#glow-lg)">
+    <!-- Clockwork Gear -->
+    <circle cx="256" cy="256" r="140" fill="#F59E0B" stroke="#1E293B" stroke-width="6"/>
+    <circle cx="256" cy="256" r="85" fill="#1E293B" stroke="#F59E0B" stroke-width="6"/>
+    <!-- Lightning Arcs -->
+    <polyline points="100,120 180,200 220,180 260,260 380,360" fill="none" stroke="#38BDF8" stroke-width="12" stroke-linecap="round"/>
+    <polyline points="100,120 180,200 220,180 260,260 380,360" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+    <polyline points="400,130 320,210 280,240 240,320 130,390" fill="none" stroke="#38BDF8" stroke-width="12" stroke-linecap="round"/>
+    <polyline points="400,130 320,210 280,240 240,320 130,390" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="256" cy="256" r="30" fill="#EF4444" stroke="#FFFFFF" stroke-width="3"/>
+  </g></svg>

@@ -1,5 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <!-- Asset: engineer_dash (Rocket Thruster) - Category: engineer -->
-  <!-- Action: Engineer Space: Rocket Thruster Jump -->
-  <image href="../../output/icons/engineer_dash_256.png" width="512" height="512"/>
-</svg>
+  <title>Engineer Dash</title>
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-lg" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <g filter="url(#glow-lg)">
+    <!-- Backpack -->
+    <rect x="170" y="150" width="172" height="50" rx="6" fill="#94A3B8" stroke="#0F172A" stroke-width="4"/>
+    <!-- Left Thruster -->
+    <polygon points="155,200 225,200 235,260 145,260" fill="#475569" stroke="#0F172A" stroke-width="4"/>
+    <polygon points="152,260 190,420 228,260" fill="#F97316"/>
+    <polygon points="170,260 190,370 210,260" fill="#FBBF24"/>
+    <polygon points="180,260 190,320 200,260" fill="#FEF08A"/>
+    <!-- Right Thruster -->
+    <polygon points="287,200 357,200 367,260 277,260" fill="#475569" stroke="#0F172A" stroke-width="4"/>
+    <polygon points="284,260 322,420 360,260" fill="#F97316"/>
+    <polygon points="302,260 322,370 342,260" fill="#FBBF24"/>
+    <polygon points="312,260 322,320 332,260" fill="#FEF08A"/>
+  </g></svg>

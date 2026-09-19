@@ -1,5 +1,40 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <!-- Asset: archer_piercing_shot (Piercing Drill) - Category: archer -->
-  <!-- Action: Archer RMB: Tri-Arrow Piercing Shot -->
-  <image href="../../output/icons/archer_piercing_shot_256.png" width="512" height="512"/>
-</svg>
+  <title>Archer Piercing Shot</title>
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-lg" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <g filter="url(#glow-lg)">
+    <!-- Shockwave Rings -->
+    <circle cx="280" cy="230" r="90" fill="none" stroke="#00E5FF" stroke-width="5"/>
+    <circle cx="330" cy="180" r="60" fill="none" stroke="#00E5FF" stroke-width="5"/>
+    <circle cx="370" cy="140" r="40" fill="none" stroke="#00E5FF" stroke-width="5"/>
+    <!-- Triple Arrows -->
+    <!-- Lower -->
+    <line x1="75" y1="415" x2="345" y2="145" stroke="#00E5FF" stroke-width="10"/>
+    <line x1="75" y1="415" x2="345" y2="145" stroke="#FFFFFF" stroke-width="4"/>
+    <polygon points="345,145 320,153 337,170" fill="#FFFFFF" stroke="#0284C7" stroke-width="2"/>
+    <!-- Center -->
+    <line x1="110" y1="380" x2="380" y2="110" stroke="#00E5FF" stroke-width="12"/>
+    <line x1="110" y1="380" x2="380" y2="110" stroke="#FFFFFF" stroke-width="5"/>
+    <polygon points="380,110 355,118 372,135" fill="#FFFFFF" stroke="#0284C7" stroke-width="2"/>
+    <!-- Upper -->
+    <line x1="145" y1="345" x2="415" y2="75" stroke="#00E5FF" stroke-width="10"/>
+    <line x1="145" y1="345" x2="415" y2="75" stroke="#FFFFFF" stroke-width="4"/>
+    <polygon points="415,75 390,83 407,100" fill="#FFFFFF" stroke="#0284C7" stroke-width="2"/>
+  </g></svg>

@@ -1,5 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <!-- Asset: archer_roll (Tumble Roll) - Category: archer -->
-  <!-- Action: Archer Space: Evasive Roll -->
-  <image href="../../output/icons/archer_roll_256.png" width="512" height="512"/>
-</svg>
+  <title>Archer Roll</title>
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-lg" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <g filter="url(#glow)">
+    <!-- Swirling Vortex -->
+    <path d="M 296,256 A 40,40 0 0,1 256,296 A 70,70 0 0,1 186,256 A 100,100 0 0,1 256,156 A 130,130 0 0,1 386,256 A 160,160 0 0,1 256,416" fill="none" stroke="#38BDF8" stroke-width="14" stroke-linecap="round"/>
+    <polygon points="236,196 276,226 256,306" fill="#BAE6FD" stroke="#0284C7" stroke-width="3"/>
+  </g></svg>

@@ -940,17 +940,32 @@ def verify_evidence() -> bool:
         ]
         for slug in expected_icon_slugs:
             p256 = icons_dir / f"{slug}.png"
+            p128 = icons_dir / f"{slug}_128.png"
             p64 = icons_dir / f"{slug}_64.png"
             p32 = icons_dir / f"{slug}_32.png"
             if not p256.exists():
-                errors.append(f"HUD icon missing: {p256}")
+                errors.append(f"HUD icon 256px missing: {p256}")
+            if not p128.exists():
+                errors.append(f"HUD icon 128px missing: {p128}")
             if not p64.exists():
                 errors.append(f"HUD icon 64px missing: {p64}")
             if not p32.exists():
                 errors.append(f"HUD icon 32px missing: {p32}")
         print(f"[PASS] All {len(expected_icon_slugs)} HUD icons verified across resolutions (256, 128, 64, 32).")
 
-        # 8c. Frames & Bars
+        # 8c. Vector SVG source check (must be pure vector geometry without raster <image> tags)
+        svg_dir = hud_dir / "source" / "svg"
+        for slug in expected_icon_slugs:
+            svg_file = svg_dir / f"{slug}.svg"
+            if not svg_file.exists():
+                errors.append(f"Missing vector SVG source: {svg_file}")
+            else:
+                svg_content = svg_file.read_text(encoding="utf-8")
+                if "<image " in svg_content:
+                    errors.append(f"SVG {svg_file.name} contains raster <image> wrapper instead of pure vector geometry")
+        print(f"[PASS] All {len(expected_icon_slugs)} vector SVG sources verified as pure vector geometry.")
+
+        # 8d. Frames & Bars
         frames_dir = hud_dir / "output" / "frames"
         bars_dir = hud_dir / "output" / "bars"
         for st in ["normal", "hover", "pressed", "disabled", "cooldown"]:
@@ -963,7 +978,7 @@ def verify_evidence() -> bool:
                 errors.append(f"Missing bar component: {bpath}")
         print(f"[PASS] HUD action slot states, keycaps, and progress bars verified.")
 
-        # 8d. Texture Atlas & Naming Map
+        # 8e. Texture Atlas, Naming Map & 9-Patch Referential Integrity
         atlas_png = hud_dir / "output" / "atlas" / "hud_atlas.png"
         atlas_json = hud_dir / "output" / "atlas" / "hud_atlas.json"
         naming_map = hud_dir / "output" / "naming_map.json"
@@ -971,6 +986,31 @@ def verify_evidence() -> bool:
         for af in [atlas_png, atlas_json, naming_map, slices_json]:
             if not af.exists():
                 errors.append(f"Missing atlas/metadata file: {af}")
+
+        if slices_json.exists():
+            try:
+                slices_data = json.loads(slices_json.read_text(encoding="utf-8"))
+                output_dir = hud_dir / "output"
+                for slice_key in slices_data:
+                    found = list(output_dir.rglob(slice_key))
+                    if not found:
+                        errors.append(f"Slice metadata key {slice_key!r} references nonexistent file in output/")
+                print(f"[PASS] All {len(slices_data)} 9-patch slice metadata keys verified against real exported files.")
+            except Exception as exc:
+                errors.append(f"Failed to inspect slices JSON: {exc}")
+
+        # 8f. Package source runner check
+        gen_kit = hud_dir / "source" / "generate_kit.py"
+        if not gen_kit.exists():
+            errors.append(f"Missing package source runner: {gen_kit}")
+        else:
+            import py_compile
+            try:
+                py_compile.compile(str(gen_kit), doraise=True)
+                print(f"[PASS] Package source runner syntax verified: {gen_kit.name}")
+            except Exception as exc:
+                errors.append(f"Source runner compilation failed: {exc}")
+
         print(f"[PASS] HUD packed atlas and metadata mapping verified.")
 
         # 8e. Review Evidence Renders

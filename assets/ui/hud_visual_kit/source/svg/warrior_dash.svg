@@ -1,5 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <!-- Asset: warrior_dash (Battle Dash) - Category: warrior -->
-  <!-- Action: Warrior Space: Combat Dash -->
-  <image href="../../output/icons/warrior_dash_256.png" width="512" height="512"/>
-</svg>
+  <title>Warrior Dash</title>
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-lg" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <g filter="url(#glow)">
+    <!-- Speed Lines -->
+    <line x1="60" y1="180" x2="220" y2="180" stroke="#FBBF24" stroke-width="10" stroke-linecap="round"/>
+    <line x1="40" y1="240" x2="260" y2="240" stroke="#F97316" stroke-width="16" stroke-linecap="round"/>
+    <line x1="50" y1="300" x2="240" y2="300" stroke="#FBBF24" stroke-width="14" stroke-linecap="round"/>
+    <line x1="80" y1="360" x2="200" y2="360" stroke="#EF4444" stroke-width="8" stroke-linecap="round"/>
+    <!-- Armored Boot Silhouette -->
+    <polygon points="220,150 290,180 290,280 390,340 380,380 240,380 200,280" fill="#CBD5E1" stroke="#0F172A" stroke-width="6"/>
+    <line x1="210" y1="210" x2="290" y2="230" stroke="#FBBF24" stroke-width="5"/>
+    <line x1="200" y1="280" x2="300" y2="300" stroke="#FBBF24" stroke-width="5"/>
+    <polygon points="160,240 220,230 190,290" fill="#F97316" stroke="#0F172A" stroke-width="4"/>
+  </g></svg>

@@ -157,11 +157,39 @@ def validate_asset(asset_dir: Path) -> dict:
         icons_dir = asset_dir / manifest.get("outputs", {}).get("icons_dir", "output/icons")
         if icons_dir.is_dir():
             icon_files = [p for p in icons_dir.iterdir() if p.suffix.lower() == ".png"]
-            result["icons_count"] = len(icon_files)
-            if min_icons and len(icon_files) < min_icons:
+            # Extract unique icon base slugs (stripping resolution suffixes like _256, _128, _64, _32)
+            unique_slugs = set()
+            for p in icon_files:
+                stem = p.stem
+                for sfx in ("_256", "_128", "_64", "_32"):
+                    if stem.endswith(sfx):
+                        stem = stem[:-len(sfx)]
+                        break
+                unique_slugs.add(stem)
+
+            result["unique_icons_count"] = len(unique_slugs)
+            result["total_icon_files"] = len(icon_files)
+            if min_icons and len(unique_slugs) < min_icons:
                 raise ValidationError(
-                    f"Icon count {len(icon_files)} is below required minimum {min_icons}"
+                    f"Unique icon count {len(unique_slugs)} is below required minimum {min_icons}"
                 )
+
+        # Referential integrity check for 9-patch slice metadata
+        slices_rel = manifest.get("outputs", {}).get("godot_slices", "output/hud_slices.json")
+        slices_path = asset_dir / slices_rel
+        if slices_path.exists():
+            try:
+                slices_data = json.loads(slices_path.read_text(encoding="utf-8"))
+            except Exception as exc:
+                raise ValidationError(f"Invalid slices JSON at {slices_path}: {exc}") from exc
+
+            output_dir = asset_dir / "output"
+            for slice_key in slices_data:
+                matching_files = list(output_dir.rglob(slice_key))
+                if not matching_files:
+                    raise ValidationError(
+                        f"Slice metadata key {slice_key!r} in {slices_rel} references nonexistent file"
+                    )
 
     return result
 

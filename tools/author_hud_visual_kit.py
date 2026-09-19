@@ -17,6 +17,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 # Import sub-modules
 from hud_icons_builder import ICON_BUILDERS
+from hud_svg_builder import export_all_svgs
 from hud_frames_builder import (
     render_action_slot,
     render_cooldown_mask,
@@ -82,15 +83,10 @@ def export_icons() -> Dict[str, Image.Image]:
         # Save WebP for modern web/runtime engines
         img_256.save(ICONS_DIR / f"{slug}.webp", "WEBP", quality=95)
 
-        # Save clean vector SVG wrapper
-        svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <!-- Asset: {slug} ({info['name']}) - Category: {info['category']} -->
-  <!-- Action: {info['action']} -->
-  <image href="../../output/icons/{slug}_256.png" width="512" height="512"/>
-</svg>"""
-        (SVG_DIR / f"{slug}.svg").write_text(svg_content, encoding="utf-8")
+    # Export pure, self-contained resolution-independent vector SVGs
+    export_all_svgs(SVG_DIR)
 
-    print(f"  [PASS] All {len(ICON_BUILDERS)} icons exported to PNG (32, 64, 128, 256), WebP, and SVG.")
+    print(f"  [PASS] All {len(ICON_BUILDERS)} icons exported to PNG (32, 64, 128, 256), WebP, and pure vector SVG.")
     return master_icons
 
 

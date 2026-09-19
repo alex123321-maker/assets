@@ -71,7 +71,7 @@ All required actions across classes, resources, global HUD, and auxiliary gamepl
   },
   "godot_integration": {
     "ninepatch_slices_file": "output/hud_slices.json",
-    "slices_count": 16
+    "slices_count": 17
   },
   "review_evidence": {
     "contact_sheet": "review/contact_sheet.png",

@@ -361,6 +361,7 @@ GODOT_9PATCH_SLICES: Dict[str, Dict[str, int]] = {
     "wave_bar_fill.png": {"margin_left": 4, "margin_top": 4, "margin_right": 4, "margin_bottom": 4},
     "xp_bar_bg.png": {"margin_left": 8, "margin_top": 6, "margin_right": 8, "margin_bottom": 6},
     "xp_bar_fill.png": {"margin_left": 4, "margin_top": 4, "margin_right": 4, "margin_bottom": 4},
-    "resource_panel_bg.png": {"margin_left": 20, "margin_top": 10, "margin_right": 20, "margin_bottom": 10},
-    "tooltip_bg.png": {"margin_left": 18, "margin_top": 18, "margin_right": 18, "margin_bottom": 18},
+    "resource_panel_frame.png": {"margin_left": 20, "margin_top": 10, "margin_right": 20, "margin_bottom": 10},
+    "tooltip_frame.png": {"margin_left": 18, "margin_top": 18, "margin_right": 18, "margin_bottom": 18},
+    "day_night_panel_frame.png": {"margin_left": 80, "margin_top": 30, "margin_right": 80, "margin_bottom": 30},
 }

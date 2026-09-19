@@ -1,5 +1,46 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <!-- Asset: resource_iron (Iron) - Category: resource -->
-  <!-- Action: Resource: Forged Iron Ingot -->
-  <image href="../../output/icons/resource_iron_256.png" width="512" height="512"/>
-</svg>
+  <title>Iron Resource</title>
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-lg" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <linearGradient id="iron-top" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#CBD5E1"/>
+      <stop offset="50%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="iron-front" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#94A3B8"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+  </defs>
+  <g filter="url(#glow)">
+    <!-- Bottom Ingot -->
+    <polygon points="150,280 330,280 372,250 192,250" fill="url(#iron-top)" stroke="#1E293B" stroke-width="4"/>
+    <polygon points="330,280 370,370 412,340 372,250" fill="#64748B" stroke="#1E293B" stroke-width="4"/>
+    <polygon points="150,280 330,280 370,370 110,370" fill="url(#iron-front)" stroke="#1E293B" stroke-width="4"/>
+    <rect x="201" y="302" width="78" height="45" fill="#64748B" stroke="#1E293B" stroke-width="3"/>
+
+    <!-- Top Ingot -->
+    <polygon points="190,170 350,170 388,142 228,142" fill="url(#iron-top)" stroke="#1E293B" stroke-width="4"/>
+    <polygon points="350,170 390,255 428,227 388,142" fill="#64748B" stroke="#1E293B" stroke-width="4"/>
+    <polygon points="190,170 350,170 390,255 150,255" fill="url(#iron-front)" stroke="#1E293B" stroke-width="4"/>
+    <rect x="234" y="191" width="72" height="42" fill="#64748B" stroke="#1E293B" stroke-width="3"/>
+
+    <!-- Specular Glint -->
+    <line x1="345" y1="140" x2="395" y2="140" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+    <line x1="370" y1="115" x2="370" y2="165" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+  </g></svg>

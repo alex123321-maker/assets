@@ -83,16 +83,22 @@
     "margin_right": 4,
     "margin_bottom": 4
   },
-  "resource_panel_bg.png": {
+  "resource_panel_frame.png": {
     "margin_left": 20,
     "margin_top": 10,
     "margin_right": 20,
     "margin_bottom": 10
   },
-  "tooltip_bg.png": {
+  "tooltip_frame.png": {
     "margin_left": 18,
     "margin_top": 18,
     "margin_right": 18,
     "margin_bottom": 18
+  },
+  "day_night_panel_frame.png": {
+    "margin_left": 80,
+    "margin_top": 30,
+    "margin_right": 80,
+    "margin_bottom": 30
   }
 }
