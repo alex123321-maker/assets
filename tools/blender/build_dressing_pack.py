@@ -175,123 +175,533 @@ def token_to_atlas_uv(spec: dict) -> tuple[float, float]:
     return u, v
 
 
+def build_grass_mesh(data: dict, occupied: dict, width: int, height: int, depth: int, voxel_size: float, shared_mat: bpy.types.Material) -> bpy.types.Object:
+    bm = bmesh.new()
+    uv_layer = bm.loops.layers.uv.new("UVMap")
+
+    columns = {}
+    for (sx, sy, sz), token in occupied.items():
+        columns.setdefault((sx, sz), []).append((sy, token))
+
+    for k in columns:
+        columns[k].sort(key=lambda item: item[0])
+
+    is_swept = "med_02" in data["name"]
+    max_r = max(0.05, max(width, depth) * voxel_size * 0.5)
+
+    for (sx, sz), levels in columns.items():
+        cx = (sx - (width - 1) / 2.0) * voxel_size
+        cy = (sz - (depth - 1) / 2.0) * voxel_size
+        dist = math.hypot(cx, cy)
+        theta = math.atan2(cy, cx) if dist > 0.001 else 0.0
+
+        if is_swept:
+            lx = math.cos(theta) * 0.35 + 0.65
+            ly = math.sin(theta) * 0.35 + 0.15
+            llen = math.hypot(lx, ly)
+            lean_x, lean_y = lx / llen, ly / llen
+            max_lean = 0.08 + 0.12 * (dist / max_r)
+        else:
+            lean_x = math.cos(theta) if dist > 0.001 else 0.0
+            lean_y = math.sin(theta) if dist > 0.001 else 0.0
+            max_lean = 0.03 + 0.08 * (dist / max_r)
+
+        tx = -lean_y if dist > 0.001 else 1.0
+        ty = lean_x if dist > 0.001 else 0.0
+        bx = lean_x if dist > 0.001 else 0.0
+        by = lean_y if dist > 0.001 else 1.0
+
+        H = levels[-1][0] + 1
+        total_col_height = H * voxel_size
+
+        def get_layer_coords(z_val):
+            tz = min(1.0, z_val / max(0.01, total_col_height))
+            shift = (tz ** 1.3) * max_lean
+            px = cx + lean_x * shift
+            py = cy + lean_y * shift
+            w = voxel_size * 0.44 * (1.0 - 0.70 * tz)
+            th = voxel_size * 0.28 * (1.0 - 0.85 * tz)
+            v0 = (px - tx * w - bx * th, py - ty * w - by * th, z_val)
+            v1 = (px + tx * w - bx * th, py + ty * w - by * th, z_val)
+            v2 = (px + tx * w + bx * th, py + ty * w + by * th, z_val)
+            v3 = (px - tx * w + bx * th, py - ty * w + by * th, z_val)
+            return px, py, [v0, v1, v2, v3]
+
+        def token_uv(tok):
+            spec = data["materials"].get(tok, {})
+            return token_to_atlas_uv(spec)
+
+        last_top_verts = None
+
+        for idx, (sy, tok) in enumerate(levels):
+            z_bot = sy * voxel_size
+            z_top = (sy + 1) * voxel_size
+            uv = token_uv(tok)
+            is_tip = (idx == len(levels) - 1)
+
+            if last_top_verts is None:
+                _, _, bot_coords = get_layer_coords(z_bot)
+                bot_verts = [bm.verts.new(c) for c in bot_coords]
+                if z_bot <= 0.001:
+                    bf = bm.faces.new([bot_verts[3], bot_verts[2], bot_verts[1], bot_verts[0]])
+                    for l in bf.loops:
+                        l[uv_layer].uv = uv
+            else:
+                bot_verts = last_top_verts
+
+            if not is_tip:
+                _, _, top_coords = get_layer_coords(z_top)
+                top_verts = [bm.verts.new(c) for c in top_coords]
+                quads = [
+                    [bot_verts[0], bot_verts[1], top_verts[1], top_verts[0]],
+                    [bot_verts[1], bot_verts[2], top_verts[2], top_verts[1]],
+                    [bot_verts[2], bot_verts[3], top_verts[3], top_verts[2]],
+                    [bot_verts[3], bot_verts[0], top_verts[0], top_verts[3]],
+                ]
+                for q in quads:
+                    f = bm.faces.new(q)
+                    for l in f.loops:
+                        l[uv_layer].uv = uv
+                last_top_verts = top_verts
+            else:
+                px, py, _ = get_layer_coords(z_top)
+                tz = 1.0
+                shift = (tz ** 1.3) * max_lean
+                tip_x = cx + lean_x * shift
+                tip_y = cy + lean_y * shift
+                w_tip = voxel_size * 0.44 * 0.20
+                t0 = bm.verts.new((tip_x - tx * w_tip, tip_y - ty * w_tip, z_top))
+                t1 = bm.verts.new((tip_x + tx * w_tip, tip_y + ty * w_tip, z_top))
+                faces_to_tip = [
+                    [bot_verts[0], bot_verts[1], t1, t0],
+                    [bot_verts[1], bot_verts[2], t1],
+                    [bot_verts[2], bot_verts[3], t0, t1],
+                    [bot_verts[3], bot_verts[0], t0],
+                ]
+                for f_verts in faces_to_tip:
+                    f = bm.faces.new(f_verts)
+                    for l in f.loops:
+                        l[uv_layer].uv = uv
+                last_top_verts = None
+
+    mesh = bpy.data.meshes.new(f"{data['name']}_mesh")
+    bm.to_mesh(mesh)
+    bm.free()
+
+    obj = bpy.data.objects.new(data["name"], mesh)
+    bpy.context.collection.objects.link(obj)
+    obj.data.materials.append(shared_mat)
+    return obj
+
+
+def build_flower_mesh(data: dict, occupied: dict, width: int, height: int, depth: int, voxel_size: float, shared_mat: bpy.types.Material) -> bpy.types.Object:
+    bm = bmesh.new()
+    uv_layer = bm.loops.layers.uv.new("UVMap")
+    slug = data["name"]
+
+    def token_uv(tok):
+        spec = data["materials"].get(tok, {})
+        return token_to_atlas_uv(spec)
+
+    pistil_tokens = {"Y", "O", "C"}
+    pistils = []
+    for (sx, sy, sz), tok in occupied.items():
+        if tok in pistil_tokens:
+            cx = (sx - (width - 1) / 2.0) * voxel_size
+            cy = (sz - (depth - 1) / 2.0) * voxel_size
+            cz = (sy + 0.5) * voxel_size
+            pistils.append((cx, cy, cz, sx, sy, sz))
+
+    for (sx, sy, sz), tok in occupied.items():
+        cx = (sx - (width - 1) / 2.0) * voxel_size
+        cy = (sz - (depth - 1) / 2.0) * voxel_size
+        uv = token_uv(tok)
+        r = math.hypot(cx, cy)
+        nx = cx / r if r > 0.001 else 0.0
+        ny = cy / r if r > 0.001 else 0.0
+
+        if sy == 0 and tok in ("D", "G"):
+            # Basal rosette leaf: flat, outward-pointing leaf slab hugging the ground
+            z_base = 0.05
+            z_tip = 0.012
+            w_base = voxel_size * 0.40
+            w_tip = voxel_size * 0.20
+            tx, ty = -ny, nx
+            in_x = cx - nx * (voxel_size * 0.35)
+            in_y = cy - ny * (voxel_size * 0.35)
+            out_x = cx + nx * (voxel_size * 0.45)
+            out_y = cy + ny * (voxel_size * 0.45)
+
+            v0 = (in_x - tx * w_base, in_y - ty * w_base, 0.0)
+            v1 = (in_x + tx * w_base, in_y + ty * w_base, 0.0)
+            v2 = (out_x + tx * w_tip, out_y + ty * w_tip, 0.0)
+            v3 = (out_x - tx * w_tip, out_y - ty * w_tip, 0.0)
+
+            v4 = (in_x - tx * w_base, in_y - ty * w_base, z_base)
+            v5 = (in_x + tx * w_base, in_y + ty * w_base, z_base)
+            v6 = (out_x + tx * w_tip, out_y + ty * w_tip, z_tip)
+            v7 = (out_x - tx * w_tip, out_y - ty * w_tip, z_tip)
+
+            bv = [bm.verts.new(c) for c in [v0, v1, v2, v3, v4, v5, v6, v7]]
+            faces = [
+                [bv[3], bv[2], bv[1], bv[0]],
+                [bv[4], bv[5], bv[6], bv[7]],
+                [bv[0], bv[1], bv[5], bv[4]],
+                [bv[1], bv[2], bv[6], bv[5]],
+                [bv[2], bv[3], bv[7], bv[6]],
+                [bv[3], bv[0], bv[4], bv[7]],
+            ]
+            for f_indices in faces:
+                f = bm.faces.new(f_indices)
+                for l in f.loops:
+                    l[uv_layer].uv = uv
+
+        elif tok == "G":
+            # Slender stem column
+            hw = voxel_size * 0.22
+            z_bot = sy * voxel_size
+            z_top = (sy + 1) * voxel_size
+            v0 = (cx - hw, cy - hw, z_bot)
+            v1 = (cx + hw, cy - hw, z_bot)
+            v2 = (cx + hw, cy + hw, z_bot)
+            v3 = (cx - hw, cy + hw, z_bot)
+
+            v4 = (cx - hw, cy - hw, z_top)
+            v5 = (cx + hw, cy - hw, z_top)
+            v6 = (cx + hw, cy + hw, z_top)
+            v7 = (cx - hw, cy + hw, z_top)
+
+            bv = [bm.verts.new(c) for c in [v0, v1, v2, v3, v4, v5, v6, v7]]
+            faces = [
+                [bv[3], bv[2], bv[1], bv[0]],
+                [bv[4], bv[5], bv[6], bv[7]],
+                [bv[0], bv[1], bv[5], bv[4]],
+                [bv[1], bv[2], bv[6], bv[5]],
+                [bv[2], bv[3], bv[7], bv[6]],
+                [bv[3], bv[0], bv[4], bv[7]],
+            ]
+            for f_indices in faces:
+                f = bm.faces.new(f_indices)
+                for l in f.loops:
+                    l[uv_layer].uv = uv
+
+        elif tok in pistil_tokens:
+            # Pistil center: chunky faceted central core
+            hw = voxel_size * 0.32
+            cz = (sy + 0.5) * voxel_size
+            hh = voxel_size * 0.26
+            v0 = (cx - hw, cy - hw, cz - hh)
+            v1 = (cx + hw, cy - hw, cz - hh)
+            v2 = (cx + hw, cy + hw, cz - hh)
+            v3 = (cx - hw, cy + hw, cz - hh)
+
+            v4 = (cx - hw, cy - hw, cz + hh)
+            v5 = (cx + hw, cy - hw, cz + hh)
+            v6 = (cx + hw, cy + hw, cz + hh)
+            v7 = (cx - hw, cy + hw, cz + hh)
+
+            bv = [bm.verts.new(c) for c in [v0, v1, v2, v3, v4, v5, v6, v7]]
+            faces = [
+                [bv[3], bv[2], bv[1], bv[0]],
+                [bv[4], bv[5], bv[6], bv[7]],
+                [bv[0], bv[1], bv[5], bv[4]],
+                [bv[1], bv[2], bv[6], bv[5]],
+                [bv[2], bv[3], bv[7], bv[6]],
+                [bv[3], bv[0], bv[4], bv[7]],
+            ]
+            for f_indices in faces:
+                f = bm.faces.new(f_indices)
+                for l in f.loops:
+                    l[uv_layer].uv = uv
+
+        else:
+            # Petal: angled petal plate/blade
+            best_pistil = None
+            best_dist = 999.0
+            for px, py, pz, psx, psy, psz in pistils:
+                d_sq = (cx - px) ** 2 + (cy - py) ** 2 + ((sy - psy) * voxel_size) ** 2
+                if d_sq < best_dist:
+                    best_dist = d_sq
+                    best_pistil = (px, py, pz)
+
+            if best_pistil:
+                p_dx = cx - best_pistil[0]
+                p_dy = cy - best_pistil[1]
+                p_r = math.hypot(p_dx, p_dy)
+                if p_r > 0.001:
+                    p_nx, p_ny = p_dx / p_r, p_dy / p_r
+                else:
+                    p_nx, p_ny = nx, ny
+            else:
+                p_nx, p_ny = nx, ny
+
+            p_tx, p_ty = -p_ny, p_nx
+            cz = (sy + 0.45) * voxel_size
+
+            # Distinct archetype tilts
+            if "white" in slug:
+                tilt_z = 0.025
+                w_petal = voxel_size * 0.38
+                thick = 0.020
+            elif "yellow" in slug:
+                tilt_z = 0.045
+                w_petal = voxel_size * 0.36
+                thick = 0.022
+            elif "red" in slug:
+                tilt_z = 0.060 if sy >= 4 else 0.040
+                w_petal = voxel_size * 0.42
+                thick = 0.024
+            elif "mixed" in slug:
+                tilt_z = -0.040 if sy >= 3 else 0.025
+                w_petal = voxel_size * 0.38
+                thick = 0.022
+            else:
+                tilt_z = 0.030
+                w_petal = voxel_size * 0.38
+                thick = 0.020
+
+            in_x = cx - p_nx * (voxel_size * 0.35)
+            in_y = cy - p_ny * (voxel_size * 0.35)
+            out_x = cx + p_nx * (voxel_size * 0.45)
+            out_y = cy + p_ny * (voxel_size * 0.45)
+
+            z_in = cz - tilt_z * 0.5
+            z_out = cz + tilt_z
+
+            v0 = (in_x - p_tx * w_petal, in_y - p_ty * w_petal, z_in - thick * 0.5)
+            v1 = (in_x + p_tx * w_petal, in_y + p_ty * w_petal, z_in - thick * 0.5)
+            v2 = (out_x + p_tx * (w_petal * 0.7), out_y + p_ty * (w_petal * 0.7), z_out - thick * 0.5)
+            v3 = (out_x - p_tx * (w_petal * 0.7), out_y - p_ty * (w_petal * 0.7), z_out - thick * 0.5)
+
+            v4 = (in_x - p_tx * w_petal, in_y - p_ty * w_petal, z_in + thick * 0.5)
+            v5 = (in_x + p_tx * w_petal, in_y + p_ty * w_petal, z_in + thick * 0.5)
+            v6 = (out_x + p_tx * (w_petal * 0.7), out_y + p_ty * (w_petal * 0.7), z_out + thick * 0.5)
+            v7 = (out_x - p_tx * (w_petal * 0.7), out_y - p_ty * (w_petal * 0.7), z_out + thick * 0.5)
+
+            bv = [bm.verts.new(c) for c in [v0, v1, v2, v3, v4, v5, v6, v7]]
+            faces = [
+                [bv[3], bv[2], bv[1], bv[0]],
+                [bv[4], bv[5], bv[6], bv[7]],
+                [bv[0], bv[1], bv[5], bv[4]],
+                [bv[1], bv[2], bv[6], bv[5]],
+                [bv[2], bv[3], bv[7], bv[6]],
+                [bv[3], bv[0], bv[4], bv[7]],
+            ]
+            for f_indices in faces:
+                f = bm.faces.new(f_indices)
+                for l in f.loops:
+                    l[uv_layer].uv = uv
+
+    mesh = bpy.data.meshes.new(f"{data['name']}_mesh")
+    bm.to_mesh(mesh)
+    bm.free()
+
+    obj = bpy.data.objects.new(data["name"], mesh)
+    bpy.context.collection.objects.link(obj)
+    obj.data.materials.append(shared_mat)
+    return obj
+
+
+def build_moss_mesh(data: dict, occupied: dict, width: int, height: int, depth: int, voxel_size: float, shared_mat: bpy.types.Material) -> bpy.types.Object:
+    bm = bmesh.new()
+    uv_layer = bm.loops.layers.uv.new("UVMap")
+    slug = data["name"]
+
+    def token_uv(tok):
+        spec = data["materials"].get(tok, {})
+        return token_to_atlas_uv(spec)
+
+    for (sx, sy, sz), tok in occupied.items():
+        cx = (sx - (width - 1) / 2.0) * voxel_size
+        cy = (sz - (depth - 1) / 2.0) * voxel_size
+        uv = token_uv(tok)
+        hw = voxel_size * 0.46
+        z_bot = sy * voxel_size
+        z_top = (sy + 1) * voxel_size
+
+        has_above = (sx, sy + 1, sz) in occupied
+        has_left = (sx - 1, sy, sz) in occupied
+        has_right = (sx + 1, sy, sz) in occupied
+        has_front = (sx, sy, sz + 1) in occupied
+        has_back = (sx, sy, sz - 1) in occupied
+
+        cushion_z = 0.015 if not has_above else 0.0
+
+        v0 = (cx - hw, cy - hw, z_bot)
+        v1 = (cx + hw, cy - hw, z_bot)
+        v2 = (cx + hw, cy + hw, z_bot)
+        v3 = (cx - hw, cy + hw, z_bot)
+
+        v4 = (cx - hw, cy - hw, z_top)
+        v5 = (cx + hw, cy - hw, z_top)
+        v6 = (cx + hw, cy + hw, z_top)
+        v7 = (cx - hw, cy + hw, z_top)
+
+        if not has_above:
+            v_mid = (cx, cy, z_top + cushion_z)
+            bv = [bm.verts.new(c) for c in [v0, v1, v2, v3, v4, v5, v6, v7, v_mid]]
+            roof_faces = [
+                [bv[4], bv[5], bv[8]],
+                [bv[5], bv[6], bv[8]],
+                [bv[6], bv[7], bv[8]],
+                [bv[7], bv[4], bv[8]],
+            ]
+            for rf in roof_faces:
+                f = bm.faces.new(rf)
+                for l in f.loops:
+                    l[uv_layer].uv = uv
+        else:
+            bv = [bm.verts.new(c) for c in [v0, v1, v2, v3, v4, v5, v6, v7]]
+            tf = bm.faces.new([bv[4], bv[5], bv[6], bv[7]])
+            for l in tf.loops:
+                l[uv_layer].uv = uv
+
+        if z_bot <= 0.001 or (sx, sy - 1, sz) not in occupied:
+            bf = bm.faces.new([bv[3], bv[2], bv[1], bv[0]])
+            for l in bf.loops:
+                l[uv_layer].uv = uv
+
+        sides = [
+            (has_back, [bv[0], bv[1], bv[5], bv[4]]),
+            (has_right, [bv[1], bv[2], bv[6], bv[5]]),
+            (has_front, [bv[2], bv[3], bv[7], bv[6]]),
+            (has_left, [bv[3], bv[0], bv[4], bv[7]]),
+        ]
+        for has_neighbor, sverts in sides:
+            if not has_neighbor:
+                f = bm.faces.new(sverts)
+                for l in f.loops:
+                    l[uv_layer].uv = uv
+
+        # For cliff ledge: add 3D hanging stalactite tendrils dripping down over cliff face
+        if slug == "moss_cliff_ledge" and sy == 0 and not has_front:
+            tendril_len = 0.08 + 0.06 * ((sx * 3) % 4)
+            thw = hw * 0.4
+            thick = 0.015
+            t0 = bm.verts.new((cx - thw, cy + hw * 0.9, 0.0))
+            t1 = bm.verts.new((cx + thw, cy + hw * 0.9, 0.0))
+            t2 = bm.verts.new((cx + thw, cy + hw * 0.9 - thick, 0.0))
+            t3 = bm.verts.new((cx - thw, cy + hw * 0.9 - thick, 0.0))
+            tip = bm.verts.new((cx, cy + hw * 0.9 - thick * 0.5, -tendril_len))
+
+            tendril_faces = [
+                [t0, t1, tip],
+                [t1, t2, tip],
+                [t2, t3, tip],
+                [t3, t0, tip],
+            ]
+            for tf in tendril_faces:
+                f = bm.faces.new(tf)
+                for l in f.loops:
+                    l[uv_layer].uv = uv
+
+    mesh = bpy.data.meshes.new(f"{data['name']}_mesh")
+    bm.to_mesh(mesh)
+    bm.free()
+
+    obj = bpy.data.objects.new(data["name"], mesh)
+    bpy.context.collection.objects.link(obj)
+    obj.data.materials.append(shared_mat)
+    return obj
+
+
+def build_stone_debris_mesh(data: dict, occupied: dict, width: int, height: int, depth: int, voxel_size: float, shared_mat: bpy.types.Material) -> bpy.types.Object:
+    bm = bmesh.new()
+    h = voxel_size / 2.0
+
+    for (sx, sy, sz), token in occupied.items():
+        cx, cy, cz = source_to_blender(sx, sy, sz, width, depth, voxel_size)
+        for (dx, dy, dz), face_name in NEIGHBORS:
+            neighbor = (sx + dx, sy + dy, sz + dz)
+            if neighbor in occupied:
+                continue
+            quad_coords = face_vertices(cx, cy, cz, h, face_name)
+            verts = [bm.verts.new(coord) for coord in quad_coords]
+            bm.faces.new(verts)
+
+    bm.verts.ensure_lookup_table()
+    bm.faces.ensure_lookup_table()
+    bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.001)
+    bmesh.ops.dissolve_limit(bm, angle_limit=math.radians(2.0), verts=bm.verts, edges=bm.edges)
+    bm.verts.ensure_lookup_table()
+    bm.edges.ensure_lookup_table()
+    bm.faces.ensure_lookup_table()
+
+    convex_edges = []
+    for e in bm.edges:
+        if len(e.link_faces) == 2 and not e.is_boundary:
+            if abs(e.verts[0].co.z) <= 0.001 and abs(e.verts[1].co.z) <= 0.001:
+                continue
+            f1, f2 = e.link_faces
+            angle = f1.normal.angle(f2.normal)
+            if angle > math.radians(45):
+                edge_mid = (e.verts[0].co + e.verts[1].co) * 0.5
+                face_mid = (f1.calc_center_bounds() + f2.calc_center_bounds()) * 0.5
+                avg_normal = f1.normal + f2.normal
+                if (face_mid - edge_mid).dot(avg_normal) < 0:
+                    convex_edges.append(e)
+
+    bevel_width = voxel_size * 0.22
+    if convex_edges:
+        bmesh.ops.bevel(
+            bm,
+            geom=convex_edges,
+            offset=bevel_width,
+            offset_type="OFFSET",
+            segments=1,
+            profile=0.5,
+            affect="EDGES",
+            clamp_overlap=True,
+        )
+
+    uv_layer = bm.loops.layers.uv.new("UVMap")
+    stone_materials = data["materials"]
+
+    for f in bm.faces:
+        nz = f.normal.z
+        center = f.calc_center_bounds()
+
+        if "M" in stone_materials and nz > 0.6 and center.z < 0.15:
+            tok = "M"
+        elif "D" in stone_materials and nz < -0.4:
+            tok = "D"
+        elif "L" in stone_materials and nz > 0.55:
+            tok = "L"
+        else:
+            tok = "S" if "S" in stone_materials else list(stone_materials.keys())[0]
+
+        spec = stone_materials.get(tok, {})
+        uv = token_to_atlas_uv(spec)
+        for loop in f.loops:
+            loop[uv_layer].uv = uv
+
+    mesh = bpy.data.meshes.new(f"{data['name']}_mesh")
+    bm.to_mesh(mesh)
+    bm.free()
+
+    obj = bpy.data.objects.new(data["name"], mesh)
+    bpy.context.collection.objects.link(obj)
+    obj.data.materials.append(shared_mat)
+    return obj
+
+
 def build_dressing_mesh(data: dict) -> tuple[bpy.types.Object, dict]:
     """Build a unified single-mesh object with shared atlas material and UV mapping."""
     occupied, width, height, depth = parse_voxels(data)
     voxel_size = float(data["voxel_size"])
-    h = voxel_size / 2.0
-
     shared_mat = get_or_create_shared_atlas_material()
-    is_stone_debris = data.get("name", "").startswith("stone_debris")
+    name = data.get("name", "")
 
-    bm = bmesh.new()
-
-    if not is_stone_debris:
-        # Standard voxel solid meshing with internal face culling and UV swatch mapping
-        uv_layer = bm.loops.layers.uv.new("UVMap")
-
-        for (sx, sy, sz), token in occupied.items():
-            cx, cy, cz = source_to_blender(sx, sy, sz, width, depth, voxel_size)
-            spec = data["materials"].get(token, {})
-            uv = token_to_atlas_uv(spec)
-
-            for (dx, dy, dz), face_name in NEIGHBORS:
-                neighbor = (sx + dx, sy + dy, sz + dz)
-                if neighbor in occupied:
-                    continue
-
-                quad_coords = face_vertices(cx, cy, cz, h, face_name)
-                verts = [bm.verts.new(coord) for coord in quad_coords]
-                face = bm.faces.new(verts)
-                for loop in face.loops:
-                    loop[uv_layer].uv = uv
-
-        mesh = bpy.data.meshes.new(f"{data['name']}_mesh")
-        bm.to_mesh(mesh)
-        bm.free()
-
-        obj = bpy.data.objects.new(data["name"], mesh)
-        bpy.context.collection.objects.link(obj)
-        obj.data.materials.append(shared_mat)
-
+    if name.startswith("grass_tuft"):
+        obj = build_grass_mesh(data, occupied, width, height, depth, voxel_size, shared_mat)
+    elif name.startswith("flower_"):
+        obj = build_flower_mesh(data, occupied, width, height, depth, voxel_size, shared_mat)
+    elif name.startswith("moss_"):
+        obj = build_moss_mesh(data, occupied, width, height, depth, voxel_size, shared_mat)
+    elif name.startswith("stone_debris"):
+        obj = build_stone_debris_mesh(data, occupied, width, height, depth, voxel_size, shared_mat)
     else:
-        # Faceted stone debris builder: watertight manifold mesh with bevels, matching Issue #3
-        for (sx, sy, sz), token in occupied.items():
-            cx, cy, cz = source_to_blender(sx, sy, sz, width, depth, voxel_size)
-            for (dx, dy, dz), face_name in NEIGHBORS:
-                neighbor = (sx + dx, sy + dy, sz + dz)
-                if neighbor in occupied:
-                    continue
-                quad_coords = face_vertices(cx, cy, cz, h, face_name)
-                verts = [bm.verts.new(coord) for coord in quad_coords]
-                bm.faces.new(verts)
-
-        bm.verts.ensure_lookup_table()
-        bm.faces.ensure_lookup_table()
-        bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.001)
-        bmesh.ops.dissolve_limit(bm, angle_limit=math.radians(2.0), verts=bm.verts, edges=bm.edges)
-        bm.verts.ensure_lookup_table()
-        bm.edges.ensure_lookup_table()
-        bm.faces.ensure_lookup_table()
-
-        # Bevel convex edges for stylized faceted look
-        convex_edges = []
-        for e in bm.edges:
-            if len(e.link_faces) == 2 and not e.is_boundary:
-                if abs(e.verts[0].co.z) <= 0.001 and abs(e.verts[1].co.z) <= 0.001:
-                    continue
-                f1, f2 = e.link_faces
-                angle = f1.normal.angle(f2.normal)
-                if angle > math.radians(45):
-                    edge_mid = (e.verts[0].co + e.verts[1].co) * 0.5
-                    face_mid = (f1.calc_center_bounds() + f2.calc_center_bounds()) * 0.5
-                    avg_normal = f1.normal + f2.normal
-                    if (face_mid - edge_mid).dot(avg_normal) < 0:
-                        convex_edges.append(e)
-
-        bevel_width = voxel_size * 0.22
-        if convex_edges:
-            bmesh.ops.bevel(
-                bm,
-                geom=convex_edges,
-                offset=bevel_width,
-                offset_type="OFFSET",
-                segments=1,
-                profile=0.5,
-                affect="EDGES",
-                clamp_overlap=True,
-            )
-
-        # Assign UVs based on stone token roles and surface normals
-        uv_layer = bm.loops.layers.uv.new("UVMap")
-        stone_materials = data["materials"]
-
-        for f in bm.faces:
-            nz = f.normal.z
-            center = f.calc_center_bounds()
-
-            # Determine matching token
-            if "M" in stone_materials and nz > 0.6 and center.z < 0.15:
-                tok = "M"
-            elif "D" in stone_materials and nz < -0.4:
-                tok = "D"
-            elif "L" in stone_materials and nz > 0.55:
-                tok = "L"
-            else:
-                tok = "S" if "S" in stone_materials else list(stone_materials.keys())[0]
-
-            spec = stone_materials.get(tok, {})
-            uv = token_to_atlas_uv(spec)
-            for loop in f.loops:
-                loop[uv_layer].uv = uv
-
-        mesh = bpy.data.meshes.new(f"{data['name']}_mesh")
-        bm.to_mesh(mesh)
-        bm.free()
-
-        obj = bpy.data.objects.new(data["name"], mesh)
-        bpy.context.collection.objects.link(obj)
-        obj.data.materials.append(shared_mat)
+        obj = build_stone_debris_mesh(data, occupied, width, height, depth, voxel_size, shared_mat)
 
     total_polys = len(obj.data.polygons)
     total_tris = sum(len(p.vertices) - 2 for p in obj.data.polygons)

@@ -691,7 +691,7 @@ This package contains 19 canonical, reusable stylized voxel dressing props autho
 - **Voxel Scale**: Uniform `voxel_size = 0.10`m.
 - **Pivot**: Strictly `bottom_center` at ground level.
 - **Shared Production Material**: Unified 1-material export (`mat_dressing_atlas`) referencing `dressing_palette_atlas.png` and `dressing_roughness_atlas.png`.
-- **MultiMesh Ready**: Exactly 1 mesh object and 1 material per prop, triangle counts 84-262 tris (average 169.9 tris, budget <= 500), no collisions, no scripts. Instanced via Godot MultiMesh without material switches.
+- **MultiMesh Ready**: Exactly 1 mesh object and 1 material per prop, triangle counts 84-408 tris (average 226.2 tris, budget <= 500), no collisions, no scripts. Instanced via Godot MultiMesh without material switches.
 - **Unified Palette**: `source/palette.json` and `textures/dressing_palette_atlas.png`.
 """
     readme_file = FAMILY_DIR / "README.md"

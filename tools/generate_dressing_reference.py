@@ -199,7 +199,7 @@ draw.text((1090, banner_y + 18), "PERFORMANCE & ENGINE CONTRACT", fill=(255, 255
 draw.text((1090, banner_y + 40), "• Total Props: 19 models across 4 subfamilies (6 Grass + 4 Flowers + 3 Moss + 6 Stone Debris)", fill=(160, 185, 210), font=font)
 draw.text((1090, banner_y + 60), "• Voxel Scale: 0.10m uniform step | Culled interior faces | Flat shaded normals", fill=(160, 185, 210), font=font)
 draw.text((1090, banner_y + 80), "• Memory Footprint: Shared 64x64 albedo & 64x64 metallic-roughness atlases", fill=(160, 185, 210), font=font)
-draw.text((1090, banner_y + 100), "• Budget: max 500 tris (actual: 84 - 262 tris) | Zero CPU runtime overhead", fill=(160, 185, 210), font=font)
+draw.text((1090, banner_y + 100), "• Budget: max 500 tris (actual: 84 - 408 tris, avg 226.2) | Zero CPU overhead", fill=(160, 185, 210), font=font)
 draw.text((1090, banner_y + 120), "• Review Evidence: Full contact sheet, 3 density tests, 3 biome tests, gameplay isometric mockup", fill=(80, 200, 120), font=font)
 
 ref_img_path = REF_DIR / "dressing_concept_reference.png"
@@ -234,7 +234,7 @@ readme_content = """# References & Visual Contract: Environment Dressing Pack
 - **Поворотная вариативность**: не выглядят монотонно при случайном вращении вокруг оси Y.
 
 ### 2. Runtime & MultiMesh Performance
-- **Маленький треугольный бюджет**: каждый проп содержит от 84 до 262 треугольников (бюджет <= 500 tris, среднее 169.9 tris).
+- **Маленький треугольный бюджет**: каждый проп содержит от 84 до 408 треугольников (бюджет <= 500 tris, среднее 226.2 tris).
 - **Пивот строго `bottom_center`**: точка привязки в основании для корректного MultiMesh-спавна на наклонных поверхностях террейна.
 - **Без коллизий и скриптов**: ассеты оптимизированы для массового batching / MultiMesh GPU instancing.
 - **Shared Material Strategy**: зафиксирована единая палитра `palette.json`, единый шейдинг и общие текстурные атласы `textures/dressing_palette_atlas.png` (sRGB baseColor) и `textures/dressing_roughness_atlas.png` (linear roughness).
@@ -249,19 +249,19 @@ readme_content = """# References & Visual Contract: Environment Dressing Pack
 
 | Семейство | Имя пакета | Назначение / Архетип | Воксели | Треугольники |
 |:---|:---|:---|:---:|:---:|
-| **Grass** | `grass_tuft_small_01` | Компактный 3-лепестковый росток (низкий разлет) | 11 | 92 |
-| **Grass** | `grass_tuft_small_02` | Асимметричный веер травы | 14 | 140 |
-| **Grass** | `grass_tuft_small_03` | Плотная ступенчатая кочка | 25 | 152 |
-| **Grass** | `grass_tuft_med_01` | Средний ярусный многолепестковый пучок | 37 | 228 |
-| **Grass** | `grass_tuft_med_02` | Средний ветровой наклонный веер | 29 | 144 |
-| **Grass** | `grass_tuft_tall_01` | Высокий доминантный акцентный пучок | 40 | 212 |
-| **Flowers** | `flower_white_cluster` | Белые луговые ромашки (золотая сердцевина) | 31 | 204 |
-| **Flowers** | `flower_yellow_cluster` | Солнечные лютики (золотые лепестки, купол) | 27 | 136 |
-| **Flowers** | `flower_red_cluster` | Яркие маки (алые лепестки, чашевидный венчик) | 34 | 236 |
-| **Flowers** | `flower_mixed_accent` | Редкий лавандово-синий колокольчик | 28 | 184 |
-| **Moss** | `moss_tree_base` | Воротник-юбка для основания ствола дерева | 20 | 144 |
-| **Moss** | `moss_rock_shelf` | Угловая полка для расщелин камней и выступов | 27 | 144 |
-| **Moss** | `moss_cliff_ledge` | Свисающий каскад для карнизов обрывов | 26 | 148 |
+| **Grass** | `grass_tuft_small_01` | Компактный 3-лепестковый росток (низкий разлет) | 11 | 84 |
+| **Grass** | `grass_tuft_small_02` | Асимметричный веер травы | 14 | 100 |
+| **Grass** | `grass_tuft_small_03` | Плотная ступенчатая кочка | 25 | 196 |
+| **Grass** | `grass_tuft_med_01` | Средний ярусный многолепестковый пучок | 37 | 284 |
+| **Grass** | `grass_tuft_med_02` | Средний ветровой наклонный веер | 29 | 224 |
+| **Grass** | `grass_tuft_tall_01` | Высокий доминантный акцентный пучок | 40 | 300 |
+| **Flowers** | `flower_white_cluster` | Белые луговые ромашки (золотая сердцевина) | 31 | 372 |
+| **Flowers** | `flower_yellow_cluster` | Солнечные лютики (золотые лепестки, купол) | 27 | 324 |
+| **Flowers** | `flower_red_cluster` | Яркие маки (алые лепестки, чашевидный венчик) | 34 | 408 |
+| **Flowers** | `flower_mixed_accent` | Редкий лавандово-синий колокольчик | 28 | 336 |
+| **Moss** | `moss_tree_base` | Воротник-юбка для основания ствола дерева | 20 | 184 |
+| **Moss** | `moss_rock_shelf` | Угловая полка для расщелин камней и выступов | 27 | 198 |
+| **Moss** | `moss_cliff_ledge` | Свисающий каскад для карнизов обрывов | 26 | 224 |
 | **Stone** | `stone_debris_single` | Одиночный граненый замковый скол скалы | 11 | 84 |
 | **Stone** | `stone_debris_trio` | Сбалансированная группа из 3 небольших камней | 17 | 184 |
 | **Stone** | `stone_debris_flat_patch` | Плоская группа каменных плит со мхом | 23 | 188 |

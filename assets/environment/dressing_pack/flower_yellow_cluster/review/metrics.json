@@ -1,7 +1,7 @@
 {
   "occupied_voxels": 27,
-  "visible_faces": 68,
-  "triangles": 136,
+  "visible_faces": 162,
+  "triangles": 324,
   "mesh_objects": 1,
   "materials": 1,
   "shared_material": "mat_dressing_atlas",
