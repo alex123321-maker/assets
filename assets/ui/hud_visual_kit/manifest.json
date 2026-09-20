@@ -1,0 +1,35 @@
+{
+  "name": "hud_visual_kit",
+  "type": "ui_kit",
+  "version": 1,
+  "source": "source",
+  "description": "Complete HUD visual kit for Cube Siege: 27 high-readability functional icons, action slot states, keycaps, Day/Night header, health & wave progress bars, packed atlas, and Godot 9-patch metadata",
+  "category": "ui",
+  "outputs": {
+    "icons_dir": "output/icons",
+    "frames_dir": "output/frames",
+    "bars_dir": "output/bars",
+    "atlas_png": "output/atlas/hud_atlas.png",
+    "atlas_json": "output/atlas/hud_atlas.json",
+    "naming_map": "output/naming_map.json",
+    "godot_slices": "output/hud_slices.json"
+  },
+  "review": {
+    "contact_sheet": "review/contact_sheet.png",
+    "readability_64px": "review/readability_64px.png",
+    "readability_32px": "review/readability_32px.png",
+    "warrior_mockup": "review/mockup_warrior_hud.png",
+    "archer_mockup": "review/mockup_archer_hud.png",
+    "engineer_mockup": "review/mockup_engineer_hud.png",
+    "day_night_mockup": "review/mockup_day_night_panel.png",
+    "resource_panel_mockup": "review/mockup_resource_panel.png",
+    "gameplay_hud_mockup": "review/mockup_gameplay_hud.png",
+    "metrics": "review/metrics.json",
+    "notes": "review/review.md"
+  },
+  "budgets": {
+    "min_icons": 24,
+    "actual_icons": 27,
+    "resolutions": [32, 64, 128, 256]
+  }
+}

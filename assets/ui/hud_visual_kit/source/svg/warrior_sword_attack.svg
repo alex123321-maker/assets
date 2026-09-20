@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Warrior Sword Attack</title>
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-lg" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="22" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+  <g filter="url(#glow)">
+    <!-- Slash Arc -->
+    <path d="M 120,380 A 180,180 0 0,1 380,120" fill="none" stroke="#EF4444" stroke-width="28" stroke-linecap="round"/>
+    <path d="M 140,360 A 170,170 0 0,1 370,140" fill="none" stroke="#F97316" stroke-width="16" stroke-linecap="round"/>
+    <path d="M 170,330 A 160,160 0 0,1 350,170" fill="none" stroke="#FEF08A" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Broadsword -->
+    <polygon points="370,120 195,325 180,320 165,295" fill="#E2E8F0" stroke="#1E293B" stroke-width="4"/>
+    <line x1="370" y1="120" x2="180" y2="310" stroke="#38BDF8" stroke-width="4"/>
+    <line x1="370" y1="120" x2="165" y2="295" stroke="#FFFFFF" stroke-width="5"/>
+    <!-- Guard & Pommel -->
+    <line x1="130" y1="270" x2="230" y2="370" stroke="#F59E0B" stroke-width="16" stroke-linecap="round"/>
+    <line x1="180" y1="310" x2="120" y2="370" stroke="#78350F" stroke-width="12"/>
+    <circle cx="120" cy="370" r="14" fill="#F59E0B" stroke="#1E293B" stroke-width="3"/>
+  </g></svg>

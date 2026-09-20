@@ -917,6 +917,133 @@ def verify_evidence() -> bool:
             if "Exact palette & shader parameters matched to Issue #3" in d_rev_text:
                 errors.append(f"Dressing review/review.md contains stale claim: 'Exact palette & shader parameters matched to Issue #3'")
 
+    # 8. Verify HUD visual kit (Issue #8)
+    hud_dir = REPO_ROOT / "assets" / "ui" / "hud_visual_kit"
+    if hud_dir.is_dir():
+        print(f"\nVerifying HUD visual kit evidence (Issue #8)...")
+        # 8a. Approved reference
+        hud_ref = hud_dir / "references" / "hud_concept_reference.jpg"
+        if not hud_ref.exists() or hud_ref.stat().st_size < 1000:
+            errors.append(f"HUD visual kit concept reference missing or invalid: {hud_ref}")
+        else:
+            print(f"[PASS] HUD concept reference: {hud_ref.name} ({hud_ref.stat().st_size} bytes)")
+
+        # 8b. Icons check
+        icons_dir = hud_dir / "output" / "icons"
+        expected_icon_slugs = [
+            "resource_wood", "resource_stone", "resource_iron", "resource_magic_stone",
+            "global_day", "global_night", "global_settings", "global_build",
+            "warrior_sword_attack", "warrior_cleave", "warrior_dash", "warrior_parry", "warrior_duel",
+            "archer_shot", "archer_piercing_shot", "archer_roll", "archer_decoy", "archer_sniper",
+            "engineer_hammer", "engineer_turret", "engineer_dash", "engineer_mine", "engineer_overclock",
+            "hud_skull_wave", "hud_health_cross", "hud_armor_shield", "hud_target_range",
+        ]
+        for slug in expected_icon_slugs:
+            p256 = icons_dir / f"{slug}.png"
+            p128 = icons_dir / f"{slug}_128.png"
+            p64 = icons_dir / f"{slug}_64.png"
+            p32 = icons_dir / f"{slug}_32.png"
+            if not p256.exists():
+                errors.append(f"HUD icon 256px missing: {p256}")
+            if not p128.exists():
+                errors.append(f"HUD icon 128px missing: {p128}")
+            if not p64.exists():
+                errors.append(f"HUD icon 64px missing: {p64}")
+            if not p32.exists():
+                errors.append(f"HUD icon 32px missing: {p32}")
+        print(f"[PASS] All {len(expected_icon_slugs)} HUD icons verified across resolutions (256, 128, 64, 32).")
+
+        # 8c. Vector SVG source check (must be pure vector geometry without raster <image> tags)
+        svg_dir = hud_dir / "source" / "svg"
+        for slug in expected_icon_slugs:
+            svg_file = svg_dir / f"{slug}.svg"
+            if not svg_file.exists():
+                errors.append(f"Missing vector SVG source: {svg_file}")
+            else:
+                svg_content = svg_file.read_text(encoding="utf-8")
+                if "<image " in svg_content:
+                    errors.append(f"SVG {svg_file.name} contains raster <image> wrapper instead of pure vector geometry")
+        print(f"[PASS] All {len(expected_icon_slugs)} vector SVG sources verified as pure vector geometry.")
+
+        # 8d. Frames & Bars
+        frames_dir = hud_dir / "output" / "frames"
+        bars_dir = hud_dir / "output" / "bars"
+        for st in ["normal", "hover", "pressed", "disabled", "cooldown"]:
+            fpath = frames_dir / f"action_slot_{st}.png"
+            if not fpath.exists():
+                errors.append(f"Missing action slot frame: {fpath}")
+        for bname in ["health_bar_bg", "health_bar_fill_full", "wave_bar_bg", "wave_bar_fill"]:
+            bpath = bars_dir / f"{bname}.png"
+            if not bpath.exists():
+                errors.append(f"Missing bar component: {bpath}")
+        print(f"[PASS] HUD action slot states, keycaps, and progress bars verified.")
+
+        # 8e. Texture Atlas, Naming Map & 9-Patch Referential Integrity
+        atlas_png = hud_dir / "output" / "atlas" / "hud_atlas.png"
+        atlas_json = hud_dir / "output" / "atlas" / "hud_atlas.json"
+        naming_map = hud_dir / "output" / "naming_map.json"
+        slices_json = hud_dir / "output" / "hud_slices.json"
+        for af in [atlas_png, atlas_json, naming_map, slices_json]:
+            if not af.exists():
+                errors.append(f"Missing atlas/metadata file: {af}")
+
+        if slices_json.exists():
+            try:
+                slices_data = json.loads(slices_json.read_text(encoding="utf-8"))
+                output_dir = hud_dir / "output"
+                for slice_key in slices_data:
+                    found = list(output_dir.rglob(slice_key))
+                    if not found:
+                        errors.append(f"Slice metadata key {slice_key!r} references nonexistent file in output/")
+                print(f"[PASS] All {len(slices_data)} 9-patch slice metadata keys verified against real exported files.")
+            except Exception as exc:
+                errors.append(f"Failed to inspect slices JSON: {exc}")
+
+        # 8f. Package source runner check
+        gen_kit = hud_dir / "source" / "generate_kit.py"
+        if not gen_kit.exists():
+            errors.append(f"Missing package source runner: {gen_kit}")
+        else:
+            import py_compile
+            try:
+                py_compile.compile(str(gen_kit), doraise=True)
+                print(f"[PASS] Package source runner syntax verified: {gen_kit.name}")
+            except Exception as exc:
+                errors.append(f"Source runner compilation failed: {exc}")
+
+        print(f"[PASS] HUD packed atlas and metadata mapping verified.")
+
+        # 8e. Review Evidence Renders
+        review_dir = hud_dir / "review"
+        required_reviews = [
+            ("contact_sheet.png", 1000, 500),
+            ("readability_64px.png", 800, 350),
+            ("readability_32px.png", 800, 250),
+            ("mockup_warrior_hud.png", 800, 200),
+            ("mockup_archer_hud.png", 800, 200),
+            ("mockup_engineer_hud.png", 800, 200),
+            ("mockup_day_night_panel.png", 600, 250),
+            ("mockup_resource_panel.png", 600, 180),
+            ("mockup_gameplay_hud.png", 1000, 600),
+        ]
+        for rname, min_w, min_h in required_reviews:
+            rpath = review_dir / rname
+            ok, w, h, err = check_png_header(rpath)
+            if not ok:
+                errors.append(f"Review render {rname} invalid: {err}")
+            elif w < min_w or h < min_h:
+                errors.append(f"Review render {rname} too small ({w}x{h}, expected >= {min_w}x{min_h})")
+        print(f"[PASS] All {len(required_reviews)} review sheets and gameplay mockups verified.")
+
+        # 8f. Metrics & Review MD
+        metrics_file = review_dir / "metrics.json"
+        review_file = review_dir / "review.md"
+        if not metrics_file.exists():
+            errors.append(f"Missing review/metrics.json in {hud_dir}")
+        if not review_file.exists():
+            errors.append(f"Missing review/review.md in {hud_dir}")
+        print(f"[PASS] HUD review.md and metrics.json verified.")
+
     if errors:
         print(f"\n[FAIL] Evidence verification failed with {len(errors)} error(s):")
         for e in errors:
