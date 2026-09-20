@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "hash_policy": "sha256-text-lf-v1",
+  "built_at": "2026-09-20T20:37:28.276994+00:00",
+  "inputs": {
+    "assets/environment/tree_oak/var_0_standard_oak/source/voxels.json": "3b004fb6f253c09a3c318c4e34174b0a8fd1a2b2eda738680f4fb202ad6d33f5",
+    "assets/environment/tree_oak/var_0_standard_oak/references/before_iso.png": "700023b08186ee3861873c7a0dd53e18bc1cf6e21277a20d5d71fd1876d0aa5a",
+    "tools/blender/build_voxel_asset.py": "5a5e9378467b81c26ab6f63afa3c9e92390cceb5626958f07568124bb9c84bb7",
+    "tools/blender/render_tree_mockup.py": "a253da5a1cb60dac52473e9977d1e94613a9342e251d5f65bc2db026cb3b0c6b",
+    "tools/create_standard_oak_comparison.py": "0abcebff8abee35107cdb6bcc25204e080cbb0d356a58388aa384a0c479c8439",
+    "assets/environment/tree_oak/references/tree_concept_reference.png": "8d0d165fdeecaec837ee9c2814efee8d92aa0d83426a28d3c4b7d41e4af4eff3",
+    "assets/environment/tree_oak/var_0_standard_oak/quality.json": "5a15f575a702cd40fcc94d72ef00801d41c2221c858187c14551a4079e4bd0ff",
+    "assets/environment/tree_oak/var_0_standard_oak/request.md": "609de9858991d9ec31233dc623905648b10cd8e96a4b0003684011941df61ef9",
+    "assets/environment/tree_oak/var_0_standard_oak/manifest.json": "f528ffd94608aa2653798110bfb9cf192eea3126cd089930cd319e2f240284bf"
+  },
+  "artifacts": {
+    "assets/environment/tree_oak/var_0_standard_oak/output/model.glb": "dd66c257df29e568ed67104eeeb53d0a6b16dd9b835453da536322f81700625d",
+    "assets/environment/tree_oak/var_0_standard_oak/review/iso.png": "f75090e35f03aa2e9ef54ab1cbaaf5f6c0663ba37f5bbd2c4e945a3d6ea5ab45",
+    "assets/environment/tree_oak/var_0_standard_oak/review/front.png": "c49fbd464b01a95414e846b6fd6cdf66f7ac433278a25d00bfc907e264858a5d",
+    "assets/environment/tree_oak/var_0_standard_oak/review/side.png": "70bcc8cc10c676e5a4ffe37b6afd1ce0de33ca777247b1e083b19ad6f696ca2b",
+    "assets/environment/tree_oak/var_0_standard_oak/review/top.png": "c686cb74878e28dcebd78920e4ec5a590a5e4e0e0c8462f6e599f1fb85776cb4",
+    "assets/environment/tree_oak/var_0_standard_oak/review/metrics.json": "f2ecfda750863777093906e67885c10644a60004fb2e902ee0d28e35ddce9b7f",
+    "assets/environment/tree_oak/var_0_standard_oak/review/gameplay_mockup.png": "8405321a86dd5b13fc5beabc30674658b6290cce0dee39fe44ad0ebe9dea017e",
+    "assets/environment/tree_oak/var_0_standard_oak/review/before_after.png": "b31299ed3085280d6b6d9fb4d0aae0940578fb479bdff57806b2f15b8f794d74"
+  },
+  "measurements": {
+    "assets/environment/tree_oak/var_0_standard_oak/output/model.glb": {
+      "triangles": 3868,
+      "materials": 3
+    }
+  },
+  "digest": "5ac1c17c7a9ff6ee23e56872d94c41fcc1a9a7c1479edddebea796acfd93b465"
+}

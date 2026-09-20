@@ -1,18 +1,18 @@
 {
-  "occupied_voxels": 1675,
-  "visible_faces": 1582,
-  "triangles": 3164,
+  "occupied_voxels": 1555,
+  "visible_faces": 1934,
+  "triangles": 3868,
   "mesh_objects": 3,
   "materials": 3,
   "grid": {
     "x": 18,
-    "y": 28,
+    "y": 27,
     "z": 18
   },
   "voxel_size": 0.15,
   "world_size": {
     "x": 2.6999999999999997,
-    "y": 4.2,
+    "y": 4.05,
     "z": 2.6999999999999997
   },
   "blender_version": "5.2.1 LTS",
