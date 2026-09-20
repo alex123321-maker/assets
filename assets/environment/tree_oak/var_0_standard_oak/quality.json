@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "inputs": [
+    "assets/environment/tree_oak/var_0_standard_oak/source/voxels.json",
+    "assets/environment/tree_oak/var_0_standard_oak/references/before_iso.png",
+    "tools/blender/build_voxel_asset.py",
+    "tools/blender/render_tree_mockup.py",
+    "tools/create_standard_oak_comparison.py"
+  ],
+  "commands": [
+    [
+      "blender",
+      "--background",
+      "--factory-startup",
+      "--python",
+      "tools/blender/build_voxel_asset.py",
+      "--",
+      "--asset",
+      "assets/environment/tree_oak/var_0_standard_oak"
+    ],
+    [
+      "blender",
+      "--background",
+      "--factory-startup",
+      "--python",
+      "tools/blender/render_tree_mockup.py",
+      "--",
+      "--asset",
+      "assets/environment/tree_oak/var_0_standard_oak"
+    ],
+    [
+      "python",
+      "tools/create_standard_oak_comparison.py"
+    ]
+  ],
+  "references": [
+    {
+      "path": "assets/environment/tree_oak/references/tree_concept_reference.png",
+      "sha256": "8d0d165fdeecaec837ee9c2814efee8d92aa0d83426a28d3c4b7d41e4af4eff3",
+      "status": "candidate",
+      "provenance": "Concept art sheet for tree oak family generated in PR #10; targeted by Issue #14 without formal manual Art Director signoff.",
+      "approval": ""
+    },
+    {
+      "path": "assets/environment/tree_oak/var_0_standard_oak/references/before_iso.png",
+      "sha256": "700023b08186ee3861873c7a0dd53e18bc1cf6e21277a20d5d71fd1876d0aa5a",
+      "status": "candidate",
+      "provenance": "Baseline review ISO render of var_0_standard_oak at commit 8248bde.",
+      "approval": ""
+    }
+  ],
+  "reference_free_reason": "",
+  "artifacts": [
+    "assets/environment/tree_oak/var_0_standard_oak/output/model.glb",
+    "assets/environment/tree_oak/var_0_standard_oak/review/iso.png",
+    "assets/environment/tree_oak/var_0_standard_oak/review/front.png",
+    "assets/environment/tree_oak/var_0_standard_oak/review/side.png",
+    "assets/environment/tree_oak/var_0_standard_oak/review/top.png",
+    "assets/environment/tree_oak/var_0_standard_oak/review/metrics.json",
+    "assets/environment/tree_oak/var_0_standard_oak/review/gameplay_mockup.png",
+    "assets/environment/tree_oak/var_0_standard_oak/review/before_after.png"
+  ],
+  "require_engine_review": false,
+  "criteria": [
+    {
+      "id": "canopy_massing",
+      "target": "Крона состоит из нескольких различимых крупных масс без центрального монолитного зелёного столба или одной сферы, с выраженными просветами между долями.",
+      "evidence": [
+        "assets/environment/tree_oak/var_0_standard_oak/review/iso.png",
+        "assets/environment/tree_oak/var_0_standard_oak/review/front.png",
+        "assets/environment/tree_oak/var_0_standard_oak/review/top.png"
+      ]
+    },
+    {
+      "id": "visible_branching",
+      "target": "В ISO видны минимум две поддерживающие крону крупные ветви из древесины под кроной; части не висят отдельно.",
+      "evidence": [
+        "assets/environment/tree_oak/var_0_standard_oak/review/iso.png",
+        "assets/environment/tree_oak/var_0_standard_oak/review/front.png"
+      ]
+    },
+    {
+      "id": "silhouette_and_ground_contact",
+      "target": "Асимметрия формы сохраняется минимум в двух проекциях (front, side); ствол имеет естественный комлевой раструб со стабильным контактом с землей.",
+      "evidence": [
+        "assets/environment/tree_oak/var_0_standard_oak/review/front.png",
+        "assets/environment/tree_oak/var_0_standard_oak/review/side.png"
+      ]
+    },
+    {
+      "id": "macro_readability",
+      "target": "Ствол, корневой раструб и крупные массы кроны читаются при уменьшении изображения без микрошумной листвы.",
+      "evidence": [
+        "assets/environment/tree_oak/var_0_standard_oak/review/iso.png"
+      ]
+    },
+    {
+      "id": "material_palette_contrast",
+      "target": "Материалы коры (wood_bark #4a2f1b), основной листвы (foliage_base #3b6b22) и акцента (foliage_accent #5e932b) различимы; линейное PBR-пространство glTF без выбеливания.",
+      "evidence": [
+        "assets/environment/tree_oak/var_0_standard_oak/review/iso.png",
+        "assets/environment/tree_oak/var_0_standard_oak/review/front.png"
+      ]
+    },
+    {
+      "id": "before_after_comparison",
+      "target": "Сопоставление before/after в одинаковой проекции, масштабе, свете и фоне подтверждает устранение вертикального столба, открытие ветвей и исправление палитры.",
+      "evidence": [
+        "assets/environment/tree_oak/var_0_standard_oak/review/before_after.png"
+      ]
+    },
+    {
+      "id": "game_scale_mockup",
+      "target": "Мокап с ориентиром роста 2 м на террейне подтверждает соответствие масштабу взрослого дуба ~4.2 м с нижним краем кроны выше головы персонажа.",
+      "evidence": [
+        "assets/environment/tree_oak/var_0_standard_oak/review/gameplay_mockup.png"
+      ]
+    }
+  ]
+}
