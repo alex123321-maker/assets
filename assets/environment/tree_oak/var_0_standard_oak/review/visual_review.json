@@ -1,5 +1,5 @@
 {
-  "evidence_digest": "5ac1c17c7a9ff6ee23e56872d94c41fcc1a9a7c1479edddebea796acfd93b465",
+  "evidence_digest": "910c83e17e77943b4997a3ef9f51cf88231a18014d69deb851fca85c8138a8cb",
   "reviewer": "Gemini 3.8 Flash (High) via Antigravity",
   "inspected_images": [
     "assets/environment/tree_oak/references/tree_concept_reference.png",
@@ -15,37 +15,37 @@
     {
       "id": "canopy_massing",
       "status": "pass",
-      "observation": "В изометрической и ортогональных проекциях крона отчетливо разделена на пять модульных облачных масс (западная, восточная, фронтальная, задняя и центральный купол-вершина). Вертикальный монолитный столб предыдущей версии полностью устранен; между долями присутствуют выраженные углубления и отрицательное пространство без висящих в воздухе вокселей. На виде сверху (top.png) крона образует органичный пятидольный контур с просветами и вилкой ветвления по центру."
+      "observation": "В проекциях FRONT, SIDE, TOP и ISO крона отчетливо разделена на пять различимых блочных масс: 4 кардинальные лопасти (западная, восточная, передняя, задняя) и приподнятый 2-ступенчатый центральный купол. На виде сверху (top.png) отчетливо виден органичный 4-лепестковый крестообразный силуэт с глубокими 90-градусными вырезами по углам. На виде спереди (front.png) левое и правое плечи отделены от центральной вершины вертикальными ступенями высоты (~5-6 вокселей) с явными выемками в силуэте. Прежняя монолитная сфера/купол полностью устранена."
     },
     {
       "id": "visible_branching",
       "status": "pass",
-      "observation": "Под кроной отчетливо видны три крупные деревянные ветви (wood_bark): фронтально-восточная ветвь, направленная прямо в камеру ISO на уровне y=8..12, западная несущая ветвь и восточная ветвь. Нижний ярус листвы начинается на уровне y=11..12 (1.65–1.8 м), оставляя открытое воздушное пространство под кроной, где видно механическое соединение веток со стволом и основанием кронных масс."
+      "observation": "Под нижним краем кроны отчетливо видны расходящиеся деревянные ветви (wood_bark): передняя ветвь направлена вперед прямо в камеру ISO (y=7..11), левая ветвь поддерживает западное плечо, правая ветвь поддерживает восточное плечо. Соединение веток со стволом и основанием кронных масс читается без висящих в воздухе вокселей."
     },
     {
       "id": "silhouette_and_ground_contact",
       "status": "pass",
-      "observation": "На виде спереди (front.png) крона имеет выраженную горизонтальную асимметрию с более массивным правым (восточным) ярусом и динамичной вилкой ветвления. На виде сбоку (side.png) выражен наклон передней кроны и отступ задней части. Основание ствола на y=0..3 расширяется с 4х4 вокселей до 8х8 вокселей за счет 4 ступенчатых контрфорсов и диагональных упоров, обеспечивая плоскую и устойчивую опорную подошву на террейне."
+      "observation": "Асимметрия формы сохраняется в проекциях FRONT, SIDE и ISO: восточное плечо расположено выше и массивнее западного, передняя лопасть опущена ниже задней. Комлевой раструб ствола на y=0..3 расширяется за счет 4 контрфорсов и диагональных упоров, обеспечивая стабильную плоскую опору на z=0."
     },
     {
       "id": "macro_readability",
       "status": "pass",
-      "observation": "При масштабе превью и изометрической игровой дистанции силуэт дуба мгновенно считывается как массивное лиственное дерево с выразительным стволом. Воксельный размер 0.15 м создает целостные блочные плоскости без одновоксельного дребезга или изолированных пиксельных островков."
+      "observation": "Форма дуба (ствол с корнями, боковые лопасти и центральная шапка) отчетливо считывается при уменьшении масштаба и на изометрической дистанции без добавления одновоксельного шума. Блочные суперквадрические подушки сохраняют чистоту воксельного стиля."
     },
     {
       "id": "material_palette_contrast",
       "status": "pass",
-      "observation": "Исправлена конверсия цвета в линейное пространство sRGB IEC 61966-2-1 в экспортере glTF и шейдерах EEVEE: кора wood_bark (#4a2f1b) читается насыщенным теплым темным деревом, основная листва foliage_base (#3b6b22) — плотной естественной дубовой зеленью, а акцентные верхушки foliage_accent (#5e932b) — светлыми освещенными шапками. Двойное гамма-выбеливание (мятно-белесый оттенок) полностью устранено, контраст между корой и листвой четкий."
+      "observation": "Линейная конверсия цветов IEC 61966-2-1 в glTF baseColorFactor и шейдерах EEVEE подтверждена: кора wood_bark (#4a2f1b) — насыщенный темный цвет, основная листва foliage_base (#3b6b22) — глубокая зелень, акцентные шапки foliage_accent (#5e932b) — светлые теплые грани. Контраст между корой и листвой четкий, выбеливание отсутствует."
     },
     {
       "id": "before_after_comparison",
       "status": "pass",
-      "observation": "На сравнительном композите before_after.png в идентичной изометрической камере и освещении отчетливо видна разница: слева (BEFORE) — выбеленная монолитная колонна, заслоняющая ветки и напоминающая столб; справа (AFTER) — глубокий сочный цвет, расширенное раскидистое ветвление с открытыми деревянными сучьями и многоярусная артикулированная форма кроны."
+      "observation": "На композите before_after.png в идентичной изометрической проекции и освещении наглядно зафиксирован результат: слева (BEFORE) — выбеленная монолитная колонна со скрытыми ветвями; справа (AFTER) — насыщенная палитра, широкая раскидистая крона с 4 боковыми лопастями, приподнятой вершиной и открытыми деревянными сучьями."
     },
     {
       "id": "game_scale_mockup",
       "status": "pass",
-      "observation": "На мокапе gameplay_mockup.png на травяном пьедестале 11х11 м рядом с дубом размещен серый человекоподобный манекен высотой ровно 2.0 м (13 вокселей) и мерная двухметровая рейка с шагом 0.5 м. Нижняя граница листьев начинается на высоте ~1.7–1.8 м у ствола и поднимается выше 2.1 м по периметру кроны, позволяя персонажу свободно проходить под ветвями. Высота дерева 4.05 м (27 вокселей по 0.15 м) соответствует масштабу солидного паркового/лесного дуба."
+      "observation": "На мокапе gameplay_mockup.png рядом с деревом размещен 2.0-метровый манекен и 4-секционная черно-белая мерная рейка (4x0.5м). Мокап подтверждает соответствие масштабу взрослого дуба: высота дерева 4.05 м соотносится с ростом персонажа как ~2:1, толщина ствола ~0.5 м пропорциональна фигуре, контакт с землей плоский на z=0. Проверка коллизий и прохода под ветвями в рантайме Godot не проводилась."
     }
   ],
   "gameplay": {
@@ -53,11 +53,60 @@
     "evidence": [
       "assets/environment/tree_oak/var_0_standard_oak/review/gameplay_mockup.png"
     ],
-    "notes": "Проверено на изолированном изометрическом рендере мокапа в Blender с 2.0-метровым манекеном и 4x0.5м масштабной рейкой на плоскости травы. Проверка в рантайме Godot не выполнялась, так как пакет не содержит игровой сцены и текущий пайплайн сфокусирован на Blender glTF/review валидации."
+    "notes": "Проверено на изолированном изометрическом рендере мокапа в Blender с 2.0-метровым манекеном и 4x0.5м масштабной рейкой на плоскости травы. Проверка коллизий персонажа и перемещения под ветвями в игровом движке Godot не выполнялась, так как пакет не содержит сцены движка."
   },
   "known_deviations": [
-    "Форма кроны стилизована под ступенчатый воксельный силуэт 0.15м сетки с сохранением блочного характера и не использует гладкий органический меш референса.",
+    "Стилизованный ступенчатый воксельный силуэт 0.15м сетки с сохранением блочного характера референса.",
     "Референс tree_concept_reference.png имеет статус candidate (концепт-арт PR #10), форма согласована в рамках ТЗ Issue #14."
   ],
-  "feedback_resolution": []
+  "feedback_resolution": [
+    {
+      "comment_id": "PR #15 review comment by alex123321-maker",
+      "issue": "BLOCKER 1: criterion canopy_massing not met visually (crown read as single round/dome mass in committed renders without distinct large masses or silhouette notches).",
+      "root_cause": "Foliage clusters had excessive central dome radius (rx=5.2, rz=5.2) and narrow 1-voxel crevices that merged together from game/ISO distance into a single dome contour.",
+      "changed_files": [
+        "tools/author_tree_oak.py",
+        "assets/environment/tree_oak/var_0_standard_oak/source/voxels.json"
+      ],
+      "verification": "Re-authored canopy into 4 wide cardinal pods + elevated 2-tier summit dome with superquadric blocky pads (p=2.8), deep corner negative space cuts, and 5-6 voxel vertical terrace steps. Visual inspection of front.png, side.png, top.png, and iso.png confirms distinct multi-mass silhouette (4-leaf clover in top view; 3 distinct horizontal peaks in front and side views)."
+    },
+    {
+      "comment_id": "PR #15 review comment by alex123321-maker",
+      "issue": "BLOCKER 2: Pipeline acceptance missing model name, iteration count, pipeline limitations, and Antigravity conversation ID in PR body.",
+      "root_cause": "PR description in .local/pr_body.md omitted explicit iteration metadata and Antigravity conversation link required by Issue #14 implementation contract.",
+      "changed_files": [
+        ".local/pr_body.md"
+      ],
+      "verification": "Updated .local/pr_body.md with full model specification (Gemini 3.8 Flash High via Antigravity), Antigravity conversation ID (b2059cb7-4ae9-4a3c-90ff-3cde7d46f7bb), iteration count (2 iterations), and enumerated pipeline findings/limitations."
+    },
+    {
+      "comment_id": "PR #15 review comment by alex123321-maker",
+      "issue": "IMPORTANT: tools/author_tree_oak.py changed existing CLI contract by defaulting --variant to var_0_standard_oak instead of all.",
+      "root_cause": "author_tree_oak.py default argument was changed during initial targeting.",
+      "changed_files": [
+        "tools/author_tree_oak.py",
+        "tests/unit/test_author_tree_oak.py"
+      ],
+      "verification": "Restored default to 'all' while preserving targeted '--variant' support. Added unit test verifying CLI default behavior and targeted behavior."
+    },
+    {
+      "comment_id": "PR #15 review comment by alex123321-maker",
+      "issue": "IMPORTANT: Family README (assets/environment/tree_oak/README.md) drifted from actual Standard Oak metrics.",
+      "root_cause": "Family README was not updated after var_0_standard_oak redesign.",
+      "changed_files": [
+        "assets/environment/tree_oak/README.md",
+        "tools/author_tree_oak.py"
+      ],
+      "verification": "Updated slot 0 entry in README.md and author_tree_oak.py template to match 18x27x18, 4.05m, 1260 voxels, and 5-mass crown description."
+    },
+    {
+      "comment_id": "PR #15 review comment by alex123321-maker",
+      "issue": "IMPORTANT: game_scale_mockup observation claimed 'free walk-under clearance' beyond evidence since mannequin is beside the tree.",
+      "root_cause": "Observation extrapolated walk-under clearance from adjacent scale figure without in-engine test.",
+      "changed_files": [
+        "assets/environment/tree_oak/var_0_standard_oak/review/visual_review.json"
+      ],
+      "verification": "Refined observation to strictly state scale ratio (~2:1) and proportions against 2.0m mannequin and height gauge without claiming walk-under verification."
+    }
+  ]
 }

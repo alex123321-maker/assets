@@ -190,6 +190,52 @@ class VoxelGrid:
                         else:
                             self.set(x, y, z, "D")
 
+    def fill_blocky_pad(
+        self,
+        pcx: float,
+        pcy: float,
+        pcz: float,
+        prx: float,
+        pry: float,
+        prz: float,
+        p: float = 2.8,
+        accent_top_ratio: float = 0.40,
+        flat_bottom: bool = True,
+    ) -> None:
+        """Fills a superquadric blocky organic cloud pad with crisp stepped terraces."""
+        min_x = int(math.floor(pcx - prx))
+        max_x = int(math.ceil(pcx + prx))
+        min_y = int(math.floor(pcy - pry))
+        max_y = int(math.ceil(pcy + pry))
+        min_z = int(math.floor(pcz - prz))
+        max_z = int(math.ceil(pcz + prz))
+
+        for y in range(min_y, max_y + 1):
+            norm_y = (y - pcy) / pry if pry > 0 else 0.0
+            if abs(norm_y) > 1.0:
+                continue
+            if flat_bottom and norm_y < -0.82:
+                continue
+            for z in range(min_z, max_z + 1):
+                norm_z = (z - pcz) / prz if prz > 0 else 0.0
+                if abs(norm_z) > 1.0:
+                    continue
+                for x in range(min_x, max_x + 1):
+                    norm_x = (x - pcx) / prx if prx > 0 else 0.0
+                    if abs(norm_x) > 1.0:
+                        continue
+
+                    val = (abs(norm_x) ** p) + (abs(norm_y) ** p) + (abs(norm_z) ** p)
+                    if val <= 1.05:
+                        if self.get(x, y, z) == "W":
+                            continue
+                        is_top = norm_y >= accent_top_ratio
+                        is_sun_shoulder = (norm_y >= 0.1) and (norm_x > 0.25 or norm_z < -0.25) and (val >= 0.65)
+                        if is_top or is_sun_shoulder:
+                            self.set(x, y, z, "L")
+                        else:
+                            self.set(x, y, z, "D")
+
     def carve_box(self, x0: int, x1: int, y0: int, y1: int, z0: int, z1: int) -> None:
         for y in range(y0, y1 + 1):
             for z in range(z0, z1 + 1):
@@ -255,27 +301,27 @@ def build_standard_oak() -> VoxelGrid:
     Standard Oak (Slot 0):
     Balanced adult oak matching tree_concept_reference.png:
     - Root collar with 4 strong spreading buttress roots at ground (z=0)
-    - Sturdy vertical trunk splitting at y=7.5..8 into visible major boughs
+    - Sturdy vertical trunk splitting at y=7..8 into visible major supporting boughs
     - Visible supporting wooden branches under canopy in ISO, FRONT, SIDE
-    - 5 distinct rounded-cuboid foliage cloud lobes (West, East, Front, Back, Summit)
-    - Deep clefts / negative space separating the masses (no central pillar or single sphere)
+    - 5 broad, distinctly articulated cloud masses (4 cardinal pods + elevated summit dome)
+    - Unmistakable multi-mass silhouette with deep corner cuts and terrace step notches
     - Sunlit accent highlights on top terraces of each lobe
     Height: 27 layers (4.05m, ~4.2m archetype).
     Width: 18x18 grid (2.70m x 2.70m).
     """
-    w, h, d = 18, 28, 18
+    w, h, d = 18, 27, 18
     g = VoxelGrid(w, h, d)
     cx, cz = 8.5, 8.5
 
     # 1. Sturdy Buttress Root Flare (y=0..3)
-    g.fill_cylinder(cx, cz, 0, 1, r0=2.8, r1=2.2, token="W")
+    g.fill_cylinder(cx, cz, 0, 1, r0=2.9, r1=2.2, token="W")
     g.fill_cylinder(cx, cz, 1, 3, r0=2.2, r1=1.7, token="W")
 
     # Cardinal roots spreading into ground
-    g.draw_line_wood(cx - 3.4, 0, cz, cx - 0.7, 2.2, cz, radius=1.1)
-    g.draw_line_wood(cx + 3.4, 0, cz, cx + 0.7, 2.2, cz, radius=1.1)
-    g.draw_line_wood(cx, 0, cz + 3.4, cx, 2.2, cz + 0.7, radius=1.1)
-    g.draw_line_wood(cx, 0, cz - 3.4, cx, 2.2, cz - 0.8, radius=1.1)
+    g.draw_line_wood(cx - 3.5, 0, cz, cx - 0.7, 2.2, cz, radius=1.1)
+    g.draw_line_wood(cx + 3.5, 0, cz, cx + 0.7, 2.2, cz, radius=1.1)
+    g.draw_line_wood(cx, 0, cz + 3.5, cx, 2.2, cz + 0.7, radius=1.1)
+    g.draw_line_wood(cx, 0, cz - 3.5, cx, 2.2, cz - 0.8, radius=1.1)
 
     # Diagonal root spurs for natural asymmetry
     g.draw_line_wood(cx - 2.5, 0, cz + 2.4, cx - 0.6, 1.8, cz + 0.6, radius=0.9)
@@ -283,64 +329,61 @@ def build_standard_oak() -> VoxelGrid:
     g.draw_line_wood(cx + 2.2, 0, cz + 2.5, cx + 0.5, 1.8, cz + 0.6, radius=0.85)
     g.draw_line_wood(cx - 2.3, 0, cz - 2.4, cx - 0.5, 1.8, cz - 0.6, radius=0.85)
 
-    # 2. Main Trunk Body (y=3..8, solid sturdy ~0.5m thick trunk)
+    # 2. Main Trunk Body (y=3..8, sturdy ~0.5m thick trunk)
     g.fill_cylinder(cx, cz, 3, 5, r0=1.7, r1=1.6, token="W", cx1=cx + 0.1, cz1=cz + 0.1)
     g.fill_cylinder(cx + 0.1, cz + 0.1, 5, 8, r0=1.6, r1=1.9, token="W", cx1=cx, cz1=cz)
 
-    # 3. Major Visible Boughs (y=7..13)
-    # Front-East Bough (facing ISO camera directly):
-    g.draw_line_wood(cx + 0.3, 7.5, cz + 0.3, cx + 2.4, 10.0, cz + 3.0, radius=1.0)
-    g.draw_line_wood(cx + 2.4, 10.0, cz + 3.2, cx + 3.2, 12.0, cz + 4.0, radius=0.7)
+    # 3. Major Visible Supporting Boughs (y=7..13)
+    # West / Left Bough:
+    g.draw_line_wood(cx - 0.3, 7.5, cz, cx - 4.2, 11.8, cz - 0.2, radius=1.0)
+    g.draw_line_wood(cx - 4.2, 11.8, cz - 0.2, cx - 5.0, 13.0, cz - 0.2, radius=0.7)
 
-    # West / Left Bough (visible extending left in FRONT & ISO):
-    g.draw_line_wood(cx - 0.3, 7.5, cz, cx - 3.4, 10.0, cz - 0.2, radius=1.0)
-    g.draw_line_wood(cx - 3.4, 10.0, cz - 0.2, cx - 4.6, 12.0, cz + 0.2, radius=0.7)
+    # East / Right Bough:
+    g.draw_line_wood(cx + 0.3, 8.0, cz, cx + 4.2, 12.5, cz + 0.3, radius=1.0)
+    g.draw_line_wood(cx + 4.2, 12.5, cz + 0.3, cx + 5.0, 13.8, cz + 0.3, radius=0.7)
 
-    # East / Right Bough (visible extending right in FRONT):
-    g.draw_line_wood(cx + 0.3, 7.8, cz - 0.3, cx + 3.4, 10.5, cz - 1.8, radius=0.95)
-    g.draw_line_wood(cx + 3.4, 10.5, cz - 1.8, cx + 4.6, 12.5, cz - 2.4, radius=0.65)
+    # Front / South Bough (prominently visible in ISO facing viewer):
+    g.draw_line_wood(cx, 7.2, cz + 0.3, cx + 0.3, 11.0, cz + 4.0, radius=1.0)
+    g.draw_line_wood(cx + 0.3, 11.0, cz + 4.0, cx + 0.4, 12.5, cz + 4.8, radius=0.7)
 
-    # North / Back Bough:
-    g.draw_line_wood(cx, 7.8, cz - 0.3, cx - 1.0, 10.5, cz - 3.2, radius=0.9)
-    g.draw_line_wood(cx - 1.0, 10.5, cz - 3.2, cx - 1.6, 12.5, cz - 4.2, radius=0.65)
+    # Back / North Bough:
+    g.draw_line_wood(cx, 8.0, cz - 0.3, cx - 0.3, 12.2, cz - 4.0, radius=0.95)
+    g.draw_line_wood(cx - 0.3, 12.2, cz - 4.0, cx - 0.4, 13.5, cz - 4.8, radius=0.7)
 
-    # Central Trunk Core (supporting summit dome):
-    g.draw_line_wood(cx, 8.0, cz, cx, 15.0, cz, radius=1.0)
-    g.draw_line_wood(cx, 15.0, cz, cx - 0.8, 19.0, cz + 0.6, radius=0.7)
-    g.draw_line_wood(cx, 15.0, cz, cx + 0.8, 19.0, cz - 0.6, radius=0.7)
+    # Central Trunk Core (reaching up into summit dome):
+    g.draw_line_wood(cx, 7.5, cz, cx, 17.5, cz, radius=1.1)
 
-    # 4. Foliage: 5 Balanced Volumetric Cloud Masses
-    # Left Lobe (West shoulder, y=10.5..21.5)
-    g.fill_foliage_cluster(cx - 4.2, 16.0, cz + 0.2, rx=4.2, ry=5.0, rz=4.2, accent_top_ratio=0.45, flat_bottom=True)
+    # 4. Five Broad Lush Articulated Cloud Pods
+    # Pod 1: West / Left Shoulder (y=11..18, broad horizontal pad)
+    g.fill_blocky_pad(cx - 4.4, 14.8, cz - 0.2, prx=3.8, pry=3.2, prz=3.5, p=2.8, flat_bottom=True)
 
-    # Right Lobe (East shoulder, y=11..21)
-    g.fill_foliage_cluster(cx + 4.2, 16.0, cz - 1.6, rx=4.2, ry=4.8, rz=4.2, accent_top_ratio=0.45, flat_bottom=True)
+    # Pod 2: East / Right Shoulder (y=12..19, slightly higher for organic asymmetry)
+    g.fill_blocky_pad(cx + 4.4, 15.8, cz + 0.3, prx=3.8, pry=3.2, prz=3.5, p=2.8, flat_bottom=True)
 
-    # Front Lobe (Front-East lower lobe, y=10..18)
-    g.fill_foliage_cluster(cx + 2.0, 14.0, cz + 3.8, rx=3.8, ry=3.6, rz=3.8, accent_top_ratio=0.45, flat_bottom=True)
+    # Pod 3: Front / South Lobe (y=10.5..17.5, lower forward mass, leaves branches visible)
+    g.fill_blocky_pad(cx + 0.3, 13.8, cz + 4.2, prx=3.6, pry=3.0, prz=3.8, p=2.8, flat_bottom=True)
 
-    # Back Lobe (Back-North lobe, y=11.5..21.5)
-    g.fill_foliage_cluster(cx - 1.6, 16.5, cz - 3.6, rx=4.0, ry=4.6, rz=4.0, accent_top_ratio=0.45, flat_bottom=True)
+    # Pod 4: Back / North Lobe (y=12..19, rear mass)
+    g.fill_blocky_pad(cx - 0.3, 15.5, cz - 4.2, prx=3.6, pry=3.2, prz=3.8, p=2.8, flat_bottom=True)
 
-    # Broad Central Summit Dome (y=16..25)
-    g.fill_foliage_cluster(cx + 0.2, 20.5, cz - 0.2, rx=5.2, ry=4.5, rz=5.2, accent_top_ratio=0.45, flat_bottom=True)
+    # Pod 5: Broad Central Summit Dome (y=17..24, connects the 4 perimeter pads seamlessly)
+    g.fill_blocky_pad(cx, 20.2, cz, prx=4.2, pry=3.2, prz=4.2, p=2.8, flat_bottom=False)
 
-    # Summit Crest Pad (Broad rounded crest, y=23.5..26.5)
-    g.fill_foliage_cluster(cx - 0.2, 25.0, cz + 0.2, rx=3.8, ry=1.8, rz=3.8, accent_top_ratio=0.25, flat_bottom=False)
+    # Summit Crest highlight pad (y=23..26.5, top cap, brings height to 27 layers = 4.05m)
+    g.fill_blocky_pad(cx, 24.5, cz, prx=2.7, pry=1.8, prz=2.7, p=2.4, accent_top_ratio=0.15, flat_bottom=False)
 
-    # 5. Carve distinct negative space crevices to clearly articulate the lobes
-    # Crevice between West and Front lobes:
-    g.carve_box(int(cx - 1.8), int(cx + 0.2), 11, 17, int(cz + 1.8), int(cz + 3.5))
-    # Crevice between East and Front lobes:
-    g.carve_box(int(cx + 2.0), int(cx + 4.2), 11, 17, int(cz + 0.2), int(cz + 1.8))
-    # Crevice between West and Back lobes:
-    g.carve_box(int(cx - 4.0), int(cx - 1.8), 12, 18, int(cz - 2.2), int(cz - 0.8))
-    # Crevice between East and Back lobes:
-    g.carve_box(int(cx + 0.8), int(cx + 3.0), 12, 18, int(cz - 3.8), int(cz - 1.8))
-    # Cleft between West shoulder and Central summit:
-    g.carve_box(int(cx - 2.2), int(cx - 0.8), 19, 24, int(cz - 1.5), int(cz + 1.5))
-    # Cleft between East shoulder and Central summit:
-    g.carve_box(int(cx + 0.8), int(cx + 2.2), 19, 24, int(cz - 1.5), int(cz + 1.5))
+    # 5. Carve deep negative space notches to ensure unmistakable multi-mass silhouette
+    # Deep corner air cuts (4-leaf clover cross in TOP view):
+    g.carve_box(1, 4, 10, 23, 1, 4)
+    g.carve_box(1, 4, 10, 23, 13, 16)
+    g.carve_box(13, 16, 10, 23, 1, 4)
+    g.carve_box(13, 16, 10, 23, 13, 16)
+
+    # Pronounced terrace step valleys between outer shoulders and summit dome
+    g.carve_box(int(cx - 3.0), int(cx - 1.5), 17, 21, int(cz - 2.2), int(cz + 2.2))
+    g.carve_box(int(cx + 1.5), int(cx + 3.0), 18, 22, int(cz - 2.2), int(cz + 2.2))
+    g.carve_box(int(cx - 2.2), int(cx + 2.2), 16, 20, int(cz + 1.5), int(cz + 3.0))
+    g.carve_box(int(cx - 2.2), int(cx + 2.2), 17, 21, int(cz - 3.0), int(cz - 1.5))
 
     g.remove_floating_voxels()
     return g
@@ -704,7 +747,7 @@ def author_all(target_slug: str | None = None) -> None:
 
 | Слот | Вариант | Папка | Сетка (X×Y×Z) | Габариты (м) | Воксели | Описание силуэта |
 |:---:|---|---|:---:|:---:|:---:|---|
-| **0** | **Standard Oak** | `var_0_standard_oak` | {summary[0]['grid']} | {summary[0]['dimensions_m']} | {summary[0]['occupied_voxels']} | Базовое взрослое дерево; ствол с контрфорсными корнями, видимые сучья, 3 асимметричные массы кроны. |
+| **0** | **Standard Oak** | `var_0_standard_oak` | {summary[0]['grid']} | {summary[0]['dimensions_m']} | {summary[0]['occupied_voxels']} | Базовое взрослое дерево; ствол с контрфорсными корнями, 4 раскидистых сука под кроной, 5 выраженных блочных масс (4 боковых лопасти + приподнятая вершина). |
 | **1** | **Tall Oak** | `var_1_tall_oak` | {summary[1]['grid']} | {summary[1]['dimensions_m']} | {summary[1]['occupied_voxels']} | Высокий пирамидальный/колоновидный силуэт (5.1м); трёхъярусная вытянутая крона, читаемые ветви. |
 | **2** | **Broad Oak** | `var_2_broad_oak` | {summary[2]['grid']} | {summary[2]['dimensions_m']} | {summary[2]['occupied_voxels']} | Широкая тяжёлая крона (3.6м размах); массивный ствол, 4 раскидистых сука под кроной. |
 | **3** | **Young Oak** | `var_3_young_oak` | {summary[3]['grid']} | {summary[3]['dimensions_m']} | {summary[3]['occupied_voxels']} | Молодое дерево (~2.4м); компактная двухдольная крона, тонкий ствол с развилкой. |
@@ -749,6 +792,6 @@ assets/environment/tree_oak/
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Author voxel source for tree oak variants.")
-    parser.add_argument("--variant", default="var_0_standard_oak", help="Variant slug to author (or 'all')")
+    parser.add_argument("--variant", default="all", help="Variant slug to author (default: all)")
     args = parser.parse_args()
     author_all(target_slug=args.variant)

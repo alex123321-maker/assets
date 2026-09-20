@@ -1,9 +1,9 @@
 {
   "version": 1,
   "hash_policy": "sha256-text-lf-v1",
-  "built_at": "2026-09-20T20:37:28.276994+00:00",
+  "built_at": "2026-09-20T21:00:23.145009+00:00",
   "inputs": {
-    "assets/environment/tree_oak/var_0_standard_oak/source/voxels.json": "3b004fb6f253c09a3c318c4e34174b0a8fd1a2b2eda738680f4fb202ad6d33f5",
+    "assets/environment/tree_oak/var_0_standard_oak/source/voxels.json": "82880b3b013f76a017ad0b263238c39ce921f3f182c69c76c6b6d4646a07a129",
     "assets/environment/tree_oak/var_0_standard_oak/references/before_iso.png": "700023b08186ee3861873c7a0dd53e18bc1cf6e21277a20d5d71fd1876d0aa5a",
     "tools/blender/build_voxel_asset.py": "5a5e9378467b81c26ab6f63afa3c9e92390cceb5626958f07568124bb9c84bb7",
     "tools/blender/render_tree_mockup.py": "a253da5a1cb60dac52473e9977d1e94613a9342e251d5f65bc2db026cb3b0c6b",
@@ -14,20 +14,20 @@
     "assets/environment/tree_oak/var_0_standard_oak/manifest.json": "f528ffd94608aa2653798110bfb9cf192eea3126cd089930cd319e2f240284bf"
   },
   "artifacts": {
-    "assets/environment/tree_oak/var_0_standard_oak/output/model.glb": "dd66c257df29e568ed67104eeeb53d0a6b16dd9b835453da536322f81700625d",
-    "assets/environment/tree_oak/var_0_standard_oak/review/iso.png": "f75090e35f03aa2e9ef54ab1cbaaf5f6c0663ba37f5bbd2c4e945a3d6ea5ab45",
-    "assets/environment/tree_oak/var_0_standard_oak/review/front.png": "c49fbd464b01a95414e846b6fd6cdf66f7ac433278a25d00bfc907e264858a5d",
-    "assets/environment/tree_oak/var_0_standard_oak/review/side.png": "70bcc8cc10c676e5a4ffe37b6afd1ce0de33ca777247b1e083b19ad6f696ca2b",
-    "assets/environment/tree_oak/var_0_standard_oak/review/top.png": "c686cb74878e28dcebd78920e4ec5a590a5e4e0e0c8462f6e599f1fb85776cb4",
-    "assets/environment/tree_oak/var_0_standard_oak/review/metrics.json": "f2ecfda750863777093906e67885c10644a60004fb2e902ee0d28e35ddce9b7f",
-    "assets/environment/tree_oak/var_0_standard_oak/review/gameplay_mockup.png": "8405321a86dd5b13fc5beabc30674658b6290cce0dee39fe44ad0ebe9dea017e",
-    "assets/environment/tree_oak/var_0_standard_oak/review/before_after.png": "b31299ed3085280d6b6d9fb4d0aae0940578fb479bdff57806b2f15b8f794d74"
+    "assets/environment/tree_oak/var_0_standard_oak/output/model.glb": "1b829888ea059c0f5fea10b835aa6766e49cef88b2c3cbd30c9b3f7cc517cbaf",
+    "assets/environment/tree_oak/var_0_standard_oak/review/iso.png": "b0d808a9e57d3a17c2bd0f707adeb04d7327ff2a8eab73ba72ff6e9afdbedc94",
+    "assets/environment/tree_oak/var_0_standard_oak/review/front.png": "cbb9b00ab775ca6d5a124501d803b8cc922010be68f43dfcd0a92403b19bcb92",
+    "assets/environment/tree_oak/var_0_standard_oak/review/side.png": "335c490b9d5158490d17628d68b821f2ed186329071d3c551c1ca24573095365",
+    "assets/environment/tree_oak/var_0_standard_oak/review/top.png": "edb8547334aa64a978a7d9a57ecea069d409c63b29b74f3aedf73e677032d050",
+    "assets/environment/tree_oak/var_0_standard_oak/review/metrics.json": "5f260eacbf7913a1cdce365a4b5f16063700937136b9eb5a070897ac879929ad",
+    "assets/environment/tree_oak/var_0_standard_oak/review/gameplay_mockup.png": "de04d72123c9a1a2164d33cf3a0e7aca5be17be435dd008b64663620c82e98ef",
+    "assets/environment/tree_oak/var_0_standard_oak/review/before_after.png": "d7dea419fac8b7306015be95e5cb7daaa799015c530d53a4d18f551ce506199c"
   },
   "measurements": {
     "assets/environment/tree_oak/var_0_standard_oak/output/model.glb": {
-      "triangles": 3868,
+      "triangles": 3144,
       "materials": 3
     }
   },
-  "digest": "5ac1c17c7a9ff6ee23e56872d94c41fcc1a9a7c1479edddebea796acfd93b465"
+  "digest": "910c83e17e77943b4997a3ef9f51cf88231a18014d69deb851fca85c8138a8cb"
 }
