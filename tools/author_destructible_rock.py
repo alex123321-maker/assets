@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from pipeline_reports import initialize_text, write_build_report
 from typing import Callable, List, Set, Tuple
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -887,7 +888,7 @@ def author_packages() -> None:
 - **Voxel Size**: {VOXEL_SIZE}m
 - **Materials**: Multi-tone natural rock palette matching approved concept reference.
 """
-        (pkg_dir / "request.md").write_text(request_content, encoding="utf-8")
+        initialize_text(pkg_dir / "request.md", request_content)
 
         # 3. Voxel source
         voxels_data = grid.to_json_dict(manifest["name"])

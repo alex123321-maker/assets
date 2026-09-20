@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from pipeline_reports import initialize_text, write_build_report
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -663,7 +664,7 @@ Designed for mass scatter-placement across Cube Siege biomes (Forest, Plains, Mo
 - Triangle budget <= 500 tris.
 """
         request_path = pkg_dir / "request.md"
-        request_path.write_text(request_md, encoding="utf-8")
+        initialize_text(request_path, request_md)
 
         print(f"  [OK] Authored package {slug}")
 

@@ -143,8 +143,8 @@ def verify_evidence() -> bool:
         errors.append(f"Missing family review.md at {family_review}")
     else:
         content = family_review.read_text(encoding="utf-8")
-        if "# Family Self Review" not in content:
-            errors.append(f"Family review.md missing title header in {family_review}")
+        if "# Family Self Review" not in content and "# Visual review" not in content:
+            errors.append(f"Family review.md missing review title header in {family_review}")
         else:
             print(f"[PASS] Family review document: {family_review.name}")
 
@@ -270,7 +270,7 @@ def verify_evidence() -> bool:
             errors.append(f"Missing tree family review.md at {t_review}")
         else:
             content = t_review.read_text(encoding="utf-8")
-            if "# Family Self Review" not in content:
+            if "# Family Self Review" not in content and "# Visual review" not in content:
                 errors.append(f"Tree review.md missing title header in {t_review}")
             else:
                 print(f"[PASS] Tree family review document: {t_review.name}")
@@ -426,7 +426,7 @@ def verify_evidence() -> bool:
             errors.append(f"Missing terrain family review.md at {t_review}")
         else:
             content = t_review.read_text(encoding="utf-8")
-            if "# Family Self Review" not in content:
+            if "# Family Self Review" not in content and "# Visual review" not in content:
                 errors.append(f"Terrain review.md missing title header in {t_review}")
             else:
                 print(f"[PASS] Terrain family review document: {t_review.name}")
@@ -574,7 +574,7 @@ def verify_evidence() -> bool:
             errors.append(f"Missing dressing family review.md at {d_review}")
         else:
             content = d_review.read_text(encoding="utf-8")
-            if "# Family Self Review" not in content:
+            if "# Family Self Review" not in content and "# Visual review" not in content:
                 errors.append(f"Dressing review.md missing title header in {d_review}")
             else:
                 print(f"[PASS] Dressing family review document: {d_review.name}")
@@ -1050,7 +1050,7 @@ def verify_evidence() -> bool:
             print(f"  - {e}")
         return False
 
-    print(f"\n[ALL PASS] All packages have complete, valid review evidence.")
+    print(f"\n[ALL PASS] Legacy evidence structure checks passed. This is not an art verdict or build-freshness check.")
     return True
 
 

@@ -38,6 +38,12 @@ DESIGN_DECISION_MARKER = "DESIGN DECISION REQUIRED"
 RESUME_PROMPT_TEMPLATE = """New GitHub review feedback was received for PR #{pr_number}.
 
 Read the authoritative Issue, current PR description, latest head, all current reviews, and all unresolved review threads.
+Read GEMINI.md and docs/GEMINI_WORKFLOW.md. Follow docs/QUALITY_GATE.md for packages with quality.json.
+Inspect the actual current reference/render images for visual findings, not only their filenames or old self-reviews.
+Record each active finding ID/URL, its root cause, the changed files, and fresh verification in review/visual_review.json feedback_resolution when present.
+For material/atlas changes recheck color space and roughness; for geometry changes recheck exported bounds/pivot and every affected variant.
+Never manufacture approval or visual PASS, rewrite an approved reference to match output, or weaken an Issue criterion to pass a check.
+After source/build changes regenerate evidence and reinspect affected images; an old visual verdict is not evidence for a new build.
 Address valid feedback only within the Issue scope.
 This is an autonomous remediation run, not a planning request.
 Do not create or update an implementation plan, do not request plan approval, and do not wait for user confirmation.

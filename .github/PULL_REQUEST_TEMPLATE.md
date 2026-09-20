@@ -2,7 +2,7 @@
 
 Closes #
 
-**Type:** `voxel_static / voxel_rigged / blender_unique / vfx`
+**Type:** `voxel_static / voxel_rigged / blender_unique / vfx / ui_kit / pipeline`
 
 ## What was created
 
@@ -20,6 +20,15 @@ Closes #
 
 ## Visual review
 
+Для asset PR вставь Markdown от `quality_gate.py packet` после commit/push:
+ссылки должны указывать на точный SHA. Для pipeline-only PR укажи N/A и проверки кода.
+Не выдавай автоматически созданный текст за художественное ревью.
+
+- Reviewed/build commit:
+- Reference provenance + user approval citation (или candidate / request-only):
+- Evidence digest:
+- Engine check: `checked / mockup_only / not_checked`, ограничения:
+
 | View | Artifact |
 | --- | --- |
 | ISO | `review/iso.png` |
@@ -35,7 +44,8 @@ Closes #
 - [ ] Build completed successfully.
 - [ ] Required review media generated.
 - [ ] `review/metrics.json` checked against budgets.
-- [ ] Self-review completed.
+- [ ] `quality_gate.py check <asset-package> --require-review` (new/enrolled packages).
+- [ ] Actual reference and result images opened; observations recorded per criterion.
 - [ ] No hidden design decisions were guessed.
 
 ## Metrics
@@ -44,7 +54,12 @@ Closes #
 
 ## Known intentional deviations
 
-None.
+Перечисли видимые отклонения и непроверенные требования. `None` допустимо только после просмотра.
+
+## Response to prior findings
+
+| Finding ID / URL | Root cause / fix | Current evidence | Status |
+| --- | --- | --- | --- |
 
 ## Reviewer focus
 

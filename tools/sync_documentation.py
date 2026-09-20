@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Synchronize README.md and review/review.md with exact metrics and authentic visual review notes."""
+"""Synchronize generated documentation and build measurements without writing art verdicts."""
 
 import json
 from pathlib import Path
+from pipeline_reports import write_build_report
 
 ROOT = Path(__file__).resolve().parent.parent
 FAMILY_DIR = ROOT / "assets" / "environment" / "destructible_rock"
@@ -80,7 +81,7 @@ def main() -> None:
 
     readme_content = f"""# Destructible Voxel Rock Family (Семейство разрушаемых камней)
 
-Семейство статических воксельных ассетов для **Cube Siege** (`voxel_static`), предназначенное для разрушаемых природных ресурсов в игровом мире, доведённое до визуального качества утверждённого концепт-арта (`references/rock_concept_reference.png`).
+Семейство статических воксельных ассетов для **Cube Siege** (`voxel_static`), предназначенное для разрушаемых природных ресурсов в игровом мире, с художественной целью соответствовать концепт-арту (`references/rock_concept_reference.png`).
 
 ## Концепция стадий и вариантов
 
@@ -145,70 +146,10 @@ assets/environment/destructible_rock/
     (FAMILY_DIR / "README.md").write_text(readme_content, encoding="utf-8")
     print("Updated README.md successfully.")
 
-    # 2. Generate review/review.md
-    table_str = "\n".join(rows)
+    # 2. Generate build measurements; preserve authored review.
 
-    review_content = f"""# Family Self Review: Destructible Rock Family (Issue #3 Art Pass)
+    write_build_report(FAMILY_DIR / "review", "Destructible rock family", json.loads(METRICS_PATH.read_text(encoding="utf-8")))
 
-## Acceptance Criteria Checklist
-
-- [x] **Ровно 17 вариантов**: 6 (Stage 1) / 3 (Stage 2) / 3 (Stage 3) / 2 (Stage 4) / 3 (Stage 5).
-- [x] **Canonical Source**: Каждый вариант имеет полностью воспроизводимый `source/voxels.json` в layered voxel representation.
-- [x] **Repository Validation**: Все варианты проходят `tools/validate_asset.py` и общий `tools/validate_all.py`.
-- [x] **Blender Pipeline**: Все варианты собираются через скрипты сборки (`build_voxel_asset.py`, `build_family.py`) на Blender 5.2.1 LTS.
-- [x] **GLB Export**: Каждый вариант экспортирует валидный `output/model.glb` для Godot с единым мешем на материал.
-- [x] **No Individual Cube Objects**: Ни один вариант не использует отдельные cube nodes в рантайме.
-- [x] **Internal Face Culling**: Внутренние грани между смежными занятыми вокселями полностью удалены.
-- [x] **Art Pass: 4-Material Palette**: Полноценная 4-материальная палитра PBR по утверждённому концепту `references/rock_concept_reference.png`:
-  - `stone_primary` (S): основной корпус камня, вертикальные грани (#7d7872);
-  - `stone_dark` (D): глубокие расщелины, выемки под нависаниями, контактные тени (#555350);
-  - `stone_light` (L): освещённые солнцем верхние террасы, плато и гребни (#aea8a0);
-  - `stone_moss` (M): деликатные акцентные островки мха в укрытых расщелинах и нишах (#6e7252).
-- [x] **No Diagonal Staircases / Flat Boxes**: Устранены непреднамеренные 45-градусные лестницы и плоские параллелепипеды; форма смоделирована массивными ступенчатыми лопастями и гранёными фасками.
-- [x] **Silhouette Diversity (Stage 1)**: Все 6 вариантов Stage 1 обладают выраженно различными силуэтами (Monolith Crag, Twin Spire, Slanted Wedge, Cantilever Brow, Three-Lobe Butte, Dual Peak Ridge).
-- [x] **Monotonic Mass Reduction**: Объем и количество вокселей строго и последовательно уменьшаются от Stage 1 к Stage 5 ({s1_r['min_vox']}–{s1_r['max_vox']} → {s2_r['min_vox']}–{s2_r['max_vox']} → {s3_r['min_vox']}–{s3_r['max_vox']} → {s4_r['min_vox']}–{s4_r['max_vox']} → {s5_r['min_vox']}–{s5_r['max_vox']}).
-- [x] **Ground Contact & Pivot**: Все варианты имеют плоский контакт с землей (`y=0`) и центрированный `bottom_center` origin.
-- [x] **Review Package**: Для каждого из 17 вариантов созданы ракурсы `iso.png`, `front.png`, `side.png`, `top.png` и `metrics.json`.
-- [x] **Family Contact Sheet & Side-by-Side Comparison**:
-  - `review/contact_sheet.png`: общая панорама всех 17 моделей (2048x1152);
-  - `review/stage_1_comparison.png`: увеличенное попарное сравнение концептов Stage 1 и 3D-моделей;
-  - `review/reference_vs_3d_comparison.png`: сравнение всего референсного листа и 3D-семейства.
-
-## Summary of Metrics
-
-| Variant | Stage | Description | Occupied Voxels | Triangles | Visible Faces | Materials | Grid (X x Y x Z) | World Size (m) |
-|---|:---:|---|:---:|:---:|:---:|:---:|:---:|:---:|
-{table_str}
-
-## Known Intentional Deviations
-None.
-
-## Visual Inspection Reference Media
-
-Visual inspection and validation against `references/rock_concept_reference.png` are provided via dedicated comparison media in `review/`:
-- `review/reference_vs_3d_comparison.png`: Full concept sheet vs 3D renders side-by-side.
-- `review/stage_1_comparison.png`: High-resolution side-by-side comparison for each of the 6 Stage 1 boulder concepts vs rendered 3D models.
-- `review/contact_sheet.png`: Global panorama of all 17 models across Stages 1–5.
-- Per-variant orthogonal renders (`iso.png`, `front.png`, `side.png`, `top.png`) in each variant's `review/` directory.
-
-### Structural & Silhouette Design Intent
-- **Stage 1 (Vars 1–6)**: Distinct macro silhouettes (Monolith Crag, Twin Spire, Slanted Wedge, Cantilever Brow, Three-Lobe Butte, Dual Peak Ridge). Meshes built with facet dissolving (planar consolidation) and 0.26 bevel chamfers to avoid terraced staircases.
-- **Stages 2–5**: Monotonic volume and polygon reduction across destruction states, flat ground contact at y=0, and clean material separation.
-- **Material Differentiation**: Upper horizontal planes mapped to `stone_light`, crevices/undercuts to `stone_dark`, side walls to `stone_primary`, and sheltered recesses to `stone_moss` accents.
-
-## Notes for External Reviewer
-- Review package contains:
-  - `review/reference_vs_3d_comparison.png` — full family comparison against approved concept art;
-  - `review/stage_1_comparison.png` — magnified side-by-side comparison of 6 Stage 1 concepts vs 3D models;
-  - `review/contact_sheet.png` — panorama of all 17 models;
-  - 4 orthogonal renders (iso, front, side, top) and `metrics.json` for each variant.
-- All polygon counts ({s5_r['min_tris']}–{s1_r['max_tris']} tris) strictly satisfy the <= 5000 tris budget.
-- All material counts (<= 4) strictly satisfy the <= 4 materials budget.
-- All GLBs are exported with single mesh per material and culled internal faces.
-"""
-
-    (FAMILY_DIR / "review" / "review.md").write_text(review_content, encoding="utf-8")
-    print("Updated review/review.md successfully.")
 
 
 if __name__ == "__main__":

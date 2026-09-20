@@ -22,6 +22,8 @@ from mathutils import Euler, Vector
 # Import helpers from build_voxel_asset
 BUILD_SCRIPT = Path(__file__).resolve().parent / "build_voxel_asset.py"
 sys.path.insert(0, str(BUILD_SCRIPT.parent))
+sys.path.insert(0, str(BUILD_SCRIPT.parent.parent))
+from pipeline_reports import write_build_report
 from build_voxel_asset import (
     clear_scene,
     export_glb,
@@ -815,39 +817,7 @@ def build_single_variant(slug: str) -> dict:
         encoding="utf-8",
     )
 
-    if slug == "moss_cliff_ledge":
-        anchor_check = "- [x] Origin at edge_anchor (z=0 cliff ledge surface plane, with 3D hanging tendrils extending below to -0.26m)."
-    else:
-        anchor_check = "- [x] Ground contact flat at z=0, origin bottom_center."
-
-    # Write review.md for package
-    review_md = f"""# Build Verification: {slug}
-
-## Objective Build Verification
-- [x] Required review renders generated (iso.png, front.png, side.png, top.png at 512x512).
-- [x] Export validated ({output_path.name}, glTF 2.0, {glb_info['size_bytes']} bytes, {glb_info['meshes']} mesh, {glb_info['materials']} shared material).
-- [x] Shared production material verified (`mat_dressing_atlas` mapped via UVMap to baseColor & metallic-roughness atlases).
-- [x] Material count is within budget (1 shared material <= 4).
-- [x] Triangle count verified ({metrics['triangles']} tris <= 500 budget).
-- [x] Internal faces culled ({metrics['visible_faces']} visible faces).
-{anchor_check}
-- [x] Low-poly blocky silhouette matching visual dressing contract.
-
-## Metrics
-- Occupied voxels: {metrics['occupied_voxels']}
-- Triangles: {metrics['triangles']}
-- Visible faces: {metrics['visible_faces']}
-- Mesh objects: {metrics['mesh_objects']}
-- Materials: {metrics['materials']}
-- Shared material: `{metrics['shared_material']}` (albedo atlas: `{metrics['atlas_texture']}`, roughness atlas: `{metrics['roughness_atlas_texture']}`)
-- Origin / Pivot: `{metrics['origin']}`
-- Grid dimensions: {metrics['grid']['x']}x{metrics['grid']['y']}x{metrics['grid']['z']} (voxel_size: {metrics['voxel_size']}m)
-- Nominal grid size: {metrics['nominal_grid_size']['x']:.2f}m x {metrics['nominal_grid_size']['y']:.2f}m x {metrics['nominal_grid_size']['z']:.2f}m
-- Exported mesh AABB: {metrics['mesh_aabb']['x']:.3f}m x {metrics['mesh_aabb']['y']:.3f}m x {metrics['mesh_aabb']['z']:.3f}m
-- Exported bounds: min=[{metrics['mesh_bounds_min']['x']:.3f}, {metrics['mesh_bounds_min']['y']:.3f}, {metrics['mesh_bounds_min']['z']:.3f}], max=[{metrics['mesh_bounds_max']['x']:.3f}, {metrics['mesh_bounds_max']['y']:.3f}, {metrics['mesh_bounds_max']['z']:.3f}]
-- Engine: {metrics['render_engine']} ({metrics['blender_version']})
-"""
-    (review_dir / "review.md").write_text(review_md, encoding="utf-8")
+    write_build_report(review_dir, slug, metrics)
     print(f"[OK] Built and verified {slug}: {metrics['triangles']} tris, {metrics['occupied_voxels']} voxels, 1 shared material")
     return metrics
 

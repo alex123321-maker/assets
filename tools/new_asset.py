@@ -7,6 +7,7 @@ import argparse
 import json
 import shutil
 from pathlib import Path
+from quality_gate import initialize
 
 
 def main() -> int:
@@ -45,6 +46,8 @@ def main() -> int:
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
+
+    initialize(root, target)
 
     print(target)
     return 0

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""generate_terrain_reference.py - Generates the approved concept reference sheet for Terrain Materials."""
+"""generate_terrain_reference.py - Generates a production material catalog; never replaces approved references."""
 
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
@@ -18,7 +18,7 @@ font = ImageFont.load_default()
 # 1. Header
 draw.rectangle([(0, 0), (W, 90)], fill=(16, 18, 22))
 draw.text((40, 25), "CUBE SIEGE   TERRAIN MATERIAL KIT", fill=(255, 255, 255), font=font)
-draw.text((40, 50), "CONCEPT ART, PALETTES & BIOME SPECIFICATIONS", fill=(180, 190, 205), font=font)
+draw.text((40, 50), "PRODUCTION CATALOG, PALETTES & BIOME SPECIFICATIONS (NOT A REFERENCE)", fill=(180, 190, 205), font=font)
 draw.text((1050, 35), "READABLE BIOMES. TILEABLE SURFACES. STRATIFIED CLIFFS.", fill=(160, 175, 190), font=font)
 draw.text((1050, 55), "PRODUCTION VOXEL TERRAIN SYSTEM | ISSUE #6", fill=(130, 145, 160), font=font)
 
@@ -237,6 +237,7 @@ for section_title, lines in specs:
 # Footer
 draw.text((35, H - 35), "CUBE SIEGE — TERRAIN MATERIAL SYSTEM | ALEX123321-MAKER/ASSETS", fill=(110, 125, 140), font=font)
 
-out_file = REF_DIR / "terrain_concept_reference.png"
+out_file = TERRAIN_DIR / "review" / "material_catalog.png"
+out_file.parent.mkdir(parents=True, exist_ok=True)
 canvas.save(out_file, "PNG")
 print(f"[SAVED] {out_file} ({W}x{H})")

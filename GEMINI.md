@@ -1,5 +1,24 @@
 # GEMINI.md — Asset Factory Contract
 
+## Прочитай перед работой: quality protocol
+
+Основной агент этого репозитория — **Gemini 3.8 Flash High в Antigravity**.
+Обязательный рабочий цикл описан в [docs/GEMINI_WORKFLOW.md](docs/GEMINI_WORKFLOW.md),
+команды — в [docs/QUALITY_GATE.md](docs/QUALITY_GATE.md).
+
+1. Открой сами reference images. Запиши конкретные признаки в `quality.json`; не объявляй свой concept approved.
+2. Для нового семейства сначала доведи одного представителя через blockout → render → фактический просмотр → правки, затем делай варианты. Действуй самостоятельно в пределах ТЗ, без согласования implementation plan.
+3. Authoring меняет source; build читает его. Сборка не меняет request/references и не пишет положительные художественные verdicts.
+4. Новые пакеты создавай через `tools/new_asset.py` или добавляй `quality.json` через `tools/quality_gate.py init`. CI требует его для новых manifests; старые ассеты попутно не мигрируй.
+5. Запускай `quality_gate.py build <package>` с полным recipe, затем открывай изображения. В `review/visual_review.json` записывай наблюдения по критериям и актуальный evidence digest.
+6. Перед PR: `quality_gate.py check <package> --require-review`; после commit сделай `quality_gate.py packet` для браузерного reviewer. Не утверждай проверку в Godot, если есть только mockup.
+7. При review fixes исправляй причину и проверяй соседние свойства; фиксируй ID/URL замечания и свежее доказательство. Технический PASS не заменяет art verdict.
+
+Автоматическая запись `legible=True`, `silhouette matches`, `production ready`,
+`approved` или «проверено агентом» без соответствующего фактического действия запрещена.
+High повышает усилие рассуждения, но не отменяет проверок. Gemini 3.8 Flash выдаёт текст;
+bitmap/3D создаются отдельными инструментами. Подробности и официальные источники — в workflow.
+
 ## 1. Роль
 
 Ты — единственный основной implementation agent этого репозитория.

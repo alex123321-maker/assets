@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""generate_dressing_reference.py - Generates the concept reference sheet & visual contract for Environment Dressing Pack."""
+"""Generate a production catalog without replacing reference art or approval records."""
 
 from pathlib import Path
+from pipeline_reports import initialize_text
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,7 +18,7 @@ font = ImageFont.load_default()
 # 1. Header
 draw.rectangle([(0, 0), (W, 96)], fill=(14, 17, 22))
 draw.text((40, 24), "CUBE SIEGE   ENVIRONMENT DRESSING PACK", fill=(255, 255, 255), font=font)
-draw.text((40, 52), "CONCEPT ART, REUSABLE PROPS SPECIFICATIONS & BIOME INTEGRATION", fill=(175, 190, 205), font=font)
+draw.text((40, 52), "PRODUCTION CATALOG (NOT A REFERENCE) & BIOME INTEGRATION", fill=(175, 190, 205), font=font)
 draw.text((1180, 32), "CHUNKY READABLE SHAPES | MASS MULTIMESH BATCHING READY", fill=(155, 175, 195), font=font)
 draw.text((1180, 56), "ISSUE #7: GRASS TUFTS (6) + FLOWERS (4) + MOSS (3) + STONE DEBRIS (6)", fill=(125, 145, 165), font=font)
 
@@ -202,74 +203,12 @@ draw.text((1090, banner_y + 80), "• Memory Footprint: Shared 64x64 albedo & 64
 draw.text((1090, banner_y + 100), "• Budget: max 500 tris (actual: 84 - 408 tris, avg 226.2) | Zero CPU overhead", fill=(160, 185, 210), font=font)
 draw.text((1090, banner_y + 120), "• Review Evidence: Full contact sheet, 3 density tests, 3 biome tests, gameplay isometric mockup", fill=(80, 200, 120), font=font)
 
-ref_img_path = REF_DIR / "dressing_concept_reference.png"
-if not ref_img_path.exists():
-    canvas.save(ref_img_path, "PNG")
-    print(f"[OK] Saved concept reference sheet to {ref_img_path} ({W}x{H})")
-else:
-    print(f"[INFO] Approved reference image exists at {ref_img_path}, preserving user reference art.")
-
-# 4. Generate references/README.md
-readme_content = """# References & Visual Contract: Environment Dressing Pack
-
-## Approved Concept Reference
-
-![Environment Dressing Concept Reference](./dressing_concept_reference.png)
-
-`dressing_concept_reference.png` — утверждённый визуальный контракт и технический ориентир для семейств малых объектов окружения (Issue #7). Он фиксирует состав пакета, пропорции, PBR-палитры и интеграцию с биомами Cube Siege:
-- **Grass Tufts (6 вариантов)**: 3 малых, 2 средних, 1 высокий акцентный;
-- **Flowers (4 варианта / архетипа)**: белые маргаритки, жёлтые лютики, красные маки, смешанные редкие колокольчики;
-- **Moss / Low Vegetation (3 варианта)**: воротник у основания деревьев, полка в расщелинах камней, уступ обрывов;
-- **Stone Debris (6 вариантов)**: самостоятельная более тёмная палитра концепт-референса с уникальными 3D-силуэтами.
-
----
-
-## Visual & Runtime Contract
-
-### 1. Силуэт и детализация
-- **Крупные читаемые формы**: воксельная геометрия без тонких одиночных травинок из десятков полигонов.
-- **Никаких альфа-карт с фототекстурами**: твердотельная стилизованная блочная геометрия с плоским шейдингом.
-- **Органическая асимметрия**: разнообразие за счёт силуэта, наклона лепестков/травинок и ярусности.
-- **Надёжный ground contact и ledge anchor**: аккуратная посадка наземных пропов на плоскость `z=0` без висящих в воздухе вокселей; для `moss_cliff_ledge` точка привязки фиксируется на уступе карниза `z=0`, откуда тендрилы органично свисают вниз.
-- **Поворотная вариативность**: не выглядят монотонно при случайном вращении вокруг оси Y.
-
-### 2. Runtime & MultiMesh Performance
-- **Маленький треугольный бюджет**: каждый проп содержит от 84 до 408 треугольников (бюджет <= 500 tris, среднее 226.2 tris).
-- **Пивот и точки привязки**: 18 наземных пропов имеют пивот строго `bottom_center` в основании (`z=0`) для MultiMesh-спавна на террейне; `moss_cliff_ledge` имеет документированный пивот `edge_anchor` на верхней кромке уступа (`z=0`), откуда 3D-тендрилы свисают вниз (до -0.26 м) для размещения на кромках скал.
-- **Без коллизий и скриптов**: ассеты оптимизированы для массового batching / MultiMesh GPU instancing.
-- **Shared Material Strategy**: зафиксирована единая палитра `palette.json`, единый шейдинг и общие текстурные атласы `textures/dressing_palette_atlas.png` (sRGB baseColor) и `textures/dressing_roughness_atlas.png` (linear roughness).
-
-### 3. Согласованность с биомами и стилем
-- **Stone Debris**: использует самостоятельную более тёмную палитру из утверждённого концепт-референса (`S`: #5b5652, `D`: #3e3d3b, `L`: #65615b, `M`: #5a673e) для четкой контрастной читаемости мелких камней на фоне грунта и травы.
-- **Foliage & Moss**: колористически сбалансированы с кронами `tree_oak` и материалами террейна `terrain_materials` (Forest Grass, Plains Meadow, Mountain Stone).
-
----
-
-## Complete Asset Inventory (19 Variants)
-
-| Семейство | Имя пакета | Назначение / Архетип | Воксели | Треугольники |
-|:---|:---|:---|:---:|:---:|
-| **Grass** | `grass_tuft_small_01` | Компактный 3-лепестковый росток (низкий разлет) | 11 | 84 |
-| **Grass** | `grass_tuft_small_02` | Асимметричный веер травы | 14 | 100 |
-| **Grass** | `grass_tuft_small_03` | Плотная ступенчатая кочка | 25 | 196 |
-| **Grass** | `grass_tuft_med_01` | Средний ярусный многолепестковый пучок | 37 | 284 |
-| **Grass** | `grass_tuft_med_02` | Средний ветровой наклонный веер | 29 | 224 |
-| **Grass** | `grass_tuft_tall_01` | Высокий доминантный акцентный пучок | 40 | 300 |
-| **Flowers** | `flower_white_cluster` | Белые луговые ромашки (золотая сердцевина) | 31 | 372 |
-| **Flowers** | `flower_yellow_cluster` | Солнечные лютики (золотые лепестки, купол) | 27 | 324 |
-| **Flowers** | `flower_red_cluster` | Яркие маки (алые лепестки, чашевидный венчик) | 34 | 408 |
-| **Flowers** | `flower_mixed_accent` | Редкий лавандово-синий колокольчик | 28 | 336 |
-| **Moss** | `moss_tree_base` | Воротник-юбка для основания ствола дерева | 20 | 184 |
-| **Moss** | `moss_rock_shelf` | Угловая полка для расщелин камней и выступов | 27 | 198 |
-| **Moss** | `moss_cliff_ledge` | Свисающий каскад для карнизов обрывов | 26 | 224 |
-| **Stone** | `stone_debris_single` | Одиночный граненый замковый скол скалы | 11 | 84 |
-| **Stone** | `stone_debris_trio` | Сбалансированная группа из 3 небольших камней | 17 | 184 |
-| **Stone** | `stone_debris_flat_patch` | Плоская группа каменных плит со мхом | 23 | 188 |
-| **Stone** | `stone_debris_angular_chip`| Острый сколотый обломок-пик с гранью | 13 | 152 |
-| **Stone** | `stone_debris_fine_scatter`| Мелкая щебеночная россыпь / гравий | 12 | 262 |
-| **Stone** | `stone_debris_mountain_cluster`| Горный ступенчатый кряжистый кластер | 25 | 194 |
-"""
-
-readme_path = REF_DIR / "README.md"
-readme_path.write_text(readme_content, encoding="utf-8")
-print(f"[OK] Saved references README to {readme_path}")
+# Generated catalogs are outputs, never approved reference inputs.
+catalog_path = DRESSING_DIR / "review" / "dressing_catalog.png"
+catalog_path.parent.mkdir(parents=True, exist_ok=True)
+canvas.save(catalog_path, "PNG")
+print(f"[OK] Saved production catalog: {catalog_path}")
+initialize_text(REF_DIR / "README.md", "# Reference provenance\n\n"
+                "Add user-supplied or separately generated candidate references here.\n"
+                "Record origin, candidate/approved status and actual approval citation in quality.json.\n"
+                "The generated production catalog in review/ is not an approved reference.\n")

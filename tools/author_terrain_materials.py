@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from pipeline_reports import initialize_text, write_build_report
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -595,7 +596,7 @@ def build_showcase_voxel_packages() -> None:
 - Production Texturing: True nearest-neighbor textured cube faces using production 16x16 PNG textures with standard UV coordinates
 - Purpose: Static 3D visual showcase and validation package for Cube Siege terrain materials.
 """
-        (pkg_dir / "request.md").write_text(request_md, encoding="utf-8")
+        initialize_text(pkg_dir / "request.md", request_md)
         print(f"[PACKAGE] {slug} initialized with manifest, request, and voxels.json")
 
 
@@ -616,26 +617,7 @@ def write_showcase_reviews() -> None:
             continue
         data = json.loads(metrics_file.read_text(encoding="utf-8"))
 
-        review_md = f"""# Build Verification: {slug}
-
-## Objective Build Verification
-- [x] Required review renders generated (iso.png, front.png, side.png, top.png).
-- [x] Export validated (model.glb, glTF 2.0 with embedded production textures and nearest filtering).
-- [x] Material count is within budget ({data.get('materials', 3)} materials <= 4).
-- [x] Triangle count verified ({data.get('triangles', 0)} tris <= 5000).
-- [x] Internal faces culled ({data.get('visible_faces', 0)} visible faces).
-- [x] Ground contact flat at y=0, origin bottom_center.
-- [x] Production 16x16 PNG textures mapped with UVs and TEXTURE_FILTER_NEAREST point filtering.
-
-## Metrics
-- Occupied voxels: {data.get('occupied_voxels', 0)}
-- Triangles: {data.get('triangles', 0)}
-- Visible faces: {data.get('visible_faces', 0)}
-- Grid: {data.get('grid', {}).get('x', 1)}x{data.get('grid', {}).get('y', 1)}x{data.get('grid', {}).get('z', 1)}
-- World size: {data.get('world_size', {}).get('x', 1.0):.2f} x {data.get('world_size', {}).get('y', 1.0):.2f} x {data.get('world_size', {}).get('z', 1.0):.2f} m
-"""
-        (review_dir / "review.md").write_text(review_md, encoding="utf-8")
-        print(f"[REVIEW] Written review.md for {slug}")
+        write_build_report(review_dir, slug, data)
 
 
 def main() -> None:

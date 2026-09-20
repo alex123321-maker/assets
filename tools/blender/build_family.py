@@ -21,6 +21,8 @@ from mathutils import Vector
 # Import helpers from build_voxel_asset
 BUILD_SCRIPT = Path(__file__).resolve().parent / "build_voxel_asset.py"
 sys.path.insert(0, str(BUILD_SCRIPT.parent))
+sys.path.insert(0, str(BUILD_SCRIPT.parent.parent))
+from pipeline_reports import write_build_report
 from build_voxel_asset import (
     clear_scene,
     build_objects,
@@ -84,7 +86,7 @@ def build_variant(pkg_dir: Path) -> dict:
 
     output_path = pkg_dir / manifest.get("outputs", {}).get("model", "output/model.glb")
     export_glb(output_path, objects)
-    glb_info = validate_glb_export(output_path)
+    validate_glb_export(output_path)
     render_views(pkg_dir / "review", objects)
 
     metrics_path = pkg_dir / "review" / "metrics.json"
@@ -93,27 +95,7 @@ def build_variant(pkg_dir: Path) -> dict:
         encoding="utf-8",
     )
 
-    title = manifest.get("title", pkg_dir.name)
-    review_path = pkg_dir / "review" / "review.md"
-
-    review_md = f"""# Build Verification: {title}
-
-## Objective Build Verification
-- [x] Required review renders generated (iso.png, front.png, side.png, top.png).
-- [x] Export validated ({output_path.name}, glTF 2.0, {glb_info['size_bytes']} bytes).
-- [x] Material count is within budget ({metrics['materials']} materials <= 4).
-- [x] Triangle count verified ({metrics['triangles']} tris <= 5000).
-- [x] Internal faces culled ({metrics['visible_faces']} visible faces).
-- [x] Ground contact flat at y=0, origin bottom_center.
-
-## Metrics
-- Occupied voxels: {metrics['occupied_voxels']}
-- Triangles: {metrics['triangles']}
-- Visible faces: {metrics['visible_faces']}
-- Grid: {metrics['grid']['x']}x{metrics['grid']['y']}x{metrics['grid']['z']}
-- World size: {metrics['world_size']['x']:.2f} x {metrics['world_size']['y']:.2f} x {metrics['world_size']['z']:.2f} m
-"""
-    review_path.write_text(review_md, encoding="utf-8")
+    write_build_report(pkg_dir / "review", pkg_dir.name, metrics)
 
     return metrics
 

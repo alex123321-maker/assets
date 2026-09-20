@@ -29,6 +29,8 @@ from mathutils import Vector
 
 BUILD_SCRIPT = Path(__file__).resolve().parent / "build_voxel_asset.py"
 sys.path.insert(0, str(BUILD_SCRIPT.parent))
+sys.path.insert(0, str(BUILD_SCRIPT.parent.parent))
+from pipeline_reports import write_build_report
 from build_voxel_asset import (
     clear_scene,
     build_objects,
@@ -91,7 +93,7 @@ def build_variant(pkg_dir: Path) -> dict:
 
     output_path = pkg_dir / manifest.get("outputs", {}).get("model", "output/model.glb")
     export_glb(output_path, objects)
-    glb_info = validate_glb_export(output_path)
+    validate_glb_export(output_path)
     render_views(pkg_dir / "review", objects)
 
     metrics_path = pkg_dir / "review" / "metrics.json"
@@ -100,30 +102,7 @@ def build_variant(pkg_dir: Path) -> dict:
         encoding="utf-8",
     )
 
-    title = pkg_dir.name
-    review_path = pkg_dir / "review" / "review.md"
-
-    review_md = f"""# Build Verification: {title}
-
-## Objective Build Verification
-- [x] Required review renders generated (iso.png, front.png, side.png, top.png).
-- [x] Export validated ({output_path.name}, glTF 2.0, {glb_info['size_bytes']} bytes, {glb_info['meshes']} meshes).
-- [x] Material count is within budget ({metrics['materials']} materials <= 3).
-- [x] Triangle count verified ({metrics['triangles']} tris <= 5000).
-- [x] Internal faces culled ({metrics['visible_faces']} visible faces).
-- [x] Ground contact flat at z=0, origin bottom_center.
-- [x] Silhouette matches requested tree slot design and proportions.
-
-## Metrics
-- Occupied voxels: {metrics['occupied_voxels']}
-- Triangles: {metrics['triangles']}
-- Visible faces: {metrics['visible_faces']}
-- Mesh objects: {metrics['mesh_objects']}
-- Materials: {metrics['materials']}
-- Grid: {metrics['grid']['x']}x{metrics['grid']['y']}x{metrics['grid']['z']}
-- World size: {metrics['world_size']['x']:.2f} x {metrics['world_size']['y']:.2f} x {metrics['world_size']['z']:.2f} m
-"""
-    review_path.write_text(review_md, encoding="utf-8")
+    write_build_report(pkg_dir / "review", pkg_dir.name, metrics)
 
     return metrics
 
@@ -484,71 +463,7 @@ def main() -> None:
     print("\n--- Rendering Gameplay Scale Mockup ---")
     render_gameplay_mockup(family_dir, variant_dirs)
 
-    # Write Family Review MD dynamically from actual metrics
-    descriptions = {
-        "var_0_standard_oak": (
-            "0", "Standard Oak",
-            "Классический сбалансированный силуэт дуба. Ствол с контрфорсными корнями, видимый каркас сучьев, 4 органические асимметричные массы кроны."
-        ),
-        "var_1_tall_oak": (
-            "1", "Tall Oak",
-            "Выраженный высокий узкий силуэт. Органически изогнутый ствол, асимметричные разновысокие ветви и плечи (восточное плечо y=12..21, западное y=18..27), шпилеобразная крона."
-        ),
-        "var_2_broad_oak": (
-            "2", "Broad Oak",
-            "Широкая раскидистая зонтичная крона. Мощный ствол 6×6, 4 массивных узловатых горизонтальных сука под кроной, широкие долевые облака листвы."
-        ),
-        "var_3_young_oak": (
-            "3", "Young Oak",
-            "Ювенильный саженец дуба (~0.6x от взрослого дерева). Тонкий ствол, компактная двухдольная крона, читаемый молодой силуэт."
-        ),
-        "var_4_shrub_oak": (
-            "4", "Shrub / Bush Oak",
-            "Низкорослый кустарниковый дуб (~1.35м). Многоствольное основание с корневыми шпорами, 3 приземистых холмика листвы. Высота по пояс 2м персонажу."
-        ),
-    }
-
-    table_rows = []
-    for pkg_dir in variant_dirs:
-        m = summary.get(pkg_dir.name, {})
-        slot_info = descriptions.get(pkg_dir.name, ("?", pkg_dir.name, ""))
-        dims = f"{m.get('world_size', {}).get('x', 0):.2f} × {m.get('world_size', {}).get('y', 0):.2f} × {m.get('world_size', {}).get('z', 0):.2f}" if 'world_size' in m else "N/A"
-        voxels = f"{m.get('occupied_voxels', 0):,}"
-        tris = f"{m.get('triangles', 0):,}"
-        table_rows.append(f"| **{slot_info[0]}** | **{slot_info[1]}** | {dims} | {voxels} | {tris} | {slot_info[2]} |")
-
-    table_content = "\n".join(table_rows)
-
-    family_review_path = family_dir / "review" / "review.md"
-    family_review_md = f"""# Family Self Review: Environment Trees (Oak Family)
-
-## Executive Summary
-Семейство дубовых деревьев (`tree_oak`) разработано в строгом соответствии с художественным направлением Cube Siege и интеграционным контрактом `ResourceTree` (Issue #5). Все 5 вариантов (слоты 0..4) построены как статические воксельные ассеты (`voxel_static`) с согласованной плотностью вокселей (0.15м), единой PBR-палитрой материалов (wood bark, base foliage, accent foliage) и нижним центральным origin (`bottom_center`).
-
-## Variant Breakdown & Silhouette Verification
-
-| Слот | Вариант | Габариты (м) | Воксели | Треугольники | Проверка силуэта и читаемости |
-|:---:|---|:---:|:---:|:---:|---|
-{table_content}
-
-## Objective Verification Criteria
-- [x] Создано ровно 5 вариантов, сопоставленных со слотами 0..4 `ResourceTree`.
-- [x] Standard / Tall / Broad визуально различаются силуэтом и пропорциями без чтения названия.
-- [x] Young и Shrub заметно меньше взрослых деревьев по высоте и объёму.
-- [x] Ни одна взрослая крона не является монолитным кубом или сферой — сборка из 3+ крупных масс.
-- [x] Ствол и ветви отчётливо читаются отдельно от кроны с игровой изометрической камеры.
-- [x] Материалы древесины и листвы визуально контрастны и различимы.
-- [x] Все варианты используют идентичный voxel density (0.15м) и общую палитру.
-- [x] Origin/pivot = bottom-center ствола (плоский контакт с землей при z=0).
-- [x] Экспорт GLB каждого варианта проверен (glTF 2.0, валидный заголовок, корректные меши).
-- [x] Полный review package сформирован:
-  - 4 ортогональных рендера (iso, front, side, top) для каждого варианта;
-  - Contact sheet всего семейства (`review/contact_sheet.png`);
-  - Comparison sheet в едином масштабе (`review/comparison_sheet.png`);
-  - Gameplay mockup с 2м персонажем (`review/gameplay_mockup.png`);
-  - Side-by-side comparison с концептом (`review/reference_vs_3d_comparison.png`).
-"""
-    family_review_path.write_text(family_review_md, encoding="utf-8")
+    write_build_report(review_dir, "Oak family", summary)
 
     print(f"\n[ALL DONE] Tree oak family build and review package completed successfully.")
 

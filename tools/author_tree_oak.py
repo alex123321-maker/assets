@@ -18,6 +18,7 @@ from __future__ import annotations
 import json
 import math
 from pathlib import Path
+from pipeline_reports import initialize_text, write_build_report
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 FAMILY_DIR = REPO_ROOT / "assets" / "environment" / "tree_oak"
@@ -637,7 +638,7 @@ def author_all() -> None:
   - `foliage_accent` (`L`): тёплый золотисто-зелёный акцент для верхних террас и освещённых шапок (#5e932b), roughness 0.82, metallic 0.0.
 - **Occlusion**: Компактная область кроны для runtime camera-occlusion fade; без одиночных летающих вокселей.
 """
-        (pkg_dir / "request.md").write_text(request_md, encoding="utf-8")
+        initialize_text(pkg_dir / "request.md", request_md)
 
         info = {
             "slot": v["slot"],

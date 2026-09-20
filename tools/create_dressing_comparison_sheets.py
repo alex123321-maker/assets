@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from pipeline_reports import write_build_report
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -288,96 +289,7 @@ def generate_metrics_summary_and_review_md() -> dict:
     )
     print(f"[OK] Wrote metrics summary to {summary_path}")
 
-    # Write Family Review.md
-    review_content = f"""# Family Self Review: Environment Dressing Pack
-
-## 1. Executive Summary
-- **Asset Family**: `assets/environment/dressing_pack`
-- **Issue**: #7 Environment dressing pack — grass, flowers, moss and stone debris
-- **Total Production Models**: 19 canonical props across 4 required subfamilies:
-  - **Grass Tufts (6 variants)**: 3 small sprigs, 2 medium clumps, 1 tall accent;
-  - **Flowers (4 variants / color groups)**: white daisies, golden yellow buttercups, crimson poppies, rare lilac-blue bellflowers;
-  - **Moss / Low Vegetation (3 variants)**: tree trunk base wrap collar, rock crevice shelf, cliff ledge cascade;
-  - **Stone Debris (6 variants)**: keystone shard, trio group, flat patch, triangular cleave, fine scatter, mountain crag cluster.
-- **Voxel Scale**: Uniform `voxel_size = 0.10`m (10 cm block step) providing chunky readable forms from the gameplay camera.
-- **Runtime Readiness & Shared Material Strategy**:
-  - Exactly **1 shared production material** (`mat_dressing_atlas`) per model;
-  - Exactly **1 mesh object** per model;
-  - UVs mapped to shared 64x64 texture atlas `textures/dressing_palette_atlas.png` (Base Color) and `textures/dressing_roughness_atlas.png` (Metallic-Roughness);
-  - Full canonical PBR roughness fidelity preserved per surface token (stone debris: 0.88 / 0.94 / 0.82 / 0.95; grass: 0.88 / 0.92 / 0.82; moss: 0.92 / 0.95 / 0.86; flowers: 0.75–0.88);
-   - Pivot: strictly `bottom_center` at z=0 for 18 ground props; `moss_cliff_ledge` uses documented `edge_anchor` at ledge surface plane (z=0) with hanging tendrils down to -0.26m; no collision, no scripts;
-   - Total triangles: {summary['total_triangles']} (avg: {summary['avg_triangles_per_prop']} tris/prop, max: {summary['max_triangles']} tris, well within <= 500 budget);
-   - Native MultiMesh GPU batching ready: all props share a single material (`mat_dressing_atlas`), enabling zero-material-switch GPU instancing in Godot 4.
-
----
-
-## 2. Objective Build Verification
-- [x] All 19 variant packages authored, validated, and built with Blender 5.2.1 LTS.
-- [x] Standard orthogonal views generated per variant (`iso.png`, `front.png`, `side.png`, `top.png` at 512x512).
-- [x] GLB exports validated (glTF 2.0 binary headers, internal face culling confirmed, 1 mesh object, 1 shared material, zero scripts).
-- [x] Shared production atlas material verified (`mat_dressing_atlas` mapped via UVMap to baseColor and metallic-roughness atlases).
-- [x] Full PBR contract verified: `baseColorTexture` and `metallicRoughnessTexture` embedded in GLB with canonical per-cell roughness.
-- [x] Rotational uniqueness verified across all 6 stone debris variants (no rotational equivalence).
-- [x] Family contact sheet generated (`contact_sheet.png`, 2560x1600).
-- [x] Multi-angle comparison sheet generated (`comparison_sheet.png`, 2048x1152).
-- [x] Side-by-side concept vs 3D comparison generated (`reference_vs_3d_comparison.png`).
-- [x] Biome mockups rendered in Blender 3D (`biome_mockup_forest.png`, `biome_mockup_plains.png`, `biome_mockup_mountain.png`).
-- [x] Density scatter mockups rendered in Blender 3D (`density_mockup_low.png`, `density_mockup_medium.png`, `density_mockup_high.png`).
-- [x] Gameplay distance render verified (`gameplay_mockup.png`, 1920x1080) with hero scale proxy, production trees, and rocks.
-- [x] Metrics summary exported (`metrics_summary.json`).
-
----
-
-## 3. Visual Quality & Style Guide Conformance
-1. **Chunky Readable Silhouettes**:
-   - Every grass tuft, flower, and stone debris prop avoids thin polygon hair-cards or microscopic noise.
-   - Distinct silhouettes are immediately recognizable from the ~45° isometric gameplay camera.
-2. **Stone Debris Independent Palette**:
-   - Adopts the accepted independent darker stone palette sampled directly from the approved concept reference (`dressing_concept_reference.png`), creating high-contrast readability for fine ground scatter.
-   - Faceted planar bevels and clean fracture clefts create strong stylistic coherence with the voxel environmental language.
-3. **Distinct Subfamily Silhouettes & Archetypes**:
-   - All 4 flower variants feature completely distinct geometries, heights (0.3m–0.5m), and head arrangements (daisies, buttercups, poppies, bellflowers).
-   - All 6 stone debris variants feature completely unique 3D rotational volume distributions.
-4. **Flat Ground Contact & Ledge Anchor**:
-   - Bottom faces rest flush at `z=0` for 18 ground props; `moss_cliff_ledge` anchors at ledge surface plane `z=0` with hanging 3D tendrils extending below cliff rim.
-5. **Rotational Variation**:
-   - Asymmetric blade tilts, off-center flower clusters, and angular rock fracture planes ensure props look natural under random rotation.
-
----
-
-## 4. Acceptance Criteria Checklist
-- [x] **6+ grass variants**: Exactly 6 variants (3 small, 2 medium, 1 tall accent).
-- [x] **4+ flower variants/groups**: Exactly 4 distinct archetypes (white daisies, yellow buttercups, red poppies, mixed bellflowers).
-- [x] **3+ moss/low vegetation variants**: Exactly 3 variants (tree base collar, rock crevice shelf, cliff ledge cascade).
-- [x] **6+ stone debris variants**: Exactly 6 variants (keystone shard, trio group, flat patch, triangular cleave, fine scatter, mountain cluster).
-- [x] **All props readable from gameplay camera**: Verified via `gameplay_mockup.png` and orthogonal views.
-- [x] **Stone debris palette updated**: Adopts the accepted independent darker stone palette from the approved concept reference.
-- [x] **No collision / scripts**: Pure visual geometry, zero runtime scripting overhead.
-- [x] **Pivot bottom-center / edge-anchor**: 18 ground props strictly use `bottom_center` at z=0; `moss_cliff_ledge` uses `edge_anchor` at z=0 cliff edge with negative hanging extent.
-- [x] **Shared material strategy implemented**: All 19 props export with 1 shared material `mat_dressing_atlas` referencing `dressing_palette_atlas.png`.
-- [x] **Geometry budget suitable for mass scatter**: Average {summary['avg_triangles_per_prop']} triangles per prop (max {summary['max_triangles']} tris, well below 500 tri budget).
-- [x] **Review package complete**: Contact sheet, density mockups (low/med/high), biome mockups (Forest/Plains/Mountain), metrics per mesh, gameplay render.
-
----
-
-## 5. Metrics Table (All 19 Props)
-
-| Семейство | Имя пакета | Воксели | Треугольники | Видимые грани | Материалы | Экспортированный AABB (ШxВxГ) | Номинальная сетка |
-|:---|:---|:---:|:---:|:---:|:---:|:---:|:---:|
-"""
-    for m in all_metrics:
-        ws = m.get("world_size", {"x": 0, "y": 0, "z": 0})
-        nom = m.get("nominal_grid_size", ws)
-        grid = m.get("grid", {"x": 0, "y": 0, "z": 0})
-        review_content += f"| **{m['name'].split('_')[0].capitalize()}** | `{m['name']}` | {m.get('occupied_voxels', 0)} | {m.get('triangles', 0)} | {m.get('visible_faces', 0)} | {m.get('materials', 1)} (shared) | {ws['x']:.2f} x {ws['y']:.2f} x {ws['z']:.2f} m | {grid['x']}x{grid['y']}x{grid['z']} ({nom['x']:.2f}x{nom['y']:.2f}x{nom['z']:.2f} m) |\n"
-
-    review_content += f"""
-**Итого по семейству**: {summary['total_occupied_voxels']} вокселей, {summary['total_triangles']} треугольников (в среднем {summary['avg_triangles_per_prop']} tris / проп, максимум {summary['max_triangles']} tris).
-"""
-
-    family_review_path = REVIEW_DIR / "review.md"
-    family_review_path.write_text(review_content, encoding="utf-8")
-    print(f"[OK] Wrote family review.md to {family_review_path}")
+    write_build_report(REVIEW_DIR, "Environment dressing pack", summary)
     return summary
 
 
