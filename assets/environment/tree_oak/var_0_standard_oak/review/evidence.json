@@ -1,27 +1,33 @@
 {
   "version": 1,
   "hash_policy": "sha256-text-lf-v1",
-  "built_at": "2026-09-20T21:00:23.145009+00:00",
+  "built_at": "2026-09-21T05:59:49.194535+00:00",
   "inputs": {
     "assets/environment/tree_oak/var_0_standard_oak/source/voxels.json": "82880b3b013f76a017ad0b263238c39ce921f3f182c69c76c6b6d4646a07a129",
     "assets/environment/tree_oak/var_0_standard_oak/references/before_iso.png": "700023b08186ee3861873c7a0dd53e18bc1cf6e21277a20d5d71fd1876d0aa5a",
     "tools/blender/build_voxel_asset.py": "5a5e9378467b81c26ab6f63afa3c9e92390cceb5626958f07568124bb9c84bb7",
     "tools/blender/render_tree_mockup.py": "a253da5a1cb60dac52473e9977d1e94613a9342e251d5f65bc2db026cb3b0c6b",
-    "tools/create_standard_oak_comparison.py": "0abcebff8abee35107cdb6bcc25204e080cbb0d356a58388aa384a0c479c8439",
+    "tools/create_standard_oak_comparison.py": "8feecc693dc69fd19c82f8cbab1f26eb9ba7497795ed93c19be69d948f692473",
+    "tools/review_comparison.py": "69864c2392ff02c0c1317d8dfa37893cf99b811c0ac8851e98ed6996226bcb75",
+    "tools/blender/render_voxel_comparison.py": "23f8754ca611e0aa9b920ced05e5dfb852e9723dd52d27a136f1a7d0172a605c",
+    "assets/environment/tree_oak/var_0_standard_oak/references/before_voxels.json": "b035b20154f1d5025a3d30d723b899a41800e3df8d6e93b6fbfee47ad6a032c2",
     "assets/environment/tree_oak/references/tree_concept_reference.png": "8d0d165fdeecaec837ee9c2814efee8d92aa0d83426a28d3c4b7d41e4af4eff3",
-    "assets/environment/tree_oak/var_0_standard_oak/quality.json": "5a15f575a702cd40fcc94d72ef00801d41c2221c858187c14551a4079e4bd0ff",
+    "assets/environment/tree_oak/var_0_standard_oak/quality.json": "914a21263e34a67a0b588777c438cf07c334b0286db5383d70e8db08fa2d9317",
     "assets/environment/tree_oak/var_0_standard_oak/request.md": "609de9858991d9ec31233dc623905648b10cd8e96a4b0003684011941df61ef9",
     "assets/environment/tree_oak/var_0_standard_oak/manifest.json": "f528ffd94608aa2653798110bfb9cf192eea3126cd089930cd319e2f240284bf"
   },
   "artifacts": {
     "assets/environment/tree_oak/var_0_standard_oak/output/model.glb": "1b829888ea059c0f5fea10b835aa6766e49cef88b2c3cbd30c9b3f7cc517cbaf",
-    "assets/environment/tree_oak/var_0_standard_oak/review/iso.png": "b0d808a9e57d3a17c2bd0f707adeb04d7327ff2a8eab73ba72ff6e9afdbedc94",
-    "assets/environment/tree_oak/var_0_standard_oak/review/front.png": "cbb9b00ab775ca6d5a124501d803b8cc922010be68f43dfcd0a92403b19bcb92",
-    "assets/environment/tree_oak/var_0_standard_oak/review/side.png": "335c490b9d5158490d17628d68b821f2ed186329071d3c551c1ca24573095365",
-    "assets/environment/tree_oak/var_0_standard_oak/review/top.png": "edb8547334aa64a978a7d9a57ecea069d409c63b29b74f3aedf73e677032d050",
+    "assets/environment/tree_oak/var_0_standard_oak/review/iso.png": "8f4b42de0bb682aebe848817e2d551bfc8c2baf99b50df2ed5dfd0963c928666",
+    "assets/environment/tree_oak/var_0_standard_oak/review/front.png": "bda0308c76c0403b63d63c153a07f028772d75901c5d77e2cd2f97fee30f2021",
+    "assets/environment/tree_oak/var_0_standard_oak/review/side.png": "1fc39796769c4aff96d11c89f26369c0237dfc706b5f20504f6a56c64736a0a4",
+    "assets/environment/tree_oak/var_0_standard_oak/review/top.png": "dabcfe5970e6155f5d67f1d82b90f5857e7e79d03585bded16ebdc9427e02cad",
     "assets/environment/tree_oak/var_0_standard_oak/review/metrics.json": "5f260eacbf7913a1cdce365a4b5f16063700937136b9eb5a070897ac879929ad",
-    "assets/environment/tree_oak/var_0_standard_oak/review/gameplay_mockup.png": "de04d72123c9a1a2164d33cf3a0e7aca5be17be435dd008b64663620c82e98ef",
-    "assets/environment/tree_oak/var_0_standard_oak/review/before_after.png": "d7dea419fac8b7306015be95e5cb7daaa799015c530d53a4d18f551ce506199c"
+    "assets/environment/tree_oak/var_0_standard_oak/review/gameplay_mockup.png": "397b4e316d3a7396a494c9365f9c8148672cf4b3a89939f13c5712dbf9163e60",
+    "assets/environment/tree_oak/var_0_standard_oak/review/before_after.png": "755c7701356a0f7752115ed50ce851fb25d77c7f91f787dfe6cc3588ab140f54",
+    "assets/environment/tree_oak/var_0_standard_oak/review/comparison_before.png": "e087b8193cdc757776011c244ff9126cd0d14602ec901d1c1663dd206e0fd9c8",
+    "assets/environment/tree_oak/var_0_standard_oak/review/comparison_after.png": "43a335fbef062830e2eb6c2b0c3301c52dad612c4988143c416af1c183c20d7b",
+    "assets/environment/tree_oak/var_0_standard_oak/review/comparison.json": "ae93ea45db6ca0bb7934e3b99dda6dcb0042b6fbcf5e99b9674d6c6be9028343"
   },
   "measurements": {
     "assets/environment/tree_oak/var_0_standard_oak/output/model.glb": {
@@ -29,5 +35,5 @@
       "materials": 3
     }
   },
-  "digest": "910c83e17e77943b4997a3ef9f51cf88231a18014d69deb851fca85c8138a8cb"
+  "digest": "cc4830f36a740ec8e373d03f3679e9fbc450868143cfcf013dfa8c82541f634c"
 }

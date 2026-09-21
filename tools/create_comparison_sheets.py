@@ -49,7 +49,7 @@ def create_family_comparison() -> Path:
     ref_x = pad
     ref_y = header_h + pad
     canvas.paste(ref_resized, (ref_x, ref_y))
-    draw.text((ref_x + 10, pad + 15), "APPROVED CONCEPT REFERENCE (Cube Siege Rock Asset Family)", fill=(240, 240, 240), font=font_large)
+    draw.text((ref_x + 10, pad + 15), "CONCEPT REFERENCE (approval recorded separately) (Cube Siege Rock Asset Family)", fill=(240, 240, 240), font=font_large)
 
     # Right box (3D Render)
     contact_x = ref_x + ref_w + pad
@@ -98,7 +98,7 @@ def create_stage_1_comparison() -> Path:
     draw = ImageDraw.Draw(canvas)
     font = ImageFont.load_default()
 
-    draw.text((pad + 10, 18), "STAGE 1 INTACT BOULDERS: CONCEPT REFERENCE vs 3D VOXEL ART PASS", fill=(255, 255, 255), font=font)
+    draw.text((pad + 10, 18), "STAGE 1 INTACT BOULDERS: CONCEPT REFERENCE vs 3D VOXEL RENDER", fill=(255, 255, 255), font=font)
 
     for i, (slug, label) in enumerate(var_names):
         col_x = pad + i * (tile_size + pad)
@@ -113,12 +113,14 @@ def create_stage_1_comparison() -> Path:
 
         # Row 2: 3D Render
         r_path = FAMILY_DIR / slug / "review" / "iso.png"
+        if not r_path.is_file():
+            raise FileNotFoundError(f"Missing required review input: {r_path}")
         if r_path.exists():
             r_img = Image.open(r_path).convert("RGB")
             r_resized = r_img.resize((tile_size, tile_size), Image.Resampling.LANCZOS)
             row2_y = row1_y + tile_size + label_h + pad
             canvas.paste(r_resized, (col_x, row2_y))
-            draw.text((col_x + 8, row2_y + tile_size + 8), f"3D PASS: {label}", fill=(220, 240, 180), font=font)
+            draw.text((col_x + 8, row2_y + tile_size + 8), f"3D RENDER: {label}", fill=(220, 240, 180), font=font)
 
     out_path = REVIEW_DIR / "stage_1_comparison.png"
     canvas.save(out_path, quality=95)

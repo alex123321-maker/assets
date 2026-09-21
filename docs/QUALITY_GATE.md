@@ -18,10 +18,13 @@ python tools/quality_gate.py init assets/environment/my_prop
 Для семейства можно указать общие зависимости в каждом пакете; семейный build допустим
 как команда, но каждый новый manifest требует собственный quality.json.
 
-commands — последовательность массивов аргументов, без shell-перенаправлений. Например:
+commands — последовательность массивов аргументов, без shell-перенаправлений.
+Blender Python commands требуют `--python-exit-code 1` до `--python`/`--python-expr`: иначе
+Blender может завершиться с кодом 0 после исключения Python и оставить старые outputs.
+Если Blender запускается внутри Python wrapper, тот тоже обязан передать этот флаг. Например:
 
 ```json
-[["blender", "--background", "--factory-startup", "--python", "tools/blender/build_voxel_asset.py", "--", "--asset", "assets/environment/my_prop"]]
+[["blender", "--background", "--factory-startup", "--python-exit-code", "1", "--python", "tools/blender/build_voxel_asset.py", "--", "--asset", "assets/environment/my_prop"]]
 ```
 
 Перед этим авторь source. Build не должен менять входные файлы, request или references.
@@ -51,6 +54,7 @@ require_engine_review включается, если это требует Issue
 ```bash
 python tools/quality_gate.py build assets/environment/my_prop
 python tools/quality_gate.py check assets/environment/my_prop
+python tools/quality_gate.py verify-clean assets/environment/my_prop
 ```
 
 build запускает команды и только после их успеха пишет review/evidence.json с SHA-256
@@ -60,7 +64,25 @@ build запускает команды и только после их успе
 Неудачная сборка удаляет старую квитанцию. При изменении файлов
 check сообщает STALE. Это контроль актуальности, а не криптографическая аттестация
 честности исполнителя и не доказательство того, что произвольный recipe действительно
-перерендерил все файлы. Recipe должен быть проверен на чистой сборке; CI здесь не запускает Blender.
+перерендерил все файлы. `verify-clean` копирует только declared inputs в временную папку и
+запускает recipe без старых outputs; незаявленные зависимости и no-op recipe приводят к ошибке.
+Команда не меняет рабочий пакет. Она проверяет состав outputs и экспортные измерения,
+GLB/обычные текстовые файлы — по hash, изображения — по декодированным RGBA с допуском
+2/255 на канал и средним отклонением не более 0.001/255 для редкого округления EEVEE.
+Более крупные различия, включая равномерный сдвиг цвета даже на 1/255, отклоняются. Receipt сравнения
+проверяется отдельно (его image hashes меняются и при допустимом округлении).
+Побайтовые различия и максимальные отклонения каналов перечисляются в отчёте.
+Это не художественное одобрение и не гарантия межплатформенной идентичности. CI здесь не запускает Blender.
+
+Сборка, изменившая или создавшая `review.md`/`visual_review.json`, отклоняется; исходные
+review-файлы восстанавливаются. Даже ошибка до запуска recipe удаляет старую квитанцию.
+Старый visual review не получает новый digest автоматически.
+
+Для сравнения в идентичных условиях укажи `comparisons: ["assets/.../review/comparison.json"]`.
+Receipt содержит source/image hashes и фактические настройки каждого рендера. Источники
+должны быть в inputs, receipt и оба PNG — в artifacts. Gate отклоняет разные камеры,
+свет, масштаб, color management, размеры и подменённые файлы. Подписи на композите нейтральны.
+Это контроль согласованности trusted renderer, а не защита от намеренно поддельного receipt.
 
 После просмотра изображений заполни review/visual_review.json:
 reviewer, evidence_digest текущего снимка, inspected_images, criteria (pass/fail/not_reviewed
@@ -85,6 +107,11 @@ require-review проверяет наличие и актуальность з�
 ```bash
 python tools/quality_gate.py packet assets/environment/my_prop --repository alex123321-maker/assets --revision HEAD --output .local/my_prop-review.md
 ```
+
+Для раннего ревью с честными fail/not_reviewed добавь `--draft`. Пакет получит заголовок
+`DRAFT — NOT ACCEPTED`, статусы каждого критерия и engine status. Он по-прежнему требует
+свежую сборку, актуальный digest и commit-проверку; наблюдения для pass/fail обязательны.
+Обычный packet, `check --require-review` и CI остаются строгими. Не меняй fail на pass ради отправки PR.
 
 Команда проверяет, что содержимое рабочих evidence совпадает с указанным commit
 (с той же нормализацией CRLF/LF).

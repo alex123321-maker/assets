@@ -1,6 +1,6 @@
 {
-  "evidence_digest": "910c83e17e77943b4997a3ef9f51cf88231a18014d69deb851fca85c8138a8cb",
-  "reviewer": "Gemini 3.8 Flash (High) via Antigravity",
+  "evidence_digest": "cc4830f36a740ec8e373d03f3679e9fbc450868143cfcf013dfa8c82541f634c",
+  "reviewer": "Codex: pipeline comparison refresh; existing geometry unchanged",
   "inspected_images": [
     "assets/environment/tree_oak/references/tree_concept_reference.png",
     "assets/environment/tree_oak/var_0_standard_oak/references/before_iso.png",
@@ -15,37 +15,37 @@
     {
       "id": "canopy_massing",
       "status": "pass",
-      "observation": "В проекциях FRONT, SIDE, TOP и ISO крона отчетливо разделена на пять различимых блочных масс: 4 кардинальные лопасти (западная, восточная, передняя, задняя) и приподнятый 2-ступенчатый центральный купол. На виде сверху (top.png) отчетливо виден органичный 4-лепестковый крестообразный силуэт с глубокими 90-градусными вырезами по углам. На виде спереди (front.png) левое и правое плечи отделены от центральной вершины вертикальными ступенями высоты (~5-6 вокселей) с явными выемками в силуэте. Прежняя монолитная сфера/купол полностью устранена."
+      "observation": "В ISO видны две передние боковые массы, центральный ярус и поднятая вершина; front/side показывают ступени между плечами и верхушкой. На top контур крестообразный. Нижняя часть кроны остаётся связной: пять полностью отдельных масс во всех проекциях не наблюдаются."
     },
     {
       "id": "visible_branching",
       "status": "pass",
-      "observation": "Под нижним краем кроны отчетливо видны расходящиеся деревянные ветви (wood_bark): передняя ветвь направлена вперед прямо в камеру ISO (y=7..11), левая ветвь поддерживает западное плечо, правая ветвь поддерживает восточное плечо. Соединение веток со стволом и основанием кронных масс читается без висящих в воздухе вокселей."
+      "observation": "В ISO под передними долями видны тёмные деревянные опоры слева и справа от ствола; front и side отчётливее показывают развилку. Значительная часть ветвей скрыта листвой, поэтому утверждение об открытом скелете всей кроны было бы преувеличением."
     },
     {
       "id": "silhouette_and_ground_contact",
       "status": "pass",
-      "observation": "Асимметрия формы сохраняется в проекциях FRONT, SIDE и ISO: восточное плечо расположено выше и массивнее западного, передняя лопасть опущена ниже задней. Комлевой раструб ствола на y=0..3 расширяется за счет 4 контрфорсов и диагональных упоров, обеспечивая стабильную плоскую опору на z=0."
+      "observation": "В front левое плечо ниже правого; в side передняя и задняя части кроны имеют разные уровни. Корневая опора расширяется у основания и заканчивается общей плоскостью. Это визуальное наблюдение; тест физики не проводился."
     },
     {
       "id": "macro_readability",
       "status": "pass",
-      "observation": "Форма дуба (ствол с корнями, боковые лопасти и центральная шапка) отчетливо считывается при уменьшении масштаба и на изометрической дистанции без добавления одновоксельного шума. Блочные суперквадрические подушки сохраняют чистоту воксельного стиля."
+      "observation": "На обзорных изображениях различимы ствол, расширение основания, боковые плечи и верхушка. Отдельного испытания при заданном размере объекта в пикселях игровой камеры нет; независимые пять масс на дальнем плане не заявляются."
     },
     {
       "id": "material_palette_contrast",
       "status": "pass",
-      "observation": "Линейная конверсия цветов IEC 61966-2-1 в glTF baseColorFactor и шейдерах EEVEE подтверждена: кора wood_bark (#4a2f1b) — насыщенный темный цвет, основная листва foliage_base (#3b6b22) — глубокая зелень, акцентные шапки foliage_accent (#5e932b) — светлые теплые грани. Контраст между корой и листвой четкий, выбеливание отсутствует."
+      "observation": "В ISO и front кора тёмно-коричневая, основные боковые грани листвы тёмно-зелёные, верхние акцентные грани светлее. GLB при пересборке не изменился. Освещённые пиксели рендера не считаются точным цветовым свотчем исходной палитры."
     },
     {
       "id": "before_after_comparison",
       "status": "pass",
-      "observation": "На композите before_after.png в идентичной изометрической проекции и освещении наглядно зафиксирован результат: слева (BEFORE) — выбеленная монолитная колонна со скрытыми ветвями; справа (AFTER) — насыщенная палитра, широкая раскидистая крона с 4 боковыми лопастями, приподнятой вершиной и открытыми деревянными сучьями."
+      "observation": "Новый композит построен из двух повторно отрендеренных source-снимков при общем масштабе и камере; comparison.json фиксирует совпадающие настройки. Справа верхушка и плечи разделяются ступенями, цвет темнее; слева верхняя масса выше и более вытянута. На картинке нет заранее записанных художественных оценок."
     },
     {
       "id": "game_scale_mockup",
       "status": "pass",
-      "observation": "На мокапе gameplay_mockup.png рядом с деревом размещен 2.0-метровый манекен и 4-секционная черно-белая мерная рейка (4x0.5м). Мокап подтверждает соответствие масштабу взрослого дуба: высота дерева 4.05 м соотносится с ростом персонажа как ~2:1, толщина ствола ~0.5 м пропорциональна фигуре, контакт с землей плоский на z=0. Проверка коллизий и прохода под ветвями в рантайме Godot не проводилась."
+      "observation": "На мокапе дерево примерно вдвое выше расположенного рядом манекена 2 м; видны рейка и общая опорная плоскость. Манекен не находится под кроной. Проходимость, коллизии и runtime camera здесь не проверены."
     }
   ],
   "gameplay": {
@@ -56,8 +56,9 @@
     "notes": "Проверено на изолированном изометрическом рендере мокапа в Blender с 2.0-метровым манекеном и 4x0.5м масштабной рейкой на плоскости травы. Проверка коллизий персонажа и перемещения под ветвями в игровом движке Godot не выполнялась, так как пакет не содержит сцены движка."
   },
   "known_deviations": [
-    "Стилизованный ступенчатый воксельный силуэт 0.15м сетки с сохранением блочного характера референса.",
-    "Референс tree_concept_reference.png имеет статус candidate (концепт-арт PR #10), форма согласована в рамках ТЗ Issue #14."
+    "Связный нижний ярус кроны: разделение читается по силуэту и ступеням, а не как пять изолированных масс во всех видах.",
+    "Размерность и стиль сохранены от принятого PR #15; точная реконструкция концепта не заявляется.",
+    "Godot и читаемость при фиксированном игровом pixel footprint в этой проверке не тестировались."
   ],
   "feedback_resolution": [
     {
@@ -107,6 +108,32 @@
         "assets/environment/tree_oak/var_0_standard_oak/review/visual_review.json"
       ],
       "verification": "Refined observation to strictly state scale ratio (~2:1) and proportions against 2.0m mannequin and height gauge without claiming walk-under verification."
+    },
+    {
+      "comment_id": "Codex pipeline audit after PR #15",
+      "issue": "Hardcoded positive captions and unequal before/after camera scale",
+      "root_cause": "Comparison pasted independently framed renders and generated verdict text without inspection.",
+      "changed_files": [
+        "tools/create_standard_oak_comparison.py",
+        "tools/blender/render_voxel_comparison.py",
+        "tools/review_comparison.py"
+      ],
+      "verification": "Both snapshots rendered in one frozen scene. Gate checks hashes and equal settings; source and exported GLB unchanged."
+    },
+    {
+      "comment_id": "Issue #14 scale acceptance / PR #15 follow-up",
+      "issue": "quality.json retained an unrequested head-clearance criterion after the observation was corrected",
+      "root_cause": "Implementation introduced a stronger gameplay claim than the Issue mockup requirement.",
+      "changed_files": [
+        "assets/environment/tree_oak/var_0_standard_oak/quality.json"
+      ],
+      "verification": "Criterion now requests the 2 m labelled mockup stated by Issue #14; no walk-under or engine verdict is inferred."
     }
-  ]
+  ],
+  "prior_review": {
+    "reviewer": "Gemini 3.8 Flash (High) via Antigravity",
+    "evidence_digest": "910c83e17e77943b4997a3ef9f51cf88231a18014d69deb851fca85c8138a8cb",
+    "commit": "39c2142fc7bf0a83c1df152986d608f1e20c7968",
+    "external_review": "https://github.com/alex123321-maker/assets/pull/15"
+  }
 }

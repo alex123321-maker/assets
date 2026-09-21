@@ -11,26 +11,20 @@ if str(REPO_ROOT) not in sys.path:
 if str(REPO_ROOT / "tools") not in sys.path:
     sys.path.insert(0, str(REPO_ROOT / "tools"))
 
-from tools.author_tree_oak import VoxelGrid, VARIANTS
+from tools.author_tree_oak import VoxelGrid, VARIANTS, main
 
 
 class AuthorTreeOakTests(unittest.TestCase):
     def test_cli_argument_defaults_to_all(self):
         """Ensure running without arguments defaults to authoring all variants."""
-        cmd = [
-            sys.executable,
-            "-c",
-            "import argparse, sys; "
-            "sys.path.insert(0, 'tools'); "
-            "from author_tree_oak import author_all; "
-            "parser = argparse.ArgumentParser(); "
-            "parser.add_argument('--variant', default='all'); "
-            "args = parser.parse_args([]); "
-            "assert args.variant == 'all', f'Expected all, got {args.variant}'; "
-            "print('OK')",
-        ]
-        res = subprocess.run(cmd, cwd=str(REPO_ROOT), capture_output=True, text=True, check=True)
-        self.assertIn("OK", res.stdout)
+        with patch('tools.author_tree_oak.author_all') as author:
+            main([])
+        author.assert_called_once_with(target_slug='all')
+
+    def test_cli_target_is_forwarded_to_real_author(self):
+        with patch('tools.author_tree_oak.author_all') as author:
+            main(['--variant', 'var_0_standard_oak'])
+        author.assert_called_once_with(target_slug='var_0_standard_oak')
 
     def test_variants_list_contains_all_five_slots(self):
         """Ensure all 5 slots (var_0..var_4) are registered in VARIANTS."""

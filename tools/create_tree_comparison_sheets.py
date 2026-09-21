@@ -55,7 +55,7 @@ def create_family_comparison() -> Path:
     canvas.paste(ref_resized, (ref_x, ref_y))
     draw.text(
         (ref_x + 10, pad + 15),
-        "APPROVED CONCEPT REFERENCE (Cube Siege Oak Tree Family — slots 0..4)",
+        "CONCEPT REFERENCE (approval recorded separately) (Cube Siege Oak Tree Family — slots 0..4)",
         fill=(240, 240, 240),
         font=font_large,
     )
@@ -66,7 +66,7 @@ def create_family_comparison() -> Path:
     canvas.paste(contact_resized, (contact_x, contact_y))
     draw.text(
         (contact_x + 10, pad + 15),
-        "3D VOXEL PRODUCTION LINEUP (Standard, Tall, Broad, Young, Shrub)",
+        "3D VOXEL RENDER LINEUP (Standard, Tall, Broad, Young, Shrub)",
         fill=(240, 240, 240),
         font=font_large,
     )
@@ -127,6 +127,8 @@ def create_variants_comparison() -> Path:
         y_bot = header_h + pad + cell_h + label_h + pad
         draw.text((x + 8, y_bot - 22), f"3D VOXEL: {slug}", fill=(210, 210, 210), font=font)
         iso_path = FAMILY_DIR / slug / "review" / "iso.png"
+        if not iso_path.is_file():
+            raise FileNotFoundError(f"Missing required review input: {iso_path}")
         if iso_path.exists():
             iso_img = Image.open(iso_path).convert("RGB")
             iso_img.thumbnail((cell_w, cell_h), Image.Resampling.LANCZOS)

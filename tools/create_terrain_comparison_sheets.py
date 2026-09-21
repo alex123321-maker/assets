@@ -98,6 +98,8 @@ def create_comparison_sheet() -> Path:
         draw.text((x + 12, y), "1. SOURCE TEXTURE (16x16 NEAREST)", fill=(200, 215, 230), font=font)
         y += 18
         tex_path = TEXTURES_DIR / f"{mat['tex_name']}.png"
+        if not tex_path.is_file():
+            raise FileNotFoundError(f"Missing required review input: {tex_path}")
         if tex_path.exists():
             t_img = Image.open(tex_path).convert("RGB")
             t_up = t_img.resize((tex_h - 20, tex_h - 20), Image.Resampling.NEAREST)
@@ -110,6 +112,8 @@ def create_comparison_sheet() -> Path:
         draw.text((x + 12, y), "2. 6x6 TILEABILITY TEST (SEAMLESS)", fill=(200, 215, 230), font=font)
         y += 18
         tile_path = REVIEW_DIR / f"tileability_{mat['tex_name']}.png"
+        if not tile_path.is_file():
+            raise FileNotFoundError(f"Missing required review input: {tile_path}")
         if tile_path.exists():
             tile_img = Image.open(tile_path).convert("RGB")
             # Crop out inner tile area
@@ -124,6 +128,8 @@ def create_comparison_sheet() -> Path:
         draw.text((x + 12, y), "3. 3D VOXEL SHOWCASE BLOCK (ISO)", fill=(200, 215, 230), font=font)
         y += 18
         iso_path = TERRAIN_DIR / mat["slug"] / "review" / "iso.png"
+        if not iso_path.is_file():
+            raise FileNotFoundError(f"Missing required review input: {iso_path}")
         if iso_path.exists():
             iso_img = Image.open(iso_path).convert("RGBA")
             iso_resized = iso_img.resize((block_h - 30, block_h - 30), Image.Resampling.LANCZOS)
@@ -169,6 +175,8 @@ def create_contact_sheet() -> Path:
         vw = 120
         for v in views:
             v_path = TERRAIN_DIR / mat["slug"] / "review" / v
+            if not v_path.is_file():
+                raise FileNotFoundError(f"Missing required review input: {v_path}")
             if v_path.exists():
                 v_img = Image.open(v_path).convert("RGBA")
                 v_resized = v_img.resize((vw, vw), Image.Resampling.LANCZOS)
@@ -178,6 +186,8 @@ def create_contact_sheet() -> Path:
 
         # 16x16 texture
         t_path = TEXTURES_DIR / f"{mat['tex_name']}.png"
+        if not t_path.is_file():
+            raise FileNotFoundError(f"Missing required review input: {t_path}")
         if t_path.exists():
             t_img = Image.open(t_path).convert("RGBA")
             t_up = t_img.resize((90, 90), Image.Resampling.NEAREST)
@@ -187,6 +197,8 @@ def create_contact_sheet() -> Path:
 
         # 6x6 preview mini
         tile_path = REVIEW_DIR / f"tileability_{mat['tex_name']}.png"
+        if not tile_path.is_file():
+            raise FileNotFoundError(f"Missing required review input: {tile_path}")
         if tile_path.exists():
             tile_img = Image.open(tile_path).convert("RGB").crop((0, 44, 576, 620))
             tile_mini = tile_img.resize((90, 90), Image.Resampling.NEAREST)
@@ -198,6 +210,8 @@ def create_contact_sheet() -> Path:
 
     # Right side top: In-game gameplay camera mockup
     mockup_path = REVIEW_DIR / "gameplay_mockup.png"
+    if not mockup_path.is_file():
+        raise FileNotFoundError(f"Missing required review input: {mockup_path}")
     if mockup_path.exists():
         draw.rectangle([(1210, 100), (W - 30, 100 + 440)], fill=(30, 36, 46), outline=(48, 56, 68))
         draw.text((1225, 115), "GAMEPLAY CAMERA CONTEXT (TRUE ISOMETRIC 45 deg / 35 deg)", fill=(255, 255, 255), font=font)
@@ -209,6 +223,8 @@ def create_contact_sheet() -> Path:
 
     # Right side bottom: Texture Atlas
     atlas_path = TEXTURES_DIR / "terrain_atlas.png"
+    if not atlas_path.is_file():
+        raise FileNotFoundError(f"Missing required review input: {atlas_path}")
     if atlas_path.exists():
         draw.rectangle([(1210, 560), (W - 30, 890)], fill=(30, 36, 46), outline=(48, 56, 68))
         draw.text((1225, 575), "UNIFIED TERRAIN ATLAS (64x64 RGBA8)", fill=(255, 255, 255), font=font)
@@ -238,18 +254,18 @@ def create_contact_sheet() -> Path:
 
     # Bottom Banner: Specifications & Metrics Summary
     draw.rectangle([(30, 915), (W - 30, H - 30)], fill=(28, 34, 44), outline=(48, 56, 68))
-    draw.text((50, 935), "QUALITY BAR & ACCEPTANCE CRITERIA STATUS", fill=(255, 255, 255), font=font)
+    draw.text((50, 935), "REVIEW CHECKLIST - NOT AUTOMATICALLY EVALUATED", fill=(255, 255, 255), font=font)
     checks = [
-        "[PASS] 4 Required terrain surfaces (Forest, Plains, Mountain, Cliff) + Soil accent authored & exported",
-        "[PASS] Forest, Plains, and Mountain clearly distinct from isometric camera distance",
-        "[PASS] Mountain stone and Cliff side 100% color-calibrated with Destructible Rock Family (#3)",
-        "[PASS] Forest grass 100% calibrated with Oak Tree foliage palette (#5)",
-        "[PASS] Zero regular procedural stripe pattern (eliminated old prototype stripe artifacts)",
-        "[PASS] Zero photorealistic fine noise; chunky stylized 16x16 texels survive camera distance",
-        "[PASS] 6x6 Tileability mathematically and visually verified with zero border seams",
-        "[PASS] Godot 4.x StandardMaterial3D (.tres) text resources with TEXTURE_FILTER_NEAREST generated",
-        "[PASS] Unified 64x64 Texture Atlas provided for single draw-call batched chunk meshes",
-        "[PASS] All 5 voxel static showcase packages pass CI asset validation (validate_all.py)",
+        "[REVIEW] Are all requested surfaces and exports present?",
+        "[REVIEW] Are biomes distinguishable at the intended camera distance?",
+        "[REVIEW] Compare stone colors with the rock family under the same lighting.",
+        "[REVIEW] Compare grass and foliage palettes without assuming a match.",
+        "[REVIEW] Inspect repetition and stripes in the tiled previews.",
+        "[REVIEW] Inspect small-scale texture noise from the game camera.",
+        "[REVIEW] Run seam measurements and inspect tile boundaries.",
+        "[REVIEW] Verify material resources and filtering in the target engine.",
+        "[REVIEW] Measure draw calls in-engine; an atlas alone does not prove batching.",
+        "[REVIEW] Read validation results from the current build/CI logs.",
     ]
     cy = 960
     for chk in checks:
@@ -291,7 +307,7 @@ def create_reference_vs_3d_comparison() -> Path:
 
     draw.rectangle([(0, 0), (total_w, header_h)], fill=(16, 18, 24))
     draw.text((pad + 10, 18), "CUBE SIEGE TERRAIN MATERIALS: CONCEPT REFERENCE VS 3D GAMEPLAY PRODUCTION", fill=(255, 255, 255), font=font)
-    draw.text((pad + 10, 42), "LEFT: APPROVED VISUAL SPECIFICATION & PALETTES | RIGHT: 3D GAMEPLAY CAMERA RENDER", fill=(170, 185, 205), font=font)
+    draw.text((pad + 10, 42), "LEFT: REFERENCE (approval recorded separately) | RIGHT: 3D MOCKUP", fill=(170, 185, 205), font=font)
 
     # Left: Reference
     canvas.paste(ref_resized, (pad, header_h + pad))
@@ -335,6 +351,8 @@ def generate_metrics_summary() -> Path:
 
     for mat in MATERIALS:
         m_file = TERRAIN_DIR / mat["slug"] / "review" / "metrics.json"
+        if not m_file.is_file():
+            raise FileNotFoundError(f"Missing required review input: {m_file}")
         if m_file.exists():
             data = json.loads(m_file.read_text(encoding="utf-8"))
             metrics["showcase_blocks"][mat["slug"]] = {

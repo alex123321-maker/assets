@@ -85,6 +85,8 @@ class QualityGateTests(unittest.TestCase):
         script = (
             "from pathlib import Path\nfrom PIL import Image\n"
             "p = Path('assets/props/test')\n"
+            "(p / 'output').mkdir(parents=True, exist_ok=True)\n"
+            "(p / 'review').mkdir(parents=True, exist_ok=True)\n"
             "assert (p / 'source/model.txt').read_text() == 'canonical'\n"
             f"(p / 'output/model.glb').write_bytes({raw!r})\n"
             "Image.new('RGB', (16,16), 'blue').save(p / 'review/iso.png')\n"
@@ -94,6 +96,10 @@ class QualityGateTests(unittest.TestCase):
         self.build()
         q.check(self.root, self.pkg)
         self.assertTrue((self.pkg / "review/evidence.json").exists())
+        with contextlib.redirect_stdout(io.StringIO()):
+            report = q.verify_clean(self.root, self.pkg)
+        self.assertEqual(report['regenerated_artifacts'], 3)
+        self.assertEqual(report['byte_different_artifacts'], [])
 
     def test_visual_review_pass_and_preservation(self):
         self.reviewed()
@@ -154,6 +160,107 @@ class QualityGateTests(unittest.TestCase):
     def test_build_must_not_rewrite_request(self):
         (self.root / "builder.py").write_text("from pathlib import Path\nPath('assets/props/test/request.md').write_text('changed')\n")
         with self.assertRaisesRegex(q.QualityError, "changed its inputs"):
+            self.build()
+
+    def test_failed_preflight_removes_old_receipt(self):
+        self.build()
+        self.contract['commands'] = []
+        self.save_contract()
+        with self.assertRaises(q.QualityError):
+            self.build()
+        self.assertFalse((self.pkg / 'review/evidence.json').exists())
+
+    def test_blender_script_failures_must_propagate_to_gate(self):
+        for options in ([], ['--python-exit-code', '0'], ['--python-exit-code', '256']):
+            self.contract['commands'] = [['blender', *options, '--python', 'builder.py']]
+            self.save_contract()
+            with self.assertRaisesRegex(q.QualityError, 'python-exit-code'):
+                q.load_contract(self.root, self.pkg)
+        self.contract['commands'] = [['blender', '--python-exit-code', '1', '--python', 'builder.py']]
+        self.save_contract()
+        q.load_contract(self.root, self.pkg)
+        self.contract['commands'] = [['blender', '--python', 'builder.py', '--python-exit-code', '1']]
+        self.save_contract()
+        with self.assertRaisesRegex(q.QualityError, 'python-exit-code'):
+            q.load_contract(self.root, self.pkg)
+
+    def test_build_cannot_write_or_fabricate_visual_reviews(self):
+        for filename in ('visual_review.json', 'review.md'):
+            path = self.pkg / 'review' / filename
+            for original in (None, b'Original independent observation'):
+                if original is None:
+                    path.unlink(missing_ok=True)
+                else:
+                    path.write_bytes(original)
+                (self.root / 'builder.py').write_text(
+                    f"from pathlib import Path\nPath('assets/props/test/review/{filename}').write_text('PASS')\n")
+                with self.assertRaisesRegex(q.QualityError, 'protected reviews'):
+                    self.build()
+                self.assertEqual(path.read_bytes() if path.exists() else None, original)
+                self.assertFalse((self.pkg / 'review/evidence.json').exists())
+
+    def test_clean_verification_rejects_noop_recipe_without_touching_original(self):
+        self.build()
+        original = (self.pkg / 'output/model.glb').read_bytes()
+        receipt = (self.pkg / 'review/evidence.json').read_bytes()
+        with self.assertRaisesRegex(q.QualityError, 'Empty|Missing'):
+            q.verify_clean(self.root, self.pkg)
+        self.assertEqual((self.pkg / 'output/model.glb').read_bytes(), original)
+        self.assertEqual((self.pkg / 'review/evidence.json').read_bytes(), receipt)
+
+    def test_clean_verification_rejects_color_drift_despite_same_geometry(self):
+        raw = (self.pkg / 'output/model.glb').read_bytes()
+        for color in ((255, 0, 0), (0, 129, 0)):
+            with self.subTest(color=color):
+                self.output()
+                (self.root / 'builder.py').write_text(
+                    "from pathlib import Path\nfrom PIL import Image\n"
+                    "p=Path('assets/props/test')\n"
+                    "(p/'output').mkdir(parents=True,exist_ok=True)\n"
+                    "(p/'review').mkdir(parents=True,exist_ok=True)\n"
+                    f"(p/'output/model.glb').write_bytes({raw!r})\n"
+                    "(p/'review/metrics.json').write_text('{\"triangles\": 2}')\n"
+                    "if not (p/'review/iso.png').exists():\n"
+                    f"    Image.new('RGB',(12,12),{color!r}).save(p/'review/iso.png')\n")
+                self.build()
+                with contextlib.redirect_stdout(io.StringIO()), self.assertRaisesRegex(q.QualityError, 'rounding tolerance'):
+                    q.verify_clean(self.root, self.pkg)
+
+    def test_used_metrics_cannot_be_omitted(self):
+        self.contract['artifacts'].remove(f'{self.prefix}/review/metrics.json')
+        self.save_contract()
+        with self.assertRaisesRegex(q.QualityError, 'Metrics used'):
+            self.build()
+
+    def test_reported_material_count_must_match_export(self):
+        q.write_json(self.pkg / 'review/metrics.json', {'triangles': 2, 'materials': 3})
+        with self.assertRaisesRegex(q.QualityError, 'material count disagrees'):
+            self.build()
+
+    def test_gate_checks_comparison_settings_and_dependencies(self):
+        name = f'{self.prefix}/review/comparison.json'
+        self.contract['artifacts'].append(name)
+        self.contract['comparisons'] = [name]
+        self.save_contract()
+        settings = dict(camera_matrix=[], ortho_scale=4, lights=[], world_color=[],
+                        resolution=[12, 12], color_management={}, engine='fixture', blender_version='fixture')
+        row = dict(source=f'{self.prefix}/source/model.txt',
+                   source_sha256=q.file_hash(self.pkg / 'source/model.txt'),
+                   image=f'{self.prefix}/review/iso.png',
+                   image_sha256=q.file_hash(self.pkg / 'review/iso.png'), settings=settings)
+        pair = {'version': 1, 'before': row, 'after': dict(row, settings=dict(settings, ortho_scale=5))}
+        q.write_json(self.root / name, pair)
+        with self.assertRaisesRegex(q.QualityError, 'settings differ'):
+            self.build()
+        pair['after'] = row
+        q.write_json(self.root / name, pair)
+        self.build()
+        q.check(self.root, self.pkg)
+        outside = self.root / 'undeclared.txt'
+        outside.write_text('canonical')
+        pair['after'] = dict(row, source='undeclared.txt', source_sha256=q.file_hash(outside))
+        q.write_json(self.root / name, pair)
+        with self.assertRaisesRegex(q.QualityError, 'tracked inputs'):
             self.build()
 
     def test_reference_approval_and_hash(self):
@@ -256,6 +363,39 @@ class QualityGateTests(unittest.TestCase):
         (self.pkg / "review/visual_review.json").write_text((self.pkg / "review/visual_review.json").read_text() + "\n")
         with self.assertRaisesRegex(q.QualityError, "differs"):
             q.packet(self.root, self.pkg, "HEAD", "owner/repo")
+
+    def test_draft_packet_can_report_failure_without_weakening_acceptance(self):
+        self.reviewed()
+        path = self.pkg / 'review/visual_review.json'
+        review = q.read_json(path)
+        review['criteria'][0].update(status='fail', observation='Two masses merge in ISO')
+        q.write_json(path, review)
+        run = self.init_git()
+        run('add', '.')
+        run('commit', '-qm', 'honest failed self-review')
+        with self.assertRaises(q.QualityError):
+            q.check(self.root, self.pkg, True)
+        with self.assertRaises(q.QualityError):
+            q.packet(self.root, self.pkg, 'HEAD', 'owner/repo')
+        text = q.packet(self.root, self.pkg, 'HEAD', 'owner/repo', draft=True)
+        self.assertIn('DRAFT', text)
+        self.assertIn('**fail**', text)
+        self.assertIn('**mockup_only**', text)
+
+    def test_draft_still_rejects_stale_evidence(self):
+        self.reviewed()
+        (self.pkg / 'source/model.txt').write_text('changed')
+        with self.assertRaisesRegex(q.QualityError, 'STALE BUILD'):
+            q.check(self.root, self.pkg, True, draft=True)
+
+    def test_null_observation_is_not_a_review(self):
+        self.reviewed()
+        path = self.pkg / 'review/visual_review.json'
+        review = q.read_json(path)
+        review['criteria'][0]['observation'] = None
+        q.write_json(path, review)
+        with self.assertRaisesRegex(q.QualityError, 'observation'):
+            q.check(self.root, self.pkg, True)
 
     def test_new_packages_required_but_legacy_untouched(self):
         (self.pkg / "quality.json").unlink()
