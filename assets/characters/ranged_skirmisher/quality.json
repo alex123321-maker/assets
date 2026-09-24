@@ -42,6 +42,7 @@
     "assets/characters/ranged_skirmisher/review/top.png",
     "assets/characters/ranged_skirmisher/review/iso.png",
     "assets/characters/ranged_skirmisher/review/gameplay.png",
+    "assets/characters/ranged_skirmisher/review/gameplay_night.png",
     "assets/characters/ranged_skirmisher/review/silhouette.png",
     "assets/characters/ranged_skirmisher/review/material_closeup.png",
     "assets/characters/ranged_skirmisher/review/anim_idle.png",
@@ -81,6 +82,15 @@
       ]
     },
     {
+      "id": "skirmisher_day_and_night_readability",
+      "target": "Материалы скелета-лучника (состаренная кость, темные суставы, потертая кожа капюшона/колчана, древесина лука и тетива) отчетливо читаются и разделяются как при дневном, так и при ночном лунном освещении (gameplay_night.png).",
+      "evidence": [
+        "assets/characters/ranged_skirmisher/review/gameplay.png",
+        "assets/characters/ranged_skirmisher/review/gameplay_night.png",
+        "assets/characters/ranged_skirmisher/review/material_closeup.png"
+      ]
+    },
+    {
       "id": "skirmisher_animations_completeness",
       "target": "Пакет содержит 5 обязательных анимаций (idle, move, attack, hit, death): в анимации атаки присутствует читаемая подготовка (замах/дотягивание до колчана), натяжение тетивы к щеке, спуск стрелы (фрейм 25) и отдача.",
       "evidence": [
@@ -93,7 +103,7 @@
     },
     {
       "id": "skirmisher_mesh_and_budget",
-      "target": "Единый меш Body экспортирован с bottom-center пивотом (0,0,0), полигонаж в пределах бюджета (420 треугольников <= 1000), 6 материалов, 23 кости арматуры включая сокеты лука и стрелы.",
+      "target": "Единый меш Body экспортирован с bottom-center пивотом (0,0,0), полигонаж в пределах бюджета (948 треугольников <= 1000), 6 материалов, 23 кости арматуры включая сокеты лука и стрелы.",
       "evidence": [
         "assets/characters/ranged_skirmisher/review/front.png",
         "assets/characters/ranged_skirmisher/review/iso.png"

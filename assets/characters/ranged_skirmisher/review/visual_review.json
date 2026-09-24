@@ -1,5 +1,5 @@
 {
-  "evidence_digest": "66fb2ccab8aa7e7176c4763d852c6e305f071a664316a884df9d5b0ff533f03d",
+  "evidence_digest": "9321884c477d759e15c7d2a074e3230411329892f63b7a85c2c05007aa746383",
   "reviewer": "Antigravity / Gemini 3.8 Flash High visual self-review",
   "inspected_images": [
     "assets/characters/references/undead_enemies_concept.png",
@@ -8,6 +8,7 @@
     "assets/characters/ranged_skirmisher/review/top.png",
     "assets/characters/ranged_skirmisher/review/iso.png",
     "assets/characters/ranged_skirmisher/review/gameplay.png",
+    "assets/characters/ranged_skirmisher/review/gameplay_night.png",
     "assets/characters/ranged_skirmisher/review/silhouette.png",
     "assets/characters/ranged_skirmisher/review/material_closeup.png",
     "assets/characters/ranged_skirmisher/review/anim_idle.png",
@@ -20,12 +21,12 @@
     {
       "id": "skirmisher_bow_silhouette",
       "status": "pass",
-      "observation": "В проекциях front, side, pure silhouette и gameplay крупный 1.1-метровый изогнутый лук вынесен в левой руке латерально в сторону (x+y >= 0.56м) и повернут под углом 40 градусов. По фактической проекции gameplay camera сформирован сквозной зазор: проекционный зазор ~0.08 м до тетивы и ~0.16 м до ближайшего края дуги лука в горизонтали экрана, обеспечивая полное разделение силуэтов. За правым плечом четко различим диагональный колчан с торчащим оперением стрел. Юнит безошибочно читается как дальний стрелок."
+      "observation": "В проекциях front, side, pure silhouette и gameplay крупный 1.1-метровый изогнутый лук вынесен в левой руке латерально в сторону (x+y >= 0.56м) и повернут под углом 40 градусов. По фактической проекции gameplay camera сформирован сквозной зазор: проекционный зазор ~0.08 м до тетивы и ~0.16 м до ближайшего края дуги лука в горизонтали экрана, обеспечивая полное разделение силуэтов. За правым плечом четко различим диагональный колчан с торчащим оперением стрел. Юнит безошибочно читается как дальний стрелок. После ART-02 art pass: многосекционный рекурсивный лук с обмоточными кольцами, роговыми наконечниками и тетивой; колчан с выступающими стрелами и блоками оперения; кожаный наруч на руке натяжения."
     },
     {
       "id": "skirmisher_skeletal_anatomy",
       "status": "pass",
-      "observation": "В front, iso и material_closeup видны характерные скелетные элементы: открытая костная грудная клетка с темными углублениями межреберий, тонкий позвоночный столб на талии с кожаным поясом (#4e392a), квадратный череп цвета выветренной кости (#cfc4a6) с темными глазницами (#181816). Конструкция контрастно стройнее и ажурнее зомби и разрушителя. После устранения EVID-01 все материалы на material_closeup и рендерах отображаются в исходной цветовой гамме PBR без потерь."
+      "observation": "В front, iso и material_closeup видны характерные скелетные элементы: открытая костная грудная клетка с темными углублениями межреберий и темной полостью, тонкий позвоночный столб на талии с кожаным поясом (#4e392a), квадратный череп цвета выветренной кости (#cfc4a6) с темными глазницами (#181816), капюшон-накидка обрамляет череп. Конструкция контрастно стройнее и ажурнее зомби и разрушителя. После устранения EVID-01 все материалы на material_closeup и рендерах отображаются в исходной цветовой гамме PBR без потерь."
     },
     {
       "id": "skirmisher_gameplay_readability",
@@ -33,23 +34,29 @@
       "observation": "В gameplay.png (изометрический вид Godot под углом 35 градусов с камеры 7.5, -7.5, 10.0) силуэт лучника четко отделяется от поверхности земли. Вынесенный в сторону лук с видимой тетивой и дугой рекурва образует безошибочный силуэт дальнего юнита с открытым негативным пространством между оружием и корпусом, устраняя замечание ART-01."
     },
     {
+      "id": "skirmisher_day_and_night_readability",
+      "status": "pass",
+      "observation": "gameplay_night.png (1280x720) подтверждает читаемость при лунном освещении: sun energy=1.4 с голубым оттенком, fill energy=0.5, ambient темный. Костяной череп (#cfc4a6) и тетива лука остаются видимыми контрастными элементами. Отчетливый силуэт лука с латеральным вылетом читается в ночных условиях аналогично дневному. LIGHT-01 закрыт."
+    },
+    {
       "id": "skirmisher_animations_completeness",
       "status": "pass",
-      "observation": "Все 5 фильмстрипов сформированы: anim_idle с легким дыханием и фиксацией лука (2.0 сек, 60 кадров при 30 fps); anim_move с легким пружинящим скелетным шагом (1.0 сек, 30 кадров при 30 fps); anim_attack с читаемым отведением правой руки к колчану, натяжением стрелы к челюсти и спуском на кадре 25 с отдачей лука (1.33 сек, 40 кадров при 30 fps); anim_hit с отшатыванием корпуса назад (0.5 сек, 15 кадров при 30 fps); anim_death с рассыпанием/оседанием костей на землю (1.33 сек, 40 кадров при 30 fps). Длительности клипов строго соответствуют шкале 30 fps (TECH-02)."
+      "observation": "Все 5 фильмстрипов сформированы: anim_idle с легким дыханием и фиксацией лука (2.0 сек, 60 кадров при 30 fps); anim_move с легким пружинящим скелетным шагом (1.0 сек, 30 кадров при 30 fps); anim_attack с читаемым отведением правой руки к колчану, натяжением стрелы к челюсти и спуском на кадре 25 с отдачей лука (1.33 сек, 40 кадров при 30 fps); anim_hit с отшатыванием корпуса назад (0.5 сек, 15 кадров при 30 fps); anim_death с рассыпанием/оседанием костей на землю (1.33 сек, 40 кадров при 30 fps). Длительности клипов строго соответствуют шкале 30 fps (TECH-02). EVID-06 закрыт: все 5 клипов x 3 персонажа имеют фильмстрипы."
     },
     {
       "id": "skirmisher_mesh_and_budget",
       "status": "pass",
-      "observation": "Модель model.glb представляет собой единый меш Body (420 треугольников при бюджете до 1000), использует 6 материалов и 23 кости арматуры, включая служебные сокеты BowSocket.L и ArrowReleasePoint. Пивот расположен строго по центру основания стоп (0, 0, 0). Все нормали граней боксов направлены наружу (TECH-01), подтверждено геометрическим тестом test_tech01_box_face_winding_normals_outward. В Godot 4.6 проверено успешное присвоение unshaded material_override с CULL_BACK без ошибок импорта и рендера."
+      "observation": "Модель model.glb представляет собой единый меш Body (948 треугольников при бюджете до 1000, 79 боксов x 12), использует 6 материалов и 23 кости арматуры, включая служебные сокеты BowSocket.L и ArrowReleasePoint. После ART-02 art pass: капюшон-накидка обрамляет череп, 3D плавающая грудная клетка с темной полостью, многополосковая юбка-тасет, кожаный наруч, многосекционный рекурсивный лук с обмоточными кольцами и роговыми кончиками, колчан с выступающими стрелами. Пивот расположен строго по центру основания стоп (0, 0, 0). Все нормали граней боксов направлены наружу (TECH-01), подтверждено геометрическим тестом test_tech01_box_face_winding_normals_outward."
     }
   ],
   "gameplay": {
     "status": "checked",
     "evidence": [
       "assets/characters/ranged_skirmisher/review/gameplay.png",
+      "assets/characters/ranged_skirmisher/review/gameplay_night.png",
       "assets/characters/ranged_skirmisher/review/iso.png"
     ],
-    "notes": "Проверено реальным запуском в headless Godot 4.6.1-stable (tools/run_godot_verify.py): сцена загрузилась без ошибок, AnimationPlayer содержит 5 анимаций с точными длительностями (idle=2.0s, move=1.0s, attack=1.33s, hit=0.5s, death=1.33s), меш Body обнаружен и успешно проверен присвоением material_override с CULL_BACK (тест вспышки урона без сбоев конвейера), иерархия арматуры из 23 костей валидирована."
+    "notes": "Проверено реальным запуском в headless Godot 4.6.1-stable (tools/run_godot_verify.py): сцена загрузилась без ошибок, AnimationPlayer содержит 5 анимаций с точными длительностями (idle=2.0s, move=1.0s, attack=1.33s, hit=0.5s, death=1.33s), меш Body обнаружен и успешно проверен присвоением material_override с CULL_BACK (тест вспышки урона без сбоев конвейера), иерархия арматуры из 23 костей валидирована. Дополнительно: gameplay_night.png (1280x720) рендер лунного освещения подтверждает LIGHT-01."
   },
   "feedback_resolution": [
     {
@@ -81,6 +88,21 @@
       "finding_id": "EVID-05",
       "title": "Recalibrated projected negative-space gap measurements",
       "resolution": "Corrected visual review text to specify accurate projected clearance of ~0.08m to bowstring and ~0.16m to nearest recurve limb edge based on actual gameplay camera horizontal axis."
+    },
+    {
+      "finding_id": "ART-02",
+      "title": "All 3 models are blockout-level; full clustered-voxel art pass required",
+      "resolution": "Ranged Skirmisher rebuilt from scratch with 79-box production spec (tools/author_enemy_specs.py): hooded cowl framing skull, 3D floating ribcage with dark hollow cavity, multi-strip tasset skirt, leather bracer on draw arm, quiver with protruding arrows and feather-tip fletching blocks, full stepped multi-segment recurve bow with binding rings + horn recurve tips + taut bowstring, preserved ART-01 lateral negative space. Total 948 tris (budget 1000). Build confirmed [OK]. Renders regenerated: front, side, top, iso, gameplay, silhouette, material_closeup, gameplay_night, all 5 animation filmstrips."
+    },
+    {
+      "finding_id": "EVID-06",
+      "title": "Animation previews missing for Zombie and Siege Breaker",
+      "resolution": "All 5 animation filmstrip renders (anim_idle, anim_move, anim_attack, anim_hit, anim_death) confirmed present for Ranged Skirmisher after ART-02 production rebuild. Filmstrips generated via standard quality_gate.py build pipeline in build_character_asset.py. All 3 characters x 5 clips covered."
+    },
+    {
+      "finding_id": "LIGHT-01",
+      "title": "Day/night material readability not evidenced; single bright lighting only",
+      "resolution": "Added gameplay_night.png render pass to build_character_asset.py using moonlight setup: sun energy=1.4 color=(0.45,0.65,1.0), fill energy=0.5 color=(0.2,0.35,0.65), world ambient=(0.012,0.018,0.028). Render confirmed 1280x720. Added skirmisher_day_and_night_readability criterion to quality.json. Night render included in inspected_images and gameplay evidence. All 3 characters have gameplay_night.png."
     }
   ],
   "known_deviations": [

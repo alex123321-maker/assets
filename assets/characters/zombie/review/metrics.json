@@ -1,6 +1,6 @@
 {
   "character": "zombie",
-  "triangles": 432,
+  "triangles": 972,
   "materials": 5,
   "bones": 22,
   "animations": [
@@ -45,12 +45,12 @@
     }
   },
   "dimensions": {
-    "x": 1.182,
-    "y": 1.078,
-    "z": 1.747
+    "x": 1.198,
+    "y": 1.03,
+    "z": 1.729
   },
   "pivot": "bottom-center (0, 0, 0)",
-  "glb_size_bytes": 121580,
+  "glb_size_bytes": 172396,
   "blender_version": "5.2.1 LTS",
   "render_engine": "BLENDER_EEVEE"
 }

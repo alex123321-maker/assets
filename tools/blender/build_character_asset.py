@@ -797,6 +797,29 @@ def build_and_render_package(asset_dir: Path):
     ground.hide_render = False
     render_camera_view(review_dir / "gameplay.png", cam, Vector((7.5, -7.5, 10.0)), center, ortho=False, scale_or_fov=45.0, res=(1280, 720))
 
+    # Night Gameplay (Cool moonlight + low ambient to verify material separation under night conditions - LIGHT-01)
+    sun_obj = bpy.data.objects.get("Sun")
+    fill_obj = bpy.data.objects.get("Fill")
+    orig_sun_energy = sun_obj.data.energy
+    orig_sun_color = tuple(sun_obj.data.color)
+    orig_fill_energy = fill_obj.data.energy
+    orig_fill_color = tuple(fill_obj.data.color)
+    orig_world_color = tuple(scene.world.color)
+
+    sun_obj.data.energy = 1.4
+    sun_obj.data.color = (0.45, 0.65, 1.0)
+    fill_obj.data.energy = 0.5
+    fill_obj.data.color = (0.2, 0.35, 0.65)
+    scene.world.color = (0.012, 0.018, 0.028)
+
+    render_camera_view(review_dir / "gameplay_night.png", cam, Vector((7.5, -7.5, 10.0)), center, ortho=False, scale_or_fov=45.0, res=(1280, 720))
+
+    sun_obj.data.energy = orig_sun_energy
+    sun_obj.data.color = orig_sun_color
+    fill_obj.data.energy = orig_fill_energy
+    fill_obj.data.color = orig_fill_color
+    scene.world.color = orig_world_color
+
     # Silhouette (pure black against pure white, shadows hidden)
     # Record original polygon material indices to guarantee non-destructive pass (EVID-01)
     original_polygon_mat_indices = [p.material_index for p in mesh_obj.data.polygons]

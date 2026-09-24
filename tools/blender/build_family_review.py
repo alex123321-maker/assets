@@ -180,6 +180,28 @@ def main():
     bpy.ops.render.render(write_still=True)
     print("Rendered family_lineup_gameplay.png")
 
+    # 3b. Night Gameplay Lineup (Cool moonlight + low ambient - LIGHT-01)
+    sun_obj = bpy.data.objects.get("Sun")
+    fill_obj = bpy.data.objects.get("Fill")
+    orig_sun_energy = sun_obj.data.energy
+    orig_sun_color = tuple(sun_obj.data.color)
+    orig_fill_energy = fill_obj.data.energy
+    orig_fill_color = tuple(fill_obj.data.color)
+
+    sun_obj.data.energy = 1.4
+    sun_obj.data.color = (0.45, 0.65, 1.0)
+    fill_obj.data.energy = 0.5
+    fill_obj.data.color = (0.2, 0.35, 0.65)
+
+    scene.render.filepath = str(OUT_DIR / "family_lineup_gameplay_night.png")
+    bpy.ops.render.render(write_still=True)
+    print("Rendered family_lineup_gameplay_night.png")
+
+    sun_obj.data.energy = orig_sun_energy
+    sun_obj.data.color = orig_sun_color
+    fill_obj.data.energy = orig_fill_energy
+    fill_obj.data.color = orig_fill_color
+
     # 4. Pure Silhouette Test (Black silhouettes on white background)
     guides.hide_render = True
     ground.hide_render = True

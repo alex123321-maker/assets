@@ -42,6 +42,7 @@
     "assets/characters/zombie/review/top.png",
     "assets/characters/zombie/review/iso.png",
     "assets/characters/zombie/review/gameplay.png",
+    "assets/characters/zombie/review/gameplay_night.png",
     "assets/characters/zombie/review/silhouette.png",
     "assets/characters/zombie/review/material_closeup.png",
     "assets/characters/zombie/review/anim_idle.png",
@@ -92,8 +93,17 @@
       ]
     },
     {
+      "id": "zombie_day_and_night_readability",
+      "target": "Материалы зомби (некротическая плоть, рваная ткань, костные зубы/ребра) четко разделяются и читаются как при дневном, так и при ночном лунном освещении (gameplay_night.png).",
+      "evidence": [
+        "assets/characters/zombie/review/gameplay.png",
+        "assets/characters/zombie/review/gameplay_night.png",
+        "assets/characters/zombie/review/material_closeup.png"
+      ]
+    },
+    {
       "id": "zombie_mesh_and_budget",
-      "target": "Единый меш Body экспортирован с bottom-center пивотом (0,0,0), полигонаж в пределах бюджета (432 треугольника <= 1000), 5 материалов, 22 кости арматуры.",
+      "target": "Единый меш Body экспортирован с bottom-center пивотом (0,0,0), полигонаж в пределах бюджета (972 треугольника <= 1000), 5 материалов, 22 кости арматуры.",
       "evidence": [
         "assets/characters/zombie/review/front.png",
         "assets/characters/zombie/review/iso.png"

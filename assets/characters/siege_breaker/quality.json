@@ -42,6 +42,7 @@
     "assets/characters/siege_breaker/review/top.png",
     "assets/characters/siege_breaker/review/iso.png",
     "assets/characters/siege_breaker/review/gameplay.png",
+    "assets/characters/siege_breaker/review/gameplay_night.png",
     "assets/characters/siege_breaker/review/silhouette.png",
     "assets/characters/siege_breaker/review/material_closeup.png",
     "assets/characters/siege_breaker/review/anim_idle.png",
@@ -81,6 +82,15 @@
       ]
     },
     {
+      "id": "siege_breaker_day_and_night_readability",
+      "target": "Материалы титана-разрушителя (сланцевая броня, металлические шипы/накладки, некротическая плоть, костяные бивни и красная кожа повязки) четко различимы и не сливаются с землей как при дневном, так и при ночном лунном освещении (gameplay_night.png).",
+      "evidence": [
+        "assets/characters/siege_breaker/review/gameplay.png",
+        "assets/characters/siege_breaker/review/gameplay_night.png",
+        "assets/characters/siege_breaker/review/material_closeup.png"
+      ]
+    },
+    {
       "id": "siege_breaker_animations_completeness",
       "target": "Пакет содержит 5 обязательных анимаций (idle, move, attack, hit, death): тяжелая атака включает мощный двуручный замах с поднятием кулаков выше головы без пересечения с наплечниками, сокрушительный удар в землю (контакт фрейм 28) и инерционное восстановление.",
       "evidence": [
@@ -93,7 +103,7 @@
     },
     {
       "id": "siege_breaker_mesh_and_budget",
-      "target": "Единый меш Body экспортирован с bottom-center пивотом (0,0,0), полигонаж в пределах бюджета (396 треугольников <= 1000), 5 материалов, 21 кость арматуры включая точку удара SmashPoint.",
+      "target": "Единый меш Body экспортирован с bottom-center пивотом (0,0,0), полигонаж в пределах бюджета (864 треугольника <= 1000), 5 материалов, 21 кость арматуры включая точку удара SmashPoint.",
       "evidence": [
         "assets/characters/siege_breaker/review/front.png",
         "assets/characters/siege_breaker/review/iso.png"

@@ -1,5 +1,5 @@
 {
-  "evidence_digest": "84d9d015f1cc42f69e59a9424d11f6e59c3dc153cc46bf8960c738254254ea0f",
+  "evidence_digest": "129df285c8961d383b70b2fa2b416befc60f2b52204be5f64f0fc22fa3c43d6a",
   "reviewer": "Antigravity / Gemini 3.8 Flash High visual self-review",
   "inspected_images": [
     "assets/characters/references/undead_enemies_concept.png",
@@ -8,6 +8,7 @@
     "assets/characters/zombie/review/top.png",
     "assets/characters/zombie/review/iso.png",
     "assets/characters/zombie/review/gameplay.png",
+    "assets/characters/zombie/review/gameplay_night.png",
     "assets/characters/zombie/review/silhouette.png",
     "assets/characters/zombie/review/material_closeup.png",
     "assets/characters/zombie/review/anim_idle.png",
@@ -20,7 +21,7 @@
     {
       "id": "zombie_silhouette_and_posture",
       "status": "pass",
-      "observation": "В проекциях front, side и pure silhouette виден явный наклон вперед: позвоночник наклонен под 16 градусов, грудная клетка под 22 градуса. Голова вынесена вперед на шее, нижняя челюсть выступает за плоскость черепа. Обе руки согнуты в локтях и вытянуты вперед с читаемым зазором (негативным пространством) между предплечьями и грудью. На silhouette силуэт безошибочно читается как сутулый агрессивный милишник."
+      "observation": "В проекциях front, side и pure silhouette виден явный наклон вперед: позвоночник наклонен под 16 градусов, грудная клетка под 22 градуса. Голова вынесена вперед на шее, нижняя челюсть выступает за плоскость черепа. Обе руки согнуты в локтях и вытянуты вперед с читаемым зазором (негативным пространством) между предплечьями и грудью. На silhouette силуэт безошибочно читается как сутулый агрессивный милишник. После ART-02 art pass: ступенчатый 5-секционный череп (свод, надбровья, виски, носовой, скулы), открытые ребра, сегментированные руки с выступами локтевых капителей, 4-когтевые кисти и ступенчатая иерархия ног полностью соответствуют кластерно-воксельному уровню детализации концептарта."
     },
     {
       "id": "zombie_palette_and_materials",
@@ -33,23 +34,29 @@
       "observation": "В gameplay.png (камера Godot FOV 45, угол наклона 35 градусов) зомби четко отделяется от серых плит пола за счет зеленоватого оттенка и контрастной темной тени. Руки направлены в сторону движения, силуэт сутулой спины хорошо заметен сверху-сбоку. Контакт стоп с землей плоский и устойчивый."
     },
     {
+      "id": "zombie_day_and_night_readability",
+      "status": "pass",
+      "observation": "gameplay_night.png (1280x720) подтверждает читаемость при лунном освещении: sun energy=1.4 с голубым оттенком (0.45, 0.65, 1.0), fill energy=0.5, ambient (0.012, 0.018, 0.028). Шалфейно-зеленый тон плоти и коричневые лохмотья ткани различимы. Темные глазницы контрастируют с бледной костяной чертой черепа. Общий силуэт читается идентично дневному варианту. LIGHT-01 закрыт."
+    },
+    {
       "id": "zombie_animations_completeness",
       "status": "pass",
-      "observation": "Все 5 фильмстрипов сформированы: anim_idle показывает покачивание груди и головы (цикл 2.0 сек, 60 кадров при 30 fps); anim_move демонстрирует шагающий цикл с синхронным подъемом и опусканием ног и компенсацией наклона торса (1.0 сек, 30 кадров при 30 fps); anim_attack показывает замах правой руки назад, акцентированный удар вперед на кадре 20 и возврат (1.33 сек, 40 кадров при 30 fps); anim_hit показывает отброс торса назад на 18 градусов при попадании (0.5 сек, 15 кадров при 30 fps); anim_death показывает падение на колени и плашмя на землю (1.33 сек, 40 кадров при 30 fps). Длительности клипов строго соответствуют шкале 30 fps (TECH-02)."
+      "observation": "Все 5 фильмстрипов сформированы: anim_idle показывает покачивание груди и головы (цикл 2.0 сек, 60 кадров при 30 fps); anim_move демонстрирует шагающий цикл с синхронным подъемом и опусканием ног и компенсацией наклона торса (1.0 сек, 30 кадров при 30 fps); anim_attack показывает замах правой руки назад, акцентированный удар вперед на кадре 20 и возврат (1.33 сек, 40 кадров при 30 fps); anim_hit показывает отброс торса назад на 18 градусов при попадании (0.5 сек, 15 кадров при 30 fps); anim_death показывает падение на колени и плашмя на землю (1.33 сек, 40 кадров при 30 fps). Длительности клипов строго соответствуют шкале 30 fps (TECH-02). EVID-06 закрыт: все 5 клипов x 3 персонажа имеют фильмстрипы."
     },
     {
       "id": "zombie_mesh_and_budget",
       "status": "pass",
-      "observation": "Файл model.glb содержит единый меш Body (432 треугольника, при бюджете до 1000), 5 материалов и 22 кости арматуры. Пивот расположен строго по центру основания стоп (0, 0, 0). Все нормали граней боксов направлены строго наружу (TECH-01), подтверждено геометрическим тестом test_tech01_box_face_winding_normals_outward. В Godot 4.6 проверено успешное присвоение unshaded material_override с CULL_BACK без ошибок импорта и рендера."
+      "observation": "Файл model.glb содержит единый меш Body (972 треугольника при бюджете до 1000, 81 бокс x 12), 5 материалов и 22 кости арматуры. После ART-02 art pass: ступенчатый череп из 5 секций, открытые ребра грудной клетки, сегментированные руки с выступающими костяными локтями, 4-когтевые кисти, ступенчатые ноги с блоками пальцев. Пивот расположен строго по центру основания стоп (0, 0, 0). Все нормали граней боксов направлены строго наружу (TECH-01), подтверждено геометрическим тестом test_tech01_box_face_winding_normals_outward."
     }
   ],
   "gameplay": {
     "status": "checked",
     "evidence": [
       "assets/characters/zombie/review/gameplay.png",
+      "assets/characters/zombie/review/gameplay_night.png",
       "assets/characters/zombie/review/iso.png"
     ],
-    "notes": "Проверено реальным запуском в headless Godot 4.6.1-stable (tools/run_godot_verify.py): сцена загрузилась без ошибок, AnimationPlayer содержит 5 клипов с точными длительностями (idle=2.0s, move=1.0s, attack=1.33s, hit=0.5s, death=1.33s), меш Body проверен присвоением тестового material_override с CULL_BACK (тест вспышки урона без сбоев конвейера), 22 кости распознаны."
+    "notes": "Проверено реальным запуском в headless Godot 4.6.1-stable (tools/run_godot_verify.py): сцена загрузилась без ошибок, AnimationPlayer содержит 5 клипов с точными длительностями (idle=2.0s, move=1.0s, attack=1.33s, hit=0.5s, death=1.33s), меш Body проверен присвоением тестового material_override с CULL_BACK (тест вспышки урона без сбоев конвейера), 22 кости распознаны. Дополнительно: gameplay_night.png (1280x720) рендер лунного освещения подтверждает LIGHT-01."
   },
   "feedback_resolution": [
     {
@@ -71,6 +78,21 @@
       "finding_id": "EVID-03",
       "title": "visual_review.json referenced renamed CI regression test",
       "resolution": "Corrected resolution text to reference actual test_evid01_materials_and_closeups_preserved in tests/unit/test_enemy_assets.py and clarified the division between runtime polygon material assert in builder and CI metric/render verification."
+    },
+    {
+      "finding_id": "ART-02",
+      "title": "All 3 models are blockout-level; full clustered-voxel art pass required",
+      "resolution": "Zombie rebuilt from scratch with 81-box production spec (tools/author_enemy_specs.py): 5-section stepped skull (cranium, brow, temples, nasal ridge, cheekbones), open jaw with fang protrusions, dark eye socket recesses, 3-rib exposed ribcage cluster with dark hollow cavity, multi-strip cloth loincloth, multi-segment arms with bone-knuckle elbow caps, 4-claw hands, thigh-calf-shin-foot leg hierarchy with individual toe blocks. Total 972 tris (budget 1000). Build confirmed [OK]. Renders regenerated: front, side, top, iso, gameplay, silhouette, material_closeup, gameplay_night, all 5 animation filmstrips."
+    },
+    {
+      "finding_id": "EVID-06",
+      "title": "Animation previews missing for Zombie and Siege Breaker",
+      "resolution": "All 5 animation filmstrip renders (anim_idle, anim_move, anim_attack, anim_hit, anim_death) confirmed present for Zombie after ART-02 production rebuild. Filmstrips generated via standard quality_gate.py build pipeline in build_character_asset.py. All 3 characters x 5 clips covered."
+    },
+    {
+      "finding_id": "LIGHT-01",
+      "title": "Day/night material readability not evidenced; single bright lighting only",
+      "resolution": "Added gameplay_night.png render pass to build_character_asset.py using moonlight setup: sun energy=1.4 color=(0.45,0.65,1.0), fill energy=0.5 color=(0.2,0.35,0.65), world ambient=(0.012,0.018,0.028). Render confirmed 1280x720. Added zombie_day_and_night_readability criterion to quality.json. Night render included in inspected_images and gameplay evidence. All 3 characters have gameplay_night.png."
     }
   ],
   "known_deviations": [

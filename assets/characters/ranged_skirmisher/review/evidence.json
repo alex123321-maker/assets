@@ -1,39 +1,40 @@
 {
   "version": 1,
   "hash_policy": "sha256-text-lf-v1",
-  "built_at": "2026-09-24T12:09:02.383897+00:00",
+  "built_at": "2026-09-24T13:02:47.366006+00:00",
   "inputs": {
-    "assets/characters/ranged_skirmisher/source/character_spec.json": "672431eb0058f16b6a56b87237c6ccd8dd4cdbe1edf2c98ae4c7437d7e7e480c",
-    "tools/blender/build_character_asset.py": "6c9f20b6facd5b19800498f58d46009215cfc878804186228e5a729e57fb77cb",
+    "assets/characters/ranged_skirmisher/source/character_spec.json": "9b00ae8aa6fe492e843c9ac2d8464c169a6e67078cfc5787067d46786aca2053",
+    "tools/blender/build_character_asset.py": "b417b3dcb687fdf7bf99a4e1b66af9d8fc307e02a63266662d1ba3d3323566cf",
     "tools/blender/character_builder_core.py": "86f4fc196f7db2c7bfdec6508e548e2b6592d82d3cecd0cdf1f097a8c4e2e56b",
     "tools/compose_animation_sheets.py": "8678a7aa3d427c79746c0c964da017a2c8ee0071929cbf1d406737ed1ce42457",
     "assets/characters/references/undead_enemies_concept.png": "a1ba890c90d0c8e21a2e5c64becf201859c2bcda0bc0679683208522e4494260",
-    "assets/characters/ranged_skirmisher/quality.json": "fc6bac8fb20786ed8f3b65bd91f13022e74fd4d2cd786baed48ad504f3853eeb",
+    "assets/characters/ranged_skirmisher/quality.json": "8d65dbf7bc8568f082be3199b200919cbd293c634b25e0698c3fdd7607847ccd",
     "assets/characters/ranged_skirmisher/request.md": "bdd4ec28b4a8ee6f09f3d37526797f9e98e5697ae3add586f6d4cc08b97d62bd",
     "assets/characters/ranged_skirmisher/manifest.json": "e0c1a15ce28da38fa5ac3a4a74967b0049948436f7d03548245378930400b8ff"
   },
   "artifacts": {
-    "assets/characters/ranged_skirmisher/output/model.glb": "778bc564b61cadc2d169862069b8d7857c63a34c5612331a321bfb2641f8c0e8",
-    "assets/characters/ranged_skirmisher/review/front.png": "40a19b17c63a8b7039dbce3c91f660fdc7d67d97e085236772bbdfb1e5a497bc",
-    "assets/characters/ranged_skirmisher/review/side.png": "953965d54672f2b171d84a4f0c11af90b7211d207c5880ec0c3bf44a0fc0a8be",
-    "assets/characters/ranged_skirmisher/review/top.png": "bec27f801432edf00a1c6ac70d0b4fdbcd300b9a64eb6d2383b7edf47c549a29",
-    "assets/characters/ranged_skirmisher/review/iso.png": "030fcb0e82a6882eb6339857f9056a40bcfe5e9d0193d3b1ce78c1d26e6f1e4d",
-    "assets/characters/ranged_skirmisher/review/gameplay.png": "64c17b332c3b52c875f0cbbfec5e3b5608800ff17f8ee735447b7d36be5c81aa",
-    "assets/characters/ranged_skirmisher/review/silhouette.png": "80b77c1b30d4219ae8c7c8cd64d64dc2f451d69f45f475df5353633bff58d4f9",
-    "assets/characters/ranged_skirmisher/review/material_closeup.png": "6778b37c6902dda013dca958ec9f03d9d03f109baf4dbcdeea600c4e7954c352",
-    "assets/characters/ranged_skirmisher/review/anim_idle.png": "5e942653dfa685ae472e2abda0dc7f8a63b527de7260ab6701fbd75ab78f047a",
-    "assets/characters/ranged_skirmisher/review/anim_move.png": "ddb6d4b12774809d03f0b53ed285c4ca85dd2786620454f6841ef6f58c3b18db",
-    "assets/characters/ranged_skirmisher/review/anim_attack.png": "eb739be6fee13f6d02cb19645ab0c505920912066c9f9fcf642eec38c99eb072",
-    "assets/characters/ranged_skirmisher/review/anim_hit.png": "4d7c8845d7e407c695801bf90040dac29dde56554fdac372feb0c1564ae7364b",
-    "assets/characters/ranged_skirmisher/review/anim_death.png": "95467262d0e51ff4c735f8b9f4af933f3246b816738fc2e9a2f3f3b72cb2bfe8",
-    "assets/characters/ranged_skirmisher/review/metrics.json": "0ac60303eead0f99d5ee96589358c41d39f29cff7d26721ca967d85b738cbebb",
+    "assets/characters/ranged_skirmisher/output/model.glb": "60e4c9c654567365672b09b8bc6c36cac4bc1258120322369cc0a47efa46ee60",
+    "assets/characters/ranged_skirmisher/review/front.png": "1bafb5193366d9d75d697301cbd6e418c8f664df0ddf2ffee2136db40c6f8d88",
+    "assets/characters/ranged_skirmisher/review/side.png": "d13325cc3f430685c08cff9555c8da37d6b7ab3d2d345f06a6671dec59d6a5a3",
+    "assets/characters/ranged_skirmisher/review/top.png": "506b0de6079bba255e153c0b540ec3c8e65e9a4b8d030ebdc893db815fb8d313",
+    "assets/characters/ranged_skirmisher/review/iso.png": "295c326a7af7414bbcdd7e11d3d4c5673003655fafb7e7ecd3a3b9577b265276",
+    "assets/characters/ranged_skirmisher/review/gameplay.png": "cb7efe1f8b25e35e45e91c70a9afd00efb6448c77f33008645c1094644ce3a1e",
+    "assets/characters/ranged_skirmisher/review/gameplay_night.png": "0dc3330c9143fa487c3f5b6d419957f2a6cf1a0c2d664a6331012d51b9fe19be",
+    "assets/characters/ranged_skirmisher/review/silhouette.png": "2e4c8012156a7d7290f6cd223aeddfb4ac13d63091b5e19ca70aa3be1e5215a2",
+    "assets/characters/ranged_skirmisher/review/material_closeup.png": "3794c31f9cebff908ed369de7600ab0347c8de847e8734443613fac748729c90",
+    "assets/characters/ranged_skirmisher/review/anim_idle.png": "58b0677463e4ddfbe55492ec25b4ddbab50aa672dc7dfb2d846cb06b89908cfd",
+    "assets/characters/ranged_skirmisher/review/anim_move.png": "96bfe134c048558a489f8b69b3125a3767780c7818b38e1a9dc3f38810cfc6ff",
+    "assets/characters/ranged_skirmisher/review/anim_attack.png": "863151d1b1cf8ec94a68b12c908aeeae02875ebcfbc79ae216df0186eebe12ba",
+    "assets/characters/ranged_skirmisher/review/anim_hit.png": "69db9b0bea72a793724df5ef0f9f673098bc9087446d83fe6df6bb855f97be5b",
+    "assets/characters/ranged_skirmisher/review/anim_death.png": "410fc0e096567fcb3c7137e958bdfc3fb5cf9f4adf631954cdef0bd76c7766d9",
+    "assets/characters/ranged_skirmisher/review/metrics.json": "b95904dd7ff7113bff258a2f798538b0045783a595db1f2b14c46bb796ad212f",
     "assets/characters/ranged_skirmisher/review/review.md": "cea3d2e846274300d92a2d593e8042772de79f2534d7f593ecf0d1e5a3da4217"
   },
   "measurements": {
     "assets/characters/ranged_skirmisher/output/model.glb": {
-      "triangles": 420,
+      "triangles": 948,
       "materials": 6
     }
   },
-  "digest": "66fb2ccab8aa7e7176c4763d852c6e305f071a664316a884df9d5b0ff533f03d"
+  "digest": "9321884c477d759e15c7d2a074e3230411329892f63b7a85c2c05007aa746383"
 }
