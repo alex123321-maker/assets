@@ -1,5 +1,5 @@
 {
-  "evidence_digest": "469255c5e1d091b64f40d20a412b2949652eb2401b58d510d8402ea05babaf82",
+  "evidence_digest": "84d9d015f1cc42f69e59a9424d11f6e59c3dc153cc46bf8960c738254254ea0f",
   "reviewer": "Antigravity / Gemini 3.8 Flash High visual self-review",
   "inspected_images": [
     "assets/characters/references/undead_enemies_concept.png",
@@ -65,7 +65,12 @@
     {
       "finding_id": "EVID-01",
       "title": "Silhouette pass stripped mesh materials permanently",
-      "resolution": "Replaced destructive materials.clear() with non-destructive bpy.context.view_layer.material_override. Verified via test_evid01_silhouette_material_override_non_destructive and visual inspection of material_closeup.png."
+      "resolution": "Replaced destructive materials.clear() with non-destructive bpy.context.view_layer.material_override. Invariance of polygon material assignments is guaranteed via runtime assertions directly inside build_character_asset.py, while CI regression test test_evid01_materials_and_closeups_preserved validates exported material metrics and non-monochrome material_closeup renders."
+    },
+    {
+      "finding_id": "EVID-03",
+      "title": "visual_review.json referenced renamed CI regression test",
+      "resolution": "Corrected resolution text to reference actual test_evid01_materials_and_closeups_preserved in tests/unit/test_enemy_assets.py and clarified the division between runtime polygon material assert in builder and CI metric/render verification."
     }
   ],
   "known_deviations": [

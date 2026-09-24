@@ -190,24 +190,24 @@ def build_skirmisher_mesh(bm: bmesh.types.BMesh, weights: dict[str, list[int]]):
     # Teeth / upper jaw
     core.add_box_geometry(bm, (0, 0.21, 1.46), (0.20, 0.08, 0.06), "Head", weights, mat_index=0)
 
-    # Left Arm (extended outward-forward to create generous opening between bow and body)
-    core.add_box_geometry(bm, (-0.26, 0.04, 1.32), (0.12, 0.12, 0.30), "UpperArm.L", weights, mat_index=0, rot=(20, 15, 0))
-    core.add_box_geometry(bm, (-0.36, 0.28, 1.28), (0.10, 0.30, 0.10), "Forearm.L", weights, mat_index=1, rot=(65, 0, -10))
-    core.add_box_geometry(bm, (-0.40, 0.48, 1.28), (0.12, 0.12, 0.12), "Hand.L", weights, mat_index=0)
+    # Left Arm (extended outward-lateral to create clear negative space between bow and body in gameplay camera)
+    core.add_box_geometry(bm, (-0.32, 0.03, 1.31), (0.22, 0.12, 0.12), "UpperArm.L", weights, mat_index=0, rot=(4, -16, 6))
+    core.add_box_geometry(bm, (-0.50, 0.05, 1.265), (0.18, 0.10, 0.10), "Forearm.L", weights, mat_index=1, rot=(2, -10, 7))
+    core.add_box_geometry(bm, (-0.62, 0.06, 1.25), (0.10, 0.10, 0.12), "Hand.L", weights, mat_index=0, rot=(0, 0, 40))
 
-    # Large Recurve Bow (stepped angular arc 1.1m tall, held outward in left hand)
+    # Large Recurve Bow (stepped angular arc 1.1m tall, held outward in left hand, angled 40 deg for rich gameplay silhouette)
     # Central grip
-    core.add_box_geometry(bm, (-0.46, 0.48, 1.28), (0.08, 0.08, 0.26), "Hand.L", weights, mat_index=3)
-    # Upper limb (curving forward then outward)
-    core.add_box_geometry(bm, (-0.46, 0.44, 1.48), (0.07, 0.07, 0.22), "Hand.L", weights, mat_index=3, rot=(-18, 0, 0))
-    core.add_box_geometry(bm, (-0.46, 0.38, 1.66), (0.06, 0.06, 0.20), "Hand.L", weights, mat_index=3, rot=(-36, 0, 0))
-    core.add_box_geometry(bm, (-0.46, 0.42, 1.80), (0.05, 0.06, 0.14), "Hand.L", weights, mat_index=3, rot=(25, 0, 0)) # Recurve tip
-    # Lower limb (curving forward then outward)
-    core.add_box_geometry(bm, (-0.46, 0.44, 1.08), (0.07, 0.07, 0.22), "Hand.L", weights, mat_index=3, rot=(18, 0, 0))
-    core.add_box_geometry(bm, (-0.46, 0.38, 0.90), (0.06, 0.06, 0.20), "Hand.L", weights, mat_index=3, rot=(36, 0, 0))
-    core.add_box_geometry(bm, (-0.46, 0.42, 0.76), (0.05, 0.06, 0.14), "Hand.L", weights, mat_index=3, rot=(-25, 0, 0)) # Recurve tip
+    core.add_box_geometry(bm, (-0.64, 0.06, 1.25), (0.08, 0.08, 0.26), "Hand.L", weights, mat_index=3, rot=(0, 0, 40))
+    # Upper limb (curving forward-outward then recurve tip)
+    core.add_box_geometry(bm, (-0.678, 0.028, 1.43), (0.07, 0.07, 0.22), "Hand.L", weights, mat_index=3, rot=(-14, 12, 40))
+    core.add_box_geometry(bm, (-0.717, -0.004, 1.61), (0.06, 0.06, 0.20), "Hand.L", weights, mat_index=3, rot=(-28, 23, 40))
+    core.add_box_geometry(bm, (-0.740, -0.024, 1.77), (0.05, 0.06, 0.14), "Hand.L", weights, mat_index=3, rot=(19, -16, 40)) # Recurve tip
+    # Lower limb (curving forward-outward then recurve tip)
+    core.add_box_geometry(bm, (-0.678, 0.028, 1.07), (0.07, 0.07, 0.22), "Hand.L", weights, mat_index=3, rot=(14, -12, 40))
+    core.add_box_geometry(bm, (-0.717, -0.004, 0.89), (0.06, 0.06, 0.20), "Hand.L", weights, mat_index=3, rot=(28, -23, 40))
+    core.add_box_geometry(bm, (-0.740, -0.024, 0.73), (0.05, 0.06, 0.14), "Hand.L", weights, mat_index=3, rot=(-19, 16, 40)) # Recurve tip
     # Bow string
-    core.add_box_geometry(bm, (-0.46, 0.34, 1.28), (0.04, 0.04, 0.96), "Hand.L", weights, mat_index=4)
+    core.add_box_geometry(bm, (-0.563, 0.124, 1.25), (0.04, 0.04, 1.04), "Hand.L", weights, mat_index=4, rot=(0, 0, 40))
 
     # Right Arm (poised with elbow out to emphasize archer readiness)
     core.add_box_geometry(bm, (0.24, 0.02, 1.32), (0.12, 0.12, 0.30), "UpperArm.R", weights, mat_index=0, rot=(12, -18, 12))
@@ -234,12 +234,12 @@ def get_skirmisher_bone_defs() -> dict[str, dict]:
         "Neck": {"head": (0, 0.04, 1.38), "tail": (0, 0.05, 1.48), "parent": "Chest", "connected": True},
         "Head": {"head": (0, 0.05, 1.48), "tail": (0, 0.06, 1.74), "parent": "Neck", "connected": True},
         
-        "Shoulder.L": {"head": (-0.12, 0.04, 1.34), "tail": (-0.22, 0.04, 1.34), "parent": "Chest"},
-        "UpperArm.L": {"head": (-0.22, 0.04, 1.34), "tail": (-0.32, 0.18, 1.30), "parent": "Shoulder.L", "connected": True},
-        "Forearm.L": {"head": (-0.32, 0.18, 1.30), "tail": (-0.38, 0.42, 1.28), "parent": "UpperArm.L", "connected": True},
-        "Hand.L": {"head": (-0.38, 0.42, 1.28), "tail": (-0.44, 0.54, 1.28), "parent": "Forearm.L", "connected": True},
-        "BowSocket.L": {"head": (-0.46, 0.48, 1.28), "tail": (-0.46, 0.58, 1.28), "parent": "Hand.L"},
-        "ArrowReleasePoint": {"head": (-0.46, 0.68, 1.28), "tail": (-0.46, 0.88, 1.28), "parent": "BowSocket.L"},
+        "Shoulder.L": {"head": (-0.12, 0.02, 1.34), "tail": (-0.22, 0.02, 1.34), "parent": "Chest"},
+        "UpperArm.L": {"head": (-0.22, 0.02, 1.34), "tail": (-0.42, 0.04, 1.28), "parent": "Shoulder.L", "connected": True},
+        "Forearm.L": {"head": (-0.42, 0.04, 1.28), "tail": (-0.58, 0.06, 1.25), "parent": "UpperArm.L", "connected": True},
+        "Hand.L": {"head": (-0.58, 0.06, 1.25), "tail": (-0.66, 0.06, 1.25), "parent": "Forearm.L", "connected": True},
+        "BowSocket.L": {"head": (-0.64, 0.06, 1.25), "tail": (-0.64, 0.16, 1.25), "parent": "Hand.L"},
+        "ArrowReleasePoint": {"head": (-0.64, 0.26, 1.25), "tail": (-0.64, 0.46, 1.25), "parent": "BowSocket.L"},
 
         "Shoulder.R": {"head": (0.12, 0.03, 1.34), "tail": (0.22, 0.03, 1.34), "parent": "Chest"},
         "UpperArm.R": {"head": (0.22, 0.03, 1.34), "tail": (0.28, 0.10, 1.18), "parent": "Shoulder.R", "connected": True},
