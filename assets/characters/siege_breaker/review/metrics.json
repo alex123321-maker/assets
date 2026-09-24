@@ -1,0 +1,56 @@
+{
+  "character": "siege_breaker",
+  "triangles": 396,
+  "materials": 5,
+  "bones": 21,
+  "animations": [
+    "idle",
+    "move",
+    "attack",
+    "hit",
+    "death"
+  ],
+  "animation_details": {
+    "idle": {
+      "frames": 60,
+      "fps": 30,
+      "duration_sec": 2.0,
+      "loop": true
+    },
+    "move": {
+      "frames": 30,
+      "fps": 30,
+      "duration_sec": 1.0,
+      "loop": true,
+      "in_place": true
+    },
+    "attack": {
+      "frames": 45,
+      "fps": 30,
+      "duration_sec": 1.5,
+      "loop": false,
+      "contact_or_release_frame": 28
+    },
+    "hit": {
+      "frames": 15,
+      "fps": 30,
+      "duration_sec": 0.5,
+      "loop": false
+    },
+    "death": {
+      "frames": 40,
+      "fps": 30,
+      "duration_sec": 1.33,
+      "loop": false
+    }
+  },
+  "dimensions": {
+    "x": 2.243,
+    "y": 1.395,
+    "z": 2.449
+  },
+  "pivot": "bottom-center (0, 0, 0)",
+  "glb_size_bytes": 122812,
+  "blender_version": "5.2.1 LTS",
+  "render_engine": "BLENDER_EEVEE"
+}

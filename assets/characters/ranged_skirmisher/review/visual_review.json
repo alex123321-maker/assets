@@ -1,0 +1,75 @@
+{
+  "evidence_digest": "d6a4c077c5740c1badc537ad9441b80d41183354390588ab3e13fb04872654d5",
+  "reviewer": "Antigravity / Gemini 3.8 Flash High visual self-review",
+  "inspected_images": [
+    "assets/characters/references/undead_enemies_concept.png",
+    "assets/characters/ranged_skirmisher/review/front.png",
+    "assets/characters/ranged_skirmisher/review/side.png",
+    "assets/characters/ranged_skirmisher/review/top.png",
+    "assets/characters/ranged_skirmisher/review/iso.png",
+    "assets/characters/ranged_skirmisher/review/gameplay.png",
+    "assets/characters/ranged_skirmisher/review/silhouette.png",
+    "assets/characters/ranged_skirmisher/review/material_closeup.png",
+    "assets/characters/ranged_skirmisher/review/anim_idle.png",
+    "assets/characters/ranged_skirmisher/review/anim_move.png",
+    "assets/characters/ranged_skirmisher/review/anim_attack.png",
+    "assets/characters/ranged_skirmisher/review/anim_hit.png",
+    "assets/characters/ranged_skirmisher/review/anim_death.png"
+  ],
+  "criteria": [
+    {
+      "id": "skirmisher_bow_silhouette",
+      "status": "pass",
+      "observation": "В проекциях front, side и pure silhouette крупный 1.1-метровый изогнутый лук вынесен в левой руке в сторону и вперед. Между тетивой/луком и торсом сформирован четкий сквозной зазор (негативное пространство). За правым плечом четко различим диагональный колчан с торчащим оперением стрел. Юнит безошибочно читается как дальний стрелок."
+    },
+    {
+      "id": "skirmisher_skeletal_anatomy",
+      "status": "pass",
+      "observation": "В front, iso и material_closeup видны характерные скелетные элементы: открытая костная грудная клетка с темными углублениями межреберий, тонкий позвоночный столб на талии с кожаным поясом (#4e392a), квадратный череп цвета выветренной кости (#cfc4a6) с темными глазницами (#181816). Конструкция контрастно стройнее и ажурнее зомби и разрушителя. После устранения EVID-01 все материалы на material_closeup и рендерах отображаются в исходной цветовой гамме PBR без потерь."
+    },
+    {
+      "id": "skirmisher_gameplay_readability",
+      "status": "pass",
+      "observation": "В gameplay.png (изометрический вид Godot под углом 35 градусов) силуэт лучника четко отделяется от поверхности земли. Лук в вытянутой левой руке и колчан за плечом задают характерную диагональную асимметрию, различимую с дистанции игрового экрана без опоры на мелкие текстуры."
+    },
+    {
+      "id": "skirmisher_animations_completeness",
+      "status": "pass",
+      "observation": "Все 5 фильмстрипов сформированы: anim_idle с легким дыханием и фиксацией лука (2.0 сек, 60 кадров при 30 fps); anim_move с легким пружинящим скелетным шагом (1.0 сек, 30 кадров при 30 fps); anim_attack с читаемым отведением правой руки к колчану, натяжением стрелы к челюсти и спуском на кадре 25 с отдачей лука (1.33 сек, 40 кадров при 30 fps); anim_hit с отшатыванием корпуса назад (0.5 сек, 15 кадров при 30 fps); anim_death с рассыпанием/оседанием костей на землю (1.33 сек, 40 кадров при 30 fps). Длительности клипов строго соответствуют шкале 30 fps (TECH-02)."
+    },
+    {
+      "id": "skirmisher_mesh_and_budget",
+      "status": "pass",
+      "observation": "Модель model.glb представляет собой единый меш Body (420 треугольников при бюджете до 1000), использует 6 материалов и 23 кости арматуры, включая служебные сокеты BowSocket.L и ArrowReleasePoint. Пивот расположен строго по центру основания стоп (0, 0, 0). Все нормали граней боксов направлены наружу (TECH-01), подтверждено геометрическим тестом test_tech01_box_face_winding_normals_outward. В Godot 4.6 проверено успешное присвоение unshaded material_override с CULL_BACK без ошибок импорта и рендера."
+    }
+  ],
+  "gameplay": {
+    "status": "checked",
+    "evidence": [
+      "assets/characters/ranged_skirmisher/review/gameplay.png",
+      "assets/characters/ranged_skirmisher/review/iso.png"
+    ],
+    "notes": "Проверено реальным запуском в headless Godot 4.6.1-stable (tools/run_godot_verify.py): сцена загрузилась без ошибок, AnimationPlayer содержит 5 анимаций с точными длительностями (idle=2.0s, move=1.0s, attack=1.33s, hit=0.5s, death=1.33s), меш Body обнаружен и успешно проверен присвоением material_override с CULL_BACK (тест вспышки урона без сбоев конвейера), иерархия арматуры из 23 костей валидирована."
+  },
+  "feedback_resolution": [
+    {
+      "finding_id": "TECH-01",
+      "title": "Inverted face normals on box geometries",
+      "resolution": "Fixed vertex winding order in character_builder_core.py to counter-clockwise outward for all 6 box faces. Verified via unit test test_tech01_box_face_winding_normals_outward and Godot material_override application with CULL_BACK."
+    },
+    {
+      "finding_id": "TECH-02",
+      "title": "Animation clip framerate mismatch (24 fps default vs 30 fps intended)",
+      "resolution": "Configured scene.render.fps = 30 and fps_base = 1.0 explicitly in Blender builder before NLA baking and GLTF export. Verified via binary GLB chunk inspection (test_tech02_glb_animation_durations_at_30fps) and Godot AnimationPlayer length checks."
+    },
+    {
+      "finding_id": "EVID-01",
+      "title": "Silhouette pass stripped mesh materials permanently",
+      "resolution": "Replaced destructive materials.clear() with non-destructive bpy.context.view_layer.material_override. Verified via test_evid01_silhouette_material_override_non_destructive and visual inspection of material_closeup.png."
+    }
+  ],
+  "known_deviations": [
+    "Тетива лука выполнена в виде жесткого воксельного элемента толщиной в 1 воксель для сохранения воксельной эстетики Cube Siege.",
+    "Кости предплечий и голеней стилизованы в виде отдельных воксельных блоков с фасками без физической симуляции мелких суставов."
+  ]
+}

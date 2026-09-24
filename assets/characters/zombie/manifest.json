@@ -1,0 +1,21 @@
+{
+  "name": "zombie",
+  "type": "voxel_rigged",
+  "version": 1,
+  "source": "source/character_spec.json",
+  "outputs": {
+    "model": "output/model.glb"
+  },
+  "review": {
+    "required_views": [
+      "iso",
+      "front",
+      "side",
+      "top"
+    ]
+  },
+  "budgets": {
+    "max_materials": 6,
+    "max_triangles": 1000
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "evidence_digest": "61d572f31087638d4a7c13556e89758f09f6d39ace140374e714cb0aa097d6f8",
+  "reviewer": "Antigravity / Gemini 3.8 Flash High visual self-review",
+  "inspected_images": [
+    "assets/characters/references/undead_enemies_concept.png",
+    "assets/characters/siege_breaker/review/front.png",
+    "assets/characters/siege_breaker/review/side.png",
+    "assets/characters/siege_breaker/review/top.png",
+    "assets/characters/siege_breaker/review/iso.png",
+    "assets/characters/siege_breaker/review/gameplay.png",
+    "assets/characters/siege_breaker/review/silhouette.png",
+    "assets/characters/siege_breaker/review/material_closeup.png",
+    "assets/characters/siege_breaker/review/anim_idle.png",
+    "assets/characters/siege_breaker/review/anim_move.png",
+    "assets/characters/siege_breaker/review/anim_attack.png",
+    "assets/characters/siege_breaker/review/anim_hit.png",
+    "assets/characters/siege_breaker/review/anim_death.png"
+  ],
+  "criteria": [
+    {
+      "id": "siege_breaker_heavy_silhouette",
+      "status": "pass",
+      "observation": "В проекциях front, side и pure silhouette юнит обладает доминирующими габаритами: ширина 2.24м, высота 2.45м, массивные трапециевидные каменные наплечники шириной более 0.5м каждый, низкий центр тяжести и колоссальные кулаки-молоты. Силуэт в два раза превосходит базового воина и зомби по площади, безошибочно читаясь как тяжелый осадный разрушитель."
+    },
+    {
+      "id": "siege_breaker_undead_armor_materials",
+      "status": "pass",
+      "observation": "В front, iso и material_closeup четко разделены материалы: холодная сланцево-серая броня (#42484f), темно-стальные пластины кулаков (#2c2f34), некротическая оливково-зеленая плоть (#54624d) на боках торса и плечах, бежево-костяная нижняя челюсть черепа (#cfc5ae) и коричневая набедренная повязка (#4e2b24). Разрушитель безошибочно выглядит как нежить-титан, а не механический или каменный голем. После устранения EVID-01 все материалы на material_closeup и рендерах отображаются в исходной цветовой гамме PBR без потерь."
+    },
+    {
+      "id": "siege_breaker_gameplay_readability",
+      "status": "pass",
+      "observation": "В gameplay.png (вид под углом 35 градусов) широкие плечи, массивная спина и выдвинутые вперед кулаки доминируют на поле боя. Длинная широкая тень подчеркивает массу персонажа. Контакт широких стоп с поверхностью абсолютно плоский и устойчивый."
+    },
+    {
+      "id": "siege_breaker_animations_completeness",
+      "status": "pass",
+      "observation": "Все 5 фильмстрипов сформированы: anim_idle с глубоким тяжелым дыханием (2.0 сек, 60 кадров при 30 fps); anim_move с медленной тяжелой поступью и переносом веса между ногами (1.0 сек, 30 кадров при 30 fps); anim_attack с мощным подъемом обоих кулаков над головой без задевания наплечников, ударом в землю на кадре 28 и фазой упругого отскока/восстановления (1.5 сек, 45 кадров при 30 fps); anim_hit с тяжелым вздрагиванием корпуса без сбивания устойчивости (0.5 сек, 15 кадров при 30 fps); anim_death с падением на колени и сокрушительным обрушением вперед (1.33 сек, 40 кадров при 30 fps). Длительности клипов строго соответствуют шкале 30 fps (TECH-02)."
+    },
+    {
+      "id": "siege_breaker_mesh_and_budget",
+      "status": "pass",
+      "observation": "Модель model.glb представлена единым мешем Body (396 треугольников при бюджете до 1000), 5 материалами и 21 костью арматуры, включая служебный сокет SmashPoint на уровне земли между кулаками. Пивот расположен строго по центру основания стоп (0, 0, 0). Все нормали граней боксов направлены наружу (TECH-01), подтверждено геометрическим тестом test_tech01_box_face_winding_normals_outward. В Godot 4.6 проверено успешное присвоение unshaded material_override с CULL_BACK без ошибок импорта и рендера."
+    }
+  ],
+  "gameplay": {
+    "status": "checked",
+    "evidence": [
+      "assets/characters/siege_breaker/review/gameplay.png",
+      "assets/characters/siege_breaker/review/iso.png"
+    ],
+    "notes": "Проверено реальным запуском в headless Godot 4.6.1-stable (tools/run_godot_verify.py): сцена загрузилась без ошибок, AnimationPlayer содержит 5 анимаций с точными длительностями (idle=2.0s, move=1.0s, attack=1.5s, hit=0.5s, death=1.33s), единый меш Body обнаружен и успешно проверен присвоением material_override с CULL_BACK (тест вспышки урона без сбоев конвейера), иерархия арматуры из 21 кости валидирована."
+  },
+  "feedback_resolution": [
+    {
+      "finding_id": "TECH-01",
+      "title": "Inverted face normals on box geometries",
+      "resolution": "Fixed vertex winding order in character_builder_core.py to counter-clockwise outward for all 6 box faces. Verified via unit test test_tech01_box_face_winding_normals_outward and Godot material_override application with CULL_BACK."
+    },
+    {
+      "finding_id": "TECH-02",
+      "title": "Animation clip framerate mismatch (24 fps default vs 30 fps intended)",
+      "resolution": "Configured scene.render.fps = 30 and fps_base = 1.0 explicitly in Blender builder before NLA baking and GLTF export. Verified via binary GLB chunk inspection (test_tech02_glb_animation_durations_at_30fps) and Godot AnimationPlayer length checks."
+    },
+    {
+      "finding_id": "EVID-01",
+      "title": "Silhouette pass stripped mesh materials permanently",
+      "resolution": "Replaced destructive materials.clear() with non-destructive bpy.context.view_layer.material_override. Verified via test_evid01_silhouette_material_override_non_destructive and visual inspection of material_closeup.png."
+    }
+  ],
+  "known_deviations": [
+    "Кулаки смоделированы как цельные утяжеленные блоки с фасками, что предотвращает визуальный шум мелких пальцев при игре с высоты птичьего полета.",
+    "Наплечники зафиксированы относительно костей Shoulder без деформации сетки, что подчеркивает жесткую каменную природу пластин."
+  ]
+}

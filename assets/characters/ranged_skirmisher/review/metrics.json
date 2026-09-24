@@ -1,0 +1,56 @@
+{
+  "character": "ranged_skirmisher",
+  "triangles": 420,
+  "materials": 6,
+  "bones": 23,
+  "animations": [
+    "idle",
+    "move",
+    "attack",
+    "hit",
+    "death"
+  ],
+  "animation_details": {
+    "idle": {
+      "frames": 60,
+      "fps": 30,
+      "duration_sec": 2.0,
+      "loop": true
+    },
+    "move": {
+      "frames": 30,
+      "fps": 30,
+      "duration_sec": 1.0,
+      "loop": true,
+      "in_place": true
+    },
+    "attack": {
+      "frames": 40,
+      "fps": 30,
+      "duration_sec": 1.33,
+      "loop": false,
+      "contact_or_release_frame": 25
+    },
+    "hit": {
+      "frames": 15,
+      "fps": 30,
+      "duration_sec": 0.5,
+      "loop": false
+    },
+    "death": {
+      "frames": 40,
+      "fps": 30,
+      "duration_sec": 1.33,
+      "loop": false
+    }
+  },
+  "dimensions": {
+    "x": 0.872,
+    "y": 0.847,
+    "z": 1.876
+  },
+  "pivot": "bottom-center (0, 0, 0)",
+  "glb_size_bytes": 126380,
+  "blender_version": "5.2.1 LTS",
+  "render_engine": "BLENDER_EEVEE"
+}
