@@ -1,0 +1,107 @@
+{
+  "evidence_digest": "ef93e422df3916df5db3098468f1f33f5653e14093f6484fc0b648f1c80bae27",
+  "reviewer": "Antigravity / Gemini 3.8 Flash High visual self-review",
+  "inspected_images": [
+    "assets/characters/references/undead_enemies_concept.png",
+    "assets/characters/siege_breaker/review/front.png",
+    "assets/characters/siege_breaker/review/side.png",
+    "assets/characters/siege_breaker/review/top.png",
+    "assets/characters/siege_breaker/review/iso.png",
+    "assets/characters/siege_breaker/review/gameplay.png",
+    "assets/characters/siege_breaker/review/gameplay_night.png",
+    "assets/characters/siege_breaker/review/silhouette.png",
+    "assets/characters/siege_breaker/review/material_closeup.png",
+    "assets/characters/siege_breaker/review/anim_idle.png",
+    "assets/characters/siege_breaker/review/anim_move.png",
+    "assets/characters/siege_breaker/review/anim_attack.png",
+    "assets/characters/siege_breaker/review/anim_hit.png",
+    "assets/characters/siege_breaker/review/anim_death.png"
+  ],
+  "criteria": [
+    {
+      "id": "siege_breaker_heavy_silhouette",
+      "status": "pass",
+      "observation": "В проекциях front, side и pure silhouette юнит обладает доминирующими габаритами: ширина 2.24м, высота 2.45м, массивные трапециевидные каменные наплечники шириной более 0.5м каждый, низкий центр тяжести и колоссальные кулаки-молоты. После ART-02 art pass: шлем с тремя каменными шипами-гребнями, черепной козырек с клыками, двойные ступенчатые наплечники с 3-шипными выступами, сегментированные каменные нагрудные пластины, хребтовой гребень спины, длинный рваный набедренный передник, отдельные поножи на столбовидных ногах, гигантские молот-кулаки с кластерами шипов и ступенчатыми нарукавными пластинами. Силуэт в два раза превосходит базового воина и зомби по площади, безошибочно читаясь как тяжелый осадный разрушитель."
+    },
+    {
+      "id": "siege_breaker_undead_armor_materials",
+      "status": "pass",
+      "observation": "В front, iso и material_closeup четко разделены материалы: холодная сланцево-серая броня (#42484f), темно-стальные пластины кулаков (#2c2f34), некротическая оливково-зеленая плоть (#54624d) на боках торса и плечах, бежево-костяная нижняя челюсть черепа (#cfc5ae) и коричневая набедренная повязка (#4e2b24). Разрушитель безошибочно выглядит как нежить-титан, а не механический или каменный голем. После устранения EVID-01 все материалы на material_closeup и рендерах отображаются в исходной цветовой гамме PBR без потерь."
+    },
+    {
+      "id": "siege_breaker_gameplay_readability",
+      "status": "pass",
+      "observation": "В gameplay.png (вид под углом 35 градусов) широкие плечи, массивная спина и выдвинутые вперед кулаки доминируют на поле боя. Длинная широкая тень подчеркивает массу персонажа. Контакт широких стоп с поверхностью абсолютно плоский и устойчивый."
+    },
+    {
+      "id": "siege_breaker_day_and_night_readability",
+      "status": "pass",
+      "observation": "gameplay_night.png (1280x720) подтверждает читаемость при лунном освещении: sun energy=1.4 с голубым оттенком, fill energy=0.5, ambient темный. Холодная сланцево-серая броня (#42484f) хорошо различима в синеватом ночном освещении. Темные пластины кулаков (#2c2f34) сохраняют контрастность относительно брони. Общий силуэт массивного тяжёлого юнита читается идентично дневному варианту. LIGHT-01 закрыт."
+    },
+    {
+      "id": "siege_breaker_animations_completeness",
+      "status": "pass",
+      "observation": "Все 5 фильмстрипов сформированы: anim_idle с глубоким тяжелым дыханием (2.0 сек, 60 кадров при 30 fps); anim_move с медленной тяжелой поступью и переносом веса между ногами (1.0 сек, 30 кадров при 30 fps); anim_attack с мощным подъемом обоих кулаков над головой без задевания наплечников, ударом в землю на кадре 28 и фазой упругого отскока/восстановления (1.5 сек, 45 кадров при 30 fps); anim_hit с тяжелым вздрагиванием корпуса без сбивания устойчивости (0.5 сек, 15 кадров при 30 fps); anim_death с падением на колени и сокрушительным обрушением вперед (1.33 сек, 40 кадров при 30 fps). Длительности клипов строго соответствуют шкале 30 fps (TECH-02). EVID-06 закрыт: все 5 клипов x 3 персонажа имеют фильмстрипы."
+    },
+    {
+      "id": "siege_breaker_mesh_and_budget",
+      "status": "pass",
+      "observation": "Модель model.glb представлена единым мешем Body (864 треугольника при бюджете до 1000, 72 бокса x 12), 5 материалами и 21 костью арматуры, включая служебный сокет SmashPoint на уровне земли между кулаками. После ART-02 art pass: шлем с гребнем из 3 шипов, черепной козырек с клыками, двойные ступенчатые наплечники с 3 шипами каждый, сегментированные нагрудники, хребтовой гребень спины, молот-кулаки с кластерами шипов на суставах. Пивот расположен строго по центру основания стоп (0, 0, 0). Все нормали граней боксов направлены наружу (TECH-01), подтверждено геометрическим тестом test_tech01_box_face_winding_normals_outward."
+    }
+  ],
+  "gameplay": {
+    "status": "checked",
+    "evidence": [
+      "assets/characters/siege_breaker/review/gameplay.png",
+      "assets/characters/siege_breaker/review/gameplay_night.png",
+      "assets/characters/siege_breaker/review/iso.png"
+    ],
+    "notes": "Проверено реальным запуском в headless Godot 4.6.1-stable (tools/run_godot_verify.py): сцена загрузилась без ошибок, AnimationPlayer содержит 5 анимаций с точными длительностями (idle=2.0s, move=1.0s, attack=1.5s, hit=0.5s, death=1.33s), единый меш Body обнаружен и успешно проверен присвоением material_override с CULL_BACK (тест вспышки урона без сбоев конвейера), иерархия арматуры из 21 кости валидирована. Дополнительно: gameplay_night.png (1280x720) рендер лунного освещения подтверждает LIGHT-01."
+  },
+  "feedback_resolution": [
+    {
+      "finding_id": "TECH-01",
+      "title": "Inverted face normals on box geometries",
+      "resolution": "Fixed vertex winding order in character_builder_core.py to counter-clockwise outward for all 6 box faces. Verified via unit test test_tech01_box_face_winding_normals_outward and Godot material_override application with CULL_BACK."
+    },
+    {
+      "finding_id": "TECH-02",
+      "title": "Animation clip framerate mismatch (24 fps default vs 30 fps intended)",
+      "resolution": "Configured scene.render.fps = 30 and fps_base = 1.0 explicitly in Blender builder before NLA baking and GLTF export. Verified via binary GLB chunk inspection (test_tech02_glb_animation_durations_at_30fps) and Godot AnimationPlayer length checks."
+    },
+    {
+      "finding_id": "EVID-01",
+      "title": "Silhouette pass stripped mesh materials permanently",
+      "resolution": "Replaced destructive materials.clear() with non-destructive bpy.context.view_layer.material_override. Invariance of polygon material assignments is guaranteed via runtime assertions directly inside build_character_asset.py, while CI regression test test_evid01_materials_and_closeups_preserved validates exported material metrics and non-monochrome material_closeup renders."
+    },
+    {
+      "finding_id": "EVID-03",
+      "title": "visual_review.json referenced renamed CI regression test",
+      "resolution": "Corrected resolution text to reference actual test_evid01_materials_and_closeups_preserved in tests/unit/test_enemy_assets.py and clarified the division between runtime polygon material assert in builder and CI metric/render verification."
+    },
+    {
+      "finding_id": "ART-02",
+      "title": "All 3 models are blockout-level; full clustered-voxel art pass required",
+      "resolution": "Siege Breaker rebuilt from scratch with 72-box production spec (tools/author_enemy_specs.py): spiked stone crest helmet with 3 stone spike prongs, skull visor with undead tusks, stepped double pauldrons with 3 spike protrusions each, segmented stone chest plates, spine ridge detail, long tattered loincloth apron, separate greaves on pillar legs, giant hammer-fists with knuckle spike clusters and stepped arm plates, asymmetric detail. Total 864 tris (budget 1000). Build confirmed [OK]. Renders regenerated: front, side, top, iso, gameplay, silhouette, material_closeup, gameplay_night, all 5 animation filmstrips."
+    },
+    {
+      "finding_id": "EVID-06",
+      "title": "Animation previews missing for Zombie and Siege Breaker",
+      "resolution": "All 5 animation filmstrip renders (anim_idle, anim_move, anim_attack, anim_hit, anim_death) confirmed present for Siege Breaker after ART-02 production rebuild. Filmstrips generated via standard quality_gate.py build pipeline in build_character_asset.py. All 3 characters x 5 clips covered."
+    },
+    {
+      "finding_id": "LIGHT-01",
+      "title": "Day/night material readability not evidenced; single bright lighting only",
+      "resolution": "Added gameplay_night.png render pass to build_character_asset.py using moonlight setup: sun energy=1.4 color=(0.45,0.65,1.0), fill energy=0.5 color=(0.2,0.35,0.65), world ambient=(0.012,0.018,0.028). Render confirmed 1280x720. Added siege_breaker_day_and_night_readability criterion to quality.json. Night render included in inspected_images and gameplay evidence. All 3 characters have gameplay_night.png."
+    },
+    {
+      "finding_id": "ANIM-01",
+      "title": "death animation ends floating in the air across all 3 characters",
+      "resolution": "Root cause: apply_pose_keyframe() was setting pb.location on the Hips bone with drop_z as a local bone Z component. The Hips bone local Z axis does not align with world -Z, causing the intended downward drop to produce aerial sideways displacement. Fix: removed all Hips local-space location keyframes from the death action. Replaced with Root bone location keyframes using loc=Vector((0,-d,0)) where Root bone local -Y == world -Z, achieving true world-space ground descent. Added Thigh.L/R and Shin.L/R rotation keyframes for knee-collapse animation (siege_breaker uses knee_extra=+10° for heavier stance). Death clip: rest (frame 0) → knee buckle (frame 10, Root -0.12m) → deep collapse (frame 25, Root -0.45m) → prone (frame 40, Root -1.00m). Rebuilt [OK] 864 tris. anim_death.png filmstrip regenerated."
+    }
+  ],
+  "known_deviations": [
+    "Кулаки смоделированы как цельные утяжеленные блоки с фасками, что предотвращает визуальный шум мелких пальцев при игре с высоты птичьего полета.",
+    "Наплечники зафиксированы относительно костей Shoulder без деформации сетки, что подчеркивает жесткую каменную природу пластин."
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "inputs": [
+    "assets/characters/ranged_skirmisher/source/character_spec.json",
+    "tools/blender/build_character_asset.py",
+    "tools/blender/character_builder_core.py",
+    "tools/compose_animation_sheets.py"
+  ],
+  "commands": [
+    [
+      "blender",
+      "--python-exit-code",
+      "1",
+      "--background",
+      "--factory-startup",
+      "--python",
+      "tools/blender/build_character_asset.py",
+      "--",
+      "--asset",
+      "assets/characters/ranged_skirmisher"
+    ],
+    [
+      "python",
+      "tools/compose_animation_sheets.py",
+      "--asset",
+      "assets/characters/ranged_skirmisher"
+    ]
+  ],
+  "references": [
+    {
+      "path": "assets/characters/references/undead_enemies_concept.png",
+      "sha256": "a1ba890c90d0c8e21a2e5c64becf201859c2bcda0bc0679683208522e4494260",
+      "status": "candidate",
+      "provenance": "Concept sheet generated via MCP bridge for Issue #9 undead enemy pack (Zombie, Ranged Skirmisher, Siege Breaker)."
+    }
+  ],
+  "reference_free_reason": "",
+  "artifacts": [
+    "assets/characters/ranged_skirmisher/output/model.glb",
+    "assets/characters/ranged_skirmisher/review/front.png",
+    "assets/characters/ranged_skirmisher/review/side.png",
+    "assets/characters/ranged_skirmisher/review/top.png",
+    "assets/characters/ranged_skirmisher/review/iso.png",
+    "assets/characters/ranged_skirmisher/review/gameplay.png",
+    "assets/characters/ranged_skirmisher/review/gameplay_night.png",
+    "assets/characters/ranged_skirmisher/review/silhouette.png",
+    "assets/characters/ranged_skirmisher/review/material_closeup.png",
+    "assets/characters/ranged_skirmisher/review/anim_idle.png",
+    "assets/characters/ranged_skirmisher/review/anim_move.png",
+    "assets/characters/ranged_skirmisher/review/anim_attack.png",
+    "assets/characters/ranged_skirmisher/review/anim_hit.png",
+    "assets/characters/ranged_skirmisher/review/anim_death.png",
+    "assets/characters/ranged_skirmisher/review/metrics.json",
+    "assets/characters/ranged_skirmisher/review/review.md"
+  ],
+  "require_engine_review": false,
+  "criteria": [
+    {
+      "id": "skirmisher_bow_silhouette",
+      "target": "Скелет-лучник безошибочно читается как дальний стрелок: крупный изогнутый лук высотой 1.1м вынесен в левой руке с чистым негативным пространством между луком и телом, за правым плечом виден колчан со стрелами.",
+      "evidence": [
+        "assets/characters/ranged_skirmisher/review/front.png",
+        "assets/characters/ranged_skirmisher/review/side.png",
+        "assets/characters/ranged_skirmisher/review/silhouette.png"
+      ]
+    },
+    {
+      "id": "skirmisher_skeletal_anatomy",
+      "target": "Скелетная анатомия включает открытые промежутки грудной клетки, темные впадины ребер, узкую поясницу/позвоночник и тонкие костные конечности, создавая резкий контраст плотности относительно тяжелого броневика.",
+      "evidence": [
+        "assets/characters/ranged_skirmisher/review/front.png",
+        "assets/characters/ranged_skirmisher/review/iso.png",
+        "assets/characters/ranged_skirmisher/review/material_closeup.png"
+      ]
+    },
+    {
+      "id": "skirmisher_gameplay_readability",
+      "target": "В игровой перспективе (камера под углом 35 градусов) силуэт лучника четко отделяется от окружения; натянутая или выставленная вперед рука с луком формирует асимметричную треугольную форму, мгновенно узнаваемую с дистанции.",
+      "evidence": [
+        "assets/characters/ranged_skirmisher/review/gameplay.png",
+        "assets/characters/ranged_skirmisher/review/iso.png"
+      ]
+    },
+    {
+      "id": "skirmisher_day_and_night_readability",
+      "target": "Материалы скелета-лучника (состаренная кость, темные суставы, потертая кожа капюшона/колчана, древесина лука и тетива) отчетливо читаются и разделяются как при дневном, так и при ночном лунном освещении (gameplay_night.png).",
+      "evidence": [
+        "assets/characters/ranged_skirmisher/review/gameplay.png",
+        "assets/characters/ranged_skirmisher/review/gameplay_night.png",
+        "assets/characters/ranged_skirmisher/review/material_closeup.png"
+      ]
+    },
+    {
+      "id": "skirmisher_animations_completeness",
+      "target": "Пакет содержит 5 обязательных анимаций (idle, move, attack, hit, death): в анимации атаки присутствует читаемая подготовка (замах/дотягивание до колчана), натяжение тетивы к щеке, спуск стрелы (фрейм 25) и отдача.",
+      "evidence": [
+        "assets/characters/ranged_skirmisher/review/anim_idle.png",
+        "assets/characters/ranged_skirmisher/review/anim_move.png",
+        "assets/characters/ranged_skirmisher/review/anim_attack.png",
+        "assets/characters/ranged_skirmisher/review/anim_hit.png",
+        "assets/characters/ranged_skirmisher/review/anim_death.png"
+      ]
+    },
+    {
+      "id": "skirmisher_mesh_and_budget",
+      "target": "Единый меш Body экспортирован с bottom-center пивотом (0,0,0), полигонаж в пределах бюджета (948 треугольников <= 1000), 6 материалов, 23 кости арматуры включая сокеты лука и стрелы.",
+      "evidence": [
+        "assets/characters/ranged_skirmisher/review/front.png",
+        "assets/characters/ranged_skirmisher/review/iso.png"
+      ]
+    }
+  ]
+}

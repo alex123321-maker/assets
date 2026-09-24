@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "inputs": [
+    "assets/characters/zombie/source/character_spec.json",
+    "tools/blender/build_character_asset.py",
+    "tools/blender/character_builder_core.py",
+    "tools/compose_animation_sheets.py"
+  ],
+  "commands": [
+    [
+      "blender",
+      "--python-exit-code",
+      "1",
+      "--background",
+      "--factory-startup",
+      "--python",
+      "tools/blender/build_character_asset.py",
+      "--",
+      "--asset",
+      "assets/characters/zombie"
+    ],
+    [
+      "python",
+      "tools/compose_animation_sheets.py",
+      "--asset",
+      "assets/characters/zombie"
+    ]
+  ],
+  "references": [
+    {
+      "path": "assets/characters/references/undead_enemies_concept.png",
+      "sha256": "a1ba890c90d0c8e21a2e5c64becf201859c2bcda0bc0679683208522e4494260",
+      "status": "candidate",
+      "provenance": "Concept sheet generated via MCP bridge for Issue #9 undead enemy pack (Zombie, Ranged Skirmisher, Siege Breaker)."
+    }
+  ],
+  "reference_free_reason": "",
+  "artifacts": [
+    "assets/characters/zombie/output/model.glb",
+    "assets/characters/zombie/review/front.png",
+    "assets/characters/zombie/review/side.png",
+    "assets/characters/zombie/review/top.png",
+    "assets/characters/zombie/review/iso.png",
+    "assets/characters/zombie/review/gameplay.png",
+    "assets/characters/zombie/review/gameplay_night.png",
+    "assets/characters/zombie/review/silhouette.png",
+    "assets/characters/zombie/review/material_closeup.png",
+    "assets/characters/zombie/review/anim_idle.png",
+    "assets/characters/zombie/review/anim_move.png",
+    "assets/characters/zombie/review/anim_attack.png",
+    "assets/characters/zombie/review/anim_hit.png",
+    "assets/characters/zombie/review/anim_death.png",
+    "assets/characters/zombie/review/metrics.json",
+    "assets/characters/zombie/review/review.md"
+  ],
+  "require_engine_review": false,
+  "criteria": [
+    {
+      "id": "zombie_silhouette_and_posture",
+      "target": "Силуэт зомби имеет выраженную сутулую позу (наклон торса вперед), опущенный череп с выступающей нижней челюстью и вытянутые вперед агрессивные руки-клешни, отделенные от торса с читаемым негативным пространством.",
+      "evidence": [
+        "assets/characters/zombie/review/front.png",
+        "assets/characters/zombie/review/side.png",
+        "assets/characters/zombie/review/silhouette.png"
+      ]
+    },
+    {
+      "id": "zombie_palette_and_materials",
+      "target": "Цветовая палитра передает некротическую плоть (приглушенный оливково-зеленый тон) с рваными остатками одежды/набедренной повязки и светлыми костными акцентами (ребра/зубы), без монохромной каши.",
+      "evidence": [
+        "assets/characters/zombie/review/front.png",
+        "assets/characters/zombie/review/iso.png",
+        "assets/characters/zombie/review/material_closeup.png"
+      ]
+    },
+    {
+      "id": "zombie_gameplay_readability",
+      "target": "В игровой перспективе (камера под углом 35 градусов) силуэт зомби мгновенно отделяется от фона и пола, читается шаг и вытянутые вперед руки, контакт с поверхностью устойчивый.",
+      "evidence": [
+        "assets/characters/zombie/review/gameplay.png",
+        "assets/characters/zombie/review/iso.png"
+      ]
+    },
+    {
+      "id": "zombie_animations_completeness",
+      "target": "Пакет содержит все 5 обязательных анимаций (idle, move, attack, hit, death) с четким разделением фаз: замах когтями, контактный кадр удара (фрейм 20), отдача при уроне и падение при смерти.",
+      "evidence": [
+        "assets/characters/zombie/review/anim_idle.png",
+        "assets/characters/zombie/review/anim_move.png",
+        "assets/characters/zombie/review/anim_attack.png",
+        "assets/characters/zombie/review/anim_hit.png",
+        "assets/characters/zombie/review/anim_death.png"
+      ]
+    },
+    {
+      "id": "zombie_day_and_night_readability",
+      "target": "Материалы зомби (некротическая плоть, рваная ткань, костные зубы/ребра) четко разделяются и читаются как при дневном, так и при ночном лунном освещении (gameplay_night.png).",
+      "evidence": [
+        "assets/characters/zombie/review/gameplay.png",
+        "assets/characters/zombie/review/gameplay_night.png",
+        "assets/characters/zombie/review/material_closeup.png"
+      ]
+    },
+    {
+      "id": "zombie_mesh_and_budget",
+      "target": "Единый меш Body экспортирован с bottom-center пивотом (0,0,0), полигонаж в пределах бюджета (972 треугольника <= 1000), 5 материалов, 22 кости арматуры.",
+      "evidence": [
+        "assets/characters/zombie/review/front.png",
+        "assets/characters/zombie/review/iso.png"
+      ]
+    }
+  ]
+}

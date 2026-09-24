@@ -1,0 +1,107 @@
+{
+  "evidence_digest": "ac53787ad45a117d7fe367aa0ac16213f1c40767659903245c07cac45b08ad6e",
+  "reviewer": "Antigravity / Gemini 3.8 Flash High visual self-review",
+  "inspected_images": [
+    "assets/characters/references/undead_enemies_concept.png",
+    "assets/characters/zombie/review/front.png",
+    "assets/characters/zombie/review/side.png",
+    "assets/characters/zombie/review/top.png",
+    "assets/characters/zombie/review/iso.png",
+    "assets/characters/zombie/review/gameplay.png",
+    "assets/characters/zombie/review/gameplay_night.png",
+    "assets/characters/zombie/review/silhouette.png",
+    "assets/characters/zombie/review/material_closeup.png",
+    "assets/characters/zombie/review/anim_idle.png",
+    "assets/characters/zombie/review/anim_move.png",
+    "assets/characters/zombie/review/anim_attack.png",
+    "assets/characters/zombie/review/anim_hit.png",
+    "assets/characters/zombie/review/anim_death.png"
+  ],
+  "criteria": [
+    {
+      "id": "zombie_silhouette_and_posture",
+      "status": "pass",
+      "observation": "В проекциях front, side и pure silhouette виден явный наклон вперед: позвоночник наклонен под 16 градусов, грудная клетка под 22 градуса. Голова вынесена вперед на шее, нижняя челюсть выступает за плоскость черепа. Обе руки согнуты в локтях и вытянуты вперед с читаемым зазором (негативным пространством) между предплечьями и грудью. На silhouette силуэт безошибочно читается как сутулый агрессивный милишник. После ART-02 art pass: ступенчатый 5-секционный череп (свод, надбровья, виски, носовой, скулы), открытые ребра, сегментированные руки с выступами локтевых капителей, 4-когтевые кисти и ступенчатая иерархия ног полностью соответствуют кластерно-воксельному уровню детализации концептарта."
+    },
+    {
+      "id": "zombie_palette_and_materials",
+      "status": "pass",
+      "observation": "В front, iso и material_closeup тело окрашено в приглушенный шалфейно-зеленый тон некротической плоти (#84946e) с более светлыми акцентами на надбровье (#9baa84). Глазницы темные (#1c221a). На бедрах и плечах надеты коричневые рваные лоскуты ткани (#524032), на груди и когтях видны костяные акценты цвета слоновой кости (#cfc8b6). После устранения EVID-01 все материалы на material_closeup и последующих рендерах отображаются в исходной цветовой гамме PBR без потерь."
+    },
+    {
+      "id": "zombie_gameplay_readability",
+      "status": "pass",
+      "observation": "В gameplay.png (камера Godot FOV 45, угол наклона 35 градусов) зомби четко отделяется от серых плит пола за счет зеленоватого оттенка и контрастной темной тени. Руки направлены в сторону движения, силуэт сутулой спины хорошо заметен сверху-сбоку. Контакт стоп с землей плоский и устойчивый."
+    },
+    {
+      "id": "zombie_day_and_night_readability",
+      "status": "pass",
+      "observation": "gameplay_night.png (1280x720) подтверждает читаемость при лунном освещении: sun energy=1.4 с голубым оттенком (0.45, 0.65, 1.0), fill energy=0.5, ambient (0.012, 0.018, 0.028). Шалфейно-зеленый тон плоти и коричневые лохмотья ткани различимы. Темные глазницы контрастируют с бледной костяной чертой черепа. Общий силуэт читается идентично дневному варианту. LIGHT-01 закрыт."
+    },
+    {
+      "id": "zombie_animations_completeness",
+      "status": "pass",
+      "observation": "Все 5 фильмстрипов сформированы: anim_idle показывает покачивание груди и головы (цикл 2.0 сек, 60 кадров при 30 fps); anim_move демонстрирует шагающий цикл с синхронным подъемом и опусканием ног и компенсацией наклона торса (1.0 сек, 30 кадров при 30 fps); anim_attack показывает замах правой руки назад, акцентированный удар вперед на кадре 20 и возврат (1.33 сек, 40 кадров при 30 fps); anim_hit показывает отброс торса назад на 18 градусов при попадании (0.5 сек, 15 кадров при 30 fps); anim_death показывает падение на колени и плашмя на землю (1.33 сек, 40 кадров при 30 fps). Длительности клипов строго соответствуют шкале 30 fps (TECH-02). EVID-06 закрыт: все 5 клипов x 3 персонажа имеют фильмстрипы."
+    },
+    {
+      "id": "zombie_mesh_and_budget",
+      "status": "pass",
+      "observation": "Файл model.glb содержит единый меш Body (972 треугольника при бюджете до 1000, 81 бокс x 12), 5 материалов и 22 кости арматуры. После ART-02 art pass: ступенчатый череп из 5 секций, открытые ребра грудной клетки, сегментированные руки с выступающими костяными локтями, 4-когтевые кисти, ступенчатые ноги с блоками пальцев. Пивот расположен строго по центру основания стоп (0, 0, 0). Все нормали граней боксов направлены строго наружу (TECH-01), подтверждено геометрическим тестом test_tech01_box_face_winding_normals_outward."
+    }
+  ],
+  "gameplay": {
+    "status": "checked",
+    "evidence": [
+      "assets/characters/zombie/review/gameplay.png",
+      "assets/characters/zombie/review/gameplay_night.png",
+      "assets/characters/zombie/review/iso.png"
+    ],
+    "notes": "Проверено реальным запуском в headless Godot 4.6.1-stable (tools/run_godot_verify.py): сцена загрузилась без ошибок, AnimationPlayer содержит 5 клипов с точными длительностями (idle=2.0s, move=1.0s, attack=1.33s, hit=0.5s, death=1.33s), меш Body проверен присвоением тестового material_override с CULL_BACK (тест вспышки урона без сбоев конвейера), 22 кости распознаны. Дополнительно: gameplay_night.png (1280x720) рендер лунного освещения подтверждает LIGHT-01."
+  },
+  "feedback_resolution": [
+    {
+      "finding_id": "TECH-01",
+      "title": "Inverted face normals on box geometries",
+      "resolution": "Fixed vertex winding order in character_builder_core.py and build_zombie_blockouts.py to counter-clockwise outward for all 6 box faces. Verified via unit test test_tech01_box_face_winding_normals_outward (dot(normal, outward) > 0 for all faces) and Godot material_override application with CULL_BACK."
+    },
+    {
+      "finding_id": "TECH-02",
+      "title": "Animation clip framerate mismatch (24 fps default vs 30 fps intended)",
+      "resolution": "Configured scene.render.fps = 30 and fps_base = 1.0 explicitly in Blender builder before NLA baking and GLTF export. Verified via binary GLB chunk inspection (test_tech02_glb_animation_durations_at_30fps) and Godot AnimationPlayer length checks."
+    },
+    {
+      "finding_id": "EVID-01",
+      "title": "Silhouette pass stripped mesh materials permanently",
+      "resolution": "Replaced destructive materials.clear() with non-destructive bpy.context.view_layer.material_override. Invariance of polygon material assignments is guaranteed via runtime assertions directly inside build_character_asset.py, while CI regression test test_evid01_materials_and_closeups_preserved validates exported material metrics and non-monochrome material_closeup renders."
+    },
+    {
+      "finding_id": "EVID-03",
+      "title": "visual_review.json referenced renamed CI regression test",
+      "resolution": "Corrected resolution text to reference actual test_evid01_materials_and_closeups_preserved in tests/unit/test_enemy_assets.py and clarified the division between runtime polygon material assert in builder and CI metric/render verification."
+    },
+    {
+      "finding_id": "ART-02",
+      "title": "All 3 models are blockout-level; full clustered-voxel art pass required",
+      "resolution": "Zombie rebuilt from scratch with 81-box production spec (tools/author_enemy_specs.py): 5-section stepped skull (cranium, brow, temples, nasal ridge, cheekbones), open jaw with fang protrusions, dark eye socket recesses, 3-rib exposed ribcage cluster with dark hollow cavity, multi-strip cloth loincloth, multi-segment arms with bone-knuckle elbow caps, 4-claw hands, thigh-calf-shin-foot leg hierarchy with individual toe blocks. Total 972 tris (budget 1000). Build confirmed [OK]. Renders regenerated: front, side, top, iso, gameplay, silhouette, material_closeup, gameplay_night, all 5 animation filmstrips."
+    },
+    {
+      "finding_id": "EVID-06",
+      "title": "Animation previews missing for Zombie and Siege Breaker",
+      "resolution": "All 5 animation filmstrip renders (anim_idle, anim_move, anim_attack, anim_hit, anim_death) confirmed present for Zombie after ART-02 production rebuild. Filmstrips generated via standard quality_gate.py build pipeline in build_character_asset.py. All 3 characters x 5 clips covered."
+    },
+    {
+      "finding_id": "LIGHT-01",
+      "title": "Day/night material readability not evidenced; single bright lighting only",
+      "resolution": "Added gameplay_night.png render pass to build_character_asset.py using moonlight setup: sun energy=1.4 color=(0.45,0.65,1.0), fill energy=0.5 color=(0.2,0.35,0.65), world ambient=(0.012,0.018,0.028). Render confirmed 1280x720. Added zombie_day_and_night_readability criterion to quality.json. Night render included in inspected_images and gameplay evidence. All 3 characters have gameplay_night.png."
+    },
+    {
+      "finding_id": "ANIM-01",
+      "title": "death animation ends floating in the air across all 3 characters",
+      "resolution": "Root cause: apply_pose_keyframe() was setting pb.location on the Hips bone with drop_z as a local bone Z component. The Hips bone local Z axis does not align with world -Z, causing the intended downward drop to produce aerial sideways displacement. Fix: removed all Hips local-space location keyframes from the death action. Replaced with Root bone location keyframes using loc=Vector((0,-d,0)) where Root bone local -Y == world -Z, achieving true world-space ground descent. Added Thigh.L/R and Shin.L/R rotation keyframes for knee-collapse animation. Death clip now progresses: rest (frame 0) → knee buckle + torso lurch (frame 10, Root -0.12m) → full knee collapse (frame 25, Root -0.45m) → prone on ground (frame 40, Root -0.72m/-1.00m). All 3 characters rebuilt: zombie [OK] 972 tris, skirmisher [OK] 948 tris, siege_breaker [OK] 864 tris. anim_death.png filmstrips regenerated."
+    }
+  ],
+  "known_deviations": [
+    "Одежда представлена простыми стилизованными полосами ткани без симуляции физики ткани, что соответствует воксельному стилю Cube Siege.",
+    "Пальцы рук объединены в стилизованные трехпалые когти для сохранения воксельной блочности."
+  ]
+}

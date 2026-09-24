@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "inputs": [
+    "assets/characters/siege_breaker/source/character_spec.json",
+    "tools/blender/build_character_asset.py",
+    "tools/blender/character_builder_core.py",
+    "tools/compose_animation_sheets.py"
+  ],
+  "commands": [
+    [
+      "blender",
+      "--python-exit-code",
+      "1",
+      "--background",
+      "--factory-startup",
+      "--python",
+      "tools/blender/build_character_asset.py",
+      "--",
+      "--asset",
+      "assets/characters/siege_breaker"
+    ],
+    [
+      "python",
+      "tools/compose_animation_sheets.py",
+      "--asset",
+      "assets/characters/siege_breaker"
+    ]
+  ],
+  "references": [
+    {
+      "path": "assets/characters/references/undead_enemies_concept.png",
+      "sha256": "a1ba890c90d0c8e21a2e5c64becf201859c2bcda0bc0679683208522e4494260",
+      "status": "candidate",
+      "provenance": "Concept sheet generated via MCP bridge for Issue #9 undead enemy pack (Zombie, Ranged Skirmisher, Siege Breaker)."
+    }
+  ],
+  "reference_free_reason": "",
+  "artifacts": [
+    "assets/characters/siege_breaker/output/model.glb",
+    "assets/characters/siege_breaker/review/front.png",
+    "assets/characters/siege_breaker/review/side.png",
+    "assets/characters/siege_breaker/review/top.png",
+    "assets/characters/siege_breaker/review/iso.png",
+    "assets/characters/siege_breaker/review/gameplay.png",
+    "assets/characters/siege_breaker/review/gameplay_night.png",
+    "assets/characters/siege_breaker/review/silhouette.png",
+    "assets/characters/siege_breaker/review/material_closeup.png",
+    "assets/characters/siege_breaker/review/anim_idle.png",
+    "assets/characters/siege_breaker/review/anim_move.png",
+    "assets/characters/siege_breaker/review/anim_attack.png",
+    "assets/characters/siege_breaker/review/anim_hit.png",
+    "assets/characters/siege_breaker/review/anim_death.png",
+    "assets/characters/siege_breaker/review/metrics.json",
+    "assets/characters/siege_breaker/review/review.md"
+  ],
+  "require_engine_review": false,
+  "criteria": [
+    {
+      "id": "siege_breaker_heavy_silhouette",
+      "target": "Тяжелый осадный разрушитель имеет доминирующую монументальную ширину (2.24м) и высоту (2.45м), массивные каменные наплечники, широкую расстановку ног и гигантские каменные кулаки-молоты, однозначно читаясь как сверхтяжелый юнит.",
+      "evidence": [
+        "assets/characters/siege_breaker/review/front.png",
+        "assets/characters/siege_breaker/review/side.png",
+        "assets/characters/siege_breaker/review/silhouette.png"
+      ]
+    },
+    {
+      "id": "siege_breaker_undead_armor_materials",
+      "target": "Материалы гармонично сочетают холодную сланцевую броню, металлические накладки на кулаках, темно-зеленую некротическую плоть на боках и обнаженную челюсть черепа, четко идентифицируя юнита как нежить-титана, а не просто каменного голема.",
+      "evidence": [
+        "assets/characters/siege_breaker/review/front.png",
+        "assets/characters/siege_breaker/review/iso.png",
+        "assets/characters/siege_breaker/review/material_closeup.png"
+      ]
+    },
+    {
+      "id": "siege_breaker_gameplay_readability",
+      "target": "В игровой перспективе (камера под углом 35 градусов) силуэт броневика доминирует на поле боя, его монолитные плечи и кулаки создают ощущение тяжести и непреодолимой угрозы, контакт с землей устойчивый и весомый.",
+      "evidence": [
+        "assets/characters/siege_breaker/review/gameplay.png",
+        "assets/characters/siege_breaker/review/iso.png"
+      ]
+    },
+    {
+      "id": "siege_breaker_day_and_night_readability",
+      "target": "Материалы титана-разрушителя (сланцевая броня, металлические шипы/накладки, некротическая плоть, костяные бивни и красная кожа повязки) четко различимы и не сливаются с землей как при дневном, так и при ночном лунном освещении (gameplay_night.png).",
+      "evidence": [
+        "assets/characters/siege_breaker/review/gameplay.png",
+        "assets/characters/siege_breaker/review/gameplay_night.png",
+        "assets/characters/siege_breaker/review/material_closeup.png"
+      ]
+    },
+    {
+      "id": "siege_breaker_animations_completeness",
+      "target": "Пакет содержит 5 обязательных анимаций (idle, move, attack, hit, death): тяжелая атака включает мощный двуручный замах с поднятием кулаков выше головы без пересечения с наплечниками, сокрушительный удар в землю (контакт фрейм 28) и инерционное восстановление.",
+      "evidence": [
+        "assets/characters/siege_breaker/review/anim_idle.png",
+        "assets/characters/siege_breaker/review/anim_move.png",
+        "assets/characters/siege_breaker/review/anim_attack.png",
+        "assets/characters/siege_breaker/review/anim_hit.png",
+        "assets/characters/siege_breaker/review/anim_death.png"
+      ]
+    },
+    {
+      "id": "siege_breaker_mesh_and_budget",
+      "target": "Единый меш Body экспортирован с bottom-center пивотом (0,0,0), полигонаж в пределах бюджета (864 треугольника <= 1000), 5 материалов, 21 кость арматуры включая точку удара SmashPoint.",
+      "evidence": [
+        "assets/characters/siege_breaker/review/front.png",
+        "assets/characters/siege_breaker/review/iso.png"
+      ]
+    }
+  ]
+}
