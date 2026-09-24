@@ -1,10 +1,10 @@
 {
   "version": 1,
   "hash_policy": "sha256-text-lf-v1",
-  "built_at": "2026-09-24T13:06:22.697032+00:00",
+  "built_at": "2026-09-24T13:56:53.707726+00:00",
   "inputs": {
     "assets/characters/siege_breaker/source/character_spec.json": "acfe9b3ff5b5caee488a2d7b6816a32626695e14191e8963ff1324d5224e186b",
-    "tools/blender/build_character_asset.py": "b417b3dcb687fdf7bf99a4e1b66af9d8fc307e02a63266662d1ba3d3323566cf",
+    "tools/blender/build_character_asset.py": "981b838edba9037322b5947d3844e8ca955590633a2b9d4c98984fcae9c5f138",
     "tools/blender/character_builder_core.py": "86f4fc196f7db2c7bfdec6508e548e2b6592d82d3cecd0cdf1f097a8c4e2e56b",
     "tools/compose_animation_sheets.py": "8678a7aa3d427c79746c0c964da017a2c8ee0071929cbf1d406737ed1ce42457",
     "assets/characters/references/undead_enemies_concept.png": "a1ba890c90d0c8e21a2e5c64becf201859c2bcda0bc0679683208522e4494260",
@@ -13,21 +13,21 @@
     "assets/characters/siege_breaker/manifest.json": "849e7242a7966200fbba4bb6737c5be22584d1bfa81ff2aa15239c45f8ac8dd3"
   },
   "artifacts": {
-    "assets/characters/siege_breaker/output/model.glb": "e461a8c277e3b69f2fb7b7d2b9d4dc44e34dc80d9d640dcfa10a3c46a788e92c",
-    "assets/characters/siege_breaker/review/front.png": "8ccd6172eeb1b55f65f8ec31deaf8d75b9db9a14b17914037aa73f44b32e4058",
-    "assets/characters/siege_breaker/review/side.png": "d7b93518d17ccb2b3be5e7712aebde532cdf4e2a198872b58b72c5f65db6631e",
-    "assets/characters/siege_breaker/review/top.png": "0e73426f24836151e0acf822a34cd2a3859f81f78e08e0b8e850dc9f8bc8a709",
-    "assets/characters/siege_breaker/review/iso.png": "49ae6460891b986b9a10fe8b9f7daed067a683fd3d3e688011c317d75779d0a9",
-    "assets/characters/siege_breaker/review/gameplay.png": "5c49e595ecdaad07285ef1f7d6785a356f525e035e3b3b3126134e5d62fd17b4",
-    "assets/characters/siege_breaker/review/gameplay_night.png": "91366019d5394b0bad97bf5be47b9c5ba91d2a7eea66c5ecc942e67d9172103f",
-    "assets/characters/siege_breaker/review/silhouette.png": "a8834a444a27fc1e5dde769a1a0e61a1706f1644fe9772aee94e3c235d283996",
-    "assets/characters/siege_breaker/review/material_closeup.png": "2bf3137c45bddccba2aae95f139c0d4b148bc5f9d4a3dc48be550d6d872dc7ba",
-    "assets/characters/siege_breaker/review/anim_idle.png": "67d14a894741a8c77fbbbb617e933a4cf42dea1a8c8a5f60991e147a9195e9e3",
-    "assets/characters/siege_breaker/review/anim_move.png": "466ea7361697eb590bb6b24a4efa318d2e6cb7911efe6fadb021b44f98299269",
-    "assets/characters/siege_breaker/review/anim_attack.png": "6284b70a5af9fb369846d951c6301b1ceab43472c1b8b8a5b350a0de5651960b",
-    "assets/characters/siege_breaker/review/anim_hit.png": "05d5a4d943e42183745050f75925f23fadf093148db69836f3ebf763062fd77a",
-    "assets/characters/siege_breaker/review/anim_death.png": "455fe43f566af23902c16a0ab68d40a8b75c77d13dba659cd0815eae98ac2574",
-    "assets/characters/siege_breaker/review/metrics.json": "067772dddda35744d52e765b9e5d0c262af30e102035a09f9e6129620e8a21dd",
+    "assets/characters/siege_breaker/output/model.glb": "6a2dd8a9555efe169661410f659f94de836a30cca575b509d5935c1985d66a70",
+    "assets/characters/siege_breaker/review/front.png": "c25c9fcc6b572d27b9cfcba453a542677362b6c0208e54c4e8f4efb7a806f609",
+    "assets/characters/siege_breaker/review/side.png": "3737558fd9f966209b863dc23a4d2e11cbc591764716ccd21145c6b1897ae999",
+    "assets/characters/siege_breaker/review/top.png": "7defe147f83618e4b6e61ef6b1f8ba851a8eaecf0911d3af686664deb51db45f",
+    "assets/characters/siege_breaker/review/iso.png": "2371ec444b4bf41ae5971b2c563412b8bb49ed17ea27dac1e238934bed64ee5e",
+    "assets/characters/siege_breaker/review/gameplay.png": "7d118a6bb9fab68f9a0512f386f538addf4dc452cc74c72c409d312db40c4270",
+    "assets/characters/siege_breaker/review/gameplay_night.png": "6cdf29b08d1bd42a952f3ac745e6c6a8cc0e7b799532282bafe0ac0a02dc44bc",
+    "assets/characters/siege_breaker/review/silhouette.png": "976a576f23f0c0159206c7c5ba20103f68fd9011a8bcac8f215a86f7d815ea1a",
+    "assets/characters/siege_breaker/review/material_closeup.png": "bce0b9940791320d759a7e0026c46775ee1348bcb72bdb4d85d926d5bc58bb4a",
+    "assets/characters/siege_breaker/review/anim_idle.png": "940d0b06abe93823d3ae3a1f82a361d8b1eff3fdd0c7845c1efa18609c01ae5e",
+    "assets/characters/siege_breaker/review/anim_move.png": "e48781ef7efd8845d69ef03d8dde93d6e3b03e857490956436dd79fd1a199ce6",
+    "assets/characters/siege_breaker/review/anim_attack.png": "efe217fd155a9c9c8b6789f8cb1e59866cd4a7c6a20fb0965237ba23abdf52d1",
+    "assets/characters/siege_breaker/review/anim_hit.png": "596b856d36c1d1c985cc8de926a98f80c89547c240c3d499598a8e44f32de93f",
+    "assets/characters/siege_breaker/review/anim_death.png": "05cca61bbb8e5b468666e9f6ad6167232c7d59b66ff55835634aee7ee682c353",
+    "assets/characters/siege_breaker/review/metrics.json": "97002a7dd4084b673f48d91abea678f092e049a19bb7332bedcebef61b9b83ed",
     "assets/characters/siege_breaker/review/review.md": "cea3d2e846274300d92a2d593e8042772de79f2534d7f593ecf0d1e5a3da4217"
   },
   "measurements": {
@@ -36,5 +36,5 @@
       "materials": 5
     }
   },
-  "digest": "4c3172c832256d9f98fcce210550175f0b03fc925caf1edc03051341eb0d068d"
+  "digest": "ef93e422df3916df5db3098468f1f33f5653e14093f6484fc0b648f1c80bae27"
 }

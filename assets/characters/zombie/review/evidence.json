@@ -1,10 +1,10 @@
 {
   "version": 1,
   "hash_policy": "sha256-text-lf-v1",
-  "built_at": "2026-09-24T12:57:42.167293+00:00",
+  "built_at": "2026-09-24T13:50:48.603140+00:00",
   "inputs": {
     "assets/characters/zombie/source/character_spec.json": "dc0986b91adeb00cff07c09bfcbf37190278c56e0c7feb2297423ef026dc5c8d",
-    "tools/blender/build_character_asset.py": "b417b3dcb687fdf7bf99a4e1b66af9d8fc307e02a63266662d1ba3d3323566cf",
+    "tools/blender/build_character_asset.py": "981b838edba9037322b5947d3844e8ca955590633a2b9d4c98984fcae9c5f138",
     "tools/blender/character_builder_core.py": "86f4fc196f7db2c7bfdec6508e548e2b6592d82d3cecd0cdf1f097a8c4e2e56b",
     "tools/compose_animation_sheets.py": "8678a7aa3d427c79746c0c964da017a2c8ee0071929cbf1d406737ed1ce42457",
     "assets/characters/references/undead_enemies_concept.png": "a1ba890c90d0c8e21a2e5c64becf201859c2bcda0bc0679683208522e4494260",
@@ -13,21 +13,21 @@
     "assets/characters/zombie/manifest.json": "4e1027e650014efe3887cced1da37f5f09aaa8a3f66bc9c525850d0a09aeeddd"
   },
   "artifacts": {
-    "assets/characters/zombie/output/model.glb": "140d93bad6e1db2955f8eb8d8401897df301ecb9ce8c3912572485f1370d142e",
-    "assets/characters/zombie/review/front.png": "3a63e5d376378ba61b99093e1f7b8367f5103046e0c6a0dcf48c7af930045e54",
-    "assets/characters/zombie/review/side.png": "cca7c97fc7b08ae39208565e76b55d998f6e91b557feb4aaa7c720476ff8bea9",
-    "assets/characters/zombie/review/top.png": "0a8188ebe69b504a7a92ca14d6d4995e777498a55aa038698212396ddcbe4a60",
-    "assets/characters/zombie/review/iso.png": "8d1e0bf0ea3adfb4c6a8c1e800818cd0b71fe10408ed88caa270104557fde859",
-    "assets/characters/zombie/review/gameplay.png": "f6a0f8c2afc93c3f914af50732c7a2326b91fe5771ac73a715e77417fb68bb18",
-    "assets/characters/zombie/review/gameplay_night.png": "30e32ddaf2971dfee4f7f880c6b1ce967d8cd3a48efe958903a5223be03d85d5",
-    "assets/characters/zombie/review/silhouette.png": "bfd81835a9a58177898d1cd201f63ca29b245de3cf6a14e2d5a68dbe2abd5401",
-    "assets/characters/zombie/review/material_closeup.png": "3d52bf35ca3fc16d95f382a4c719a3c925ac42ee6e9cf2317ab95e89113d05a8",
-    "assets/characters/zombie/review/anim_idle.png": "cb0393c5a68a1f8bca964074fa2e161bf1c83504d830f9cac9f97e3de2dd84da",
-    "assets/characters/zombie/review/anim_move.png": "96645ec6fad011e202c021d1a924e214ce9148086ecc5e99dcb4185fa231b1bc",
-    "assets/characters/zombie/review/anim_attack.png": "c28520ff0b11335727e2be0305932e143d7d07111431abb9994f49fd08ad885b",
-    "assets/characters/zombie/review/anim_hit.png": "7bbf3097f5b6ec71c55ae1e4a4eb5f7328c254bd5b0f2bf7f2b3618c6dc46fc3",
-    "assets/characters/zombie/review/anim_death.png": "7e8882254b9bc93c3b3b9bad0e8766d19f96192a9e913a60d261eabb9c8b78ac",
-    "assets/characters/zombie/review/metrics.json": "8f4d70fbf6ed985ebfef5e83d5b602d04e077b95544ef83b89918fbaf01a5fbf",
+    "assets/characters/zombie/output/model.glb": "2ee29ced8c532445cd6943b9cef949953e4f44d210fbdd4ceb928edd651ae548",
+    "assets/characters/zombie/review/front.png": "dc54b1c6cd46cf68c8b5463bcd74df3011a578d95739829a2c951c64410d2aa3",
+    "assets/characters/zombie/review/side.png": "ff2ff42b6e56621ab5e825acb09f0034df3e925db0e03bb24cce4ca2457c7b4a",
+    "assets/characters/zombie/review/top.png": "c1e801af1c42008c37a95fa97870f3d1119fbce848df0d5def83dc57abc67a55",
+    "assets/characters/zombie/review/iso.png": "7a9117acab33b45ac2f8662e6792eade8f0613c010d30e951706b57644e9bbf3",
+    "assets/characters/zombie/review/gameplay.png": "8817cc6dcba2d6dc166c88623248facdc0d346a4e33e3400a0184c0bc9f8d619",
+    "assets/characters/zombie/review/gameplay_night.png": "0d0db11b84e25fe51d566345fc34d4fa9a5e79ea6b94354850237de1fcf206a4",
+    "assets/characters/zombie/review/silhouette.png": "895ffe2a86155012cb7d3238e361eb57a6a3f7b1280c498bfff0b179446b5513",
+    "assets/characters/zombie/review/material_closeup.png": "fbe5763c088d6f6afb305660566d4253b9d89d3444d1e48ee0a67ce087b24e65",
+    "assets/characters/zombie/review/anim_idle.png": "9c04b23de0e7f1b3b143235223b46b5738b1dca7e56c6f22e212b2139027ee45",
+    "assets/characters/zombie/review/anim_move.png": "a3d3c277cdc74ea6e95e7b4a55503148b5dcc60e0b4cdd64e69aee651fd3608f",
+    "assets/characters/zombie/review/anim_attack.png": "78b936c635fc865fb11a907df43d42bef8a75d508dd8c2a095abb10c1c054ca1",
+    "assets/characters/zombie/review/anim_hit.png": "f8aa038b2c9433406964648f30667c900d7befe576d04ccfbbadc177df2127b6",
+    "assets/characters/zombie/review/anim_death.png": "59eaab54f5a6c1a2bc40fab5e8d23a57e623baa8c956732b94b57a4324adc575",
+    "assets/characters/zombie/review/metrics.json": "04f052aa8d3ff240d240e855b95779799cdb60b5b66752f83c37229d1996d7c8",
     "assets/characters/zombie/review/review.md": "cea3d2e846274300d92a2d593e8042772de79f2534d7f593ecf0d1e5a3da4217"
   },
   "measurements": {
@@ -36,5 +36,5 @@
       "materials": 5
     }
   },
-  "digest": "129df285c8961d383b70b2fa2b416befc60f2b52204be5f64f0fc22fa3c43d6a"
+  "digest": "ac53787ad45a117d7fe367aa0ac16213f1c40767659903245c07cac45b08ad6e"
 }

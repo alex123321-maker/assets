@@ -1,5 +1,5 @@
 {
-  "evidence_digest": "9321884c477d759e15c7d2a074e3230411329892f63b7a85c2c05007aa746383",
+  "evidence_digest": "41b1ab9708c3239f10af3320efba63c1b6eee7aacaebc93fe1aa00e7356fd031",
   "reviewer": "Antigravity / Gemini 3.8 Flash High visual self-review",
   "inspected_images": [
     "assets/characters/references/undead_enemies_concept.png",
@@ -103,6 +103,11 @@
       "finding_id": "LIGHT-01",
       "title": "Day/night material readability not evidenced; single bright lighting only",
       "resolution": "Added gameplay_night.png render pass to build_character_asset.py using moonlight setup: sun energy=1.4 color=(0.45,0.65,1.0), fill energy=0.5 color=(0.2,0.35,0.65), world ambient=(0.012,0.018,0.028). Render confirmed 1280x720. Added skirmisher_day_and_night_readability criterion to quality.json. Night render included in inspected_images and gameplay evidence. All 3 characters have gameplay_night.png."
+    },
+    {
+      "finding_id": "ANIM-01",
+      "title": "death animation ends floating in the air across all 3 characters",
+      "resolution": "Root cause: apply_pose_keyframe() was setting pb.location on the Hips bone with drop_z as a local bone Z component. The Hips bone local Z axis does not align with world -Z, causing the intended downward drop to produce aerial sideways displacement. Fix: removed all Hips local-space location keyframes from the death action. Replaced with Root bone location keyframes using loc=Vector((0,-d,0)) where Root bone local -Y == world -Z, achieving true world-space ground descent. Added Thigh.L/R and Shin.L/R rotation keyframes for knee-collapse animation. Death clip now progresses: rest (frame 0) → knee buckle + torso lurch (frame 10, Root -0.12m) → full knee collapse (frame 25, Root -0.45m) → prone on ground (frame 40, Root -0.72m). All 3 characters rebuilt: [OK] 948 tris. anim_death.png filmstrip regenerated."
     }
   ],
   "known_deviations": [

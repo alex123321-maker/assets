@@ -554,25 +554,62 @@ def create_character_actions(char_name: str, amt_obj: bpy.types.Object) -> list[
 
     # -------------------------------------------------------------
     # ACTION 5: DEATH (40 frames)
+    # ANIM-01 fix: Root bone local-Y == world +Z, so loc=(0,-d,0) drops
+    # the character by d metres in world space.  Hips and Chest rotation
+    # tips the torso forward.  Thigh/Shin rotation collapses the knees.
+    # No local Hips translation is used for the world-space drop, because
+    # the Hips bone's local axes do NOT align with world XYZ and using
+    # pb.location on Hips for a "drop" produces erroneous aerial motion.
     # -------------------------------------------------------------
     act_death = bpy.data.actions.new(name="death")
     amt_obj.animation_data.action = act_death
     reset_pose(amt_obj)
 
-    apply_pose_keyframe(amt_obj, "Hips", 0, loc=Vector((0, 0, 0)), rot_euler=Euler((0, 0, 0)))
+    # Per-character tuning (siege_breaker is taller / heavier)
+    knee_extra = 10.0 if char_name == "siege_breaker" else 0.0
+    root_final_drop = 0.72 if char_name != "siege_breaker" else 1.00
+
+    # Frame 0 — rest stance (all bones at identity)
+    apply_pose_keyframe(amt_obj, "Root",  0, loc=Vector((0, 0, 0)), rot_euler=Euler((0, 0, 0)))
+    apply_pose_keyframe(amt_obj, "Hips",  0, rot_euler=Euler((0, 0, 0)))
     apply_pose_keyframe(amt_obj, "Chest", 0, rot_euler=Euler((0, 0, 0)))
+    apply_pose_keyframe(amt_obj, "Head",  0, rot_euler=Euler((0, 0, 0)))
+    apply_pose_keyframe(amt_obj, "Thigh.L", 0, rot_euler=Euler((0, 0, 0)))
+    apply_pose_keyframe(amt_obj, "Thigh.R", 0, rot_euler=Euler((0, 0, 0)))
+    apply_pose_keyframe(amt_obj, "Shin.L",  0, rot_euler=Euler((0, 0, 0)))
+    apply_pose_keyframe(amt_obj, "Shin.R",  0, rot_euler=Euler((0, 0, 0)))
 
-    apply_pose_keyframe(amt_obj, "Hips", 10, loc=Vector((0, -0.05, -0.15)), rot_euler=Euler((math.radians(10), 0, 0)))
-    apply_pose_keyframe(amt_obj, "Chest", 10, rot_euler=Euler((math.radians(20), 0, 0)))
+    # Frame 10 — knees begin buckling, torso lurches forward
+    # Root descends 0.12 m in world Z (local -Y = world -Z)
+    apply_pose_keyframe(amt_obj, "Root",  10, loc=Vector((0, -0.12, 0)))
+    apply_pose_keyframe(amt_obj, "Hips",  10, rot_euler=Euler((math.radians(12), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Chest", 10, rot_euler=Euler((math.radians(22), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Thigh.L", 10, rot_euler=Euler((math.radians(28 + knee_extra), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Thigh.R", 10, rot_euler=Euler((math.radians(28 + knee_extra), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Shin.L",  10, rot_euler=Euler((math.radians(-38), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Shin.R",  10, rot_euler=Euler((math.radians(-38), 0, 0)))
 
-    drop_z = -0.75 if char_name != "siege_breaker" else -1.05
-    apply_pose_keyframe(amt_obj, "Hips", 25, loc=Vector((0, 0.20, drop_z)), rot_euler=Euler((math.radians(50), 0, 0)))
+    # Frame 25 — deep knee collapse, torso pitching forward 50°
+    # Root descends 0.45 m in world Z
+    apply_pose_keyframe(amt_obj, "Root",  25, loc=Vector((0, -0.45, 0)))
+    apply_pose_keyframe(amt_obj, "Hips",  25, rot_euler=Euler((math.radians(50), 0, 0)))
     apply_pose_keyframe(amt_obj, "Chest", 25, rot_euler=Euler((math.radians(35), 0, 0)))
-    apply_pose_keyframe(amt_obj, "Head", 25, rot_euler=Euler((math.radians(40), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Head",  25, rot_euler=Euler((math.radians(38), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Thigh.L", 25, rot_euler=Euler((math.radians(65 + knee_extra), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Thigh.R", 25, rot_euler=Euler((math.radians(65 + knee_extra), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Shin.L",  25, rot_euler=Euler((math.radians(-70), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Shin.R",  25, rot_euler=Euler((math.radians(-70), 0, 0)))
 
-    apply_pose_keyframe(amt_obj, "Hips", 40, loc=Vector((0, 0.40, drop_z - 0.12)), rot_euler=Euler((math.radians(85), 0, 0)))
-    apply_pose_keyframe(amt_obj, "Chest", 40, rot_euler=Euler((math.radians(10), 0, 0)))
-    apply_pose_keyframe(amt_obj, "Head", 40, rot_euler=Euler((math.radians(10), 0, 0)))
+    # Frame 40 — prone on ground, torso flat (Hips ≈ 85° forward)
+    # Root descends root_final_drop m in world Z — body now rests on floor.
+    apply_pose_keyframe(amt_obj, "Root",  40, loc=Vector((0, -root_final_drop, 0)))
+    apply_pose_keyframe(amt_obj, "Hips",  40, rot_euler=Euler((math.radians(85), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Chest", 40, rot_euler=Euler((math.radians(8), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Head",  40, rot_euler=Euler((math.radians(8), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Thigh.L", 40, rot_euler=Euler((math.radians(80 + knee_extra), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Thigh.R", 40, rot_euler=Euler((math.radians(80 + knee_extra), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Shin.L",  40, rot_euler=Euler((math.radians(-82), 0, 0)))
+    apply_pose_keyframe(amt_obj, "Shin.R",  40, rot_euler=Euler((math.radians(-82), 0, 0)))
     actions.append(act_death)
 
     # Reset to rest pose

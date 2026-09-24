@@ -1,5 +1,5 @@
 {
-  "evidence_digest": "4c3172c832256d9f98fcce210550175f0b03fc925caf1edc03051341eb0d068d",
+  "evidence_digest": "ef93e422df3916df5db3098468f1f33f5653e14093f6484fc0b648f1c80bae27",
   "reviewer": "Antigravity / Gemini 3.8 Flash High visual self-review",
   "inspected_images": [
     "assets/characters/references/undead_enemies_concept.png",
@@ -93,6 +93,11 @@
       "finding_id": "LIGHT-01",
       "title": "Day/night material readability not evidenced; single bright lighting only",
       "resolution": "Added gameplay_night.png render pass to build_character_asset.py using moonlight setup: sun energy=1.4 color=(0.45,0.65,1.0), fill energy=0.5 color=(0.2,0.35,0.65), world ambient=(0.012,0.018,0.028). Render confirmed 1280x720. Added siege_breaker_day_and_night_readability criterion to quality.json. Night render included in inspected_images and gameplay evidence. All 3 characters have gameplay_night.png."
+    },
+    {
+      "finding_id": "ANIM-01",
+      "title": "death animation ends floating in the air across all 3 characters",
+      "resolution": "Root cause: apply_pose_keyframe() was setting pb.location on the Hips bone with drop_z as a local bone Z component. The Hips bone local Z axis does not align with world -Z, causing the intended downward drop to produce aerial sideways displacement. Fix: removed all Hips local-space location keyframes from the death action. Replaced with Root bone location keyframes using loc=Vector((0,-d,0)) where Root bone local -Y == world -Z, achieving true world-space ground descent. Added Thigh.L/R and Shin.L/R rotation keyframes for knee-collapse animation (siege_breaker uses knee_extra=+10° for heavier stance). Death clip: rest (frame 0) → knee buckle (frame 10, Root -0.12m) → deep collapse (frame 25, Root -0.45m) → prone (frame 40, Root -1.00m). Rebuilt [OK] 864 tris. anim_death.png filmstrip regenerated."
     }
   ],
   "known_deviations": [

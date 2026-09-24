@@ -46,11 +46,11 @@
   },
   "dimensions": {
     "x": 1.178,
-    "y": 0.671,
+    "y": 0.62,
     "z": 1.857
   },
   "pivot": "bottom-center (0, 0, 0)",
-  "glb_size_bytes": 175364,
+  "glb_size_bytes": 178344,
   "blender_version": "5.2.1 LTS",
   "render_engine": "BLENDER_EEVEE"
 }
