@@ -20,7 +20,7 @@
     {
       "id": "skirmisher_bow_silhouette",
       "status": "pass",
-      "observation": "В проекциях front, side, pure silhouette и gameplay крупный 1.1-метровый изогнутый лук вынесен в левой руке латерально в сторону (x+y >= 0.56м) и повернут под углом 40 градусов. Между тетивой/луком и торсом сформирован четкий сквозной зазор более 24 см чистого негативного пространства. За правым плечом четко различим диагональный колчан с торчащим оперением стрел. Юнит безошибочно читается как дальний стрелок."
+      "observation": "В проекциях front, side, pure silhouette и gameplay крупный 1.1-метровый изогнутый лук вынесен в левой руке латерально в сторону (x+y >= 0.56м) и повернут под углом 40 градусов. По фактической проекции gameplay camera сформирован сквозной зазор: проекционный зазор ~0.08 м до тетивы и ~0.16 м до ближайшего края дуги лука в горизонтали экрана, обеспечивая полное разделение силуэтов. За правым плечом четко различим диагональный колчан с торчащим оперением стрел. Юнит безошибочно читается как дальний стрелок."
     },
     {
       "id": "skirmisher_skeletal_anatomy",
@@ -75,7 +75,12 @@
     {
       "finding_id": "ART-01",
       "title": "Ranged Skirmisher bow silhouette collapsed onto torso in gameplay camera",
-      "resolution": "Repositioned left arm (UpperArm.L, Forearm.L, Hand.L) outward-lateral (x+y >= 0.56m) and re-oriented recurve bow at 40 deg angle. This guarantees clear negative space (>0.24m separation) between bow/string and torso in the actual (7.5, -7.5, 10.0) gameplay camera view, verified via gameplay.png, front.png, and silhouette.png renders."
+      "resolution": "Repositioned left arm (UpperArm.L, Forearm.L, Hand.L) outward-lateral (x+y >= 0.56m) and re-oriented recurve bow at 40 deg angle. This creates projected clearance of ~0.08m to the bowstring and ~0.16m to the bow limb edge in the actual (7.5, -7.5, 10.0) gameplay camera view, verified via gameplay.png, front.png, and silhouette.png renders."
+    },
+    {
+      "finding_id": "EVID-05",
+      "title": "Recalibrated projected negative-space gap measurements",
+      "resolution": "Corrected visual review text to specify accurate projected clearance of ~0.08m to bowstring and ~0.16m to nearest recurve limb edge based on actual gameplay camera horizontal axis."
     }
   ],
   "known_deviations": [
