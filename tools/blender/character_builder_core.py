@@ -42,6 +42,8 @@ def clear_scene():
                 bpy.data.armatures.remove(block)
             elif isinstance(block, bpy.types.Action):
                 bpy.data.actions.remove(block)
+    bpy.context.scene.render.fps = 30
+    bpy.context.scene.render.fps_base = 1.0
 
 def get_eevee_engine() -> str:
     engine_items = {item.identifier for item in bpy.types.RenderSettings.bl_rna.properties["engine"].enum_items}
@@ -85,13 +87,17 @@ def add_box_geometry(
         new_indices.append(base_idx + i)
         
     faces = [
-        (0, 1, 2, 3), (4, 7, 6, 5),
-        (0, 4, 5, 1), (1, 5, 6, 2),
-        (2, 6, 7, 3), (3, 7, 4, 0)
+        (0, 3, 2, 1),  # Bottom (-Z)
+        (4, 5, 6, 7),  # Top (+Z)
+        (0, 1, 5, 4),  # Front (-Y)
+        (1, 2, 6, 5),  # Right (+X)
+        (2, 3, 7, 6),  # Back (+Y)
+        (3, 0, 4, 7),  # Left (-X)
     ]
     for f in faces:
         bmf = bm.faces.new([transformed_verts[i] for i in f])
         bmf.material_index = mat_index
+    bm.normal_update()
         
     weight_map.setdefault(bone_name, []).extend(new_indices)
 
@@ -167,4 +173,11 @@ def add_ground_plane(size: float = 30.0) -> bpy.types.Object:
 
 def look_at(obj: bpy.types.Object, target: Vector):
     dir_vec = target - obj.location
+    if abs(dir_vec.x) < 1e-6 and abs(dir_vec.y) < 1e-6:
+        if dir_vec.z < 0:
+            obj.rotation_euler = (0, 0, 0)
+            return
+        else:
+            obj.rotation_euler = (math.pi, 0, 0)
+            return
     obj.rotation_euler = dir_vec.to_track_quat("-Z", "Y").to_euler()

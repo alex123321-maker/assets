@@ -50,7 +50,7 @@
     "z": 2.449
   },
   "pivot": "bottom-center (0, 0, 0)",
-  "glb_size_bytes": 122832,
+  "glb_size_bytes": 122812,
   "blender_version": "5.2.1 LTS",
   "render_engine": "BLENDER_EEVEE"
 }

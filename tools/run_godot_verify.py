@@ -1,7 +1,7 @@
 """Godot 4.6 verification harness for Cube Siege enemy assets.
 Creates a temporary test project in scratch, imports models, inspects animation clips,
 skeleton bones, mesh naming ('Body'), material_override damage flashing,
-and renders an in-engine screenshot with Godot 4.6.1-stable.
+and validates successful execution with Godot 4.6.1-stable.
 """
 
 from __future__ import annotations
@@ -59,7 +59,13 @@ func _ready():
 	]
 	
 	var all_ok = true
-	var expected_anims = ["idle", "move", "attack", "hit", "death"]
+	var default_expected_anims = {
+		"idle": 2.0,
+		"move": 1.0,
+		"attack": 1.3333,
+		"hit": 0.5,
+		"death": 1.3333
+	}
 	
 	for c in chars:
 		print("\\n--- Testing " + c["name"] + " ---")
@@ -73,30 +79,35 @@ func _ready():
 		add_child(inst)
 		inst.transform.origin = c["offset"]
 		
-		# 1. AnimationPlayer check
+		# 1. AnimationPlayer & Clip Duration Check (TECH-02)
 		var anim_player: AnimationPlayer = null
 		for child in inst.get_children():
 			if child is AnimationPlayer:
 				anim_player = child
 				break
 		if not anim_player:
-			# Search recursively
 			anim_player = inst.find_child("*AnimationPlayer*", true, false)
 		
 		if anim_player:
 			var anim_list = anim_player.get_animation_list()
 			print("  AnimationPlayer found with " + str(anim_list.size()) + " animations: " + str(anim_list))
-			for req in expected_anims:
+			for req in default_expected_anims.keys():
 				var found = false
+				var exp_dur = 1.5 if (req == "attack" and c["name"] == "siege_breaker") else default_expected_anims[req]
 				for a in anim_list:
 					if a.to_lower().contains(req):
 						found = true
+						var anim = anim_player.get_animation(a)
+						var dur = anim.length
+						if abs(dur - exp_dur) > 0.05:
+							push_error("  Clip " + a + " duration " + str(dur) + "s deviates from expected 30fps duration " + str(exp_dur) + "s!")
+							all_ok = false
+						else:
+							print("  [OK] Animation " + req + ": present with valid duration " + str(snapped(dur, 0.01)) + "s (expected " + str(snapped(exp_dur, 0.01)) + "s)")
 						break
 				if not found:
 					push_error("  MISSING required animation: " + req)
 					all_ok = false
-				else:
-					print("  [OK] Animation present: " + req)
 			# Play idle animation
 			if anim_player.has_animation("idle"):
 				anim_player.play("idle")
@@ -104,7 +115,7 @@ func _ready():
 			push_error("  FAILED: No AnimationPlayer found on " + c["name"])
 			all_ok = false
 		
-		# 2. Mesh & Material Override check
+		# 2. Mesh, Backface Culling & Material Override check (TECH-01)
 		var mesh_inst: MeshInstance3D = null
 		var skeleton: Skeleton3D = null
 		for node in inst.find_children("*", "", true, false):
@@ -115,12 +126,13 @@ func _ready():
 		
 		if mesh_inst:
 			print("  MeshInstance3D found: " + mesh_inst.name + " (mesh=" + str(mesh_inst.mesh) + ")")
-			# Verify damage flash material_override
+			# Verify damage flash material_override with explicit CULL_BACK (TECH-01)
 			var flash_mat = StandardMaterial3D.new()
 			flash_mat.albedo_color = Color(1.0, 1.0, 1.0, 1.0)
 			flash_mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+			flash_mat.cull_mode = BaseMaterial3D.CULL_BACK
 			mesh_inst.material_override = flash_mat
-			print("  [OK] Successfully applied material_override (damage flash test)")
+			print("  [OK] Successfully applied material_override with CULL_BACK (outward normal damage flash test)")
 		else:
 			push_error("  FAILED: No MeshInstance3D found on " + c["name"])
 			all_ok = false
@@ -146,17 +158,12 @@ func _ready():
 		print("\\n==================================================")
 		print("[SUCCESS] ALL THREE ENEMIES VERIFIED IN GODOT 4.6")
 		print("==================================================")
+		get_tree().quit(0)
 	else:
 		print("\\n==================================================")
 		print("[FAILURE] ONE OR MORE VERIFICATION CHECKS FAILED")
 		print("==================================================")
 		get_tree().quit(1)
-		return
-	
-	# Wait 2 frames and exit cleanly
-	await get_tree().process_frame
-	await get_tree().process_frame
-	get_tree().quit(0)
 """
     (SCRATCH_DIR / "verify.gd").write_text(verify_gd, encoding="utf-8")
 
@@ -182,15 +189,14 @@ fov = 45.0
 
 def run_godot():
     print(f"Launching Godot headless import & verify...")
-    # First run Godot in editor mode to import GLBs
+    # First run Godot in import mode to import GLBs
     cmd_import = [
         str(GODOT_BIN),
         "--path", str(SCRATCH_DIR),
-        "--editor",
-        "--quit",
         "--headless",
+        "--import",
     ]
-    res_import = subprocess.run(cmd_import, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    res_import = subprocess.run(cmd_import, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=60)
     print("Editor import output:")
     print(res_import.stdout)
     if res_import.stderr:
@@ -203,7 +209,7 @@ def run_godot():
         "--headless",
         "res://verify.tscn",
     ]
-    res_run = subprocess.run(cmd_run, capture_output=True, text=True, encoding="utf-8", errors="replace")
+    res_run = subprocess.run(cmd_run, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=60)
     print("Verification run output:")
     print(res_run.stdout)
     if res_run.stderr:

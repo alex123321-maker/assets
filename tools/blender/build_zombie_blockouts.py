@@ -66,12 +66,16 @@ def add_box(bm, center: tuple[float, float, float], size: tuple[float, float, fl
         transformed_verts.append(bm.verts.new(tv))
         
     faces = [
-        (0, 1, 2, 3), (4, 7, 6, 5),
-        (0, 4, 5, 1), (1, 5, 6, 2),
-        (2, 6, 7, 3), (3, 7, 4, 0)
+        (0, 3, 2, 1),  # Bottom (-Z)
+        (4, 5, 6, 7),  # Top (+Z)
+        (0, 1, 5, 4),  # Front (-Y)
+        (1, 2, 6, 5),  # Right (+X)
+        (2, 3, 7, 6),  # Back (+Y)
+        (3, 0, 4, 7),  # Left (-X)
     ]
     for f in faces:
         bm.faces.new([transformed_verts[i] for i in f])
+    bm.normal_update()
 
 def build_variant_a(offset_x: float) -> bpy.types.Object:
     bm = bmesh.new()

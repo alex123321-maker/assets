@@ -403,11 +403,14 @@ class ReviewWatcher:
         try:
             inline_comments = self.github.get_pr_inline_comments(pr_number)
             for ic in inline_comments:
-                ic_id = str(ic.get("id"))
+                ic_id = str(ic.get("id") or "")
                 ic_author = ic.get("user", {}).get("login", "")
                 ic_body = ic.get("body", "")
 
-                if not ic_id or self.state.is_event_known(pr_number, ic_id):
+                if not ic_id or any(
+                    self.state.is_event_known(pr_number, str(identifier))
+                    for identifier in (ic_id, ic.get("node_id")) if identifier
+                ):
                     continue
 
                 if self.ignore_agent_report(
@@ -468,11 +471,17 @@ class ReviewWatcher:
                     th_comments = th.get("comments", {}).get("nodes", [])
                     if th_comments:
                         last_c = th_comments[-1]
-                        th_c_id = last_c.get("id")
+                        # REST uses database IDs, GraphQL otherwise uses node IDs.
+                        # Both endpoints describe the same comment, not two events.
+                        th_node_id = last_c.get("id")
+                        th_c_id = str(last_c.get("databaseId") or th_node_id or "")
                         th_author = last_c.get("author", {}).get("login", "")
                         th_body = last_c.get("body", "")
 
-                        if th_c_id and not self.state.is_event_known(pr_number, th_c_id):
+                        if th_c_id and not any(
+                            self.state.is_event_known(pr_number, str(identifier))
+                            for identifier in (th_c_id, th_node_id) if identifier
+                        ):
                             if self.ignore_agent_report(
                                 pr_number, th_c_id, th_author, th_body
                             ):
@@ -486,7 +495,9 @@ class ReviewWatcher:
                                         "id": th_c_id,
                                         "type": "THREAD_COMMENT",
                                         "author": th_author,
-                                        "body": th_body
+                                        "body": th_body,
+                                        "path": last_c.get("path"),
+                                        "line": last_c.get("line"),
                                     })
         except GitHubAuthError:
             raise

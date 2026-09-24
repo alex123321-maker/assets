@@ -616,6 +616,9 @@ def build_and_render_package(asset_dir: Path):
     char_name = asset_dir.name
     print(f"Building character package: {char_name} in {asset_dir}")
     core.clear_scene()
+    scene = bpy.context.scene
+    scene.render.fps = 30
+    scene.render.fps_base = 1.0
 
     spec_path = asset_dir / "source" / "character_spec.json"
     if spec_path.is_file():
@@ -795,20 +798,29 @@ def build_and_render_package(asset_dir: Path):
     render_camera_view(review_dir / "gameplay.png", cam, Vector((7.5, -7.5, 10.0)), center, ortho=False, scale_or_fov=45.0, res=(1280, 720))
 
     # Silhouette (pure black against pure white, shadows hidden)
+    # Record original polygon material indices to guarantee non-destructive pass (EVID-01)
+    original_polygon_mat_indices = [p.material_index for p in mesh_obj.data.polygons]
+    original_materials = list(mesh_obj.data.materials)
+
     mat_black = core.create_pbr_material("mat_black", "#010101", roughness=1.0)
-    orig_mats = list(mesh_obj.data.materials)
-    mesh_obj.data.materials.clear()
-    mesh_obj.data.materials.append(mat_black)
+    bpy.context.view_layer.material_override = mat_black
     ground.hide_render = True
     scene.world.color = (1.0, 1.0, 1.0)
     render_camera_view(review_dir / "silhouette.png", cam, Vector((0, -char_h * 2.8, center_z)), center, ortho=True, scale_or_fov=ortho_scale)
     
-    # Restore materials & background
-    mesh_obj.data.materials.clear()
-    for m in orig_mats:
-        mesh_obj.data.materials.append(m)
+    # Restore materials override & background
+    bpy.context.view_layer.material_override = None
     ground.hide_render = False
     scene.world.color = (0.05, 0.055, 0.065)
+
+    # Verification: assert polygon material assignments remain strictly identical before and after silhouette pass
+    current_polygon_mat_indices = [p.material_index for p in mesh_obj.data.polygons]
+    assert current_polygon_mat_indices == original_polygon_mat_indices, (
+        "EVID-01 violation: polygon material indices altered during silhouette pass!"
+    )
+    assert list(mesh_obj.data.materials) == original_materials, (
+        "EVID-01 violation: mesh materials altered during silhouette pass!"
+    )
 
     # Material closeup
     closeup_target = Vector((0, 0, char_h * 0.72))
@@ -837,26 +849,29 @@ def build_and_render_package(asset_dir: Path):
     scene.frame_set(0)
     amt_obj.animation_data.action = None
 
-    # 7. Metrics
+    # 7. Metrics (computed dynamically from actual scene.render.fps)
+    fps = scene.render.fps
+    attack_frames = 45 if char_name == "siege_breaker" else 40
+    contact_frame = 25 if char_name == "ranged_skirmisher" else (20 if char_name == "zombie" else 28)
     tris = sum(len(p.vertices) - 2 for p in mesh_obj.data.polygons)
     metrics = {
         "character": char_name,
         "triangles": tris,
-        "materials": len(orig_mats),
+        "materials": len(original_materials),
         "bones": len(amt_obj.data.bones),
         "animations": [act.name for act in actions],
         "animation_details": {
-            "idle": {"frames": 60, "fps": 30, "duration_sec": 2.0, "loop": True},
-            "move": {"frames": 30, "fps": 30, "duration_sec": 1.0, "loop": True, "in_place": True},
+            "idle": {"frames": 60, "fps": fps, "duration_sec": round(60.0 / fps, 2), "loop": True},
+            "move": {"frames": 30, "fps": fps, "duration_sec": round(30.0 / fps, 2), "loop": True, "in_place": True},
             "attack": {
-                "frames": 40 if char_name != "siege_breaker" else 45,
-                "fps": 30,
-                "duration_sec": 1.33 if char_name != "siege_breaker" else 1.5,
+                "frames": attack_frames,
+                "fps": fps,
+                "duration_sec": round(float(attack_frames) / fps, 2),
                 "loop": False,
-                "contact_or_release_frame": 25 if char_name == "ranged_skirmisher" else (20 if char_name == "zombie" else 28),
+                "contact_or_release_frame": contact_frame,
             },
-            "hit": {"frames": 15, "fps": 30, "duration_sec": 0.5, "loop": False},
-            "death": {"frames": 40, "fps": 30, "duration_sec": 1.33, "loop": False},
+            "hit": {"frames": 15, "fps": fps, "duration_sec": round(15.0 / fps, 2), "loop": False},
+            "death": {"frames": 40, "fps": fps, "duration_sec": round(40.0 / fps, 2), "loop": False},
         },
         "dimensions": {
             "x": round(mesh_obj.dimensions.x, 3),
