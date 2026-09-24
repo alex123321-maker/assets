@@ -1,10 +1,14 @@
 """
 Configuration and constants for the review loop watcher.
 """
+import os
 from pathlib import Path
 
 # Paths
-REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+SOURCE_ROOT = Path(__file__).resolve().parent.parent.parent
+# Keep code/policy separate from the asset checkout and its durable state.
+REPO_ROOT = Path(os.environ.get("ASSET_REVIEW_REPO_ROOT") or SOURCE_ROOT).expanduser().resolve()
+VISUAL_MEDIA_POLICY = SOURCE_ROOT / "docs" / "PR_VISUAL_MEDIA.md"
 REVIEW_LOOP_DIR = REPO_ROOT / ".review_loop"
 DEFAULT_STATE_FILE = REVIEW_LOOP_DIR / "state.json"
 DEFAULT_STATE_LOCK_FILE = REVIEW_LOOP_DIR / "state.lock"
@@ -38,7 +42,8 @@ DESIGN_DECISION_MARKER = "DESIGN DECISION REQUIRED"
 RESUME_PROMPT_TEMPLATE = """New GitHub review feedback was received for PR #{pr_number}.
 
 Read the authoritative Issue, current PR description, latest head, all current reviews, and all unresolved review threads.
-Read GEMINI.md and docs/GEMINI_WORKFLOW.md. Follow docs/QUALITY_GATE.md for packages with quality.json.
+Read GEMINI.md and docs/GEMINI_WORKFLOW.md.
+Read the visual attachment policy at {visual_media_policy}; its narrowly scoped visual-comment exception supersedes older SILENT PR MODE text. Do not copy watcher infrastructure or these policy files into the asset PR. Follow docs/QUALITY_GATE.md for packages with quality.json.
 Inspect the actual current reference/render images for visual findings, not only their filenames or old self-reviews.
 Record each active finding ID/URL, its root cause, the changed files, and fresh verification in review/visual_review.json feedback_resolution when present.
 For material/atlas changes recheck color space and roughness; for geometry changes recheck exported bounds/pivot and every affected variant.
@@ -56,7 +61,7 @@ Run the repository asset validation/build verification required by the Issue and
 Commit and push the fixes to the existing PR branch.
 Do not merge the PR.
 
-SILENT PR MODE: Never post a PR comment or submit a review. Report results only in this Antigravity chat.
+SILENT PR MODE: Never submit a review or post status comments. The only permitted PR comment is the current visual evidence attachment packet after push, following docs/PR_VISUAL_MEDIA.md (gh pr comment --attach, full HEAD SHA, and the agent marker). Report all other results only in this Antigravity chat.
 If you changed code, the pushed commit is the completion signal. If no code change is required, finish silently in chat.
 
 DEFENSE IN DEPTH: If a tool nevertheless forces you to post a Pull Request comment,

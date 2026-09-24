@@ -25,6 +25,7 @@ from tools.review_loop.config import (
     DEFAULT_LOG_FILE,
     DEFAULT_PID_FILE,
     REPO_ROOT,
+    SOURCE_ROOT,
     REVIEW_LOOP_DIR,
     RUN_WATCHER_BAT,
     SIDECAR_MARKER_FILE,
@@ -111,7 +112,7 @@ def install_antigravity_sidecar(config_root: Optional[Path] = None) -> bool:
     root = config_root or get_antigravity_config_root()
     config_path = root / "config.json"
     sidecar_path = root / "sidecars" / ANTIGRAVITY_SIDECAR_ID / "sidecar.json"
-    watcher_path = REPO_ROOT / "tools" / "review_loop" / "watcher.py"
+    watcher_path = SOURCE_ROOT / "tools" / "review_loop" / "watcher.py"
     try:
         config: Dict[str, Any] = {}
         if config_path.exists():
@@ -129,7 +130,7 @@ def install_antigravity_sidecar(config_root: Optional[Path] = None) -> bool:
             "command": sys.executable,
             "args": [str(watcher_path)],
             "restart_policy": "always",
-            "env": {"PYTHONUNBUFFERED": "1"},
+            "env": {"PYTHONUNBUFFERED": "1", "ASSET_REVIEW_REPO_ROOT": str(REPO_ROOT)},
         }
         _write_json_atomic(sidecar_path, sidecar)
         _write_json_atomic(config_path, config)
@@ -168,11 +169,12 @@ def uninstall_antigravity_sidecar(config_root: Optional[Path] = None) -> bool:
 
 def create_windows_launcher() -> Path:
     REVIEW_LOOP_DIR.mkdir(parents=True, exist_ok=True)
-    watcher_path = REPO_ROOT / "tools" / "review_loop" / "watcher.py"
+    watcher_path = SOURCE_ROOT / "tools" / "review_loop" / "watcher.py"
     content = (
         "@echo off\n"
         f'if exist "{SIDECAR_MARKER_FILE}" exit /b 0\n'
         f'cd /d "{REPO_ROOT}"\n'
+        f'set "ASSET_REVIEW_REPO_ROOT={REPO_ROOT}"\n'
         f'"{sys.executable}" "{watcher_path}" %*\n'
     )
     RUN_WATCHER_BAT.write_text(content, encoding="utf-8")
@@ -281,13 +283,14 @@ def uninstall_windows() -> bool:
 # ================= Linux fallback =================
 
 def install_linux() -> bool:
-    watcher_path = REPO_ROOT / "tools" / "review_loop" / "watcher.py"
+    watcher_path = SOURCE_ROOT / "tools" / "review_loop" / "watcher.py"
     service_dir = Path.home() / ".config" / "systemd" / "user"
     service_dir.mkdir(parents=True, exist_ok=True)
     service_path = service_dir / LINUX_SERVICE_NAME
     service_path.write_text(
         "[Unit]\nDescription=Asset Factory Antigravity PR Review Feedback Watcher\nAfter=network.target\n\n"
         "[Service]\nType=simple\n"
+        f'Environment="ASSET_REVIEW_REPO_ROOT={REPO_ROOT}"\n'
         f"WorkingDirectory={REPO_ROOT}\nExecStart={sys.executable} {watcher_path}\n"
         "Restart=on-failure\nRestartSec=10\n\n[Install]\nWantedBy=default.target\n",
         encoding="utf-8",
@@ -309,7 +312,7 @@ def start_linux() -> bool:
     )
     if result.returncode == 0 and wait_for_watcher():
         return True
-    subprocess.Popen([sys.executable, str(REPO_ROOT / "tools" / "review_loop" / "watcher.py")], cwd=str(REPO_ROOT))
+    subprocess.Popen([sys.executable, str(SOURCE_ROOT / "tools" / "review_loop" / "watcher.py")], cwd=str(REPO_ROOT), env={**os.environ, "ASSET_REVIEW_REPO_ROOT": str(REPO_ROOT)})
     return wait_for_watcher()
 
 

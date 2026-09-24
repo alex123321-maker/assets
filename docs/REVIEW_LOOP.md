@@ -129,7 +129,7 @@ python tools/review_loop/register.py --reactivate <pr_number>
 - исправляет только валидные замечания в scope;
 - не додумывает художественные/gameplay решения;
 - при настоящей неопределённости сообщает `DESIGN DECISION REQUIRED`;
-- не публикует собственные PR comments/reviews;
+- не публикует reviews или статусные PR comments; после push публикует актуальные визуальные вложения по [PR_VISUAL_MEDIA.md](PR_VISUAL_MEDIA.md);
 - не merge PR;
 - после исправления запускает требуемые asset validation/build checks;
 - commit + push является сигналом watcher, что исправления готовы к повторному review.
@@ -141,3 +141,15 @@ Review loop покрыт unit tests:
 ```bash
 python -m unittest discover -s tests/unit -p "test_review_loop.py"
 ```
+
+
+## Isolated watcher runtime
+
+To keep asset PRs free of watcher/policy changes, run the watcher from a separate
+checkout and set `ASSET_REVIEW_REPO_ROOT` to the asset working repository. The
+watcher loads code and `docs/PR_VISUAL_MEDIA.md` from its own checkout; GitHub
+commands, feedback files, locks, PID and state remain under the target asset
+repository. The sidecar installer preserves this separation in its manifest.
+Install from the infrastructure checkout with the environment variable set, then
+restart the Asset Factory sidecar. Keep that infrastructure checkout available.
+No merge or cherry-pick into the asset branch is required.
