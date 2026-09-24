@@ -50,6 +50,8 @@ class TestIsolatedRuntime(unittest.TestCase):
             self.assertIn("TAIL-FINDING", full)
             self.assertIn(str(VISUAL_MEDIA_POLICY), full)
             self.assertIn("gh pr comment --attach", full)
+            self.assertIn("still publish any missing packet", full)
+            self.assertNotIn("finish silently in chat", full)
             self.assertIn("<!-- agent:review-loop -->", full)
             self.assertIn("Publish the visual attachment packet", dispatch)
             self.assertNotIn("or post PR comments", dispatch)

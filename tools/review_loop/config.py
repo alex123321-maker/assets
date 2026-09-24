@@ -62,7 +62,7 @@ Commit and push the fixes to the existing PR branch.
 Do not merge the PR.
 
 SILENT PR MODE: Never submit a review or post status comments. The only permitted PR comment is the current visual evidence attachment packet after push, following docs/PR_VISUAL_MEDIA.md (gh pr comment --attach, full HEAD SHA, and the agent marker). Report all other results only in this Antigravity chat.
-If you changed code, the pushed commit is the completion signal. If no code change is required, finish silently in chat.
+After pushing, publish or verify the complete visual attachment packet for the current PR head before reporting completion in chat. If no code change is required, still publish any missing packet; do not create an unrelated commit.
 
 DEFENSE IN DEPTH: If a tool nevertheless forces you to post a Pull Request comment,
 you MUST include the exact marker `""" + AGENT_COMMENT_MARKER + """` at the END of the body.
