@@ -807,6 +807,35 @@ class TestReviewWatcher(unittest.TestCase):
         )
         self.assertFalse(unmarked_report)
 
+    def test_visual_attachment_comment_is_ignored_but_real_review_still_dispatches(self):
+        self.state_mgr.register_pr(127, "gui-conv", "feat/127")
+        packet = {
+            "id": "visual-packet-127",
+            "author": {"login": "alex123321-maker"},
+            "body": ("Visual evidence for commit " + "b" * 40 + "\n"
+                     "![gameplay](https://github.com/user-attachments/assets/example)\n"
+                     "NOT READY is the previous verdict; these images address it.\n"
+                     + AGENT_COMMENT_MARKER),
+        }
+        self._setup_pr_mocks(127, comments=[packet], head="b" * 40)
+        self.watcher.run_cycle()
+        self.watcher.run_cycle()
+        self.mock_resumer.resume_conversation.assert_not_called()
+        self.assertTrue(self.state_mgr.is_event_processed(127, packet["id"]))
+        self.assertEqual(self.state_mgr.get_pr(127)["pending_events"], [])
+
+        # The reviewer uses the same account. Filter by marker, not login.
+        review = {
+            "id": "human-review-127",
+            "author": {"login": "alex123321-maker"},
+            "body": "NOT READY\nBLOCKER: the bow intersects the torso in the uploaded render.",
+        }
+        self._setup_pr_mocks(127, comments=[packet, review], head="b" * 40)
+        self.watcher.run_cycle()
+        self.mock_resumer.resume_conversation.assert_called_once()
+        events = self.state_mgr.get_pr(127)["in_flight_events"]
+        self.assertEqual([event["id"] for event in events], [review["id"]])
+
     def test_unmarked_agent_reports_are_ignored_without_github_mutation(self):
         self.assertTrue(
             is_likely_agent_report(

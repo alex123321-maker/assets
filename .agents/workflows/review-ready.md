@@ -15,3 +15,5 @@
    ```bash
    python tools/review_loop/create_pr.py -- <аргументы gh pr create>
    ```
+
+11. **Visual attachments** — после создания PR загрузи references и review PNG через `gh pr comment --attach` по `docs/PR_VISUAL_MEDIA.md`; укажи полный HEAD SHA, проверь опубликованные вложения и сохрани URL комментария. Повторяй после push исправлений.
