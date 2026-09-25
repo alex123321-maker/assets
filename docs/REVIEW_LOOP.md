@@ -122,6 +122,30 @@ python tools/review_loop/register.py --reactivate <pr_number>
 
 Каталог игнорируется Git.
 
+### Длинные review и Windows
+
+Сообщение длиннее 4000 символов сохраняется целиком в
+`.review_loop/feedback/pr_<number>_<sha256>.txt` (UTF-8). Агент получает короткое
+уведомление с абсолютным путём и SHA-256 и должен прочитать файл полностью.
+Замечания не обрезаются; повторная попытка использует тот же файл. Файлы остаются
+локальными для диагностики и не включаются в PR.
+
+Официальный Windows `agentapi.bat` распознаётся как простой shim и заменяется
+прямым вызовом `language_server.exe agentapi`, без `cmd.exe`. Неизвестные batch
+обёртки отклоняются: текст review не должен интерпретироваться оболочкой.
+
+REST inline comments и GraphQL thread comments сопоставляются по числовому
+GitHub database ID. Старые node ID также проверяются, чтобы уже обработанные
+или ожидающие замечания не отправлялись заново. Для старых очередей одинаковый
+текст выводится один раз со ссылками из остальных записей; их ID и расположения
+сохраняются для подтверждения обработки.
+
+После исправления причины ошибки доставки можно выполнить
+`python tools/review_loop/register.py --reactivate <number>`: счётчик попыток
+сбросится, сохранённые замечания останутся в очереди. Сначала перезапусти watcher,
+если менялся его код. Успешная доставка ещё не означает исправление review:
+in-flight события завершаются по существующему протоколу, после работы агента.
+
 ## Поведение при review fixes
 
 Автоматически возобновлённый Gemini / Antigravity:
@@ -139,7 +163,7 @@ python tools/review_loop/register.py --reactivate <pr_number>
 Review loop покрыт unit tests:
 
 ```bash
-python -m unittest discover -s tests/unit -p "test_review_loop.py"
+python -m unittest discover -s tests/unit -p "test_review*.py"
 ```
 
 

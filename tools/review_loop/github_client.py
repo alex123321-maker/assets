@@ -180,6 +180,9 @@ class GitHubClient:
                   comments(first: 20) {
                     nodes {
                       id
+                      databaseId
+                      path
+                      line
                       author { login }
                       body
                       createdAt
