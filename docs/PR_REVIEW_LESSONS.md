@@ -23,3 +23,24 @@
 
 Принятые в прошлых PR визуальные решения этим изменением не отменяются. Новые правила
 улучшают дальнейшее производство, не переоценивают задним числом одобренные ассеты.
+# Pilot #14 / PR #15 follow-up
+
+PR #15 was merged after a second visual iteration, but its comparison generator still
+printed unmeasured artistic conclusions and pasted independently fitted images under an
+"identical scale" caption. Review closure is not evidence that every generator is sound.
+
+- Comparison sources now render in one frozen scene; metadata and image/source hashes
+  are validated, and captions contain identifiers rather than positive verdicts.
+- Other family sheets no longer print fixed artistic PASS/APPROVED claims; missing
+  required images/metrics cause an error instead of silently omitting a panel.
+- Build cannot create/overwrite reviewer documents. A draft packet can honestly carry
+  fail/not_reviewed without weakening the strict acceptance check.
+- Clean rebuild is an executable command using only declared inputs. It compares outputs,
+  not just filenames. Blender script failures must propagate with `--python-exit-code 1`.
+- The author CLI test invokes the real entrypoint instead of recreating its parser.
+- The pilot's scale criterion is aligned with Issue #14 and the accepted review scope:
+  a 2 m guide in a labelled mockup. The extra walk-under/head-clearance requirement had
+  been invented by the implementation; collision/clearance is not demonstrated by that image.
+
+These controls improve evidence integrity; they cannot decide artistic quality or prove
+that an agent actually inspected an image. Independent review remains necessary.

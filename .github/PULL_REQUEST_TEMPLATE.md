@@ -28,6 +28,11 @@ Closes #
 - Reference provenance + user approval citation (или candidate / request-only):
 - Evidence digest:
 - Engine check: `checked / mockup_only / not_checked`, ограничения:
+- Implementation model / Antigravity conversation ID / iteration count (для pipeline pilot):
+- Clean build: `quality_gate.py verify-clean <package>`, различия и ограничения:
+
+Для раннего ревью допустим `packet --draft` с честными fail/not_reviewed: PR остаётся draft,
+зелёный technical check не означает художественную приёмку.
 
 | View | Artifact |
 | --- | --- |

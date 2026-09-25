@@ -789,9 +789,13 @@ assets/environment/tree_oak/
         print(f"\n[DONE] Successfully authored {target_slug} in {FAMILY_DIR / target_slug}")
 
 
-if __name__ == "__main__":
+def main(argv=None):
     import argparse
     parser = argparse.ArgumentParser(description="Author voxel source for tree oak variants.")
     parser.add_argument("--variant", default="all", help="Variant slug to author (default: all)")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     author_all(target_slug=args.variant)
+
+
+if __name__ == "__main__":
+    main()

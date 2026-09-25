@@ -6,9 +6,11 @@ import argparse
 import hashlib
 import json
 import re
+import shutil
 import struct
 import subprocess
 import sys
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote
@@ -21,6 +23,10 @@ TEXT_SUFFIXES = {".py", ".json", ".md", ".txt", ".svg", ".tres", ".tscn", ".gd",
 
 class QualityError(ValueError):
     pass
+
+
+def nonempty(value: object) -> bool:
+    return isinstance(value, str) and bool(value.strip())
 
 
 def read_json(path: Path) -> dict:
@@ -95,9 +101,22 @@ def load_contract(root: Path, package: Path) -> dict:
     for command in contract["commands"]:
         if not isinstance(command, list) or not command or not all(isinstance(x, str) and x for x in command):
             raise QualityError("Commands must be nonempty argument arrays (no shell command strings)")
+        executable = command[0].replace("\\", "/").rsplit("/", 1)[-1].lower()
+        if executable in {"blender", "blender.exe"} and any(x in command for x in ("--python", "--python-expr")):
+            options = command[:command.index("--")] if "--" in command else command
+            try:
+                flag_index = options.index("--python-exit-code")
+                exit_code = int(options[flag_index + 1])
+                script_index = min(options.index(x) for x in ("--python", "--python-expr") if x in options)
+                if flag_index > script_index:
+                    exit_code = 0  # Blender executes Python actions in argument order.
+            except (ValueError, IndexError):
+                exit_code = 0
+            if not 1 <= exit_code <= 255:
+                raise QualityError("Blender Python recipes require --python-exit-code 1 before --python/--python-expr; otherwise script failures can return success")
     ids = set()
     for criterion in contract["criteria"]:
-        if not isinstance(criterion, dict) or not criterion.get("id") or not str(criterion.get("target", "")).strip():
+        if not isinstance(criterion, dict) or not nonempty(criterion.get("id")) or not nonempty(criterion.get("target")):
             raise QualityError("Each visual criterion needs an id and a concrete target")
         if criterion["id"] in ids:
             raise QualityError(f"Duplicate criterion: {criterion['id']}")
@@ -198,9 +217,13 @@ def inspect_artifacts(root: Path, contract: dict, artifacts: dict) -> dict:
                 raise QualityError(f"{name}: {field} {actual[field]} exceeds budget {budget}")
         metrics = owner / "review" / "metrics.json"
         if metrics.is_file():
+            if metrics.relative_to(root).as_posix() not in artifacts:
+                raise QualityError(f"Metrics used for validation must be included in artifacts: {metrics}")
             reported = read_json(metrics)
             if reported.get("triangles") != actual["triangles"]:
                 raise QualityError(f"{name}: triangle count disagrees with metrics.json")
+            if "materials" in reported and reported["materials"] != actual["materials"]:
+                raise QualityError(f"{name}: material count disagrees with metrics.json")
     for criterion in contract["criteria"]:
         for name in criterion["evidence"]:
             if name not in artifacts or Path(name).suffix.lower() not in IMAGE_SUFFIXES:
@@ -231,14 +254,53 @@ def check_manifest_outputs(root: Path, package: Path, artifacts: dict) -> None:
                 raise QualityError(f"Declared output/view omitted from build artifacts: {required}")
 
 
+def inspect_comparisons(root: Path, contract: dict, inputs: dict, artifacts: dict) -> None:
+    comparisons = contract.get("comparisons", [])
+    if not isinstance(comparisons, list):
+        raise QualityError("comparisons must be a list of render receipts")
+    if not comparisons:
+        return
+    try:
+        from .review_comparison import validate_pair
+    except ImportError:
+        from review_comparison import validate_pair
+    for name in comparisons:
+        if not isinstance(name, str) or name not in artifacts:
+            raise QualityError("Comparison receipt must be a built artifact")
+        try:
+            pair = validate_pair(root, local_path(root, name))
+            for side in ("before", "after"):
+                if pair[side]["source"] not in inputs or pair[side]["image"] not in artifacts:
+                    raise QualityError("Comparison sources/images must be tracked inputs/artifacts")
+        except (KeyError, TypeError, ValueError, OSError) as exc:
+            raise QualityError(f"Invalid comparison {name}: {exc}") from exc
+
+
 def build(root: Path, package: Path) -> dict:
-    contract = load_contract(root, package)
-    before = input_state(root, package, contract)
     evidence_path = package / "review" / "evidence.json"
     evidence_path.unlink(missing_ok=True)  # A failed run must not leave a valid old build receipt.
-    for command in contract["commands"]:
-        print(f"Running: {command}", flush=True)
-        subprocess.run(command, cwd=root, check=True, shell=False)
+    contract = load_contract(root, package)
+    before = input_state(root, package, contract)
+    protected = {package / "review" / name: (package / "review" / name).read_bytes()
+                 if (package / "review" / name).exists() else None
+                 for name in ("visual_review.json", "review.md")}
+    try:
+        for command in contract["commands"]:
+            print(f"Running: {command}", flush=True)
+            subprocess.run(command, cwd=root, check=True, shell=False)
+    finally:
+        changed = []
+        for path, original in protected.items():
+            current = path.read_bytes() if path.exists() else None
+            if current != original:
+                changed.append(path.name)
+                if original is None:
+                    path.unlink(missing_ok=True)
+                else:
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    path.write_bytes(original)
+        if changed:
+            raise QualityError(f"Build wrote protected reviews: {changed}; originals restored. Record observations after build.")
     after = input_state(root, package, contract)
     if after != before:
         raise QualityError("Build changed its inputs/request/reference. Author first, then rebuild frozen inputs.")
@@ -250,6 +312,7 @@ def build(root: Path, package: Path) -> dict:
     if any(local_path(root, name) in forbidden for name in artifacts):
         raise QualityError("Do not include evidence.json or visual_review.json in artifacts")
     measurements = inspect_artifacts(root, contract, artifacts)
+    inspect_comparisons(root, contract, before, artifacts)
     record = {"version": 1, "hash_policy": "sha256-text-lf-v1", "built_at": datetime.now(timezone.utc).isoformat(),
               "inputs": before, "artifacts": artifacts, "measurements": measurements}
     record["digest"] = digest(record)
@@ -264,7 +327,7 @@ def build(root: Path, package: Path) -> dict:
     return record
 
 
-def check(root: Path, package: Path, require_review: bool = False) -> dict:
+def check(root: Path, package: Path, require_review: bool = False, *, draft: bool = False) -> dict:
     contract = load_contract(root, package)
     record = read_json(package / "review" / "evidence.json")
     if record.get("version") != 1 or record.get("hash_policy") != "sha256-text-lf-v1":
@@ -280,37 +343,100 @@ def check(root: Path, package: Path, require_review: bool = False) -> dict:
         raise QualityError("STALE EVIDENCE: exports/images/metrics changed; rebuild")
     if record.get("measurements") != inspect_artifacts(root, contract, artifacts):
         raise QualityError("Export measurements differ from build receipt")
+    inspect_comparisons(root, contract, record["inputs"], artifacts)
     if not require_review:
         return record
     review = read_json(package / "review" / "visual_review.json")
     if review.get("evidence_digest") != claimed:
         raise QualityError("STALE VISUAL REVIEW: inspect current images and record current digest")
-    if not str(review.get("reviewer", "")).strip():
+    if not draft and not nonempty(review.get("reviewer")):
         raise QualityError("Visual review must identify its actual author/model")
     inspected = review.get("inspected_images", [])
     required = {n for c in contract["criteria"] for n in c["evidence"]}
     required.update(r["path"] for r in contract["references"] if Path(r["path"]).suffix.lower() in IMAGE_SUFFIXES)
-    if not isinstance(inspected, list) or not required.issubset(set(inspected)):
+    if not isinstance(inspected, list) or not all(isinstance(n, str) for n in inspected):
+        raise QualityError("inspected_images must contain image paths")
+    if not draft and not required.issubset(set(inspected)):
         raise QualityError("Visual review does not list every required inspected image/reference")
     rows = review.get("criteria", [])
     if not isinstance(rows, list) or not all(isinstance(c, dict) for c in rows) or len(rows) != len(contract["criteria"]):
         raise QualityError("Visual review must cover exactly the declared criteria")
-    by_id = {c.get("id"): c for c in rows}
+    if not all(nonempty(c.get("id")) for c in rows):
+        raise QualityError("Visual review criterion ids must be strings")
+    by_id = {c["id"]: c for c in rows}
+    if len(by_id) != len(rows) or set(by_id) != {c["id"] for c in contract["criteria"]}:
+        raise QualityError("Visual review must cover exactly the declared criteria without duplicates")
     for criterion in contract["criteria"]:
         result = by_id.get(criterion["id"], {})
-        if result.get("status") != "pass" or not str(result.get("observation", "")).strip():
+        allowed = {"pass", "fail", "not_reviewed"} if draft else {"pass"}
+        if result.get("status") not in allowed or (result.get("status") != "not_reviewed" and not nonempty(result.get("observation"))):
             raise QualityError(f"Visual criterion not passed with observation: {criterion['id']}")
+        if result.get("status") != "not_reviewed" and not set(criterion["evidence"]).issubset(inspected):
+            raise QualityError(f"Missing inspected images for observed criterion: {criterion['id']}")
     gameplay = review.get("gameplay", {})
     if gameplay.get("status") not in {"checked", "mockup_only", "not_checked"}:
         raise QualityError("Invalid gameplay review status")
     if gameplay.get("status") in {"checked", "mockup_only"}:
         if not gameplay.get("evidence") or any(n not in artifacts for n in gameplay["evidence"]):
             raise QualityError("Gameplay review requires built evidence")
-    if contract.get("require_engine_review") and gameplay.get("status") != "checked":
+    if not draft and contract.get("require_engine_review") and gameplay.get("status") != "checked":
         raise QualityError("This request requires an engine review; a mockup is insufficient")
-    if gameplay.get("status") != "checked" and not str(gameplay.get("notes", "")).strip():
+    if not draft and not nonempty(gameplay.get("notes")):
         raise QualityError("Explain the missing engine verification")
     return record
+
+
+def verify_clean(root: Path, package: Path) -> dict:
+    """Run the real recipe with only declared inputs, without touching the working asset."""
+    original = check(root, package)
+    relative = package.relative_to(root)
+    with tempfile.TemporaryDirectory(prefix="asset-clean-build-") as folder:
+        isolated = Path(folder).resolve()
+        for name in original["inputs"]:
+            destination = local_path(isolated, name)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(local_path(root, name), destination)
+        isolated_package = isolated / relative
+        # Preserve reviewer documents so builders cannot silently manufacture replacements.
+        for name in ("review.md", "visual_review.json"):
+            source = package / "review" / name
+            if source.exists():
+                destination = isolated_package / "review" / name
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(source, destination)
+        rebuilt = build(isolated, isolated_package)
+        if set(rebuilt["artifacts"]) != set(original["artifacts"]):
+            raise QualityError("Clean build produced a different artifact set")
+        if rebuilt["measurements"] != original["measurements"]:
+            raise QualityError("Clean build changed exported measurements")
+        changed = [name for name, value in rebuilt["artifacts"].items()
+                   if value != original["artifacts"][name]]
+        image_differences = {}
+        mismatches = []
+        receipts = load_contract(root, package).get("comparisons", [])
+        for name in changed:
+            if Path(name).suffix.lower() in IMAGE_SUFFIXES:
+                from PIL import Image, ImageChops, ImageStat
+                with Image.open(root / name) as a, Image.open(isolated / name) as b:
+                    if a.size != b.size:
+                        mismatches.append(name)
+                        continue
+                    difference = ImageChops.difference(a.convert("RGBA"), b.convert("RGBA"))
+                    maximum = max(high for low, high in difference.getextrema())
+                    mean = max(ImageStat.Stat(difference).mean)
+                    image_differences[name] = {"max": maximum, "mean": mean}
+                    # Measured EEVEE repeat renders differ sparsely by 1-2 steps.
+                    # The mean bound rejects even a uniform one-step color shift.
+                    if maximum > 2 or mean > 0.001:
+                        mismatches.append(name)
+            elif name not in receipts:
+                mismatches.append(name)
+        if mismatches:
+            raise QualityError(f"Clean build differs from committed evidence beyond image rounding tolerance: {mismatches}; image deltas: {image_differences}")
+    return {"regenerated_artifacts": len(original["artifacts"]),
+            "byte_different_artifacts": changed,
+            "image_max_channel_delta_8bit": image_differences,
+            "note": "All outputs regenerated from declared inputs; image deltas <=2/255 max and <=0.001/255 channel mean, other artifacts exact (comparison receipts validated separately). Not artistic approval."}
 
 
 def initialize(root: Path, package: Path) -> None:
@@ -339,10 +465,10 @@ def git(root: Path, *args: str) -> str:
     return subprocess.check_output(["git", *args], cwd=root, text=True, encoding="utf-8").strip()
 
 
-def packet(root: Path, package: Path, revision: str, repository: str) -> str:
+def packet(root: Path, package: Path, revision: str, repository: str, *, draft: bool = False) -> str:
     if not re.fullmatch(r"[\w.-]+/[\w.-]+", repository):
         raise QualityError("Repository must be owner/name")
-    record = check(root, package, require_review=True)
+    record = check(root, package, require_review=True, draft=draft)
     sha = git(root, "rev-parse", "--verify", revision + "^{commit}")
     paths = dict(record["inputs"], **record["artifacts"])
     for extra in ("review/evidence.json", "review/visual_review.json"):
@@ -358,7 +484,9 @@ def packet(root: Path, package: Path, revision: str, repository: str) -> str:
     base = f"https://github.com/{repository}/blob/{sha}/"
     link = lambda name: base + quote(name, safe="/")
     contract = load_contract(root, package)
+    review = read_json(package / "review" / "visual_review.json")
     lines = [f"# Asset review: {package.name}", "", f"Commit: `{sha}`", f"Evidence: `{record['digest']}`", "",
+        "DRAFT — NOT ACCEPTED. Failed/unreviewed criteria below require review." if draft else "Author self-review recorded — independent art acceptance still required.",
         "Open docs/REVIEW.md at this commit. Inspect images before reading the author's visual conclusions.",
         "Green checks confirm recorded evidence, not beauty or engine performance. State inaccessible images explicitly.", "",
         "## Reference and target"]
@@ -368,11 +496,17 @@ def packet(root: Path, package: Path, revision: str, repository: str) -> str:
         lines += [contract["reference_free_reason"]]
     for c in contract["criteria"]:
         lines += [f"- **{c['id']}**: {c['target']}"]
+    lines += ["", "## Author-reported status (not an independent verdict)"]
+    for c in review["criteria"]:
+        lines += [f"- {c['id']}: **{c['status']}**"]
+    lines += [f"Engine: **{review['gameplay']['status']}**", ""]
     lines += ["", "## Images (open original size)"]
     image_names = {n for c in contract["criteria"] for n in c["evidence"]}
     image_names.update(r["path"] for r in contract["references"] if Path(r["path"]).suffix.lower() in IMAGE_SUFFIXES)
     for name in sorted(image_names):
         lines += [f"[{name}]({link(name)})", f"![{Path(name).name}]({link(name)}?raw=true)", ""]
+    for name in contract.get("comparisons", []):
+        lines += [f"Comparison camera/light settings and source/image hashes: [{name}]({link(name)})", ""]
     lines += ["## Export measurements", "```json", json.dumps(record["measurements"], indent=2), "```", "",
         "## Evidence and author's review (read after images)"]
     for name in ["docs/REVIEW.md", *(str((package / p).relative_to(root).as_posix()) for p in
@@ -415,12 +549,13 @@ def check_all(root: Path, base_ref: str | None = None) -> int:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="action", required=True)
-    for action in ("init", "build", "check", "packet"):
+    for action in ("init", "build", "verify-clean", "check", "packet"):
         p = sub.add_parser(action)
         p.add_argument("package", type=Path)
         if action == "check":
             p.add_argument("--require-review", action="store_true")
         if action == "packet":
+            p.add_argument("--draft", action="store_true", help="Export honest failed/unreviewed criteria; never implies acceptance")
             p.add_argument("--revision", default="HEAD")
             p.add_argument("--repository", required=True)
             p.add_argument("--output", type=Path, required=True)
@@ -439,8 +574,10 @@ def main() -> int:
             build(ROOT, package)
         elif args.action == "check":
             check(ROOT, package, args.require_review)
+        elif args.action == "verify-clean":
+            print(json.dumps(verify_clean(ROOT, package), ensure_ascii=False, indent=2))
         else:
-            content = packet(ROOT, package, args.revision, args.repository)
+            content = packet(ROOT, package, args.revision, args.repository, draft=args.draft)
             args.output.parent.mkdir(parents=True, exist_ok=True)
             args.output.write_text(content, encoding="utf-8")
         print(f"[OK] {args.action}: {package.name} (no automatic art approval)")

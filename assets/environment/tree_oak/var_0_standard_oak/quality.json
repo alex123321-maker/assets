@@ -5,11 +5,16 @@
     "assets/environment/tree_oak/var_0_standard_oak/references/before_iso.png",
     "tools/blender/build_voxel_asset.py",
     "tools/blender/render_tree_mockup.py",
-    "tools/create_standard_oak_comparison.py"
+    "tools/create_standard_oak_comparison.py",
+    "tools/review_comparison.py",
+    "tools/blender/render_voxel_comparison.py",
+    "assets/environment/tree_oak/var_0_standard_oak/references/before_voxels.json"
   ],
   "commands": [
     [
       "blender",
+      "--python-exit-code",
+      "1",
       "--background",
       "--factory-startup",
       "--python",
@@ -20,6 +25,8 @@
     ],
     [
       "blender",
+      "--python-exit-code",
+      "1",
       "--background",
       "--factory-startup",
       "--python",
@@ -58,7 +65,10 @@
     "assets/environment/tree_oak/var_0_standard_oak/review/top.png",
     "assets/environment/tree_oak/var_0_standard_oak/review/metrics.json",
     "assets/environment/tree_oak/var_0_standard_oak/review/gameplay_mockup.png",
-    "assets/environment/tree_oak/var_0_standard_oak/review/before_after.png"
+    "assets/environment/tree_oak/var_0_standard_oak/review/before_after.png",
+    "assets/environment/tree_oak/var_0_standard_oak/review/comparison_before.png",
+    "assets/environment/tree_oak/var_0_standard_oak/review/comparison_after.png",
+    "assets/environment/tree_oak/var_0_standard_oak/review/comparison.json"
   ],
   "require_engine_review": false,
   "criteria": [
@@ -111,10 +121,13 @@
     },
     {
       "id": "game_scale_mockup",
-      "target": "Мокап с ориентиром роста 2 м на террейне подтверждает соответствие масштабу взрослого дуба ~4.2 м с нижним краем кроны выше головы персонажа.",
+      "target": "Мокап с ориентиром роста 2 м позволяет сравнить масштаб взрослого дуба; явно обозначен как mockup, без заявлений о проходимости, коллизиях или проверке в Godot (Issue #14).",
       "evidence": [
         "assets/environment/tree_oak/var_0_standard_oak/review/gameplay_mockup.png"
       ]
     }
+  ],
+  "comparisons": [
+    "assets/environment/tree_oak/var_0_standard_oak/review/comparison.json"
   ]
 }

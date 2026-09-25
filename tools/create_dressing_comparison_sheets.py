@@ -64,6 +64,8 @@ GROUPS = [
 
 def load_variant_metrics(slug: str) -> dict:
     m_path = FAMILY_DIR / slug / "review" / "metrics.json"
+    if not m_path.is_file():
+        raise FileNotFoundError(f"Missing required review input: {m_path}")
     if m_path.exists():
         try:
             return json.loads(m_path.read_text(encoding="utf-8"))
@@ -106,6 +108,8 @@ def build_contact_sheet() -> Path:
             draw.rectangle([(cx, cy), (cx + card_w, cy + card_h_actual)], fill=(28, 33, 40), outline=(44, 52, 64), width=1)
 
             iso_path = FAMILY_DIR / slug / "review" / "iso.png"
+            if not iso_path.is_file():
+                raise FileNotFoundError(f"Missing required review input: {iso_path}")
             if iso_path.exists():
                 thumb = Image.open(iso_path).convert("RGB")
                 thumb = thumb.resize((190, 190), Image.Resampling.LANCZOS)
@@ -181,6 +185,8 @@ def build_comparison_sheet() -> Path:
             vx = view_start_x + v_idx * (thumb_size + view_gap)
             vy = cy + 20
             v_file = FAMILY_DIR / slug / "review" / f"{v_name}.png"
+            if not v_file.is_file():
+                raise FileNotFoundError(f"Missing required review input: {v_file}")
             if v_file.exists():
                 v_img = Image.open(v_file).convert("RGB")
                 v_img = v_img.resize((thumb_size, thumb_size), Image.Resampling.LANCZOS)
@@ -225,7 +231,7 @@ def build_ref_vs_3d_comparison() -> Path:
     ref_x = pad
     ref_y = header_h + pad
     canvas.paste(ref_resized, (ref_x, ref_y))
-    draw.text((ref_x + 10, pad + 15), "APPROVED CONCEPT REFERENCE & VISUAL CONTRACT (Issue #7)", fill=(240, 240, 240), font=font)
+    draw.text((ref_x + 10, pad + 15), "CONCEPT REFERENCE (approval recorded separately) (Issue #7)", fill=(240, 240, 240), font=font)
 
     contact_x = ref_x + ref_w + pad
     contact_y = header_h + pad
