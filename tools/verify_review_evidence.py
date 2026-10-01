@@ -12,6 +12,7 @@ Does NOT modify review documents or auto-approve subjective items.
 Only validates objective evidence integrity.
 """
 import json
+import hashlib
 import struct
 import sys
 from pathlib import Path
@@ -917,10 +918,10 @@ def verify_evidence() -> bool:
             if "Exact palette & shader parameters matched to Issue #3" in d_rev_text:
                 errors.append(f"Dressing review/review.md contains stale claim: 'Exact palette & shader parameters matched to Issue #3'")
 
-    # 8. Verify HUD visual kit (Issue #8)
+    # 8. Verify HUD ImageGen kit (Issue #52)
     hud_dir = REPO_ROOT / "assets" / "ui" / "hud_visual_kit"
     if hud_dir.is_dir():
-        print(f"\nVerifying HUD visual kit evidence (Issue #8)...")
+        print(f"\nVerifying HUD ImageGen visual kit evidence (Issue #52)...")
         # 8a. Approved reference
         hud_ref = hud_dir / "references" / "hud_concept_reference.jpg"
         if not hud_ref.exists() or hud_ref.stat().st_size < 1000:
@@ -934,9 +935,8 @@ def verify_evidence() -> bool:
             "resource_wood", "resource_stone", "resource_iron", "resource_magic_stone",
             "global_day", "global_night", "global_settings", "global_build",
             "warrior_sword_attack", "warrior_cleave", "warrior_dash", "warrior_parry", "warrior_duel",
-            "archer_shot", "archer_piercing_shot", "archer_roll", "archer_decoy", "archer_sniper",
-            "engineer_hammer", "engineer_turret", "engineer_dash", "engineer_mine", "engineer_overclock",
-            "hud_skull_wave", "hud_health_cross", "hud_armor_shield", "hud_target_range",
+            "archer_shot", "archer_piercing_shot", "archer_roll", "archer_decoy", "archer_eagle_eye",
+            "engineer_hammer", "engineer_turret", "engineer_dash", "engineer_mine", "engineer_tactical_nuke",
         ]
         for slug in expected_icon_slugs:
             p256 = icons_dir / f"{slug}.png"
@@ -951,19 +951,33 @@ def verify_evidence() -> bool:
                 errors.append(f"HUD icon 64px missing: {p64}")
             if not p32.exists():
                 errors.append(f"HUD icon 32px missing: {p32}")
-        print(f"[PASS] All {len(expected_icon_slugs)} HUD icons verified across resolutions (256, 128, 64, 32).")
+        print(f"[PASS] All {len(expected_icon_slugs)} ImageGen runtime icons verified across resolutions (256, 128, 64, 32).")
 
-        # 8c. Vector SVG source check (must be pure vector geometry without raster <image> tags)
-        svg_dir = hud_dir / "source" / "svg"
-        for slug in expected_icon_slugs:
-            svg_file = svg_dir / f"{slug}.svg"
-            if not svg_file.exists():
-                errors.append(f"Missing vector SVG source: {svg_file}")
-            else:
-                svg_content = svg_file.read_text(encoding="utf-8")
-                if "<image " in svg_content:
-                    errors.append(f"SVG {svg_file.name} contains raster <image> wrapper instead of pure vector geometry")
-        print(f"[PASS] All {len(expected_icon_slugs)} vector SVG sources verified as pure vector geometry.")
+        # 8c. ImageGen master/provenance integrity; SVG/procedural substitutes are forbidden.
+        provenance_path = hud_dir / "source" / "imagegen" / "prompts.json"
+        masters_dir = hud_dir / "source" / "imagegen" / "masters"
+        try:
+            provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
+            entries = {entry["id"]: entry for entry in provenance["masters"]}
+            if set(entries) != set(expected_icon_slugs):
+                errors.append("ImageGen provenance must contain the exact 23 runtime icons.")
+            for slug in expected_icon_slugs:
+                entry = entries.get(slug, {})
+                master = hud_dir / entry.get("master", "")
+                if not master.is_file():
+                    errors.append(f"ImageGen master missing for {slug}: {master}")
+                elif hashlib.sha256(master.read_bytes()).hexdigest() != entry.get("master_sha256"):
+                    errors.append(f"ImageGen master checksum mismatch: {slug}")
+            if provenance.get("generation_tool") != "Codex built-in ImageGen":
+                errors.append("Image generation tool provenance is missing or inaccurate.")
+            if provenance.get("godot_mcp_used_for_generation") is not False:
+                errors.append("Generation provenance must not claim an MCP call that was not made.")
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            errors.append(f"Cannot verify ImageGen prompts/provenance: {exc}")
+        legacy_svg_dir = hud_dir / "source" / "svg"
+        if legacy_svg_dir.exists() or list(icons_dir.glob("*.svg")):
+            errors.append("Legacy SVG icon sources/exports must be removed from the Issue #52 HUD package.")
+        print(f"[PASS] ImageGen masters and provenance checked for {len(expected_icon_slugs)} runtime icons.")
 
         # 8d. Frames & Bars
         frames_dir = hud_dir / "output" / "frames"
@@ -1016,15 +1030,14 @@ def verify_evidence() -> bool:
         # 8e. Review Evidence Renders
         review_dir = hud_dir / "review"
         required_reviews = [
-            ("contact_sheet.png", 1000, 500),
-            ("readability_64px.png", 800, 350),
-            ("readability_32px.png", 800, 250),
+            ("contact_sheet.png", 1500, 800),
+            ("readability_64px.png", 1000, 350),
+            ("readability_32px.png", 1000, 350),
             ("mockup_warrior_hud.png", 800, 200),
             ("mockup_archer_hud.png", 800, 200),
             ("mockup_engineer_hud.png", 800, 200),
-            ("mockup_day_night_panel.png", 600, 250),
-            ("mockup_resource_panel.png", 600, 180),
-            ("mockup_gameplay_hud.png", 1000, 600),
+            ("mockup_day_night_panel.png", 700, 180),
+            ("mockup_resource_panel.png", 700, 180),
         ]
         for rname, min_w, min_h in required_reviews:
             rpath = review_dir / rname
@@ -1033,7 +1046,7 @@ def verify_evidence() -> bool:
                 errors.append(f"Review render {rname} invalid: {err}")
             elif w < min_w or h < min_h:
                 errors.append(f"Review render {rname} too small ({w}x{h}, expected >= {min_w}x{min_h})")
-        print(f"[PASS] All {len(required_reviews)} review sheets and gameplay mockups verified.")
+        print(f"[PASS] All {len(required_reviews)} review art layouts verified; these are not engine captures.")
 
         # 8f. Metrics & Review MD
         metrics_file = review_dir / "metrics.json"

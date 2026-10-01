@@ -5,25 +5,25 @@
     "w": 96,
     "h": 96
   },
-  "archer_piercing_shot": {
+  "archer_eagle_eye": {
     "x": 128,
     "y": 16,
     "w": 96,
     "h": 96
   },
-  "archer_roll": {
+  "archer_piercing_shot": {
     "x": 240,
     "y": 16,
     "w": 96,
     "h": 96
   },
-  "archer_shot": {
+  "archer_roll": {
     "x": 352,
     "y": 16,
     "w": 96,
     "h": 96
   },
-  "archer_sniper": {
+  "archer_shot": {
     "x": 464,
     "y": 16,
     "w": 96,
@@ -47,7 +47,7 @@
     "w": 96,
     "h": 96
   },
-  "engineer_overclock": {
+  "engineer_tactical_nuke": {
     "x": 912,
     "y": 16,
     "w": 96,
@@ -83,80 +83,56 @@
     "w": 96,
     "h": 96
   },
-  "hud_armor_shield": {
+  "resource_iron": {
     "x": 576,
     "y": 128,
     "w": 96,
     "h": 96
   },
-  "hud_health_cross": {
+  "resource_magic_stone": {
     "x": 688,
     "y": 128,
     "w": 96,
     "h": 96
   },
-  "hud_skull_wave": {
+  "resource_stone": {
     "x": 800,
     "y": 128,
     "w": 96,
     "h": 96
   },
-  "hud_target_range": {
+  "resource_wood": {
     "x": 912,
     "y": 128,
     "w": 96,
     "h": 96
   },
-  "resource_iron": {
+  "warrior_cleave": {
     "x": 16,
     "y": 240,
     "w": 96,
     "h": 96
   },
-  "resource_magic_stone": {
+  "warrior_dash": {
     "x": 128,
     "y": 240,
     "w": 96,
     "h": 96
   },
-  "resource_stone": {
+  "warrior_duel": {
     "x": 240,
     "y": 240,
     "w": 96,
     "h": 96
   },
-  "resource_wood": {
+  "warrior_parry": {
     "x": 352,
     "y": 240,
     "w": 96,
     "h": 96
   },
-  "warrior_cleave": {
-    "x": 464,
-    "y": 240,
-    "w": 96,
-    "h": 96
-  },
-  "warrior_dash": {
-    "x": 576,
-    "y": 240,
-    "w": 96,
-    "h": 96
-  },
-  "warrior_duel": {
-    "x": 688,
-    "y": 240,
-    "w": 96,
-    "h": 96
-  },
-  "warrior_parry": {
-    "x": 800,
-    "y": 240,
-    "w": 96,
-    "h": 96
-  },
   "warrior_sword_attack": {
-    "x": 912,
+    "x": 464,
     "y": 240,
     "w": 96,
     "h": 96

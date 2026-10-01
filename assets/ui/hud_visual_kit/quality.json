@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "inputs": [
+    "assets/ui/hud_visual_kit/source",
+    "tools/author_hud_visual_kit.py",
+    "tools/hud_frames_builder.py",
+    "tools/pipeline_reports.py"
+  ],
+  "commands": [
+    [
+      "python",
+      "tools/author_hud_visual_kit.py"
+    ]
+  ],
+  "references": [
+    {
+      "path": "assets/ui/hud_visual_kit/references/hud_concept_reference.jpg",
+      "sha256": "a75048d2483e2d2a9eb1c6e3996683ffc894f486de736ff1f7be187d8b9c2e6c",
+      "status": "candidate",
+      "provenance": "Historical HUD art direction image included with this legacy package; Issue #52 uses it as a candidate visual reference only.",
+      "approval": ""
+    }
+  ],
+  "reference_free_reason": "",
+  "artifacts": [
+    "assets/ui/hud_visual_kit/output",
+    "assets/ui/hud_visual_kit/review/contact_sheet.png",
+    "assets/ui/hud_visual_kit/review/readability_64px.png",
+    "assets/ui/hud_visual_kit/review/readability_32px.png",
+    "assets/ui/hud_visual_kit/review/mockup_warrior_hud.png",
+    "assets/ui/hud_visual_kit/review/mockup_archer_hud.png",
+    "assets/ui/hud_visual_kit/review/mockup_engineer_hud.png",
+    "assets/ui/hud_visual_kit/review/mockup_day_night_panel.png",
+    "assets/ui/hud_visual_kit/review/mockup_resource_panel.png",
+    "assets/ui/hud_visual_kit/review/metrics.json",
+    "assets/ui/hud_visual_kit/review/build_report.md",
+    "assets/ui/hud_visual_kit/review/review.md"
+  ],
+  "require_engine_review": false,
+  "criteria": [
+    {
+      "id": "style_cohesion",
+      "target": "All 23 source icons share restrained dark fantasy materials and cyan/amber accents while retaining distinct art silhouettes.",
+      "evidence": [
+        "assets/ui/hud_visual_kit/review/contact_sheet.png"
+      ]
+    },
+    {
+      "id": "class_mapping",
+      "target": "Each Warrior, Archer and Engineer row shows its five distinct abilities, including Eagle Eye and Tactical Nuke.",
+      "evidence": [
+        "assets/ui/hud_visual_kit/review/mockup_warrior_hud.png",
+        "assets/ui/hud_visual_kit/review/mockup_archer_hud.png",
+        "assets/ui/hud_visual_kit/review/mockup_engineer_hud.png"
+      ]
+    },
+    {
+      "id": "readability_64",
+      "target": "The 23 exported transparent PNG icons retain their key silhouette and do not clip at 64 px.",
+      "evidence": [
+        "assets/ui/hud_visual_kit/review/readability_64px.png"
+      ]
+    },
+    {
+      "id": "readability_32",
+      "target": "The 23 exported transparent PNG icons retain their key silhouette and do not clip at 32 px.",
+      "evidence": [
+        "assets/ui/hud_visual_kit/review/readability_32px.png"
+      ]
+    }
+  ]
+}

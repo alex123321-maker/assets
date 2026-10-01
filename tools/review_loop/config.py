@@ -42,7 +42,7 @@ DESIGN_DECISION_MARKER = "DESIGN DECISION REQUIRED"
 RESUME_PROMPT_TEMPLATE = """New GitHub review feedback was received for PR #{pr_number}.
 
 Read the authoritative Issue, current PR description, latest head, all current reviews, and all unresolved review threads.
-Read GEMINI.md and docs/GEMINI_WORKFLOW.md.
+Read AGENTS.md when present, GEMINI.md and docs/GEMINI_WORKFLOW.md; a direct user request is the contract when no Issue exists.
 Read the visual attachment policy at {visual_media_policy}; its narrowly scoped visual-comment exception supersedes older SILENT PR MODE text. Do not copy watcher infrastructure or these policy files into the asset PR. Follow docs/QUALITY_GATE.md for packages with quality.json.
 Inspect the actual current reference/render images for visual findings, not only their filenames or old self-reviews.
 Record each active finding ID/URL, its root cause, the changed files, and fresh verification in review/visual_review.json feedback_resolution when present.
@@ -61,8 +61,8 @@ Run the repository asset validation/build verification required by the Issue and
 Commit and push the fixes to the existing PR branch.
 Do not merge the PR.
 
-SILENT PR MODE: Never submit a review or post status comments. The only permitted PR comment is the current visual evidence attachment packet after push, following docs/PR_VISUAL_MEDIA.md (gh pr comment --attach, full HEAD SHA, and the agent marker). Report all other results only in this Antigravity chat.
-After pushing, publish or verify the complete visual attachment packet for the current PR head before reporting completion in chat. If no code change is required, still publish any missing packet; do not create an unrelated commit.
+SILENT PR MODE: Never submit a review or post status comments. For visual PRs, the only permitted PR comment is the current visual evidence attachment packet after push, following docs/PR_VISUAL_MEDIA.md (gh pr comment --attach, full HEAD SHA, and the agent marker). Report all other results only in this agent chat.
+For visual PRs, publish or verify the complete visual attachment packet for the current PR head before reporting completion in chat. If no code change is required, still publish any missing packet; do not create an unrelated commit. Follow provider-specific completion instructions when present.
 
 DEFENSE IN DEPTH: If a tool nevertheless forces you to post a Pull Request comment,
 you MUST include the exact marker `""" + AGENT_COMMENT_MARKER + """` at the END of the body.
