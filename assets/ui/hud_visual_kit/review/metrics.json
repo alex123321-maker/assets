@@ -1,13 +1,13 @@
 {
   "kit_name": "hud_visual_kit",
-  "total_unique_icons": 27,
+  "total_unique_icons": 23,
   "categories": {
     "resource": 4,
-    "global_hud": 4,
+    "global_hud": 3,
+    "build": 1,
     "warrior": 5,
     "archer": 5,
-    "engineer": 5,
-    "auxiliary": 4
+    "engineer": 5
   },
   "resolutions_provided": [
     256,
@@ -15,7 +15,7 @@
     64,
     32
   ],
-  "total_icon_files": 135,
+  "total_icon_files": 92,
   "total_frame_files": 25,
   "total_bar_files": 7,
   "atlas": {
@@ -35,16 +35,8 @@
     "mockup_archer_hud": "review/mockup_archer_hud.png",
     "mockup_engineer_hud": "review/mockup_engineer_hud.png",
     "mockup_day_night_panel": "review/mockup_day_night_panel.png",
-    "mockup_resource_panel": "review/mockup_resource_panel.png",
-    "mockup_gameplay_hud": "review/mockup_gameplay_hud.png"
+    "mockup_resource_panel": "review/mockup_resource_panel.png"
   },
-  "acceptance_criteria_verified": {
-    "min_24_unique_icons": true,
-    "no_emojis": true,
-    "legible_32_64px": true,
-    "class_distinction": true,
-    "reusable_frames": true,
-    "full_naming_map": true,
-    "godot_export_ready": true
-  }
+  "visual_review_status": "recorded in review/visual_review.json",
+  "engine_verification_status": "not_checked; see the game runtime review for Issue #52"
 }

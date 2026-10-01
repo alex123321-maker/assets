@@ -1,0 +1,205 @@
+{
+  "package": "hud_visual_kit",
+  "issue": 52,
+  "generated_date": "2026-10-01",
+  "generation_tool": "Codex built-in ImageGen",
+  "godot_mcp_used_for_generation": false,
+  "reference": {
+    "path": "references/hud_concept_reference.jpg",
+    "sha256": "a75048d2483e2d2a9eb1c6e3996683ffc894f486de736ff1f7be187d8b9c2e6c",
+    "status": "candidate; historical package reference, not a new approval"
+  },
+  "masters": [
+    {
+      "id": "resource_wood",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-6374c481-d710-4948-a042-de65a8ac8717.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy resource HUD icon master, square transparent PNG.\nPrimary request: a compact stack of two cut hardwood logs, bark ridges and visible circular growth rings, unmistakable as gathered wood at 32px.\nStyle/medium: dimensional hand-painted fantasy/MOBA game icon, detailed believable wood and clean silhouette, crisp edge lighting, restrained painterly shading.\nLighting/palette: cool upper-left light; warm amber-brown bark and pale cut ends; narrow blue-gray rim highlight. Suits charcoal/navy UI panels.\nComposition: one centered compact icon with clear transparent padding, all ends and bark inside the square.\nAvoid: trees, forest, text, letters, numbers, UI frame, background, extra props, watermark, edge crop.",
+      "master": "source/imagegen/masters/resource_wood.png",
+      "master_sha256": "f9807f0c9a9277244ee846d3352d8f68025f4f5aa1c7ccf8e1140c7a8f78d189"
+    },
+    {
+      "id": "resource_stone",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-0b7a5d3d-385e-4ded-be37-7d59a563e619.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy resource HUD icon master, square transparent PNG.\nPrimary request: one compact chiseled granite stone block with angular facets and a subtle mineral sheen, clearly readable as a mined stone resource at 32px.\nStyle/medium: dimensional hand-painted fantasy/MOBA game icon, crisp planes, polished but natural stone material, restrained painterly shading.\nLighting/palette: cool upper-left light; charcoal slate, blue-gray and a few pale silver facets, restrained cyan rim.\nComposition: single centered block with clear transparent padding, no part outside the square.\nAvoid: mountain scene, pile of many rocks, text, letters, numbers, UI frame, background, extra props, watermark, edge crop.",
+      "master": "source/imagegen/masters/resource_stone.png",
+      "master_sha256": "7534d77a814a73fca34e324ae8ee9f7efcd50846ee4e180afc32a1c769c0294e"
+    },
+    {
+      "id": "resource_iron",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-853a5381-8d12-44e4-a662-4248faae85ed.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy resource HUD icon master, square transparent PNG.\nPrimary request: one solid forged iron ingot with a simple beveled trapezoid silhouette, cleanly recognizable as iron at 32px.\nStyle/medium: dimensional hand-painted fantasy/MOBA game icon, believable forged metal, crisp bevels, subtle hammering and controlled metallic specular highlights.\nLighting/palette: cool upper-left light; dark iron, brushed silver faces, restrained blue-gray reflections; avoid mirror-bright glare.\nComposition: one centered complete ingot with transparent padding around every side.\nAvoid: weapons, tools, text, letters, numbers, UI frame, background, extra objects, watermark, edge crop.",
+      "master": "source/imagegen/masters/resource_iron.png",
+      "master_sha256": "99c2ef3d43d92858fec0102f64930da2ff96dc2d67293d4221daa69493b656c7"
+    },
+    {
+      "id": "resource_magic_stone",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-ded6b60c-3cb4-45da-ba94-e29d2078c187.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy resource HUD icon master, square transparent PNG.\nPrimary request: a small cluster of faceted magical crystals, unmistakably a rare purple-cyan magic stone resource at 32px.\nStyle/medium: dimensional hand-painted fantasy/MOBA game icon, sharp gemstone facets, polished mineral material, restrained painterly light, crisp silhouette.\nLighting/palette: cool upper-left key; amethyst violet and deep blue facets with a few luminous cyan edges, contained inner glow only.\nComposition: centered cluster of three connected crystal points with clear transparent padding and complete tips.\nAvoid: text, letters, numbers, runes, UI frame, environment, pedestal, broad glow cloud, extra props, watermark, edge crop.",
+      "master": "source/imagegen/masters/resource_magic_stone.png",
+      "master_sha256": "8f86f6960acd5d3f33cc1572ef35e2cfed5d14b6eb275c367761b68966d83d5a"
+    },
+    {
+      "id": "global_day",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-e87e9f30-2663-44fa-bbb9-6a5a4262e539.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy HUD day-phase icon master, square transparent PNG.\nPrimary request: a radiant golden solar disc with short sculpted angular rays, unmistakable as daytime at 32px.\nStyle/medium: dimensional hand-painted fantasy/MOBA game icon, formed warm metal and amber glass, crisp beveled light-catching edges, refined not flat-vector.\nLighting/palette: warm gold/amber core, restrained ivory highlights, a little blue-gray shadow for volume.\nComposition: single centered sun medallion with even optical padding, every ray fully inside the square.\nAvoid: text, letters, numbers, face, UI frame, sky, horizon, scene background, clouds, broad glow, watermark, edge crop.",
+      "master": "source/imagegen/masters/global_day.png",
+      "master_sha256": "b643afc7a6a819cb9614555fe6220fbb07659324dc9c419406e20422df47a434"
+    },
+    {
+      "id": "global_night",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-53382786-b414-4544-a9c6-4ec63bb3c20b.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy HUD night-phase icon master, square transparent PNG.\nPrimary request: one polished cyan crescent moon with two small star glints, unmistakable as nighttime at 32px.\nStyle/medium: dimensional hand-painted fantasy/MOBA game icon, sculpted luminous crystal-metal with crisp bevels, restrained painterly shading, clear crescent silhouette.\nLighting/palette: cool silver-blue body, limited cyan edge light and small white star highlights; dark navy shadows.\nComposition: centered crescent and two compact glints with clear transparent padding; complete moon tips inside the square.\nAvoid: text, letters, numbers, face, UI frame, sky, clouds, scene background, broad glow, extra stars, watermark, edge crop.",
+      "master": "source/imagegen/masters/global_night.png",
+      "master_sha256": "9284d35354501b4423c3968136003fd89dae54adfce5f84df38183c2e4ffaf58"
+    },
+    {
+      "id": "global_settings",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-3f92ba80-7b50-4572-964f-a3d6d9e956f4.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy HUD settings icon master, square transparent PNG.\nPrimary request: one precision mechanical cog, thick beveled steel teeth around a dark navy central hub, clearly recognizable as settings at 32px.\nStyle/medium: dimensional hand-painted fantasy/MOBA game icon, polished metal with crisp edges and restrained painterly surface detail.\nLighting/palette: cool upper-left key light, dark charcoal steel, blue-gray shadow, small cyan edge reflections.\nComposition: single centered gear with complete evenly spaced teeth and clear transparent padding.\nAvoid: text, letters, numbers, UI frame, background, extra gears, tools, bright glow, watermark, edge crop.",
+      "master": "source/imagegen/masters/global_settings.png",
+      "master_sha256": "9500b25e21619bb056d8aaa064a1c1e8c505b2e65be3a3d7f485d637bff2cd0f"
+    },
+    {
+      "id": "global_build",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-fea42f7c-235f-4020-b49a-a7326f6addc2.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy HUD build-mode icon master, square transparent PNG.\nPrimary request: one builder's hammer crossed with a draftsman's square, a clear construction symbol at 32px.\nStyle/medium: dimensional hand-painted fantasy/MOBA game icon, forged steel head, warm wood handle, compact polished materials and sharp silhouette.\nLighting/palette: cool upper-left key light, charcoal metal, warm walnut, restrained amber and cyan edge highlights.\nComposition: two simple crossed tools centered and fully visible inside a square with transparent padding.\nAvoid: buildings, plans with writing, text, letters, numbers, UI frame, background, extra props, watermark, edge crop.",
+      "master": "source/imagegen/masters/global_build.png",
+      "master_sha256": "f18dc572828a0a828324b4f5bdd6f9c559dce600f6b262bc7a5c48e6e4abec77"
+    },
+    {
+      "id": "warrior_sword_attack",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-5fd3c9d4-d752-47c3-b8a7-f873ec0e7735.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy Warrior basic-attack HUD ability icon master, square transparent PNG.\nPrimary request: one steel longsword in a fast single cutting slash, with a short narrow silver motion trail that clarifies the strike.\nStyle/medium: dimensional hand-painted fantasy/MOBA ability illustration, polished blade, dark leather grip, crisp material edge and painterly depth.\nLighting/palette: cool upper-left light, silver-blue steel, restrained warm glint at the cut; charcoal/navy compatible.\nComposition: one complete diagonal sword and contained slash trail centered with transparent padding, clearly different from a shield parry and wide cleave.\nAvoid: shield, crossed weapons, text, letters, numbers, UI frame, background, extra objects, broad glow, watermark, edge crop.",
+      "master": "source/imagegen/masters/warrior_sword_attack.png",
+      "master_sha256": "79e23fd9a67eab07449529105f6a3cac03bb4dce6ddc0180976490b5104d9630"
+    },
+    {
+      "id": "warrior_cleave",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-2a633ca6-fec4-42ff-b164-4a5e2b0034d7.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy Warrior special-attack HUD ability icon master, square transparent PNG.\nPrimary request: one broad curved longsword cleave with a contained orange-red arc sweeping through its path, clearly reading as a wide multi-target sweep at 32px.\nStyle/medium: dimensional hand-painted fantasy/MOBA ability art, steel blade, dark leather grip, crisp materials and a controlled painterly energy trail.\nLighting/palette: cool silver blade, warm amber-to-red arc, restrained cyan edge reflection, no foggy glow.\nComposition: diagonal sword with a wide curved arc contained inside the centered square, all parts visible with transparent padding.\nAvoid: shield, crossed swords, multiple blades, text, letters, numbers, UI frame, background, extra props, broad glow cloud, watermark, edge crop.",
+      "master": "source/imagegen/masters/warrior_cleave.png",
+      "master_sha256": "7b8fc7c52d1f61ab675c7299c7693c0f85d71ecf3304d65bb3dc519fc4ee9556"
+    },
+    {
+      "id": "warrior_dash",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-e01f911c-32ac-419c-88c8-11fdf148fa9d.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy Warrior movement ability HUD icon master, square transparent PNG.\nPrimary request: one pair of rugged armored boots driving forward in a combat dash, with short directional wind streaks behind them, clearly distinct from an attack at 32px.\nStyle/medium: dimensional hand-painted fantasy/MOBA ability illustration, dark steel shin guards, leather straps, readable material texture, crisp silhouette.\nLighting/palette: cool upper-left light, blue-gray steel and leather, a restrained cyan motion edge.\nComposition: forward-leaning paired boots centered, motion trailing behind, every boot and streak contained with transparent padding.\nAvoid: whole character, weapons, text, letters, numbers, UI frame, background, extra limbs, broad glow, watermark, edge crop.",
+      "master": "source/imagegen/masters/warrior_dash.png",
+      "master_sha256": "ad0bf8d97850b4b52c21d3158459479067143103e35ab77e324b17a73f8f997a"
+    },
+    {
+      "id": "warrior_parry",
+      "operation": "imagegen-edit",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-2a649605-4cce-419e-9be6-6b0735ef46c9.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy game HUD ability icon master.\nPrimary request: recompose this Warrior parry illustration as a complete icon, keeping the same polished fantasy painting and materials. Show a compact steel kite shield deflecting one diagonal sword at one crisp contact spark. Remove the partial arm and gauntlet completely. Keep the whole shield outline, sword tip, crossguard, and pommel visible.\nStyle/medium: dimensional hand-painted fantasy/MOBA ability art; brushed silver bevels, deep navy inset shield, subtle cool cyan edge light; crisp material read and one controlled impact flash.\nComposition/framing: square canvas; fit the entire subject inside a centered safe square occupying at most 68% of canvas width and height. At least 16% genuinely transparent margin on every side. Icon-scale close-up but not edge-cropped. The sword must not point into or cross any canvas edge.\nBackground: transparent outside the shield, sword, and small contact spark.\nConstraints: preserve a readable parry silhouette; no other props, scene, lettering, numbers, UI frame, glow cloud, watermark, or clipping.",
+      "master": "source/imagegen/masters/warrior_parry.png",
+      "master_sha256": "b523638cf095614f3a23a93088f6a84892632f20938c3fc6ee3cbda64c904cac",
+      "edit_input_output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-cddce96b-6763-4860-9533-11d708a6b93f.png",
+      "saved_edit_input": "source/imagegen/drafts/warrior_parry_v1.png",
+      "saved_edit_input_sha256": "c52254f1487831ed73a105ebc2b4c4f9b79ec49126869e92bf0476f0a8d83e79"
+    },
+    {
+      "id": "warrior_duel",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-006787c5-7f09-494e-9bc4-9b4ad9fe1cb8.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy Warrior ultimate HUD ability icon master, square transparent PNG.\nPrimary request: two distinct crossed steel swords framed by a compact crowned battle crest, unmistakably a duel challenge rather than a single slash.\nStyle/medium: dimensional hand-painted fantasy/MOBA ability art, polished forged steel, dark navy crest enamel, crisp edge and restrained painterly depth.\nLighting/palette: cool silver blades with limited gold crest accents and a subtle warm combat highlight, charcoal/navy compatible.\nComposition: two full crossed blades and compact crest centered within a square, clear transparent padding, unclipped silhouette.\nAvoid: words, letters, numbers, faces, shield wall, UI frame, scene background, extra weapons, broad aura, watermark, edge crop.",
+      "master": "source/imagegen/masters/warrior_duel.png",
+      "master_sha256": "9940be50b8483c2ee8e145afc848be1ad668e3cf241ae03fff22935d53e37114"
+    },
+    {
+      "id": "archer_shot",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-a822e8ae-06c8-4bc0-9669-f1f2ce7b70b2.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy Archer basic-attack HUD ability icon master, square transparent PNG.\nPrimary request: one elegant compact composite bow holding one nocked arrow, ready for a standard shot; instantly recognizable as an archer's basic ranged attack at 32px.\nStyle/medium: dimensional hand-painted fantasy/MOBA ability art, carved dark wood, wrapped grip, crisp steel arrowhead, polished material edges, restrained painterly shading.\nLighting/palette: cool upper-left light; walnut, silver-blue steel, a tiny cyan glint.\nComposition: complete bow and single arrow arranged diagonally at center with transparent padding.\nAvoid: three rings, multiple arrows, person, text, letters, numbers, UI frame, background, broad glow, watermark, edge crop.",
+      "master": "source/imagegen/masters/archer_shot.png",
+      "master_sha256": "e581db5c3b42f2a770ae27bb02a4198128cb101b63b044005fd4799a7f28a6a4"
+    },
+    {
+      "id": "archer_piercing_shot",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-74190bbb-2976-4d84-af8e-1877617e4194.png",
+      "prompt": "Use case: stylized-concept\nAsset type: production fantasy action-game HUD ability icon master, square RGBA with transparent canvas.\nPrimary request: one original Archer piercing-shot illustration: a finely crafted recurved bow releases one bright steel arrow straight through three thin, aligned cyan energy rings. Make the arrow's forward penetration unmistakable at 32px; show a clear bow, shaft, point, and three rings.\nStyle/medium: dimensional hand-painted fantasy/MOBA ability illustration, crisp readable silhouette, polished material edges, restrained painterly shading, detailed but not photorealistic. UI art for Cube Siege's dark charcoal/navy panels and voxel-fantasy world.\nLighting/mood: same cool upper-left key light, narrow cyan rim accents, no broad glow cloud.\nColor palette: dark walnut bow, silver arrowhead, deep blue-gray materials, limited cyan rings and white highlights.\nComposition/framing: single centered icon, diagonal bow and arrow within a square safe area, leave clear transparent padding, keep every object fully visible.\nConstraints: no text, letters, numbers, hotkeys, UI frame, background scene, extra arrows, extra characters, watermark, edge crop, or detached floating effects.",
+      "master": "source/imagegen/masters/archer_piercing_shot.png",
+      "master_sha256": "a05ec4faab2c812a9b7b1bf20b08dcbf10b91b24e4275d087c1d0d0b1906462c"
+    },
+    {
+      "id": "archer_roll",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-e7550e8b-c5ae-4d44-b8a2-5ce52e81f9f1.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy Archer movement ability HUD icon master, square transparent PNG.\nPrimary request: a compact hooded archer in a low acrobatic evasive tumble, body curled into a readable rolling motion with two short wind trails; clearly movement rather than aiming at 32px.\nStyle/medium: dimensional hand-painted fantasy/MOBA ability art, dark leather and cloth, a visible small bow secured to the figure, crisp silhouette and controlled detail.\nLighting/palette: cool upper-left light, deep navy cloth, silver-blue highlights, restrained cyan wind edges.\nComposition: one complete compact rolling figure contained inside a centered square, clear transparent padding.\nAvoid: standing pose, firing pose, extra characters, weapons separate from body, text, letters, numbers, UI frame, background, broad glow, watermark, edge crop.",
+      "master": "source/imagegen/masters/archer_roll.png",
+      "master_sha256": "decda28af18c2f3b2653b3476ca9a64ab6f9768303e2a6fae1bf73e891c6c3bb"
+    },
+    {
+      "id": "archer_decoy",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-831d8047-7b8a-4de0-8088-c4174f8eb5f6.png",
+      "prompt": "Use case: stylized-concept\nAsset type: fantasy Archer utility HUD ability icon master, square transparent PNG.\nPrimary request: a single translucent spectral shadow-clone archer holding a shortbow, with a few separated ghostly edge fragments to show it is a decoy; readable at 32px.\nStyle/medium: dimensional hand-painted fantasy/MOBA ability illustration with clear sculpted silhouette beneath spectral material, restrained painterly highlights.\nLighting/palette: cool cyan-blue glasslike transparency over dark navy and silver-gray, subtle inner light only.\nComposition: one centered archer bust/upper-body silhouette and bow, complete and contained with clear transparent padding.\nAvoid: two figures, skull, real enemy, text, letters, numbers, UI frame, scene background, broad glow cloud, watermark, edge crop.",
+      "master": "source/imagegen/masters/archer_decoy.png",
+      "master_sha256": "7d8d173eca4e8583620763852f4ef4d7d06e01f4a03df3e415b1b69513241e4f"
+    },
+    {
+      "id": "archer_eagle_eye",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-8a2ff74c-3baa-49c1-93e8-6af9e2de5609.png",
+      "prompt": "A single premium fantasy MOBA ability icon for Eagle Eye, a legendary archer ultimate: an elegant spectral hawk eye nested in a drawn bow sight, piercing golden target rings and feather motifs, unmistakable circular eye and arrowhead silhouette. Hand-painted AAA game concept art, crisp readable focal silhouette, steel blue and restrained warm gold highlights, dramatic but controlled glow, dark material values, isolated transparent background, centered square composition with generous transparent padding. No text, no letters, no UI frame, no border, no watermark.",
+      "master": "source/imagegen/masters/archer_eagle_eye.png",
+      "master_sha256": "bb18b066d1524e79616e1af9a913811e97359c410865c6723fb68cc7baa1ec7d"
+    },
+    {
+      "id": "engineer_hammer",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-c3944ea0-e328-4f78-8dc1-542ecf6d4461.png",
+      "prompt": "A single premium fantasy MOBA ability icon for an engineer's heavy hammer strike: a compact rune-forged blacksmith warhammer angled down into a bright impact spark with two small metal fragments, unmistakable hammer silhouette. Hand-painted AAA game concept art, crisp readable focal silhouette, steel blue and restrained amber highlights, dark material values, directional studio lighting, isolated transparent background, centered square composition with generous transparent padding. No text, no letters, no UI frame, no border, no watermark.",
+      "master": "source/imagegen/masters/engineer_hammer.png",
+      "master_sha256": "0c9a07a097a2bbdce82d6c5dd76ad462b8a21b0843aaeff3c551feaa3c06eeb0"
+    },
+    {
+      "id": "engineer_turret",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-45d53211-04a7-40ab-aa59-9a3082e06dfc.png",
+      "prompt": "A single premium fantasy MOBA ability icon for deploying an engineer's compact defense turret: a squat mechanical ballista turret with three articulated legs and a glowing cyan targeting lens, unmistakable turret silhouette. Hand-painted AAA game concept art, crisp readable focal silhouette, steel blue and restrained amber highlights, dark material values, directional studio lighting, isolated transparent background, centered square composition with generous transparent padding. No text, no letters, no UI frame, no border, no watermark.",
+      "master": "source/imagegen/masters/engineer_turret.png",
+      "master_sha256": "f2f4077245ebee1ead62e71a20dcb64e725bd2ff957f202d875292103beb0c94"
+    },
+    {
+      "id": "engineer_dash",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-3a9d51c0-e1c8-4600-8051-d98bbc7f1849.png",
+      "prompt": "A single premium fantasy MOBA ability icon for an engineer's powered dash: a compact pair of heavy mechanical greaves with one small rear thruster on each boot, driving forward with short cyan exhaust trails, unmistakable boots and directional movement. Hand-painted AAA game concept art, crisp readable focal silhouette, steel blue and restrained amber highlights, dark material values, directional studio lighting, isolated transparent background, centered square composition with generous transparent padding. No text, no letters, no UI frame, no border, no watermark.",
+      "master": "source/imagegen/masters/engineer_dash.png",
+      "master_sha256": "94bc820ead59c8a74dad0c6e4e52c0c8673649688d986506fc179d90a977ab09"
+    },
+    {
+      "id": "engineer_mine",
+      "operation": "imagegen-generate",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-a6226618-0208-49a0-8d78-a404115de16f.png",
+      "prompt": "A single premium fantasy MOBA utility icon for an engineer's proximity mine: one compact dark steel circular pressure mine with three short radial prongs and a clearly visible central amber charge, slight three-quarter angle, unmistakable placed explosive silhouette. Hand-painted AAA game concept art, crisp readable focal silhouette, steel blue and restrained amber highlights, dark material values, directional studio lighting, isolated transparent background, centered square composition with generous transparent padding. No text, no letters, no UI frame, no border, no watermark.",
+      "master": "source/imagegen/masters/engineer_mine.png",
+      "master_sha256": "7e38ff679e833f44cb6f3f16d58ac5d8a11618967d20118ba067193eb28cf509"
+    },
+    {
+      "id": "engineer_tactical_nuke",
+      "operation": "imagegen-edit",
+      "output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-c7c38239-0191-48e6-b21f-3cb89bb0c919.png",
+      "prompt": "Use case: stylized-concept\nAsset type: compact square tactical ultimate HUD icon.\nPrimary request: keep the same clearly recognizable descending steel orbital missile and small battlefield impact, but recompose it to fit cleanly as a game icon. Make the missile the dominant object. Shorten the exhaust to a narrow controlled flame trail and remove the oversized smoke cloud; retain a compact orange impact flare and only a few small debris pieces.\nStyle/medium: preserve the dimensional painted fantasy/MOBA materials, charcoal steel, red-orange accents, crisp metal edges, controlled cyan-blue rim light.\nComposition/framing: show the complete missile nose, body and tail, the complete short exhaust, and contained impact. Keep all parts inside a centered safe square using at most 68% of canvas width and height, with at least 16% transparent padding around the whole silhouette.\nBackground: transparent.\nConstraints: one missile only; no smoke plume reaching the canvas edge, no text, letters, numbers, gears, gauge, UI frame, scene background, broad glow, watermark, or crop.",
+      "master": "source/imagegen/masters/engineer_tactical_nuke.png",
+      "master_sha256": "59a4e2967ebf01e45b7dbcfccaf5e525c02bf22d4d24668737bcc4536b14353e",
+      "edit_input_output": "C:\\Users\\alexa\\.codex\\generated_images\\01a0f6dd-396b-7be0-bc09-04c283e2895a\\exec-308b8c13-b4b2-41c5-b092-afd76024d519.png",
+      "saved_edit_input": "source/imagegen/drafts/engineer_tactical_nuke_v1.png",
+      "saved_edit_input_sha256": "237e8bd95bfbe6ff1d8b741b38a7ed55cc61cfcf9ed15389ea3ca6d513520796"
+    }
+  ],
+  "export_policy": "Preserve masters unchanged. Crop transparent bounds, uniformly fit whole artwork with padding, then resize PNG exports."
+}

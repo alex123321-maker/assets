@@ -1,72 +1,27 @@
-# Request: HUD Visual Kit — Icons, Frames, and Action-Slot Art
+# Issue #52 — ImageGen HUD Art Source
 
-## Context & Purpose
+## Purpose
 
-This asset package provides the complete visual UI kit for Cube Siege (Isometric Action-Survival).
-The kit replaces placeholder emojis and primitive UI boxes in the runtime game with high-definition, cohesive, production-ready graphical assets matching the approved visual reference (`references/hud_concept_reference.jpg`).
+This package stores the immutable ImageGen source art and deterministic technical exports for the Cube Siege HUD. Each runtime icon is traced to one transparent RGBA master under \`source/imagegen/masters\`; export code may crop transparent bounds, uniformly fit artwork into a padded square, and resize it. It must not draw, replace, vectorize, or otherwise synthesize icon artwork.
 
-## Required Scope
+## Runtime catalog: 23 unique icons
 
-### 1. Resources (4 icons)
-- **Wood** (`resource_wood`): Stack of chopped lumber logs with growth rings and bark texture.
-- **Stone** (`resource_stone`): Chiseled granite block with angular facets and mineral sheen.
-- **Iron** (`resource_iron`): Solid forged iron ingot with metallic specular highlights and clean bevels.
-- **Magic Stone** (`resource_magic_stone`): Glowing purple/cyan crystal cluster radiating magical energy.
+- Resources (4): \`resource_wood\`, \`resource_stone\`, \`resource_iron\`, \`resource_magic_stone\`.
+- Global HUD (3): \`global_day\`, \`global_night\`, \`global_settings\`.
+- Build (1): \`global_build\`.
+- Warrior (5): \`warrior_sword_attack\`, \`warrior_cleave\`, \`warrior_dash\`, \`warrior_parry\`, \`warrior_duel\`.
+- Archer (5): \`archer_shot\`, \`archer_piercing_shot\`, \`archer_roll\`, \`archer_decoy\`, \`archer_eagle_eye\`.
+- Engineer (5): \`engineer_hammer\`, \`engineer_turret\`, \`engineer_dash\`, \`engineer_mine\`, \`engineer_tactical_nuke\`.
 
-### 2. Global HUD (4 icons)
-- **Day** (`global_day`): Radiant golden solar disc with stylized angular rays.
-- **Night** (`global_night`): Glowing cyan crescent moon with star glints.
-- **Settings** (`global_settings`): Precision mechanical cog with beveled teeth.
-- **Build** (`global_build`): Crossed builder's hammer and draftsman square / architect hammer.
+Ability labels follow the game contract: Archer F is Eagle Eye, Engineer F is Tactical Nuke, and Engineer Q communicates whether the remote mine can be placed or detonated.
 
-### 3. Warrior Abilities (5 icons)
-- **LMB Sword Attack** (`warrior_sword_attack`): Steel blade delivering a swift cutting slash.
-- **RMB Cleave** (`warrior_cleave`): Wide fiery circular sweep / whirlwind blade arc.
-- **Space Dash** (`warrior_dash`): Forward boots with dynamic velocity streaks.
-- **Q Parry** (`warrior_parry`): Deflecting shield and crossed blade with impact spark.
-- **F Duel** (`warrior_duel`): Crossed swords within a crowned battle crest and blazing aura.
+## Exports
 
-### 4. Archer Abilities (5 icons)
-- **LMB Shot** (`archer_shot`): Elegant composite bow nocked with loose flight arrow.
-- **RMB Piercing Shot** (`archer_piercing_shot`): Triple luminous cyan arrows punching through energy rings.
-- **Space Roll** (`archer_roll`): Acrobatic evasive tumble swirl with wind trails.
-- **Q Decoy** (`archer_decoy`): Translucent holographic shadow clone archer.
-- **F Sniper** (`archer_sniper`): High-precision target reticle locked onto lethal projectile path.
+- Transparent PNG icons at 256, 128, 64 and 32 px, all derived from the immutable masters.
+- Action-slot frames, cooldown and keycap art, panel frames, progress bars, atlas and 9-patch metadata. These are technical UI components, not replacement icon art.
+- Contact, 64 px and 32 px readability sheets, and class/component layouts. These layouts show generated assets and are not engine captures.
+- Per-master ImageGen prompts, operation/output lineage, hashes and reference provenance in \`source/imagegen/prompts.json\`.
 
-### 5. Engineer Abilities (5 icons)
-- **LMB Hammer** (`engineer_hammer`): Industrial war-mallet striking with electric/kinetic sparks.
-- **RMB Turret** (`engineer_turret`): Automated tripod sentry gun pod with twin barrels.
-- **Space Dash** (`engineer_dash`): Twin rocket thruster burst with flame exhaust cones.
-- **Q Mine** (`engineer_mine`): Spiked proximity landmine with hazard stripes and warning LEDs.
-- **F Overclock** (`engineer_overclock`): Overcharged lightning gears surging through a steam gauge.
+SVG icon output and procedural icon builders are not part of this package's production pipeline. The historical HUD reference in \`references/\` is recorded as a candidate reference, not as a new style approval. Image generation used Codex's built-in ImageGen tool; it was not sent through a Godot MCP bridge.
 
-### 6. Auxiliary & HUD Elements (4 icons)
-- **Skull Wave** (`hud_skull_wave`): Menacing combat skull marker for wave & boss indicators.
-- **Health Cross** (`hud_health_cross`): Radiant green vitality cross for healing & health.
-- **Armor Shield** (`hud_armor_shield`): Heavy fortified kite shield for armor & defense.
-- **Target Range** (`hud_target_range`): Concentric bulls-eye with range indicators.
-
-### 7. Reusable Frames & UI Components
-- Action slot frames in 5 states: `normal`, `hover`, `pressed`/`selected`, `disabled`, `cooldown`.
-- Cooldown overlay & radial mask reference.
-- Keycap frames and pre-rendered key badges (`LMB`, `RMB`, `SPACE`, `Q`, `W`, `E`, `R`, `F`, `TAB`).
-- Compact top-center Day/Night header frame.
-- Wave progress bar (background frame + fill).
-- Floating overhead player/enemy health bar (frame + full/danger fills).
-- Resource row pill container frame.
-- Tooltip popup frame.
-
-## Visual Language & Style
-- Dark charcoal/navy palettes (`#0D131A`, `#151F2C`, `#1D2A3A`) providing high contrast against voxel environments.
-- Vibrant cold cyan/blue accents (`#2CD8FF`, `#00A3E0`) for active abilities and night themes.
-- Warm fiery red/orange accents (`#FF3B30`, `#FF5722`, `#FF9800`) for danger, HP, and warrior cleave.
-- Radiant golden/amber tones (`#F5A623`, `#FFD23F`) for daylight, resources, and masteries.
-- Strict silhouette clarity: icons must remain instantly recognizable at 32px and 64px.
-- Zero emojis; cohesive vector and pixel-rendered game assets.
-
-## Delivery Requirements
-- Vector SVGs and high-resolution master PNGs (256x256).
-- Scaled game-ready icon exports (128x128, 64x64, 32x32) with alpha transparency.
-- 9-patch slice metadata in JSON for Godot `NinePatchRect` / `TextureRect`.
-- Packed spritesheet atlas (`output/atlas/hud_atlas.png`) with JSON coordinate map.
-- Review contact sheets, 64px & 32px readability sheets, class HUD strips, Day/Night mockup, Resource bar mockup, and full assembled gameplay mockup.
+\n
