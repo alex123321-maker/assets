@@ -1,6 +1,6 @@
 {
-  "evidence_digest": "8aaec37e0fda70b5623be195806ebc34fcc32bc8c0eac5df4256af644059eec1",
-  "reviewer": "Codex (direct preview inspection)",
+  "evidence_digest": "a5493328177728f56f127a491e4f4d6874fbe76000f80a459149aea8883a8839",
+  "reviewer": "Codex, direct image inspection during consolidation 2026-10-02",
   "inspected_images": [
     "assets/ui/hud_visual_kit/review/contact_sheet.png",
     "assets/ui/hud_visual_kit/review/readability_64px.png",
@@ -16,22 +16,22 @@
     {
       "id": "style_cohesion",
       "status": "pass",
-      "observation": "The 23 masters share dark steel/charcoal rendering, cool blue/cyan edge light and restrained amber highlights. Cleave and Eagle Eye retain distinct warm focal accents."
+      "observation": "The contact sheet uses dark steel and cyan highlights throughout, with amber on cleave, dueling weapons, Eagle Eye and the missile. Resource wood, stone, ingot and crystal silhouettes are distinct."
     },
     {
       "id": "class_mapping",
       "status": "pass",
-      "observation": "The reviewed 800x200 class strips keep all five icons, keys and Russian names visible. Archer F is Eagle Eye; Engineer F is Tactical Nuke. Engineer Q's changing verb is implemented and verified in the game worktree."
+      "observation": "Each inspected class strip contains five distinct icons and keys. Archer F shows the gold eye and Engineer F the missile; all action names remain beneath the icons."
     },
     {
       "id": "readability_64",
       "status": "pass",
-      "observation": "At 64 px every silhouette stays inside the slot. Resource materials and ability categories remain distinct without clipping."
+      "observation": "At 64 px all 23 art silhouettes fit inside their slots. The arrow, boots, shield, turret and mine are identifiable; no icon is clipped."
     },
     {
       "id": "readability_32",
       "status": "pass",
-      "observation": "At 32 px the primary shapes remain distinct. Bow and turret details are fine but still identify their respective abilities."
+      "observation": "At 32 px all art silhouettes fit. The bow and turret have finer, dimmer detail, while resource shapes and warm cleave/missile accents remain distinguishable. Some contact-sheet ID captions truncate; these captions are review labels, not runtime labels."
     }
   ],
   "gameplay": {
@@ -40,7 +40,17 @@
     "notes": "These are generated art/layout sheets, not Godot captures. Runtime and requested MCP inspection are recorded with the game-side Issue #52 work; no MCP runtime result is claimed for this source-art review."
   },
   "known_deviations": [
-    "This static art package does not include Godot runtime screenshots. Its generated layouts are explicitly labeled as non-engine evidence."
+    "This static art package does not include Godot runtime screenshots. Its generated layouts are explicitly labeled as non-engine evidence.",
+    "The historical reference is a candidate and includes older labels such as Sniper/Overclock; current strips follow the Issue #52 Eagle Eye/Nuke mapping."
   ],
-  "feedback_resolution": []
+  "feedback_resolution": [
+    {
+      "finding": "Manifest schema compatibility detected in consolidation",
+      "root_cause": "Asset revision 2 was written into the schema version field, but validate_asset requires schema version 1.",
+      "changed_files": [
+        "assets/ui/hud_visual_kit/manifest.json"
+      ],
+      "verification": "validate_all passed after retaining schema version 1 and storing asset_revision 2; build refreshed evidence and the six declared sheets were directly reinspected."
+    }
+  ]
 }

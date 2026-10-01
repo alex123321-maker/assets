@@ -1,7 +1,8 @@
 {
   "name": "hud_visual_kit",
   "type": "ui_kit",
-  "version": 2,
+  "version": 1,
+  "asset_revision": 2,
   "source": "source",
   "description": "Issue #52: 23 transparent ImageGen HUD icon masters, deterministic PNG exports and technical Godot UI components.",
   "category": "ui",

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "hash_policy": "sha256-text-lf-v1",
-  "built_at": "2026-10-01T12:40:33.216119+00:00",
+  "built_at": "2026-10-01T17:34:42.710726+00:00",
   "inputs": {
     "assets/ui/hud_visual_kit/source/generate_kit.py": "1dadec6e68451a7cfcf7c0375057a55fee6bd21e5913de8adb6bb9c7b76841ba",
     "assets/ui/hud_visual_kit/source/imagegen/drafts/engineer_tactical_nuke_v1.png": "237e8bd95bfbe6ff1d8b741b38a7ed55cc61cfcf9ed15389ea3ca6d513520796",
@@ -36,7 +36,7 @@
     "assets/ui/hud_visual_kit/references/hud_concept_reference.jpg": "a75048d2483e2d2a9eb1c6e3996683ffc894f486de736ff1f7be187d8b9c2e6c",
     "assets/ui/hud_visual_kit/quality.json": "ca0e9bcbb6e9923785a41b59086cdf82a41665bc0f19074bded32227d5b33faf",
     "assets/ui/hud_visual_kit/request.md": "36675f0fdbab89b5fb959733f116b5b01776b00f75a726f3c0b2e0ddce5ea626",
-    "assets/ui/hud_visual_kit/manifest.json": "0294c3bfff563c6d479ccd78674abbaa6de77f673f92a950f514ff1648cc2b90"
+    "assets/ui/hud_visual_kit/manifest.json": "dce79b2c4cecb68dfde9547efd14275af02fee0d7e6f1b8535960c578f0d9b94"
   },
   "artifacts": {
     "assets/ui/hud_visual_kit/output/atlas/hud_atlas.json": "1e9f1089c99948bed7f5fd362baf755a38f96c8271eaaa526307f46617e8da57",
@@ -180,5 +180,5 @@
     "assets/ui/hud_visual_kit/review/review.md": "6b27fa42c5e4c2c9a90700a9773f107ef95545ff0adfb5afbe45d1f0ba40cdd1"
   },
   "measurements": {},
-  "digest": "8aaec37e0fda70b5623be195806ebc34fcc32bc8c0eac5df4256af644059eec1"
+  "digest": "a5493328177728f56f127a491e4f4d6874fbe76000f80a459149aea8883a8839"
 }
