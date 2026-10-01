@@ -2,6 +2,8 @@
 
 Этот репозиторий использует тот же принцип автономного review loop, что и основной Cube Siege, но с отдельными runtime state и service identifiers.
 
+Поддерживаются Gemini / Antigravity и Codex. Инструкции Codex — [AGENTS.md](../AGENTS.md), настройка и протокол завершения — [CODEX_REVIEW_LOOP.md](CODEX_REVIEW_LOOP.md). Ниже описана исходная установка Antigravity; Codex использует отдельный транспорт `codex queue`.
+
 ## Основной цикл
 
 ```text

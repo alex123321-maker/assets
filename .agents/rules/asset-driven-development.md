@@ -1,4 +1,11 @@
+---
+trigger: model_decision
+description: "Применять при создании/изменении ассетов, работе с Issue, PR и исправлениями внешнего review."
+---
+
 # Asset Issue-Driven Development Rule
+
+Прямой запрос пользователя без Issue также задаёт контракт: не выдумывай номер Issue и не блокируй исполнение ради её создания. Консультации/генерация через MCP выполняются по [GEMINI.md](../../GEMINI.md) и [docs/MCP_BRIDGE.md](../../docs/MCP_BRIDGE.md); они не заменяют external review.
 
 ## 1. Авторитетный жизненный цикл
 
@@ -42,10 +49,10 @@ PR создаётся **только** через:
 python tools/review_loop/create_pr.py -- <аргументы gh pr create>
 ```
 
-Прямой `gh pr create` запрещён: wrapper обеспечивает связь branch ↔ Antigravity conversation и регистрацию PR в review loop.
+Прямой `gh pr create` запрещён: wrapper обеспечивает связь branch ↔ provider + conversation и регистрацию PR в review loop. Для Codex добавляй `--agent codex` по [AGENTS.md](../../AGENTS.md).
 
 PR должен содержать:
-1. `Closes #N` или `Fixes #N`;
+1. ссылку на существующую Issue или описание прямого запроса; `Closes #N`/`Fixes #N` только если PR закрывает эту Issue;
 2. что создано/изменено;
 3. canonical source;
 4. runtime outputs;
@@ -63,7 +70,7 @@ PR должен содержать:
 - не публиковать reviews или статусные PR comments; разрешён только комментарий с визуальными вложениями по `docs/PR_VISUAL_MEDIA.md`;
 - не менять дизайн для удобства исправления;
 - не merge PR;
-- commit + push в существующую branch — сигнал завершения.
+- для Antigravity commit + push в существующую branch — сигнал завершения; Codex также подтверждает run через `complete_run.py --run-id` по AGENTS.md.
 
 Если исправление требует нового художественного/gameplay решения:
 `DESIGN DECISION REQUIRED`.
