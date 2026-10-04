@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "damage_reflection_pixel_icon.png",
+  "sha256": "a952268a7f6e14b0f422e6784f34b8e69982333ec6c91e23586c52a259ac26d7",
+  "observations": [
+    "На нагруднике есть трещина и вспышка полученного удара.",
+    "От места попадания к вражеской лапе возвращается отдельный золотисто-красный поток; повреждение не отменено."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

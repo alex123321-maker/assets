@@ -1,0 +1,33 @@
+{
+  "name": "Исцеление",
+  "key": "healing",
+  "page_id": "page_625805b2aee48191ac55eb429c9201ba",
+  "category": "effects",
+  "subject": "One deep red heart held lightly by a cupped silver gauntlet, a SINGLE concentrated brilliant emerald/white restorative star touches and mends one small crack in the heart. Short outward burst, no circular loop, time particles, life-drain source or potion. Dark emerald/navy background.",
+  "caption": "Один яркий восстановительный импульс у сердца обозначает разовое исцеление.",
+  "kind": "icon",
+  "folder": "assets/ui/effects/healing/references/catalog_2026-10-04",
+  "selected_image": "healing_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-58fd570b-f304-49b0-9aa8-9ab66a34c5ff.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "1b1e11f1dc422fb83f5de54cb901ff2ce039662cd2dc442e2e51908527319e1c",
+  "byte_size": 1287778,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9NN2V6U3k2Y0VxMGtxLXhQVDhWc1V3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

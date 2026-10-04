@@ -1,0 +1,32 @@
+{
+  "key": "ui_health_bar_full",
+  "name": "Здоровье — полное",
+  "page_id": "page_37d4ce8fd7d48191a94aa3a77d87d607",
+  "subject": "ONE thin emerald-green strip width9 height1, mint top highlight and darker green lower edge. No frame.",
+  "prompt_override": "Generate ONE plain horizontal FLAT 2D PIXEL progress FILL STRIP ONLY on TRUE transparent background. Crisp square pixels and broad color ramps. Long rectangle aspect 12 to 1, tiny stepped tips, generous clear margins. NO border, frame, rivet, button, metal, navy empty well, extra bar, shadow, glow, texture background or text. Solid emerald-green strip with mint top edge and dark-green bottom.",
+  "transparent_background": true,
+  "kind": "icon",
+  "category": "hud_components",
+  "folder": "assets/ui/components/health_bar_full/references/catalog_2026-10-04",
+  "selected_image": "health_bar_full_pixel_reference.png",
+  "caption": "Пиксельный UI-компонент с прозрачным внешним фоном. Это визуальный референс; runtime-экспорт и проверка в движке не выполнены.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-d10f125d-6300-4540-8eca-6f5abf4fbb99.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "d6ddac321c3a3348b8a98253ab172ea18b1c7bfd7ae370a2a878e8f12b63a037",
+  "byte_size": 199318,
+  "dimensions": [
+    2172,
+    724
+  ],
+  "mode": "RGBA",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9ta2w5QjRSclZRV2dCV2VaU3Z2UmVR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

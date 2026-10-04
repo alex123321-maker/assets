@@ -1,0 +1,34 @@
+{
+  "name": "Инженер",
+  "kind": "model",
+  "folder": "assets/characters/engineer/references/catalog_2026-10-04",
+  "selected_image": "engineer_five_views.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-93863412-6e88-47d7-b272-0f3ed7c7c54b.png",
+  "page_id": "page_129d67a7d7588191a7184a07b3945493",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Фэнтези-Инженер: крупные воксели, молот в правой руке, кожаный фартук и рюкзак инструментов. Пять видов на чистом фоне.",
+  "sha256": "66c12b379bf927f61544104d4652a3ec2388ecc35f805593fcfe17e81d462c44",
+  "byte_size": 1476114,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV8yVnIwSHZBejhOd1docnlUeUZJQzNB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

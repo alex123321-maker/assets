@@ -1,0 +1,38 @@
+{
+  "key": "flower_red_cluster",
+  "name": "Цветы — красные маки",
+  "subject": "ONE fantasy voxel environment dressing asset. A cluster of exactly THREE voxel crimson POPPIES at varied heights, each with a broad coarse cross-shaped red petal head and DARK charcoal centre, thick leafy green stepped stems. Deep burgundy and bright red chunky petal material pixels, visually detailed but large blocks. Same three flowers and leaves in all rotations. NO flowerpot, earth, soil patch or base.",
+  "page_id": "page_8b516544f5d4819199fe01cddfac3bb6",
+  "kind": "model",
+  "category": "dressing",
+  "folder": "assets/environment/dressing_pack/flower_red_cluster/references/catalog_2026-10-04",
+  "selected_image": "flower_red_cluster_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\dressing_pack\\references\\dressing_concept_reference.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного варианта декора. Крупные воксели, чистый фон; без земли и демонстрационной подложки.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-022d520f-902a-41c6-a67c-32927d15c797.png",
+  "sha256": "076cea9bcff2228b1a2900d199cb93b1cc0a7e82a16becdbca1b2944921f6ba9",
+  "byte_size": 1196831,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9oMW5FSzk2eVptbmtGQmwtUFF5a0Z3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

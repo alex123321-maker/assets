@@ -1,0 +1,33 @@
+{
+  "name": "Акробатический кувырок",
+  "key": "acrobat_roll",
+  "page_id": "page_8fd44df383148191a14242266b7d2f5a",
+  "category": "abilities/archer",
+  "subject": "An agile green-hooded leather-armored ranger in a compact tucked forward-roll pose, head low and knees folded toward chest, a thin pale emerald semicircular movement swoosh follows rotation behind back/boots. Bow secured across back with quiver, hands close to body, no loose sharp arrow, no protective aura, no double body. Clear roll silhouette on navy forest background.",
+  "caption": "Компактный кувырок Лучника со следом вращения, без защитной ауры.",
+  "kind": "icon",
+  "folder": "assets/ui/abilities/archer/acrobat_roll/references/catalog_2026-10-04",
+  "selected_image": "acrobat_roll_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-a32eb7fc-509b-4c95-94bf-03f54647d2cd.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "6d48450cc447692cacb59c8be18fcc3f8de04b293ce936fa1aca028f592aa31e",
+  "byte_size": 1327490,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9OYzZGYlJHa3lfYm9zdW5KR1g3QW5R_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

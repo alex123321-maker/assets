@@ -1,0 +1,33 @@
+{
+  "key": "enemy_triple_throw",
+  "page_id": "page_c14fe5d9b1a08191a5968b81ced0b9a5",
+  "subject": "THREE small lobbed iron-amber projectiles at clearly DIFFERENT heights and different distances along ONE forward trajectory, suggesting three successive throws. One bright nearer landing flash and two dim small separated landing glints. NOT a simultaneous fan of three parallel arrows; no persistent mines.",
+  "name": "Тройной бросок",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/enemy_triple_throw/references/catalog_2026-10-04",
+  "selected_image": "enemy_triple_throw_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-8fcf0316-c362-4cd0-8223-472907591fbd.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "eead17ae97c0594f81e61a24a609cbb9d91024c3b82f39dfa71d5ae09af92a69",
+  "byte_size": 1338195,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9ac1NvaTMyU2dFTEhQNkktWjlzZGVn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

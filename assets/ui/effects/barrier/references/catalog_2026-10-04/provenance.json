@@ -1,0 +1,34 @@
+{
+  "name": "Щит",
+  "key": "barrier",
+  "page_id": "page_e8b1f0cdf8c081919cc6fcd4b4e897e8",
+  "category": "effects",
+  "subject": "A blue crystalline magical aegis shaped like a broad shield silhouette, layered translucent cyan panels enclosing a small red heart clearly behind them. One outer panel chips at a contact glint, inner heart remains intact. No physical wooden shield, no gold invulnerability contour, no sword or counterattack. Navy/blue background.",
+  "caption": "Кристаллическая оболочка защищает сердце и имеет собственный разрушаемый запас.",
+  "kind": "icon",
+  "folder": "assets/ui/effects/barrier/references/catalog_2026-10-04",
+  "selected_image": "barrier_pixel_icon.png",
+  "prompt_override": "Use case: stylized-concept. Asset type: ONE square CubeSiege fantasy game ability/talent icon, no sheet. Input image is ONLY reference for crisp 2D pixel rendering, controlled coarse pixel clusters, sharp stepped edges, rich readable game-icon illustration, restrained navy background and material palette. Render NEW subject described below. No 3D voxels, smoothing, photo texture, text, letters, numbers, annotation arrows, diagram, UI frame, watermark or infographic. One strong coherent silhouette occupying most of square; limited supporting details, enough dark breathing room around edges. Hard-edged pixel color ramps, silver steel/brass, color-coded magic/energy as specified. All weapons must be constructed consistently: straight blade, grip/guard/pommel aligned; believable grasp and action. Trails follow the blade/projectile/contact geometry, NEVER originate from grip/handle. Clean powerful composition; subtly textured colored background permitted. Subject: A blue crystalline magical aegis shaped like a broad shield silhouette, layered translucent cyan panels enclosing a small red heart clearly behind them. One outer panel chips at a contact glint, inner heart remains intact. No physical wooden shield, no gold invulnerability contour, no sword or counterattack. Navy/blue background.\n\nCORRECTION:\nEdit the blue magical shield icon: show exactly ONE SINGLE continuous crystalline shield plate, not multiple nested or stacked shields. Remove both inner repeated shield silhouettes and their white outline edges. Preserve the outer shield contour and outer contact chip/sparks, fill its inside with one subtly translucent blue crystalline surface with broad planar facets. The small intact red heart remains visible behind the single surface. No additional barrier layers, physical wood, gold aura, text or symbols. Preserve crisp 2D pixel rendering and navy background.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-c2a424c8-6e75-4a19-abfa-3d572c54a9fa.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "748daacd7fabc1a113f412114e650f137707827c0d4e8a72823ca13e196ab56f",
+  "byte_size": 1277649,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV85LWpIWGFYTm1BLTd2UFY0N01XRzV3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

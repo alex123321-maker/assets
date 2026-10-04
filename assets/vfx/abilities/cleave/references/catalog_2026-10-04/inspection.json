@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "cleave_five_views.png",
+  "sha256": "5e4c498ebaa07b5da494c10f26edcb231b1d07d13afb79e39915dfa138565c31",
+  "observations": [
+    "Широкая открытая фронтальная дуга с двумя концами; изометрия подтверждает отсутствие задней половины кольца."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

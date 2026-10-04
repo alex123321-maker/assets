@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "floor_spikes_five_views.png",
+  "sha256": "0626bce9190759605ab4e654d31fcb084e453316b367d6408071c5bb8e3e8b90",
+  "observations": [
+    "Viewed four low horizontal side orientations and one isometric view, trap remains flat in every panel.",
+    "Nine stepped iron spikes form a 3×3 grid on three wooden planks; no top or underside substitution."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

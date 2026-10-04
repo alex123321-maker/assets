@@ -1,0 +1,34 @@
+{
+  "key": "boss_lob_attack",
+  "page_id": "page_de32ca7b52e88191bde9b0e9d9b9f1db",
+  "subject": "ONE heavy amber-violet fantasy stone projectile descending on a clear curved ballistic arc toward an EMPTY small magic landing ring. Ring contains no hero; a dormant dark trap form begins at its centre after this empty landing. One projectile and one destination only. No straight laser trail, simultaneous hero-hit-and-trap scene or modern missile.",
+  "name": "Навесная атака",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/boss_lob_attack/references/catalog_2026-10-04",
+  "selected_image": "boss_lob_attack_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "input_images": [
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-c637cee1-e153-463d-a1ba-026552969fc7.png"
+  ],
+  "prompt_override": "Edit this one crisp pixel fantasy ability icon. Preserve the airborne stone projectile, amber/violet curved BALLISTIC flight trail, navy background and complete original art style. At the lower-right landing marker REMOVE ALL dark spike/black trap shapes and upward purple wisps from its center. Leave a QUIET EMPTY navy center inside a thin stationary violet warning ring. The projectile remains clearly IN AIR above this ring: this is before landing, no impact explosion, no already-armed trap, no sparks at marker. No actors, letters, diagrams or arrows.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-d7b7a3d5-5e4b-4933-9f9e-97c08775394e.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "a5a100bb55c22bfbbb0cb01e954812a8357e913bca110894a9d6d75bb3533595",
+  "byte_size": 1322435,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV90UG9NaFByZ3JuVXVzdWlwb3J0M0t3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

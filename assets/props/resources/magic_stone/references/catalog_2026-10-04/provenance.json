@@ -1,0 +1,37 @@
+{
+  "key": "pickup_magic_stone",
+  "name": "Магический камень — добытый ресурс",
+  "page_id": "page_f58044d4583c81919ce5b848a87d0701",
+  "subject": "THREE separate violet and cyan magical crystal shards, one tall and two shorter, BROAD CUBIC STAIR-STEP tips, large translucent purple faces and cyan internal core strips. Fixed loose triangular arrangement with clear white gaps, emissive colors without light cast on background. No gemstone display stand, conventional smooth pointed pyramids or terrain.",
+  "kind": "model",
+  "category": "resources",
+  "folder": "assets/props/resources/magic_stone/references/catalog_2026-10-04",
+  "selected_image": "magic_stone_pickup_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов набора из трёх отделённых частей добытого ресурса. Количество частей — визуальная композиция, не новая категория или баланс.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-b23dc62d-01cc-4729-b646-6fd5044a7b92.png",
+  "sha256": "01499b7c0b4164f338e946ecb35ebacb3e3205fff6e3c4a12e1de74762f1bc7f",
+  "byte_size": 1125514,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9HYVp2alhFcWY4V2Ntd0ZTOEQ3dEN3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

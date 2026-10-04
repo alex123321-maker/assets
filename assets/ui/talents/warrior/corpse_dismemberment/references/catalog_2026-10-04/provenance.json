@@ -1,0 +1,33 @@
+{
+  "name": "Расчленение трупа",
+  "key": "corpse_dismemberment",
+  "page_id": "page_7c5f514792648191bf4c13a276421619",
+  "category": "talents/warrior",
+  "subject": "A broken dark undead armored torso and helmet scattering into a few large blocky pieces under a downward silver sword edge; small restrained crimson impact highlights, no organs or realism. A warm gold victory glow rises behind the intact sword; muted cold blue haze around nearby fragments suggests slowed enemies. Fantasy game combat aftermath, dark burgundy/navy.",
+  "caption": "Победа над дуэльной целью: разлетающиеся части брони и тёплый акцент победы.",
+  "kind": "icon",
+  "folder": "assets/ui/talents/warrior/corpse_dismemberment/references/catalog_2026-10-04",
+  "selected_image": "corpse_dismemberment_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-b1973894-ca2b-4dec-83d9-e262a35d68c1.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "2dada5250b6913426f55deebcddf53c716b2ef3ef8db68235eacf66f3006b56f",
+  "byte_size": 1598111,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV92d2loMFR2ak1tMG5oVWFNbHA5WE5n_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

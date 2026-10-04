@@ -1,0 +1,33 @@
+{
+  "name": "Удар молотом",
+  "key": "hammer_strike",
+  "page_id": "page_e34988af1ac08191821f30a6a1b298b9",
+  "category": "abilities/engineer",
+  "subject": "A leather-gloved hand with teal sleeve swings a heavy SQUARE steel forge hammer with brass bands on a securely aligned brown wood handle. Broad flat striking FACE contacts a broken wood-and-stone brace at lower right; short gold contact sparks and small teal repair motes rise from restored joints. Hammer solid weight, handle connects centrally to head, no speed coming from grip. Navy/teal backdrop.",
+  "caption": "Тяжёлый молот и искры в точке удара; бирюзовые частицы напоминают о ремонте.",
+  "kind": "icon",
+  "folder": "assets/ui/abilities/engineer/hammer_strike/references/catalog_2026-10-04",
+  "selected_image": "hammer_strike_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-35e49919-f396-4497-b712-0b9f12c76a81.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "015bab691425304499a64e6d7d3460f885e406a144d72f45fd858014f1a47e69",
+  "byte_size": 1445288,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9rMmhuTjlUQ0E1Skd3M3BFRm1VMjh3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

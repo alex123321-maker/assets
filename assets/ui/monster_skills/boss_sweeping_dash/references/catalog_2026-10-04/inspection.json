@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "boss_sweeping_dash_pixel_icon.png",
+  "sha256": "4a327b9f0ad9bce9620f3167fd7b387380a6396bff86afc14ed5b6c4cf104611",
+  "observations": [
+    "Viewed a heavy armored enemy moving bodily forward behind a solid burgundy shield, short blue wake behind shoulders.",
+    "No detached damaging corridor beam; still icon does not demonstrate carry timing."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

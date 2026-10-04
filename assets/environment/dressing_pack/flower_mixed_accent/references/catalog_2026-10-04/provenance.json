@@ -1,0 +1,38 @@
+{
+  "key": "flower_mixed_accent",
+  "name": "Цветы — лиловые колокольчики",
+  "subject": "ONE fantasy voxel environment dressing asset. A rare lilac PURPLE BELLFLOWER accent cluster: THREE thick green stems with descending cubical violet bell-shaped blossoms, each hollow dark purple downward facing opening and chunky lilac rim, green coarse leaves. One flower species only, no multicolored bouquet. NO pot, earth, soil patch or base.",
+  "page_id": "page_8b516544f5d4819199fe01cddfac3bb6",
+  "kind": "model",
+  "category": "dressing",
+  "folder": "assets/environment/dressing_pack/flower_mixed_accent/references/catalog_2026-10-04",
+  "selected_image": "flower_mixed_accent_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\dressing_pack\\references\\dressing_concept_reference.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного варианта декора. Крупные воксели, чистый фон; без земли и демонстрационной подложки.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-b6cbd273-aa5d-4cc7-afab-89a2a368aa7f.png",
+  "sha256": "dfbf2fc33b84aa24fbd50ba58e3f467f084d65851f9f080f5bd4d4f6d3690d02",
+  "byte_size": 1171749,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV84NVdkWnp2YVVEYW92d2dDS1dOZTNR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

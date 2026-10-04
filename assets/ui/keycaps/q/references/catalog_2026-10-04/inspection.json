@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "q_pixel_reference.png",
+  "sha256": "63c474b8d1ddf4f08787ac897d4d6534f043cdfc9da4d84cb29fdfe63e20f9ea",
+  "observations": [
+    "Проверена точная надпись Q; ступенчатая клавиша и серебристые пиксельные буквы соответствуют семейству HUD."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

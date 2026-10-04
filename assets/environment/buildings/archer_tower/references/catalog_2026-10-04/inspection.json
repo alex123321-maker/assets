@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "archer_tower_five_views.png",
+  "sha256": "9f0d3aafd14fdb3193acee027d574b4606f1534904d4993541e7d795130d464b",
+  "observations": [
+    "Viewed five orientations: four oak posts, braced platform, fixed rear-side ladder and front burgundy banner.",
+    "Loaded crossbow bolt aligns along stock: front head centered, rear fletching centered, opposing side profiles point left/right, consistent isometric."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

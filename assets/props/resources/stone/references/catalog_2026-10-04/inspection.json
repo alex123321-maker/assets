@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "stone_pickup_five_views.png",
+  "sha256": "4135d8be97b5271906ae9a47c6890649b84b1a93746daad89e28b3836f5f55e0",
+  "observations": [
+    "Один низкий ступенчатый каменный фрагмент; длинные грани и узкие торцы различаются, светлый скол остаётся на соответствующей стороне."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

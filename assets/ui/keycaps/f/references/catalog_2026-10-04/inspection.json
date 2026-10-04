@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "f_pixel_reference.png",
+  "sha256": "6f4a8c9a9d19a68468a9471cb480f8eafae4229e21edbc111c4327e204ee853d",
+  "observations": [
+    "Проверена точная надпись F; ступенчатая клавиша и серебристые пиксельные буквы соответствуют семейству HUD."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

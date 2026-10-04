@@ -1,0 +1,33 @@
+{
+  "name": "Око снайпера",
+  "key": "sniper_eye",
+  "page_id": "page_9819e8f728288191bf2bf4b20a328448",
+  "category": "abilities/archer",
+  "subject": "One intense emerald human eye beneath a green hood, upper face partly visible in brown/tan pixel ramps. A narrow silver arrowhead reflected in the pupil and a clean long fading green sight glimmer points toward upper right. Clear precision/extended sight symbol, no literal numbers, crosshair overlay, magical explosion or camera UI. Dark navy forest.",
+  "caption": "Глаз под зелёным капюшоном обозначает точность и дальний обзор без уточнения режима активации.",
+  "kind": "icon",
+  "folder": "assets/ui/abilities/archer/sniper_eye/references/catalog_2026-10-04",
+  "selected_image": "sniper_eye_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-f1ff8e67-a099-42fb-9014-64ce1dc144cf.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "9c468ea255ec49cda63403aca8365d3a36e6350fc16a8a8c8a9de4a22a829fbd",
+  "byte_size": 1155612,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV90Y2NXOVpOWGpUZEVqNGRNOThXdjVR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

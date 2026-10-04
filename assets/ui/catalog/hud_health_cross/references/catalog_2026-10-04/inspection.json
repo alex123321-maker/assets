@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "hud_health_cross_pixel_reference.png",
+  "sha256": "a2c4470803e65a6009468e72c3ea52d09d445b7dc466bcf1179aed0f6f245a7c",
+  "observations": [
+    "Изумрудный крест с золотым обрамлением; хорошо отделяется от красных вредоносных эффектов."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

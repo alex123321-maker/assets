@@ -1,0 +1,33 @@
+{
+  "name": "Отражение урона",
+  "key": "damage_reflection",
+  "page_id": "page_0a211a7c6ba48191b1639d1d474d22ff",
+  "category": "effects",
+  "subject": "A dark iron breastplate visibly receives a small red incoming strike at upper-right, leaving a small contact crack and red flash. From that SAME received-hit point a thinner red/gold return energy streak curls outward back toward a small enemy claw at upper-right. Chest remains wounded so effect does not read as negating damage. No mirror shield, invulnerability dome or arrow diagram. Navy/crimson background.",
+  "caption": "Полученный удар оставляет след на броне, а ответная энергия возвращается к атакующему.",
+  "kind": "icon",
+  "folder": "assets/ui/effects/damage_reflection/references/catalog_2026-10-04",
+  "selected_image": "damage_reflection_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-c90d7f9b-3917-48c5-92f0-c37db7a52c9a.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "a952268a7f6e14b0f422e6784f34b8e69982333ec6c91e23586c52a259ac26d7",
+  "byte_size": 1512960,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9qWkVmSmZ1ZDlnMEVMaGhEN0pkejhB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

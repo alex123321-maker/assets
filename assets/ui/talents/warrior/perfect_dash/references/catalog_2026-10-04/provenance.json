@@ -1,0 +1,33 @@
+{
+  "name": "Идеальный рывок",
+  "key": "perfect_dash",
+  "page_id": "page_e43d035079a4819195b4a4c24074db97",
+  "category": "talents/warrior",
+  "subject": "Silver/burgundy warrior moving swiftly to upper right with long silver-cyan trailing streaks. Thin GOLD protective contour hugs the entire leading body silhouette, with one incoming dark shard dispersing harmlessly just outside contour. No sword strike or dome; readable enhanced protected dash. Dark navy. The warrior has uncovered short brown hair and blue eyes, no helmet; silver/brass armor and burgundy cape match the accepted character.",
+  "caption": "Усиленный рывок: длинный след и золотой защитный контур вокруг героя.",
+  "kind": "icon",
+  "folder": "assets/ui/talents/warrior/perfect_dash/references/catalog_2026-10-04",
+  "selected_image": "perfect_dash_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-e4968f95-f12f-458c-8d5d-32418a5d449b.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "2c00884105da662a6148b2a684914ae69ba422055b5822d78b03dd86c8f47811",
+  "byte_size": 1609245,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV8tWjZ3djZfSjY5NzVTcDBWWGF5dGxB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

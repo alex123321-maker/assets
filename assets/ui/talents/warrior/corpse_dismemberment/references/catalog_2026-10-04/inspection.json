@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "corpse_dismemberment_pixel_icon.png",
+  "sha256": "2dada5250b6913426f55deebcddf53c716b2ef3ef8db68235eacf66f3006b56f",
+  "observations": [
+    "Клинок идёт вниз к разрушенному тёмному нагруднику, рядом разлетаются шлем и крупные части брони.",
+    "Золотое свечение расположено у клинка, холодные голубые контуры — вокруг частей врага.",
+    "Сдержанные красные акценты передают попадание; рисунок целиком выполнен пиксельными цветовыми группами."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

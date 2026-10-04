@@ -1,0 +1,38 @@
+{
+  "key": "stage_2_var_1",
+  "name": "Крупные обломки — усечённая глыба",
+  "subject": "ONE destructible natural gray rock resource asset, angular stepped fused voxel geology, warm-gray primary stone with a few pale coarse mineral patches, dark-gray wide fracture seams and restrained FLAT olive moss color patches attached to stone surfaces (no growing plants). Large Minecraft-style cubic masses with chunky material pixels, no tiny rubble confetti, smooth beveled stone or photoreal texture. No soil, ground, grass, pedestal or landscape. This is ONE variant, not a family gallery or destruction sequence. All five copies show the same arrangement of main masses, cracks and separate fragments. Second destruction-stage broken large rock. One truncated block-like core with a freshly broken flat uneven top, two lower attached chunky remnant shoulders and ONE large separated fragment beside the core. Less height than intact monolith, wide visible break surfaces.",
+  "page_id": "page_8a1842277d7c819192faca9c0ffb2803",
+  "kind": "model",
+  "category": "rocks",
+  "folder": "assets/environment/destructible_rock/stage_2_var_1/references/catalog_2026-10-04",
+  "selected_image": "stage_2_var_1_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\destructible_rock\\references\\rock_concept_reference.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Один вариант соответствующей стадии разрушения: пять ракурсов без земли, ландшафта и подписи.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-19243d5c-384a-49c1-aca0-cc922395b253.png",
+  "sha256": "62cd326e3c973d44ab17d715fdfaaf439cfbff785182fba37a808a21b3030bc4",
+  "byte_size": 1254627,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9WVUpXQ0ZJMzYtWkZzeDdXazZodlFR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

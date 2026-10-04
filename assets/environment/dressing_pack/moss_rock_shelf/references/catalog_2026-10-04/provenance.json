@@ -1,0 +1,38 @@
+{
+  "key": "moss_rock_shelf",
+  "name": "Мох — каменная полка",
+  "subject": "ONE fantasy voxel environment dressing asset. The moss vegetation ITSELF: a thick low L-shaped moss SHELF with two unequal connected arms, stepped emerald and olive moss lobes along the top, intended to cling to a boulder crevice. Shape is vegetation only, not a solid stone shelf. Same shape in all rotations. NO stone, soil, terrain or supporting ground.",
+  "page_id": "page_8b516544f5d4819199fe01cddfac3bb6",
+  "kind": "model",
+  "category": "dressing",
+  "folder": "assets/environment/dressing_pack/moss_rock_shelf/references/catalog_2026-10-04",
+  "selected_image": "moss_rock_shelf_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного варианта декора. Крупные воксели, чистый фон; без земли и демонстрационной подложки.",
+  "prompt_override": "Create a BRAND NEW fantasy Minecraft-style voxel asset reference sheet. The supplied image is STYLE ONLY; do not copy its identity or geometry. Exactly FIVE separate complete views of ONE identical asset: front and back on upper row, left profile, right profile and isometric game view on lower row. Large axis-aligned cubes, flat square surfaces and broad coarse pixel material patches. Pure uniform white background, generous margins. NO text, annotations, arrows, panels, labels, ground, dirt, supporting plinth, cast/contact shadows or ambient occlusion. Mild face material color variation only. Subject: A very LOW HORIZONTAL L-shaped moss patch intended to sit in a rock crevice. Two broad unequal arms form an L IN TOP PLAN, not an upside-down L in profile. Entire patch at most TWO geometric cubes tall, with a few broad green block lobes, dark emerald/olive material pixels. FLAT BOTTOM at same height under both arms. Absolutely no hanging green parts, vines, dangling roots, tendrils or vegetation icicles. No rock or other support.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-ad9e5f7b-f059-4730-aadd-41b87bc82081.png",
+  "sha256": "f89f554a3f5616d8a04634a6cabf7bc041451c4ba47a053f8571d651aa3d65e6",
+  "byte_size": 1060952,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9yaGFFWExudU9KVV8tOTVVdUZPUEJB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "ballista_five_views.png",
+  "sha256": "65efbf515d22fca1b31634c105a120f6d05d59a326db5178980d07825b6f9ee8",
+  "observations": [
+    "Viewed five orientations with broad wooden bow limbs, taut string behind loaded bolt, guide rail and winding crank.",
+    "Front bolt head and rear red fletching are distinguished; both side profiles reverse correctly. Stone pedestal belongs to firing mount."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

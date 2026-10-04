@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "stage_2_var_2_five_views.png",
+  "sha256": "3cbc952c07dc4c16af5498f62dd2579980ea26adb643aae4b6f550239068ca94",
+  "observations": [
+    "Пять видов ступенчатого остатка с несколькими понижающимися каменными блоками.",
+    "Читаемые широкие трещины, крупные кубические массы, чистый белый фон."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

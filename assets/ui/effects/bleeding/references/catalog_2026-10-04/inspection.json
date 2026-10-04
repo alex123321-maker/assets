@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "bleeding_pixel_icon.png",
+  "sha256": "fe64e2439eafd708ac43841d5d50935c4ef8117fafd73015e91cab3cf09fe34a",
+  "observations": [
+    "По металлической пластине проходит диагональная красная рана; ниже видны три падающие капли.",
+    "Отделённые части пластины сохраняют тёмный металлический цвет.",
+    "Другие источники периодического урона не смешаны в композиции."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

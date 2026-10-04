@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "stone_debris_flat_patch_five_views.png",
+  "sha256": "cd732e176f585b4c7cd365d4f62169bd6516b382f21d9e44e24246be7caaf364",
+  "observations": [
+    "Пять видов низкой группы плоских каменных пластин с широкими швами.",
+    "Профили показывают малую высоту, изометрия — взаимное расположение пластин; без подложки."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

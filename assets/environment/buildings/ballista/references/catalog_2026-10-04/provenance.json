@@ -1,0 +1,38 @@
+{
+  "key": "building_ballista",
+  "name": "Баллиста",
+  "subject": "ONE heavy fantasy BALLISTA on a squat gray stone-and-iron square pedestal that is its INTRINSIC firing mount. Broad dark-oak crossbow limbs extend symmetrically left and right, visibly taut bowstring joins both limb tips behind a thick loaded bolt, bolt head points forward and fletching stays at rear. Thick stock, guide rail, swivel, iron braces and side winding crank. Physical crossbow string geometry coherent in ALL views. No surrounding ground, demonstration plinth or scene.",
+  "page_id": "page_a8c020fb9ff48191b09c5eff1e4f2dcc",
+  "kind": "model",
+  "category": "buildings",
+  "folder": "assets/environment/buildings/ballista/references/catalog_2026-10-04",
+  "selected_image": "ballista_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game\\screenshots_debug\\demo_buildings\\building_models_isometric_day.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одной существующей постройки. Крупные воксели; без ландшафта, внешней подставки и подписей.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-6dd110b5-7d47-4e74-aeda-3690cb1dcc7a.png",
+  "sha256": "65efbf515d22fca1b31634c105a120f6d05d59a326db5178980d07825b6f9ee8",
+  "byte_size": 1257369,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9obXNWUERDWmp6YWwyZGR0ZlNQMFdn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

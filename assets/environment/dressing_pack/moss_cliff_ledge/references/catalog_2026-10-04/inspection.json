@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "moss_cliff_ledge_five_views.png",
+  "sha256": "dce42205004c3cc0e12bb6ddbba3cadefd3634440703b87de6c68a901eeb9680",
+  "observations": [
+    "Пять ракурсов горизонтальной моховой кромки с тремя неравными свисающими отростками.",
+    "В профилях читается переход горизонтального края в вертикальный свес; без скалы и земли."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

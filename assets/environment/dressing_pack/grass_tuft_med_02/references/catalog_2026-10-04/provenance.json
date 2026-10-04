@@ -1,0 +1,38 @@
+{
+  "key": "grass_tuft_med_02",
+  "name": "Трава — наклонённый пучок",
+  "subject": "ONE fantasy voxel environment dressing asset. A medium WINDSWEPT grass clump of seven thick chunky stepped blades all leaning to the SAME side, long top blades extend sideways and low blades spread. Do not change the direction relative to the asset in different views. NO soil, ground plate or base disc.",
+  "page_id": "page_8b516544f5d4819199fe01cddfac3bb6",
+  "kind": "model",
+  "category": "dressing",
+  "folder": "assets/environment/dressing_pack/grass_tuft_med_02/references/catalog_2026-10-04",
+  "selected_image": "grass_tuft_med_02_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\dressing_pack\\references\\dressing_concept_reference.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного варианта декора. Крупные воксели, чистый фон; без земли и демонстрационной подложки.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-2fd622ec-ecd6-43b6-8c4f-34cb247e88a4.png",
+  "sha256": "594b0cc3c58987e6d8341ce5b2049774ab86a02ed4122cabd15f945db714947c",
+  "byte_size": 850675,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9ONzI5NFhiZkRwaUNweXV4ai1MM1V3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

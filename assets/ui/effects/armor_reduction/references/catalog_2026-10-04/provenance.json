@@ -1,0 +1,33 @@
+{
+  "key": "armor_reduction",
+  "name": "Снижение брони?",
+  "page_id": "page_6c92896a10c88191b72391b46d41aea8",
+  "subject": "One dark enemy iron breastplate whose outer right armor panel is split and peeling away, rusty fragments fall outward exposing burgundy cloth beneath. Sharp red contact seam, no sword, blood heart, magic protection dome, arrows or numbers. Distinct weakened armor silhouette.",
+  "caption": "Расколотая наружная пластина показывает ослабление защиты. Визуальная трактовка существующего эффекта под вопросом; не утверждает его механику.",
+  "category": "effects",
+  "kind": "icon",
+  "folder": "assets/ui/effects/armor_reduction/references/catalog_2026-10-04",
+  "selected_image": "armor_reduction_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-b0c73756-1c78-4a16-861e-385910aacd89.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "305588e07f6ba5d5c2e5f325d6324d202b9f6d12e2ee1f9b9081ccc15b4ec40e",
+  "byte_size": 1481615,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9vWHlCRXVzTmJsQjAtTlhRbXRxb0pn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

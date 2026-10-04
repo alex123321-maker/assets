@@ -1,0 +1,33 @@
+{
+  "key": "hud_armor_shield",
+  "name": "Броня",
+  "subject": "One thick silver and dark-blue physical kite shield with broad brass rim and central iron rivet, clearly solid plate not translucent magical barrier.",
+  "page_id": "page_37d4ce8fd7d48191a94aa3a77d87d607",
+  "kind": "icon",
+  "category": "hud_globals",
+  "folder": "assets/ui/catalog/hud_armor_shield/references/catalog_2026-10-04",
+  "selected_image": "hud_armor_shield_pixel_reference.png",
+  "caption": "Единая пиксельная графика HUD: тёмно-синяя основа, сталь и латунь, чёткий силуэт и функциональный цвет.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-07aff7b1-90a1-483a-b632-8467b9a36340.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "02907d9a74fa0a28992f81b9c8b9c3771b235363e7e278ba80afc82889177f3c",
+  "byte_size": 1367466,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV8wNGJJV3drMTc3Ql9qM2gzY1B0eHNR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Тактический отскок",
+  "key": "tactical_recoil",
+  "page_id": "page_e794bf8e31d88191a834a4fe6443849c",
+  "category": "abilities/engineer",
+  "subject": "A teal-tunic brown-apron fantasy engineer facing right while springing BACKWARD toward left, knees slightly tucked, right arm holding heavy square forge hammer safely close to body. Short pale speed streaks follow backward retreat; three sharp iron caltrops drop from left empty hand into the vacated lower-right space. Coherent backwards hop, no jetpack, rocket propulsion, invulnerability aura or gun. Dark navy/teal.",
+  "caption": "Отскок назад с рассыпающимися шипами — визуальный концепт дизайна из GDD; расхождение с прототипом сохранено в тексте страницы.",
+  "kind": "icon",
+  "folder": "assets/ui/abilities/engineer/tactical_recoil/references/catalog_2026-10-04",
+  "selected_image": "tactical_recoil_pixel_icon.png",
+  "prompt_override": "Use case: stylized-concept. Asset type: ONE square CubeSiege fantasy game ability/talent icon, no sheet. Input image is ONLY reference for crisp 2D pixel rendering, controlled coarse pixel clusters, sharp stepped edges, rich readable game-icon illustration, restrained navy background and material palette. Render NEW subject described below. No 3D voxels, smoothing, photo texture, text, letters, numbers, annotation arrows, diagram, UI frame, watermark or infographic. One strong coherent silhouette occupying most of square; limited supporting details, enough dark breathing room around edges. Hard-edged pixel color ramps, silver steel/brass, color-coded magic/energy as specified. All weapons must be constructed consistently: straight blade, grip/guard/pommel aligned; believable grasp and action. Trails follow the blade/projectile/contact geometry, NEVER originate from grip/handle. Clean powerful composition; subtly textured colored background permitted. Subject: A teal-tunic brown-apron fantasy engineer facing right while springing BACKWARD toward left, knees slightly tucked, right arm holding heavy square forge hammer safely close to body. Short pale speed streaks follow backward retreat; three sharp iron caltrops drop from left empty hand into the vacated lower-right space. Coherent backwards hop, no jetpack, rocket propulsion, invulnerability aura or gun. Dark navy/teal.\n\nCORRECTION:\nEdit image 1, the tactical backward-hop pixel icon. TWO precise corrections:\n1) Hero faces right but moves BACKWARD toward LEFT. Remove ALL white/cyan speed trails on LEFT of his body. Put three short white/cyan speed streaks trailing to the RIGHT behind his torso/boots, visually leading back toward the vacated area where caltrops fall. Keep falling caltrops and their downward paths unchanged. Do not add annotation arrows.\n2) Match the Engineer identity/equipment in image 2: short auburn hair with brown leather cap, brass SQUARE goggles raised onto forehead, blue eye, short beard; remove ponytail/bun. Add compact silver/brass shoulder plates. Translate identity into image 1's sharp 2D pixel illustration, no 3D voxel rendering.\nKeep backward tucked pose, anatomical hands, held square forge hammer, teal tunic/brown apron, dark navy background, caltrops and all other style unchanged.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-7d943ee6-8c67-4c7a-8d69-859232a72cf9.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "d7998cf81203519600757fb8c635653390a022d9e06d9f93c3f9a62ea218eb71",
+  "byte_size": 1375040,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9qWnBpRXBWcHpOeFBic1BEOHBXTnRn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

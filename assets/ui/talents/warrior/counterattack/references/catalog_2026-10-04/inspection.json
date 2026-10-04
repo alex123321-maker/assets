@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "counterattack_pixel_icon.png",
+  "sha256": "41a98bc0abbde4139a5d63f63c82f05236aa2b27089bac5ae89b045b5a7b73ba",
+  "observations": [
+    "Тёмный входящий клинок касается края бордового щита с золотыми искрами.",
+    "Отдельный серебряный меч, удерживаемый рукой, направлен из-за щита вперёд.",
+    "Удалён случайный герб с животным; щит имеет обычный латунный умбон, как в иконке парирования."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

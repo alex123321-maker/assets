@@ -1,0 +1,38 @@
+{
+  "key": "building_wood_wall",
+  "name": "Деревянная стена",
+  "subject": "ONE modular defensive WOOD WALL section. Three thick square dark-oak posts with stepped caps, closely fitted chunky vertical timber infill and two horizontal dark wood braces on BOTH sides, broad iron bands and large square rivets. Dark brown wood with coarse amber end-grain patches, muted steel hardware. Clear tall rectangular fence-like silhouette with sturdy flat post feet. No surrounding fence, gate, ground or presentation base.",
+  "page_id": "page_cad2530bda488191b1521c152b614ba6",
+  "kind": "model",
+  "category": "buildings",
+  "folder": "assets/environment/buildings/wood_wall/references/catalog_2026-10-04",
+  "selected_image": "wood_wall_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game\\screenshots_debug\\demo_buildings\\building_models_isometric_day.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одной существующей постройки. Крупные воксели; без ландшафта, внешней подставки и подписей.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-847cab6b-f2a8-4f06-aadc-fef97c3bf0c1.png",
+  "sha256": "e58c3ad2fb9ee0d4ad5ff7286f2419289e5725ffcbd31ef78b41f9204e683fe7",
+  "byte_size": 1279951,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9tazZtMEdERGtkQjE4cFBVN0l0d0tn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

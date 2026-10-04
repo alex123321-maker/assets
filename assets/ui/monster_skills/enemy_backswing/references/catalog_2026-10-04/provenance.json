@@ -1,0 +1,33 @@
+{
+  "key": "enemy_backswing",
+  "page_id": "page_95353da2b24c8191b3649aa6c0c34e62",
+  "subject": "ONE physically gripped dark cleaver with TWO unequal frontal edge-sweep traces: broad fading amber first cut and shorter brighter reverse cut close to the blade edge. Both traces derive from the CUTTING EDGE beyond the hand, no energy from grip or pommel. No full circular whirlwind or double weapon.",
+  "name": "Удар с обратным взмахом",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/enemy_backswing/references/catalog_2026-10-04",
+  "selected_image": "enemy_backswing_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-1bc543a6-4a5d-4bfa-a282-f8ae18bace29.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "a42a1f0d9f941c60cf575853340f8904df47fa1d3fbf9ecdf34436b77b82da88",
+  "byte_size": 1379432,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV84YnFOQjBmR0I5T1o0dGpmMnU3bjRn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

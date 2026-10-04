@@ -1,0 +1,35 @@
+{
+  "key": "ui_xp_bar_fill",
+  "name": "Опыт — заполнение",
+  "page_id": "page_37d4ce8fd7d48191a94aa3a77d87d607",
+  "subject": "ONE exceptionally thin gold-amber strip width12 height1, pale gold top pixels and dark brass bottom. No frame.",
+  "prompt_override": "Generate ONE isolated reusable fantasy game UI component, straight-on FLAT 2D PIXEL ART, sharp square pixel clusters, no voxel or perspective. Same CubeSiege palette: charcoal navy #101B2B, dark steel #3D4B61, pale silver #BDC7CE, muted brass #AD7B36, sparse cyan #56CEF0. Broad stepped border corners, four tiny corner rivets, thin inner separation line; calm spacious center. TRUE TRANSPARENT outside component, generous clear margin. No mockup, multiple variants, labels, fake text, symbols, shadow, blur, infographic or tiny filigree. Text only if an exact key glyph is explicitly requested. ONE exceptionally thin gold-amber strip width12 height1, pale gold top pixels and dark brass bottom. No frame.",
+  "transparent_background": true,
+  "kind": "icon",
+  "category": "hud_components",
+  "folder": "assets/ui/components/xp_bar_fill/references/catalog_2026-10-04",
+  "selected_image": "xp_bar_fill_pixel_reference.png",
+  "caption": "Пиксельный UI-компонент с прозрачным внешним фоном. Это визуальный референс; runtime-экспорт и проверка в движке не выполнены.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-92447fe0-29c1-4018-8bea-c11fa8824860.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "8d5311b0f2f99c2d0364670761ff2081f66cfb885d517928d65bc2e51ca86290",
+  "byte_size": 63462,
+  "dimensions": [
+    1374,
+    1145
+  ],
+  "mode": "RGBA",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9UUm1nYzVISEJsNlNxczFkSl9memRB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

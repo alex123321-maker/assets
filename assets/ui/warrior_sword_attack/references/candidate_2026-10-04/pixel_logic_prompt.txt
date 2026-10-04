@@ -1,0 +1,15 @@
+Redesign this pixel-art Sword Strike icon to make the action PHYSICALLY AND LOGICALLY CLEAR. Keep the appealing pixel style, silver steel sword, plain symmetrical gold crossguard, burgundy grip and dark navy background. The current huge crescent hugs the length of the blade and reads as an unrelated magical wave. Replace that composition completely with a plausible sword SWING.
+
+One straight real sword is frozen at the END of a left-to-right sweeping swing. Its hilt/pommel is near the lower-left quarter, guard/pivot around x=30 percent, y=70 percent of the square, and blade extends diagonally toward upper-right with the tip near x=78 percent, y=22 percent. Sword is front-face orthographic, all parts collinear, straight centered fuller, parallel symmetrical blade edges tapering to a point, simple straight crossguard perpendicular to blade. No perspective distortion.
+
+The movement trail follows the ACTUAL PATH OF THE SWORD TIP around that hilt pivot:
+- One broad arcing slash trail is located across the UPPER HALF of the icon, sweeping from upper-left through top-center to the sword tip at upper-right.
+- The geometric center of this arc is near the sword's guard/hilt in the lower-left area. The arc radius matches the guard-to-tip blade length.
+- The left end is older movement: it tapers and fades into dark blue pixel streaks. The right end is the CURRENT sharp bright leading edge at the sword tip.
+- The sword blade itself is the leading radial boundary of the sweep. The trail sits BEHIND its movement direction, chiefly above and to the left of the blade. Keep a dark negative-space gap below/right of the blade. There is NO huge crescent running parallel alongside the full blade, NO enclosing crescent around the sword, NO glowing second blade, NO detached energy projectile.
+- Use a forceful clear WHITE/CYAN core at the leading part near the tip, solid cyan mass trailing toward top-center, cobalt/teal stepped fading wake toward upper-left. Thick enough to feel powerful, but the weapon remains the main identifiable object. A few purposeful short streaks following the same arc support the rotation.
+- Do not depict literal extra swords, multiple current blades, circular 360-degree whirlwind, elemental spell, floating wave, exploding orb or confetti. The effect represents the physical moving sword cutting the air.
+
+Composition and visual hierarchy: gold/red hilt in lower-left, steel blade on diagonal, a powerful coherent upper arc showing the single left-to-right swing. Quiet near-black navy background with very sparse dark teal pixel shapes. Clear breathing room around all parts; pommel, tip and arc fully inside. Use most of the square but leave margin.
+
+Genuine 2D fantasy PIXEL ART at an apparent 128x128 grid, enlarged nearest-neighbor: large square pixels, hard stair-step contours, deliberate solid pixel clusters, controlled limited palette, zero antialiasing, no smooth gradients or painterly texture, no voxels. Rich fantasy ability icon finish. No text, arrows, diagram, labels, borders, hands, characters or terrain. The viewer should understand ONE sword swinging along ONE mechanically plausible tip arc.

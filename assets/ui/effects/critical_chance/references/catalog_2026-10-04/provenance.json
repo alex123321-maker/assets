@@ -1,0 +1,33 @@
+{
+  "key": "critical_chance",
+  "name": "Повышение шанса критического удара?",
+  "page_id": "page_1ffb384999b881919d0659aec10e795f",
+  "subject": "A sharply focused small silver blade TIP precisely hits the seam between two dark armor plates, one sharp crimson/gold star-shaped impact at that seam. The cutting edge and target contact are visible and mechanically believable. No blood organ, dice, percent sign or whole sword swing.",
+  "caption": "Точное попадание в стык брони; без численного обозначения шанса. Визуальная трактовка существующего эффекта под вопросом; не утверждает его механику.",
+  "category": "effects",
+  "kind": "icon",
+  "folder": "assets/ui/effects/critical_chance/references/catalog_2026-10-04",
+  "selected_image": "critical_chance_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-0b0c9086-5374-4fcb-91f7-1c1abc618d07.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "54a4afc16d359fd30d2b66ffb50edf5743ef78a767526d274408a03ce83d5e54",
+  "byte_size": 1304844,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9Sb3BUaUxScVdkTDhzQWdtMFBlV0tn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

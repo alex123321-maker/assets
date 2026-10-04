@@ -1,0 +1,33 @@
+{
+  "key": "arrow_splinters",
+  "name": "Осколочные щепы — визуальная идея",
+  "subject": "A silver-tipped wooden arrow cuts diagonally toward upper right. A small portion of wooden shaft behind the intact main arrow breaks into several sharp wood splinters scattering from the actual broken shaft, pale cyan wake. Single main projectile retained, no diagram arrows, fixed count badges, explosions or tree log.",
+  "caption": "Щепы отделяются от повреждённого древка; число и правила образования осколков не задаются. Референс существующего направления мутации; отдельный талант и параметры ещё не утверждены.",
+  "page_id": "page_5e44bec4e58881918d12ee0803e1d69d",
+  "category": "talents/archer",
+  "kind": "icon",
+  "folder": "assets/ui/talents/archer/arrow_splinters/references/catalog_2026-10-04",
+  "selected_image": "arrow_splinters_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-cb8157cf-e2df-463d-a97d-5b51c8b7eea5.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "ea6c79a78d1387f23b99b95cb1a6425325a408ff08c02cc7b21160ee002c9dca",
+  "byte_size": 1279586,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9mcDFRTTc4Z3ltMnRaajRJYnVHSkt3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

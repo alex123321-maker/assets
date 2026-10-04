@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "stage_3_var_2_five_views.png",
+  "sha256": "432c489c379a9f7be883e11838fc2489ccd2694a7570ace5e03165f6761ecab5",
+  "observations": [
+    "Пять ракурсов двух разделённых обломков разной высоты и отдельного малого скола.",
+    "Между массами появился читаемый просвет; взаимное расположение сохраняется при развороте."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

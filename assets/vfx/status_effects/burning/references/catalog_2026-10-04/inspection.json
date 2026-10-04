@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "burning_vfx_five_views.png",
+  "sha256": "271a39edd182659a6629a7d395ba9e2d7c2d3f9b576227be1cab088d40d5bc52",
+  "observations": [
+    "Короткие янтарные языки пламени и три серых куба пепла; отсутствует дополнительная огненная земля."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

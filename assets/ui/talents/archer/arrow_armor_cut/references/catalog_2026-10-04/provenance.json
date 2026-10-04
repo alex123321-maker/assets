@@ -1,0 +1,33 @@
+{
+  "key": "arrow_armor_cut",
+  "name": "Срез брони — визуальная идея",
+  "subject": "One silver-tipped wooden arrow penetrates an enemy dark armor panel along diagonal from lower left to upper right. The panel splits at the actual arrowhead contact, two rusty metal plates peel outward exposing burgundy inner cloth. Pale cyan arrow energy and small red cracked seam, no heart, numerical percentage, shield dome or multiple arrows.",
+  "caption": "Раскол находится в точке контакта наконечника с бронёй; величина снижения не изображена. Референс существующего направления мутации; отдельный талант и параметры ещё не утверждены.",
+  "page_id": "page_5e44bec4e58881918d12ee0803e1d69d",
+  "category": "talents/archer",
+  "kind": "icon",
+  "folder": "assets/ui/talents/archer/arrow_armor_cut/references/catalog_2026-10-04",
+  "selected_image": "arrow_armor_cut_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-9c40453e-38da-489d-a34c-e50f1f8d1792.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "9b97a83f63610c0920e29f7aece926f9ba1ed30e9bdf41adacbf33e384c9b5b8",
+  "byte_size": 1520997,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9MbUtqRm9EQldjLXRLZ2IyVEZCSmhB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

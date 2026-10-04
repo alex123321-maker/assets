@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "global_day_pixel_reference.png",
+  "sha256": "7476bc64ed6baf76b9cf1a7eeeff14e732e5dbd623d1c277f158f321ddd039cd",
+  "observations": [
+    "Золотое солнце с восемью крупными лучами, единая тёмно-синяя палитра фона."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

@@ -1,0 +1,38 @@
+{
+  "key": "zombie",
+  "name": "Зомби",
+  "subject": "A lean ordinary melee undead with large cubic olive-green head, hollow black eyes, asymmetrical broken bone jaw, a few broad square teeth; olive limbs, torn brown cloth shirt and belted rag trousers, patches of coarse dark rot coloration. Bony square hands EMPTY on both arms, arms slightly forward/down ready to claw, broad block fingers, bare block feet. No armor, helmet, bow, sword, shield, backpack or glow. More detailed rag seams, cord belt and surface patches than old blockout, but blocks as large as approved Warrior. Both sides show the same torn garment geometry.",
+  "page_id": "page_089c0b9170b48191bedee6b03071563b",
+  "kind": "model",
+  "category": "monsters",
+  "folder": "assets/characters/zombie/references/catalog_2026-10-04",
+  "selected_image": "zombie_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\characters\\zombie\\review\\iso.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Крупные фэнтезийные воксели; фронт, спина, два профиля и игровая изометрия на белом фоне.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-c0d08140-eb96-4528-aee4-2418a25a3886.png",
+  "sha256": "f961a35aeb787cf580b192d4d67509c936ed256d4b89c1c9172d7c5e34ce5a18",
+  "byte_size": 1025963,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV8xcXlwMWJRNTFoTmRQZnFtRWxCUkJn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

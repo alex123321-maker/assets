@@ -1,0 +1,38 @@
+{
+  "key": "rift_harbinger",
+  "name": "Вестник Разлома",
+  "subject": "A floating dark-plum crystal-and-armor entity: broad squared upper torso, pale angular cubic mask, bright magenta stepped suspended CRYSTAL core at chest. Instead of legs, tapering layered large voxel shards form a pointed lower body hovering with no ground. Broken pale lavender HALO attached behind head, two tall side pieces and incomplete top piece, no perfect golden circle. TWO separate chunky rune-less stone/crystal PILLARS orbit at body sides at fixed height, one left and one right, each inset magenta square seal; their placement stays identical in all views and may overlap naturally in profiles. Broad block forearms with simple stone hand tips; no held weapon, cape, horns or human feet. Discrete large voxel facets, not fine crystal gravel, pink emissive core without environmental light/shadows or smoke cloud.",
+  "page_id": "page_8b6a308450f08191a7c7fc03df5f95d9",
+  "kind": "model",
+  "category": "bosses",
+  "folder": "assets/characters/bosses/rift_harbinger/references/catalog_2026-10-04",
+  "selected_image": "rift_harbinger_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game\\screenshots_debug\\demo_polish\\canonical_bosses\\day_06_attack_0_warning.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов босса в крупной воксельной стилистике; развитие существующего силуэта и палитры.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-c84f66a4-850e-4f33-9d35-a943b0259b65.png",
+  "sha256": "fd435369eea95822d9944db5a0894128959299e7942d1b3cd66148d69987f0fd",
+  "byte_size": 1331193,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9aODZYOEZKZXdSQ0E1ckZMeEJxVUlB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

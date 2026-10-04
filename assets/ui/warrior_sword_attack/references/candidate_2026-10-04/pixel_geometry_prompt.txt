@@ -1,0 +1,14 @@
+Correct the physical geometry and perspective of this pixel-art Sword Strike icon. The art director says the sword feels twisted and unrealistic. Create a much more coherent, buildable straight medieval sword, keeping the PIXEL ART style and silver/gold/burgundy/navy palette.
+
+Essential geometry:
+- One single straight longitudinal centerline goes diagonally from the bottom-left pommel through the center of the burgundy grip, the center of the crossguard, the blade root, the center fuller and the blade tip toward the upper right. All these parts must be precisely collinear.
+- Use a simple near-FRONT VIEW of the broad sword face, with orthographic projection and no foreshortening. Rotate the entire sword as one rigid object diagonally in the 2D composition. Both blade edges and fuller share the same projection. No independent rotation of any part.
+- Steel blade is straight, symmetric about the centerline, nearly parallel edges narrowing gradually to a clean centered point. The blade root meets the guard cleanly without an offset, bend or swollen wedge. The fuller is a single straight centered narrow gray groove.
+- Gold crossguard is a SIMPLE STRAIGHT symmetrical bar exactly perpendicular to the blade centerline, equal matching ends. Replace the curled swept sculptural guard with this mechanically coherent bar. No twisted or curved quillons, no incompatible planes.
+- Cylindrical-looking burgundy leather grip, simple gold round or octagonal pommel at its bottom, both centered. Normal sword proportions: grip about one fifth of overall length, compact guard about a quarter blade length. Clear separate metal blade, guard, leather grip and pommel.
+
+Keep the icon close-up, fully in frame with margins, steel sword angled bottom-left to top-right. A restrained single white/cyan stepped motion arc is behind the blade; it must not obscure the blade root, guard, or create a false second blade. Deep navy/teal pixel background with fewer busy clusters around the hilt so the weapon construction reads clearly.
+
+Genuine 2D pixel art with visibly square pixels and clean stair-step contours, as if authored at native 128x128 and enlarged nearest-neighbor. Controlled pixel clusters, limited palette, sharp edges, no anti-aliasing, no blur, no smooth painting, no 3D voxels. Simple consistent highlights along one side, no contradictory lighting. Detailed but anatomically and mechanically plausible real sword geometry. No hands, people, enemies, text, borders, labels or extra weapons.
+
+Priorities: physically straight sword with a single collinear axis and one consistent near-front orthographic view; simple symmetric perpendicular guard; authentic visible pixel style.

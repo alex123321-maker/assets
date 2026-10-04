@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "enemy_spit_puddle_pixel_icon.png",
+  "sha256": "d30ebc7018bfe813081022c76e6aeb5cf98665f82865d2037431737f4933b12f",
+  "observations": [
+    "Viewed an undead mouth launching a straight green glob toward a pooled green contact area.",
+    "Trajectory starts at the mouth and has no high ballistic arc; the pool has clear viscous droplets."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

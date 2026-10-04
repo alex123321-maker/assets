@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "wood_pickup_five_views.png",
+  "sha256": "225b768c6981498163f17d781c3502f9894187cbc51dde0e1323adbd588478e3",
+  "observations": [
+    "Одна часть бревна: два длинных вида, два торцевых вида с квадратными кольцами и одна изометрия; пять видов без земли."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

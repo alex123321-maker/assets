@@ -1,0 +1,38 @@
+{
+  "key": "ash_oracle",
+  "name": "Пепельный оракул",
+  "subject": "A tall ash sorcerer in layered muted plum/charcoal voxel robes and a large square hood, pale ivory skeletal lower face in dark hood recess, two small amber eyes, cinched brown belt and broad worn cloth hem blocks. CHARACTER RIGHT hand holds a dark wood staff vertically with a brass cubical CENSER at its top enclosing small amber voxel ember blocks. CHARACTER LEFT hand holds a CLOSED ash-gray book with brass corner clasps. Front staff is viewer LEFT, book viewer RIGHT; back staff viewer RIGHT. Isometric faces lower right, staff-bearing RIGHT arm is nearest viewer on image LEFT. Identical hand assignment and connected physically held props in every view. Small amber chest core. No fiery battlefield, smoke cloud, skull swarm, modern wand or visible readable writing.",
+  "page_id": "page_d339f2473ed48191b348d468d10ea015",
+  "kind": "model",
+  "category": "bosses",
+  "folder": "assets/characters/bosses/ash_oracle/references/catalog_2026-10-04",
+  "selected_image": "ash_oracle_five_views.png",
+  "input_images": [
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-1d8e8b52-f7bd-4612-a415-745747124b24.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов босса в крупной воксельной стилистике; развитие существующего силуэта и палитры.",
+  "prompt_override": "Edit ONLY the two SIDE-PROFILE figures in the upper row of this five-view voxel sheet. Keep front, back, lower isometric, all geometry/colors/background and staff unchanged. The THIRD upper-row figure from left, facing RIGHT, shows the CHARACTER LEFT arm nearest viewer: that bone hand MUST hold the SAME closed dark-gray book with brass corner clasps as front/back/isometric. Add this vertically held book at the left hand against the thigh, naturally grasped, with identical dimensions and materials. The FOURTH upper-row figure, facing LEFT, has the book in the far CHARACTER LEFT hand: show the natural narrow book edge peeking beside its thigh where possible, never swap it into staff hand. One book per character, same pose, correct occlusion, no floating props. Keep the same coarse voxel style and clean white shadowless background. No labels.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-3036cf9d-b45c-4a9e-8de6-d78f37cd837e.png",
+  "sha256": "9d200d4df9a8668c6aa91158f1a208263abaff3a5c893559853ac4588583ba1e",
+  "byte_size": 1355604,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9MZVdEb1N6OFFxc3JlVEZ1SG5qYll3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

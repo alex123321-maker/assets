@@ -1,0 +1,37 @@
+{
+  "key": "pickup_wood",
+  "name": "Древесина — добытый ресурс",
+  "page_id": "page_f58044d4583c81919ce5b848a87d0701",
+  "subject": "ONE short thick oak log fragment ONLY, rectangular coarse voxel timber segment, tan concentric SQUARE growth rings at both cut ends, broad bark steps and two large dark knots on one long side. Low horizontal small pickup geometry, same cuts/knots across front/back/left/right/isometric. No bundle, second piece, rope, stump, leaves, ground or tree. Front and back show long bark sides; left and right show opposing square cut ends; isometric shows long side and end.",
+  "kind": "model",
+  "category": "resources",
+  "folder": "assets/props/resources/wood/references/catalog_2026-10-04",
+  "selected_image": "wood_pickup_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одной части добытого ресурса. В игре используются 1–3 экземпляра; количество и масштаб задаёт существующая система подбора.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-030ab363-c6f8-4b59-a18b-f256506840dd.png",
+  "sha256": "225b768c6981498163f17d781c3502f9894187cbc51dde0e1323adbd588478e3",
+  "byte_size": 1063068,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9XSW5lQ29vaFY4WEVPa1M0RDZvalZ3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

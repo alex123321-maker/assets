@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "tower_empowerment_pixel_icon.png",
+  "sha256": "44cef37957046045093d1088b9e11791d042e2be95f789d6cc9468b812541acc",
+  "observations": [
+    "Арбалет на деревянной башне выпускает один болт вдоль направляющей; его золотой след продолжается за снарядом.",
+    "Дерево, серебряные связи и латунный механизм соответствуют фэнтезийной технологии игры."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

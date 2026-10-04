@@ -1,0 +1,52 @@
+{
+  "name": "Портал",
+  "status": "approved",
+  "approval": {
+    "date": "2026-10-04",
+    "conversation_id": "01a106c4-3599-7542-97d9-b7ebf83abb70",
+    "authority": "user",
+    "quote": "Ну ладно пускай будет такой ... персонаж и элемент мира меня устраивают, продолжай в том же духе"
+  },
+  "created_date": "2026-10-04",
+  "scope": "reference_only",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-b75d63a9-6f5d-4a5d-b274-cfb76636ddc0.png",
+  "page_id": "page_4fa20c73fc088191b2cc1935d570d66b",
+  "page_url": "https://chatgpt.com/space/page_4fa20c73fc088191b2cc1935d570d66b",
+  "images": [
+    "portal_five_views_bright.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "input_images": [
+    "portal_five_views.png"
+  ],
+  "notes": "Утверждено пользователем 4 октября 2026; это художественный референс, не production-модель.",
+  "prompt_files": [
+    "prompt.txt",
+    "lighting_prompt.txt"
+  ],
+  "selected_image": "portal_five_views_bright.png",
+  "sha256": "740cfa76d8628876aa0ba057e17f272cf9a318a2f7f3829c3d56d2a56f301136",
+  "byte_size": 1192696,
+  "dimensions": [
+    1374,
+    1145
+  ],
+  "format": "PNG",
+  "mode": "RGB",
+  "page_reference": "library-file:fde1_bGliZmlsZV9mXzhEakZwdzV6Q1R1TDJLbTZZWDZB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "revision_history": [
+    {
+      "image": "portal_five_views.png",
+      "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-0df71186-76d0-4de0-8d1c-bd162fc6f23d.png",
+      "status": "superseded"
+    }
+  ],
+  "art_direction": "Детализированный воксельный фэнтези-портал; чистый фон для 3D-референса."
+}

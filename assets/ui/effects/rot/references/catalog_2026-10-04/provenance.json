@@ -1,0 +1,33 @@
+{
+  "name": "Гниение",
+  "key": "rot",
+  "page_id": "page_d0f45e82cee881918dd8fd6cbe9aab83",
+  "category": "effects",
+  "subject": "A weathered undead skull with olive yellow-green fungal patches, crumbling cheekbone and a few murky green spore wisps spreading outward. Deep plum/navy background, dirty muted green not emerald healing, visible decay rather than a poison bottle or clean magic skull.",
+  "caption": "Разрушающийся череп, грибковые пятна и мутные споры передают гниение.",
+  "kind": "icon",
+  "folder": "assets/ui/effects/rot/references/catalog_2026-10-04",
+  "selected_image": "rot_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-71319357-f50b-4829-b5d8-4f7fc00bc7a2.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "97821cd05c376d2946f724d1e4ef034425f6f353bc307e06ef17f3a35b4075a0",
+  "byte_size": 1381307,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV92Mm5HN2xNQ09PdkZOczduVGdjZ3h3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

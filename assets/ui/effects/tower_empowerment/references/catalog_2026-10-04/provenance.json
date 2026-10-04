@@ -1,0 +1,33 @@
+{
+  "key": "tower_empowerment",
+  "name": "Усиление башен?",
+  "page_id": "page_14f4dab53b408191bc8688e5fa203f53",
+  "subject": "A compact wooden fantasy archer tower crowned with one brass arbalest; one bright gold bolt launches from the bow's centre on a long clean flight streak. Cyan bands reinforce the bow mechanism, no guns, twin barrels, technology LEDs, extra tower or stats.",
+  "caption": "Башня и усиленный арбалетный выстрел; параметры дальности и частоты не изображены. Визуальная трактовка существующего эффекта под вопросом; не утверждает его механику.",
+  "category": "effects",
+  "kind": "icon",
+  "folder": "assets/ui/effects/tower_empowerment/references/catalog_2026-10-04",
+  "selected_image": "tower_empowerment_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-4db3c0e8-2837-43b4-950d-a6bc70cd6de2.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "44cef37957046045093d1088b9e11791d042e2be95f789d6cc9468b812541acc",
+  "byte_size": 1447166,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9kSlRkYkJlNnctZHNXbWhRSkE0T3Fn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

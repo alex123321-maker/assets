@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "mortar_five_views.png",
+  "sha256": "c4036818198f9cc574da32f57fc5876880d23d54b1838c474d836b0c1d49dff7",
+  "observations": [
+    "Пять видов массивного автомата; две мортиры на плечевых креплениях и котёл на спине конструктивно связаны с корпусом.",
+    "В профилях дальняя мортира естественно перекрывается ближней; руки пустые, на белом фоне нет тени."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

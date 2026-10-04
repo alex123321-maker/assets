@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "temporary_turret_pixel_icon.png",
+  "sha256": "d414fd8edc47cccd103709964c68e81980f0c1c8b7d63ed4e51106c44677df62",
+  "observations": [
+    "Арбалетная турель закреплена на трёх разнесённых ногах с металлическими опорами.",
+    "Деревянные дуги, тетива и центральная направляющая образуют связанный механизм; один болт выходит вперёд.",
+    "Бирюзовый камень, серебряный металл и латунные крепления формируют палитру Инженера."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

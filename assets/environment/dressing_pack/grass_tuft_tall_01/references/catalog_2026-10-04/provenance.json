@@ -1,0 +1,38 @@
+{
+  "key": "grass_tuft_tall_01",
+  "name": "Трава — высокий акцент",
+  "subject": "ONE fantasy voxel environment dressing asset. A tall prominent grass clump with ONE towering broad centre blade and six shorter stepped supporting blades. Large angular Minecraft blocks, deep green main body and restrained lime tips. NO soil, ground plate or base disc.",
+  "page_id": "page_8b516544f5d4819199fe01cddfac3bb6",
+  "kind": "model",
+  "category": "dressing",
+  "folder": "assets/environment/dressing_pack/grass_tuft_tall_01/references/catalog_2026-10-04",
+  "selected_image": "grass_tuft_tall_01_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\dressing_pack\\references\\dressing_concept_reference.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного варианта декора. Крупные воксели, чистый фон; без земли и демонстрационной подложки.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-fddcee4e-c1c5-4bfa-bc74-1710b2d61332.png",
+  "sha256": "fa5466e196aeb8019863248660a01adbebb017f9f8f4325f721090eb2a7affc7",
+  "byte_size": 850712,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9BM0dSbS1oRk5JM3EweDFjNEpiTVJn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

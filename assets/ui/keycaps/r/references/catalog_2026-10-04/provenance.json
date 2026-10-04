@@ -1,0 +1,35 @@
+{
+  "key": "keycap_R",
+  "name": "Клавиша R",
+  "page_id": "page_37d4ce8fd7d48191a94aa3a77d87d607",
+  "subject": "ONE horizontal navy steel-rim keycap with stepped corners, width 1.2 height1, two muted brass corner accents. ONLY exact centered pale silver BITMAP PIXEL GLYPH 'R'. No other text or symbols.",
+  "transparent_background": true,
+  "kind": "icon",
+  "category": "hud_keycaps",
+  "folder": "assets/ui/keycaps/r/references/catalog_2026-10-04",
+  "selected_image": "r_pixel_reference.png",
+  "caption": "Пиксельная клавиша с точной подписью R.",
+  "prompt_override": "Generate ONE isolated reusable fantasy game UI component, straight-on FLAT 2D PIXEL ART, sharp square pixel clusters, no voxel or perspective. Same CubeSiege palette: charcoal navy #101B2B, dark steel #3D4B61, pale silver #BDC7CE, muted brass #AD7B36, sparse cyan #56CEF0. Broad stepped border corners, four tiny corner rivets, thin inner separation line; calm spacious center. TRUE TRANSPARENT outside component, generous clear margin. No mockup, multiple variants, labels, fake text, symbols, shadow, blur, infographic or tiny filigree. Text only if an exact key glyph is explicitly requested. ONE horizontal navy steel-rim keycap with stepped corners, width 1.2 height1, two muted brass corner accents. ONLY exact centered pale silver BITMAP PIXEL GLYPH 'R'. No other text or symbols.",
+  "input_images": [
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-be1dafa0-de96-4981-97e0-aee2952f966e.png"
+  ],
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-84ae43d7-6330-4c90-9d52-b3dd31d980ab.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "17dc8e46c55d9c80255655c0b7092c6f6c3a6e2de08ef0175a8fff444f61d9e0",
+  "byte_size": 286476,
+  "dimensions": [
+    1374,
+    1145
+  ],
+  "mode": "RGBA",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9NNU5jTDY0NDRCNEJ6WW1GOUgzTWtR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

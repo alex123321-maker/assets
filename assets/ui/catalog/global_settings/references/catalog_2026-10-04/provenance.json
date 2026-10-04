@@ -1,0 +1,33 @@
+{
+  "key": "global_settings",
+  "name": "Настройки",
+  "subject": "One dark silver mechanical cog with exactly eight broad teeth, brass central axle ring, strong round silhouette; no steampunk pipes or letters.",
+  "page_id": "page_37d4ce8fd7d48191a94aa3a77d87d607",
+  "kind": "icon",
+  "category": "hud_globals",
+  "folder": "assets/ui/catalog/global_settings/references/catalog_2026-10-04",
+  "selected_image": "global_settings_pixel_reference.png",
+  "caption": "Единая пиксельная графика HUD: тёмно-синяя основа, сталь и латунь, чёткий силуэт и функциональный цвет.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-c4fafcff-8a6e-491b-9230-0057dc85733d.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "1908499b2588a7e36dbf38c734cced4ed46d21bd7ce4cb244ef272b42b88b6ff",
+  "byte_size": 1249114,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9BcGhOMHFyQ0pDUEtqdjJFLXE4cWtB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

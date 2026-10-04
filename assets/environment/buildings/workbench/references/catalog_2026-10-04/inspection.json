@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "workbench_five_views.png",
+  "sha256": "810208fbdbc0fa9fa04ffb1f2a7d80d6fea9a4573989ea41c6d73854dc588195",
+  "observations": [
+    "Viewed five orientations with wood-plank top, four iron-footed legs, braced lower shelf and three iron billets.",
+    "Hammer, anvil and burgundy cloth have consistent opposite positions in front/rear views; isolated on white."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "archer_pixel_portrait.png",
+  "sha256": "dfa02c79b8aa0ca35a8a29824dc9a75937c259e61dd0d920f9a2698d5ad1b682",
+  "observations": [
+    "Светлая чёлка, зелёные глаза, зелёный капюшон, коричневый ремень и металлические наплечники соответствуют Лучнику."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

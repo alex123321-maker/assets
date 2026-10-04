@@ -1,0 +1,33 @@
+{
+  "key": "arrow_knockdown",
+  "name": "Сбивание с ног — визуальная идея",
+  "subject": "An arrow lands squarely on an undead enemy's breastplate and tips the body backward, one boot lifting away, torso off balance, pale cyan contact flash on chest. Exactly one intact arrow with tip touching armor; body pose conveys knockdown not stun stars or frozen paralysis. No blood organ, duration symbols or repeated bodies.",
+  "caption": "Стрела касается нагрудника; отклонённый корпус и потерявшая опору нога показывают сбивание с ног. Референс существующего направления мутации; отдельный талант и параметры ещё не утверждены.",
+  "page_id": "page_5e44bec4e58881918d12ee0803e1d69d",
+  "category": "talents/archer",
+  "kind": "icon",
+  "folder": "assets/ui/talents/archer/arrow_knockdown/references/catalog_2026-10-04",
+  "selected_image": "arrow_knockdown_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-7b75bd68-f69e-49d4-86b8-9d1b167fc431.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "f90734f1a590d8981204115bbc9aba6f33f9f8ca3e629d79102e26b4b670a828",
+  "byte_size": 1437687,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9yaGtTbFVoLU9VQWM5c21pbGs0dktn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

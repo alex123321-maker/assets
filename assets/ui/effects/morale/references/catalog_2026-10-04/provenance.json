@@ -1,0 +1,33 @@
+{
+  "key": "morale",
+  "name": "Повышение морали?",
+  "page_id": "page_6b580d3d14788191a9c994d2cc7e4a9a",
+  "subject": "A resolute warrior with uncovered short brown hair, blue eyes, silver/brass armor and burgundy cape stands upright raising a clenched gauntlet, warm gold rally glow behind shoulders. No wings, shield dome, dodging motion, boot speed trails, bonus arrows or numbers; conveys confidence without asserting unsettled combined mechanics.",
+  "caption": "Поднятая перчатка и уверенная поза обозначают боевой дух без фиксации спорного состава бонусов. Визуальная трактовка существующего эффекта под вопросом; не утверждает его механику.",
+  "category": "effects",
+  "kind": "icon",
+  "folder": "assets/ui/effects/morale/references/catalog_2026-10-04",
+  "selected_image": "morale_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-c917e2a5-4187-4c77-af1c-b8506bcdd314.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "0ad509252849d5559cbd74610fd549fa3ca11138eb850ec44850015f24f53759",
+  "byte_size": 1511801,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9yenA2T2l1MU5uTnlZNm5Xc3lqTVlR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

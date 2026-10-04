@@ -1,0 +1,15 @@
+Improve this pixel-art Sword Strike ability icon so the slash feels POWERFUL and visually memorable. The current pale thin trailing arc feels weak. Change the effect and composition, keeping the mechanically coherent straight sword from this input, its aligned blade/grip/pommel and simple symmetrical straight gold crossguard. Do not distort or twist the sword.
+
+Create a bold, concentrated directional sword-swing wave:
+- A broad thick crescent/swept wedge of kinetic motion dominates the middle-right portion of the icon, occupying roughly a THIRD of the square rather than a thin edge line.
+- Give it a solid brilliant WHITE core, thick saturated icy CYAN middle band and deep electric-BLUE outer trailing band, all in discrete crisp pixel clusters. Very strong contrast against a much darker background.
+- The wave has an aggressively sharp leading edge near the upper-right blade tip and a broad tapered sweeping tail toward the lower-middle. A few big angular streaks and separated pixel fragments shoot forward along the strike direction. Use a forceful clear sweep, not a complete circle, not a soft mist halo.
+- Make the arc connect visually to the sword's motion; overlap it behind the upper blade and let the brightest leading streak extend just beyond the tip while remaining inside the canvas. Keep blade, guard and grip contours fully readable.
+- The wave should feel like the blade is carving a decisive fast blow through the air. This is a physical attack represented by stylized motion, not a magical orb, fireball or elemental enchantment.
+- Retain enough dark gaps inside the effect to distinguish white core, cyan mass, blue wake and a few deliberate pixel fragments. No thin washed-out ribbon, no weak pastel haze, no random white confetti.
+
+Composition: slightly reduce sword scale if useful to give the effect breathing room, sword still diagonal bottom-left to upper-right, hilt substantial and easy to recognize in lower-left. Every sword part stays collinear and in the same near-front orthographic projection. Simple gold guard exactly perpendicular and symmetrical. White steel blade, gray centered fuller, burgundy leather grip and gold pommel. Make the center of the icon energetic and purposeful. Keep both tip and pommel away from canvas edges.
+
+Background: near-black navy with a few restrained deep teal pixel masses, much less busy than the input, especially around the slash. Strong separation between dark background and white/cyan action. Warm gold hilt accents balance the cool wave.
+
+Genuine 2D fantasy PIXEL ART: clearly visible regular square pixel clusters, sharp stair-step contours, limited coordinated palette, no antialiasing or smooth gradients, no blur, no painterly texture, no 3D voxels. Rich detail but bold readable large masses at icon scale. One full-bleed square icon, no text, border, logos, numbers, hands, people, terrain or extra weapons. Prioritize an impactful broad slash and clear visual hierarchy, while preserving the corrected straight sword geometry.

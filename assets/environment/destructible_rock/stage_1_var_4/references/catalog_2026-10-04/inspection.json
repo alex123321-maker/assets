@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "stage_1_var_4_five_views.png",
+  "sha256": "81aeb877f2e65b1b98143d541fe049bfcc3e1336050c40a66133debc6687fa55",
+  "observations": [
+    "Пять видов каменного навеса на толстом каменном ядре; свес виден в профилях и изометрии.",
+    "Контрастные крупные минеральные пятна, чистый белый фон без отдельной площадки или ландшафта."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

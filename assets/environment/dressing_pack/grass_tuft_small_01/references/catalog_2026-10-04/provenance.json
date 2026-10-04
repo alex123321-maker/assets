@@ -1,0 +1,38 @@
+{
+  "key": "grass_tuft_small_01",
+  "name": "Трава — компактные три листа",
+  "subject": "ONE fantasy voxel environment dressing asset. A compact grass sprig made of exactly THREE thick green stepped blades of unequal heights, a taller upright middle blade and two shorter bent side blades, connected at a tiny green stem foot. Each blade is several large blocks thick enough to be 3D, not paper planes. Emerald and olive-green chunky color patches. NO soil, ground plate or base disc.",
+  "page_id": "page_8b516544f5d4819199fe01cddfac3bb6",
+  "kind": "model",
+  "category": "dressing",
+  "folder": "assets/environment/dressing_pack/grass_tuft_small_01/references/catalog_2026-10-04",
+  "selected_image": "grass_tuft_small_01_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\dressing_pack\\references\\dressing_concept_reference.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного варианта декора. Крупные воксели, чистый фон; без земли и демонстрационной подложки.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-bd3d35af-54b4-48b5-bd43-44bb712c21e8.png",
+  "sha256": "e418fb4967acc468d8f4bac4b297c7a555f0afa7cc10491832484516851b1f23",
+  "byte_size": 795617,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9rWElTdkFiNkFPU1JLY19zd3BTbjhn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

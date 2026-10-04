@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "wood_wall_pixel_icon.png",
+  "sha256": "dd5a9f729a730c76b6c7fc06b7f9d08286497bcf3068614df1f8d36fbafbfd1f",
+  "observations": [
+    "Деревянная секция с тремя столбами и металлическими связями; читаемый пиксельный силуэт на общем фоне."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

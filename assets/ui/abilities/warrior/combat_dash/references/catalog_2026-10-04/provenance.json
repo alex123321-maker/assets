@@ -1,0 +1,35 @@
+{
+  "name": "Боевой рывок",
+  "key": "combat_dash",
+  "page_id": "page_cc11201aab6881919ab7bf7037972786",
+  "category": "abilities/warrior",
+  "subject": "One silver-and-burgundy armored warrior torso leaning forward to the right with a low extended leg and taut red cape; three short pale cyan speed streaks trail LEFT behind shoulders and heels. Heavy boots and gold armor edging, dynamic purposeful forward movement. No sphere, shield aura, sparkles, attack slash, invulnerability, wings, jump or duplicate body. Dark navy backdrop. The warrior has uncovered short brown hair and blue eyes, no helmet; silver/brass armor and burgundy cape match the accepted character.",
+  "caption": "Направленное перемещение Воина со следом скорости, без защитной ауры.",
+  "kind": "icon",
+  "folder": "assets/ui/abilities/warrior/combat_dash/references/catalog_2026-10-04",
+  "selected_image": "combat_dash_pixel_icon.png",
+  "prompt_override": "Use case: stylized-concept. Asset type: ONE square CubeSiege fantasy game ability/talent icon, no sheet. Input image is ONLY reference for crisp 2D pixel rendering, controlled coarse pixel clusters, sharp stepped edges, rich readable game-icon illustration, restrained navy background and material palette. Render NEW subject described below. No 3D voxels, smoothing, photo texture, text, letters, numbers, arrows, diagram, UI frame, watermark or infographic. One strong coherent silhouette occupying most of square; limited supporting details, enough dark breathing room around edges. Hard-edged pixel color ramps, silver steel/brass, color-coded magic/energy as specified. All weapons must be constructed consistently: straight blade, grip/guard/pommel aligned; believable grasp and action. Trails follow the blade/projectile/contact geometry, NEVER originate from grip/handle. Clean powerful composition; subtly textured colored background permitted. Subject: One silver-and-burgundy armored warrior torso leaning forward to the right with a low extended leg and taut red cape; three short pale cyan speed streaks trail LEFT behind shoulders and heels. Heavy boots and gold armor edging, dynamic purposeful forward movement. No sphere, shield aura, sparkles, attack slash, invulnerability, wings, jump or duplicate body. Dark navy backdrop.\n\nCORRECTION:\nEdit image 1 ONLY to replace the helmeted head with the approved Warrior's uncovered head from image 2: short brown hair, blue eyes, clean-shaven face. Image 2 provides identity only; translate the head into image 1's sharp 2D pixel illustration, never 3D voxels. Keep forward-running pose, anatomy, silver/brass armor, burgundy cape, exact speed trails, dark navy background and all other composition unchanged. The head's forward lean and perspective must connect naturally to neck/body. No additional equipment or effects.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png",
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-759b85d3-cb21-4924-adcb-6c03dba9d119.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "90dce6cdbeb7b99353d77d1acc545d21d5f4bdacaab35988202bb02f7ca25712",
+  "byte_size": 1406862,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9zX0s2NWI0Y1l6d0pVaW1kX0wzeV9R_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

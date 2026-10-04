@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "blood_tempering_pixel_icon.png",
+  "sha256": "a04d8d77d2e3afdfa3a9b82ac2f7b05f058dd0302dc1187ccb4669d00c876fc3",
+  "observations": [
+    "Вражеский клинок касается края бордового щита, а собственный серебряный меч направлен вперёд.",
+    "Зелёная дуга с частицами жизни возвращается от режущей части меча к руке.",
+    "Сочетает золотые искры парирования с цветовым признаком лечения."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

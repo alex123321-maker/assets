@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "boss_lob_attack_pixel_icon.png",
+  "sha256": "a5a100bb55c22bfbbb0cb01e954812a8357e913bca110894a9d6d75bb3533595",
+  "observations": [
+    "Каменный снаряд находится над тихим пустым кольцом; взрыва или готовой ловушки до приземления нет."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

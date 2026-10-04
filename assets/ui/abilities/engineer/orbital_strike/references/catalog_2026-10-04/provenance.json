@@ -1,0 +1,33 @@
+{
+  "name": "Орбитальный удар",
+  "key": "orbital_strike",
+  "page_id": "page_3357b27a71e88191a1736340a295c874",
+  "category": "abilities/engineer",
+  "subject": "A heavy pointed brass-and-iron fantasy siege projectile falls vertically from upper centre, trailing short pale gold fire, toward a large expanding orange/white impact burst below. One descending projectile, strong overhead-to-impact read, a small ember corona remains at base. Detailed pixel metal plates and teal runic band; no modern missile fins, radioactive symbol, mushroom cloud, planet or futuristic tech. Dark navy with restrained warm glow.",
+  "caption": "Удар сверху: тяжёлый снаряд и огненный акцент в области попадания.",
+  "kind": "icon",
+  "folder": "assets/ui/abilities/engineer/orbital_strike/references/catalog_2026-10-04",
+  "selected_image": "orbital_strike_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-61381983-3c5d-4035-9e2e-98e53d23c6de.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "8c2fb647ca0f6bda14ec8fff4f952bcbe32afaf07f76409c12fe450d99b74e7d",
+  "byte_size": 1452721,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9RZXduRTk5TGRybXlXcjBSMFk1cDVB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

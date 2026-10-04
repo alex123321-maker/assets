@@ -1,0 +1,38 @@
+{
+  "key": "block_dirt_soil",
+  "name": "Материал — почва",
+  "subject": "ONE exactly cubic material sample entirely warm dark brown loam on all faces, coarse ochre and umber irregular block patches with a few dark broken seams. A sample of soil material only, not landscape or ground platform. Clean cube shape without protruding grass, pebbles, roots or earth scatter.",
+  "page_id": "page_d72fa7295f9081918e25d36f776e8125",
+  "kind": "model",
+  "category": "terrain_materials",
+  "folder": "assets/environment/terrain_materials/block_dirt_soil/references/catalog_2026-10-04",
+  "selected_image": "block_dirt_soil_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\terrain_materials\\references\\terrain_concept_reference.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Изолированный образец существующего материала: четыре стороны и изометрия, без ландшафта и подписей.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-db73a83d-c962-4acd-9d8e-a6a472344032.png",
+  "sha256": "a389956bb48d01f9b5abbe538ad2cf61b176fd5bc6d5abea826d84d8d5a4e501",
+  "byte_size": 980102,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV8ySXpwM1NSUWVyTUR6NUlNYThsNUFB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

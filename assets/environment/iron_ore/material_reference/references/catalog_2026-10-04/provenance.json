@@ -1,0 +1,38 @@
+{
+  "key": "iron_ore_material",
+  "name": "Железная руда — вариант материала",
+  "page_id": "page_f58044d4583c81919ce5b848a87d0701",
+  "subject": "Use the SECOND reference image rock geometry and EXACT SAME stepped silhouette as a representative IRON ORE MATERIAL variant. Keep the broad gray stepped rock shape and five orientations. Change only material to warm dark gray/brown with broad rust-brown inclusions and dull silver exposed iron veins. No gold, crystal clusters, new boulder geometry, ground, foliage or glow. This is the material convention for the existing rock family, not a new geometric family.",
+  "kind": "model",
+  "category": "resources",
+  "folder": "assets/environment/iron_ore/material_reference/references/catalog_2026-10-04",
+  "selected_image": "iron_ore_material_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\destructible_rock\\stage_1_var_1\\references\\catalog_2026-10-04\\stage_1_var_1_five_views.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Материальный вариант существующего семейства скал. Геометрические варианты и стадии разрушения переиспользуются; оттенок и жилы отличают железную руду.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-7644a6cd-1a93-46b3-b9e1-6dc06e6d8cb8.png",
+  "sha256": "44a6329519b2c378754026dbbf0a7366c400461c81fc071006932f9236e0b446",
+  "byte_size": 1191795,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV92REVfVWZHbjNEbi13Sk5OOWFib3RB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

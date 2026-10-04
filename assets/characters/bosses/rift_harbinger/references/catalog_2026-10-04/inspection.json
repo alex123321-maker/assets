@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "rift_harbinger_five_views.png",
+  "sha256": "fd435369eea95822d9944db5a0894128959299e7942d1b3cd66148d69987f0fd",
+  "observations": [
+    "Пять видов парящего кристаллического существа без ног, земли и тени.",
+    "Сломанный нимб и два пилона согласованы в пространстве; в профилях пилоны перекрываются, а в изометрии видны оба."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

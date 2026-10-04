@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "stun_pixel_icon.png",
+  "sha256": "25bb9c8226a6a8bbfa4dfe5a322666c522e174ab50ac7175e3bcce7c693a45d2",
+  "observations": [
+    "Три золотые звезды окружают ошеломлённую голову противника.",
+    "Опущенное оружие и расфокусированное лицо показывают прерванное действие; символов сна нет."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

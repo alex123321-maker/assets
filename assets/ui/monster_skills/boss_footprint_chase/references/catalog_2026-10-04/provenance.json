@@ -1,0 +1,34 @@
+{
+  "key": "boss_footprint_chase",
+  "page_id": "page_c422cd6b535c8191a80682b62bb43a9c",
+  "subject": "Exactly SIX small stationary amber-violet magical marks along a loose curving path of fleeing leather boot prints, ONE of the oldest marks bursts behind the newest boot. Marks remain at their original distinct locations. No marks attached to boot, homing spiral, arrows or numbered countdown.",
+  "name": "Погоня за следами",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/boss_footprint_chase/references/catalog_2026-10-04",
+  "selected_image": "boss_footprint_chase_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "prompt_override": "Use case: stylized-concept. Asset type: ONE square CubeSiege fantasy game ability/talent icon, no sheet. Input image is ONLY reference for crisp 2D pixel rendering, controlled coarse pixel clusters, sharp stepped edges, rich readable game-icon illustration, restrained navy background and material palette. Render NEW subject described below. No 3D voxels, smoothing, photo texture, text, letters, numbers, annotation arrows, diagram, UI frame, watermark or infographic. One strong coherent silhouette occupying most of square; limited supporting details, enough dark breathing room around edges. Hard-edged pixel color ramps, silver steel/brass, color-coded magic/energy as specified. All weapons must be constructed consistently: straight blade, grip/guard/pommel aligned; believable grasp and action. Trails follow the blade/projectile/contact geometry, NEVER originate from grip/handle. Clean powerful composition; subtly textured colored background permitted. Subject: EXACTLY SIX separate boot-print danger marks arranged as THREE staggered PAIRS on a diagonal path from lower-left to upper-right. TWO prints in LOWER LEFT pair, TWO in CENTER pair, TWO in UPPER RIGHT pair. Six total all countable, similar readable size, clear navy gap between each. Each print has a thin stationary violet/amber warning outline. ONLY first print at lower-left has a small amber detonation. Other FIVE are quiet. No seventh mark, numbers, arrows, actor or terrain.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-88414a47-3696-4481-97de-4db9038f24fd.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "bc090b03561cbf26d755db483f9d26d31a2850619b69721d15996898d7d3fb9f",
+  "byte_size": 1285043,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9RVGFScnYwUmFtV051ZVZyZ0tVUVdR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

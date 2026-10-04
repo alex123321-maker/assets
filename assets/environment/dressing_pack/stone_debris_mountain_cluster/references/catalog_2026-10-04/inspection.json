@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "stone_debris_mountain_cluster_five_views.png",
+  "sha256": "c32ec0c153adc6fc394f423d0211eba731199caaf1a6e27ab89462648bf0d5aa",
+  "observations": [
+    "Пять видов соединённого горного обломка с центральным гребнем, боковыми уступами и глубокими швами.",
+    "Серо-каменная палитра и светлые крупные включения; чистый белый фон."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

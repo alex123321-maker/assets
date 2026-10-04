@@ -1,0 +1,33 @@
+{
+  "key": "hud_health_cross",
+  "name": "Здоровье",
+  "subject": "One thick symmetrical emerald vitality cross, pale mint center and four identical arms, restrained short green restoration glints, strong simple silhouette.",
+  "page_id": "page_37d4ce8fd7d48191a94aa3a77d87d607",
+  "kind": "icon",
+  "category": "hud_globals",
+  "folder": "assets/ui/catalog/hud_health_cross/references/catalog_2026-10-04",
+  "selected_image": "hud_health_cross_pixel_reference.png",
+  "caption": "Единая пиксельная графика HUD: тёмно-синяя основа, сталь и латунь, чёткий силуэт и функциональный цвет.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-9188fd2c-4a02-4fce-9726-d6f28b666633.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "a2c4470803e65a6009468e72c3ea52d09d445b7dc466bcf1179aed0f6f245a7c",
+  "byte_size": 1194387,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV95SnVpcVdkbHZBcmNzdktqZjZSS2R3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

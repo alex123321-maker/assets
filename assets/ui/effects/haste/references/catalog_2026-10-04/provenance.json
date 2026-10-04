@@ -1,0 +1,33 @@
+{
+  "name": "Ускорение передвижения",
+  "key": "haste",
+  "page_id": "page_85b2da73c3388191b740db41a40a5d1f",
+  "category": "effects",
+  "subject": "A brown leather boot with brass buckle lunges to upper-right, THREE short clean white/gold speed streaks stream behind heel to lower-left. Unrestricted movement, no wings, jumping arc, magical dome, attack slash or green healing particles. Navy/gold background.",
+  "caption": "Лёгкий направленный шаг со светлыми следами скорости.",
+  "kind": "icon",
+  "folder": "assets/ui/effects/haste/references/catalog_2026-10-04",
+  "selected_image": "haste_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-5d266cb3-307f-405d-b970-1fe14958945d.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "f23587595d9da72058ec4a52ab57841fa1e3caaf7233f726a4c49704ce6b075e",
+  "byte_size": 1255865,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9uemVfREFPRGVvV1ZpaWpUX2tGemhB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

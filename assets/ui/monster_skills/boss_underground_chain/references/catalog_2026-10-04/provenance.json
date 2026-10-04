@@ -1,0 +1,33 @@
+{
+  "key": "boss_underground_chain",
+  "page_id": "page_f828c62477008191917367abc999f7f8",
+  "subject": "A short irregular chain of separate stationary amber rupture marks, one bright bursting eruption, one medium glow and two dim still-arming spots. Different glow stages convey sequential eruptions at fixed locations. No footprints, following target, planted mines or single connecting continuous laser.",
+  "name": "Подземная цепь взрывов",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/boss_underground_chain/references/catalog_2026-10-04",
+  "selected_image": "boss_underground_chain_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-f1ec352d-073c-4b2c-80c7-2fa6608b5649.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "57abc7d1db06e766f3111e80f37542e61a20c46cce81e69aafc55c9b45b7a559",
+  "byte_size": 1280134,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9Mc2VOYTFJOU9RT0xxYzFGdDBmLU9n_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

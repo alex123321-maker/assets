@@ -1,0 +1,39 @@
+{
+  "key": "building_floor_spikes",
+  "name": "Напольные шипы",
+  "subject": "ONE square floor SPIKE TRAP module: three broad dark-oak planks on two cross-bindings and exactly a 3-by-3 arrangement of NINE thick iron spikes. Each spike tapers via large cubic stair steps, not smooth pyramids, same nine spikes in every view. Gray steel tips and large brass rivets, wooden substrate is INTRINSIC trap structure, not landscape. No extra surrounding floor, ground or base pedestal.",
+  "page_id": "page_3bbaeba2efa881918e16b9cbd1fa3618",
+  "kind": "model",
+  "category": "buildings",
+  "folder": "assets/environment/buildings/floor_spikes/references/catalog_2026-10-04",
+  "selected_image": "floor_spikes_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game\\screenshots_debug\\demo_buildings\\building_models_isometric_day.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одной существующей постройки. Крупные воксели; без ландшафта, внешней подставки и подписей.",
+  "prompt_override": "Use case: stylized-concept. Create ONE clean fantasy voxel 3D MODEL reference sheet for CubeSiege. Exactly FIVE views of the SAME complete asset: front and back across upper row, left side, right side and game-like 3/4 isometric across lower row. Equal visual scale, generous separation, no cropped extremities, no extra duplicates, details and equipment identical in all views. FIRST image sets the approved chunky Minecraft-like voxel size and detail treatment ONLY. SECOND image shows existing role/silhouette to develop, not a quality target. Large block geometry, square planar surfaces and coarse pixel material detail; no tiny gravel-like cubes, smooth meshes, bevels or realistic paint. Rich construction details must use broad readable block clusters. Flat bright unlit material colors, extremely mild face color variation, NO cast shadows, NO contact shadow, NO ambient occlusion, NO harsh dark shaded faces. Entire background uniform pure white, without ground, landscape, grass, platform, plinth, horizon, gradient or texture. No text, labels, arrows, diagrams, borders, watermark or infographic. Neutral model pose maintained across views. Change absolutely all old hero identity details to the new subject. Subject: ONE floor spike trap lies HORIZONTALLY in EVERY panel, never rotate the object upright. It is a low thick 3-plank oak tile, two iron binding rails, EXACTLY NINE broad stair-step iron spikes in a 3 by 3 grid rising VERTICALLY. Top row: FRONT and REAR viewed from horizontal camera at ONLY 12 degrees above horizon, showing LOW wood edge and THREE spikes per visible row; each side view has width roughly FIVE times height. Bottom row LEFT and RIGHT also near-horizontal low side profile, showing wood edge and three spike profiles, NOT full square overhead tile. Bottom-right genuine 45degree ISOMETRIC showing nine spikes in three rows. Four orthographic LOW SIDE profiles plus ONE isometric. No top view, underside view, blueprint, text, terrain, ground shadows. The prior problem was vertical top/underside panels: do NOT repeat that.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-7e1025df-2e04-44d1-8728-926a9589270a.png",
+  "sha256": "0626bce9190759605ab4e654d31fcb084e453316b367d6408071c5bb8e3e8b90",
+  "byte_size": 1120861,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV80WEJEMnFiNHJXVE55aF9mekpGanRB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

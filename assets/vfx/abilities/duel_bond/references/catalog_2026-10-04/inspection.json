@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "duel_bond_five_views.png",
+  "sha256": "603a27828c78ee02c7db490aff1a35d985b54ec981a3ae62aa986b9726e2033e",
+  "observations": [
+    "Два отдельных бордово-золотых кольца-маркера соединены тонкой связью; нет клетки или периметра арены."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

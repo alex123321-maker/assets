@@ -1,0 +1,38 @@
+{
+  "key": "fx_turret_bolt",
+  "name": "Турель — арбалетный болт — 5 видов",
+  "page_id": "page_80f51b27f15c8191b9151c17b7e58600",
+  "subject": "ONE short stout coarse wooden crossbow bolt along X, square iron pyramidal stepped tip at front, burgundy rear vanes and one very short pale ivory rear streak. No gun, barrel, hand, duplicate missile, luminous blade or curved path.",
+  "prompt_override": "Use case: stylized-concept. Clean MODEL turntable sheet, EXACTLY FIVE isolated depictions of ONE chunky Minecraft fantasy crossbow BOLT on uniform white, absolutely no text, labels, arrows, ground or cast shadows. Wooden square shaft, stepped pyramid steel head, burgundy rear FOUR vanes, pale small nock. Geometry remains IDENTICAL. Arrange: TOP LEFT = long left side profile, tip points RIGHT. TOP RIGHT = opposite long right side profile, tip points LEFT. BOTTOM LEFT = DIRECT FRONT, camera EXACTLY on shaft axis toward metal TIP: see an almost square steel pyramid cross section, shaft and rear vanes hidden behind it, NO visible long shaft. BOTTOM MIDDLE = DIRECT REAR, camera EXACTLY on shaft axis toward pale NOCK: see nock and burgundy four-vane cross, shaft and metal tip hidden. BOTTOM RIGHT = complete true isometric view with long shaft visible. ONLY TWO long side silhouettes, TWO compact end-on cross sections, ONE isometric; do not substitute a third side silhouette. Large cubic geometry, flat unlit material colors, rich construction details made from broad blocks. No trails for this model sheet. Use source only for scale/style.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "kind": "model",
+  "category": "props/ability_objects",
+  "folder": "assets/props/ability_objects/turret_bolt/references/catalog_2026-10-04",
+  "selected_image": "turret_bolt_five_views.png",
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного объекта/момента в крупной воксельной стилистике. Художественный референс; правила срабатывания берутся из текста способности, анимация и читаемость в движке не проверены.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-079c3088-4b65-4c30-b5e0-5828330e9581.png",
+  "sha256": "e599231e7fddfda63536914f96fdc86074be2ac1f541aec889343c484c0cba60",
+  "byte_size": 1359749,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV8yME5UWjlOXzR2c0x6MjExbFBMWVFR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

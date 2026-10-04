@@ -1,0 +1,33 @@
+{
+  "name": "Широкий выпад",
+  "key": "wide_lunge",
+  "page_id": "page_62ac7e389d888191893fbdb065d75fae",
+  "category": "talents/warrior",
+  "subject": "A forward-lunging silver/burgundy warrior at right side of icon ends a long dash; faint straight pale speed streaks trail far behind left, but sword slash exists ONLY at destination around extended sword blade ahead of him. One bright partial white/cyan frontal crescent at endpoint, none along movement trail. Dark navy, coherent single pose. The warrior has uncovered short brown hair and blue eyes, no helmet; silver/brass armor and burgundy cape match the accepted character.",
+  "caption": "Длинный выпад и один фронтальный удар в конечной точке.",
+  "kind": "icon",
+  "folder": "assets/ui/talents/warrior/wide_lunge/references/catalog_2026-10-04",
+  "selected_image": "wide_lunge_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-3de9e55f-5af6-4928-b95d-50003677280b.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "45574a97c819a057cfd818bb1487d6a962227342ea3e4185875a4e95bd6670d4",
+  "byte_size": 1369523,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV85M3ZUYXFvYmRlUlQ1Q2ZZc1drUUpR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "wave_bar_bg_pixel_reference.png",
+  "sha256": "eb034fbee3fac4ffd48aa85f0538fa5a1b526a5343634f0418090bd81071a45a",
+  "observations": [
+    "Пустой длинный канал, ступенчатые торцы и латунные акценты."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Управляемая мина",
+  "key": "controlled_mine",
+  "page_id": "page_a05fba85c50c8191a6b4586961e217be",
+  "category": "abilities/engineer",
+  "subject": "A low sturdy round iron-and-brass fantasy mine with square bolted plates and a vivid small red central activation gem, beside a leather-gloved teal-sleeved hand holding a compact brass rune detonator. A short red glimmer links hand control to device conceptually without a drawn wire, no tripwire/stepping foot. Mine not exploded yet, no modern electronics or labels. Navy/teal background.",
+  "caption": "Мина и ручной активатор подчёркивают выбор момента подрыва.",
+  "kind": "icon",
+  "folder": "assets/ui/abilities/engineer/controlled_mine/references/catalog_2026-10-04",
+  "selected_image": "controlled_mine_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-726e314d-2310-4c9c-b543-694cde7a88df.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "b7f0eb57c2f7e67971ad149c42390f3a7cbb39ea82ff9c0a4232082284140207",
+  "byte_size": 1350573,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9JX0FqRmFsUUh0ajNYaXJBZFQ1SVln_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

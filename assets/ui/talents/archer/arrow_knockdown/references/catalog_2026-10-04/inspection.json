@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "arrow_knockdown_pixel_icon.png",
+  "sha256": "f90734f1a590d8981204115bbc9aba6f33f9f8ca3e629d79102e26b4b670a828",
+  "observations": [
+    "Один наконечник касается нагрудника, вспышка совпадает с контактом.",
+    "Корпус отклонён назад, одна нога поднята и потеряла опору; нет звёзд оглушения."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

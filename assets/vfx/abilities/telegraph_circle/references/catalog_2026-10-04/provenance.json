@@ -1,0 +1,38 @@
+{
+  "key": "fx_telegraph_circle",
+  "name": "Предупреждение — круг — 5 видов",
+  "page_id": "page_6d69c835c8588191a7014f560e7cc316",
+  "subject": "ONE very thin quiet horizontal hollow amber stepped circle, narrow muted purple outer edging, EMPTY interior. Four small fixed amber cardinal ticks as part of circle, no labels, countdown, damage, flames, explosion or floor. Four orthographic side views show thin edge profiles; isometric shows hollow circle.",
+  "prompt_override": "Use case: stylized-concept. CLEAN gameplay spatial-reference sheet of ONE FLAT HORIZONTAL floor-warning outline, a circular hollow outline with FOUR small cardinal ticks. EXACTLY FIVE groups: upper row front and back, lower row left, right, and one isometric. Uniform plain dark navy contrasting background, no actual floor/terrain/scene, no actor or text or diagrams. All geometry lies in XZ HORIZONTAL plane, thickness only ONE voxel, virtually zero vertical height. Think glowing tape lying flat at foot level, NOT a vertical portal, frame, fence, tube, raised box or wall. The FOUR true orthographic cameras are at ZERO elevation on the horizon, so they see ONLY THIN HORIZONTAL EDGE PROFILES; NEVER show an upright complete circle or upright sector in these four positions. All four orthographic silhouettes are thin horizontal amber strips of slightly differing widths as geometry is rotated. ONLY fifth group has elevated 35deg true isometric camera and shows the complete outline lying FLAT horizontally, like a shallow ellipse/flat floor marking. Keep footprint constant, contour thin, quiet muted amber with a faint violet outside accent, hollow interior. No tall blocks, floating particles, cuboid cage, extrusion, light beams or flames. Use coarse stair-step cubic contour pixels with flat unlit color, no AO/cast shadows, no bloom on background. Generous clean gaps. Same exact footprint in all five views.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "kind": "model",
+  "category": "vfx/abilities",
+  "folder": "assets/vfx/abilities/telegraph_circle/references/catalog_2026-10-04",
+  "selected_image": "telegraph_circle_five_views.png",
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного объекта/момента в крупной воксельной стилистике. Художественный референс; правила срабатывания берутся из текста способности, анимация и читаемость в движке не проверены.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-bc1efe2e-ff50-4210-8f12-a149327a0797.png",
+  "sha256": "5f55ce59416198d29e238ef80f59d2785f18d992cb2bc9ddef5230ddfa2e9f8c",
+  "byte_size": 930339,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9hX2FqdGxSU0NlNjNUR0dxc1ZieFZ3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

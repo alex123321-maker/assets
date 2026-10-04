@@ -1,0 +1,33 @@
+{
+  "name": "Оглушение",
+  "key": "stun",
+  "page_id": "page_45d20c1035a881919bc5b6625ba3c58e",
+  "category": "effects",
+  "subject": "A dark steel helmet around a dazed undead face with eyes half unfocused, THREE sharp warm yellow stars orbit tightly above its head. A small dropped sword edge at bottom suggests interrupted action. No sleep Z letters, ice chains, arrows or full-body paralysis statue. Navy/gold palette.",
+  "caption": "Звёзды над потерявшей ориентацию головой передают оглушение.",
+  "kind": "icon",
+  "folder": "assets/ui/effects/stun/references/catalog_2026-10-04",
+  "selected_image": "stun_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-0377edfe-b639-4bd2-bcd0-65794e504522.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "25bb9c8226a6a8bbfa4dfe5a322666c522e174ab50ac7175e3bcce7c693a45d2",
+  "byte_size": 1388306,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9DVmQ5TjVjS1ZMLUlfRl82SnQwMDF3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

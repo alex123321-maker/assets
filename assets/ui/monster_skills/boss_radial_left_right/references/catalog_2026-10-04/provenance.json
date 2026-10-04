@@ -1,0 +1,34 @@
+{
+  "key": "boss_radial_left_right",
+  "page_id": "page_ce4118ce9c388191bd50b8243720e0ec",
+  "subject": "ONE continuous amber-violet energy ray connected to a dark casting focus, its bright active ray on the clockwise edge of a short sector and a soft fading angular wake behind on the counterclockwise side. Readable one-ray left-to-right sweep. No arrowhead, dial ticks, multiple active rays or full circle.",
+  "name": "Радиальная атака — Один луч: проход слева направо.",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/boss_radial_left_right/references/catalog_2026-10-04",
+  "selected_image": "boss_radial_left_right_pixel_icon.png",
+  "caption": "Один луч: проход слева направо.",
+  "prompt_override": "Edit this single crisp 2D pixel fantasy ability icon. Preserve exactly the golden ray COUNT and POSITIONS, the angular fading violet fan trails, navy background, overall composition and pixel clusters. Change ONLY the small lower-centre emitter: REMOVE the nautical anchor-shaped metal object with hooks and its handle. Replace entire lower hooked shape with ONE SMALL floating round VIOLET ENERGY ORB with white-violet central glint, directly attached at the common beam origin. Pure magical glowing sphere, no nautical anchor, physical stand, staff, hooks, cross, rune glyphs, hands or arrow symbols. No extra rays. Keep all trails and bright beams in exactly their current locations.",
+  "input_images": [
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-ab75a22a-a58d-4663-885d-10e0ceb2b459.png"
+  ],
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-7436b176-a134-4881-8e20-ee5fb9d331e5.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "27fdf8229b49517f75679290e56951278b28da05b0bb70d931b72e294bc7e95b",
+  "byte_size": 1209827,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9saHdZZlhaZFhBeHVqTE1EOEE2WmlR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

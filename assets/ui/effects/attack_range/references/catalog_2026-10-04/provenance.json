@@ -1,0 +1,33 @@
+{
+  "key": "attack_range",
+  "name": "Увеличение дальности атак?",
+  "page_id": "page_82359c772ac48191aed3136bd656d7ed",
+  "subject": "A single long silver-tipped wooden arrow travelling from lower left toward upper right, with a long slender pale cyan trail starting at its tail; a tiny distant dark target silhouette near upper right. Clear extended flight, no three arrows, radial attack, concentric infographic or number.",
+  "caption": "Одна стрела с протяжённым следом подчёркивает дальность полёта. Визуальная трактовка существующего эффекта под вопросом; не утверждает его механику.",
+  "category": "effects",
+  "kind": "icon",
+  "folder": "assets/ui/effects/attack_range/references/catalog_2026-10-04",
+  "selected_image": "attack_range_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-3a281ee3-a312-421e-b23f-bec3e6e318e3.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "8156e557e3daf9d1e72ed9843aa8995872b7c523721fd4887db26ed28121b535",
+  "byte_size": 1280741,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV8ySVlncTJhX18xWTFhb0FLTHlyaE13_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "burning_pixel_icon.png",
+  "sha256": "b82ff179a7be4c86d5dc6eead11124060ea2faf505aa69054784f55f87562184",
+  "observations": [
+    "Оранжевое пламя обволакивает обугленный фрагмент металлической брони.",
+    "Светлый центр и редкие тёмные частицы пепла отделяют пламя от синего фона.",
+    "Нет летящего огненного снаряда или руки заклинателя."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

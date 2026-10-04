@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "grass_tuft_small_02_five_views.png",
+  "sha256": "5ca1aec80fa4d6cb0115695c6a8233dafc07208243ce2dacf99a7efa93144d5c",
+  "observations": [
+    "Пять видов асимметричного веера с высокой стороной и постепенно понижающимися листьями.",
+    "Асимметрия разворачивается в обратном виде; толстые листья и крупные цветовые участки."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

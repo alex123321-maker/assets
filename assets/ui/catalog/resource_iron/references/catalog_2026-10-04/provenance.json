@@ -1,0 +1,33 @@
+{
+  "key": "resource_iron",
+  "name": "Железо — HUD",
+  "subject": "TWO forged iron ingots stacked at a slight offset, cool gray metal with pale silver highlights and dark slots, restrained brass reflection; no ore nuggets.",
+  "page_id": "page_f58044d4583c81919ce5b848a87d0701",
+  "kind": "icon",
+  "category": "hud_resources",
+  "folder": "assets/ui/catalog/resource_iron/references/catalog_2026-10-04",
+  "selected_image": "resource_iron_pixel_reference.png",
+  "caption": "Единая пиксельная графика HUD: тёмно-синяя основа, сталь и латунь, чёткий силуэт и функциональный цвет.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-663bb1a4-0687-4bbf-8e98-9b9c8db6fbff.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "963a0c6f2928e0564968a147d1987b54bef0eb408225a4e9a35811b5e0929943",
+  "byte_size": 1253389,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9NdzlTOU54d0NCV1dtNVhYVURJN2hR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

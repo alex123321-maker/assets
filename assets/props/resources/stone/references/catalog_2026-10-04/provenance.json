@@ -1,0 +1,37 @@
+{
+  "key": "pickup_stone",
+  "name": "Камень — добытый ресурс",
+  "page_id": "page_f58044d4583c81919ce5b848a87d0701",
+  "subject": "ONE small raw stone fragment ONLY, low broad coarse warm-gray chunk approximately five voxel units wide and three units high, asymmetrical stepped broken upper corner, one pale chip on one side. Small pickup piece, not a large boulder or a connected deposit. Front/back broad faces, left/right opposing narrow profiles, same chipped corner locations after rotation, isometric shows full shape. No extra piece, vein, glow, pile or ground.",
+  "kind": "model",
+  "category": "resources",
+  "folder": "assets/props/resources/stone/references/catalog_2026-10-04",
+  "selected_image": "stone_pickup_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одной части добытого ресурса. В игре используются 1–3 экземпляра; количество и масштаб задаёт существующая система подбора.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-34bbf6c2-269c-4512-8b81-37e8c90d884c.png",
+  "sha256": "4135d8be97b5271906ae9a47c6890649b84b1a93746daad89e28b3836f5f55e0",
+  "byte_size": 989645,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9rT2tEMF9KNmRMcjdPQ3dneTBSaDJB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,38 @@
+{
+  "key": "stage_5_var_3",
+  "name": "Щебень — серповидная россыпь",
+  "subject": "ONE destructible natural gray rock resource asset, angular stepped fused voxel geology, warm-gray primary stone with a few pale coarse mineral patches, dark-gray wide fracture seams and restrained FLAT olive moss color patches attached to stone surfaces (no growing plants). Large Minecraft-style cubic masses with chunky material pixels, no tiny rubble confetti, smooth beveled stone or photoreal texture. No soil, ground, grass, pedestal or landscape. This is ONE variant, not a family gallery or destruction sequence. All five copies show the same arrangement of main masses, cracks and separate fragments. Fifth destruction-stage FINAL rubble pile. Several small coarse gray fragments form an irregular low CRESCENT grouping with open white gap inside the crescent and a slightly larger squat chip at one end. No large intact rock, perfectly circular magic ring, soil bed, dirt scatter or tiny confetti.",
+  "page_id": "page_8a1842277d7c819192faca9c0ffb2803",
+  "kind": "model",
+  "category": "rocks",
+  "folder": "assets/environment/destructible_rock/stage_5_var_3/references/catalog_2026-10-04",
+  "selected_image": "stage_5_var_3_five_views.png",
+  "input_images": [
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-7bf23b66-0063-4d37-abe9-1800e26b6411.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Один вариант соответствующей стадии разрушения: пять ракурсов без земли, ландшафта и подписи.",
+  "prompt_override": "Edit this reference sheet into FINAL DESTROYED RUBBLE. DELETE every tall boulder, peak, tiered rock cluster and intact stone mass from ALL FIVE views. Replace them with very few extremely LOW broken cubical stone pieces. Exactly SEVEN small isolated chunky chips in a shallow open CRESCENT with white inside. All pieces ONLY ONE or TWO coarse cube steps high. Absolutely NO central boulder or tall chunk. White gaps between every piece. The highest fragment MUST consist of at most TWO stacked geometric voxels; use extremely large Minecraft cubes and chunky warm gray mineral pixels, only a trace of olive color on one small fragment. Keep exactly five views of the identical fixed grouping, front/back upper row, left/right profiles and isometric lower row, same scale. Front and side views must look extremely LOW and near-flat, not a mountain. Bright flat unlit colors, pure white background with ample negative space. No ground, terrain, base, contact shadow, cast shadow, ambient occlusion, labels, arrows or annotation. Do not preserve any of the original tall geometry.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-33a00cea-bb87-4909-b24d-58c31cba931b.png",
+  "sha256": "a91940adc7ffe598a53638f964babd4cca579ff156816030931f1f0d013f52a9",
+  "byte_size": 848152,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9Bejc0Mk1pYXRIUGtxSDI3Y0NoNHJB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

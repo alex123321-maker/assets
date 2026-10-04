@@ -1,0 +1,33 @@
+{
+  "key": "structure_durability",
+  "name": "Повышение прочности строений?",
+  "page_id": "page_0c64c17131788191a6b99e50be61edff",
+  "subject": "A stout intact fantasy stone-wall corner built from three courses of thick gray masonry, brass iron reinforcement braces at the corners, strong stable broad silhouette. Small warm glint on the brace. No health heart, hammer repair, magical dome or cracked stone.",
+  "caption": "Толстая каменная кладка с металлическими связями обозначает прочность строения. Визуальная трактовка существующего эффекта под вопросом; не утверждает его механику.",
+  "category": "effects",
+  "kind": "icon",
+  "folder": "assets/ui/effects/structure_durability/references/catalog_2026-10-04",
+  "selected_image": "structure_durability_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-7300c327-d606-477d-b779-4d8e7d39d9eb.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "0107abb8e77fe057834e967203fcb0e6127176415d52285685db2c6914cb6130",
+  "byte_size": 1335104,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9sbmZ2V0V0eXhwOVFPVE0wWFlsXzl3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

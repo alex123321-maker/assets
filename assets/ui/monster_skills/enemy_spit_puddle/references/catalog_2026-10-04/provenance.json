@@ -1,0 +1,33 @@
+{
+  "key": "enemy_spit_puddle",
+  "page_id": "page_173c42cbdf048191ac8692c15d465d4c",
+  "subject": "An undead mouth spits ONE dirty yellow-green glob on a STRAIGHT short trail toward a dark mustard toxic puddle with ragged rim and a few contact bubbles. Actual glob hits at near puddle edge. Sickly muted yellow/olive clearly distinct from emerald healing. No curving lob trail, homing spiral, healing cross or terrain.",
+  "name": "Плевок с лужей",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/enemy_spit_puddle/references/catalog_2026-10-04",
+  "selected_image": "enemy_spit_puddle_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-685cf30c-fcb2-4781-a24d-0678c9d1aec5.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "d30ebc7018bfe813081022c76e6aeb5cf98665f82865d2037431737f4933b12f",
+  "byte_size": 1323586,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9wdTBLTlpUUFJYV0V4M1E3QlYtNmNB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Контратака",
+  "key": "counterattack",
+  "page_id": "page_20d505f46b8c8191a38d9a7b3c46184c",
+  "category": "talents/warrior",
+  "subject": "Burgundy/silver kite shield braces at lower left while a separate HERO steel sword thrusts OUT past its right rim toward a dark enemy blade at upper right. Gold contact sparks on shield rim imply a block already made; white sharp blade-tip glint conveys the answer strike. Clearly two weapons and shield, no impossible blade emerging from shield, no arrows, navy background.",
+  "caption": "Щит перехватывает удар, собственный меч выходит вперёд для ответной атаки.",
+  "kind": "icon",
+  "folder": "assets/ui/talents/warrior/counterattack/references/catalog_2026-10-04",
+  "selected_image": "counterattack_pixel_icon.png",
+  "prompt_override": "Use case: stylized-concept. Asset type: ONE square CubeSiege fantasy game ability/talent icon, no sheet. Input image is ONLY reference for crisp 2D pixel rendering, controlled coarse pixel clusters, sharp stepped edges, rich readable game-icon illustration, restrained navy background and material palette. Render NEW subject described below. No 3D voxels, smoothing, photo texture, text, letters, numbers, arrows, diagram, UI frame, watermark or infographic. One strong coherent silhouette occupying most of square; limited supporting details, enough dark breathing room around edges. Hard-edged pixel color ramps, silver steel/brass, color-coded magic/energy as specified. All weapons must be constructed consistently: straight blade, grip/guard/pommel aligned; believable grasp and action. Trails follow the blade/projectile/contact geometry, NEVER originate from grip/handle. Clean powerful composition; subtly textured colored background permitted. Subject: Burgundy/silver kite shield braces at lower left while a separate HERO steel sword thrusts OUT past its right rim toward a dark enemy blade at upper right. Gold contact sparks on shield rim imply a block already made; white sharp blade-tip glint conveys the answer strike. Clearly two weapons and shield, no impossible blade emerging from shield, no arrows, navy background.\n\nCORRECTION:\nEdit ONLY the shield FRONT design in this Counterattack icon. Remove the white stag/animal emblem entirely. Restore a plain burgundy wooden surface with one round brass central boss matching the existing Parry icon's shield language. Do not change shield shape/rim, sword positions, arm, sparks, contact geometry, pixel style, background or composition. The hero's blade still thrusts outward while the incoming dark blade strikes the shield edge. No new symbol, text or extra spark effects.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-c4700b7b-e8e1-4703-bf84-07e685d069e9.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "41a98bc0abbde4139a5d63f63c82f05236aa2b27089bac5ae89b045b5a7b73ba",
+  "byte_size": 1492192,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV91YXFGUUtVZHNWMTNZZkQ2bDRWejV3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

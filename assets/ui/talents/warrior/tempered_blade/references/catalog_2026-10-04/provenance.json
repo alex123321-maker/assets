@@ -1,0 +1,33 @@
+{
+  "name": "Закалённый клинок",
+  "key": "tempered_blade",
+  "page_id": "page_ac4bc9b3a82c8191b4e3651efcc79b73",
+  "category": "talents/warrior",
+  "subject": "Silver sword held by burgundy-gripped gauntlet; a red pinpoint at upper blade edge releases a few small emerald life motes curving back DOWN toward the hero's hand, clear healing-from-sword-contact symbol. Steel blade remains silver, no melting/fire. One subtle green glow near wrist, navy background.",
+  "caption": "Лечение от атак: зелёные частицы жизни возвращаются от клинка к владельцу.",
+  "kind": "icon",
+  "folder": "assets/ui/talents/warrior/tempered_blade/references/catalog_2026-10-04",
+  "selected_image": "tempered_blade_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-eeeaeaf7-b653-4a9d-9cf7-cf5c36297eff.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "bbcf7fb5518b0c8f7e2c73c8f094777c6963e13e63679cf348e3c75e5761e077",
+  "byte_size": 1241987,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9TenI2d3QtWEFHeGRhaXMxcGxqUGhB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

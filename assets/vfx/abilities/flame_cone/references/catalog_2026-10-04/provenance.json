@@ -1,0 +1,38 @@
+{
+  "key": "fx_flame_cone",
+  "name": "Огненный выдох — короткий конус — 5 видов",
+  "page_id": "page_de0c96cedcd881918c5ea95cb92489e8",
+  "subject": "ONE short horizontal amber flame CONE along X, a clearly narrow attached source root at one end and broad jagged flat flame front at other; broad cubic flame masses with white/yellow core near root. Fixed-direction continuous short cone, no mouth object, detached fireball, ring, terrain or heat haze.",
+  "prompt_override": "Use case: stylized-concept. Generate a CLEAN fantasy VOXEL GAMEPLAY-EFFECT spatial reference, EXACTLY FIVE views of ONE SAME frozen effect at ONE instant: upper row front and back, lower row left, right, true 45degree isometric. All panels show same particle arrangement and same geometry simply rotated, not five animation phases. Large Minecraft-like visible CUBIC particle units, thick stair-step edges, detailed purposeful major/medium blocks, NO smooth painterly or photorealistic smoke. Minimal flat face color differences, unlit emission color, no cast shadow, AO, scene lighting or bloom bleeding on background. Isolate EFFECT ONLY, no actor, enemy, mannequin, body, heart icon, unrelated weapon, landscape, terrain, floor, display plinth, UI frame, arrows, text, labels, captions or infographic. Plain solid dark slate navy contrasting background. Wide clean gaps between five views, no extra sixth view. First reference supplies only coarse voxel scale/style; no character is copied. Subject: ONE short horizontal amber flame CONE along X, a clearly narrow attached source root at one end and broad jagged flat flame front at other; broad cubic flame masses with white/yellow core near root. Fixed-direction continuous short cone, no mouth object, detached fireball, ring, terrain or heat haze. Camera consistency: four genuinely DIFFERENT orthographic views at 0,180,90,270 degrees around the vertical axis, plus one true isometric; do not use five similar three-quarter poses. Long directional X objects must be foreshortened/end-on in two opposite views. All five groups show SAME geometry and frozen particle state.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "kind": "model",
+  "category": "vfx/abilities",
+  "folder": "assets/vfx/abilities/flame_cone/references/catalog_2026-10-04",
+  "selected_image": "flame_cone_five_views.png",
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного объекта/момента в крупной воксельной стилистике. Художественный референс; правила срабатывания берутся из текста способности, анимация и читаемость в движке не проверены.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-ab44a2ca-cc9e-4642-a9f9-69ba673b6207.png",
+  "sha256": "a7e36bb40da4a5085514f03a9da9beda49d0faad2126abb736c75950b523fc44",
+  "byte_size": 1288011,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9FR2VPVnlYeDRybklkcjhHZHJiX1RR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

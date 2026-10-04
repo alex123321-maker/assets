@@ -1,0 +1,34 @@
+{
+  "key": "portrait_engineer",
+  "name": "Инженер — портрет HUD",
+  "page_id": "page_129d67a7d7588191a7184a07b3945493",
+  "subject": "ONE close head-and-shoulders fantasy class portrait, face fills middle and eyes unobstructed, calm determined expression, slightly three-quarter facing viewer, no weapon or hands. Ginger-red short beard and side hair, blue eyes, brown leather cap with brass rectangular goggles resting on forehead, teal shirt, brown apron straps, silver/brass shoulders. Match model identity. No ponytail or modern helmet. Rich detailed 2D pixel portrait, NOT voxel cubes or a photo. Navy background, no text/frame.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png",
+    "D:\\Repository\\game_assets\\assets\\characters\\engineer\\references\\catalog_2026-10-04\\engineer_five_views.png"
+  ],
+  "kind": "icon",
+  "category": "hud_portraits",
+  "folder": "assets/ui/portraits/engineer/references/catalog_2026-10-04",
+  "selected_image": "engineer_pixel_portrait.png",
+  "caption": "Пиксельный портрет HUD с внешностью из модельного референса персонажа. Палитра и материалы согласованы с набором иконок.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-01492f3b-70e8-41c2-80b0-559d9b731ded.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "7e2c838bab78757c9a18ee4b11046eb3fc728b3379f055a2cf4dd58f7ea99b67",
+  "byte_size": 1363632,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9jNWZsdHViS1ZsSXdkeFliMFJXZGlR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

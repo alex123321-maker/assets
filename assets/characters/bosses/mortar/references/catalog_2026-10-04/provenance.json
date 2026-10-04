@@ -1,0 +1,38 @@
+{
+  "key": "mortar",
+  "name": "Мортирный колосс",
+  "subject": "A massive squat fantasy siege automaton with dark iron articulated block legs, huge steel torso frame, brass square visor with two amber eye slits. A large stepped rectangular BOILER mounted on BACK with brass bands, brown heat-dark panels and a small amber furnace window. TWO identical thick short MORTAR BARRELS fixed above left/right shoulders, pointing forward and slightly upward at the SAME angle, open dark bores, broad brass muzzle rings, robust attached brackets and side pistons. Both hands are empty iron fists below. Heavy riveted armor feet and shoulders, coarse industrial-fantasy construction, no modern electronics, hazard labels, guns in hands, wheels, tracks, smoke, emitted missiles or landscape. All boiler/barrel attachments consistent from front/back/both sides/isometric.",
+  "page_id": "page_5a1773fa06188191a471c45b6871b2cd",
+  "kind": "model",
+  "category": "bosses",
+  "folder": "assets/characters/bosses/mortar/references/catalog_2026-10-04",
+  "selected_image": "mortar_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game\\screenshots_debug\\demo_polish\\canonical_bosses\\day_04_attack_0_warning.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов босса в крупной воксельной стилистике; развитие существующего силуэта и палитры.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-6ed0d47f-96ec-4998-a594-6a37902866a0.png",
+  "sha256": "c4036818198f9cc574da32f57fc5876880d23d54b1838c474d836b0c1d49dff7",
+  "byte_size": 1655172,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9qRjNFWmtxNkF0N0FkMHNmek9TQVVB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,38 @@
+{
+  "key": "siege_breaker",
+  "name": "Осадный таранщик",
+  "subject": "A massively built olive-green undead brute with broad cubic torso and short thick legs, ivory skull jaw under a low charcoal iron helmet. Huge squared iron fists covering BOTH hands, oversize iron shoulder plates, heavy shin guards, worn brown leather waist loincloth and large dark belt buckle. Thick overlapping broad armor plates with a few coarse rivets and chipped rusty seams; large green forearms visible between shoulder and fists. No separate held hammer, sword, bow, shield, cape, backpack or energy glow. Brute's width and fist volume make siege role obvious. Symmetrical main armor geometry consistent in all five views.",
+  "page_id": "page_075cabb8a360819185c2db684edb673d",
+  "kind": "model",
+  "category": "monsters",
+  "folder": "assets/characters/siege_breaker/references/catalog_2026-10-04",
+  "selected_image": "siege_breaker_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\characters\\siege_breaker\\review\\iso.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Крупные фэнтезийные воксели; фронт, спина, два профиля и игровая изометрия на белом фоне.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-9d6f4285-fa79-4f84-b095-6c04c4e54815.png",
+  "sha256": "5bed6319e30ea9e1917e572b5c5cc0ed6ec177741798e1a8f44743bf66cb3a95",
+  "byte_size": 1359338,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9ya0lKNHR3SFlOVGpVQUpmZHBmVUNn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

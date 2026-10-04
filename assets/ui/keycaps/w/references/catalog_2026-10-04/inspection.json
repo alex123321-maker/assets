@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "w_pixel_reference.png",
+  "sha256": "4a850b7c513d198d92f3a7e8ba2a1fa92f0451b636115416a0ce4d45f1f294e7",
+  "observations": [
+    "Проверена точная надпись W; ступенчатая клавиша и серебристые пиксельные буквы соответствуют семейству HUD."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

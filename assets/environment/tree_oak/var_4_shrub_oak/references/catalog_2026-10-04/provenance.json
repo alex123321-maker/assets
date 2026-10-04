@@ -1,0 +1,38 @@
+{
+  "key": "var_4_shrub_oak",
+  "name": "Кустовой дуб",
+  "subject": "A LOW spreading shrubby oak with THREE short dark-brown stems branching immediately above the bottom, a wide irregular cluster of FOUR low chunky green foliage lobes. Bush height shorter than foliage width, forest-green leaf blocks with broad warm olive patches, a few visible brown branch joints. No long tree trunk, decorative pot, soil, stones, grass bed or ground; open white background under cut-off stems. Detailed coarse stepped voxel surfaces with connected leaf masses, same stem/canopy construction across five views.",
+  "page_id": "page_4b10edf1c2f48191901cba58a1571ca4",
+  "kind": "model",
+  "category": "trees",
+  "folder": "assets/environment/tree_oak/var_4_shrub_oak/references/catalog_2026-10-04",
+  "selected_image": "var_4_shrub_oak_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\tree_oak\\var_4_shrub_oak\\review\\iso.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Отдельный вариант дуба: пять ракурсов на белом фоне; без земли, площадки и ландшафта.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-10a5f96e-a7b7-4246-9012-47a8be65e0c6.png",
+  "sha256": "f1d7ffcbf5106ccc9693239a953fc1fc23954f7c6068c42aed5ccbe401519980",
+  "byte_size": 940811,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV80QTVEZ21qamJMRkFMczRUOGg0UmZ3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

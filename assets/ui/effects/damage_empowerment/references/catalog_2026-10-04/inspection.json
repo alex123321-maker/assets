@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "damage_empowerment_pixel_icon.png",
+  "sha256": "d28bd051c8e37d8a9599c2b8647e2f1cea2da60ee955d75cac167919effac83b",
+  "observations": [
+    "Прямой клинок конструктивно согласован с рукоятью и гардой; красно-золотая энергия облегает лезвие.",
+    "Энергия не выходит из рукояти и не создаёт отдельную необъяснимую волну."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

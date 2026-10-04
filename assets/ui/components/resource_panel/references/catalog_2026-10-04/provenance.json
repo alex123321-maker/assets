@@ -1,0 +1,35 @@
+{
+  "key": "ui_resource_panel",
+  "name": "Панель ресурсов",
+  "page_id": "page_37d4ce8fd7d48191a94aa3a77d87d607",
+  "subject": "ONE wide resource frame width5.5 height1, steel border. Inside small SQUARE EMPTY portrait well at LEFT plus FOUR equal EMPTY rectangular resource wells to right, separated by thin steel dividers.",
+  "prompt_override": "Generate ONE isolated reusable fantasy game UI component, straight-on FLAT 2D PIXEL ART, sharp square pixel clusters, no voxel or perspective. Same CubeSiege palette: charcoal navy #101B2B, dark steel #3D4B61, pale silver #BDC7CE, muted brass #AD7B36, sparse cyan #56CEF0. Broad stepped border corners, four tiny corner rivets, thin inner separation line; calm spacious center. TRUE TRANSPARENT outside component, generous clear margin. No mockup, multiple variants, labels, fake text, symbols, shadow, blur, infographic or tiny filigree. Text only if an exact key glyph is explicitly requested. ONE wide resource frame width5.5 height1, steel border. Inside small SQUARE EMPTY portrait well at LEFT plus FOUR equal EMPTY rectangular resource wells to right, separated by thin steel dividers.",
+  "transparent_background": true,
+  "kind": "icon",
+  "category": "hud_components",
+  "folder": "assets/ui/components/resource_panel/references/catalog_2026-10-04",
+  "selected_image": "resource_panel_pixel_reference.png",
+  "caption": "Пиксельный UI-компонент с прозрачным внешним фоном. Это визуальный референс; runtime-экспорт и проверка в движке не выполнены.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-30a6e628-2b5e-4ec0-8bb8-d9f7e2b8a8dc.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "fd444a7747da5321356f9d7cf66311a8325460700b1f98fcb06b0c652e5ce9e0",
+  "byte_size": 484608,
+  "dimensions": [
+    2079,
+    756
+  ],
+  "mode": "RGBA",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9XSEVJRkhkOXQ5bVZ5WTRscDJnMDlR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "telegraph_circle_five_views.png",
+  "sha256": "5f55ce59416198d29e238ef80f59d2785f18d992cb2bc9ddef5230ddfa2e9f8c",
+  "observations": [
+    "Четыре тонких горизонтальных профиля и изометрический полный круг; пустой центр, четыре метки, вертикального портала нет."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "iron_wall_five_views.png",
+  "sha256": "e2a3801251c5c1b9c771df40871ab7ac70a4430d3b41684cbf4c72cb71e412a1",
+  "observations": [
+    "Viewed five orientations: three dark plate courses, three crenels, brass fasteners and front studs, two rear buttresses.",
+    "Side views reveal buttresses consistently; intrinsic narrow stone footing, no terrain."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

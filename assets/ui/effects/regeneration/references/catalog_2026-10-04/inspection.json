@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "regeneration_pixel_icon.png",
+  "sha256": "9c4d6802b0272bae9aea69a5c5a11b9f4bd97e060debe032936bc9a9fd7b3a7f",
+  "observations": [
+    "Красное условное сердце той же формы, что у Исцеления; вокруг проходят три зелёных импульса непрерывного восстановления.",
+    "Нет анатомического органа, текста или числовых параметров."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

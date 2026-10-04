@@ -1,0 +1,33 @@
+{
+  "name": "Громкий триумф",
+  "key": "loud_triumph",
+  "page_id": "page_87b33a394a088191b374285ad874deb1",
+  "category": "talents/warrior",
+  "subject": "Silver armored fist raises a straight steel/brass sword vertically in victory, burgundy cloth at wrist. Strong gold rays fan OUT behind upper blade without becoming fire. Proud powerful upward silhouette, tiny cracked enemy crown near lower corner. No timer, count, numbers or stacks; reward duration unspecified. Dark wine/navy.",
+  "caption": "Поднятый меч и золотые лучи обозначают наступательное усиление после победы.",
+  "kind": "icon",
+  "folder": "assets/ui/talents/warrior/loud_triumph/references/catalog_2026-10-04",
+  "selected_image": "loud_triumph_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-c83161be-d558-4091-8197-d55e1ee635a4.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "36d3d058eb137a6b9440d5d25fa97943ebb34177115b33a23ef010406b6725bb",
+  "byte_size": 1416822,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV8tMlFqamREMXpHSXNSVW1heTR1SnZ3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

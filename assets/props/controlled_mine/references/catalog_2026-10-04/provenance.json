@@ -1,0 +1,38 @@
+{
+  "key": "prop_controlled_mine",
+  "name": "Управляемая мина — модель",
+  "page_id": "page_a05fba85c50c8191a6b4586961e217be",
+  "subject": "ONE low portable fantasy rune mine: broad STEPPED OCTAGONAL dark iron casing with brass rim, exactly FOUR large square brass corner plates with iron bolts, small red cubic crystal trigger in top center. Clean low square footing belongs to device, no spikes or blade protrusions, no hand or remote control shown. Same four plates and central crystal all views; detailed broad engraved geometric grooves, no letters, blinking electronics, explosion, ground or scenery.",
+  "kind": "model",
+  "category": "ability_props",
+  "folder": "assets/props/controlled_mine/references/catalog_2026-10-04",
+  "selected_image": "prop_controlled_mine_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\ui\\abilities\\engineer\\controlled_mine\\references\\catalog_2026-10-04\\controlled_mine_pixel_icon.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов физического объекта способности. Дизайн согласован с её пиксельной иконкой; крупные фэнтезийные воксели, чистый белый фон.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-d8570088-1f70-495d-b957-a446cceeab63.png",
+  "sha256": "4a2d9987d508b59bf54f231c27ffdc985a356e14e0a2bececf3f7d89552af5ad",
+  "byte_size": 1449023,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9haXk3djlOZ2RpWTRZUFlzZjZOSjV3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

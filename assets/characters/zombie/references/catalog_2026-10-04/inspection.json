@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "zombie_five_views.png",
+  "sha256": "f961a35aeb787cf580b192d4d67509c936ed256d4b89c1c9172d7c5e34ce5a18",
+  "observations": [
+    "Пять полных опорных видов без подписи на белом фоне; руки пустые.",
+    "Крупная оливковая голова, костяная челюсть, коричневые лохмотья и узловой пояс согласованы между видами; нет тени на фоне."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

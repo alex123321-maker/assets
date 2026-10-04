@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "parry_contact_five_views.png",
+  "sha256": "809866f2063826edb2ceb75d99e048731cf682a61cf2fe4d3898e9d16de4c41a",
+  "observations": [
+    "Короткая бело-золотая звезда контакта и серые отклонённые осколки сбоку; тонкие профильные ракурсы."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

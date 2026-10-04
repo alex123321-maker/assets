@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "enemy_fire_breath_pixel_icon.png",
+  "sha256": "346f385ec91babbcf0ebe98e0fd0d69a84611c6d9675ec1c57c05227bd10115b",
+  "observations": [
+    "Viewed single 2D pixel icon: green undead skull emits a connected short amber flame cone from its open mouth.",
+    "Mouth is the visible origin of the flame, with no hand spell or detached fireball; sharp navy and amber pixel clusters."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}
