@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "inputs": [
+    "assets/characters/bosses/cairn/source/model.blend",
+    "assets/characters/bosses/cairn/source/voxels.json",
+    "assets/characters/bosses/cairn/source/blockout_b.json",
+    "assets/characters/bosses/cairn/source/death_motion.json",
+    "assets/characters/bosses/cairn/source/rig_contract.json",
+    "assets/characters/bosses/cairn/source/runtime",
+    "tools/cairn",
+    "assets/characters/bosses/cairn/references/selected_cairn_provenance.json",
+    "tools/review_comparison.py"
+  ],
+  "commands": [
+    [
+      "python",
+      "tools/cairn/build_package.py"
+    ]
+  ],
+  "references": [
+    {
+      "path": "assets/characters/bosses/cairn/references/selected_cairn.png",
+      "sha256": "ed52354e99b2f7ecbe119a505bc07d20bfc1895bec2136a4004b684ff7349b9a",
+      "status": "candidate",
+      "provenance": "CubeSiege Page page_ac6de68b0c28819193cb8bb93156c5bb; unchanged local five-view catalog image, selected for this direct request.",
+      "approval": ""
+    }
+  ],
+  "reference_free_reason": "",
+  "artifacts": [
+    "assets/characters/bosses/cairn/output/model.glb",
+    "assets/characters/bosses/cairn/review/frames",
+    "assets/characters/bosses/cairn/review/iso.png",
+    "assets/characters/bosses/cairn/review/front.png",
+    "assets/characters/bosses/cairn/review/back.png",
+    "assets/characters/bosses/cairn/review/side.png",
+    "assets/characters/bosses/cairn/review/left.png",
+    "assets/characters/bosses/cairn/review/top.png",
+    "assets/characters/bosses/cairn/review/blockout_a_iso.png",
+    "assets/characters/bosses/cairn/review/blockout_b_iso.png",
+    "assets/characters/bosses/cairn/review/blockout_a_front.png",
+    "assets/characters/bosses/cairn/review/blockout_b_front.png",
+    "assets/characters/bosses/cairn/review/reference_comparison.png",
+    "assets/characters/bosses/cairn/review/blockout_comparison.png",
+    "assets/characters/bosses/cairn/review/metrics.json",
+    "assets/characters/bosses/cairn/review/cube_validation.json",
+    "assets/characters/bosses/cairn/review/death_validation.json",
+    "assets/characters/bosses/cairn/review/media_manifest.json",
+    "assets/characters/bosses/cairn/review/anim_idle.png",
+    "assets/characters/bosses/cairn/review/anim_idle.mp4",
+    "assets/characters/bosses/cairn/review/anim_move.png",
+    "assets/characters/bosses/cairn/review/anim_move.mp4",
+    "assets/characters/bosses/cairn/review/anim_attack_0.png",
+    "assets/characters/bosses/cairn/review/anim_attack_0.mp4",
+    "assets/characters/bosses/cairn/review/anim_attack_1.png",
+    "assets/characters/bosses/cairn/review/anim_attack_1.mp4",
+    "assets/characters/bosses/cairn/review/anim_death.png",
+    "assets/characters/bosses/cairn/review/anim_death.mp4",
+    "assets/characters/bosses/cairn/review/godot/runtime_pose_samples.json",
+    "assets/characters/bosses/cairn/review/godot/cube_validation.json",
+    "assets/characters/bosses/cairn/review/godot/runtime_preview.mp4",
+    "assets/characters/bosses/cairn/review/godot/idle.png",
+    "assets/characters/bosses/cairn/review/godot/walk_half_speed.png",
+    "assets/characters/bosses/cairn/review/godot/walk_reference_speed.png",
+    "assets/characters/bosses/cairn/review/godot/walk_fast_turn_slope_22.png",
+    "assets/characters/bosses/cairn/review/godot/walk_reverse_turn_slope_22.png",
+    "assets/characters/bosses/cairn/review/godot/attack_0_1.500.png",
+    "assets/characters/bosses/cairn/review/godot/attack_1_1.700.png",
+    "assets/characters/bosses/cairn/review/blockout_comparison_receipt.json",
+    "assets/characters/bosses/cairn/review/glb_validation.json"
+  ],
+  "require_engine_review": true,
+  "criteria": [
+    {
+      "id": "silhouette",
+      "target": "Cairn keeps a stepped crest, broad layered shoulders, block fists, short torso and planted wide boots. Front and iso preserve the selected stone guardian massing.",
+      "evidence": [
+        "assets/characters/bosses/cairn/review/reference_comparison.png",
+        "assets/characters/bosses/cairn/review/blockout_comparison.png",
+        "assets/characters/bosses/cairn/review/front.png",
+        "assets/characters/bosses/cairn/review/iso.png"
+      ]
+    },
+    {
+      "id": "face_seals",
+      "target": "Ivory rectangular face rim frames a dark slit with two amber eyes. Three discrete amber/brass chest seals and brown waist are visible.",
+      "evidence": [
+        "assets/characters/bosses/cairn/review/front.png",
+        "assets/characters/bosses/cairn/review/iso.png"
+      ]
+    },
+    {
+      "id": "cubic_geometry",
+      "target": "All occupied cells are unique rigid cubes on a consistent 0.10 m grid; decoration uses cell color without intersecting overlay geometry. Flat faces and stepped contours remain visible.",
+      "evidence": [
+        "assets/characters/bosses/cairn/review/iso.png",
+        "assets/characters/bosses/cairn/review/side.png",
+        "assets/characters/bosses/cairn/review/top.png"
+      ]
+    },
+    {
+      "id": "materials",
+      "target": "Gray-green stone dominates; moss is restrained whole-cell pigment, ivory frames the mask, warm gold marks the three seals, brown marks the waist. No rounded shading or glossy plastic.",
+      "evidence": [
+        "assets/characters/bosses/cairn/review/reference_comparison.png",
+        "assets/characters/bosses/cairn/review/back.png",
+        "assets/characters/bosses/cairn/review/iso.png"
+      ]
+    },
+    {
+      "id": "locomotion",
+      "target": "Idle is restrained. Alternating planted stance and lifting swing give a readable heavy walk; actual Godot speed/turn/slope poses preserve foot support and body clearance.",
+      "evidence": [
+        "assets/characters/bosses/cairn/review/anim_idle.png",
+        "assets/characters/bosses/cairn/review/anim_move.png",
+        "assets/characters/bosses/cairn/review/godot/walk_reference_speed.png",
+        "assets/characters/bosses/cairn/review/godot/walk_fast_turn_slope_22.png"
+      ]
+    },
+    {
+      "id": "abilities",
+      "target": "Both fists rise during burst warning and release at active entry; the lob arm releases at warning entry, followed by flight/landing and recovery. Each pose is readable with feet supporting the mass.",
+      "evidence": [
+        "assets/characters/bosses/cairn/review/anim_attack_0.png",
+        "assets/characters/bosses/cairn/review/anim_attack_1.png",
+        "assets/characters/bosses/cairn/review/godot/attack_0_1.500.png",
+        "assets/characters/bosses/cairn/review/godot/attack_1_1.700.png"
+      ]
+    },
+    {
+      "id": "death",
+      "target": "Guardian loses structure into cubic stones that fall under gravity, contact the floor, settle into a supported pile and remain visible through the end of death.",
+      "evidence": [
+        "assets/characters/bosses/cairn/review/anim_death.png"
+      ]
+    }
+  ],
+  "comparisons": [
+    "assets/characters/bosses/cairn/review/blockout_comparison_receipt.json"
+  ]
+}

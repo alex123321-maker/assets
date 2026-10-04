@@ -1,0 +1,9 @@
+{
+  "status": "candidate",
+  "source_page": "https://chatgpt.com/space/page_ac6de68b0c28819193cb8bb93156c5bb",
+  "source_local": "references/catalog_2026-10-04/cairn_five_views.png",
+  "sha256": "ed52354e99b2f7ecbe119a505bc07d20bfc1895bec2136a4004b684ff7349b9a",
+  "selection": "User request to select and reproduce one boss; cairn announced and retained after voxel clarification.",
+  "original_tool": "image_gen.imagegen",
+  "reference_snapshot_only": true
+}
