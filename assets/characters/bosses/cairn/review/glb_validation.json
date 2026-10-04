@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "glb_sha256": "cf71b05b37b2c0064229dc5d2bef5c8be1033a3c4329152a69cb34ae10371a91",
+  "geometry": {
+    "vertices_checked": 25008,
+    "triangles_checked": 12504,
+    "expected_closed_voxel_faces": 6252,
+    "actual_closed_voxel_faces": 6252,
+    "rigid_fragment_bones_bound": 633
+  },
+  "death": {
+    "fractional_source_key_count": 731,
+    "fragment_translation_channels": 633,
+    "emitted_translation_key_count_min": 732,
+    "emitted_translation_key_count_max": 732,
+    "missing_ccd_keys": 0,
+    "maximum_world_center_error_m": 2.3841569207760926e-07,
+    "emitted_duration_s": 2.953855037689209,
+    "emitted_swept_validation": {
+      "checked_linear_segments": 730,
+      "swept_penetration_tolerance_m": 1e-05,
+      "max_floor_penetration_m": 1.2490421266719842e-07
+    }
+  },
+  "issue_count": 0,
+  "issues": [],
+  "tolerance_m": 1e-05,
+  "issues_truncated": false
+}

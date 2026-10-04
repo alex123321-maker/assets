@@ -1,0 +1,45 @@
+{
+  "asset": "cairn",
+  "triangles": 12504,
+  "materials": 3,
+  "bones": 649,
+  "articulated_bones": 16,
+  "fracture_cube_bones": 633,
+  "source_voxels": 2042,
+  "voxel_size_m": 0.1,
+  "dimensions": {
+    "x": 2.4,
+    "y": 1.0,
+    "z": 3.2
+  },
+  "animation_details": {
+    "idle": {
+      "duration_seconds": 2.0,
+      "loop": true
+    },
+    "move": {
+      "duration_seconds": 0.5,
+      "loop": true
+    },
+    "attack_0": {
+      "duration_seconds": 1.0,
+      "loop": false
+    },
+    "attack_1": {
+      "duration_seconds": 1.0,
+      "loop": false
+    },
+    "death": {
+      "duration_seconds": 2.953855021876922,
+      "loop": false
+    }
+  },
+  "pivot": "bottom-center",
+  "forward": "glTF -Z",
+  "blender_version": "5.2.1 LTS",
+  "render_engine": "CYCLES",
+  "glb_size_bytes": 8191764,
+  "motion_samples_checked": 453,
+  "cube_validation_tolerance_m": 1e-05,
+  "limits": "Blender rig sample validation is finite; continuous death segments checked separately. Engine demonstration is standalone."
+}

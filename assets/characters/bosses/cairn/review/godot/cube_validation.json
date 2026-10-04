@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "pass": true,
+  "tolerance_m": 2e-05,
+  "cube_count": 2042,
+  "frames_requested": 479,
+  "frames_checked": 479,
+  "rest_overlap_count": 0,
+  "animated_overlap_count": 0,
+  "aabb_candidates": 839284,
+  "sat_tests": 839284,
+  "issue_count": 0,
+  "issues": [],
+  "coverage": "supplied_samples_only",
+  "issues_truncated": false
+}

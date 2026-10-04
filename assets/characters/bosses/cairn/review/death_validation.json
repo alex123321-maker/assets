@@ -1,0 +1,8 @@
+{
+  "checked_linear_segments": 730,
+  "swept_penetration_tolerance_m": 1e-07,
+  "max_floor_penetration_m": 2.7755575615628914e-17,
+  "fragments": 633,
+  "unsupported_fragments": 0,
+  "max_final_speed_m_s": 0.0
+}
