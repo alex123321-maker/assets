@@ -1,0 +1,47 @@
+{
+  "name": "Удар мечом",
+  "status": "candidate",
+  "approval": null,
+  "created_date": "2026-10-04",
+  "scope": "reference_only_pilot",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-c1adfdc0-a31e-475d-84d5-61fffc11975a.png",
+  "page_id": "page_1b033b6408a88191962d4ad00f4aeb0a",
+  "page_url": "https://chatgpt.com/space/page_1b033b6408a88191962d4ad00f4aeb0a",
+  "images": [
+    "sword_strike_painted_icon.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "input_images": [],
+  "notes": "Художественный кандидат после последнего уточнения пользователя. Не утверждён. Это сгенерированный референс, не модель и не рендер движка.",
+  "prompt_files": [
+    "prompt.txt",
+    "lighting_prompt.txt",
+    "revision_prompt.txt"
+  ],
+  "selected_image": "sword_strike_painted_icon.png",
+  "sha256": "a696957c89182a353f1e5e324c43522ab2d41494b5dcb0281ff184bce99e726a",
+  "byte_size": 2726252,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "format": "PNG",
+  "mode": "RGB",
+  "page_reference": "library-file:fde1_bGliZmlsZV9Tb3Vtd0dTUWdhNjhBWlB2S1lObVp3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "revision_history": [
+    {
+      "image": "sword_strike_icon.png",
+      "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-1a909baf-a464-432c-bb9f-82d7c96749a6.png",
+      "status": "superseded"
+    },
+    {
+      "image": "iterations/sword_strike_voxel_lighting_v2.png",
+      "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-ff5d57dd-96e4-42b5-b692-6bbd6ebfa1f9.png",
+      "status": "superseded"
+    }
+  ],
+  "art_direction": "Рисованная фэнтези-иконка примерно как в Dota; UI не воксельный, цветной фон разрешён."
+}

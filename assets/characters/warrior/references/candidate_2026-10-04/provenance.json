@@ -1,0 +1,57 @@
+{
+  "name": "Воин",
+  "status": "candidate",
+  "approval": null,
+  "created_date": "2026-10-04",
+  "scope": "reference_only_pilot",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-9094642b-51a8-4a39-a935-0c5d4344532c.png",
+  "page_id": "page_0331275e699c8191bc139e93d84a406f",
+  "page_url": "https://chatgpt.com/space/page_0331275e699c8191bc139e93d84a406f",
+  "images": [
+    "warrior_minecraft_shield_five_views.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "input_images": ["iterations/warrior_shield_before_consistency_fix.png"],
+  "notes": "Художественный кандидат после последнего уточнения пользователя. Не утверждён. Это сгенерированный референс, не модель и не рендер движка.",
+  "prompt_files": [
+    "prompt.txt",
+    "lighting_prompt.txt",
+    "revision_prompt.txt",
+    "consistency_prompt.txt"
+  ],
+  "selected_image": "warrior_minecraft_shield_five_views.png",
+  "sha256": "35a68ea735f0552244a17f164934cbe49a6c07d5ef283f1939fc922f19a060fc",
+  "byte_size": 1380740,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "format": "PNG",
+  "mode": "RGB",
+  "page_reference": "library-file:fde1_bGliZmlsZV9JTl9zZTBZUnZDUFE3LXZHcDcwWmN3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "revision_history": [
+    {
+      "image": "warrior_five_views.png",
+      "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-08283395-750c-40d6-9bff-7581bdaaafcb.png",
+      "status": "superseded"
+    },
+    {
+      "image": "iterations/warrior_lighting_v2.png",
+      "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-7f39aa3f-7227-440d-b117-9d3b2d57d261.png",
+      "status": "superseded"
+    },
+    {
+      "image": "iterations/warrior_shield_before_consistency_fix.png",
+      "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-3c2ae51e-456e-4e92-9466-f715d35110aa.png",
+      "status": "superseded"
+    }
+  ],
+  "art_direction": "Крупные воксели, Minecraft-подобная форма, меч справа, щит слева."
+}

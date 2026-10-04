@@ -1,0 +1,25 @@
+{
+  "status": "candidate",
+  "approval": null,
+  "inspected_image": "sword_strike_painted_icon.png",
+  "sha256": "a696957c89182a353f1e5e324c43522ab2d41494b5dcb0281ff184bce99e726a",
+  "observations": [
+    "Рисованная композиция с диагональным прямым стальным мечом, золотой гардой и бордовой рукоятью.",
+    "Белый направленный след взмаха на тёмном синем цветном фоне.",
+    "Видимые мазки и металлические блики; воксельных кубов нет.",
+    "Подписи, числа, рамка интерфейса, персонажи и ландшафт не видны."
+  ],
+  "limitations": [
+    "Проверен художественный референс; читаемость иконки в реальном интерфейсе и при 32/64 px не проверялась."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "production_build": "not_applicable_reference_only",
+  "quality_gate": "not_run_no_production_manifest",
+  "user_art_approval": "pending"
+}

@@ -1,0 +1,27 @@
+{
+  "status": "candidate",
+  "approval": null,
+  "inspected_image": "portal_five_views_bright.png",
+  "sha256": "740cfa76d8628876aa0ba057e17f272cf9a318a2f7f3829c3d56d2a56f301136",
+  "observations": [
+    "На листе пять проекций: две широкие стороны, два узких профиля, изометрия.",
+    "Портал симметричен; виды спереди/сзади и слева/справа визуально почти одинаковы.",
+    "Каменная ступенчатая арка, геометрический рельеф, бирюзовая плоскость прохода.",
+    "Белый фон, без подписей, земли, окружающего ландшафта и падающих теней."
+  ],
+  "limitations": [
+    "На гранях остаются небольшие тональные различия; это не гарантированная карта albedo без любого затенения.",
+    "Ракурсы сгенерированы изображением, а не получены вращением одной настоящей 3D-модели.",
+    "Рендер в игровом движке не проводился."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "production_build": "not_applicable_reference_only",
+  "quality_gate": "not_run_no_production_manifest",
+  "user_art_approval": "pending"
+}
