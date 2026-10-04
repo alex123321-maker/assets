@@ -1,0 +1,33 @@
+{
+  "name": "Горение",
+  "key": "burning",
+  "page_id": "page_4150ce71bf708191b0bd951aa74c2566",
+  "category": "effects",
+  "subject": "One intense amber/orange flame wrapping a small dark charred armor fragment, bright cream core, sharply stepped licking tongues, few dark ash chips rising. Fire anchored to damaged object, navy background, no missile, fireball flight or spell hand.",
+  "caption": "Яркое пламя вокруг обугленного объекта и редкие частицы пепла.",
+  "kind": "icon",
+  "folder": "assets/ui/effects/burning/references/catalog_2026-10-04",
+  "selected_image": "burning_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-33eef2fd-13f6-4e86-bd7f-85831d3bd56e.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "b82ff179a7be4c86d5dc6eead11124060ea2faf505aa69054784f55f87562184",
+  "byte_size": 1279767,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9HWnVoTnNFMkpMMHBsTTkwd1ZGN1RB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

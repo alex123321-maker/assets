@@ -1,0 +1,38 @@
+{
+  "key": "gorgon",
+  "name": "Горгон-Топтатель",
+  "subject": "A very broad horned beast-like humanoid siege boss with blue slate hide/armor, heavy ivory block horns protruding symmetrically upward and forward, two ivory square tusks beside a broad beast snout. Thick squared forearms and block gauntlets, heavy digitless fists; ridged overlapping stone/iron BACK plates descending spine, massive stomping legs, dark waist cloth. Small crimson ember core at breastplate. Large rectangular horns made of a few stepped blocks, not tiny smooth spirals. No bow, sword, axe, cannon, wings or tail. Powerful forward-heavy silhouette and identical paired horns/tusks/back plates in five views.",
+  "page_id": "page_0adbd2c3453c81918dab147695ab2106",
+  "kind": "model",
+  "category": "bosses",
+  "folder": "assets/characters/bosses/gorgon/references/catalog_2026-10-04",
+  "selected_image": "gorgon_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game\\screenshots_debug\\demo_polish\\canonical_bosses\\day_02_attack_0_warning.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов босса в крупной воксельной стилистике; развитие существующего силуэта и палитры.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-7c12731c-1b64-4d38-803c-9d7d7c4c37f6.png",
+  "sha256": "b8cec2179f62da523a91f04effbf1923965d7fc656730d81033d3eeb1d6ba396",
+  "byte_size": 1170018,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9ZNHBQWXItdXp0SjhWQTgtX2lRR2NR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

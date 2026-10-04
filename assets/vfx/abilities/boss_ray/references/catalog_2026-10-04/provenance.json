@@ -1,0 +1,38 @@
+{
+  "key": "fx_boss_ray",
+  "name": "Босс — непрерывный луч — 5 видов",
+  "page_id": "page_c8b3c7dc5378819193fa8f4237c1a319",
+  "subject": "ONE continuous straight thick amber-white beam along X permanently connected at left root to a small violet floating orb source. Bright flat advancing front at far end and luminous whole reached beam body with violet cubic edge wisps; NO gaps, detached missile, arrow, nautical anchor, modern machine or floor.",
+  "prompt_override": "Use case: stylized-concept. Generate a CLEAN fantasy VOXEL GAMEPLAY-EFFECT spatial reference, EXACTLY FIVE views of ONE SAME frozen effect at ONE instant: upper row front and back, lower row left, right, true 45degree isometric. All panels show same particle arrangement and same geometry simply rotated, not five animation phases. Large Minecraft-like visible CUBIC particle units, thick stair-step edges, detailed purposeful major/medium blocks, NO smooth painterly or photorealistic smoke. Minimal flat face color differences, unlit emission color, no cast shadow, AO, scene lighting or bloom bleeding on background. Isolate EFFECT ONLY, no actor, enemy, mannequin, body, heart icon, unrelated weapon, landscape, terrain, floor, display plinth, UI frame, arrows, text, labels, captions or infographic. Plain solid dark slate navy contrasting background. Wide clean gaps between five views, no extra sixth view. First reference supplies only coarse voxel scale/style; no character is copied. Subject: ONE continuous straight thick amber-white beam along X permanently connected at left root to a small violet floating orb source. Bright flat advancing front at far end and luminous whole reached beam body with violet cubic edge wisps; NO gaps, detached missile, arrow, nautical anchor, modern machine or floor. Camera consistency: four genuinely DIFFERENT orthographic views at 0,180,90,270 degrees around the vertical axis, plus one true isometric; do not use five similar three-quarter poses. Long directional X objects must be foreshortened/end-on in two opposite views. All five groups show SAME geometry and frozen particle state.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "kind": "model",
+  "category": "vfx/abilities",
+  "folder": "assets/vfx/abilities/boss_ray/references/catalog_2026-10-04",
+  "selected_image": "boss_ray_five_views.png",
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного объекта/момента в крупной воксельной стилистике. Художественный референс; правила срабатывания берутся из текста способности, анимация и читаемость в движке не проверены.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-bea206e7-70d7-41fe-8f49-1fad19925a41.png",
+  "sha256": "8b48822d9e5a1154c8fd9f592a42778246aa948d4d9e723ff09b08f50fa1cf70",
+  "byte_size": 1145509,
+  "dimensions": [
+    1518,
+    1036
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV80RHR4V3AxQm5keWI0bks0aTFCU25n_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

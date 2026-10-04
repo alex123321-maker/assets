@@ -1,0 +1,33 @@
+{
+  "name": "Замедление",
+  "key": "slow",
+  "page_id": "page_d010d9d01ff8819196094b29ad56e413",
+  "category": "effects",
+  "subject": "One stout brown leather boot with brass buckle dragging through thick cold blue magical viscous ribbons that cling to sole and stretch behind heel. Front toe still lifts visibly, movement impeded but not fully rooted. No closed chains, ice statue, clock, wings or frozen foot. Navy/blue background.",
+  "caption": "Тяжёлый шаг и вязкий голубой след обозначают снижение скорости.",
+  "kind": "icon",
+  "folder": "assets/ui/effects/slow/references/catalog_2026-10-04",
+  "selected_image": "slow_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-c207d619-5e7e-4f04-a7bf-d640d56d5ef4.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "fb07420ff0517235e519e0a009df1194e4353503399d1f7418f51f078bdf8797",
+  "byte_size": 1285597,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV96UGxpdzZNX2lObERzZGM4VWdsSEZB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

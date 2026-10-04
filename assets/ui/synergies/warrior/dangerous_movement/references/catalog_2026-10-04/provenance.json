@@ -1,0 +1,33 @@
+{
+  "name": "Опасные движения",
+  "key": "dangerous_movement",
+  "page_id": "page_f286efd7b44881918672859e1ce38dac",
+  "category": "synergies/warrior",
+  "subject": "Silver/burgundy brown-haired warrior dashes to right, golden contour hugs moving body, pale cyan speed wake behind. A small dark enemy armored silhouette IN THE MOVEMENT PATH is struck by a concentrated red/gold shoulder-contact flash. Sword held safely back, damage comes from passing body/path rather than separate sword slash. Dark navy.",
+  "caption": "Защищённый рывок наносит урон противнику на пути перемещения.",
+  "kind": "icon",
+  "folder": "assets/ui/synergies/warrior/dangerous_movement/references/catalog_2026-10-04",
+  "selected_image": "dangerous_movement_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-821560fd-2fdd-443e-9faa-beb6e72c5757.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "faf4b39e12fc3e3a444af3e3a3ad8b541a0802b750b95ab992b638f770c9ed7b",
+  "byte_size": 1428435,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9GTEN3OXFreEtrWWUxT0kyYlhGLVBn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Парирование",
+  "key": "parry",
+  "page_id": "page_c5f59f413d388191aada1c707a572956",
+  "category": "abilities/warrior",
+  "subject": "A burgundy kite shield with silver rim and restrained brass central boss is firmly held from behind by a gauntlet entering at bottom left. An enemy straight silver blade strikes the shield's UPPER RIGHT metal rim; short white/gold contact sparks ONLY at the contact point and enemy blade visibly deflected to right. No return attack, no sustained magical dome, no explosion. Dark navy.",
+  "caption": "Один удар перехвачен щитом; искры расположены в точке контакта.",
+  "kind": "icon",
+  "folder": "assets/ui/abilities/warrior/parry/references/catalog_2026-10-04",
+  "selected_image": "parry_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-8d73ae3b-6ff7-4f8d-a41c-1c524c28fe45.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "c9e6fa739694483ac49479b8e73b5d46d61724980ad0393ff58c777c73eac7a7",
+  "byte_size": 1428347,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9rYjFidzlVSGRlUFNZWjVKdmRHTTJB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

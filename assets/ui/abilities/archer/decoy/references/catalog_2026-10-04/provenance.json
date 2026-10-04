@@ -1,0 +1,33 @@
+{
+  "name": "Приманка",
+  "key": "decoy",
+  "page_id": "page_53627e1d31d48191b481982aebd811d1",
+  "category": "abilities/archer",
+  "subject": "A fantasy straw training dummy with a green ragged hood, wood crossbar arms, stuffed burlap torso and brown tied belt. Two tiny dark undead faces at lower corners turn visibly inward toward the dummy, their eyes focusing on it. No arrow target markings, no actual player clone or magic spell. Detailed pixel burlap/straw, forest/navy backdrop.",
+  "caption": "Чучело в зелёном капюшоне отвлекает внимание ближайших врагов.",
+  "kind": "icon",
+  "folder": "assets/ui/abilities/archer/decoy/references/catalog_2026-10-04",
+  "selected_image": "decoy_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-88acf3cc-e970-443e-8d6d-6051864634d1.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "479bb8649424a5db75d8473ad4b6bc95f56c29c2dbb36a7ada3a030e4c64858a",
+  "byte_size": 1451896,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9BYUY3OXd1alZwdjZBZ095NklpWUp3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

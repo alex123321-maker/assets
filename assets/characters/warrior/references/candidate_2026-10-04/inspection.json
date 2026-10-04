@@ -1,6 +1,11 @@
 {
-  "status": "candidate",
-  "approval": null,
+  "status": "approved",
+  "approval": {
+    "date": "2026-10-04",
+    "conversation_id": "01a106c4-3599-7542-97d9-b7ebf83abb70",
+    "authority": "user",
+    "quote": "Ну ладно пускай будет такой ... персонаж и элемент мира меня устраивают, продолжай в том же духе"
+  },
   "inspected_image": "warrior_minecraft_shield_five_views.png",
   "sha256": "35a68ea735f0552244a17f164934cbe49a6c07d5ef283f1939fc922f19a060fc",
   "observations": [
@@ -23,5 +28,5 @@
   },
   "production_build": "not_applicable_reference_only",
   "quality_gate": "not_run_no_production_manifest",
-  "user_art_approval": "pending"
+  "user_art_approval": "approved"
 }

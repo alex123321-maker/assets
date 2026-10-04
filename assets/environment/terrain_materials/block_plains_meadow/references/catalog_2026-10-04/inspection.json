@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "block_plains_meadow_five_views.png",
+  "sha256": "5a4e66fff11c6975ccc39c1429eecf636fd3e19b3d2f9c0ae6208b7062a2d69d",
+  "observations": [
+    "Viewed five clean isolated cube orientations: broad light meadow-green cap above brown soil and gray mineral pixels.",
+    "The cube itself is the material sample; no surrounding terrain, text or ground shadow."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

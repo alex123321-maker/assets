@@ -1,0 +1,33 @@
+{
+  "name": "Выстрел из лука",
+  "key": "bow_shot",
+  "page_id": "page_936e5105da14819189cc473fb8ee8bc9",
+  "category": "abilities/archer",
+  "subject": "A wooden recurved longbow bent under tension; a brown leather-gloved left hand firmly grasps its central grip while a fletched wooden arrow lies correctly on the arrow rest, nocked to the drawn string pulled back by a second hand. Arrow aims upper-right, green ranger wrist cloth, silver broadhead. Physically coherent bow/string/arrow, no multiple shots or magic. Deep forest/navy background.",
+  "caption": "Натянутый деревянный лук и одна стрела с правильным положением тетивы.",
+  "kind": "icon",
+  "folder": "assets/ui/abilities/archer/bow_shot/references/catalog_2026-10-04",
+  "selected_image": "bow_shot_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-36cbdcf0-95ef-48f4-9069-80820d80bd82.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "c860aeaa9e212bec700a51607f4980cf6c8c523f543a277fa35d6513b69d7d39",
+  "byte_size": 1269637,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9wcFlYM2VZakdrTFlZS3l5VzFNQ0l3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

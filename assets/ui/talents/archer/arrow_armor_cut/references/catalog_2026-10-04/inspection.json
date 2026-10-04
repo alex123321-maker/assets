@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "arrow_armor_cut_pixel_icon.png",
+  "sha256": "9b97a83f63610c0920e29f7aece926f9ba1ed30e9bdf41adacbf33e384c9b5b8",
+  "observations": [
+    "Наконечник одной стрелы находится в расколотом шве нагрудника.",
+    "Пластины расходятся от места попадания, открывая внутреннюю ткань; проценты отсутствуют."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Закалка кровью",
+  "key": "blood_tempering",
+  "page_id": "page_f286efd7b44881918672859e1ce38dac",
+  "category": "synergies/warrior",
+  "subject": "A burgundy steel-rimmed shield catches a dark blade at upper-left in gold sparks, while a separate silver/brass hero sword answers toward upper-right; a short emerald life stream returns from sword tip to the holding gauntlet below. Coherent block/counter/heal emblem, plain brass shield boss, no animal heraldry, no gore. Dark navy/green.",
+  "caption": "Ответный удар после парирования возвращает владельцу частицы жизни.",
+  "kind": "icon",
+  "folder": "assets/ui/synergies/warrior/blood_tempering/references/catalog_2026-10-04",
+  "selected_image": "blood_tempering_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-d321cb2b-988f-47e3-a5d4-ba0235a35d3b.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "a04d8d77d2e3afdfa3a9b82ac2f7b05f058dd0302dc1187ccb4669d00c876fc3",
+  "byte_size": 1545956,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9IazItU3JhcUN2dmFrc2pBS3hzRmF3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

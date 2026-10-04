@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "hammer_strike_pixel_icon.png",
+  "sha256": "015bab691425304499a64e6d7d3460f885e406a144d72f45fd858014f1a47e69",
+  "observations": [
+    "Короткая деревянная рукоять соединяет руку с крупной прямоугольной стальной головкой молота.",
+    "Золотые искры находятся между рабочей гранью и конструкцией; бирюзовые частицы поднимаются из соединений.",
+    "Коричневая кожа и бирюзовый рукав соответствуют образу Инженера."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

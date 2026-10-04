@@ -1,0 +1,35 @@
+{
+  "key": "ui_action_slot_hover",
+  "name": "Ячейка способности — наведение",
+  "page_id": "page_37d4ce8fd7d48191a94aa3a77d87d607",
+  "subject": "Same SQUARE steel rim, four brass rivets, EMPTY navy well. Thin bright cyan INNER edge, hover state.",
+  "prompt_override": "Generate ONE isolated reusable fantasy game UI component, straight-on FLAT 2D PIXEL ART, sharp square pixel clusters, no voxel or perspective. Same CubeSiege palette: charcoal navy #101B2B, dark steel #3D4B61, pale silver #BDC7CE, muted brass #AD7B36, sparse cyan #56CEF0. Broad stepped border corners, four tiny corner rivets, thin inner separation line; calm spacious center. TRUE TRANSPARENT outside component, generous clear margin. No mockup, multiple variants, labels, fake text, symbols, shadow, blur, infographic or tiny filigree. Text only if an exact key glyph is explicitly requested. Same SQUARE steel rim, four brass rivets, EMPTY navy well. Thin bright cyan INNER edge, hover state.",
+  "transparent_background": true,
+  "kind": "icon",
+  "category": "hud_components",
+  "folder": "assets/ui/components/action_slot_hover/references/catalog_2026-10-04",
+  "selected_image": "action_slot_hover_pixel_reference.png",
+  "caption": "Пиксельный UI-компонент с прозрачным внешним фоном. Это визуальный референс; runtime-экспорт и проверка в движке не выполнены.",
+  "input_images": [
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-b38e6176-252b-4f3f-9f6e-4232c681fe05.png"
+  ],
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-65b598f1-9d15-4e3a-bcf4-d57511ae9dcb.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "fd9c3bdbc6a9c4741fd76c3aa6f0d0dab78853c03626a32e6a9bfdb14deb811a",
+  "byte_size": 700321,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9vQjcyWmMxNEhYQ3A4RnQ3WTJnbjZ3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

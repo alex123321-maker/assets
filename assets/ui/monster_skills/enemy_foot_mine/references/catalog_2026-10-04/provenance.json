@@ -1,0 +1,33 @@
+{
+  "key": "enemy_foot_mine",
+  "page_id": "page_d96b8e0da0308191b51fc243dee0aab7",
+  "subject": "ONE small armed fantasy rune mine below an approaching leather boot, violet metal disc with a clearly visible amber central trigger. Boot has NOT touched it yet, mine intact and quiet. Danger is foot entry after arming. No explosion, instant arming damage, multiple traps or modern electronics.",
+  "name": "Мина под ногами",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/enemy_foot_mine/references/catalog_2026-10-04",
+  "selected_image": "enemy_foot_mine_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-15694681-6535-4fae-932e-46604deb198f.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "fa5aa3fbcd0c501e48dfa5b12b0eec27ed7df06f04ddd8da31b97ddc29eab6e8",
+  "byte_size": 1435358,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9rTzdPckxSNzhLNXNVbjE4eTFGclVR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

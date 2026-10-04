@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "rift_warden_five_views.png",
+  "sha256": "b393816534747cbfd8de564e201ce15c3bfa40a58d147d3a29384f838460ab40",
+  "observations": [
+    "Фронт, спина, два профиля и изометрия показывают большой клинок в правой руке и щит в левой.",
+    "Со спины видны ремни щита вместо лицевого кристалла; корона, наплечники и плащ согласованы между ракурсами."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

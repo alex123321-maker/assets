@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "campfire_five_views.png",
+  "sha256": "91a2954990ad6718f34d3e8d6990bc3d2e59124cb52a082c16635dd0ec00011b",
+  "observations": [
+    "Viewed five orientations of an eight-stone hearth with crossed logs, dark coals and large orange/cream voxel flame.",
+    "No separate landscape base or cast illumination. Flame and smoke animation are not validated by this still sheet."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "stone_debris_fine_scatter_five_views.png",
+  "sha256": "15491f410a284da5b0a5b38166407c926ce90d668a021042abf095fcd99a01d4",
+  "observations": [
+    "Viewed all five orientations: seven small separate one- or two-layer fragments arranged as a sparse scatter.",
+    "No large central boulder or visible terrain; broad pixel material accents and clean white gaps."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

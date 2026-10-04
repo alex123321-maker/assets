@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "slow_pixel_icon.png",
+  "sha256": "fb07420ff0517235e519e0a009df1194e4353503399d1f7418f51f078bdf8797",
+  "observations": [
+    "Кожаный ботинок с латунной пряжкой поднимает носок; голубые вязкие нити тянутся за подошвой.",
+    "Движение затруднено, но стопа не заперта цепями и не превращена в ледяную статую."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

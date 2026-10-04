@@ -1,0 +1,33 @@
+{
+  "name": "Провокация",
+  "key": "taunt",
+  "page_id": "page_be0d0d30b75081919a5a98a1c4321af0",
+  "category": "effects",
+  "subject": "A shouting fantasy warrior face with short brown hair, furrowed brows and open mouth at centre, silver/brass shoulder and burgundy collar. Two small dark enemy eyes at corners turn inward toward him, red/gold short attention glints. Clear aggressive call commanding focus, no crossed swords, hypnosis spiral or forced attack arrows. Navy/burgundy.",
+  "caption": "Гневный клич и обращённые к нему глаза врагов обозначают перенаправление внимания.",
+  "kind": "icon",
+  "folder": "assets/ui/effects/taunt/references/catalog_2026-10-04",
+  "selected_image": "taunt_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-be9dd40c-a3b3-40db-8552-9ef8d1ec8250.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "49cdcfc2a00523f8beaaabc9d4a34328a7b2dc1d02b76e04c82bd02108bb4812",
+  "byte_size": 1359398,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9odnhKM2s3dW4zQWJ0a0V0R3ZLQXpn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

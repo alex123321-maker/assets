@@ -1,0 +1,23 @@
+{
+  "status": "candidate",
+  "inspected_image": "archer_five_views.png",
+  "sha256": "c32ababd49d11a3150250edc901eb7a63d574b6e6e8a3763bcfb64cd9e835000",
+  "observations": [
+    "Четыре верхние проекции и нижняя изометрия показывают одного героя с крупными вокселями.",
+    "Лук с видимой тетивой находится в левой руке; правая пустая. Исправлена зеркальность первоначальной изометрии.",
+    "Капюшон и короткий плащ зелёные; кожаные ремни и колчан коричневые, наплечники серые.",
+    "Нет ландшафта, подписей, подставки или отбрасываемой тени."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

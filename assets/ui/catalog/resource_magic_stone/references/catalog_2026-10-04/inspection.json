@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "resource_magic_stone_pixel_reference.png",
+  "sha256": "8955a298e1852139978fe666ead515742f44428e9e2bfc25c8d2c6a57b0d4f9c",
+  "observations": [
+    "Фиолетовые кристаллы с циановыми сердцевинами, силуэт отличается от железа и камня."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

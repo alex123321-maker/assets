@@ -1,0 +1,39 @@
+{
+  "key": "building_archer_tower",
+  "name": "Стрелковая башня",
+  "subject": "ONE automated fantasy wooden ARCHER TOWER. Four thick dark-oak upright posts with iron foot bands, broad diagonal structural braces, ladder attached to ONE fixed side, upper wooden deck with low chunky parapet, one small burgundy hanging banner and ONE mounted compact wooden CROSSBOW with visible taut string and loaded arrow on top swivel. NO human archer or NPC. Top crossbow and ladder stay on same sides in all views. Intrinsic deck and four feet only, no ground or presentation platform.",
+  "page_id": "page_bc05286551048191b2154c765f42356b",
+  "kind": "model",
+  "category": "buildings",
+  "folder": "assets/environment/buildings/archer_tower/references/catalog_2026-10-04",
+  "selected_image": "archer_tower_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-6dd110b5-7d47-4e74-aeda-3690cb1dcc7a.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одной существующей постройки. Крупные воксели; без ландшафта, внешней подставки и подписей.",
+  "prompt_override": "Use case: stylized-concept. Create ONE clean fantasy voxel 3D MODEL reference sheet for CubeSiege. Exactly FIVE views of the SAME complete asset: front and back across upper row, left side, right side and game-like 3/4 isometric across lower row. Equal visual scale, generous separation, no cropped extremities, no extra duplicates, details and equipment identical in all views. FIRST image sets the approved chunky Minecraft-like voxel size and detail treatment ONLY. SECOND image shows existing role/silhouette to develop, not a quality target. Large block geometry, square planar surfaces and coarse pixel material detail; no tiny gravel-like cubes, smooth meshes, bevels or realistic paint. Rich construction details must use broad readable block clusters. Flat bright unlit material colors, extremely mild face color variation, NO cast shadows, NO contact shadow, NO ambient occlusion, NO harsh dark shaded faces. Entire background uniform pure white, without ground, landscape, grass, platform, plinth, horizon, gradient or texture. No text, labels, arrows, diagrams, borders, watermark or infographic. Neutral model pose maintained across views. Change absolutely all old hero identity details to the new subject. Subject: ONE automated fantasy wooden ARCHER TOWER. Four thick dark-oak upright posts with iron foot bands, broad diagonal structural braces, ladder attached to ONE fixed side, upper wooden deck with low chunky parapet, one small burgundy hanging banner and ONE mounted compact wooden CROSSBOW with visible taut string and loaded arrow on top swivel. NO human archer or NPC. Top crossbow and ladder stay on same sides in all views. Intrinsic deck and four feet only, no ground or presentation platform. MECHANICAL CORRECTION: crossbow FIXED facing the FRONT of asset, no swivel between views. FRONT top-left: two bow limbs extend horizontally left/right, bowstring forms a V to rear center, only FORESHORTENED gray BOLT HEAD seen at exact FRONT CENTER, NEVER an arrow pointing laterally. REAR top-right: two limbs symmetric, ONLY red/brown fletching at exact center, bolt head hidden. LEFT profile lower-left: loaded bolt head points LEFT, string/stock aligned same longitudinal rail. RIGHT profile lower-middle: loaded bolt head points RIGHT, strict mirror of left. ISOMETRIC lower-right confirms bolt points FORWARD perpendicular to bow limbs, with fletching BEHIND string. All five same fixed object orientation. SECOND image is mechanical geometry guide only, replace its pedestal with tall four-post tower with rear ladder and front burgundy banner. No arrow pointing sideways across bow limbs.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-5a5514fe-69f6-46d9-86a9-854f1b8c901f.png",
+  "sha256": "9f0d3aafd14fdb3193acee027d574b4606f1534904d4993541e7d795130d464b",
+  "byte_size": 1296568,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9lZ1FrLVN2dk02VlpzQ0dBYURTdk9n_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

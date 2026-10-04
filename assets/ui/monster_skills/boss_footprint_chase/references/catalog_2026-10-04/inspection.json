@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "boss_footprint_chase_pixel_icon.png",
+  "sha256": "bc090b03561cbf26d755db483f9d26d31a2850619b69721d15996898d7d3fb9f",
+  "observations": [
+    "Counted exactly six separate boot-print marks arranged as three staggered pairs.",
+    "Only the first lower-left mark has a detonation; five remaining marks are quiet, with separated stationary outlines."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

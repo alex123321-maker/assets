@@ -1,0 +1,38 @@
+{
+  "key": "building_workbench",
+  "name": "Верстак",
+  "subject": "ONE fantasy WORKBENCH. Four thick square dark-oak legs with broad iron feet, five chunky top planks, braced lower wooden shelf, compact dark steel ANVIL on one side, one iron-headed wooden HAMMER lying beside anvil, three gray iron billets on lower shelf, folded small burgundy cloth over front corner with brass trim. All tools fixed in same arrangement across rotations. No surrounding workshop floor, wall, scene or ground.",
+  "page_id": "page_f79f4e67775481918be412edd67f69b7",
+  "kind": "model",
+  "category": "buildings",
+  "folder": "assets/environment/buildings/workbench/references/catalog_2026-10-04",
+  "selected_image": "workbench_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game\\screenshots_debug\\demo_buildings\\building_models_isometric_day.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одной существующей постройки. Крупные воксели; без ландшафта, внешней подставки и подписей.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-0eeacd84-da36-4a22-a0d0-c7d8d4c28860.png",
+  "sha256": "810208fbdbc0fa9fa04ffb1f2a7d80d6fea9a4573989ea41c6d73854dc588195",
+  "byte_size": 1086705,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV8tMi1IZzJLNmpPcV9zZkltNnBsSm1B_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

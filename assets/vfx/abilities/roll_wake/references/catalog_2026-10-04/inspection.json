@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "roll_wake_five_views.png",
+  "sha256": "6ff1f42e528d218d1c2af44ec92ca0d92f0c3a2cef4a1be67f99966950ad3817",
+  "observations": [
+    "Открытая зелёная дуга вращения и небольшие бежевые частицы пыли; без героя и замкнутого защитного кольца."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

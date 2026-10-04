@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "boss_underground_chain_pixel_icon.png",
+  "sha256": "57abc7d1db06e766f3111e80f37542e61a20c46cce81e69aafc55c9b45b7a559",
+  "observations": [
+    "Viewed four separate fixed blast points in a staggered progression, each with its own amber burst.",
+    "No pursuing hero or homing link; point count is a composition choice, not a documented balance value."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

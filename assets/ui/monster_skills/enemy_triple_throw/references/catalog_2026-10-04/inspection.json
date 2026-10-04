@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "enemy_triple_throw_pixel_icon.png",
+  "sha256": "eead17ae97c0594f81e61a24a609cbb9d91024c3b82f39dfa71d5ae09af92a69",
+  "observations": [
+    "Viewed three staggered arcing heavy missiles, each with its own landing flash.",
+    "Three projectiles identify the triple throw. The icon compresses successive throws into a single composition; it is not an animation timing proof."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "tactical_recoil_pixel_icon.png",
+  "sha256": "d7998cf81203519600757fb8c635653390a022d9e06d9f93c3f9a62ea218eb71",
+  "observations": [
+    "Инженер смотрит вправо, а короткие бело-голубые следы тянутся справа от тела, показывая отскок влево.",
+    "Три шипа падают из свободной руки в оставленную область справа; молот находится в другой руке.",
+    "После правки голова имеет кожаную шапку с квадратными очками, убран хвост волос, добавлены металлические наплечники."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

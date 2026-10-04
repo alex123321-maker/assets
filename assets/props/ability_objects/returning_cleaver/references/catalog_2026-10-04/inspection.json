@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "returning_cleaver_five_views.png",
+  "sha256": "2bb149ce92218dfa148b876538740eb91a8a3cafdd2125070d9cfd483b2f9525",
+  "observations": [
+    "Один тяжёлый прямой тесак с короткой рукоятью, широким стальным лезвием и одинаковой конструкцией в пяти видах; энергетической волны от ручки нет."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

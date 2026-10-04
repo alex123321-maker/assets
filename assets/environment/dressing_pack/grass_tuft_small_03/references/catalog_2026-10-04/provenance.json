@@ -1,0 +1,38 @@
+{
+  "key": "grass_tuft_small_03",
+  "name": "Трава — густая низкая кочка",
+  "subject": "ONE fantasy voxel environment dressing asset. A squat dense rounded grass CLUMP of seven chunky stepped blades, one slightly raised central blade, thick low side blades make broad bushy silhouette. Deep moss green and fresh green coarse patches. NO soil, ground plate or base disc.",
+  "page_id": "page_8b516544f5d4819199fe01cddfac3bb6",
+  "kind": "model",
+  "category": "dressing",
+  "folder": "assets/environment/dressing_pack/grass_tuft_small_03/references/catalog_2026-10-04",
+  "selected_image": "grass_tuft_small_03_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\dressing_pack\\references\\dressing_concept_reference.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного варианта декора. Крупные воксели, чистый фон; без земли и демонстрационной подложки.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-b3388065-dd03-4a08-b8ad-5328a334d633.png",
+  "sha256": "7b284cb847cbc2e5a2aaf2d0e654f44d2e1e1a87ca660c6028433c46d9cbb9b5",
+  "byte_size": 943187,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9iUERhdVFsR1VDRTF6YThVWGxTblp3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

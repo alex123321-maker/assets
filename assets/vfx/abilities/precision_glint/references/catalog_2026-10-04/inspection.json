@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "precision_glint_five_views.png",
+  "sha256": "090d007f122403f52cbea7fd9cc0f2683cf4f7da6c0b2b3120594f6dad5830a0",
+  "observations": [
+    "Небольшой зелёно-белый акцент и короткий направленный след; боковые профили уже фронтального."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

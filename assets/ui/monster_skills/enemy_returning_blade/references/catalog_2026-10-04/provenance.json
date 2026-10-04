@@ -1,0 +1,33 @@
+{
+  "key": "enemy_returning_blade",
+  "page_id": "page_076791485d348191819e52d0ab06d326",
+  "subject": "ONE dark iron throwing cleaver flying BACK toward an outstretched green gauntlet along a single straight pale amber trail. Blade edge leads, handle behind; straight fading wake continues farther outward behind the returning weapon. No curved boomerang path, duplicate blade or energy emitted by a handle.",
+  "name": "Возвращающийся клинок",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/enemy_returning_blade/references/catalog_2026-10-04",
+  "selected_image": "enemy_returning_blade_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-d8652a4f-3889-490c-86fd-f665796e99c0.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "51175764bd36b4d6972aa5b43171de224f98acf5fac0c0d97006b95c595bc0b6",
+  "byte_size": 1378778,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9sZW00aXdVZ0c5aks2bUFpVGFqdGl3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

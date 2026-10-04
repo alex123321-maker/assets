@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "damage_reflection_vfx_five_views.png",
+  "sha256": "838ef683037ee03538063b3f4c9086578f16fa80b8728680060909181ccea31a",
+  "observations": [
+    "Красный полученный контактный всплеск и более тонкий красно-золотой обратный след от той же точки."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

@@ -1,0 +1,38 @@
+{
+  "key": "stone_debris_trio",
+  "name": "Декор — три камня",
+  "subject": "ONE fantasy voxel environment dressing asset. Exactly THREE small separate warm gray angular stone fragments, heights four, three and two coarse cubes, loosely balanced triangular grouping with white negative space. No extra pieces. Pale mineral patches and restrained olive patch on one stone. Same fixed arrangement in all views. NO earth or supporting ground.",
+  "page_id": "page_8b516544f5d4819199fe01cddfac3bb6",
+  "kind": "model",
+  "category": "dressing",
+  "folder": "assets/environment/dressing_pack/stone_debris_trio/references/catalog_2026-10-04",
+  "selected_image": "stone_debris_trio_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного варианта декора. Крупные воксели, чистый фон; без земли и демонстрационной подложки.",
+  "prompt_override": "Create a BRAND NEW fantasy Minecraft-style voxel asset reference sheet. The supplied image is STYLE ONLY; do not copy its identity or geometry. Exactly FIVE separate complete views of ONE identical asset: front and back on upper row, left profile, right profile and isometric game view on lower row. Large axis-aligned cubes, flat square surfaces and broad coarse pixel material patches. Pure uniform white background, generous margins. NO text, annotations, arrows, panels, labels, ground, dirt, supporting plinth, cast/contact shadows or ambient occlusion. Mild face material color variation only. Subject: Exactly THREE isolated small broken stone chunks in a loose triangular grouping with large WHITE GAPS. Heights only FOUR, THREE and TWO geometric cubes respectively, widest chunk five cubes wide. Warm gray coarse block geology, pale mineral patches, one small flat olive patch. Truncated low angular tops, no tall spire, no attached extra chunks.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-8644b7b3-63bb-4a84-9838-a51950f2f817.png",
+  "sha256": "9a74ea4b89b77c317a85bf5cd0d59cd7c2d2b0a9f63a7ca1127d8ee2ea1e6b86",
+  "byte_size": 861474,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9ic0NTaFJyQzB6eEFieXdjNXc3dndn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

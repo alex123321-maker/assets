@@ -1,0 +1,38 @@
+{
+  "key": "fx_damage_reduction",
+  "name": "Снижение входящего урона — VFX",
+  "page_id": "page_f42c321c1d088191b0b851e9c34abe29",
+  "subject": "ONE restrained compact silver/amber contact spark cluster: small dull red impact core, FOUR short pale cuboid fragments scattered closely along incoming direction. Visibly weaker contained impact, no enclosing ward, physical breastplate prop, return beam or healing particles.",
+  "prompt_override": "Use case: stylized-concept. Generate a CLEAN fantasy VOXEL GAMEPLAY-EFFECT spatial reference, EXACTLY FIVE views of ONE SAME frozen effect at ONE instant: upper row front and back, lower row left, right, true 45degree isometric. All panels show same particle arrangement and same geometry simply rotated, not five animation phases. Large Minecraft-like visible CUBIC particle units, thick stair-step edges, detailed purposeful major/medium blocks, NO smooth painterly or photorealistic smoke. Minimal flat face color differences, unlit emission color, no cast shadow, AO, scene lighting or bloom bleeding on background. Isolate EFFECT ONLY, no actor, enemy, mannequin, body, heart icon, weapon, landscape, terrain, floor, display plinth, UI frame, arrows, text, labels, captions or infographic. Plain solid dark slate navy contrasting background. Wide clean gaps between five views, no extra sixth view. First reference supplies only coarse voxel scale/style; no character is copied. Subject: ONE restrained compact silver/amber contact spark cluster: small dull red impact core, FOUR short pale cuboid fragments scattered closely along incoming direction. Visibly weaker contained impact, no enclosing ward, physical breastplate prop, return beam or healing particles.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "kind": "model",
+  "category": "vfx/status_effects",
+  "folder": "assets/vfx/status_effects/damage_reduction/references/catalog_2026-10-04",
+  "selected_image": "damage_reduction_vfx_five_views.png",
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять пространственных ракурсов эффекта в один момент. Крупные воксельные частицы, однотонный контрастный фон; без персонажа и ландшафта. Анимация и читаемость в движке не проверены.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-0019702d-16aa-427a-b437-a02ed4438b34.png",
+  "sha256": "7e1f122553d520cca5988c5452460e19f74e92db5ec91d674675c2ca2109b0a7",
+  "byte_size": 1032353,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV84UDR0WjV1WEpnSUVZbUQ5U3NlbTBn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

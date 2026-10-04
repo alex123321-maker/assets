@@ -1,0 +1,38 @@
+{
+  "key": "rift_warden",
+  "name": "Страж Разлома",
+  "subject": "A towering fallen fantasy knight with violet-gray broad iron plate armor, pale cubic mask with narrow violet eyes, a stepped spiked CROWN, large chunky pale-lavender crystal shoulder pauldrons, dark plum rectangular torn cape. CHARACTER RIGHT hand holds ONE large straight stepped pale-silver GREATBLADE downward, inset violet strip through the actual blade centre, grip/guard/blade one aligned connected construction. CHARACTER LEFT hand holds ONE broad physical violet-gray kite shield with a lavender crystal boss and thick metal edging. Front greatblade viewer LEFT and shield viewer RIGHT; back blade viewer RIGHT, shield viewer LEFT. Isometric faces lower LEFT so shield-bearing LEFT arm is nearest viewer on image RIGHT. Equipment assignment consistent; backside of shield has handle straps, not front crystal emblem. No extra sword, horns, levitation, aura, energy slash or tiny shards.",
+  "page_id": "page_2cd37d3498588191a863cbb318759ebb",
+  "kind": "model",
+  "category": "bosses",
+  "folder": "assets/characters/bosses/rift_warden/references/catalog_2026-10-04",
+  "selected_image": "rift_warden_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game\\screenshots_debug\\demo_polish\\canonical_bosses\\day_05_attack_0_warning.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов босса в крупной воксельной стилистике; развитие существующего силуэта и палитры.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-5db381bb-3790-43af-a7c9-60c1f96d27c9.png",
+  "sha256": "b393816534747cbfd8de564e201ce15c3bfa40a58d147d3a29384f838460ab40",
+  "byte_size": 1381401,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9uN3pBOTM0QUVYakk1UEtGZnAtdTNR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

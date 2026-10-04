@@ -1,0 +1,33 @@
+{
+  "key": "boss_line_attack",
+  "page_id": "page_c8b3c7dc5378819193fa8f4237c1a319",
+  "subject": "A dark fantasy casting focus at left continuously anchors ONE broad amber-violet energy beam extending right. Bright advancing beam front, every part of the reached beam body remains visibly connected and active back to source. No detached projectile or empty gap behind front, no infinity symbol or arrows.",
+  "name": "Атака по линии",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/boss_line_attack/references/catalog_2026-10-04",
+  "selected_image": "boss_line_attack_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-a26da762-3f9f-44bf-9953-e2e6f895c00b.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "e3ee686c8ae32f4b01b175cc3cebe828a3598d0fead483ad2eedf9aa99017bab",
+  "byte_size": 1281341,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV8xcEQteHkwUUVCUDJnTFdNRmwwZzRB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

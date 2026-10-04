@@ -1,0 +1,38 @@
+{
+  "key": "moss_tree_base",
+  "name": "Мох — воротник ствола",
+  "subject": "ONE fantasy voxel environment dressing asset. The moss vegetation ITSELF: an irregular low curved C-shaped moss COLLAR with an empty central opening sized to embrace a tree trunk. Thick coarse green blocks and stepped outer rim, dark forest green underneath and olive accents on top, no root spikes. Keep same collar opening and arrangement in all views. NO tree, stump, soil, rock or supporting ground.",
+  "page_id": "page_8b516544f5d4819199fe01cddfac3bb6",
+  "kind": "model",
+  "category": "dressing",
+  "folder": "assets/environment/dressing_pack/moss_tree_base/references/catalog_2026-10-04",
+  "selected_image": "moss_tree_base_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\dressing_pack\\references\\dressing_concept_reference.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного варианта декора. Крупные воксели, чистый фон; без земли и демонстрационной подложки.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-07cbed4f-587b-4971-b531-a7581789cd07.png",
+  "sha256": "0df887df5cddf8ce7c2f9a6f5b1126e4aa9da5f2da76718204d5617317f6d030",
+  "byte_size": 903715,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9qMnlrSmxnNFRadmV5NTBVZl9xSkdn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

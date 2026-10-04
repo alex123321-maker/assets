@@ -1,0 +1,34 @@
+{
+  "key": "icon_building_iron_wall",
+  "name": "Железная стена — иконка",
+  "page_id": "page_698ffce1725881918eabf22f3137d678",
+  "subject": "ONE compact fantasy BUILD MENU icon showing ONLY the building from second reference image, three-quarter composition, retain its wood/steel/brass materials and characteristic silhouette. SECOND image defines structure, NOT voxel rendering: convert to crisp rich 2D PIXEL ILLUSTRATION like first image. No construction arrows, ground, NPC, tool overlay, text or surrounding scene. ONE modular defensive IRON WALL section. Thick dark-blue iron core, three broad overlapping armor plate courses on both sides, very large square rivets, short chunky square thorns fixed on plates, two rear-side support buttresses and three squared crenellation teeth along top. Narrow structural gray stone footing ONLY as part of wall construction, no terrain/pedestal. Muted silver cut edges, slate/navy iron, restrained bronze hardware. Strong rectangular armored silhouette.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png",
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-ea1e20a7-a074-4790-9029-6e7b34bc33e6.png"
+  ],
+  "kind": "icon",
+  "category": "building_icons",
+  "folder": "assets/ui/buildings/iron_wall/references/catalog_2026-10-04",
+  "selected_image": "iron_wall_pixel_icon.png",
+  "caption": "Пиксельная иконка меню строительства, согласованная с пятиракурсным референсом этой постройки.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-72323a11-fdde-46f6-8872-8363a90332ee.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "f910b95e7c6c3baa81e4f528b810320f677be48cdefe14204d3d70d575280004",
+  "byte_size": 1406928,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9iQ0lBTXRnVWE3WUFGQ1FRalQwY2hR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

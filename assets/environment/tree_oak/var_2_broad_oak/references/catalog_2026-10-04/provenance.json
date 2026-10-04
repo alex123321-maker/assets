@@ -1,0 +1,38 @@
+{
+  "key": "var_2_broad_oak",
+  "name": "Широкий дуб",
+  "subject": "A very BROAD mature oak with a stout dark-brown trunk that forks into FOUR large spreading boughs, visibly supporting a low heavy umbrella canopy. Canopy width substantially greater than total height, irregular broad stepped terraces of dense forest-green large leaf-block clusters with restrained warm olive patches. Four visible buttress roots, coarse bark seams and branch crotches. No tiny foliage voxels, hanging vines, fallen leaves, soil or plinth. Keep the same four primary boughs and distinct asymmetric canopy silhouette in all five views.",
+  "page_id": "page_4b10edf1c2f48191901cba58a1571ca4",
+  "kind": "model",
+  "category": "trees",
+  "folder": "assets/environment/tree_oak/var_2_broad_oak/references/catalog_2026-10-04",
+  "selected_image": "var_2_broad_oak_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\tree_oak\\var_2_broad_oak\\review\\iso.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Отдельный вариант дуба: пять ракурсов на белом фоне; без земли, площадки и ландшафта.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-c730ade2-d65c-46ef-aee4-8114ebf3c355.png",
+  "sha256": "3b476100827138d3a043213321d376e54638cec6dba27c3d7d486b229c5dd8c9",
+  "byte_size": 1368074,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9KejVyMkQ0VnNvMlRlMmJRWm9BeFdR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

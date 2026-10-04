@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "enemy_short_lunge_pixel_icon.png",
+  "sha256": "403254a982a0cee51c4feb5c07e44423ed9e06f0a04019166c76e5c1f8259d37",
+  "observations": [
+    "Viewed an undead upper body thrusting forward with both arms bent, and short speed streaks behind the shoulder.",
+    "Reads as body movement rather than a detached projectile or an extended sword stab."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

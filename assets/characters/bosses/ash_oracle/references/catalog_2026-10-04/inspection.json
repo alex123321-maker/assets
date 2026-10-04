@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "ash_oracle_five_views.png",
+  "sha256": "9d200d4df9a8668c6aa91158f1a208263abaff3a5c893559853ac4588583ba1e",
+  "observations": [
+    "Ровно пять полных видов капюшона, посоха с латунным кадилом и закрытой книги.",
+    "После коррекции книга присутствует в обоих профилях; фронт, спина и изометрия сохраняют посох в правой руке, книгу — в левой. Нет падающей тени."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

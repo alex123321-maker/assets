@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "damage_reduction_vfx_five_views.png",
+  "sha256": "7e1f122553d520cca5988c5452460e19f74e92db5ec91d674675c2ca2109b0a7",
+  "observations": [
+    "Сдержанный красный контакт и близкие серебристо-золотые частицы; нет защитного купола или отдельного предмета брони."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

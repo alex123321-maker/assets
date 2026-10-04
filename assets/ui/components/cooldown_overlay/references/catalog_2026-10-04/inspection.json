@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "cooldown_overlay_pixel_reference.png",
+  "sha256": "f9983bc6223ae383f42491cf862f1ba7ab16a2678077ba86a8dd794599b46c5a",
+  "observations": [
+    "Техническая полупрозрачная маска без металлической рамки; RGBA, alpha 0–146, прозрачность и непустая область подтверждены чтением пикселей.",
+    "На тёмном фоне предпросмотра маска почти не видна; предназначена для наложения на иконку."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

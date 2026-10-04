@@ -1,0 +1,38 @@
+{
+  "key": "prop_recoil_caltrop",
+  "name": "Тактический отскок — замедляющий шип — 5 видов",
+  "page_id": "page_e794bf8e31d88191a834a4fe6443849c",
+  "subject": "ONE compact iron caltrop with FOUR stout spike arms forming a tetrahedral arrangement, each point built from broad Minecraft-like stair-step cubes, muted silver edges and dark iron interior, one brass joint. Same physical object rotated, quiet intact trap. No mine casing, flame, boot, ground, scene or group.",
+  "prompt_override": "Use case: stylized-concept. Create ONE clean fantasy voxel 3D MODEL reference sheet for CubeSiege. Exactly FIVE views of the SAME complete asset: front and back across upper row, left side, right side and game-like 3/4 isometric across lower row. Equal visual scale, generous separation, no cropped extremities, no extra duplicates, details and equipment identical in all views. FIRST image sets the approved chunky Minecraft-like voxel size and detail treatment ONLY. SECOND image shows existing role/silhouette to develop, not a quality target. Large block geometry, square planar surfaces and coarse pixel material detail; no tiny gravel-like cubes, smooth meshes, bevels or realistic paint. Rich construction details must use broad readable block clusters. Flat bright unlit material colors, extremely mild face color variation, NO cast shadows, NO contact shadow, NO ambient occlusion, NO harsh dark shaded faces. Entire background uniform pure white, without ground, landscape, grass, platform, plinth, horizon, gradient or texture. No text, labels, arrows, diagrams, borders, watermark or infographic. Neutral model pose maintained across views. Change absolutely all old hero identity details to the new subject. Subject: ONE compact iron caltrop with FOUR stout spike arms forming a tetrahedral arrangement, each point built from broad Minecraft-like stair-step cubes, muted silver edges and dark iron interior, one brass joint. Same physical object rotated, quiet intact trap. No mine casing, flame, boot, ground, scene or group. Camera consistency: four genuinely DIFFERENT orthographic views at 0,180,90,270 degrees around the vertical axis, plus one true isometric; do not use five similar three-quarter poses. Long directional X objects must be foreshortened/end-on in two opposite views. All five groups show SAME geometry and frozen particle state.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "kind": "model",
+  "category": "props/ability_objects",
+  "folder": "assets/props/ability_objects/recoil_caltrop/references/catalog_2026-10-04",
+  "selected_image": "recoil_caltrop_five_views.png",
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного объекта/момента в крупной воксельной стилистике. Художественный референс; правила срабатывания берутся из текста способности, анимация и читаемость в движке не проверены. Шип относится к концепту GDD; его отсутствие в прототипе отмечено на странице.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-92a32be5-ddb2-42c4-919a-1a78e70d6099.png",
+  "sha256": "7df486e8b62b442c749e5c08e2e6a69591ccf6518236dc4a74c45b5b997d4459",
+  "byte_size": 935976,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV93QmFZNWkwby1fTFlGOXVoN0tVQUFn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Рассечение",
+  "key": "cleave",
+  "page_id": "page_5f044fe4ab8c81918129e1d7126c2943",
+  "category": "abilities/warrior",
+  "subject": "A silver straight broad sword with simple brass guard, burgundy grip grasped by a silver gauntlet at lower left. Blade extends across frame toward upper right; broad bright white/cyan crescent follows the OUTER CUTTING HALF of the blade in a powerful frontal sideways sweep. Crescent is a partial arc ahead of the hand, never a circle around the handle. Two small dark enemy armor fragments at the far blade-edge impact convey frontal multiple-target knockback. Navy backdrop, silver/cyan/brass/burgundy palette.",
+  "caption": "Широкий фронтальный взмах меча; частичная дуга следует режущей части клинка.",
+  "kind": "icon",
+  "folder": "assets/ui/abilities/warrior/cleave/references/catalog_2026-10-04",
+  "selected_image": "cleave_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-ffc64e92-854f-44bd-a6c0-091597495980.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "328e8f4c0029733be726ac54a9411f50f81f669230cab66e8e7afb08c8b8d811",
+  "byte_size": 1398030,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9pZnZFUnBIYmpFTElfbkRxdG10N1pB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

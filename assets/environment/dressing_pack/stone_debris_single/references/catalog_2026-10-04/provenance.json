@@ -1,0 +1,38 @@
+{
+  "key": "stone_debris_single",
+  "name": "Декор — одиночный каменный осколок",
+  "subject": "ONE fantasy voxel environment dressing asset. ONE small faceted RECTANGULAR keystone shard of warm gray stone, low angular chipped corners, one broad diagonal fracture face, small flat olive surface patch. Thick coarse cubes, width slightly greater than height. NO soil, grass, support plate or terrain.",
+  "page_id": "page_8b516544f5d4819199fe01cddfac3bb6",
+  "kind": "model",
+  "category": "dressing",
+  "folder": "assets/environment/dressing_pack/stone_debris_single/references/catalog_2026-10-04",
+  "selected_image": "stone_debris_single_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\dressing_pack\\references\\dressing_concept_reference.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного варианта декора. Крупные воксели, чистый фон; без земли и демонстрационной подложки.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-a2a07701-1704-438e-ad39-c8c33db8470b.png",
+  "sha256": "8e84f8a50a8d4b4d33974bd836b35ccf0ec459ca2ce3354b0dc5de4345035c8b",
+  "byte_size": 818977,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV95ZS1xMVBuV2Zmc3BtQ3BhNVhfNjB3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

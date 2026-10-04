@@ -1,0 +1,38 @@
+{
+  "key": "block_mountain_stone",
+  "name": "Материал — горный камень",
+  "subject": "ONE exactly cubic terrain material sample of light warm-gray mountain stone. TOP coarse broad pale mineral shelves and fractured gray planar patches, sides blocky rock texture with restrained darker wide seams. Same broad warm-gray geology as new rock references. No separate stones or boulders on top.",
+  "page_id": "page_d72fa7295f9081918e25d36f776e8125",
+  "kind": "model",
+  "category": "terrain_materials",
+  "folder": "assets/environment/terrain_materials/block_mountain_stone/references/catalog_2026-10-04",
+  "selected_image": "block_mountain_stone_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\terrain_materials\\references\\terrain_concept_reference.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Изолированный образец существующего материала: четыре стороны и изометрия, без ландшафта и подписей.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-8a83c2ee-53ed-4dc9-bf7c-19e6e7683a1b.png",
+  "sha256": "4cd084f63652f6d277866d76cc1a6bfc5f78a826c2066dc5002dbd5fdfa54b01",
+  "byte_size": 887652,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9YQWZyWlkwd3JtY0hnbEpFMnFTNXRn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,38 @@
+{
+  "key": "fx_regeneration",
+  "name": "Регенерация здоровья — VFX",
+  "page_id": "page_26e4b8622d0c8191937466b4ed88f274",
+  "subject": "THREE separated small emerald cubic motes ascend in a restrained open spiral around an empty vertical actor-sized space, small pale mint centers. Calm ongoing recovery, no sudden explosion or bright full-body shell.",
+  "prompt_override": "Use case: stylized-concept. Generate a CLEAN fantasy VOXEL GAMEPLAY-EFFECT spatial reference, EXACTLY FIVE views of ONE SAME frozen effect at ONE instant: upper row front and back, lower row left, right, true 45degree isometric. All panels show same particle arrangement and same geometry simply rotated, not five animation phases. Large Minecraft-like visible CUBIC particle units, thick stair-step edges, detailed purposeful major/medium blocks, NO smooth painterly or photorealistic smoke. Minimal flat face color differences, unlit emission color, no cast shadow, AO, scene lighting or bloom bleeding on background. Isolate EFFECT ONLY, no actor, enemy, mannequin, body, heart icon, weapon, landscape, terrain, floor, display plinth, UI frame, arrows, text, labels, captions or infographic. Plain solid dark slate navy contrasting background. Wide clean gaps between five views, no extra sixth view. First reference supplies only coarse voxel scale/style; no character is copied. Subject: THREE separated small emerald cubic motes ascend in a restrained open spiral around an empty vertical actor-sized space, small pale mint centers. Calm ongoing recovery, no sudden explosion or bright full-body shell.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "kind": "model",
+  "category": "vfx/status_effects",
+  "folder": "assets/vfx/status_effects/regeneration/references/catalog_2026-10-04",
+  "selected_image": "regeneration_vfx_five_views.png",
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять пространственных ракурсов эффекта в один момент. Крупные воксельные частицы, однотонный контрастный фон; без персонажа и ландшафта. Анимация и читаемость в движке не проверены.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-7901c39e-95f4-4dec-a173-f141cd42dd13.png",
+  "sha256": "d70a522806a23dad1f07887b07aae9a3675ba2e736c27c5cfc731941e86d23f3",
+  "byte_size": 1173881,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV8xZk54YWhnb2tGM3dRVXh4amgtUnpn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

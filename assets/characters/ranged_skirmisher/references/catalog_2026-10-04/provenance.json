@@ -1,0 +1,38 @@
+{
+  "key": "ranged_skirmisher",
+  "name": "Стрелок нежити",
+  "subject": "A lean undead SKELETON archer with ivory cubic skull, deep square eye sockets, open ribcage built from a few broad blocks, brown square hood and short ragged brown shoulder cape; sturdy thin block bone limbs, leather belt and ankle wraps. Holds ONE stepped wooden bow in CHARACTER'S LEFT hand in every view, EMPTY RIGHT hand, brown arrow quiver fixed on BACK. Bow grip physically in left palm, bow string attaches between limb tips. Front shows bow on viewer RIGHT; back shows bow on viewer LEFT. Isometric faces toward lower left, LEFT bow-bearing arm is on the near visible side. Keep one identical bow and quiver in all views. No armor suit, magic glow, firearms or multiple bows.",
+  "page_id": "page_fcf55f33a0fc8191906a13b33d29db37",
+  "kind": "model",
+  "category": "monsters",
+  "folder": "assets/characters/ranged_skirmisher/references/catalog_2026-10-04",
+  "selected_image": "ranged_skirmisher_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\characters\\ranged_skirmisher\\review\\iso.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Крупные фэнтезийные воксели; фронт, спина, два профиля и игровая изометрия на белом фоне.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-4bc59126-b955-40e1-9312-256e6f3bff70.png",
+  "sha256": "d59673a187f2cb6451dc9d8610a7f90023adc559161fa98206a6d7e3ee46e7c3",
+  "byte_size": 1262315,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9aMUVpQkExTFU4NUl1MXhkMklNOFZn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

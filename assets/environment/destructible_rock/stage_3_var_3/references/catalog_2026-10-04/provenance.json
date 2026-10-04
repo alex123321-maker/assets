@@ -1,0 +1,38 @@
+{
+  "key": "stage_3_var_3",
+  "name": "Средние обломки — расколотый остаток",
+  "subject": "ONE destructible natural gray rock resource asset, angular stepped fused voxel geology, warm-gray primary stone with a few pale coarse mineral patches, dark-gray wide fracture seams and restrained FLAT olive moss color patches attached to stone surfaces (no growing plants). Large Minecraft-style cubic masses with chunky material pixels, no tiny rubble confetti, smooth beveled stone or photoreal texture. No soil, ground, grass, pedestal or landscape. This is ONE variant, not a family gallery or destruction sequence. All five copies show the same arrangement of main masses, cracks and separate fragments. Third destruction-stage MEDIUM remnant. One short fractured stone stump built from a wide lower tier and smaller offset cap, a deep notch removes one side, TWO chunky detached chips near the missing side. Low standing stump, compact geometry.",
+  "page_id": "page_8a1842277d7c819192faca9c0ffb2803",
+  "kind": "model",
+  "category": "rocks",
+  "folder": "assets/environment/destructible_rock/stage_3_var_3/references/catalog_2026-10-04",
+  "selected_image": "stage_3_var_3_five_views.png",
+  "input_images": [
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-2f935a18-a52a-465e-89fa-2109b4e33d73.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Один вариант соответствующей стадии разрушения: пять ракурсов без земли, ландшафта и подписи.",
+  "prompt_override": "Edit this five-view reference sheet. Keep the warm gray stone palette, pale mineral color patches, restrained olive patches, large Minecraft voxel style, and pure white background. REBUILD the entire asset as a convincingly DESTROYED much lower remnant. Every visible geometric voxel must be very large; the maximum number of stacked cubes is strict. ONE squat fractured stone STUMP only FOUR coarse voxel steps high, with a broad chipped flat upper cut, a wide cleft dividing its top, and TWO low broken pieces separated beside it. Width visibly greater than height. No tall tower or tiered conical boulder. Produce exactly five separate complete depictions of this SAME arrangement: front and back orthographic on upper row, left and right profiles and one isometric game view on lower row. Match the same fragment geometry and their fixed relative arrangement across all five views. No captions, labels, annotations, arrows, ground, soil, landscape, pedestal, contact shadows, ambient occlusion or cast shadows. Flat bright unlit colors; mild material tones only. Keep generous white margins. This is one asset variant, not a gallery of different rocks.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-e86edb9c-984f-4a09-9849-e2653a3048b2.png",
+  "sha256": "ce27bbe1a5af5a9f605a3ad17c0c6604c80d3feb3dd00b91fd2a6bb6909c6866",
+  "byte_size": 1183877,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9FcnVVVXg1Y3lMZTE5aU95VW1sdDVR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

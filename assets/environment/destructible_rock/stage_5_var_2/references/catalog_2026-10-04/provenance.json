@@ -1,0 +1,38 @@
+{
+  "key": "stage_5_var_2",
+  "name": "Щебень — вытянутый след",
+  "subject": "ONE destructible natural gray rock resource asset, angular stepped fused voxel geology, warm-gray primary stone with a few pale coarse mineral patches, dark-gray wide fracture seams and restrained FLAT olive moss color patches attached to stone surfaces (no growing plants). Large Minecraft-style cubic masses with chunky material pixels, no tiny rubble confetti, smooth beveled stone or photoreal texture. No soil, ground, grass, pedestal or landscape. This is ONE variant, not a family gallery or destruction sequence. All five copies show the same arrangement of main masses, cracks and separate fragments. Fifth destruction-stage FINAL rubble pile. A sparse elongated linear TRAIL of several small coarse gray broken fragments of unequal height, two larger low chips near one end, gaps of white between each piece. No big centre boulder, dust cloud, engraved path or underlying terrain.",
+  "page_id": "page_8a1842277d7c819192faca9c0ffb2803",
+  "kind": "model",
+  "category": "rocks",
+  "folder": "assets/environment/destructible_rock/stage_5_var_2/references/catalog_2026-10-04",
+  "selected_image": "stage_5_var_2_five_views.png",
+  "input_images": [
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-0eab79ba-25f2-40d5-866f-8fed9e9323d0.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Один вариант соответствующей стадии разрушения: пять ракурсов без земли, ландшафта и подписи.",
+  "prompt_override": "Edit this reference sheet into FINAL DESTROYED RUBBLE. DELETE every tall boulder, peak, tiered rock cluster and intact stone mass from ALL FIVE views. Replace them with very few extremely LOW broken cubical stone pieces. Exactly SIX separate broken chips in one sparse elongated uneven LINE. All chips ONLY ONE or TWO coarse cube steps high. Absolutely NO central large mass. Wide white gaps. The entire grouping is much longer than tall. The highest fragment MUST consist of at most TWO stacked geometric voxels; use extremely large Minecraft cubes and chunky warm gray mineral pixels, only a trace of olive color on one small fragment. Keep exactly five views of the identical fixed grouping, front/back upper row, left/right profiles and isometric lower row, same scale. Front and side views must look extremely LOW and near-flat, not a mountain. Bright flat unlit colors, pure white background with ample negative space. No ground, terrain, base, contact shadow, cast shadow, ambient occlusion, labels, arrows or annotation. Do not preserve any of the original tall geometry.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-3af3e76d-a3ca-4166-a38e-d319e0057744.png",
+  "sha256": "71c99bacc2167a653a0faaff15daf17d9c4e60ffd8bd5b99b231134a2c8978f1",
+  "byte_size": 1062914,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV82T3VOallwMm1paWVSTVVNYVV6d1h3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

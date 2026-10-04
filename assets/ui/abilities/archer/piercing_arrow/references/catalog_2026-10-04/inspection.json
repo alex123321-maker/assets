@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "piercing_arrow_pixel_icon.png",
+  "sha256": "d22765e2e4c3fdb0f6a64c2e229cbe4a6e3d0a11c0128290e5be2b89887e3852",
+  "observations": [
+    "Одна прямая стрела проходит через нагрудники двух противников на общей линии.",
+    "Белые и зелёные вспышки находятся у точек входа и выхода; оперение видно позади.",
+    "Других стрел или веера снарядов нет."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

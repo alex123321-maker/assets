@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "prop_decoy_five_views.png",
+  "sha256": "87a4268009cbee618b3f1905d6736991c8c4bf213db0d06fda0c7c448a572631",
+  "observations": [
+    "Viewed five orientations of a physical straw dummy on a crossed wooden foot, horizontal hands and one vertical post.",
+    "Green hood, cream sack torso and rope tie match the ability icon; no holographic clone or moving legs."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

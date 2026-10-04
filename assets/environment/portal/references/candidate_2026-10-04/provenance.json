@@ -1,9 +1,14 @@
 {
   "name": "Портал",
-  "status": "candidate",
-  "approval": null,
+  "status": "approved",
+  "approval": {
+    "date": "2026-10-04",
+    "conversation_id": "01a106c4-3599-7542-97d9-b7ebf83abb70",
+    "authority": "user",
+    "quote": "Ну ладно пускай будет такой ... персонаж и элемент мира меня устраивают, продолжай в том же духе"
+  },
   "created_date": "2026-10-04",
-  "scope": "reference_only_pilot",
+  "scope": "reference_only",
   "tool": "image_gen.imagegen (Codex built-in)",
   "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-b75d63a9-6f5d-4a5d-b274-cfb76636ddc0.png",
   "page_id": "page_4fa20c73fc088191b2cc1935d570d66b",
@@ -18,8 +23,10 @@
     "right",
     "isometric"
   ],
-  "input_images": ["portal_five_views.png"],
-  "notes": "Художественный кандидат после последнего уточнения пользователя. Не утверждён. Это сгенерированный референс, не модель и не рендер движка.",
+  "input_images": [
+    "portal_five_views.png"
+  ],
+  "notes": "Утверждено пользователем 4 октября 2026; это художественный референс, не production-модель.",
   "prompt_files": [
     "prompt.txt",
     "lighting_prompt.txt"

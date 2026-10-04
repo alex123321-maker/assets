@@ -1,0 +1,38 @@
+{
+  "key": "block_forest_grass",
+  "name": "Материал — лесная трава",
+  "subject": "ONE exactly cubic terrain material sample. A thin continuous DARK FOREST GREEN grass cap with broad emerald/olive coarse patches on TOP face, warm gray-brown rock/loam sides and deep brown lower soil course. Forest cap distinctly darker/cooler than meadow material. No growing grass, roots or trees, no ground beyond cube.",
+  "page_id": "page_d72fa7295f9081918e25d36f776e8125",
+  "kind": "model",
+  "category": "terrain_materials",
+  "folder": "assets/environment/terrain_materials/block_forest_grass/references/catalog_2026-10-04",
+  "selected_image": "block_forest_grass_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\terrain_materials\\references\\terrain_concept_reference.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Изолированный образец существующего материала: четыре стороны и изометрия, без ландшафта и подписей.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-e82f48cb-9342-449d-826c-64c42b559a7f.png",
+  "sha256": "7e9e96d7e22eef98bdfbfe38ba871ba2dd70bd9aaf288e7fad0baad45972d4c8",
+  "byte_size": 981031,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV80NU1TNVNuTVRZUzRrWEJqb2tNbWxn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

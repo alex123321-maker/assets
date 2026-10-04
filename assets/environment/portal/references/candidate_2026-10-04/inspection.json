@@ -1,6 +1,11 @@
 {
-  "status": "candidate",
-  "approval": null,
+  "status": "approved",
+  "approval": {
+    "date": "2026-10-04",
+    "conversation_id": "01a106c4-3599-7542-97d9-b7ebf83abb70",
+    "authority": "user",
+    "quote": "Ну ладно пускай будет такой ... персонаж и элемент мира меня устраивают, продолжай в том же духе"
+  },
   "inspected_image": "portal_five_views_bright.png",
   "sha256": "740cfa76d8628876aa0ba057e17f272cf9a318a2f7f3829c3d56d2a56f301136",
   "observations": [
@@ -23,5 +28,5 @@
   },
   "production_build": "not_applicable_reference_only",
   "quality_gate": "not_run_no_production_manifest",
-  "user_art_approval": "pending"
+  "user_art_approval": "approved"
 }

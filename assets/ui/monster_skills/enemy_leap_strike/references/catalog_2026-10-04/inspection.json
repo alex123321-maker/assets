@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "enemy_leap_strike_pixel_icon.png",
+  "sha256": "b46a19d074572125f1323b451191f3280bc7078a6b3be92311cb807f72200d6e",
+  "observations": [
+    "Viewed airborne undead with fists and boots clearly separated from a quiet hollow amber landing marker.",
+    "No premature explosion, debris or impact spark below the actor."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "dash_wake_five_views.png",
+  "sha256": "834342df032b3be750e9e5378d06d771a1e271c76945a6279ae9e8a11cbb9580",
+  "observations": [
+    "Три прямых следа: длинные боковые и короткие торцевые виды, пустое место героя, защитной оболочки нет."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "rot_pixel_icon.png",
+  "sha256": "97821cd05c376d2946f724d1e4ef034425f6f353bc307e06ef17f3a35b4075a0",
+  "observations": [
+    "Череп частично покрыт тусклыми жёлто-зелёными грибами и пятнами.",
+    "Часть челюсти и щеки крошится, вокруг расходятся мутные споры.",
+    "Фон тёмный фиолетовый; палитра явно отличается от яркого зелёного лечения."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

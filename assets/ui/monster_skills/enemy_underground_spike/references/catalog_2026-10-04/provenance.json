@@ -1,0 +1,33 @@
+{
+  "key": "enemy_underground_spike",
+  "page_id": "page_e4fdddd56b18819183f15900be113f28",
+  "subject": "ONE thick angular violet-black spike thrust upward through a small broken amber magic warning ring, bright one-time impact flecks at its foot. Spike remains a solid obstacle after emerging. No spreading flame hazard, multiple spike field, continuing damage rays or terrain scenery.",
+  "name": "Подземный шип",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/enemy_underground_spike/references/catalog_2026-10-04",
+  "selected_image": "enemy_underground_spike_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-fd3b826a-4d13-4d46-a425-05e1ff22fe93.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "9dfdbef4f0e4252a023d4b78e8f3ae9031ba564ac48369cc551d974e8af629e1",
+  "byte_size": 1332419,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9sa1lJSmpNSTZGV0pHdUU4ODUxN1NB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

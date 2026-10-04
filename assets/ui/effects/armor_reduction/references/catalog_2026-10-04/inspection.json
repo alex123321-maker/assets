@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "armor_reduction_pixel_icon.png",
+  "sha256": "305588e07f6ba5d5c2e5f325d6324d202b9f6d12e2ee1f9b9081ccc15b4ec40e",
+  "observations": [
+    "Наружная броневая пластина отслаивается, открывая бордовую ткань; обломки уходят от повреждённого края.",
+    "Нет защитной магической оболочки или численного ослабления."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

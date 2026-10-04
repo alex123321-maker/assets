@@ -1,0 +1,38 @@
+{
+  "key": "stage_4_var_1",
+  "name": "Мелкие обломки — фрагмент и спутники",
+  "subject": "ONE destructible natural gray rock resource asset, angular stepped fused voxel geology, warm-gray primary stone with a few pale coarse mineral patches, dark-gray wide fracture seams and restrained FLAT olive moss color patches attached to stone surfaces (no growing plants). Large Minecraft-style cubic masses with chunky material pixels, no tiny rubble confetti, smooth beveled stone or photoreal texture. No soil, ground, grass, pedestal or landscape. This is ONE variant, not a family gallery or destruction sequence. All five copies show the same arrangement of main masses, cracks and separate fragments. Fourth destruction-stage SMALL rubble. ONE low squat central stone fragment and THREE smaller detached broad chips arranged close beside it, all coarse chunky stone blocks at same bottom level. Mostly separated fragments, no standing tall core, no earth floor.",
+  "page_id": "page_8a1842277d7c819192faca9c0ffb2803",
+  "kind": "model",
+  "category": "rocks",
+  "folder": "assets/environment/destructible_rock/stage_4_var_1/references/catalog_2026-10-04",
+  "selected_image": "stage_4_var_1_five_views.png",
+  "input_images": [
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-87a9c448-7818-41a8-9984-7a9f50bbf1c8.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Один вариант соответствующей стадии разрушения: пять ракурсов без земли, ландшафта и подписи.",
+  "prompt_override": "Edit this five-view reference sheet. Keep the warm gray stone palette, pale mineral color patches, restrained olive patches, large Minecraft voxel style, and pure white background. REBUILD the entire asset as a convincingly DESTROYED much lower remnant. Every visible geometric voxel must be very large; the maximum number of stacked cubes is strict. Late destruction debris: ONE small coarse angular fragment just THREE voxel blocks high and FOUR blocks wide, and exactly THREE small separate satellite chunks one or two blocks high, with wide white gaps between every fragment. Very low, sparse, incomplete rubble. No central boulder, large intact crag or moss-covered mound. Produce exactly five separate complete depictions of this SAME arrangement: front and back orthographic on upper row, left and right profiles and one isometric game view on lower row. Match the same fragment geometry and their fixed relative arrangement across all five views. No captions, labels, annotations, arrows, ground, soil, landscape, pedestal, contact shadows, ambient occlusion or cast shadows. Flat bright unlit colors; mild material tones only. Keep generous white margins. This is one asset variant, not a gallery of different rocks.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-c70d3256-6947-4fbe-b8c7-081814bddb1d.png",
+  "sha256": "180f083adbd243fce2beb3b7db00b4d1c23ff1557124c76de07853f62f28c9ee",
+  "byte_size": 1115830,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9kaW9mYlNhQ2tET1RCbThSTnBaNmtn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

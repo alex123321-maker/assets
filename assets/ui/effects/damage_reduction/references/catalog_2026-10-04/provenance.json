@@ -1,0 +1,33 @@
+{
+  "name": "Снижение входящего урона",
+  "key": "damage_reduction",
+  "page_id": "page_f42c321c1d088191b0b851e9c34abe29",
+  "category": "effects",
+  "subject": "A thick silver/brass layered breastplate takes a hard dark impact at upper-right; a small muted red contact spark is contained by the outer metal plating. Strong reinforced armor silhouette, no magical dome, crystal shield, return beam or healing particles. Navy/steel with restrained gold edges.",
+  "caption": "Усиленный нагрудник с небольшим следом принятого удара обозначает снижение урона.",
+  "kind": "icon",
+  "folder": "assets/ui/effects/damage_reduction/references/catalog_2026-10-04",
+  "selected_image": "damage_reduction_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-016e66b9-9298-40b7-ab95-59a64fe2f655.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "4e55197d82ea4b80244604d2467ad58df9d60dace93bb329953e09265c4b1c39",
+  "byte_size": 1481976,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9DZXViN1dHZzl3VUVsY3JHaU5maFd3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

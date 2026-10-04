@@ -1,0 +1,33 @@
+{
+  "name": "Резня",
+  "key": "slaughter",
+  "page_id": "page_f286efd7b44881918672859e1ce38dac",
+  "category": "synergies/warrior",
+  "subject": "A silver sword sweeping through a partial circular cyan/white arc, several large dark undead helmet and armor pieces scatter outward from the outer cutting edge with small crimson accents. Centre remains dark, no healing stream, morale rays or slow aura; brutal stylized combat, no organs. Navy/burgundy.",
+  "caption": "Круговое рассечение и разлетающиеся части врага; дополнительные эффекты морали не подразумеваются.",
+  "kind": "icon",
+  "folder": "assets/ui/synergies/warrior/slaughter/references/catalog_2026-10-04",
+  "selected_image": "slaughter_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-95b30433-a56e-4f20-9953-9915461816be.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "6163a23061d90fc6bc9ba1e10268d4cc16f475ca25f25bb6bc458bcfa6fe7a02",
+  "byte_size": 1582632,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9OX1hZUEgtT3lmdDVZMHY5QWdXbmhB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

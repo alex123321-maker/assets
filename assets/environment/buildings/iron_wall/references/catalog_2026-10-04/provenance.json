@@ -1,0 +1,38 @@
+{
+  "key": "building_iron_wall",
+  "name": "Железная стена",
+  "subject": "ONE modular defensive IRON WALL section. Thick dark-blue iron core, three broad overlapping armor plate courses on both sides, very large square rivets, short chunky square thorns fixed on plates, two rear-side support buttresses and three squared crenellation teeth along top. Narrow structural gray stone footing ONLY as part of wall construction, no terrain/pedestal. Muted silver cut edges, slate/navy iron, restrained bronze hardware. Strong rectangular armored silhouette.",
+  "page_id": "page_698ffce1725881918eabf22f3137d678",
+  "kind": "model",
+  "category": "buildings",
+  "folder": "assets/environment/buildings/iron_wall/references/catalog_2026-10-04",
+  "selected_image": "iron_wall_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game\\screenshots_debug\\demo_buildings\\building_models_isometric_day.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одной существующей постройки. Крупные воксели; без ландшафта, внешней подставки и подписей.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-ea1e20a7-a074-4790-9029-6e7b34bc33e6.png",
+  "sha256": "e2a3801251c5c1b9c771df40871ab7ac70a4430d3b41684cbf4c72cb71e412a1",
+  "byte_size": 1404380,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9IUm1lWDd1VjhSSDdoZDZ2LXQzQ2RR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

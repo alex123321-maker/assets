@@ -1,0 +1,38 @@
+{
+  "key": "fx_enemy_armed_mine",
+  "name": "Мина врага — взведённое устройство — 5 видов",
+  "page_id": "page_d96b8e0da0308191b51fc243dee0aab7",
+  "subject": "ONE low dark iron/violet fantasy circular-by-steps rune mine, broad octagonal plates, four amber corner studs and one amber central arming crystal. Intact quiet armed device, no foot, hand, pressure contact, explosion, modern electronics or trap field.",
+  "prompt_override": "Use case: stylized-concept. Create ONE clean fantasy voxel 3D MODEL reference sheet for CubeSiege. Exactly FIVE views of the SAME complete asset: front and back across upper row, left side, right side and game-like 3/4 isometric across lower row. Equal visual scale, generous separation, no cropped extremities, no extra duplicates, details and equipment identical in all views. FIRST image sets the approved chunky Minecraft-like voxel size and detail treatment ONLY. SECOND image shows existing role/silhouette to develop, not a quality target. Large block geometry, square planar surfaces and coarse pixel material detail; no tiny gravel-like cubes, smooth meshes, bevels or realistic paint. Rich construction details must use broad readable block clusters. Flat bright unlit material colors, extremely mild face color variation, NO cast shadows, NO contact shadow, NO ambient occlusion, NO harsh dark shaded faces. Entire background uniform pure white, without ground, landscape, grass, platform, plinth, horizon, gradient or texture. No text, labels, arrows, diagrams, borders, watermark or infographic. Neutral model pose maintained across views. Change absolutely all old hero identity details to the new subject. Subject: ONE low dark iron/violet fantasy circular-by-steps rune mine, broad octagonal plates, four amber corner studs and one amber central arming crystal. Intact quiet armed device, no foot, hand, pressure contact, explosion, modern electronics or trap field. Camera consistency: four genuinely DIFFERENT orthographic views at 0,180,90,270 degrees around the vertical axis, plus one true isometric; do not use five similar three-quarter poses. Long directional X objects must be foreshortened/end-on in two opposite views. All five groups show SAME geometry and frozen particle state.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "kind": "model",
+  "category": "props/ability_objects",
+  "folder": "assets/props/ability_objects/enemy_armed_mine/references/catalog_2026-10-04",
+  "selected_image": "enemy_armed_mine_five_views.png",
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного объекта/момента в крупной воксельной стилистике. Художественный референс; правила срабатывания берутся из текста способности, анимация и читаемость в движке не проверены.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-004cfcdb-c211-4afd-9a67-94b4216c6a1c.png",
+  "sha256": "fb73ce28e729cbac493b1372c6034b707b00033b037c993ed2b89a52599c138f",
+  "byte_size": 1424787,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9yZmlTajhReWJ3cEh2U3BRZGFvYWlB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "lifesteal_pixel_icon.png",
+  "sha256": "ae6a82913e626852505f2eb401381f7ed27fde7a2aa7f114207f176e95ac5b8d",
+  "observations": [
+    "Клинок касается повреждаемого сердца противника справа сверху; красный поток идёт от него к сердцу атакующего внизу.",
+    "Получающее сердце окружено зелёным восстановлением; оба сердца используют общий условный символ."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

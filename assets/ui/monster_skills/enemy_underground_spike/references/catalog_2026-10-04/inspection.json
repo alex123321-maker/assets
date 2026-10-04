@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "enemy_underground_spike_pixel_icon.png",
+  "sha256": "9dfdbef4f0e4252a023d4b78e8f3ae9031ba564ac48369cc551d974e8af629e1",
+  "observations": [
+    "Viewed one upright violet spike breaking through an amber warning circle with a brief emergence burst.",
+    "Single solid obstacle is the dominant form; no poison cloud or repeated active pulses."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

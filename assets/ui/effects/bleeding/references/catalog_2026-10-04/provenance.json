@@ -1,0 +1,33 @@
+{
+  "name": "Кровотечение",
+  "key": "bleeding",
+  "page_id": "page_934e834252448191a9fc5ec0c7d120b8",
+  "category": "effects",
+  "subject": "A deep crimson blood droplet with two smaller falling drops beneath a jagged diagonal cut in a dark steel armor plate. Small bright red wet edge at wound, no sword, fire, skull, poison cloud or gore. Strong red-on-navy silhouette.",
+  "caption": "Красные капли у пореза обозначают периодическую потерю здоровья.",
+  "kind": "icon",
+  "folder": "assets/ui/effects/bleeding/references/catalog_2026-10-04",
+  "selected_image": "bleeding_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-518f4b1b-036c-4957-bde8-1c3bcbe58417.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "fe64e2439eafd708ac43841d5d50935c4ef8117fafd73015e91cab3cf09fe34a",
+  "byte_size": 1307570,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV92VGF2UmlNMmRYcFFvZHJ1N1VTWXRB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

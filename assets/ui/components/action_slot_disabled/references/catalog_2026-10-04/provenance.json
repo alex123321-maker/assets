@@ -1,0 +1,35 @@
+{
+  "key": "ui_action_slot_disabled",
+  "name": "Ячейка способности — недоступна",
+  "page_id": "page_37d4ce8fd7d48191a94aa3a77d87d607",
+  "subject": "Same SQUARE rim, EMPTY navy well. Desaturated dark gray frame and dim gray rivets, no active glow.",
+  "prompt_override": "Generate ONE isolated reusable fantasy game UI component, straight-on FLAT 2D PIXEL ART, sharp square pixel clusters, no voxel or perspective. Same CubeSiege palette: charcoal navy #101B2B, dark steel #3D4B61, pale silver #BDC7CE, muted brass #AD7B36, sparse cyan #56CEF0. Broad stepped border corners, four tiny corner rivets, thin inner separation line; calm spacious center. TRUE TRANSPARENT outside component, generous clear margin. No mockup, multiple variants, labels, fake text, symbols, shadow, blur, infographic or tiny filigree. Text only if an exact key glyph is explicitly requested. Same SQUARE rim, EMPTY navy well. Desaturated dark gray frame and dim gray rivets, no active glow.",
+  "transparent_background": true,
+  "kind": "icon",
+  "category": "hud_components",
+  "folder": "assets/ui/components/action_slot_disabled/references/catalog_2026-10-04",
+  "selected_image": "action_slot_disabled_pixel_reference.png",
+  "caption": "Пиксельный UI-компонент с прозрачным внешним фоном. Это визуальный референс; runtime-экспорт и проверка в движке не выполнены.",
+  "input_images": [
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-b38e6176-252b-4f3f-9f6e-4232c681fe05.png"
+  ],
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-d20547a2-6250-4f13-bcac-d3dee94a1cbe.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "1241af74811a222e805dd1b98e085d8bedc6c473b2a7cd41d92eaf54499e879f",
+  "byte_size": 690933,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9BUHNwTGROSHZMcnNmbGNOZy1BTWR3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

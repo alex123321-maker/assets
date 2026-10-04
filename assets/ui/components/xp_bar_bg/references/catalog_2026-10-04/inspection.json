@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "xp_bar_bg_pixel_reference.png",
+  "sha256": "93f1c7b286cea3e361b89af460f5deb1813bf320b957174a9291d1941a6a0112",
+  "observations": [
+    "Очень тонкий пустой канал, латунный край и серебристые торцы."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

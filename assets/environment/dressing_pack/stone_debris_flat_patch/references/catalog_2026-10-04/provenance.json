@@ -1,0 +1,38 @@
+{
+  "key": "stone_debris_flat_patch",
+  "name": "Декор — плоские каменные пластины",
+  "subject": "ONE fantasy voxel environment dressing asset. A very LOW flat irregular patch of five interlocking fractured stone SLABS, just one or two coarse cubes high, broad jagged outline and dark material seams, warm gray and pale coarse mineral patches. A little flat olive patch along one slab edge. No underlying earth or plate. Same arrangement in all rotations.",
+  "page_id": "page_8b516544f5d4819199fe01cddfac3bb6",
+  "kind": "model",
+  "category": "dressing",
+  "folder": "assets/environment/dressing_pack/stone_debris_flat_patch/references/catalog_2026-10-04",
+  "selected_image": "stone_debris_flat_patch_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\dressing_pack\\references\\dressing_concept_reference.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного варианта декора. Крупные воксели, чистый фон; без земли и демонстрационной подложки.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-d39b2792-b57c-449f-897d-abe26e8a36cd.png",
+  "sha256": "cd732e176f585b4c7cd365d4f62169bd6516b382f21d9e44e24246be7caaf364",
+  "byte_size": 1016404,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9lcG43dTd3VzBvQU52V053RnNpUzZB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

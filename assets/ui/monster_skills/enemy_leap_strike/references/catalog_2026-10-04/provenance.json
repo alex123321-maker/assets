@@ -1,0 +1,34 @@
+{
+  "key": "enemy_leap_strike",
+  "page_id": "page_6d69c835c8588191a7014f560e7cc316",
+  "subject": "A green undead attacker visibly AIRBORNE in a short forward jump, knees bent, both fists descending toward ONE stationary amber landing ring below and ahead. One impact flash on the ring rim conveys landing, no floating trap, teleport portal or arrows. Anatomy and airborne perspective physically plausible.",
+  "name": "Прыжок с ударом",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/enemy_leap_strike/references/catalog_2026-10-04",
+  "selected_image": "enemy_leap_strike_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "prompt_override": "Use case: stylized-concept. Asset type: ONE square CubeSiege fantasy game ability/talent icon, no sheet. Input image is ONLY reference for crisp 2D pixel rendering, controlled coarse pixel clusters, sharp stepped edges, rich readable game-icon illustration, restrained navy background and material palette. Render NEW subject described below. No 3D voxels, smoothing, photo texture, text, letters, numbers, annotation arrows, diagram, UI frame, watermark or infographic. One strong coherent silhouette occupying most of square; limited supporting details, enough dark breathing room around edges. Hard-edged pixel color ramps, silver steel/brass, color-coded magic/energy as specified. All weapons must be constructed consistently: straight blade, grip/guard/pommel aligned; believable grasp and action. Trails follow the blade/projectile/contact geometry, NEVER originate from grip/handle. Clean powerful composition; subtly textured colored background permitted. Subject: ONE green undead warrior visibly AIRBORNE above a QUIET amber hollow landing marker. Both feet and both fists remain well ABOVE the marker with a CLEAR DARK EMPTY AIR GAP beneath them. Marker is ONE thin calm flat ellipse: uninterrupted outer amber line, dark empty interior, NO central light, NO explosion, NO impact flash, NO debris, NO sparks at the marker. This is the PRE-LANDING instant, attacker has NOT made contact. Clear bent knees, forward dive, green leather/iron bracers and brown torn tunic. No terrain. The only motion trail is short and BEHIND the airborne actor. The lower half must be mostly empty navy with one calm ellipse. Fresh composition.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-4bec9798-745f-453e-b348-981b4ebb3a97.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "b46a19d074572125f1323b451191f3280bc7078a6b3be92311cb807f72200d6e",
+  "byte_size": 1286631,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9lbUxmSDB2QjhMU0UxRVc5RXVLZWN3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,33 @@
+{
+  "key": "enemy_short_lunge",
+  "page_id": "page_5cc04eec6084819189df66965ec34fb7",
+  "subject": "A green undead torso and shoulder surging FORWARD along a short straight lane, heavy body leading, faint amber speed wake BEHIND its back. Contact attack by the BODY, bent arms kept close, no sword thrust, magical projectile or invulnerability shell.",
+  "name": "Короткий выпад",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/enemy_short_lunge/references/catalog_2026-10-04",
+  "selected_image": "enemy_short_lunge_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-ca59e83f-cecf-43f4-b643-3bf46bae7854.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "403254a982a0cee51c4feb5c07e44423ed9e06f0a04019166c76e5c1f8259d37",
+  "byte_size": 1403367,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV85MTZDMWVCTjRIdzFLdjNhUTgtTG93_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

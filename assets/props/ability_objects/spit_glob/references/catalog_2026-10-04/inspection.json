@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "spit_glob_five_views.png",
+  "sha256": "57a2cd3285ad914460e76d86131172c0fe0a13fc1268314c690a36a1c83b3755",
+  "observations": [
+    "Один оливковый сгусток с прямым коротким хвостом капель; нет дуги навесного броска."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

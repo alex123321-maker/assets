@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "boss_line_attack_pixel_icon.png",
+  "sha256": "e3ee686c8ae32f4b01b175cc3cebe828a3598d0fead483ad2eedf9aa99017bab",
+  "observations": [
+    "Viewed an uninterrupted white-gold beam attached to a violet focus held in a gauntlet.",
+    "Continuous source-to-tip line rather than a detached projectile; dark navy negative space keeps the source readable."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

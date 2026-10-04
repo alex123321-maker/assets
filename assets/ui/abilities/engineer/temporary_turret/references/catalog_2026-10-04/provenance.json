@@ -1,0 +1,33 @@
+{
+  "name": "Временная турель",
+  "key": "temporary_turret",
+  "page_id": "page_80f51b27f15c8191b9151c17b7e58600",
+  "category": "abilities/engineer",
+  "subject": "A compact fantasy brass-and-iron automatic CROSSBOW turret on three stout wood/metal folding legs. Mounted wooden bow arms, taut string, brass rotating swivel, teal small rune power gem, one steel-tipped bolt clearly emerging along its central straight firing rail. Low stable silhouette, detailed mechanical bracing, no modern firearm, sci-fi scope, steam smoke or multiple arrows. Navy/teal backdrop.",
+  "caption": "Небольшая автономная арбалетная турель на устойчивой треноге.",
+  "kind": "icon",
+  "folder": "assets/ui/abilities/engineer/temporary_turret/references/catalog_2026-10-04",
+  "selected_image": "temporary_turret_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-11ade6ac-dcbc-40b8-903d-4b58c2a567a7.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "d414fd8edc47cccd103709964c68e81980f0c1c8b7d63ed4e51106c44677df62",
+  "byte_size": 1466257,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV8wTGhUc2JaeEtha2t4eTNfbzR6bGFB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

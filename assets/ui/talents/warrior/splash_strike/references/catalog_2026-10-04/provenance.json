@@ -1,0 +1,33 @@
+{
+  "name": "Разящий удар",
+  "key": "splash_strike",
+  "page_id": "page_a955100753708191911e60504137b50b",
+  "category": "talents/warrior",
+  "subject": "One straight silver/brass sword held at lower left strikes a large dark enemy helmet at upper right, with TWO smaller adjacent enemy helmets behind it caught in a short white/cyan outward contact spray from the blade edge. Clear main target plus nearby splash, no circle or lightning or projectile. Dark navy.",
+  "caption": "Попадание по основной цели с коротким сплэшем по соседним противникам.",
+  "kind": "icon",
+  "folder": "assets/ui/talents/warrior/splash_strike/references/catalog_2026-10-04",
+  "selected_image": "splash_strike_pixel_icon.png",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-48e7b4ea-9255-4217-b162-6e7bf14e9f9f.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "56d74b6dd867d18cb5ea7291156b93a63a45cbb40f19ed4f290f482e2e503856",
+  "byte_size": 1387954,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV90M0lvcjdsUjZhNE5RVWhLXzhTT1B3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

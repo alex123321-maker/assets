@@ -1,0 +1,38 @@
+{
+  "key": "cairn",
+  "name": "Страж кургана",
+  "subject": "A huge squat ancient stone guardian with gray-green layered burial-stone armor, cubic ivory sandstone face and dark square eye slits with amber pupils, broad slabs as shoulders and enormous BOTH stone gauntlet fists. Stacked coarse stone crest on head, three simple geometric brass/amber inset seals on chest, dark moss-green mineral patches on the armor surface (no actual plants). Thick block legs and feet, dark brown cloth belt. One amber core embedded at breastplate centre. No held weapon, horns, cannons, cape or shield. Detailed chipped plate edges and broad stone grain pixels, clearly massive burial guardian not iron siege undead.",
+  "page_id": "page_ac6de68b0c28819193cb8bb93156c5bb",
+  "kind": "model",
+  "category": "bosses",
+  "folder": "assets/characters/bosses/cairn/references/catalog_2026-10-04",
+  "selected_image": "cairn_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game\\screenshots_debug\\demo_polish\\canonical_bosses\\day_01_attack_0_warning.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов босса в крупной воксельной стилистике; развитие существующего силуэта и палитры.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-63a2e47c-033b-4736-9015-d566dc8d9438.png",
+  "sha256": "ed52354e99b2f7ecbe119a505bc07d20bfc1895bec2136a4004b684ff7349b9a",
+  "byte_size": 1460460,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV95WHBpcDQtRDhMMkJsT25EYXJQQzFR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

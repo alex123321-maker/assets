@@ -1,0 +1,33 @@
+{
+  "key": "global_day",
+  "name": "День",
+  "subject": "Golden solar disc with eight short angular amber rays, cream central glint, warm navy background.",
+  "page_id": "page_37d4ce8fd7d48191a94aa3a77d87d607",
+  "kind": "icon",
+  "category": "hud_globals",
+  "folder": "assets/ui/catalog/global_day/references/catalog_2026-10-04",
+  "selected_image": "global_day_pixel_reference.png",
+  "caption": "Единая пиксельная графика HUD: тёмно-синяя основа, сталь и латунь, чёткий силуэт и функциональный цвет.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-ea6a9c3a-b156-4292-bd0a-5f312a590ddd.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "7476bc64ed6baf76b9cf1a7eeeff14e732e5dbd623d1c277f158f321ddd039cd",
+  "byte_size": 1179264,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9rWTlGSVRKRGxIWVctNjhiZW1BaVpB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

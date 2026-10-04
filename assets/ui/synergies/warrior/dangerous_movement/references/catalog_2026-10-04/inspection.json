@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "dangerous_movement_pixel_icon.png",
+  "sha256": "faf4b39e12fc3e3a444af3e3a3ad8b541a0802b750b95ab992b638f770c9ed7b",
+  "observations": [
+    "Движущийся Воин окружён золотым контуром; следы скорости остаются слева позади.",
+    "Вспышка контакта находится у плеча и врага на пути справа; меч удерживается позади героя.",
+    "Нет отдельного взмаха меча или поражающей дуги впереди."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

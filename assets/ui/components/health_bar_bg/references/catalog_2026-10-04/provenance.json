@@ -1,0 +1,35 @@
+{
+  "key": "ui_health_bar_bg",
+  "name": "Здоровье — рамка",
+  "page_id": "page_37d4ce8fd7d48191a94aa3a77d87d607",
+  "subject": "ONE thin horizontal EMPTY navy channel width9 height1, clipped dark steel rim and pale top line. No fill.",
+  "prompt_override": "Generate ONE isolated reusable fantasy game UI component, straight-on FLAT 2D PIXEL ART, sharp square pixel clusters, no voxel or perspective. Same CubeSiege palette: charcoal navy #101B2B, dark steel #3D4B61, pale silver #BDC7CE, muted brass #AD7B36, sparse cyan #56CEF0. Broad stepped border corners, four tiny corner rivets, thin inner separation line; calm spacious center. TRUE TRANSPARENT outside component, generous clear margin. No mockup, multiple variants, labels, fake text, symbols, shadow, blur, infographic or tiny filigree. Text only if an exact key glyph is explicitly requested. ONE thin horizontal EMPTY navy channel width9 height1, clipped dark steel rim and pale top line. No fill.",
+  "transparent_background": true,
+  "kind": "icon",
+  "category": "hud_components",
+  "folder": "assets/ui/components/health_bar_bg/references/catalog_2026-10-04",
+  "selected_image": "health_bar_bg_pixel_reference.png",
+  "caption": "Пиксельный UI-компонент с прозрачным внешним фоном. Это визуальный референс; runtime-экспорт и проверка в движке не выполнены.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-b3e784a0-7be0-45ec-b8a1-43e846fbddb9.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "0bf9aeba07e75c799e29638af197967f534f0f0af55f6ec7ec90166fb3ef3213",
+  "byte_size": 191424,
+  "dimensions": [
+    1947,
+    808
+  ],
+  "mode": "RGBA",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9zcGp0aXlEaHVrNm5hUXNWNTRuYlpR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

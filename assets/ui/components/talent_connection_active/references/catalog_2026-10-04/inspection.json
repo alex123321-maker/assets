@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "talent_connection_active_pixel_reference.png",
+  "sha256": "af2f6ce9a7bd74e866718a39dc6e8a189caedcadb5a6f8751b71a3bc755e8e97",
+  "observations": [
+    "Одна связь с двумя прямоугольными изгибами, золотой центральной линией и двумя серебристыми узлами изгиба."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

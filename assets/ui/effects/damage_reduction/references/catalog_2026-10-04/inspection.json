@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "damage_reduction_pixel_icon.png",
+  "sha256": "4e55197d82ea4b80244604d2467ad58df9d60dace93bb329953e09265c4b1c39",
+  "observations": [
+    "Усиленный серебряный нагрудник с латунными краями принимает удар в правое плечо.",
+    "На контакте видна небольшая приглушённая красная вспышка; магической оболочки и ответного луча нет."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

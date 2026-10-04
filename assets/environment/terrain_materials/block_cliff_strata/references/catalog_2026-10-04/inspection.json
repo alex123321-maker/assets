@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "block_cliff_strata_five_views.png",
+  "sha256": "a33130102c3001590daad147023bf3e0520e80559df31f96f04ef67c25f0e5e6",
+  "observations": [
+    "Viewed five isolated gray cube orientations with clear horizontal dark and pale strata.",
+    "Isometric occupies lower middle; four other cube faces remain separate on white."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

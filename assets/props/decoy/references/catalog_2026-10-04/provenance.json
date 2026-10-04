@@ -1,0 +1,38 @@
+{
+  "key": "prop_decoy",
+  "name": "Приманка — модель",
+  "page_id": "page_53627e1d31d48191b481982aebd811d1",
+  "subject": "A PHYSICAL straw-filled training decoy on ONE thick oak vertical post and a crossed timber foot. Broad sack torso tied with rope, TWO horizontal straw hands on a fixed wooden crossbar, small straw head under a coarse forest-green hood; ragged cream sack skirt, no legs or walking body. All straw tips are broad stepped voxel clusters. Fixed identical hood and rope arrangement from all sides. No skeleton actors, attraction aura, ground or scene.",
+  "kind": "model",
+  "category": "ability_props",
+  "folder": "assets/props/decoy/references/catalog_2026-10-04",
+  "selected_image": "prop_decoy_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\ui\\abilities\\archer\\decoy\\references\\catalog_2026-10-04\\decoy_pixel_icon.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов физического объекта способности. Дизайн согласован с её пиксельной иконкой; крупные фэнтезийные воксели, чистый белый фон.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-397b5f8e-debf-4033-9a6a-bff9232b46bf.png",
+  "sha256": "87a4268009cbee618b3f1905d6736991c8c4bf213db0d06fda0c7c448a572631",
+  "byte_size": 1300475,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9CYVlJRXBVZ2NBc3MyWU5IcFptd0Nn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

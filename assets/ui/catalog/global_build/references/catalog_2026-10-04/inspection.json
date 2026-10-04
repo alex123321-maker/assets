@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "global_build_pixel_reference.png",
+  "sha256": "c5a759f458f5804896bc23f127a4a2d3ee05f673935eba8f952cdbf280747939",
+  "observations": [
+    "Молоток и строительный угольник, физически понятные инструменты."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

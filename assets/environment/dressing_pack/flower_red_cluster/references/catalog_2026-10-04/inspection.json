@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "flower_red_cluster_five_views.png",
+  "sha256": "076cea9bcff2228b1a2900d199cb93b1cc0a7e82a16becdbca1b2944921f6ba9",
+  "observations": [
+    "Пять видов трёх красных маков с тёмными центрами, толстыми стеблями и ступенчатыми листьями.",
+    "Три бутона сохраняют высоту и расположение; в профиле один частично перекрывается другим."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

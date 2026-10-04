@@ -1,0 +1,38 @@
+{
+  "key": "fx_contact_burst",
+  "name": "Попадание — общий всплеск — 5 видов",
+  "page_id": "page_89d3c121b07c81919f5f417723ca5b77",
+  "subject": "ONE low broad white/amber instantaneous cubic impact star, eight uneven radial hot fragments and sparse dark chips. Whole area burst in one frozen moment, empty space above, no actor, mine, projectile, residual fire field, ground crack or mushroom cloud.",
+  "prompt_override": "Use case: stylized-concept. Generate a CLEAN fantasy VOXEL GAMEPLAY-EFFECT spatial reference, EXACTLY FIVE views of ONE SAME frozen effect at ONE instant: upper row front and back, lower row left, right, true 45degree isometric. All panels show same particle arrangement and same geometry simply rotated, not five animation phases. Large Minecraft-like visible CUBIC particle units, thick stair-step edges, detailed purposeful major/medium blocks, NO smooth painterly or photorealistic smoke. Minimal flat face color differences, unlit emission color, no cast shadow, AO, scene lighting or bloom bleeding on background. Isolate EFFECT ONLY, no actor, enemy, mannequin, body, heart icon, unrelated weapon, landscape, terrain, floor, display plinth, UI frame, arrows, text, labels, captions or infographic. Plain solid dark slate navy contrasting background. Wide clean gaps between five views, no extra sixth view. First reference supplies only coarse voxel scale/style; no character is copied. Subject: ONE low broad white/amber instantaneous cubic impact star, eight uneven radial hot fragments and sparse dark chips. Whole area burst in one frozen moment, empty space above, no actor, mine, projectile, residual fire field, ground crack or mushroom cloud. Camera consistency: four genuinely DIFFERENT orthographic views at 0,180,90,270 degrees around the vertical axis, plus one true isometric; do not use five similar three-quarter poses. Long directional X objects must be foreshortened/end-on in two opposite views. All five groups show SAME geometry and frozen particle state.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "kind": "model",
+  "category": "vfx/abilities",
+  "folder": "assets/vfx/abilities/contact_burst/references/catalog_2026-10-04",
+  "selected_image": "contact_burst_five_views.png",
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одного объекта/момента в крупной воксельной стилистике. Художественный референс; правила срабатывания берутся из текста способности, анимация и читаемость в движке не проверены.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-d8c0e4e4-c15a-4bca-9363-5543165fa2f4.png",
+  "sha256": "234298b34a6d4eb023a8715e506e061548bfb6107684a652449e88392055ee99",
+  "byte_size": 1180017,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV94WUFWekJsQlRENzltVVFaSklza2Zn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

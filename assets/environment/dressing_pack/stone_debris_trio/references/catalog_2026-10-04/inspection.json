@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "stone_debris_trio_five_views.png",
+  "sha256": "9a74ea4b89b77c317a85bf5cd0d59cd7c2d2b0a9f63a7ca1127d8ee2ea1e6b86",
+  "observations": [
+    "Viewed all five orientations: three separate gray stone fragments of differing heights with clear white gaps and broad stepped blocks.",
+    "Arrangement reverses in the rear view; isometric view reads as three independent pieces, not a connected rock mass."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

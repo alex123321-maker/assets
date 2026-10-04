@@ -1,0 +1,34 @@
+{
+  "key": "portrait_archer",
+  "name": "Лучник — портрет HUD",
+  "page_id": "page_53022a18f3288191a0387b6921e42ed8",
+  "subject": "ONE close head-and-shoulders fantasy class portrait, face fills middle and eyes unobstructed, calm determined expression, slightly three-quarter facing viewer, no weapon or hands. Short sandy-blond fringe, bright green eyes, forest-green hood, brown diagonal chest strap with brass buckle and small silver shoulder plates. Match model identity. No beard or elf ears. Rich detailed 2D pixel portrait, NOT voxel cubes or a photo. Navy background, no text/frame.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png",
+    "D:\\Repository\\game_assets\\assets\\characters\\archer\\references\\catalog_2026-10-04\\archer_five_views.png"
+  ],
+  "kind": "icon",
+  "category": "hud_portraits",
+  "folder": "assets/ui/portraits/archer/references/catalog_2026-10-04",
+  "selected_image": "archer_pixel_portrait.png",
+  "caption": "Пиксельный портрет HUD с внешностью из модельного референса персонажа. Палитра и материалы согласованы с набором иконок.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-db182bca-e536-4961-975c-a944b7a4ac11.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "dfa02c79b8aa0ca35a8a29824dc9a75937c259e61dd0d920f9a2698d5ad1b682",
+  "byte_size": 1323441,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV90UFZHUGZsV0NMTU90N3YyQ2tfNVBB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,34 @@
+{
+  "key": "icon_building_wood_wall",
+  "name": "Деревянная стена — иконка",
+  "page_id": "page_cad2530bda488191b1521c152b614ba6",
+  "subject": "ONE compact fantasy BUILD MENU icon showing ONLY the building from second reference image, three-quarter composition, retain its wood/steel/brass materials and characteristic silhouette. SECOND image defines structure, NOT voxel rendering: convert to crisp rich 2D PIXEL ILLUSTRATION like first image. No construction arrows, ground, NPC, tool overlay, text or surrounding scene. ONE modular defensive WOOD WALL section. Three thick square dark-oak posts with stepped caps, closely fitted chunky vertical timber infill and two horizontal dark wood braces on BOTH sides, broad iron bands and large square rivets. Dark brown wood with coarse amber end-grain patches, muted steel hardware. Clear tall rectangular fence-like silhouette with sturdy flat post feet. No surrounding fence, gate, ground or presentation base.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png",
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-847cab6b-f2a8-4f06-aadc-fef97c3bf0c1.png"
+  ],
+  "kind": "icon",
+  "category": "building_icons",
+  "folder": "assets/ui/buildings/wood_wall/references/catalog_2026-10-04",
+  "selected_image": "wood_wall_pixel_icon.png",
+  "caption": "Пиксельная иконка меню строительства, согласованная с пятиракурсным референсом этой постройки.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-cc851055-4747-46ff-bb00-75a015fdf97b.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "dd5a9f729a730c76b6c7fc06b7f9d08286497bcf3068614df1f8d36fbafbfd1f",
+  "byte_size": 1315187,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9Vczg5dWktLXhZWUlUdnJjTWJpa3NB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

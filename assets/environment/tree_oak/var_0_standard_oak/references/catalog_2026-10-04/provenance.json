@@ -1,0 +1,38 @@
+{
+  "key": "var_0_standard_oak",
+  "name": "Взрослый дуб",
+  "subject": "A mature oak tree with one sturdy dark-brown block trunk, several visible forked branches and broad asymmetrical rounded-stepped canopy assembled from LARGE fused forest-green cubic masses. Warm olive leaf accents in broad checker clusters, deeply textured bark using coarse brown pixels. Buttress roots are part of trunk ONLY, exposed and cut off cleanly without ground. Balanced crown width about equal to total trunk+crown height, organic asymmetry preserved between five actual angles. No fruits, tiny leaf particles, loose cubes, vines, soil or platform.",
+  "page_id": "page_4b10edf1c2f48191901cba58a1571ca4",
+  "kind": "model",
+  "category": "trees",
+  "folder": "assets/environment/tree_oak/var_0_standard_oak/references/catalog_2026-10-04",
+  "selected_image": "var_0_standard_oak_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game_assets\\assets\\environment\\tree_oak\\var_0_standard_oak\\review\\iso.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Отдельный вариант дуба: пять ракурсов на белом фоне; без земли, площадки и ландшафта.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-6fe65f87-fd73-4730-85bc-3f337c1553a8.png",
+  "sha256": "11ad2b6ab8d1d213003fa69ed0f24a4d882bfe797096313785e4ef5acc5f644a",
+  "byte_size": 1079435,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV8xdVFWY1JDaUNCc2htMkU2c0pwU1ZB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

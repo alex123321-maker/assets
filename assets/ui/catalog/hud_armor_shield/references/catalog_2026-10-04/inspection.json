@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "hud_armor_shield_pixel_reference.png",
+  "sha256": "02907d9a74fa0a28992f81b9c8b9c3771b235363e7e278ba80afc82889177f3c",
+  "observations": [
+    "Синий щит, серебристые накладки и латунный край сочетаются с металлом HUD."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

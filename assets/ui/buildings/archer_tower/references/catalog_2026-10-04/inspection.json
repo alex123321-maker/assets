@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "archer_tower_pixel_icon.png",
+  "sha256": "bd2d632e8f4f25c34bef3b248d126ef949305d06a06c61b4e6ad0377688651c6",
+  "observations": [
+    "Четырёхопорная башня с лестницей, бордовым полотнищем и центральным арбалетным болтом."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

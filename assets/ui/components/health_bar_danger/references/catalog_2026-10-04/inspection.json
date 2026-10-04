@@ -1,0 +1,19 @@
+{
+  "status": "candidate",
+  "inspected_image": "health_bar_danger_pixel_reference.png",
+  "sha256": "36f8491a4ab8ed2a8a1fa9db5853f1d7b4bbd6e4a4d8063ae27a441454bfc20b",
+  "observations": [
+    "Отдельная красная полоса критического здоровья без рамки; та же форма, прозрачные поля."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

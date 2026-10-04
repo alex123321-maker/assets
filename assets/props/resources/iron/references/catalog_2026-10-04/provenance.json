@@ -1,0 +1,37 @@
+{
+  "key": "pickup_iron",
+  "name": "Железо — добытый ресурс",
+  "page_id": "page_f58044d4583c81919ce5b848a87d0701",
+  "subject": "THREE separate raw iron nuggets: dark warm gray/brown broad stepped chunks with clearly visible dull SILVER exposed ore facets and restrained rusty amber specks. One larger, two smaller, same loose triangular arrangement with clear white gaps. RAW nuggets, no finished ingots or golden ore.",
+  "kind": "model",
+  "category": "resources",
+  "folder": "assets/props/resources/iron/references/catalog_2026-10-04",
+  "selected_image": "iron_pickup_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов набора из трёх отделённых частей добытого ресурса. Количество частей — визуальная композиция, не новая категория или баланс.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-2907dcbc-e99e-419e-8926-ad87590d1d5b.png",
+  "sha256": "70320a29d28ab655961485494095ea3a4c44384289d1e31b57de7b752dd602dc",
+  "byte_size": 980651,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9fdUV6TDZoOTQtWWRRamx4SUFUT0FB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

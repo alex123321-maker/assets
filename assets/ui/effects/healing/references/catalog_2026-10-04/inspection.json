@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "healing_pixel_icon.png",
+  "sha256": "1b1e11f1dc422fb83f5de54cb901ff2ce039662cd2dc442e2e51908527319e1c",
+  "observations": [
+    "Рука поддерживает красное сердце с одной видимой трещиной.",
+    "Яркая зелёно-белая вспышка сосредоточена на трещине и образует единичный импульс.",
+    "Нет кругового следа продолжительного лечения или источника отнятой жизни."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

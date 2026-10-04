@@ -1,0 +1,33 @@
+{
+  "key": "boss_sweeping_dash",
+  "page_id": "page_8d1e2a49cd4c8191981827ef5bace786",
+  "subject": "A blue slate horned armored brute surging forward, shoulder/body in real CONTACT with one small burgundy hero shield at the leading edge, driving it forward. Wake behind monster back, long straight movement. Corridor itself not shown as damaging flame; no telekinetic pull or detached missile.",
+  "name": "Сметающий рывок",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/boss_sweeping_dash/references/catalog_2026-10-04",
+  "selected_image": "boss_sweeping_dash_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-5cdcd053-0b04-4606-acc1-fdf9bc478d7d.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "4a327b9f0ad9bce9620f3167fd7b387380a6396bff86afc14ed5b6c4cf104611",
+  "byte_size": 1523671,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9EcGZ3bTdLMHJDdkp5ZmUzbS1NeXhn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

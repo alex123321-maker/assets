@@ -1,9 +1,14 @@
 {
   "name": "Воин",
-  "status": "candidate",
-  "approval": null,
+  "status": "approved",
+  "approval": {
+    "date": "2026-10-04",
+    "conversation_id": "01a106c4-3599-7542-97d9-b7ebf83abb70",
+    "authority": "user",
+    "quote": "Ну ладно пускай будет такой ... персонаж и элемент мира меня устраивают, продолжай в том же духе"
+  },
   "created_date": "2026-10-04",
-  "scope": "reference_only_pilot",
+  "scope": "reference_only",
   "tool": "image_gen.imagegen (Codex built-in)",
   "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-9094642b-51a8-4a39-a935-0c5d4344532c.png",
   "page_id": "page_0331275e699c8191bc139e93d84a406f",
@@ -18,8 +23,10 @@
     "right",
     "isometric"
   ],
-  "input_images": ["iterations/warrior_shield_before_consistency_fix.png"],
-  "notes": "Художественный кандидат после последнего уточнения пользователя. Не утверждён. Это сгенерированный референс, не модель и не рендер движка.",
+  "input_images": [
+    "iterations/warrior_shield_before_consistency_fix.png"
+  ],
+  "notes": "Утверждено пользователем 4 октября 2026; это художественный референс, не production-модель.",
   "prompt_files": [
     "prompt.txt",
     "lighting_prompt.txt",

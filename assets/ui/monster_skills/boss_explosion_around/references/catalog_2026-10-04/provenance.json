@@ -1,0 +1,33 @@
+{
+  "key": "boss_explosion_around",
+  "page_id": "page_89d3c121b07c81919f5f417723ca5b77",
+  "subject": "ONE massive circular instantaneous amber explosion around a dark monster core, jagged wide radial flash and chunky hot outward fragments. One whole-area pulse, open dark navy beyond. No persistent mine, lingering toxic puddle or endless expanding concentric hazard.",
+  "name": "Взрыв вокруг",
+  "kind": "icon",
+  "category": "monster_skills",
+  "folder": "assets/ui/monster_skills/boss_explosion_around/references/catalog_2026-10-04",
+  "selected_image": "boss_explosion_around_pixel_icon.png",
+  "caption": "Пиксельная иконка проверена на соответствие источнику, траектории и моменту действия способности.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-64336c17-3971-4022-904d-66cabccc2e44.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "6fb39cc86c9f397b2231f4178549b2c139f79e8e8bbc103a96fb1d22e3e27bfe",
+  "byte_size": 1447821,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9xVlpKblNleUNfaHRXQXlTejZmZ3dR_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

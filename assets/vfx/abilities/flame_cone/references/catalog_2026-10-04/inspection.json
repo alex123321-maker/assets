@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "flame_cone_five_views.png",
+  "sha256": "a7e36bb40da4a5085514f03a9da9beda49d0faad2126abb736c75950b523fc44",
+  "observations": [
+    "Короткий огненный конус расширяется от узкого источника; два торцевых профиля и изометрия показывают объём."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

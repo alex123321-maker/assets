@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "stage_1_var_3_five_views.png",
+  "sha256": "c41bde281e73a006560f302899f7a8d715f418b1e3fa8b920cadc9075b115b8f",
+  "observations": [
+    "Пять полных ракурсов широкой каменной глыбы с диагональным ступенчатым гребнем и трещиной.",
+    "Крупные кубические массы и нижние выступы сохраняют цельный силуэт; без подложки и падающих теней."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

@@ -1,0 +1,35 @@
+{
+  "key": "ui_keycap_frame_pressed",
+  "name": "Клавиша — нажатая рамка",
+  "page_id": "page_37d4ce8fd7d48191a94aa3a77d87d607",
+  "subject": "Same keycap width2 height1, inset dark rim and gold INNER edge, EMPTY navy center.",
+  "prompt_override": "Generate ONE isolated reusable fantasy game UI component, straight-on FLAT 2D PIXEL ART, sharp square pixel clusters, no voxel or perspective. Same CubeSiege palette: charcoal navy #101B2B, dark steel #3D4B61, pale silver #BDC7CE, muted brass #AD7B36, sparse cyan #56CEF0. Broad stepped border corners, four tiny corner rivets, thin inner separation line; calm spacious center. TRUE TRANSPARENT outside component, generous clear margin. No mockup, multiple variants, labels, fake text, symbols, shadow, blur, infographic or tiny filigree. Text only if an exact key glyph is explicitly requested. Same keycap width2 height1, inset dark rim and gold INNER edge, EMPTY navy center.",
+  "transparent_background": true,
+  "kind": "icon",
+  "category": "hud_components",
+  "folder": "assets/ui/components/keycap_frame_pressed/references/catalog_2026-10-04",
+  "selected_image": "keycap_frame_pressed_pixel_reference.png",
+  "caption": "Пиксельный UI-компонент с прозрачным внешним фоном. Это визуальный референс; runtime-экспорт и проверка в движке не выполнены.",
+  "input_images": [
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-be1dafa0-de96-4981-97e0-aee2952f966e.png"
+  ],
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-db3a6d14-6e22-4cf7-b04d-d5913d8cda3e.png",
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "77edb2507df6f6e8f2ddcdf3926ad5c65a83889793ad0d84b5cd8ed4730c71d9",
+  "byte_size": 348611,
+  "dimensions": [
+    1774,
+    887
+  ],
+  "mode": "RGBA",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9Bd25XZjFXTzR3OHppMjNqeUc2UzJB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

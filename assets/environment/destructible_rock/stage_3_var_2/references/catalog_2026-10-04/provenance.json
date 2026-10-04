@@ -1,0 +1,38 @@
+{
+  "key": "stage_3_var_2",
+  "name": "Средние обломки — парные фрагменты",
+  "subject": "ONE destructible natural gray rock resource asset, angular stepped fused voxel geology, warm-gray primary stone with a few pale coarse mineral patches, dark-gray wide fracture seams and restrained FLAT olive moss color patches attached to stone surfaces (no growing plants). Large Minecraft-style cubic masses with chunky material pixels, no tiny rubble confetti, smooth beveled stone or photoreal texture. No soil, ground, grass, pedestal or landscape. This is ONE variant, not a family gallery or destruction sequence. All five copies show the same arrangement of main masses, cracks and separate fragments. Third destruction-stage MEDIUM remnant. TWO separate medium squat unequal blocky chunks with fresh flat split faces, placed next to each other with a small white gap, one lower stone chip near their feet. No tall connected intact base, soil slab or scattered miniature dust.",
+  "page_id": "page_8a1842277d7c819192faca9c0ffb2803",
+  "kind": "model",
+  "category": "rocks",
+  "folder": "assets/environment/destructible_rock/stage_3_var_2/references/catalog_2026-10-04",
+  "selected_image": "stage_3_var_2_five_views.png",
+  "input_images": [
+    "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-e28a94cb-c3ae-4691-a00f-2427d3d2800d.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Один вариант соответствующей стадии разрушения: пять ракурсов без земли, ландшафта и подписи.",
+  "prompt_override": "Edit this five-view reference sheet. Keep the warm gray stone palette, pale mineral color patches, restrained olive patches, large Minecraft voxel style, and pure white background. REBUILD the entire asset as a convincingly DESTROYED much lower remnant. Every visible geometric voxel must be very large; the maximum number of stacked cubes is strict. Exactly TWO chunky separated squat stone remnants, one FIVE coarse voxel steps high and one THREE steps high, plus ONE tiny chip. Wide clean white gap separates the two large remnants. Both have truncated fractured tops. No tall central peak, no connected mountain wall. Produce exactly five separate complete depictions of this SAME arrangement: front and back orthographic on upper row, left and right profiles and one isometric game view on lower row. Match the same fragment geometry and their fixed relative arrangement across all five views. No captions, labels, annotations, arrows, ground, soil, landscape, pedestal, contact shadows, ambient occlusion or cast shadows. Flat bright unlit colors; mild material tones only. Keep generous white margins. This is one asset variant, not a gallery of different rocks.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-6e0d5bb4-c7c4-40d1-b66a-a8170688e0dd.png",
+  "sha256": "432c489c379a9f7be883e11838fc2489ccd2694a7570ace5e03165f6761ecab5",
+  "byte_size": 838202,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9IWmhkZW9PVXVUZmlPQWo0ckl2bHVB_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

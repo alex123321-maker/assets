@@ -1,0 +1,33 @@
+{
+  "key": "hud_target_range",
+  "name": "Дальность",
+  "subject": "One physical archery bullseye medallion: THREE concentric dark navy and brass rings, small bright cyan center and four short radial notches. No text, number, map or arrows.",
+  "page_id": "page_37d4ce8fd7d48191a94aa3a77d87d607",
+  "kind": "icon",
+  "category": "hud_globals",
+  "folder": "assets/ui/catalog/hud_target_range/references/catalog_2026-10-04",
+  "selected_image": "hud_target_range_pixel_reference.png",
+  "caption": "Единая пиксельная графика HUD: тёмно-синяя основа, сталь и латунь, чёткий силуэт и функциональный цвет.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-dc479fc2-e8d0-47f3-ab56-a07b939a306d.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\ui\\warrior_sword_attack\\references\\candidate_2026-10-04\\sword_strike_pixel_physical.png"
+  ],
+  "expected_views": [
+    "single_icon"
+  ],
+  "sha256": "2764843248f37a6a00b3214152610e42d04172856c2d576a2b7efc1d1d8a63d7",
+  "byte_size": 1290465,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9RNjR4TjMydDVScnBKTVoySFQ0MGZ3_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

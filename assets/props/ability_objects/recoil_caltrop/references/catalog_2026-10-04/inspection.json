@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "recoil_caltrop_five_views.png",
+  "sha256": "7df486e8b62b442c749e5c08e2e6a69591ccf6518236dc4a74c45b5b997d4459",
+  "observations": [
+    "Компактный железный шип с четырьмя выступами и латунным узлом; используется как концепт объекта из GDD, без заявления о реализации в прототипе."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

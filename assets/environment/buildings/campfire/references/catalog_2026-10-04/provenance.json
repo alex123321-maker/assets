@@ -1,0 +1,38 @@
+{
+  "key": "building_campfire",
+  "name": "Костёр",
+  "subject": "ONE fantasy CAMPFIRE hearth: ring of EIGHT thick cubical warm-gray stones, four chunky crossed dark-oak logs within ring, dark charcoal ember bed and large Minecraft-stepped amber flame with pale cream centre and orange-red lower tongues. Broad readable cubes, flat colors; flame does NOT cast light or shadow onto backdrop. Hearth stones and fuel are asset itself, no dirt, terrain platform, smoke cloud or additional scenery.",
+  "page_id": "page_997d649cdc9081919a2a963384109169",
+  "kind": "model",
+  "category": "buildings",
+  "folder": "assets/environment/buildings/campfire/references/catalog_2026-10-04",
+  "selected_image": "campfire_five_views.png",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png",
+    "D:\\Repository\\game\\screenshots_debug\\demo_buildings\\building_models_isometric_day.png"
+  ],
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять ракурсов одной существующей постройки. Крупные воксели; без ландшафта, внешней подставки и подписей.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-02b77342-0bd4-464b-b931-871f3acfaf8b.png",
+  "sha256": "91a2954990ad6718f34d3e8d6990bc3d2e59124cb52a082c16635dd0ec00011b",
+  "byte_size": 932293,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "page_reference": "library-file:fde1_bGliZmlsZV9KRTktQXlyZmNBQTk4b00tbF9zd0tn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

@@ -1,0 +1,47 @@
+{
+  "key": "fx_lifesteal",
+  "name": "Вампиризм — VFX",
+  "page_id": "page_b87b95d4121481919eaf8ca246bae59a",
+  "subject": "ONE thin dark-crimson flowing filament from a small dim SOURCE particle cluster at right to a warmer red/emerald RECEIVING cluster at left, both at torso height. Sparse cubic red motes trace flow, green recipient glint. Straight short bridge with fading sourceward trail, no physical hearts, bats or blood puddle.",
+  "prompt_override": "Use case: stylized-concept. Generate a CLEAN fantasy VOXEL GAMEPLAY-EFFECT spatial reference, EXACTLY FIVE views of ONE SAME frozen effect at ONE instant: upper row front and back, lower row left, right, true 45degree isometric. All panels show same particle arrangement and same geometry simply rotated, not five animation phases. Large Minecraft-like visible CUBIC particle units, thick stair-step edges, detailed purposeful major/medium blocks, NO smooth painterly or photorealistic smoke. Minimal flat face color differences, unlit emission color, no cast shadow, AO, scene lighting or bloom bleeding on background. Isolate EFFECT ONLY, no actor, enemy, mannequin, body, heart icon, weapon, landscape, terrain, floor, display plinth, UI frame, arrows, text, labels, captions or infographic. Plain solid dark slate navy contrasting background. Wide clean gaps between five views, no extra sixth view. First reference supplies only coarse voxel scale/style; no character is copied. Subject: ONE thin dark-crimson flowing filament from a small dim SOURCE particle cluster at right to a warmer red/emerald RECEIVING cluster at left, both at torso height. Sparse cubic red motes trace flow, green recipient glint. Straight short bridge with fading sourceward trail, no physical hearts, bats or blood puddle. STRICT CAMERA LAYOUT: upper-left FRONT sees full horizontal connection, recipient at LEFT; upper-right BACK sees full horizontal connection, recipient at RIGHT. Lower-left LEFT-END VIEW looks down connection axis: big receiving cluster front, thin connection foreshortened behind, small source mostly occluded. Lower-middle RIGHT-END VIEW looks down opposite axis: small source in front, big receiving cluster behind. Lower-right only ISOMETRIC full diagonal connection. NO full horizontal side-on connection in the two end-view cells. Five same frozen geometry views, not repeated horizontal motifs.",
+  "input_images": [
+    "D:\\Repository\\game_assets\\assets\\characters\\warrior\\references\\candidate_2026-10-04\\warrior_minecraft_shield_five_views.png"
+  ],
+  "kind": "model",
+  "category": "vfx/status_effects",
+  "folder": "assets/vfx/status_effects/lifesteal/references/catalog_2026-10-04",
+  "selected_image": "lifesteal_vfx_five_views_v2.png",
+  "expected_views": [
+    "front",
+    "back",
+    "left",
+    "right",
+    "isometric"
+  ],
+  "caption": "Пять пространственных ракурсов эффекта в один момент. Крупные воксельные частицы, однотонный контрастный фон; без персонажа и ландшафта. Анимация и читаемость в движке не проверены.",
+  "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-75aee63a-9941-429e-8c1c-211bbab12c16.png",
+  "sha256": "accbb13b0c1f79c67fb2cf0495cbc5c553ffb8dcd128ec5129c4b98370c645f1",
+  "byte_size": 1072543,
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGB",
+  "format": "PNG",
+  "tool": "image_gen.imagegen (Codex built-in)",
+  "status": "candidate",
+  "approval": null,
+  "scope": "reference_only",
+  "created_date": "2026-10-04",
+  "revision_history": [
+    {
+      "image": "lifesteal_vfx_five_views.png",
+      "sha256": "196583e1de18ae9621642fdf7fec9f6f70bcc7f245c9030266d49e7cb4ede386",
+      "source_path": "C:\\Users\\alexa\\.codex\\generated_images\\01a106c4-3599-7542-97d9-b7ebf83abb70\\exec-152c95e3-2eed-4e46-a8d3-0c782329fc6b.png",
+      "status": "superseded",
+      "reason": "Side cameras did not foreshorten the connection; v2 supplies overlapping end clusters."
+    }
+  ],
+  "page_reference": "library-file:fde1_bGliZmlsZV94VHRtQlJmVGpxWlBXR1dzUDh1MmVn_FileDrive_78e86f51cb0c8191a8451c97f2945c0e",
+  "page_verified": true
+}

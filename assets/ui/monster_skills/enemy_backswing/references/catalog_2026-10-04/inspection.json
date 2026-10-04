@@ -1,0 +1,20 @@
+{
+  "status": "candidate",
+  "inspected_image": "enemy_backswing_pixel_icon.png",
+  "sha256": "a42a1f0d9f941c60cf575853340f8904df47fa1d3fbf9ecdf34436b77b82da88",
+  "observations": [
+    "Viewed a held heavy cleaver with two adjacent warm blade-edge arcs of different reach.",
+    "No full circular spin or independent projectiles. A still icon compresses the two swing moments; motion timing remains a reference limitation."
+  ],
+  "limitations": [
+    "Generated pixel-style concept; native small-size pixel grid and engine UI readability are not verified."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "candidate",
+  "inspected_image": "wood_wall_five_views.png",
+  "sha256": "e58c3ad2fb9ee0d4ad5ff7286f2419289e5725ffcbd31ef78b41f9204e683fe7",
+  "observations": [
+    "Viewed five orientations: three thick wood posts, plank infill, two horizontal rails, large iron bands and bolts.",
+    "Front/rear construction is symmetric, side views show wall depth; isolated on white."
+  ],
+  "limitations": [
+    "Generated art reference; production model, animation and engine readability are not verified.",
+    "Minimal face tonal variation remains; no cast ground shadow is visible."
+  ],
+  "technical_verification": {
+    "png_decoded": true,
+    "source_copy_sha256_equal": true,
+    "page_file_access_confirmed": true,
+    "page_insert_read_back": true,
+    "preexisting_page_blocks_preserved": true
+  },
+  "user_art_approval": "pending"
+}
